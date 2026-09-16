@@ -27,26 +27,6 @@
       "PowerShell(Start-BitsTransfer *)"
     ]
   },
-  "sandbox": {
-    "enabled": true,
-    "failIfUnavailable": true,
-    "allowUnsandboxedCommands": false,
-    "autoAllowBashIfSandboxed": true,
-    "network": {
-      "allowedDomains": []
-    },
-    "filesystem": {
-      "denyRead": [
-        "~/source/repos",
-        "~/.claude/projects",
-        "~/.remember",
-        "~/AppData/Local/Temp/claude"
-      ],
-      "allowRead": [
-        "~/source/repos/H3V7N5QF"
-      ]
-    }
-  },
   "disableClaudeAiConnectors": true,
   "enableAllProjectMcpServers": false,
   "disableAllHooks": true,
