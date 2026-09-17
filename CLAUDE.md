@@ -125,6 +125,21 @@ Blockers (stop and report instead of working around):
 - Any step that would need the network, a file outside the repository, a
   change to `prompt/`, or a question.
 
+## How to run (appended after the plan; see `paper/change_log.md` item 15)
+
+All from the repository root, one plain command each:
+
+- tests, coverage, types: `python -m pytest`, then
+  `python code/xry/gate.py <coverage.json>` for the two rates separately
+  (`python -m pytest --cov-report=json:<coverage.json>` writes the report),
+  and `python -m mypy`;
+- evidence: `python code/generate.py` (about 40 s);
+- Lean build and axiom report: `python code/lean_report.py` (runs `lake`
+  inside `lean4/`, where the pinned toolchain applies);
+- Lean build alone: `lake +leanprover/lean4:v4.33.1 -d lean4 build`. Never run
+  `lake` from the root without naming the toolchain: elan's default toolchain
+  would start rebuilding the shared dependencies.
+
 ## Commit discipline
 
 Small commits per phase on the current branch. Nothing is pushed.
