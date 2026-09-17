@@ -1,0 +1,23 @@
+# Tool configuration only; nothing is installed from here.
+# `code/` is a source root (not a package: a package named `code` would shadow
+# the standard library module of that name); the package is `code/xry`.
+
+[tool.pytest.ini_options]
+pythonpath = ["code"]
+testpaths = ["tests"]
+addopts = "--cov=xry --cov-branch --cov-report=term-missing --cov-fail-under=95 -p no:cacheprovider"
+
+[tool.coverage.run]
+branch = true
+source = ["xry"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+exclude_also = ["if __name__ == .__main__.:"]
+
+[tool.mypy]
+strict = true
+mypy_path = "code"
+files = ["code/xry", "tests"]
+explicit_package_bases = true
