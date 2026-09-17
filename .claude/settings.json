@@ -2,7 +2,19 @@
   "model": "fable",
   "effortLevel": "xhigh",
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "blockReadsOutsideWorkingDirectories": true,
+    "allow": [
+      "Bash",
+      "PowerShell",
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "NotebookEdit",
+      "Agent"
+    ],
     "deny": [
       "WebSearch",
       "WebFetch",
@@ -24,7 +36,11 @@
       "PowerShell(irm *)",
       "PowerShell(curl *)",
       "PowerShell(wget *)",
-      "PowerShell(Start-BitsTransfer *)"
+      "PowerShell(Start-BitsTransfer *)",
+      "mcp__Claude_Browser",
+      "mcp__claude-in-chrome",
+      "Edit(.claude/**)",
+      "Write(.claude/**)"
     ]
   },
   "disableClaudeAiConnectors": true,
