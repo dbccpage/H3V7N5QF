@@ -126,6 +126,17 @@ def write_given(out: Path) -> dict[str, object]:
                 "attempts": [attempt_record(rec, 1) for rec in expl.log],
                 "builds_with_one_added_term": builds,
             }
+    one = State.of(1, [])
+    on_one = one_term_builds(one, 0)
+    doc["builds_answering_xrx_on_one_term"] = {
+        "state": one.written(),
+        "one_term_builds": [b.written() for b in on_one],
+        "up_to_free_sameness": [
+            b.written() for b in sorted({canonical(b) for b in on_one}, key=order)
+        ],
+        "these_are_the_alternatives_for_what_is_given": {canonical(b) for b in on_one}
+        == {canonical(given(bra, Sameness.FREE)) for bra in (False, True)},
+    }
     _write_json(out / "given.json", doc)
     return {"states_on_given_terms": len(found)}
 

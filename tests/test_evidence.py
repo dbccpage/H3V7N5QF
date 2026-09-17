@@ -88,6 +88,17 @@ def test_write_all(tmp_path: Path) -> None:
     add_ara = next(a for a in root["attempts"] if a["change"] == "add ara")
     assert add_ara["answers"][1]["further"] == ["add a term", "add arc"]
     assert root["builds_with_one_added_term"]["add ara"]["one_term_builds"] == 6
+    on_one = doc["builds_answering_xrx_on_one_term"]
+    assert on_one["one_term_builds"] == [
+        "terms a b; asserted arb",
+        "terms a b; asserted bra",
+        "terms a b; asserted arb bra",
+    ]
+    assert on_one["up_to_free_sameness"] == [
+        "terms a b; asserted arb",
+        "terms a b; asserted arb bra",
+    ]
+    assert on_one["these_are_the_alternatives_for_what_is_given"] is True
 
     log = (tmp_path / "attempts_bound2_free_with_bra.jsonl").read_text(encoding="utf-8")
     assert all(json.loads(line)["round"] >= 1 for line in log.splitlines())
