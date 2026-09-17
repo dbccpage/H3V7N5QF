@@ -1,0 +1,50 @@
+lake build: passed
+sorry / admit / declared axiom in lean4/ (outside comments): none
+#print axioms (H3V7N5QF/Axioms.lean):
+'Seed.given_distinct' does not depend on any axioms
+'Seed.bra_not_refuted' does not depend on any axioms
+'Seed.bra_not_derived' depends on axioms: [propext]
+'Seed.two_states_on_given_terms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.two_states_differ' depends on axioms: [propext]
+'Seed.passing_on_refutes_bra' does not depend on any axioms
+'Seed.image_loop_iff' does not depend on any axioms
+'Seed.identification_obstructed_iff' depends on axioms: [propext]
+'Seed.loop_survives_replacement' does not depend on any axioms
+'Seed.loop_survives_additions' does not depend on any axioms
+'Seed.only_removal_restores' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.identify_legal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.addAssertion_legal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.adding_xrx_always_obstructed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.remove_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.addTerm_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Step.legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Step.wf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Step.nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Step.names_stay_merged' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.obstruction_persists' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.identify_keeps_apart' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Step.costA_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Step.costB_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.wf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.names_stay_merged' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.arb_gone_for_good' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_lower_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_lower_B' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.givenA_to_givenB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.givenB_to_givenA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.reach_by_edits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.edits_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.givenA_to_oneTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.givenB_to_oneTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_B' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.remove_obstruction_first_or_last' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.remove_answer_one_way' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.remove_answer_two_way' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.build_answer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.build_answer_reverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.build_gives_back' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.build_reverse_gives_back' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.build_needs_term_and_assertion' depends on axioms: [propext, Classical.choice, Quot.sound]
