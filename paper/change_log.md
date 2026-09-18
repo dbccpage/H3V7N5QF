@@ -152,3 +152,19 @@ reading of the seed.
     - A `lean-toolchain` at the repository root, a copy of
       `lean4/lean-toolchain`, so `lake` run from the root uses the pinned
       toolchain (item 11).
+
+## Changes made during the second derivation (`prompt/second/`)
+
+20. **`lean4/lakefile.toml`: a second library target `Second` and
+    `defaultTargets = ["H3V7N5QF", "Second"]`.** Made by the second
+    derivation. Not a defect correction: it is the build configuration of the
+    shared Lake package, and the only first-derivation file the second
+    derivation touched; recorded here as `prompt/second/prompt.md` requires
+    for any change to a first-derivation file. Nothing in `lean4/H3V7N5QF/`,
+    `code/xry/`, `tests/test_*.py` (first set), `paper/paper.md`,
+    `paper/claim_ledger.md` or `evidence/` changed. After the edit
+    `python code/generate.py --check` matched and `python code/lean_report.py`
+    rewrote `evidence/lean_axioms.txt` byte-identically (its build now also
+    compiles `lean4/Second/`; its report still prints the first library's
+    axioms only). The second derivation's own changes are logged in
+    `paper/second/change_log.md`.
