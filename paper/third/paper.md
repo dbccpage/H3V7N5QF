@@ -76,9 +76,10 @@ derivations that fail under the third seed are listed in §7.
    second derivation: 5 terms (any rewriting), 4 terms (names kept; a
    counts-only census at 5). Within the bound the exploration is complete,
    certified by an independent count; the frontier is exported exactly (D14).
-   Everything claimed as derived is in Lean, including both directions of the
-   reachability criterion, one of which the second derivation left open
-   (2:O3).
+   Both directions of the reachability criterion are in Lean, one of which the
+   second derivation left open (2:O3); the within-bound completeness (D14) and
+   the FREE-reading characterizations (D8, D9) are proved in the paper and
+   checked by computation, as the seed's Lean model does not reach them.
 
 ## 1. What the seed gives
 
@@ -661,8 +662,8 @@ rewrites `evidence/third/lean_axioms.txt`, refusing if the build warns of
 `sorry` or a cited theorem depends on an axiom other than `propext`,
 `Classical.choice`, `Quot.sound`. The first and second derivations'
 `--check` and Lean reports were re-run after this work and their evidence
-regenerates unchanged. Tests: 263 passed, three derivations; line coverage
-99.95 %, branch coverage 98.99 % of all of `code/` (`python
+regenerates unchanged. Tests: 264 passed, three derivations; line coverage
+100.00 %, branch coverage 99.13 % of all of `code/` (`python
 code/xry/gate.py coverage.json`); `mypy --strict` clean; the prose watchlist
 clean, with every pinned hit of this paper in §9.
 

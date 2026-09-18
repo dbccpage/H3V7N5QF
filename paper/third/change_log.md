@@ -114,3 +114,20 @@ repository).
     names in the ledger's D8 written in full; the K-claims are now cited by
     ID in §6. (e) The totals 393 and 66 cited to a test are now asserted by
     it. No number, claim status or evidence file changed.
+
+15. **Review fixes from a code review of this branch (PR #9).** (a) The
+    one-way-reachability counter in `code/third/evidence.py` (`mutual`, the
+    source of `unordered_pairs_reachable_both_ways`) had no injection test,
+    unlike every sibling counter in `write_reach`/`write_run`: the line that
+    increments it is dead, since antisymmetry (`Reach2.antisymm`) makes a
+    reverse reachability impossible, so a regression that made the column
+    vacuous would pass. Added `tests/test_third_evidence.py::
+    test_mutual_reachability_would_be_counted`, which monkeypatches
+    `reachable` to force a reverse and asserts the counter and the gate fire;
+    it also covers the previously dead line, so line coverage returns to
+    100.00 % and branch to 99.13 % (K10: 263 → 264 tests). No derivation code
+    changed. (b) §0 said "everything claimed as derived is in Lean"; the
+    within-bound completeness (D14) and the FREE-reading characterizations
+    (D8, D9) are proved in the paper and checked by computation, as bookkeeping
+    rule 3 allows and the ledger already marked ("paper §4"). §0 now says so.
+    No claim status or evidence file changed.

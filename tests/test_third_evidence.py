@@ -212,6 +212,21 @@ def test_reach_counts_pairs_the_second_seed_does_not_reach(
     assert not cli.reach_ok(got)
 
 
+def test_mutual_reachability_would_be_counted(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    # No two distinct results are mutually reachable under this seed (Lean
+    # `Reach2.antisymm`), so `unordered_pairs_reachable_both_ways` is 0 and the
+    # `mutual` counter never fires on a real run.  Forcing `reachable` to report
+    # a reverse makes the counter and the summary field rise, so the check that
+    # reachability is one-way is not vacuous.
+    monkeypatch.setattr(evidence, "reachable", lambda s, t: True)
+    got = write_reach(tmp_path, Sameness.ANCHORED, False, SMALL)
+    both = got["unordered_pairs_reachable_both_ways"]
+    assert isinstance(both, int) and both > 0
+    assert not cli.reach_ok(got)
+
+
 def test_fewer_rounds_than_the_bound_needs(tmp_path: Path) -> None:
     few = Plan(free_bound=4, anchored_bound=3, census_bound=0, log_bound=2, rounds=1, layers_upto=4, count_upto=2)
     run = write_run(tmp_path, Sameness.FREE, False, few)
