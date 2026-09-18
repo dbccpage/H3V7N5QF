@@ -170,7 +170,10 @@ def test_sequences_are_counted_and_the_witnesses_differ() -> None:
     assert seqs[star] == 1  # the term must come before `arc`
     assert all(count >= 1 for count in seqs.values())
     free = count_sequences(explore(given(False, Sameness.FREE), 3, rounds=30))
-    assert sum(free.values()) == sum(seqs.values())
+    assert sum(free.values()) == sum(seqs.values()) == 393
+    with_bra = count_sequences(explore(given(True, Sameness.ANCHORED), 3, rounds=30))
+    free_bra = count_sequences(explore(given(True, Sameness.FREE), 3, rounds=30))
+    assert sum(free_bra.values()) == sum(with_bra.values()) == 66
 
 
 def test_sequence_count_refuses_a_change_that_does_not_raise_the_round() -> None:

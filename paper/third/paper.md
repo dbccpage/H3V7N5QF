@@ -170,10 +170,13 @@ round that changes nothing; the further changes of an answer count one each.
 Both kinds add one, so "fewest additions first" does not order them; each
 result's changes are attempted in the seed's order of kinds — adding a term,
 then adding an assertion. Unchosen: the other order; an obstructed change and
-its answer counted as one. Under this seed no such choice can move a result to
-another round: every sequence reaching a result has the same length (D8), so
-the round of a result is derived, and C6 fixes only which attempt is recorded
-first.
+its answer counted as one. The order cannot move a result to another round:
+every sequence of changes reaching a result has the same length (D8), so the
+round of a result is derived, and the order fixes only which attempt is
+recorded first. Counting an answered change as one would change the rounds
+(a build's two additions would count as one, so `a b c; arb arc` would be met
+in round 1 instead of 2) but not the results (D10), as under the second seed
+(2:C6, 2:§7).
 
 **C7. Obstruction and answers.** The obstruction of a change is the set of
 assertions that would become some `xrx` (as 1:C7). Under this seed only adding
@@ -262,8 +265,11 @@ changes every term and every assertion of the start is still there
 (`Reach2.name_a`, `Reach2.name_b`), so with names kept `a` and `b` are two
 terms (`Reach2.names_apart`), `arb` is asserted (`Reach2.arb_persists`), `bra`
 if it was given (`Reach2.bra_persists`), and there are at least two terms
-(`Reach2.two_terms`, `reach2_givenA_two_terms`, `reach2_givenB_two_terms`) —
-all 2:D6, embedding. The numbers of terms and of assertions never decrease
+(`Reach2.two_terms`, `reach2_givenA_two_terms`, `reach2_givenB_two_terms`).
+The persistence of the terms, assertions and names themselves is new (from
+D5; the second seed kept only images); the four statements about `a`, `b`,
+`arb`, `bra` and the two terms are 2:D6, embedding. The numbers of terms and
+of assertions never decrease
 (`Reach2.card_T_le`, `Reach2.card_A_le`; new: the second seed's N8 refuted
 this). Every result is legal, well formed and has at least one term:
 `Step2.legal`, `Step2.wf`, `Step2.nonempty`, `Reach2.legal`, `Reach2.wf`,
@@ -275,7 +281,7 @@ Computed: `evidence/third/follows_*.csv` — `arb_asserted`, `names_apart`,
 `something_asserted`, `at_least_two_terms`, `at_least_one_term`, `no_xrx` hold
 in every result within the bound in both ANCHORED runs, `bra_asserted` in the
 run with `bra`; the last four without names in both FREE runs
-(`statements_holding_in_every_result`; 2:K6 computed again). What is added to
+(`statements_holding_in_every_result`; K6, 2:K6 computed again). What is added to
 what is given is never negative (`additions_never_negative` true in all four
 runs), and on every one of the 97 633 + 89 432 + 5 923 + 2 689
 unobstructed changes within the bounds neither count fell and the size rose by
@@ -336,8 +342,7 @@ change within the bound the outcome's round is the state's plus one
 (`round_not_raised_by_one` empty), so within the bound every sequence to a
 result has the length of its round — the computed form of
 `Reach2.length_unique`. Consequence for the protocol: the order in which
-changes are attempted, and whether an answered change counts as one, cannot
-move a result to another round (C6).
+changes are attempted cannot move a result to another round (C6).
 
 **D9. The results are the legal states containing what is given.** With
 names: a state is reached from some writing of what is given exactly when it
@@ -474,8 +479,8 @@ are exactly "no `xrx`", "at least one term", "at least two terms", "something
 is asserted", and with names "`arb` is asserted", "`a` and `b` are two terms",
 plus "`bra` is asserted" when `bra` is given; each is proved for all results
 (D6). Every other statement has a result where it holds and one where it
-fails, except the two of D15 under the beginning with `bra` (2:N5, computed
-again).
+fails, except the two of D15 under the beginning with `bra` (2:N5, no
+change; the witnesses computed again, K6).
 
 **N6. Which answer an obstructed change gets.** Refusal is always possible;
 removal never, or is refusal (R3, C7); a build always (adding a term is never
@@ -549,8 +554,8 @@ three attempts. The second derivation had five and four (one identification
 more), the first six and five.
 
 **Results by what they add to what is given** (ANCHORED, without `bra`, bound
-4; `evidence/third/added_*.csv`). The table is the second derivation's (2:K5,
-computed again: the same results in the same rounds, D9). No number is
+4; `evidence/third/added_*.csv`; K5). The table is the second derivation's
+(2:K5, computed again: the same results in the same rounds, D9). No number is
 negative, and every group appears in one round only, the round being terms
 added plus assertions added (D8).
 
@@ -573,8 +578,8 @@ added plus assertions added (D8).
 
 **Rounds.** New results per round within the bound, and without any bound
 (the latter from D8 and D9 by counting states up to sameness, exact, to round
-20; `evidence/third/rounds_*.csv`). The numbers are the second derivation's
-(2:K2, 2:K3, computed again); the column
+20; `evidence/third/rounds_*.csv`; K2, K3). The numbers are the second
+derivation's (2:K2, 2:K3, computed again); the column
 `new_results_second_derivation_without_identifications` of each file repeats
 the second derivation's run beside this one, and the two are equal in every
 round.
@@ -602,7 +607,7 @@ be listed; the set of results of round `k` is determined for every `k` by D8
 and D9 — membership is a formula — and only its size beyond round 20 is left
 open (O2).
 
-**Totals.** Results within the bound: 9 841 (FREE, no `bra`: 2, 15, 217,
+**Totals** (K1, K2, K4). Results within the bound: 9 841 (FREE, no `bra`: 2, 15, 217,
 9 607 by number of terms), 9 212 (FREE, `bra`: 1, 9, 176, 9 026), 1 090
 (ANCHORED, no `bra`: 2, 32, 1 056), 545 (ANCHORED, `bra`: 1, 16, 528); census
 at 5 terms: 90 562 and 45 281 — the second derivation's totals. Changes
@@ -613,7 +618,7 @@ attempted: 156 192, 144 321, 11 303, 5 379 (census 1 398 119 and
 its identifications. Each total is the sum over the results of `1 + n² − m`,
 and each obstructed total the sum of `n` (D3; checked in every run).
 
-**Frontier.** Every result with `N` terms, each with `1 + N` attempts leaving
+**Frontier** (K4). Every result with `N` terms, each with `1 + N` attempts leaving
 the bound and `1 + 2N` frontier entries: 9 607 results, 57 642 attempts,
 105 677 entries (FREE, no `bra`); 9 026, 54 156, 99 286 (FREE, `bra`); 1 056,
 5 280, 9 504 and 528, 2 640, 4 752 (ANCHORED) — the second derivation's
@@ -622,7 +627,7 @@ The census counts 89 472 and 44 736 frontier results (984 192 and 492 096
 entries) and does not export them. `evidence/third/frontier_*.csv`,
 `summary.json`.
 
-**Reachability within 3 terms.** For every ordered pair of results
+**Reachability within 3 terms** (K8). For every ordered pair of results
 `reach_bound3_*.csv` lists whether the second is reachable from the first, the
 embedding if so, and whether the second seed reached it (2:D12's carrying
 map). Of the 1 156 ordered pairs (ANCHORED, without `bra`) 294 are
@@ -634,7 +639,7 @@ results are reachable both ways here, where the second seed had 34, 28, 16 and
 10 such pairs. Every result reaches itself; no other result reaches what is
 given.
 
-**Sequences.** For every result within the bound `results_*.csv` gives the
+**Sequences** (K7). For every result within the bound `results_*.csv` gives the
 number of sequences of changes reaching it (exact, D14 (iv)): a sequence is a
 chain of attempted changes, each taken from the list of changes of the result
 it is applied to (C6), and two changes of that list that differ count as two
@@ -647,7 +652,7 @@ one and the same bound the FREE and ANCHORED totals agree for each beginning
 counted by its changes, which are the same however the states along it are
 written; the exported runs use different bounds, so their totals differ.
 
-**Reproducibility.** `python code/generate_third.py` rewrites every computed
+**Reproducibility** (K9, K10). `python code/generate_third.py` rewrites every computed
 file of `evidence/third/`; `MANIFEST.sha256` lists their hashes;
 `python code/generate_third.py --check` regenerates into a temporary folder
 and compares every computed file, in both directions (it matched).
@@ -676,7 +681,7 @@ clean, with every pinned hit of this paper in §9.
 | the order of the two kinds within a result | kept as a convention; cannot change any round (D8) |
 | builds with more than one added term or assertion | kept as results (D9); not listed as answers beyond the fewest (C7) |
 | every legal state containing what is given, within the bound | kept; none dropped (D14) |
-| counting an answered change as one | not computed; same results and rounds (D8, D10) |
+| counting an answered change as one | not computed; same results (D10), rounds differ (C6) |
 | assertions with multiplicity | neither computed nor eliminated: open (O1) |
 
 **Results of the earlier derivations that do not hold under this seed** (each
@@ -687,10 +692,10 @@ by any carrying map (by an embedding, D12); 2:N8 "counts can decrease" (they
 cannot, D6, R12); 2:N9 "a result can be left and returned to; some results
 return to what is given" (never, D13, R13); 2:N10 "reachability is not
 antisymmetric" (it is, D13, R14); 2:D3's obstructed identifications (no
-object, D3); 2:C7's third reading of removal (no object). From the first, in
-addition to what the second derivation already listed: 1:D5, 1:D7, 1:D9,
-1:D10's removal answers, 1:N4–N6, all as in 2:§7. Everything else cited stands
-with the re-check given at its citation.
+object, D3); 2:C7's third reading of removal (no object). From the first:
+exactly those the second derivation already listed in 2:§7 (1:D2, 1:D5,
+1:D7–1:D10, 1:N4–N6, 1:R4, 1:R5), for the same reasons. Everything else cited
+stands with the re-check given at its citation.
 
 ## 8. Open
 

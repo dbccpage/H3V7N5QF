@@ -97,3 +97,20 @@ repository).
     requires, and the census pins every such hit per file; every pinned hit
     of the third paper is in that section (checked by line number in the
     audit).
+
+14. **Review fixes after the first complete draft (one review pass).** (a)
+    The alternative "an obstructed change and its answer counted as one" had
+    been said to leave the rounds unchanged (C6, D8, §7); it does not — a
+    build's two additions would count as one, so `a b c; arb arc` would be
+    met in round 1 — and the paper now says, as the second paper did, that it
+    changes rounds but not results. D8's uniqueness of length is about
+    sequences of changes, each addition counting one, and is unaffected. (b)
+    The persistence of the terms, assertions and names themselves (D6) had
+    been labelled as inherited from 2:D6 by embedding; it is new (from D5),
+    and the second seed kept only images. (c) The ledger's D13 had said 2:N10
+    "left antisymmetry open"; 2:N10 refuted it with witnesses. (d) Wording:
+    §7's list of first-derivation results that fail is exactly 2:§7's; N5's
+    re-check is "no change" with witnesses computed again; two informal Lean
+    names in the ledger's D8 written in full; the K-claims are now cited by
+    ID in §6. (e) The totals 393 and 66 cited to a test are now asserted by
+    it. No number, claim status or evidence file changed.
