@@ -1,0 +1,231 @@
+{
+  "attempts_in_full_logs": {
+    "anchored/with_bra": 1350,
+    "anchored/without_bra": 1350,
+    "free/with_bra": 228,
+    "free/without_bra": 228
+  },
+  "free_cost_closed_form_checked_on": 476,
+  "free_cost_closed_form_mismatches": [],
+  "given": {
+    "listed_builds_that_are_not_builds": 0,
+    "states_on_given_terms": 2
+  },
+  "independent_counts": {
+    "anchored": [
+      1,
+      8,
+      100,
+      2864,
+      224904,
+      54411072
+    ],
+    "free": [
+      1,
+      3,
+      16,
+      218,
+      9608,
+      1540944
+    ],
+    "free_one_way": [
+      1,
+      2,
+      7,
+      42,
+      582,
+      21480
+    ]
+  },
+  "plan": {
+    "bound_on_terms_anchored": 4,
+    "bound_on_terms_free": 5,
+    "bound_on_terms_full_log": 3,
+    "rounds": 100,
+    "unbounded_round_counts_upto": 20
+  },
+  "runs": {
+    "anchored/with_bra": {
+      "answers_beyond_bound": 22912,
+      "answers_reaching_something_new": [],
+      "answers_within_bound": 51665,
+      "bound_on_terms": 4,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 564,
+      "explored_equals_independent_count": true,
+      "frontier_attempts": 14320,
+      "frontier_entries": 25776,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 2864,
+      "last_round_with_a_new_result": 18,
+      "obstructed_attempts": 24859,
+      "results": 2973,
+      "results_by_terms": {
+        "1": 1,
+        "2": 8,
+        "3": 100,
+        "4": 2864
+      },
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "at_least_one_term",
+        "no_xrx"
+      ],
+      "statements_that_do_not_follow": [
+        "bra_asserted",
+        "arb_asserted",
+        "names_apart",
+        "both_ways_always",
+        "both_ways_never",
+        "passes_on",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms",
+        "something_asserted"
+      ]
+    },
+    "anchored/without_bra": {
+      "answers_beyond_bound": 22912,
+      "answers_reaching_something_new": [],
+      "answers_within_bound": 51665,
+      "bound_on_terms": 4,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 564,
+      "explored_equals_independent_count": true,
+      "frontier_attempts": 14320,
+      "frontier_entries": 25776,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 2864,
+      "last_round_with_a_new_result": 17,
+      "obstructed_attempts": 24859,
+      "results": 2973,
+      "results_by_terms": {
+        "1": 1,
+        "2": 8,
+        "3": 100,
+        "4": 2864
+      },
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "at_least_one_term",
+        "no_xrx"
+      ],
+      "statements_that_do_not_follow": [
+        "bra_asserted",
+        "arb_asserted",
+        "names_apart",
+        "both_ways_always",
+        "both_ways_never",
+        "passes_on",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms",
+        "something_asserted"
+      ]
+    },
+    "free/with_bra": {
+      "answers_beyond_bound": 96080,
+      "answers_reaching_something_new": [],
+      "answers_within_bound": 269296,
+      "bound_on_terms": 5,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 633,
+      "explored_equals_independent_count": true,
+      "frontier_attempts": 57648,
+      "frontier_entries": 105688,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 9608,
+      "last_round_with_a_new_result": 21,
+      "obstructed_attempts": 121792,
+      "results": 9846,
+      "results_by_terms": {
+        "1": 1,
+        "2": 3,
+        "3": 16,
+        "4": 218,
+        "5": 9608
+      },
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "at_least_one_term",
+        "no_xrx"
+      ],
+      "statements_that_do_not_follow": [
+        "both_ways_always",
+        "both_ways_never",
+        "passes_on",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms",
+        "something_asserted"
+      ]
+    },
+    "free/without_bra": {
+      "answers_beyond_bound": 96080,
+      "answers_reaching_something_new": [],
+      "answers_within_bound": 269296,
+      "bound_on_terms": 5,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 633,
+      "explored_equals_independent_count": true,
+      "frontier_attempts": 57648,
+      "frontier_entries": 105688,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 9608,
+      "last_round_with_a_new_result": 22,
+      "obstructed_attempts": 121792,
+      "results": 9846,
+      "results_by_terms": {
+        "1": 1,
+        "2": 3,
+        "3": 16,
+        "4": 218,
+        "5": 9608
+      },
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "at_least_one_term",
+        "no_xrx"
+      ],
+      "statements_that_do_not_follow": [
+        "both_ways_always",
+        "both_ways_never",
+        "passes_on",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms",
+        "something_asserted"
+      ]
+    }
+  }
+}

@@ -1,0 +1,834 @@
+{
+  "anchored/with_bra": {
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1.1-0"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 3,
+            "completes_the_change": true,
+            "further": [
+              "remove arb",
+              "remove bra"
+            ],
+            "result": "1:00:"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1.1-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "obstruction": [
+          "arb",
+          "bra"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2:01:0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "obstruction": [],
+        "outcome": "2:10:0-1",
+        "round": 1,
+        "state": "2:01:0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "obstruction": [],
+        "outcome": "2:01:0-1",
+        "round": 1,
+        "state": "2:01:0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "obstruction": [],
+        "outcome": "3:01:0-1.1-0",
+        "round": 1,
+        "state": "2:01:0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3:01:0-1.0-2.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3:01:0-1.1-0.2-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2:01:0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3:10:0-1.0-2.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3:10:0-1.1-0.2-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2:01:0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 12,
+        "up_to_sameness": [
+          "terms a b c; asserted arb arc bra",
+          "terms a b c; asserted arb arc bra brc",
+          "terms a b c; asserted arb bra cra",
+          "terms a b c; asserted arb arc bra cra",
+          "terms a c b; asserted arc arb crb bra",
+          "terms b c a; asserted brc bra cra arb",
+          "terms a c b; asserted arb cra crb bra",
+          "terms a b c; asserted arb arc bra brc cra",
+          "terms a c b; asserted arc arb cra crb bra",
+          "terms b a c; asserted bra brc arb arc crb",
+          "terms b c a; asserted brc bra crb cra arb",
+          "terms a b c; asserted arb arc bra brc cra crb"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 12,
+        "up_to_sameness": [
+          "terms b a c; asserted bra brc arb",
+          "terms a b c; asserted arb arc bra brc",
+          "terms b a c; asserted bra arb crb",
+          "terms b a c; asserted bra brc arb crb",
+          "terms a c b; asserted arc arb crb bra",
+          "terms b c a; asserted brc bra cra arb",
+          "terms a c b; asserted arb cra crb bra",
+          "terms a b c; asserted arb arc bra brc cra",
+          "terms a c b; asserted arc arb cra crb bra",
+          "terms b a c; asserted bra brc arb arc crb",
+          "terms b c a; asserted brc bra crb cra arb",
+          "terms a b c; asserted arb arc bra brc cra crb"
+        ]
+      }
+    },
+    "state": "terms a b; asserted arb bra"
+  },
+  "anchored/without_bra": {
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 2,
+            "completes_the_change": true,
+            "further": [
+              "remove arb"
+            ],
+            "result": "1:00:"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "obstruction": [
+          "arb"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2:01:0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "obstruction": [],
+        "outcome": "2:01:",
+        "round": 1,
+        "state": "2:01:0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "obstruction": [],
+        "outcome": "3:01:0-1",
+        "round": 1,
+        "state": "2:01:0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3:01:0-1.0-2"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3:02:0-2.1-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2:01:0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add bra",
+        "obstruction": [],
+        "outcome": "2:01:0-1.1-0",
+        "round": 1,
+        "state": "2:01:0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3:10:0-2.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3:02:0-2.1-2"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2:01:0-1",
+        "written": "terms a b; asserted arb"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 6,
+        "up_to_sameness": [
+          "terms a b c; asserted arb arc",
+          "terms a c b; asserted arb cra",
+          "terms a c b; asserted arc arb cra",
+          "terms a c b; asserted arc arb crb",
+          "terms c a b; asserted cra crb arb",
+          "terms a c b; asserted arc arb cra crb"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 6,
+        "up_to_sameness": [
+          "terms b a c; asserted brc arb",
+          "terms a c b; asserted arb crb",
+          "terms a b c; asserted arb arc brc",
+          "terms a c b; asserted arc arb crb",
+          "terms b c a; asserted brc crb arb",
+          "terms b a c; asserted brc arb arc crb"
+        ]
+      }
+    },
+    "state": "terms a b; asserted arb"
+  },
+  "builds_answering_xrx_on_one_term": {
+    "one_term_builds": [
+      "terms a b; asserted arb",
+      "terms a b; asserted bra",
+      "terms a b; asserted arb bra"
+    ],
+    "state": "terms a; asserted nothing",
+    "these_are_the_alternatives_for_what_is_given": true,
+    "up_to_free_sameness": [
+      "terms a b; asserted arb",
+      "terms a b; asserted arb bra"
+    ]
+  },
+  "count": 2,
+  "free/with_bra": {
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1.1-0"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 3,
+            "completes_the_change": true,
+            "further": [
+              "remove arb",
+              "remove bra"
+            ],
+            "result": "1::"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1.1-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "obstruction": [
+          "arb",
+          "bra"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2::0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "obstruction": [],
+        "outcome": "2::0-1",
+        "round": 1,
+        "state": "2::0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "obstruction": [],
+        "outcome": "2::0-1",
+        "round": 1,
+        "state": "2::0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "obstruction": [],
+        "outcome": "3::0-1.1-0",
+        "round": 1,
+        "state": "2::0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3::0-1.0-2.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3::0-1.1-0.2-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2::0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3::0-1.0-2.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3::0-1.1-0.2-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2::0-1.1-0",
+        "written": "terms a b; asserted arb bra"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 12,
+        "up_to_sameness": [
+          "terms a b c; asserted arb arc bra",
+          "terms a b c; asserted arb arc bra brc",
+          "terms a b c; asserted arb bra cra",
+          "terms a b c; asserted arb arc bra cra",
+          "terms a b c; asserted arb arc brc cra",
+          "terms a b c; asserted arc bra brc cra",
+          "terms a b c; asserted arb arc bra brc cra",
+          "terms a b c; asserted arb arc bra brc cra crb"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 12,
+        "up_to_sameness": [
+          "terms a b c; asserted arb arc bra",
+          "terms a b c; asserted arb arc bra brc",
+          "terms a b c; asserted arb bra cra",
+          "terms a b c; asserted arb arc bra cra",
+          "terms a b c; asserted arb arc brc cra",
+          "terms a b c; asserted arc bra brc cra",
+          "terms a b c; asserted arb arc bra brc cra",
+          "terms a b c; asserted arb arc bra brc cra crb"
+        ]
+      }
+    },
+    "state": "terms a b; asserted arb bra"
+  },
+  "free/without_bra": {
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 2,
+            "completes_the_change": true,
+            "further": [
+              "remove arb"
+            ],
+            "result": "1::"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "obstruction": [
+          "arb"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2::0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "obstruction": [],
+        "outcome": "2::",
+        "round": 1,
+        "state": "2::0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "obstruction": [],
+        "outcome": "3::0-1",
+        "round": 1,
+        "state": "2::0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3::0-1.0-2"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3::0-2.1-0"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2::0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add bra",
+        "obstruction": [],
+        "outcome": "2::0-1.1-0",
+        "round": 1,
+        "state": "2::0-1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3::0-2.1-0"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3::0-2.1-2"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "round": 1,
+        "state": "2::0-1",
+        "written": "terms a b; asserted arb"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 6,
+        "up_to_sameness": [
+          "terms a b c; asserted arb arc",
+          "terms a b c; asserted arc bra",
+          "terms a b c; asserted arb arc bra",
+          "terms a b c; asserted arb arc brc",
+          "terms a b c; asserted arb arc bra brc"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 6,
+        "up_to_sameness": [
+          "terms a b c; asserted arc bra",
+          "terms a b c; asserted arc brc",
+          "terms a b c; asserted arb arc brc",
+          "terms a b c; asserted arb bra cra",
+          "terms a b c; asserted arc bra brc cra"
+        ]
+      }
+    },
+    "state": "terms a b; asserted arb"
+  },
+  "legal_states_on_the_given_terms_with_arb": [
+    "terms a b; asserted arb",
+    "terms a b; asserted arb bra"
+  ]
+}

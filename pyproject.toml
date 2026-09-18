@@ -1,0 +1,25 @@
+# Tool configuration only; nothing is installed from here.
+# `code/` is a source root (not a package: a package named `code` would shadow
+# the standard library module of that name); the package is `code/xry`, and
+# `code/generate.py`, `code/lean_report.py` are two-line launchers.
+
+[tool.pytest.ini_options]
+pythonpath = ["code"]
+testpaths = ["tests"]
+# `--cov-fail-under` checks one figure combining lines and branches; the task asks for
+# each separately, so every run also writes coverage.json for `code/xry/gate.py`.
+addopts = "--cov=code --cov-branch --cov-report=term-missing --cov-report=json:coverage.json --cov-fail-under=95 -p no:cacheprovider"
+
+[tool.coverage.run]
+branch = true
+source = ["code"]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
+
+[tool.mypy]
+strict = true
+mypy_path = "code"
+files = ["code", "tests"]
+explicit_package_bases = true

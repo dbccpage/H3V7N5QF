@@ -1,0 +1,154 @@
+# Change log
+
+Each material change, and its reason. Newest last. Commits are on the branch
+the run started on; nothing was pushed.
+
+1. **`CLAUDE.md` written and committed before anything else.**
+   Reason: required by `prompt/prompt.md`.
+
+2. **`lean4/lakefile.toml`: added a `lean_lib` target and `defaultTargets`.**
+   Reason: the file as found declared only the Mathlib requirement, so
+   `lake build` had nothing of this repository to build.
+
+3. **`lean4/.lake/packages` is a local junction to the packages fetched before
+   the run in the main checkout.** Reason: no network; `.lake/` is ignored by
+   git, so nothing of it is committed.
+
+4. **`pyproject.toml` at the root (tool configuration only); the Python package
+   is `code/xry`, not `code`.** Reason: a package named `code` would shadow the
+   standard library module `code`, which the test runner imports.
+
+5. **`.gitattributes`: `evidence/** -text`.** Reason: evidence files are hashed
+   in `evidence/MANIFEST.sha256`; line-ending conversion would break the hashes.
+
+6. **Reading of "build structure": two readings tried and dropped, a third
+   kept (C7).** Dropped: "perform the change, then repair the state" — from a
+   state with `xrx` only a removal restores legality (D5), so building could
+   never replace removal. Dropped as the only reading: "build until the change
+   is unobstructed" — never succeeds for adding `xrx` (D4), and for an
+   identification only removal succeeds (D5). Kept: the build stands in for the
+   obstructed change (identifying the added terms back gives its would-be
+   outcome). Reason for tolerating a choice here: D10 shows the results do not
+   depend on it.
+
+7. **The exploration spreads along unobstructed changes and checks answers
+   afterwards, instead of spreading along answers too.** Reason: an answer
+   performs several changes; spreading along it would give rounds that mix two
+   ways of counting. With D10 nothing is lost, and the check
+   (`check_answers`) verifies that for every obstructed attempt.
+
+8. **Two readings of sameness carried through every computation** (not one,
+   as first drafted). Reason: the literal reading of G12 (any rewriting) makes
+   `arb` alone and `bra` alone the same result, while G11 compares results with
+   a given that names `a` and `b`; neither reading could be eliminated.
+
+9. **Lean, `Cost.lean`: destroyed givens rewritten through a helper `miss` and
+   case lemmas.** Reason: the first version (nested `if`, `split_ifs`, `omega`)
+   did not close four goals. Statements unchanged.
+
+10. **Lean target 6 of the plan (the upper bound) was reached**, so D8 is in
+    Lean in both directions for states written with `a = 0`, `b ∈ {0, 1}`. The
+    remaining gap (invariance under rewriting) is recorded as open O3 rather
+    than hidden.
+
+11. **Incident: wrong Lean toolchain.** `lake -d lean4 build` run from the
+    repository root used elan's default toolchain (4.34.0), not the pinned
+    4.33.1 (the `lean-toolchain` file is inside `lean4/`). Lake began
+    rebuilding dependencies in the shared package folder with the wrong
+    compiler and failed. Repair: rebuilt with
+    `lake +leanprover/lean4:v4.33.1 -d lean4 build`; 304 dependency modules were
+    rebuilt with the pinned compiler, Mathlib itself was not, and the build
+    completed (3008 jobs). All later builds name the toolchain or run inside
+    `lean4/`. Noted in `research/notes.md` §5.
+
+12. **Launchers `code/generate.py`, `code/lean_report.py`; coverage measured on
+    all of `code/`.** Reason: run the generators without setting
+    `PYTHONPATH`; the task asks for coverage of `code/`, not of the package
+    only. Coverage went from 100 % / 100 % on `code/xry` to 100.00 % line,
+    99.28 % branch on `code/` (the two untaken branches are the launchers'
+    "imported, not run" side).
+
+13. **`evidence/given.json` gained `builds_answering_xrx_on_one_term`.**
+    Reason: D11's remark (the one-term builds of `xrx` are, up to FREE
+    sameness, the two beginnings) needed computed support.
+
+14. **Paper, D3: "603 writings" corrected to "69 legal states".** Reason: the
+    first number was wrong (1 + 4 + 64 = 69 legal states written on 1–3 terms).
+
+15. **`CLAUDE.md`: a "How to run" section appended.** Reason: the commands
+    changed (items 11, 12). The plan and stopping conditions are unchanged.
+
+16. **Not in the repository:** `.claude/settings.local.json` (ignored by git)
+    received an allow-list for the commands used here, at the user's request
+    during the run. The checked-in `.claude/settings.json`, including its
+    network denials, was not touched.
+
+## Operator corrections at review (2026-09-18)
+
+Made by the operator while reviewing the branch, after the run; not by the run.
+Each corrects a statement, narrows a claim to its evidence, or makes a check
+enforce what the paper already asserted. None adds a result, a proof, or a
+reading of the seed.
+
+17. **Records.** Item 16's last sentence does not hold for the branch: operator
+    commit `b335f95` (00:55, between the plan commit and the first code commit)
+    changed `.claude/settings.json` during the run, adding `defaultMode:
+    bypassPermissions` and an allow-list of tools. The header's "nothing was
+    pushed" held when written; the branch was pushed at the user's request after
+    the run. `CLAUDE.md` "How to run" gains `--check` (item 19).
+
+18. **Claims narrowed to their evidence** (paper and ledger):
+    - N4: the first rounds differ by beginning (1, 2, 1, 1 without `bra`;
+      1, 3, 1, 2 with it), as `evidence/follows_*.csv` records.
+    - D5, R3: the Lean statements are for one change; the step to a sequence of
+      changes is the paper's argument. New open item O6.
+    - D7 and §0, §9: "the one thing that cannot be undone" / "the only
+      irreversible event" withdrawn to "cannot be undone": nothing cited proves
+      that every other change can be undone.
+    - D9, D10: names in other places, and the removal answer when only `vru` is
+      asserted, rest on the rewriting step (O3), not on Lean.
+    - D10: the computed check covers the answers within the bound; those beyond
+      it belong to the frontier and are not checked.
+    - D11: `build_needs_term_and_assertion` shows a new assertion mentioning a
+      term outside the old terms, not that the build has a new term; the test
+      of `3 · 2^d` covers one state and not completeness.
+    - D12 (iii), §6, K4: the frontier has `1 + N` leaving attempts and
+      `1 + 2N` entries per state (57 648 / 105 688 FREE, 14 320 / 25 776
+      ANCHORED); the numbers 105 688 and 25 776 had been called attempts.
+    - C3: harmless for results and fewest changes; not claimed for answers.
+    - C6, §6: the protocol as run — each result's changes attempted once, in
+      the round after it is first reached, fewest additions first within the
+      result. The results do not depend on this.
+    - C7: "declare which" is stated as read (all answers recorded with their
+      kind, all kept); the dropped readings cite D4, D5, not `research/`.
+    - §7: "remove the obstruction" for `xrx` is eliminated under C7's reading;
+      multiplicity is open, not eliminated. N7 given witnesses; its finiteness
+      part is derived (D6), not "does not follow". §6: the count of results in
+      which every identification is obstructed is of results with at least two
+      terms. §2: "added to what is given" is counted against `a`, `b`, `arb`
+      for both beginnings. D12, §6: the independent count is named by what it
+      counts. §9: `research/notes.md` is marked as not evidence. Ledger:
+      falsifiers for R1–R7.
+
+19. **Checks made to enforce what was asserted** (`code/`, `tests/`):
+    - `code/xry/leanreport.py` refuses the report when the build warns of
+      `sorry` or a `#print axioms` line lists anything outside `propext`,
+      `Classical.choice`, `Quot.sound`; its scan also sees `sorryAx` and axioms
+      after attributes and modifiers; Lean's output is decoded as UTF-8 (the
+      Windows default code page cannot decode it).
+    - `python code/generate.py --check` compares `evidence/` with a fresh
+      regeneration in both directions (K7).
+    - The generator's pass line now also requires a non-empty comparison with
+      the unbounded counts, the frontier's `1 + 2N` entries, no disagreement in
+      the FREE closed form, and no listed build that is not a build; the last
+      two were `assert` statements, skipped under `python -O`. `--rounds`
+      below the bound no longer indexes past the run.
+    - `summary.json` gains `frontier_entries`,
+      `frontier_entries_are_1_plus_2N_per_state_with_N_terms`,
+      `free_cost_closed_form_mismatches`, `listed_builds_that_are_not_builds`;
+      `frontier_attempts` now counts attempts. No other evidence file changed.
+    - `pytest` writes `coverage.json` for `code/xry/gate.py`, which checks the
+      two rates separately (`--cov-fail-under` checks one combined figure).
+    - A `lean-toolchain` at the repository root, a copy of
+      `lean4/lean-toolchain`, so `lake` run from the root uses the pinned
+      toolchain (item 11).
