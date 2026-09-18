@@ -168,3 +168,21 @@ reading of the seed.
     compiles `lean4/Second/`; its report still prints the first library's
     axioms only). The second derivation's own changes are logged in
     `paper/second/change_log.md`.
+
+## Changes made during the third derivation (`prompt/third/`)
+
+21. **`lean4/lakefile.toml`: a third library target `Third` and
+    `defaultTargets = ["H3V7N5QF", "Second", "Third"]`.** Made by the third
+    derivation. Not a defect correction: it is the build configuration of the
+    shared Lake package, and the only first-derivation file the third
+    derivation touched; recorded here as `prompt/third/prompt.md` requires for
+    any change to a first- or second-derivation file (no second-derivation
+    file changed). Nothing in `lean4/H3V7N5QF/`, `lean4/Second/`, `code/xry/`,
+    `code/second/`, the first or second test sets, the earlier papers,
+    ledgers, `evidence/` or `evidence/second/` changed. After the edit
+    `python code/generate.py --check` and `python code/generate_second.py
+    --check` matched, and `python code/lean_report.py` and
+    `python code/lean_report_second.py` rewrote their reports byte-identically
+    (their builds now also compile `lean4/Third/`; each report still prints
+    its own library's axioms only). The third derivation's own changes are
+    logged in `paper/third/change_log.md`.

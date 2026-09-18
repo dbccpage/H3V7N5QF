@@ -291,3 +291,191 @@ From the repository root:
 - `python code/lean_report_second.py` builds `lean4/` and writes
   `evidence/second/lean_axioms.txt`;
 - the first derivation's commands are unchanged (see above).
+
+---
+
+# Third derivation (`prompt/third/`) — plan and stopping conditions
+
+Written before any other work of the third derivation, as
+`prompt/third/prompt.md` requires. Inputs: `prompt/third/prompt.md` and
+`prompt/third/seed_prompt.md`; the first derivation (`paper/`, `code/xry/`,
+`lean4/H3V7N5QF/`, `evidence/`) and the second (`paper/second/`,
+`code/second/`, `lean4/Second/`, `evidence/second/`) are cited where used,
+never assumed. Everything above stays in force (isolation, no network,
+`prompt/` untouched, `.lake/` never committed, bookkeeping rules 1–4). Rule 5
+of the third task: every result of the first or second derivation that is used
+is cited and its proof re-checked from the third seed — in Lean by an explicit
+embedding of the third seed's changes into the second's (and through it into
+the first's) where the statement is about changes, or by observing that the
+statement mentions no change at all, or by computing it again from the third
+seed's own exploration.
+
+## What differs in the seed
+
+One sentence: "identifying two terms" is no longer a kind of change, and the
+sentence saying what identifying does is gone with it. The two kinds are adding
+a term and adding an assertion. Every other sentence is identical to the second
+seed (`diff`), and so to the first seed except for removal.
+
+## Layout
+
+- `research/third/` — reading notes (not evidence).
+- `code/third/` — typed Python package for the third seed; it imports from
+  `code/xry/` and `code/second/` what still applies (states, sameness, the
+  counts of results, the cost in closed form, the statements tested, the
+  fewest classes, the writers, the attempt records) and defines afresh what
+  the seed changes (the list of changes, the answers, the exploration,
+  reachability between results, the counts that never decrease, the number of
+  sequences reaching a result). First- and second-derivation files are not
+  modified except to correct a defect, recorded in the relevant change log.
+- `tests/test_third_*.py` — tests of `code/third/`; all of `code/` stays at
+  ≥ 95 % line and ≥ 95 % branch coverage; `mypy --strict` passes; the prose
+  watchlist (`ci/check_prose_watchlist.py`) stays clean.
+- `lean4/Third/` — a third Lean library in the same Lake package (the lakefile
+  gains the library target and a default target; recorded in
+  `paper/change_log.md` since it is a first-derivation file). It imports
+  `Second` and reuses the state model; the third seed's changes are a new
+  inductive `Step2` with two constructors, embedded into the second's `Step3`
+  and through it into the first's `Step`.
+- `evidence/third/` — written by `python code/generate_third.py`; the axiom
+  report by `python code/lean_report_third.py`; `--check` regenerates into a
+  temporary folder and compares.
+- `paper/third/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the third seed (`research/third/`)
+Sentence-by-sentence diff against the second seed; the notion table with
+source statuses; the readings inherited (C1–C9 of the earlier papers) and which
+of them change meaning (C5 loses its clause on identifying a term with itself;
+C7: the only obstructed change is adding some `xrx`, and its obstruction is the
+assertion the change itself adds, so "remove the obstruction" is either
+impossible or coincides with refusal — both readings kept). Expected
+consequences to be proved or refuted: every change leaves every term, every
+assertion and both names in place (the state is contained in its outcome);
+the second derivation's carrying map is the identity; nothing is ever
+un-asserted and no term ever disappears; the numbers of terms and of
+assertions never decrease; size rises by exactly one per change, so every
+sequence of changes from what is given to a result has the same length, the
+size difference; the results are the same set as under the second seed (the
+legal states containing what is given), in the same rounds; reachability
+between results is containment (up to rewriting under FREE) and is one-way: a
+result once left is never returned to, and only what is given reaches what is
+given; refuse or build are the only answers.
+
+### Phase 2 — `code/third/` and `tests/`
+- changes (two kinds), obstruction (reused), answers (refuse, build; removal
+  impossible), exploration (same protocol, two kinds), full logs at bound 3;
+- cost in closed form reused from the second derivation and re-checked against
+  the explored rounds; every sequence within bound 3 enumerated and its length
+  compared with the size difference; the number of sequences reaching each
+  result (exact within the bound, since a sequence never has more terms than
+  its target);
+- independent count of the results (reused, re-checked) as the completeness
+  certificate; the third exploration compared result by result and round by
+  round with the second derivation's exploration run without identifications
+  (the computed form of the citation);
+- reachability by containment (an embedding of the terms carrying assertions
+  and names), checked against breadth-first search between every pair of
+  results within a small bound, and compared with the second derivation's
+  carrying-map reachability (which pairs the second reaches and the third does
+  not; no pair reachable both ways);
+- the counts that never decrease, checked on every change within the bound;
+  the number of attempts per result (`1 + n² − m`, `n` of them obstructed)
+  checked against the exploration;
+- property witnesses for "what does not follow";
+- deterministic evidence writer with `--check`; Lean axiom-report writer for
+  `lean4/Third/Axioms.lean`.
+
+### Phase 3 — `lean4/Third/`
+Targets, in order:
+1. `Step2` (two kinds), embeddings into `Step3` and `Step`; legality,
+   well-formedness, at least one term, inherited through the embedding (cited,
+   re-checked); conversely every change of the second seed is an
+   identification or a change of the third; no change of the third has the
+   outcome of an identification or of a removal.
+2. The containment invariant: every sequence of changes leaves terms,
+   assertions and names in place; this is a carrying map (the second
+   derivation's invariant, re-checked by the embedding). Consequences: `a`,
+   `b` stay two terms; `arb` (and `bra` if given) stays asserted; an
+   obstruction is never cleared; the numbers of terms and of assertions never
+   decrease; the fewest classes of a split never decreases (embedding).
+3. Size rises by exactly one per change; every sequence between two states has
+   the same length; lower and upper bounds; fewest changes is exactly the size
+   difference; a result is reachable from a result exactly when it contains it
+   (both directions in Lean); mutual reachability only in zero changes; a
+   result once left is never returned to; the same for every writing (rename).
+4. Answers: an attempt is obstructed exactly when it adds some `xrx`; builds
+   are two additions; "remove the obstruction" is impossible for every
+   obstructed change (adding `xrx` stays obstructed after every sequence of
+   changes); a result reached by two different sequences (witness).
+5. `Step2.rename`, `Reach2.rename` and the every-writing forms of the results
+   above. Attempted once; if a step does not close it is proved in the paper
+   and marked "not in Lean".
+`#print axioms` for every theorem the third paper cites, into
+`evidence/third/lean_axioms.txt`.
+
+### Phase 4 — `evidence/third/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The first and second derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/third/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check; final section: nearest known results and differences — the only
+place where outside names appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit.
+
+## Stopping conditions (third derivation)
+
+The run stops when U1–U9 hold, or when a blocker is hit.
+
+- U1 Every notion in `paper/third/paper.md` has one recorded source status.
+- U2 Every claim in `paper/third/claim_ledger.md` has evidence, or is open.
+- U3 Every alternative is kept, or eliminated by a cited proof.
+- U4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/`; `python -m mypy`
+  passes.
+- U5 `lake build` (pinned toolchain, inside `lean4/`) passes for all three
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all three
+  axiom reports regenerated and committed.
+- U6 `evidence/third/` regenerates byte-identically (`--check`); the first and
+  second derivations' evidence still regenerates byte-identically.
+- U7 Every use of a first- or second-derivation result in the third paper is
+  cited and re-checked (ledger column "re-check").
+- U8 The prose watchlist passes on the tracked tree; every pinned hit of the
+  third paper is in its final section.
+- U9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: FREE at most 5 terms; ANCHORED 4 terms with a counts-only census at
+  5, as in the second derivation (the third exploration attempts fewer changes
+  per result, so the same bounds complete faster). Declared in the paper; the
+  frontier is exported exactly; completeness within the bound is certified by
+  the independent count. Full logs and reachability at bound 3.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–4 required; target 5 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The worktree has
+no `lean4/.lake`; the pinned packages are in the main checkout of this same
+repository at `lean4/.lake/packages`, at exactly the revisions of the
+committed manifest (checked before Phase 0), so a local junction to that
+directory (ignored by git) is made and no download happens. Should `lake`
+still try to fetch, the build is stopped and the Lean claims are marked open.
+
+## How to run (third derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, three derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_third.py` writes `evidence/third/`;
+  `python code/generate_third.py --check` compares with a fresh regeneration;
+- `python code/lean_report_third.py` builds `lean4/` and writes
+  `evidence/third/lean_axioms.txt`;
+- the first and second derivations' commands are unchanged (see above).

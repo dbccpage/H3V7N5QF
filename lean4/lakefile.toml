@@ -1,6 +1,6 @@
 name = "H3V7N5QF"
 version = "0.1.0"
-defaultTargets = ["H3V7N5QF", "Second"]
+defaultTargets = ["H3V7N5QF", "Second", "Third"]
 
 [[require]]
 name = "mathlib"
@@ -13,3 +13,7 @@ name = "H3V7N5QF"
 # The second derivation (`prompt/second/`); imports `H3V7N5QF`.
 [[lean_lib]]
 name = "Second"
+
+# The third derivation (`prompt/third/`); imports `Second`.
+[[lean_lib]]
+name = "Third"
