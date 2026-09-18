@@ -1,0 +1,12 @@
+statement,wording,in_what_is_given,first_holds,round,first_fails,round_
+both_ways_always,"Whenever `xry` is asserted, `yrx` is asserted.",1,terms a b; asserted arb bra,0,terms a b c; asserted arb arc bra,2
+both_ways_never,Never are `xry` and `yrx` both asserted.,0,,,terms a b; asserted arb bra,0
+passes_on,"Whenever `xry` and `yrz` are asserted, `xrz` is asserted.",0,,,terms a b; asserted arb bra,0
+any_two_related,"For any two terms `x`, `y`: `xry` or `yrx` is asserted.",1,terms a b; asserted arb bra,0,terms a b c; asserted arb bra,1
+every_term_first,Every term `x` has some `xry` asserted.,1,terms a b; asserted arb bra,0,terms a b c; asserted arb bra,1
+every_term_mentioned,Every term occurs in some asserted assertion.,1,terms a b; asserted arb bra,0,terms a b c; asserted arb bra,1
+exactly_two_terms,There are exactly two terms.,1,terms a b; asserted arb bra,0,terms a b c; asserted arb bra,1
+something_asserted,Some assertion is asserted.,1,terms a b; asserted arb bra,0,,
+at_least_one_term,There is at least one term.,1,terms a b; asserted arb bra,0,,
+no_xrx,No `xrx` is asserted.,1,terms a b; asserted arb bra,0,,
+at_least_two_terms,There are at least two terms.,1,terms a b; asserted arb bra,0,,
