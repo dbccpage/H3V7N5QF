@@ -20,6 +20,6 @@ show_missing = true
 
 [tool.mypy]
 strict = true
-mypy_path = "code"
-files = ["code", "tests"]
+mypy_path = ["code", "ci"]
+files = ["code", "tests", "ci"]
 explicit_package_bases = true
