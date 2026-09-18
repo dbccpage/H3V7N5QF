@@ -479,3 +479,230 @@ From the repository root:
 - `python code/lean_report_third.py` builds `lean4/` and writes
   `evidence/third/lean_axioms.txt`;
 - the first and second derivations' commands are unchanged (see above).
+
+---
+
+# Fourth derivation (`prompt/fourth/`) — plan and stopping conditions
+
+Written before any other work of the fourth derivation, as
+`prompt/fourth/prompt.md` requires. Inputs: `prompt/fourth/prompt.md` and
+`prompt/fourth/seed_prompt.md`; the first derivation (`paper/`, `code/xry/`,
+`lean4/H3V7N5QF/`, `evidence/`), the second (`paper/second/`, `code/second/`,
+`lean4/Second/`, `evidence/second/`) and the third (`paper/third/`,
+`code/third/`, `lean4/Third/`, `evidence/third/`) are cited where used, never
+assumed. Everything above stays in force (isolation, no network, `prompt/`
+untouched, `.lake/` never committed, bookkeeping rules 1–4). Rule 5 of the
+fourth task: every result of an earlier derivation that is used is cited and
+its proof re-checked from the fourth seed, and the re-check says whether the
+result survives the assertion being counted — in Lean by an explicit map
+between the counted states and the earlier states (the earlier changes embed
+into the fourth seed's, and a change of the fourth seed whose outcome asserts
+nothing twice is a change of the third), or by observing that the statement
+mentions no multiplicity, or by computing it again from the fourth seed's own
+exploration and comparing with the third's on the results that assert nothing
+twice.
+
+## What differs in the seed
+
+Two sentences: "An assertion is written `xry` … ; it is asserted a number of
+times, its multiplicity. Adding an assertion raises its multiplicity by one."
+and "`arb` is asserted with multiplicity one." Every other sentence is
+identical to the third seed (`diff`). So the earlier derivations' reading C1
+(asserted is yes or no; multiplicity left open as O1) is replaced by the seed,
+and the state itself changes: what a state asserts is a number for each `xry`,
+not a yes or no.
+
+## Layout
+
+- `research/fourth/` — reading notes (not evidence).
+- `code/fourth/` — typed Python package for the fourth seed. The state model
+  is new (`code/fourth/state.py`: terms, a multiplicity for each ordered pair,
+  names; sameness under both readings). Imported from the earlier packages
+  only what the multiplicity leaves intact: the sameness readings (`Sameness`),
+  the kinds of change and the answer kinds (`Kind`, `AnswerKind`), the CSV /
+  JSON / manifest writers, `compare_evidence`, the cycle-length machinery of
+  the orbit counts (`partitions`, `class_size`, `pair_cycles`), the
+  fewest-classes count and the earlier statements tested (both applied to the
+  state's *support*: the state that asserts `xry` exactly when its multiplicity
+  is positive), the Lean report runner, and the third derivation's exploration,
+  reachability and sequence counts for the comparison. Defined afresh: the
+  list of changes (re-adding what is asserted is now a change), the answers,
+  the exploration (bounded in terms and in rounds), containment and
+  reachability with multiplicities compared one by one, the cost, the counts
+  that never decrease, the independent count of results, the statements about
+  multiplicity, the number of sequences per result. First-, second- and
+  third-derivation files are not modified except to correct a defect,
+  recorded in the relevant change log.
+- `tests/test_fourth_*.py` — tests of `code/fourth/`; all of `code/` stays at
+  ≥ 95 % line and ≥ 95 % branch coverage; `mypy --strict` passes; the prose
+  watchlist stays clean.
+- `lean4/Fourth/` — a fourth Lean library in the same Lake package (the
+  lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). A new state structure with a multiplicity function
+  (`MSt`), the two kinds of change as an inductive `Step4`, and the two maps
+  to and from the third derivation's states: the indicator map (`ofSt`, a
+  state of the earlier seeds read as asserting everything once) and the
+  support map (`toSt`). It imports `Third`.
+- `evidence/fourth/` — written by `python code/generate_fourth.py`; the axiom
+  report by `python code/lean_report_fourth.py`; `--check` regenerates into a
+  temporary folder and compares.
+- `paper/fourth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the fourth seed (`research/fourth/`)
+Sentence-by-sentence diff against the third seed; the notion table with
+source statuses; which of the readings C1–C9 change meaning: C1 is replaced
+by the seed (multiplicity is given); C5 loses "adding what is asserted is not a
+change" (it now raises the multiplicity, so it is a change with a new
+outcome); C2 gains a clause: the beginning with `bra` asserts it with
+multiplicity one (chosen; a beginning asserting `bra` `k` times is a result of
+it, so the unchosen readings add no result); C6, C7 unchanged in wording.
+Expected consequences to be proved or refuted: every change leaves its state
+contained in its outcome, containment now comparing multiplicities one by one
+(no multiplicity ever decreases, and one rises by exactly one per assertion
+added); size = terms + sum of multiplicities rises by exactly one per change,
+so every sequence between two states has the same length; the results are
+the legal states containing what is given, now an infinite set even with the
+terms bounded (the multiplicity of `arb` alone can be anything ≥ 1); the
+results that assert nothing twice are exactly the third seed's results, in
+the same rounds, reached by the same sequences; reachability is containment
+(up to rewriting under FREE) and is one-way; a result has `1 + n²` changes,
+`n` of them obstructed, whatever it asserts; the multiplicity of `arb` is not
+kept at one (adding `arb` again is an unobstructed change); refuse or build
+are the only answers, and "remove the obstruction" is impossible or refusal
+as under the third seed.
+
+### Phase 2 — `code/fourth/` and `tests/`
+- states with multiplicities, sameness under both readings, the support map
+  to the earlier state model and the indicator map back;
+- changes (two kinds; `1 + n²` per state), obstruction, answers (refuse, build;
+  removal impossible), exploration bounded in terms and in rounds, full logs
+  at a small bound;
+- cost in closed form (size difference with multiplicities counted), checked
+  against the explored rounds; FREE closed form checked against the best
+  placement; every change within the bound checked to raise the round by one
+  and to lower no count; the number of sequences reaching each result (exact
+  within the bound: a sequence never leaves the bound its target is within),
+  with the closed form for two-term results checked;
+- an independent count of the results by terms and total multiplicity (the
+  orbit method with a series for each cycle instead of a binomial), as the
+  completeness certificate within the bound; the results asserting nothing
+  twice counted separately and compared with the third derivation's counts;
+- the fourth exploration compared with the third's: the results asserting
+  nothing twice, their rounds and their sequence counts must be the third's
+  (the computed form of the citation);
+- reachability by containment (an embedding of the terms carrying names and
+  every multiplicity to one at least as large), checked against breadth-first
+  search between every pair of results within a small bound, and compared
+  with the third derivation's reachability on the pairs of results asserting
+  nothing twice (they must agree);
+- property witnesses for "what does not follow", including the new
+  multiplicity statements;
+- deterministic evidence writer with `--check`; Lean axiom-report writer for
+  `lean4/Fourth/Axioms.lean`.
+
+### Phase 3 — `lean4/Fourth/`
+Targets, in order:
+1. `MSt` (terms, a multiplicity function, names), `Legal`, `WF`, `size`,
+   `Simple` (nothing asserted twice), `ofSt`, `toSt`, the two beginnings;
+   `Step4` (two kinds), `Reach4`; legality, well-formedness, at least one term
+   preserved; every change of the third seed is a change of the fourth on the
+   indicator states (`Step2.toStep4`, `Reach2.toReach4`), and a change of the
+   fourth whose outcome asserts nothing twice is a change of the third on the
+   supports (`Step4.toStep2`, `Reach4.toReach2`).
+2. Containment with multiplicities (`Contains4`): every sequence leaves terms,
+   names and every multiplicity in place or higher. Consequences: `a`, `b`
+   stay two terms; `arb` (and `bra` if given) stays asserted; no multiplicity
+   ever decreases; the multiplicity of `arb` can rise (witness); an
+   obstruction is never cleared; terms, total multiplicity and the fewest
+   classes of a split (through the support) never decrease.
+3. Size rises by exactly one per change; every sequence between two states
+   has the same length; additions reach every legal state containing a state
+   (induction on the missing terms, then on the total missing multiplicity);
+   fewest changes is exactly the size difference; reachability is containment
+   (both directions); one-way reachability; a result once left is never
+   returned to; from the two beginnings.
+4. Answers: an attempt is obstructed exactly when it adds some `xrx`; adding
+   an asserted `xry` (`x ≠ y`) is unobstructed; builds are two additions;
+   "remove the obstruction" is impossible; a result reached by two different
+   sequences (witness).
+5. `rename` for counted states; changes commute with rewriting; the
+   every-writing forms of the results above. Attempted once; if a step does
+   not close it is proved in the paper and marked "not in Lean".
+6. What survives: on states asserting nothing twice, reachability, cost and
+   one-way reachability of the fourth seed coincide with the third's through
+   `toSt` / `ofSt` (the formal form of rule 5).
+`#print axioms` for every theorem the fourth paper cites, into
+`evidence/fourth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/fourth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The first, second and third derivations' `--check` and Lean
+reports are re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/fourth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives the counting; a section answering the task's
+question for the results, the reachability criterion, the cost and one-way
+reachability; final section: nearest known results and differences — the only
+place where outside names appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit.
+
+## Stopping conditions (fourth derivation)
+
+The run stops when V1–V9 hold, or when a blocker is hit.
+
+- V1 Every notion in `paper/fourth/paper.md` has one recorded source status.
+- V2 Every claim in `paper/fourth/claim_ledger.md` has evidence, or is open.
+- V3 Every alternative is kept, or eliminated by a cited proof.
+- V4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/`; `python -m mypy`
+  passes.
+- V5 `lake build` (pinned toolchain, inside `lean4/`) passes for all four
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all four
+  axiom reports regenerated and committed.
+- V6 `evidence/fourth/` regenerates byte-identically (`--check`); the first,
+  second and third derivations' evidence still regenerates byte-identically.
+- V7 Every use of an earlier result in the fourth paper is cited and
+  re-checked, with the re-check saying whether it survives the counting
+  (ledger column "re-check").
+- V8 The prose watchlist passes on the tracked tree; every pinned hit of the
+  fourth paper is in its final section.
+- V9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: the results within any bound on terms are infinite, so the bound is
+  on terms and on rounds together. Planned: 2 terms with all 100 rounds (the
+  only setting in which the seed's 100 rounds complete: about 5 000 results
+  per run); 3 terms with 12 rounds; 5 terms (any rewriting) and 4 terms
+  (names kept) with 8 rounds; a counts-only census at 5 terms (names kept)
+  with 8 rounds. Full attempt logs at 2 terms; reachability at 3 terms with 6
+  rounds (which holds every result of the third seed within 3 terms). Declared
+  in the paper; the frontier is exported exactly (the attempts leaving the
+  term bound, and the results of the last round, whose changes await the next
+  round); completeness within the bound is certified by the independent
+  count. Bounds are lowered if a run does not complete in minutes here.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–4 and 6 required; target 5 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The worktree's
+`lean4/.lake/packages` is still the local junction to the main checkout's
+pinned packages (checked before Phase 0; no download happens).
+
+## How to run (fourth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, four derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_fourth.py` writes `evidence/fourth/`;
+  `python code/generate_fourth.py --check` compares with a fresh regeneration;
+- `python code/lean_report_fourth.py` builds `lean4/` and writes
+  `evidence/fourth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
