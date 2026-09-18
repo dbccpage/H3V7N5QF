@@ -133,7 +133,9 @@ All from the repository root, one plain command each:
   `python code/xry/gate.py <coverage.json>` for the two rates separately
   (`python -m pytest --cov-report=json:<coverage.json>` writes the report),
   and `python -m mypy`;
-- evidence: `python code/generate.py` (about 40 s);
+- evidence: `python code/generate.py` (about 40 s); `python code/generate.py
+  --check` compares `evidence/` with a fresh regeneration (added at review, see
+  `paper/change_log.md` item 17);
 - Lean build and axiom report: `python code/lean_report.py` (runs `lake`
   inside `lean4/`, where the pinned toolchain applies);
 - Lean build alone: `lake +leanprover/lean4:v4.33.1 -d lean4 build`. Never run
