@@ -199,7 +199,8 @@ change meaning; the expected consequences to be proved or refuted: nothing is
 ever un-asserted; `arb` persists; `a`, `b` are never identified; "remove the
 obstruction" is never available; the results are the legal states that
 contain what is given; fewest changes is the size difference; reachability
-between results is a preorder with cycles.
+between results composes, each result reaches itself, and two different
+results can reach each other.
 
 ### Phase 2 — `code/second/` and `tests/`
 - changes (three kinds), obstruction (reused), answers (refuse, build; no
@@ -208,7 +209,7 @@ between results is a preorder with cycles.
   against explored rounds; FREE closed form checked against best placement;
 - independent count of the results within the bound (orbit counts restricted
   to states containing what is given) as the completeness certificate;
-- a reachability test by term maps (homomorphism criterion), checked against
+- a reachability test by term maps (the carrying-map criterion), checked against
   breadth-first search between every pair of results within a small bound;
 - property witnesses for "what does not follow";
 - deterministic evidence writer with `--check`; Lean axiom-report writer for
@@ -218,7 +219,7 @@ between results is a preorder with cycles.
 Targets, in order:
 1. `Step3` (three kinds), embedding into `Step`; legality, well-formedness,
    at least one term, inherited through the embedding (cited, re-checked).
-2. The homomorphism invariant: every sequence of changes induces a map of
+2. The carrying-map invariant: every sequence of changes induces a map of
    terms carrying assertions to assertions and names to names. Consequences:
    `a`, `b` stay two terms; `arb` (and `bra` if given) stays asserted; an
    obstruction is never cleared; the fewest classes of a split with no two

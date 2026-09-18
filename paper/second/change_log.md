@@ -57,9 +57,9 @@ the branch was pushed afterwards at the user's request (item 12).
    additions are in Lean, the merging step is not. Bounded effort as planned.
 
 9. **Two test expectations written during the run were wrong and were
-   corrected; one correction became a claim.** (a) A directed 4-cycle has no
-   carrying map onto a directed 3-cycle (the test now uses a 6-cycle, which
-   has one). (b) With `bra` given, "passing on" holds in no result; the test
+   corrected; one correction became a claim.** (a) Four terms each asserting
+   the next around to the first have no carrying map onto three terms so
+   arranged (the test now uses six terms so arranged, which have one). (b) With `bra` given, "passing on" holds in no result; the test
    had expected a witness. (b) was added to the paper as D15 and R7. Reason for
    recording: the second changed what the paper claims.
 
@@ -97,3 +97,18 @@ the branch was pushed afterwards at the user's request (item 12).
     only `--out`, which both launchers print, so it could not catch a launcher
     wired to the other's `main`). Test count in K10 / §6 accordingly 178 → 179;
     coverage (line 100.00 %, branch 99.24 %) unchanged.
+
+14. **Review fix: the plan and notes were reworded to the seed's own words.**
+    `paper.md` already honoured the rule that outside results are named only in
+    its final section (§9); but a few forward-looking lines of the Phase-0 plan
+    (`CLAUDE.md`, second-derivation section), the reading notes
+    (`research/second/reading_the_seed.md`), and this log had named outside
+    notions directly — for the shape of reachability between results, for the
+    term-map reachability criterion and the sequence invariant, for how this
+    exploration sits inside the first's, and for states made of several terms
+    each asserting the next with the last asserting the first. Each was reworded
+    to the repository's own words (reachability composes and is not one-way; the
+    carrying-map criterion and invariant; the exploration is contained in the
+    first's; such states written out by their assertions). Only wording changed;
+    no prediction, notion, or result moved, and `paper.md` §9 is untouched. The
+    exact edits are in the commit diff.

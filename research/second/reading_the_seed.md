@@ -120,7 +120,7 @@ in the *upper bound* direction (a path that removes what the target lacks).
 
 ## Noticed on the way
 
-- Under the second seed the exploration is a subgraph of the first's: every
+- Under the second seed the exploration is contained in the first's: every
   attempt is an attempt of the first derivation, minus the removals. So every
   result within a bound is a first-derivation result within the same bound,
   and the first's per-state data (obstructed identifications etc.) coincide.
@@ -135,8 +135,9 @@ in the *upper bound* direction (a path that removes what the target lacks).
 - With `bra` given, "passing on" and "never both ways" hold in *no* result:
   `bra` cannot be removed, and `arb`, `bra` with passing on would give `ara`.
   First seen as a failing test expectation; became D15.
-- A directed 4-cycle has no carrying map onto a directed 3-cycle; a 6-cycle
-  has. (Also first seen as a wrong test expectation.)
+- Four terms each asserting the next around to the first (`arb`, `brc`, `crd`,
+  `dra`) have no carrying map onto three terms so arranged (`arb`, `brc`, `cra`);
+  six terms so arranged do. (Also first seen as a wrong test expectation.)
 - Results that return to what is given are rare and shrink with the bound:
   14 of 1 090 (ANCHORED, without `bra`, 4 terms). They are exactly the results
   whose terms can be split into the classes "goes to `a`" and "goes to `b`"
