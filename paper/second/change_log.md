@@ -1,7 +1,8 @@
 # Change log, second derivation
 
 Each material change, and its reason. Newest last. Commits are on the branch
-the run started on (`second-derivation`); nothing is pushed.
+the run started on (`second-derivation`). Nothing was pushed during the run;
+the branch was pushed afterwards at the user's request (item 12).
 
 1. **`CLAUDE.md` gained the second derivation's plan and stopping conditions,
    committed before any other work.** Reason: required by
@@ -72,3 +73,8 @@ the run started on (`second-derivation`); nothing is pushed.
     `.generate_second_check.log`) were deleted before the commit.** Reason:
     they are not evidence (they hold no numbers the summary lacks) and are not
     regenerable by a committed command.
+
+12. **The branch `second-derivation` was pushed to `origin` after the run, at
+    the user's request** (commits `31c0850` … `7d752e4`, then this entry).
+    `CLAUDE.md`'s "nothing is pushed" describes the run itself and is left as
+    written; no pull request was opened. Nothing else changed.
