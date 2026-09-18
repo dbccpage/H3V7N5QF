@@ -10,12 +10,16 @@ Given by the seed
 Chosen here
     * An alternative is a result (a legal state, up to sameness) together
       with the changes that can be attempted on it.
-    * Round `k` attempts every change on every result known after round
-      `k - 1`.  Each performed change counts one; a refused change is an
-      attempt of its round and changes nothing.
-    * The declared bound is on the number of terms.  The frontier is the
-      exact list of attempts whose outcome, or whose answer, has more terms
-      than the bound.
+    * Round `k` attempts every change on every result first reached in
+      round `k - 1`, so each change on each result is attempted exactly once,
+      in the round after the result is reached.  Attempting it again in a
+      later round would repeat a known outcome.  Within a result, changes are
+      taken fewest additions first; results are taken in a fixed order.
+      Each performed change counts one; a refused change is an attempt of its
+      round and changes nothing.
+    * The declared bound is on the number of terms.  The frontier lists,
+      for every attempt whose outcome or whose answer has more terms than the
+      bound, one entry for the outcome and one for each such answer.
 
 Derived (paper, Theorem on answers)
     Every answer to an obstructed change is a sequence of unobstructed
@@ -128,7 +132,7 @@ def explore(start: State, bound: int, rounds: int = 100, keep_log: bool = False)
                     found.append(rec.outcome)
                 if keep_log:
                     log.append(rec)
-        # Round r attempted every change on every result known before it.
+        # Round r attempted every change on every result first reached in round r - 1.
         attempts_per_round.append(attempts_known)
         obstructed_per_round.append(obstructed_known)
         wave = sorted(found, key=order)

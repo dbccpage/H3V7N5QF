@@ -116,7 +116,11 @@ class State:
         return self.has(x, y) or self.has(y, x)
 
     def key(self) -> str:
-        """A compact, order-preserving identifier of this exact writing."""
+        """A compact identifier of this exact writing.
+
+        Unambiguous while every name index is one digit (at most ten terms);
+        it does not follow `explore.order`.
+        """
         names = "" if self.names is None else f"{self.names[0]}{self.names[1]}"
         body = ".".join(f"{x}-{y}" for x, y in self.pairs)
         return f"{self.n}:{names}:{body}"

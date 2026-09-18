@@ -6,7 +6,9 @@
 [tool.pytest.ini_options]
 pythonpath = ["code"]
 testpaths = ["tests"]
-addopts = "--cov=code --cov-branch --cov-report=term-missing --cov-fail-under=95 -p no:cacheprovider"
+# `--cov-fail-under` checks one figure combining lines and branches; the task asks for
+# each separately, so every run also writes coverage.json for `code/xry/gate.py`.
+addopts = "--cov=code --cov-branch --cov-report=term-missing --cov-report=json:coverage.json --cov-fail-under=95 -p no:cacheprovider"
 
 [tool.coverage.run]
 branch = true

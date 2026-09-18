@@ -8,11 +8,13 @@ from pathlib import Path
 import pytest
 
 from xry import __main__ as cli
+from xry import evidence
 from xry.evidence import (
     Plan,
     added_rows,
     alternative,
     check_free_cost,
+    compare_evidence,
     states_on_given_terms,
     write_all,
     write_manifest,
@@ -45,10 +47,14 @@ def test_write_all(tmp_path: Path) -> None:
         assert run["round_equals_cost_formula_for_every_result"]
         assert all(run["rounds_agreeing_with_unbounded_formula"])
         assert run["answers_reaching_something_new"] == []
+        assert run["frontier_entries_are_1_plus_2N_per_state_with_N_terms"]
+        assert run["frontier_entries"] == run["frontier_states"] * 7
+        assert run["frontier_attempts"] == run["frontier_states"] * 4
         assert "bra_asserted" not in run["statements_holding_in_every_result"]
         assert "no_xrx" in run["statements_holding_in_every_result"]
     assert "bra_asserted" in runs["anchored/without_bra"]["statements_that_do_not_follow"]
-    assert summary["given"] == {"states_on_given_terms": 2}
+    assert summary["given"] == {"states_on_given_terms": 2, "listed_builds_that_are_not_builds": 0}
+    assert summary["free_cost_closed_form_mismatches"] == []
     assert summary["independent_counts"] == {
         "free": [1, 3, 16],
         "free_one_way": [1, 2, 7],
@@ -132,7 +138,49 @@ def test_added_rows_put_fewest_additions_first() -> None:
 
 
 def test_free_cost_check_counts_both_alternatives() -> None:
-    assert check_free_cost(3) == 2 * (1 + 3 + 16)
+    assert check_free_cost(3) == (2 * (1 + 3 + 16), [])
+
+
+def test_free_cost_check_reports_a_disagreement(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(evidence, "cost_free", lambda state, bra: -1)
+    checked, mismatches = check_free_cost(2)
+    assert checked == 2 * (1 + 3) and len(mismatches) == checked
+    assert mismatches[0].startswith("without_bra/")
+
+
+def test_a_listed_build_that_is_not_a_build_is_counted(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(evidence, "is_build_of", lambda build, state, change: False)
+    assert evidence.write_given(tmp_path)["listed_builds_that_are_not_builds"] == 72
+
+
+def test_fewer_rounds_than_the_bound_needs(tmp_path: Path) -> None:
+    few = Plan(free_bound=4, anchored_bound=3, log_bound=2, rounds=1, layers_upto=4, count_upto=2)
+    run = evidence.write_run(tmp_path, Sameness.FREE, False, few)
+    assert run["rounds_agreeing_with_unbounded_formula"] == [True, True]
+
+
+def test_compare_evidence(tmp_path: Path) -> None:
+    one, two = tmp_path / "one", tmp_path / "two"
+    for folder in (one, two):
+        folder.mkdir()
+        (folder / "a.csv").write_text("x\n", encoding="utf-8")
+        write_manifest(folder)
+    assert compare_evidence(one, two) == []
+    (one / "lean_axioms.txt").write_text("report\n", encoding="utf-8")
+    write_manifest(one)
+    assert compare_evidence(one, two) == []
+    (one / "a.csv").write_text("y\n", encoding="utf-8")
+    (one / "stale.jsonl").write_text("", encoding="utf-8")
+    (two / "new.csv").write_text("", encoding="utf-8")
+    (two / "MANIFEST.sha256").unlink()
+    assert compare_evidence(one, two) == [
+        f"only in {one}: stale.jsonl",
+        "only in the regeneration: new.csv",
+        "differs: a.csv",
+        "differs: MANIFEST.sha256 (lean_axioms.txt line left out)",
+    ]
 
 
 def test_command_line(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
@@ -142,7 +190,26 @@ def test_command_line(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> Non
     ]  # fmt: skip
     assert cli.main(args) == 0
     out = capsys.readouterr().out
-    assert out.count("checks pass") == 4 and "FAIL" not in out
+    assert out.count("checks pass") == 5 and "FAIL" not in out
+    assert cli.main([*args, "--check"]) == 0
+    assert "matches a fresh regeneration" in capsys.readouterr().out
+    (tmp_path / "counts.csv").write_text("edited\n", encoding="utf-8")
+    assert cli.main([*args, "--check"]) == 1
+    out = capsys.readouterr().out
+    assert "differs: counts.csv" in out and "DIFFERS FROM a fresh regeneration" in out
+
+
+def test_an_empty_comparison_does_not_pass() -> None:
+    run: dict[str, object] = {
+        "explored_equals_independent_count": True,
+        "round_equals_cost_formula_for_every_result": True,
+        "rounds_agreeing_with_unbounded_formula": [],
+        "answers_reaching_something_new": [],
+        "frontier_entries_are_1_plus_2N_per_state_with_N_terms": True,
+    }
+    assert not cli.run_ok(run)
+    run["rounds_agreeing_with_unbounded_formula"] = [True]
+    assert cli.run_ok(run)
 
 
 def test_command_line_fails_when_a_check_fails(
@@ -154,7 +221,18 @@ def test_command_line_fails_when_a_check_fails(
         "round_equals_cost_formula_for_every_result": True,
         "rounds_agreeing_with_unbounded_formula": [True],
         "answers_reaching_something_new": [],
+        "frontier_entries_are_1_plus_2N_per_state_with_N_terms": True,
     }
-    monkeypatch.setattr(cli, "write_all", lambda out, plan: {"runs": {"free/without_bra": bad}})
+    shared: dict[str, object] = {
+        "given": {"listed_builds_that_are_not_builds": 0},
+        "free_cost_closed_form_mismatches": [],
+    }
+    monkeypatch.setattr(
+        cli, "write_all", lambda out, plan: {"runs": {"free/without_bra": bad}, **shared}
+    )
     assert cli.main(["--out", str(tmp_path)]) == 1
-    assert "FAIL" in capsys.readouterr().out
+    assert "free/without_bra: 1 results, checks FAIL" in capsys.readouterr().out
+    bad["explored_equals_independent_count"] = True
+    shared["free_cost_closed_form_mismatches"] = ["x"]
+    assert cli.main(["--out", str(tmp_path)]) == 1
+    assert "given and free cost: checks FAIL" in capsys.readouterr().out

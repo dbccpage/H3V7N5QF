@@ -107,6 +107,7 @@ def write_given(out: Path) -> dict[str, object]:
         "legal_states_on_the_given_terms_with_arb": [s.written() for s in found],
         "count": len(found),
     }
+    not_builds = 0
     for sameness in Sameness:
         for bra in (False, True):
             start = given(bra, sameness)
@@ -115,7 +116,7 @@ def write_given(out: Path) -> dict[str, object]:
             for change in changes(start):
                 if change.kind is Kind.ADD_ASSERTION and obstruction(start, change):
                     all_builds = one_term_builds(start, change.x)
-                    assert all(is_build_of(b, start, change) for b in all_builds)
+                    not_builds += sum(1 for b in all_builds if not is_build_of(b, start, change))
                     distinct = sorted({canonical(b) for b in all_builds}, key=order)
                     builds[change.written(start)] = {
                         "one_term_builds": len(all_builds),
@@ -138,7 +139,7 @@ def write_given(out: Path) -> dict[str, object]:
         == {canonical(given(bra, Sameness.FREE)) for bra in (False, True)},
     }
     _write_json(out / "given.json", doc)
-    return {"states_on_given_terms": len(found)}
+    return {"states_on_given_terms": len(found), "listed_builds_that_are_not_builds": not_builds}
 
 
 def result_rows(expl: Exploration, bra: bool) -> list[list[object]]:
@@ -285,8 +286,14 @@ def write_run(out: Path, sameness: Sameness, bra: bool, plan: Plan) -> dict[str,
         for n in range(1, bound + 1)
     }
     mismatches = [s.key() for s, r in expl.depth.items() if cost(s, bra) != r]
-    within_bound_layers = min(plan.layers_upto, bound - 2)
+    # Rounds 0 .. N - 2 are complete within the bound; only rounds that were run can be compared.
+    within_bound_layers = min(plan.layers_upto, bound - 2, plan.rounds)
     check = check_answers(expl)
+    entries: dict[State, int] = {}
+    for leave in expl.frontier:
+        entries[leave.state] = entries.get(leave.state, 0) + 1
+    full = {s for s in expl.depth if s.n == bound}
+    one_plus_two_n = set(entries) == full and all(c == 1 + 2 * s.n for s, c in entries.items())
     return {
         "bound_on_terms": bound,
         "rounds": plan.rounds,
@@ -299,8 +306,10 @@ def write_run(out: Path, sameness: Sameness, bra: bool, plan: Plan) -> dict[str,
         "rounds_agreeing_with_unbounded_formula": [
             expl.new_per_round[r] == exact[r] for r in range(within_bound_layers + 1)
         ],
-        "frontier_states": len({leave.state for leave in expl.frontier}),
-        "frontier_attempts": len(expl.frontier),
+        "frontier_states": len(entries),
+        "frontier_attempts": len({(leave.state, leave.change) for leave in expl.frontier}),
+        "frontier_entries": len(expl.frontier),
+        "frontier_entries_are_1_plus_2N_per_state_with_N_terms": one_plus_two_n,
         "obstructed_attempts": check.obstructed,
         "answers_within_bound": check.answers_within,
         "answers_beyond_bound": check.answers_beyond,
@@ -343,15 +352,48 @@ def write_counts(out: Path, plan: Plan) -> dict[str, list[int]]:
     return totals
 
 
-def check_free_cost(bound: int) -> int:
-    """Compare the closed form for FREE cost with the best placement of names."""
+def check_free_cost(bound: int) -> tuple[int, list[str]]:
+    """Compare the closed form for FREE cost with the best placement of names.
+
+    Returns how many (state, alternative) pairs were compared, and the keys of
+    those where the two disagree.
+    """
     checked = 0
+    mismatches = []
     for bra in (False, True):
         expl = explore(given(bra, Sameness.FREE), bound, rounds=bound * bound + 4)
         for state in expl.depth:
-            assert cost_free(state, bra) == cost_free_by_placement(state, bra), state.key()
+            if cost_free(state, bra) != cost_free_by_placement(state, bra):
+                mismatches.append(f"{alternative(bra)}/{state.key()}")
             checked += 1
-    return checked
+    return checked, mismatches
+
+
+def compare_evidence(committed: Path, fresh: Path) -> list[str]:
+    """How a committed evidence folder differs from a fresh regeneration of it.
+
+    `lean_axioms.txt` is written by `xry.leanreport`, not by this module, so it
+    and its manifest line are left out of the comparison.
+    """
+    skip = {"MANIFEST.sha256", "lean_axioms.txt"}
+    names_a = {p.name for p in committed.iterdir() if p.is_file()} - skip
+    names_b = {p.name for p in fresh.iterdir() if p.is_file()} - skip
+    out = [f"only in {committed}: {n}" for n in sorted(names_a - names_b)]
+    out += [f"only in the regeneration: {n}" for n in sorted(names_b - names_a)]
+    for name in sorted(names_a & names_b):
+        if (committed / name).read_bytes() != (fresh / name).read_bytes():
+            out.append(f"differs: {name}")
+
+    def manifest(folder: Path) -> list[str]:
+        path = folder / "MANIFEST.sha256"
+        if not path.is_file():
+            return []
+        lines = path.read_text(encoding="utf-8").splitlines()
+        return [line for line in lines if not line.endswith("  lean_axioms.txt")]
+
+    if manifest(committed) != manifest(fresh):
+        out.append("differs: MANIFEST.sha256 (lean_axioms.txt line left out)")
+    return out
 
 
 def write_manifest(out: Path) -> int:
@@ -368,6 +410,7 @@ def write_manifest(out: Path) -> int:
 def write_all(out: Path, plan: Plan) -> dict[str, object]:
     """Write every computed evidence file into `out`; return the summary."""
     out.mkdir(parents=True, exist_ok=True)
+    checked, cost_mismatches = check_free_cost(min(plan.free_bound, 4))
     summary: dict[str, object] = {
         "plan": {
             "bound_on_terms_free": plan.free_bound,
@@ -378,7 +421,8 @@ def write_all(out: Path, plan: Plan) -> dict[str, object]:
         },
         "given": write_given(out),
         "independent_counts": write_counts(out, plan),
-        "free_cost_closed_form_checked_on": check_free_cost(min(plan.free_bound, 4)),
+        "free_cost_closed_form_checked_on": checked,
+        "free_cost_closed_form_mismatches": cost_mismatches,
     }
     runs: dict[str, object] = {}
     logged: dict[str, int] = {}

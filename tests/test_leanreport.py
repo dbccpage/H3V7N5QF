@@ -64,6 +64,46 @@ def test_forbidden_words(tmp_path: Path) -> None:
         leanreport.report(root, runner())
 
 
+@pytest.mark.parametrize(
+    "line",
+    [
+        "@[simp] axiom bad : (1 : Nat) = 2",
+        "noncomputable axiom bad : Nat",
+        "private noncomputable axiom bad : False",
+        "open Nat in axiom bad : False",
+        "theorem t : False := sorryAx False false",
+    ],
+)
+def test_forbidden_sees_attributes_modifiers_and_sorryax(tmp_path: Path, line: str) -> None:
+    assert leanreport.forbidden(lean_dir(tmp_path, line + "\n"))
+
+
+def test_nonstandard_axioms() -> None:
+    assert leanreport.nonstandard(AXIOMS) == []
+    ok = "'Seed.t' depends on axioms: [propext, Classical.choice, Quot.sound]"
+    assert leanreport.nonstandard(ok) == []
+    user = "'Seed.t' depends on axioms: [propext, Seed.cheat]"
+    sorry = "'Seed.u' depends on axioms: [sorryAx]"
+    stray = "info: downloading component 'lean'"
+    assert leanreport.nonstandard("\n".join([ok, user, sorry, stray])) == [user, sorry, stray]
+
+
+def run_with(build_out: str, axioms: str) -> leanreport.Runner:
+    def run(cmd: Sequence[str], cwd: Path) -> tuple[int, str]:
+        return 0, build_out if list(cmd) == ["lake", "build"] else axioms
+
+    return run
+
+
+def test_report_refuses_sorry_and_nonstandard_axioms(tmp_path: Path) -> None:
+    root = lean_dir(tmp_path)
+    warned = "warning: H3V7N5QF/X.lean:1:8: declaration uses `sorry`\nBuild completed successfully.\n"
+    with pytest.raises(RuntimeError, match="uses sorry"):
+        leanreport.report(root, run_with(warned, AXIOMS))
+    with pytest.raises(RuntimeError, match="standard axioms"):
+        leanreport.report(root, run_with("ok\n", "'Seed.u' depends on axioms: [sorryAx]\n"))
+
+
 def test_main_writes_the_report_and_the_manifest(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
