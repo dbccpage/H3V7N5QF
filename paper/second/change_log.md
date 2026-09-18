@@ -112,3 +112,21 @@ the branch was pushed afterwards at the user's request (item 12).
     first's; such states written out by their assertions). Only wording changed;
     no prediction, notion, or result moved, and `paper.md` §9 is untouched. The
     exact edits are in the commit diff.
+
+15. **Two verification gates were ported in from the genesis repository
+    (`dbccpage/19L57G1`), after item 14 showed the outside-word rule had no
+    mechanical guard.** (a) `ci/check_prose_watchlist.py` with
+    `ci/prose_watchlist.json`: a digest-stored census of outside-theory terms
+    that fails on any whole-word hit its per-file pin does not already record.
+    The current tree is clean; all 35 pinned hits sit in the two papers' §9
+    "nearest known results" sections, the one place the rule permits them.
+    `tests/test_prose_watchlist.py` runs the census over the tracked tree, so
+    `python -m pytest` enforces it (the repository has no hosted CI). (b)
+    `tests/test_second_cost.py::test_cost_is_none_exactly_off_the_result_set`:
+    a property that `cost` is `None` exactly off the result set, checked over
+    every state — legal and illegal, both name readings, to three terms — so
+    the item-13 legality guard cannot silently regress; it exercises the
+    illegal states that `check_free_cost` skips. `pyproject.toml` now type-checks
+    `ci/` too. Tests 179 → 193; coverage of `code/` unchanged (the gate lives in
+    `ci/`, outside the measured source). No object-language notion or result
+    changed.

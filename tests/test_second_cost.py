@@ -9,6 +9,7 @@ from second.cost import (
     cost_free,
     cost_free_by_placement,
     given_size,
+    has_two_way,
 )
 from xry.state import Sameness, State, given
 
@@ -85,3 +86,37 @@ def test_illegal_states_are_unreachable() -> None:
         assert cost_free(mixed, bra) == cost_free_by_placement(mixed, bra)
     named = State(2, 3, (0, 1))  # the same with names: illegal, so `None`, not 1
     assert cost_anchored(named, False) is None and cost(named, False) is None
+
+
+def _is_result(state: State, bra: bool) -> bool:
+    """Whether `state` is reachable from what is given, stated independently of
+    the cost functions: a result is legal and, with names, contains what is
+    given; without names, asserts something (with `bra`, a pair both ways)."""
+    if not state.legal:
+        return False
+    if state.names is not None:
+        return contains_given(state, bra)
+    return has_two_way(state) if bra else state.m > 0
+
+
+def test_cost_is_none_exactly_off_the_result_set() -> None:
+    """Property: over every state -- legal and illegal, both name readings, up
+    to a small bound -- `cost` is `None` exactly when the state is not a result,
+    and otherwise the non-negative size difference. This exercises the illegal
+    states that `check_free_cost` skips, so the legality guard cannot silently
+    regress."""
+    checked = illegal = 0
+    for bra in (False, True):
+        for n in range(1, 4):
+            for mask in range(1 << (n * n)):
+                for names in (None, (0, 0), (0, 1 % n)):
+                    state = State(n, mask, names)
+                    illegal += not state.legal
+                    got = cost(state, bra)
+                    if _is_result(state, bra):
+                        assert got == state.n + state.m - given_size(bra)
+                        assert got is not None and got >= 0
+                    else:
+                        assert got is None
+                    checked += 1
+    assert checked > 0 and illegal > 0

@@ -1,0 +1,42 @@
+{
+  "about": [
+    "Prose-level watchlist for outside-theory vocabulary. Terms are stored as SHA-256 digests of their normalized form (NFKD, combining marks dropped, lowercase) so this repository never carries the words themselves as prose.",
+    "A CENSUS, not a ban: every whole-word hit in tracked prose is pinned per file under baseline. The pins gather the tree outside-theory vocabulary in one place -- for these papers, each paper final nearest-known-results section. Run: python ci/check_prose_watchlist.py; probe: --probe WORD; repin deliberately: --regen."
+  ],
+  "baseline": {
+    "paper/paper.md": {
+      "58cc98d152156a28ae37905f16a2bce2b2c0a0a6775481d977ffb391f0a91f4b": 1,
+      "64a5b744b8e3f298d33d50f2e10418891f9645d5737bef8d16b5de0f46621861": 1,
+      "666d83a02126d92598412bd2bb96ee181cc7bcc88a1014847b3ddf35fb8a87ea": 1,
+      "b83e27e8f16390f124eae6fc4dfa3277489581fd0f42f5f31a3f27744b4eaec9": 2,
+      "c6ae2c20c073e21bd8691789c34071fd10adbc224fbd25c64d9a4ce506352bcd": 1,
+      "eceaa64388b5ca0e158d5b12c0f66b68555f6a3582dbca41df25208b704ee0fb": 2
+    },
+    "paper/second/paper.md": {
+      "3d2371b94363bb589b7f07d9493bfcd380eefc5e377474509a5f88c40a6109ec": 2,
+      "58cc98d152156a28ae37905f16a2bce2b2c0a0a6775481d977ffb391f0a91f4b": 1,
+      "64a5b744b8e3f298d33d50f2e10418891f9645d5737bef8d16b5de0f46621861": 1,
+      "666d83a02126d92598412bd2bb96ee181cc7bcc88a1014847b3ddf35fb8a87ea": 1,
+      "803893c31132cb8ee7b86aee5444b6333137fc29776ebde488b1d358015f1169": 5,
+      "996ca880c432d252525514e15b14d84d60770a66f74cfe62e541207139f6705e": 1,
+      "b83e27e8f16390f124eae6fc4dfa3277489581fd0f42f5f31a3f27744b4eaec9": 12,
+      "c6a78bd5638ad442e2d39bef85d56424144a93a2181c6094af380ef1c78fd57e": 2,
+      "c6ae2c20c073e21bd8691789c34071fd10adbc224fbd25c64d9a4ce506352bcd": 1,
+      "eceaa64388b5ca0e158d5b12c0f66b68555f6a3582dbca41df25208b704ee0fb": 1
+    }
+  },
+  "watched": {
+    "3d2371b94363bb589b7f07d9493bfcd380eefc5e377474509a5f88c40a6109ec": "graph-theory term",
+    "58cc98d152156a28ae37905f16a2bce2b2c0a0a6775481d977ffb391f0a91f4b": "graph-theory term",
+    "64a5b744b8e3f298d33d50f2e10418891f9645d5737bef8d16b5de0f46621861": "order-theory term",
+    "666d83a02126d92598412bd2bb96ee181cc7bcc88a1014847b3ddf35fb8a87ea": "enumeration term (Polya)",
+    "779309c52a44855bddbe59857e8c53211792b229a17e41cad847af994e784e84": "order-theory term",
+    "803893c31132cb8ee7b86aee5444b6333137fc29776ebde488b1d358015f1169": "graph-theory term",
+    "996ca880c432d252525514e15b14d84d60770a66f74cfe62e541207139f6705e": "graph-theory term",
+    "b83e27e8f16390f124eae6fc4dfa3277489581fd0f42f5f31a3f27744b4eaec9": "graph-theory term",
+    "bf39c79f9a16d5864695caabaed13a5c51673ba790420847780bfa9c8fa8e6e7": "graph-theory term",
+    "c6a78bd5638ad442e2d39bef85d56424144a93a2181c6094af380ef1c78fd57e": "order-theory term",
+    "c6ae2c20c073e21bd8691789c34071fd10adbc224fbd25c64d9a4ce506352bcd": "graph-theory term",
+    "eceaa64388b5ca0e158d5b12c0f66b68555f6a3582dbca41df25208b704ee0fb": "algorithms term"
+  }
+}
