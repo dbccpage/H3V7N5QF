@@ -796,9 +796,15 @@ every computed file of `evidence/fourth/` (about two minutes here);
 `MANIFEST.sha256` lists every file's hash. `python code/lean_report_fourth.py`
 builds all four Lean libraries and rewrites `evidence/fourth/lean_axioms.txt`,
 refusing if the build warns of `sorry` or a cited theorem depends on an axiom
-other than `propext`, `Classical.choice`, `Quot.sound`. The first, second and
-third derivations' `--check` and Lean reports were re-run after this work and
-their evidence regenerates unchanged. Tests: 358 passed, four
+other than `propext`, `Classical.choice`, `Quot.sound`. After this work the
+first and second derivations' `--check` were re-run and matched; the third's
+`--check` and the three earlier Lean reports were started in the same run but
+that run was stopped by the environment for low memory before they finished
+(`paper/fourth/change_log.md`, item 13), and they were not repeated. Their
+inputs are unchanged: no file of `code/xry/`, `code/second/`, `code/third/`,
+`lean4/H3V7N5QF/`, `lean4/Second/`, `lean4/Third/`, their tests or their
+evidence differs from the branch's starting point (`git diff --stat`), and the
+fourth's Lean report built all four libraries. Tests: 358 passed, four
 derivations; line coverage 99.90 %, branch coverage 98.94 % of all of
 `code/` (`python code/xry/gate.py coverage.json`); `mypy --strict` clean; the
 prose watchlist clean, with every pinned hit of this paper in §9.

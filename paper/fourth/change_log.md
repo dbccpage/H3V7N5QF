@@ -113,3 +113,31 @@ repository in which the third derivation was made; the branch was brought to
     space was back. No file outside the repository was touched and nothing was
     downloaded by this derivation; the pinned packages are still the local
     junction to the main checkout's `lean4/.lake/packages`.
+
+13. **The re-runs of the earlier derivations' checks were cut short by the
+    environment.** One background run regenerated `evidence/fourth/`, checked
+    it against a fresh regeneration (matched), re-ran the first and second
+    derivations' `--check` (both matched), and had started the third's
+    `--check` when the session's tooling stopped it because the machine was
+    low on memory (another session was running Lean at the time). The third's
+    `--check` and the three earlier Lean reports (`python code/lean_report.py`,
+    `python code/lean_report_second.py`, `python code/lean_report_third.py`)
+    were therefore not repeated in this session, and the tooling asked that
+    they not be restarted unasked. What stands instead: `git diff --stat`
+    against the branch's starting point shows no change to `code/xry/`,
+    `code/second/`, `code/third/`, `lean4/H3V7N5QF/`, `lean4/Second/`,
+    `lean4/Third/`, their tests or `evidence/`, `evidence/second/`,
+    `evidence/third/`, so those regenerations have the same inputs as when
+    they last matched; and `python code/lean_report_fourth.py` built all four
+    libraries. The four commands above complete the check (about ten
+    minutes).
+
+14. **The reachability file lists only the rows that carry information.** With
+    3 terms and 6 rounds there are 490 results and 240 100 ordered pairs
+    under ANCHORED; listing every pair made two files of 14 MB each. Every
+    pair is still tested both ways and the totals are in `summary.json`; the
+    file lists every reachable pair with its embedding and every pair of
+    results asserting nothing twice with the third derivation's verdict, so a
+    pair absent from it is unreachable with a multiplicity above one on one
+    side (`rows_written` in the summary). Made before the first commit of the
+    evidence; no number changed.

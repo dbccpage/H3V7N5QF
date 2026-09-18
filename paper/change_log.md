@@ -198,6 +198,9 @@ reading of the seed.
     derivation's file. Nothing in `lean4/H3V7N5QF/`, `lean4/Second/`,
     `lean4/Third/`, `code/xry/`, `code/second/`, `code/third/`, the earlier
     test sets, the earlier papers, ledgers, `evidence/`, `evidence/second/` or
-    `evidence/third/` changed. The earlier `--check` runs and Lean reports
-    were re-run after the edit (see `paper/fourth/change_log.md`). The fourth
-    derivation's own changes are logged in `paper/fourth/change_log.md`.
+    `evidence/third/` changed. The first and second derivations' `--check`
+    were re-run after the edit and matched; the third's `--check` and the
+    three earlier Lean reports were stopped by the environment before they
+    finished and not repeated (`paper/fourth/change_log.md`, item 13); the
+    fourth's Lean report built all four libraries. The fourth derivation's own
+    changes are logged in `paper/fourth/change_log.md`.
