@@ -69,7 +69,7 @@ for a claim new to this derivation.
 | K7 | Reachability within 3 terms: 439 of 1 156, 161 of 289, 153 of 289, 62 of 100 ordered pairs reachable; 34, 28, 16, 10 unordered pairs reachable both ways; results reaching what is given within the bound: 14 of 1 090, 83 of 545, 32 of 9 841, 363 of 9 212 | computed | `evidence/second/reach_bound3_*.csv`, `summary.json` (`reachability`, `results_that_reach_what_is_given`) | — | — | regeneration gives other numbers |
 | K8 | Fewest classes never fell on 122 227, 111 948, 7 267, 3 361 changes | computed | `summary.json` (`fewest_classes_checked_on`, `fewest_classes_lowered_by`) | — | — | a listed drop |
 | K9 | Evidence is regenerable: a fresh run reproduces every computed file of `evidence/second/` byte for byte; the first derivation's `evidence/` still regenerates unchanged | computed | `python code/generate_second.py --check`; `python code/generate.py --check`; `python code/lean_report.py`; `tests/test_second_evidence.py::test_command_line` | — | — | a `--check` reporting a difference |
-| K10 | Tests: 178 passed (both derivations); line coverage 100.00 %, branch coverage 99.24 % of `code/`; `mypy --strict` clean | computed | `python -m pytest`; `python code/xry/gate.py coverage.json`; `python -m mypy` | — | — | a failing run |
+| K10 | Tests: 179 passed (both derivations); line coverage 100.00 %, branch coverage 99.24 % of `code/`; `mypy --strict` clean | computed | `python -m pytest`; `python code/xry/gate.py coverage.json`; `python -m mypy` | — | — | a failing run |
 
 ## Refuted
 

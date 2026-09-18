@@ -569,7 +569,7 @@ and compares every computed file, in both directions (it matched).
 cited theorem depends on an axiom other than `propext`, `Classical.choice`,
 `Quot.sound`. The first derivation's `python code/generate.py --check` and
 `python code/lean_report.py` were re-run after this work and its evidence
-regenerates unchanged. Tests: 178 passed, both derivations; line coverage
+regenerates unchanged. Tests: 179 passed, both derivations; line coverage
 100.00 %, branch coverage 99.24 % of all of `code/`
 (`python code/xry/gate.py coverage.json`); `mypy --strict` clean.
 

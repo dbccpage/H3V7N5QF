@@ -78,3 +78,22 @@ the branch was pushed afterwards at the user's request (item 12).
     the user's request** (commits `31c0850` … `7d752e4`, then this entry).
     `CLAUDE.md`'s "nothing is pushed" describes the run itself and is left as
     written; no pull request was opened. Nothing else changed.
+
+13. **Review fix: an illegal state is unreachable, so its cost is `None`
+    (`code/second/cost.py`).** Found in a code review of this branch.
+    `cost_anchored` and `cost_free` tested whether a state contains what is
+    given (or, without names, asserts something) but not whether it is *legal*;
+    an illegal state (some `xrx` asserted) is never a result, yet the tests
+    admitted one and returned a finite — sometimes negative — size difference
+    (`cost_free(State(1,1), True)` returned `-2`), disagreeing with
+    `cost_free_by_placement`. Both now return `None` for an illegal state, the
+    documented value for an unreachable one. No evidence changes: every
+    explored result is legal and `check_free_cost` only ever compared legal
+    states (`free_cost_closed_form_checked_on: 476` unchanged), so
+    `--check` still matches byte for byte and no `evidence/second/` number
+    moves. A regression test (`tests/test_second_cost.py::
+    test_illegal_states_are_unreachable`) was added, and the launcher smoke
+    test was strengthened to assert a launcher-specific flag (it had asserted
+    only `--out`, which both launchers print, so it could not catch a launcher
+    wired to the other's `main`). Test count in K10 / §6 accordingly 178 → 179;
+    coverage (line 100.00 %, branch 99.24 %) unchanged.

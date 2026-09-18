@@ -49,15 +49,23 @@ def contains_given(state: State, bra: bool) -> bool:
 
 
 def cost_anchored(state: State, bra: bool) -> int | None:
-    """Fewest changes from what is given to `state`, names kept; `None` if unreachable."""
-    if not contains_given(state, bra):
+    """Fewest changes from what is given to `state`, names kept; `None` if unreachable.
+
+    An illegal state (some `xrx` asserted) is never a result, so it is
+    unreachable and its cost is `None`, whatever it asserts between `a` and `b`.
+    """
+    if not state.legal or not contains_given(state, bra):
         return None
     return state.n + state.m - given_size(bra)
 
 
 def cost_free(state: State, bra: bool) -> int | None:
-    """Fewest changes to `state`, any rewriting allowed; `None` if unreachable."""
-    reachable = has_two_way(state) if bra else state.m > 0
+    """Fewest changes to `state`, any rewriting allowed; `None` if unreachable.
+
+    An illegal state is unreachable, so it is `None` here too; without this an
+    `xrx`-only state would count as reached and give a negative size difference.
+    """
+    reachable = state.legal and (has_two_way(state) if bra else state.m > 0)
     if not reachable:
         return None
     return state.n + state.m - given_size(bra)

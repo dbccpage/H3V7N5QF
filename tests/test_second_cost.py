@@ -64,4 +64,24 @@ def test_free_cost_is_the_best_placement_of_the_names() -> None:
                 continue
             for bra in (False, True):
                 assert cost_free(state, bra) == cost_free_by_placement(state, bra)
-                assert cost(state, bra) == cost_free(state, bra)
+
+
+def test_illegal_states_are_unreachable() -> None:
+    """A state asserting some `xrx` is never a result, so every cost is `None`.
+
+    Without the legality guard the reachability tests ("contains what is given"
+    / "has an assertion") admit self-loops and give a finite, even negative,
+    size difference; the two FREE formulas then need not agree either.
+    """
+    loop = State(1, 1)  # `ara` only: a self-loop, illegal
+    assert not loop.legal
+    assert cost_free(loop, False) is None and cost_free(loop, True) is None
+    assert cost_free_by_placement(loop, False) is None
+    assert cost(loop, False) is None
+    mixed = State(2, 3)  # `arb` and the self-loop `ara`: illegal, yet contains `arb`
+    assert not mixed.legal
+    for bra in (False, True):
+        assert cost_free(mixed, bra) is None
+        assert cost_free(mixed, bra) == cost_free_by_placement(mixed, bra)
+    named = State(2, 3, (0, 1))  # the same with names: illegal, so `None`, not 1
+    assert cost_anchored(named, False) is None and cost(named, False) is None
