@@ -1,0 +1,335 @@
+{
+  "anchored_census": {
+    "anchored/with_bra": {
+      "bound_on_terms": 5,
+      "changes_attempted": 1126996,
+      "explored_equals_independent_count": true,
+      "frontier_entries": 492096,
+      "frontier_states": 44736,
+      "last_round_with_a_new_result": 21,
+      "of_which_obstructed": 574835,
+      "results": 45281,
+      "results_by_terms": {
+        "2": 1,
+        "3": 16,
+        "4": 528,
+        "5": 44736
+      },
+      "round_equals_cost_formula_for_every_result": true
+    },
+    "anchored/without_bra": {
+      "bound_on_terms": 5,
+      "changes_attempted": 2299273,
+      "explored_equals_independent_count": true,
+      "frontier_entries": 984192,
+      "frontier_states": 89472,
+      "last_round_with_a_new_result": 22,
+      "of_which_obstructed": 1149670,
+      "results": 90562,
+      "results_by_terms": {
+        "2": 2,
+        "3": 32,
+        "4": 1056,
+        "5": 89472
+      },
+      "round_equals_cost_formula_for_every_result": true
+    }
+  },
+  "attempts_in_full_logs": {
+    "anchored/with_bra": 148,
+    "anchored/without_bra": 313,
+    "free/with_bra": 86,
+    "free/without_bra": 156
+  },
+  "free_cost_closed_form_checked_on": 476,
+  "free_cost_closed_form_mismatches": [],
+  "given": {
+    "listed_builds_that_are_not_builds": 0,
+    "states_on_given_terms": 2
+  },
+  "independent_counts": {
+    "anchored/with_bra": [
+      0,
+      1,
+      16,
+      528,
+      44736,
+      11319328
+    ],
+    "anchored/without_bra": [
+      0,
+      2,
+      32,
+      1056,
+      89472,
+      22638656
+    ],
+    "free/with_bra": [
+      0,
+      1,
+      9,
+      176,
+      9026,
+      1519464
+    ],
+    "free/without_bra": [
+      0,
+      2,
+      15,
+      217,
+      9607,
+      1540943
+    ]
+  },
+  "plan": {
+    "bound_on_terms_anchored": 4,
+    "bound_on_terms_anchored_census": 5,
+    "bound_on_terms_free": 5,
+    "bound_on_terms_full_log": 3,
+    "bound_on_terms_reachability": 3,
+    "rounds": 100,
+    "unbounded_round_counts_upto": 20
+  },
+  "reachability": {
+    "anchored/with_bra": {
+      "bound_on_terms": 3,
+      "carrying_map_agrees_with_search": true,
+      "disagreements": [],
+      "ordered_pairs": 289,
+      "ordered_pairs_reachable": 161,
+      "results": 17,
+      "unordered_pairs_reachable_both_ways": 28
+    },
+    "anchored/without_bra": {
+      "bound_on_terms": 3,
+      "carrying_map_agrees_with_search": true,
+      "disagreements": [],
+      "ordered_pairs": 1156,
+      "ordered_pairs_reachable": 439,
+      "results": 34,
+      "unordered_pairs_reachable_both_ways": 34
+    },
+    "free/with_bra": {
+      "bound_on_terms": 3,
+      "carrying_map_agrees_with_search": true,
+      "disagreements": [],
+      "ordered_pairs": 100,
+      "ordered_pairs_reachable": 62,
+      "results": 10,
+      "unordered_pairs_reachable_both_ways": 10
+    },
+    "free/without_bra": {
+      "bound_on_terms": 3,
+      "carrying_map_agrees_with_search": true,
+      "disagreements": [],
+      "ordered_pairs": 289,
+      "ordered_pairs_reachable": 153,
+      "results": 17,
+      "unordered_pairs_reachable_both_ways": 16
+    }
+  },
+  "runs": {
+    "anchored/with_bra": {
+      "additions_alone_reach_the_same_results_in_the_same_rounds": true,
+      "additions_never_negative": true,
+      "answers_beyond_bound": 4224,
+      "answers_reaching_something_new": [],
+      "answers_removing_the_obstruction": 0,
+      "answers_within_bound": 7352,
+      "bound_on_terms": 4,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 136,
+      "explored_equals_independent_count": true,
+      "fewest_classes_checked_on": 3361,
+      "fewest_classes_lowered_by": [],
+      "frontier_attempts": 2640,
+      "frontier_entries": 4752,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 528,
+      "last_round_with_a_new_result": 12,
+      "obstructed_attempts": 4707,
+      "results": 545,
+      "results_by_terms": {
+        "2": 1,
+        "3": 16,
+        "4": 528
+      },
+      "results_that_reach_what_is_given": 83,
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "bra_asserted",
+        "arb_asserted",
+        "names_apart",
+        "something_asserted",
+        "at_least_one_term",
+        "no_xrx",
+        "at_least_two_terms"
+      ],
+      "statements_that_do_not_follow": [
+        "both_ways_always",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms"
+      ]
+    },
+    "anchored/without_bra": {
+      "additions_alone_reach_the_same_results_in_the_same_rounds": true,
+      "additions_never_negative": true,
+      "answers_beyond_bound": 8448,
+      "answers_reaching_something_new": [],
+      "answers_removing_the_obstruction": 0,
+      "answers_within_bound": 14704,
+      "bound_on_terms": 4,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 272,
+      "explored_equals_independent_count": true,
+      "fewest_classes_checked_on": 7267,
+      "fewest_classes_lowered_by": [],
+      "frontier_attempts": 5280,
+      "frontier_entries": 9504,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 1056,
+      "last_round_with_a_new_result": 13,
+      "obstructed_attempts": 9414,
+      "results": 1090,
+      "results_by_terms": {
+        "2": 2,
+        "3": 32,
+        "4": 1056
+      },
+      "results_that_reach_what_is_given": 14,
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "arb_asserted",
+        "names_apart",
+        "something_asserted",
+        "at_least_one_term",
+        "no_xrx",
+        "at_least_two_terms"
+      ],
+      "statements_that_do_not_follow": [
+        "bra_asserted",
+        "both_ways_always",
+        "both_ways_never",
+        "passes_on",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms"
+      ]
+    },
+    "free/with_bra": {
+      "additions_alone_reach_the_same_results_in_the_same_rounds": true,
+      "additions_never_negative": true,
+      "answers_beyond_bound": 90260,
+      "answers_reaching_something_new": [],
+      "answers_removing_the_obstruction": 0,
+      "answers_within_bound": 184985,
+      "bound_on_terms": 5,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 614,
+      "explored_equals_independent_count": true,
+      "fewest_classes_checked_on": 111948,
+      "fewest_classes_lowered_by": [],
+      "frontier_attempts": 54156,
+      "frontier_entries": 99286,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 9026,
+      "last_round_with_a_new_result": 21,
+      "obstructed_attempts": 114691,
+      "results": 9212,
+      "results_by_terms": {
+        "2": 1,
+        "3": 9,
+        "4": 176,
+        "5": 9026
+      },
+      "results_that_reach_what_is_given": 363,
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "something_asserted",
+        "at_least_one_term",
+        "no_xrx",
+        "at_least_two_terms"
+      ],
+      "statements_that_do_not_follow": [
+        "both_ways_always",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms"
+      ]
+    },
+    "free/without_bra": {
+      "additions_alone_reach_the_same_results_in_the_same_rounds": true,
+      "additions_never_negative": true,
+      "answers_beyond_bound": 96070,
+      "answers_reaching_something_new": [],
+      "answers_removing_the_obstruction": 0,
+      "answers_within_bound": 196436,
+      "bound_on_terms": 5,
+      "cost_formula_mismatches": [],
+      "every_identification_obstructed": 633,
+      "explored_equals_independent_count": true,
+      "fewest_classes_checked_on": 122227,
+      "fewest_classes_lowered_by": [],
+      "frontier_attempts": 57642,
+      "frontier_entries": 105677,
+      "frontier_entries_are_1_plus_2N_per_state_with_N_terms": true,
+      "frontier_states": 9607,
+      "last_round_with_a_new_result": 22,
+      "obstructed_attempts": 121777,
+      "results": 9841,
+      "results_by_terms": {
+        "2": 2,
+        "3": 15,
+        "4": 217,
+        "5": 9607
+      },
+      "results_that_reach_what_is_given": 32,
+      "round_equals_cost_formula_for_every_result": true,
+      "rounds": 100,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "statements_holding_in_every_result": [
+        "something_asserted",
+        "at_least_one_term",
+        "no_xrx",
+        "at_least_two_terms"
+      ],
+      "statements_that_do_not_follow": [
+        "both_ways_always",
+        "both_ways_never",
+        "passes_on",
+        "any_two_related",
+        "every_term_first",
+        "every_term_mentioned",
+        "exactly_two_terms"
+      ]
+    }
+  }
+}
