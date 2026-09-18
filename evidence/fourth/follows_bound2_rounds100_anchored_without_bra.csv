@@ -1,0 +1,20 @@
+statement,wording,in_what_is_given,first_holds,round,first_fails,round_
+bra_asserted,`bra` is asserted.,0,terms a b; asserted arb bra,1,terms a b; asserted arb,0
+arb_asserted,`arb` is asserted.,1,terms a b; asserted arb,0,,
+names_apart,`a` and `b` are two terms.,1,terms a b; asserted arb,0,,
+arb_once,`arb` is asserted exactly once.,1,terms a b; asserted arb,0,terms a b; asserted arb(2),1
+both_ways_always,"Whenever `xry` is asserted, `yrx` is asserted.",0,terms a b; asserted arb bra,1,terms a b; asserted arb,0
+both_ways_never,Never are `xry` and `yrx` both asserted.,1,terms a b; asserted arb,0,terms a b; asserted arb bra,1
+passes_on,"Whenever `xry` and `yrz` are asserted, `xrz` is asserted.",1,terms a b; asserted arb,0,terms a b; asserted arb bra,1
+any_two_related,"For any two terms `x`, `y`: `xry` or `yrx` is asserted.",1,terms a b; asserted arb,0,,
+every_term_first,Every term `x` has some `xry` asserted.,0,terms a b; asserted arb bra,1,terms a b; asserted arb,0
+every_term_mentioned,Every term occurs in some asserted assertion.,1,terms a b; asserted arb,0,,
+exactly_two_terms,There are exactly two terms.,1,terms a b; asserted arb,0,,
+something_asserted,Some assertion is asserted.,1,terms a b; asserted arb,0,,
+at_least_one_term,There is at least one term.,1,terms a b; asserted arb,0,,
+no_xrx,No `xrx` is asserted.,1,terms a b; asserted arb,0,,
+at_least_two_terms,There are at least two terms.,1,terms a b; asserted arb,0,,
+nothing_twice,No assertion is asserted more than once.,1,terms a b; asserted arb,0,terms a b; asserted arb(2),1
+something_twice,Some assertion is asserted at least twice.,0,terms a b; asserted arb(2),1,terms a b; asserted arb,0
+same_multiplicity,Every asserted assertion is asserted equally often.,1,terms a b; asserted arb,0,terms a b; asserted arb bra(2),2
+both_ways_equal,"Whenever `xry` and `yrx` are both asserted, they are asserted equally often.",1,terms a b; asserted arb,0,terms a b; asserted arb bra(2),2

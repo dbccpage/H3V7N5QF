@@ -186,3 +186,21 @@ reading of the seed.
     (their builds now also compile `lean4/Third/`; each report still prints
     its own library's axioms only). The third derivation's own changes are
     logged in `paper/third/change_log.md`.
+
+## Changes made during the fourth derivation (`prompt/fourth/`)
+
+22. **`lean4/lakefile.toml`: a fourth library target `Fourth` and
+    `defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth"]`.** Made by
+    the fourth derivation. Not a defect correction: it is the build
+    configuration of the shared Lake package, and the only earlier-derivation
+    file the fourth derivation touched; recorded here as
+    `prompt/fourth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/`, `lean4/Second/`,
+    `lean4/Third/`, `code/xry/`, `code/second/`, `code/third/`, the earlier
+    test sets, the earlier papers, ledgers, `evidence/`, `evidence/second/` or
+    `evidence/third/` changed. The first and second derivations' `--check`
+    were re-run after the edit and matched; the third's `--check` and the
+    three earlier Lean reports were stopped by the environment before they
+    finished and not repeated (`paper/fourth/change_log.md`, item 13); the
+    fourth's Lean report built all four libraries. The fourth derivation's own
+    changes are logged in `paper/fourth/change_log.md`.
