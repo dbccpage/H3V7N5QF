@@ -107,6 +107,7 @@ open Seed Seed.Second Seed.Third
 #print axioms two_states_differ
 #print axioms passing_on_refutes_bra
 #print axioms addAssertion_legal_iff
+#print axioms identify_legal_iff
 #print axioms adding_xrx_always_obstructed
 #print axioms addTerm_legal
 #print axioms build_gives_back
@@ -122,6 +123,8 @@ open Seed Seed.Second Seed.Third
 #print axioms rename_symm_apply
 #print axioms size_givenA
 #print axioms size_givenB
+#print axioms givenA_to_givenB3
+#print axioms build_answer3
 
 -- Earlier derivations, cited and re-checked through the embeddings
 #print axioms Step.legal
