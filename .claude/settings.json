@@ -2,7 +2,6 @@
   "model": "fable",
   "effortLevel": "xhigh",
   "permissions": {
-    "defaultMode": "bypassPermissions",
     "blockReadsOutsideWorkingDirectories": true,
     "allow": [
       "Bash",
@@ -37,12 +36,27 @@
       "PowerShell(curl *)",
       "PowerShell(wget *)",
       "PowerShell(Start-BitsTransfer *)",
-      "mcp__Claude_Browser",
-      "mcp__claude-in-chrome",
       "Edit(.claude/**)",
-      "Write(.claude/**)"
+      "PowerShell(git clone *)",
+      "PowerShell(git fetch *)",
+      "PowerShell(git pull *)",
+      "PowerShell(git push *)",
+      "PowerShell(git remote *)",
+      "PowerShell(pip install *)",
+      "PowerShell(python -m pip install *)",
+      "PowerShell(uv *)",
+      "PowerShell(lake update *)",
+      "PowerShell(lake exe cache *)",
+      "Bash(curl.exe *)",
+      "PowerShell(curl.exe *)",
+      "Bash(gh *)",
+      "PowerShell(gh *)",
+      "mcp__*",
+      "SendMessage",
+      "ListAgents"
     ]
   },
+  "crossSessionInbound": "refuse",
   "disableClaudeAiConnectors": true,
   "enableAllProjectMcpServers": false,
   "disableAllHooks": true,
