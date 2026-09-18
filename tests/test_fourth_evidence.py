@@ -78,6 +78,8 @@ def test_write_all(tmp_path: Path) -> None:
         assert pairs["unordered_pairs_reachable_both_ways"] == 0
         assert pairs["pairs_reachable_with_a_multiplicity_above_one"] > 0
         assert pairs["third_derivation_disagreements"] == []
+        assert pairs["rows_written"] == pairs["ordered_pairs_reachable"] + pairs["ordered_pairs_asserting_nothing_twice"] - pairs["of_which_reachable"]
+        assert pairs["rows_written"] < pairs["ordered_pairs"]
     for count in census.values():
         assert cli.census_ok(count) and count["bound_on_terms"] == 4 and count["rounds"] == 4
     two = runs["anchored/without_bra/bound2_rounds6"]

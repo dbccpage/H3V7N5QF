@@ -1,0 +1,10 @@
+round,new_results_within_bound,results_so_far_within_bound,changes_attempted_so_far,of_which_obstructed,new_results_asserting_nothing_twice,new_results_third_derivation,new_results_without_bound_by_formula
+0,1,1,0,0,1,1,1
+1,2,3,5,2,1,1,2
+2,6,9,20,7,3,3,6
+3,19,28,77,24,8,8,19
+4,57,85,301,85,19,19,58
+5,181,266,1095,286,49,49,186
+6,575,841,4007,977,120,120,611
+7,1859,2700,14427,3324,286,286,2076
+8,5894,8594,51693,11347,590,590,7248

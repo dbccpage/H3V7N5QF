@@ -596,8 +596,12 @@ def write_log(out: Path, sameness: Sameness, bra: bool, plan: Plan) -> int:
 def write_reach(out: Path, sameness: Sameness, bra: bool, plan: Plan) -> dict[str, object]:
     """`reach_{tag}.csv`: which result reaches which, by containment and by search.
 
-    Every ordered pair of results asserting nothing twice is also tested with
-    the third derivation's reachability, which must agree.
+    Every ordered pair of results is tested both ways and the totals are in
+    the summary; the file lists the pairs that carry information: every
+    reachable pair with its embedding, and every pair of results asserting
+    nothing twice, reachable or not, with the third derivation's verdict on
+    it (which must agree).  An ordered pair of results absent from the file
+    is unreachable and has a multiplicity above one on at least one side.
     """
     bound, rounds = plan.reach_bound, plan.reach_rounds
     expl = explore(given(bra, sameness), bound, rounds)
@@ -605,12 +609,13 @@ def write_reach(out: Path, sameness: Sameness, bra: bool, plan: Plan) -> dict[st
     rows: list[list[object]] = []
     disagreements: list[str] = []
     third_disagreements: list[str] = []
-    ordered = mutual = simple_pairs = simple_reachable = counted_only = 0
+    ordered = mutual = simple_pairs = simple_reachable = counted_only = pairs = 0
     for s in states:
         by_search = reachable_by_search(s, bound, rounds - expl.depth[s])
         if not by_search <= set(states):
             disagreements.append(f"{s.key()} -> a state that is not a result")
         for t in states:
+            pairs += 1
             q = embedding(s, t)
             here = q is not None
             both_simple = s.simple and t.simple
@@ -625,16 +630,17 @@ def write_reach(out: Path, sameness: Sameness, bra: bool, plan: Plan) -> dict[st
                 counted_only += 1
             if here != (t in by_search):
                 disagreements.append(f"{s.key()} -> {t.key()}")
-            rows.append(
-                [
-                    s.key(),
-                    t.key(),
-                    int(here),
-                    "" if q is None else " ".join(map(str, q)),
-                    int(both_simple),
-                    "" if third is None else int(third),
-                ]
-            )
+            if here or both_simple:
+                rows.append(
+                    [
+                        s.key(),
+                        t.key(),
+                        int(here),
+                        "" if q is None else " ".join(map(str, q)),
+                        int(both_simple),
+                        "" if third is None else int(third),
+                    ]
+                )
             ordered += here
             if here and s != t and reachable(t, s):
                 mutual += 1
@@ -648,7 +654,8 @@ def write_reach(out: Path, sameness: Sameness, bra: bool, plan: Plan) -> dict[st
         "bound_on_terms": bound,
         "rounds": rounds,
         "results": len(states),
-        "ordered_pairs": len(rows),
+        "ordered_pairs": pairs,
+        "rows_written": len(rows),
         "ordered_pairs_reachable": ordered,
         "unordered_pairs_reachable_both_ways": mutual // 2,
         "ordered_pairs_asserting_nothing_twice": simple_pairs,
