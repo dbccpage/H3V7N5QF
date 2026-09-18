@@ -141,3 +141,22 @@ repository in which the third derivation was made; the branch was brought to
     pair absent from it is unreachable with a multiplicity above one on one
     side (`rows_written` in the summary). Made before the first commit of the
     evidence; no number changed.
+
+15. **Review fixes: a dropped negative test restored, and full coverage
+    regained.** A review of the derivation's pull request found that the
+    FREE-cost differential check (`check_free_cost`, which cross-checks the
+    closed form `cost_free` against the best-placement form
+    `cost_free_by_placement`) had no injection test, unlike the first and
+    second derivations (`tests/test_evidence.py`, `tests/test_second_evidence.py`,
+    each with `monkeypatch.setattr(evidence, "cost_free", ...)`): the two
+    formulas always agree, so the mismatch-recording line was never executed
+    and a regression making the check vacuous would have passed green. Added
+    `test_free_cost_check_reports_a_disagreement`, which forces a disagreement
+    and asserts every checked state is recorded, plus
+    `test_independent_count_skips_terms_beyond_the_size_bound` and
+    `test_free_count_of_no_terms_is_empty` for the two defensive guards
+    (`_counted`'s `degree < 0` skip, `_free`'s zero-terms return), and
+    `# pragma: no cover` on the `__main__` guard of `code/generate_fourth.py`
+    and `code/lean_report_fourth.py` (as `fourth/__main__.py` already carries).
+    Line coverage returns to 100%. No derivation code, evidence, claim, or
+    claim status changed; the checks the tests exercise are unchanged.

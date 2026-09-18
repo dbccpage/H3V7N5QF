@@ -22,6 +22,7 @@ from fourth.evidence import (
     write_run,
 )
 from fourth.explore import Exploration, count_sequences, explore
+from fourth.orbits import counts_upto
 from fourth.state import MState, canonical, given
 from third.explore import explore as explore_third
 from xry.state import Sameness
@@ -195,6 +196,27 @@ def test_free_cost_check() -> None:
     checked, mismatches = check_free_cost(2, 2)
     assert mismatches == [] and checked == 2 * (1 + 6)
     assert check_free_cost(1, 3)[0] == 2
+
+
+def test_free_cost_check_reports_a_disagreement(monkeypatch: pytest.MonkeyPatch) -> None:
+    # The closed form and the best-placement form always agree, so the mismatch
+    # branch never fires on correct code; force a disagreement to prove the
+    # check is not vacuous (as the first and second derivations do).
+    monkeypatch.setattr(evidence, "cost_free", lambda state, bra: -1)
+    checked, mismatches = check_free_cost(2, 2)
+    assert checked == 2 * (1 + 6) and len(mismatches) == checked
+    assert mismatches[0].startswith("without_bra/")
+
+
+def test_independent_count_skips_terms_beyond_the_size_bound() -> None:
+    # `_counted` skips a term count whose least size already exceeds the rounds
+    # bound (degree < 0); with no rounds, four terms is beyond size(given) = 3.
+    assert 4 not in evidence._counted(Sameness.FREE, False, 4, 0)
+
+
+def test_free_count_of_no_terms_is_empty() -> None:
+    # `_free` returns all zeros for zero terms (no state on no terms).
+    assert counts_upto(Sameness.FREE, False, 0, 3) == [0, 0, 0, 0]
 
 
 def test_a_listed_build_that_is_not_a_build_is_counted(
