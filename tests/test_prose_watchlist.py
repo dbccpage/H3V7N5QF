@@ -95,7 +95,9 @@ def test_probe_reports_watched_status() -> None:
 
 
 def test_in_scope_excludes_seed_inputs_and_the_json() -> None:
+    # the whole prompt/ tree is read-only seed input, out of scope by prefix.
     assert not cpw.in_scope("prompt/second/seed_prompt.md")
+    assert not cpw.in_scope("prompt/third/seed_prompt.md")
     assert not cpw.in_scope(cpw.WATCHLIST_REL)
     assert cpw.in_scope("paper/second/paper.md")
 

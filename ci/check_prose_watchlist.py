@@ -52,16 +52,11 @@ from typing import NamedTuple
 
 REPO = Path(__file__).resolve().parent.parent
 WATCHLIST_REL = "ci/prose_watchlist.json"
-EXCLUDED_PATHS = frozenset(
-    {
-        "prompt/prompt.md",
-        "prompt/seed_prompt.md",
-        "prompt/second/prompt.md",
-        "prompt/second/seed_prompt.md",
-        WATCHLIST_REL,
-    }
-)
-EXCLUDED_PREFIXES: tuple[str, ...] = ()
+EXCLUDED_PATHS = frozenset({WATCHLIST_REL})
+# The whole `prompt/` tree is read-only seed input, not paper prose, so it is
+# out of scope -- one prefix rather than a file list, so a new `prompt/<n>/`
+# subtree needs no edit here.
+EXCLUDED_PREFIXES: tuple[str, ...] = ("prompt/",)
 
 TOKEN = re.compile(r"\b[a-z]+\b")
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
