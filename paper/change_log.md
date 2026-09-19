@@ -257,3 +257,22 @@ reading of the seed.
     Lean reports were re-run after the edit (`paper/seventh/change_log.md`).
     The seventh derivation's own changes are logged in
     `paper/seventh/change_log.md`.
+
+## Changes made during the eighth derivation (`prompt/eighth/`)
+
+26. **`lean4/lakefile.toml`: an eighth library target `Eighth` and
+    `defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth",
+    "Sixth", "Seventh", "Eighth"]`.** Made by the eighth derivation. Not a
+    defect correction: it is the build configuration of the shared Lake
+    package, and the only earlier-derivation file the eighth derivation
+    touched; recorded here as `prompt/eighth/prompt.md` requires for any
+    change to an earlier derivation's file. Nothing in `lean4/H3V7N5QF/`,
+    `lean4/Second/`, `lean4/Third/`, `lean4/Fourth/`, `lean4/Fifth/`,
+    `lean4/Sixth/`, `lean4/Seventh/`, `code/xry/`, `code/second/`,
+    `code/third/`, `code/fourth/`, `code/fifth/`, `code/sixth/`,
+    `code/seventh/`, the earlier test sets, the earlier papers, ledgers,
+    `evidence/`, `evidence/second/`, `evidence/third/`, `evidence/fourth/`,
+    `evidence/fifth/`, `evidence/sixth/` or `evidence/seventh/` changed. The
+    seven earlier `--check`s and the seven earlier Lean reports were re-run
+    after the edit (`paper/eighth/change_log.md`). The eighth derivation's
+    own changes are logged in `paper/eighth/change_log.md`.
