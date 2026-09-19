@@ -67,6 +67,7 @@ library re-proves some first-derivation theorems under the same short name.
 #print axioms Seed.Fifth.removed_arb_contains
 #print axioms Seed.Fifth.fewest_changes5_upper_A_apart
 #print axioms Seed.Fifth.givenA4_to_oneTerm4
+#print axioms Seed.Fifth.oneTerm4_contains
 #print axioms Seed.Fifth.fewest_changes5_upper_A_merged
 #print axioms Seed.Fifth.fewest_changes5_A
 #print axioms Seed.Fifth.fewest_changes5_upper_B_apart
@@ -152,7 +153,13 @@ library re-proves some first-derivation theorems under the same short name.
 #print axioms Seed.obstruction_persists
 #print axioms Seed.Step.costA_le
 #print axioms Seed.reach_by_edits
+#print axioms Seed.fewest_changes_lower_A
 #print axioms Seed.fewest_changes_A
+#print axioms Seed.givenB_to_givenA
+#print axioms Seed.givenA_to_oneTerm
+#print axioms Seed.givenB_to_oneTerm
+#print axioms Seed.remove_answer_one_way
+#print axioms Seed.remove_answer_two_way
 #print axioms Seed.Reach.names_stay_merged
 #print axioms Seed.Reach.arb_gone_for_good
 #print axioms Seed.remove_obstruction_first_or_last
@@ -171,7 +178,9 @@ library re-proves some first-derivation theorems under the same short name.
 #print axioms Seed.Fourth.fewest_changes4_A
 #print axioms Seed.Fourth.Try4.obstructed_iff
 #print axioms Seed.Fourth.adding_xrx_always_obstructed4
+#print axioms Seed.Fourth.addTerm_unobstructed4
 #print axioms Seed.Fourth.addAssertion_again_unobstructed
+#print axioms Seed.Fourth.two_sequences4
 #print axioms Seed.Fourth.build_answer4
 #print axioms Seed.Fourth.build_answer4_reverse
 #print axioms Seed.Fourth.givenA4_to_givenB4

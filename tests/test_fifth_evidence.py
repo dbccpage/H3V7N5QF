@@ -203,10 +203,10 @@ def test_write_run_and_census_and_given_and_reach_alone(tmp_path: Path) -> None:
     run = write_run(tmp_path, Sameness.FREE, True, 3, 3, SMALL)
     assert cli.run_ok(run) and run["results"] == 33
     census = write_census(Sameness.ANCHORED, True, 3, 3)
-    assert cli.census_ok(census) and census["results"] > 0
+    assert cli.census_ok(census) and census["results"] != 0
     assert write_given(tmp_path) == {"listed_builds_that_are_not_builds": 0}
     reach = write_reach(tmp_path, Sameness.ANCHORED, False, Plan(reach_bound=2, reach_rounds=3, reach_extra=2))
-    assert cli.reach_ok(reach) and reach["results_with_the_names_one_term"] > 0
+    assert cli.reach_ok(reach) and reach["results_with_the_names_one_term"] != 0
 
 
 def test_the_checks_fail_when_a_number_is_wrong() -> None:
