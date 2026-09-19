@@ -204,3 +204,20 @@ reading of the seed.
     finished and not repeated (`paper/fourth/change_log.md`, item 13); the
     fourth's Lean report built all four libraries. The fourth derivation's own
     changes are logged in `paper/fourth/change_log.md`.
+
+## Changes made during the fifth derivation (`prompt/fifth/`)
+
+23. **`lean4/lakefile.toml`: a fifth library target `Fifth` and
+    `defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth"]`.**
+    Made by the fifth derivation. Not a defect correction: it is the build
+    configuration of the shared Lake package, and the only earlier-derivation
+    file the fifth derivation touched; recorded here as
+    `prompt/fifth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/`, `lean4/Second/`,
+    `lean4/Third/`, `lean4/Fourth/`, `code/xry/`, `code/second/`,
+    `code/third/`, `code/fourth/`, the earlier test sets, the earlier papers,
+    ledgers, `evidence/`, `evidence/second/`, `evidence/third/` or
+    `evidence/fourth/` changed. The four earlier `--check`s and the four
+    earlier Lean reports were re-run after the edit (`paper/fifth/change_log.md`,
+    items 12 and 15). The fifth derivation's own changes are logged in
+    `paper/fifth/change_log.md`.

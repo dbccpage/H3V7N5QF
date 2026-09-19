@@ -1,0 +1,994 @@
+{
+  "anchored/with_bra": {
+    "arb_asserted_twice_reaches_what_is_given": true,
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1.1-0*1"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 3,
+            "completes_the_change": true,
+            "further": [
+              "remove arb",
+              "remove bra"
+            ],
+            "result": "1:00:"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1.1-0*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "obstruction": [
+          "arb",
+          "bra"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "obstruction": [],
+        "outcome": "2:01:1-0*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "obstruction": [],
+        "outcome": "2:01:0-1*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "obstruction": [],
+        "outcome": "3:01:0-1*1.1-0*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1.1-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3:01:0-1*1.0-2*1.1-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3:01:0-1*1.1-0*1.2-0*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2:01:0-1*2.1-0*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2:01:0-1*1.1-0*2",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1.1-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3:01:0-1*1.1-0*1.1-2*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3:01:0-1*1.1-0*1.2-1*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted arb bra cra",
+          "terms a b c; asserted arb arc bra"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted arb bra crb",
+          "terms a b c; asserted arb bra brc"
+        ]
+      }
+    },
+    "changes": 8,
+    "cost_of_nothing_asserted": 2,
+    "cost_of_the_one_term_state": 3,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_obstructed": 3,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb bra",
+    "the_one_term_state_reaches_it": false,
+    "the_other_beginning_reaches_it": true
+  },
+  "anchored/without_bra": {
+    "arb_asserted_twice_reaches_what_is_given": true,
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 2,
+            "completes_the_change": true,
+            "further": [
+              "remove arb"
+            ],
+            "result": "1:00:"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "obstruction": [
+          "arb"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "obstruction": [],
+        "outcome": "2:01:",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "obstruction": [],
+        "outcome": "3:01:0-1*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3:01:0-1*1.0-2*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3:01:0-1*1.2-0*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2:01:0-1*2",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2:01:0-1*1.1-0*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2:01:0-1*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3:01:0-1*1.1-2*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3:01:0-1*1.2-1*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted arb cra",
+          "terms a b c; asserted arb arc"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted arb crb",
+          "terms a b c; asserted arb brc"
+        ]
+      }
+    },
+    "changes": 7,
+    "cost_of_nothing_asserted": 1,
+    "cost_of_the_one_term_state": 2,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_obstructed": 3,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb",
+    "the_one_term_state_reaches_it": false,
+    "the_other_beginning_reaches_it": true
+  },
+  "free/with_bra": {
+    "arb_asserted_twice_reaches_what_is_given": true,
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1*1.1-0*1"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 3,
+            "completes_the_change": true,
+            "further": [
+              "remove arb",
+              "remove bra"
+            ],
+            "result": "1::"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1*1.1-0*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "obstruction": [
+          "arb",
+          "bra"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "obstruction": [],
+        "outcome": "2::1-0*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "obstruction": [],
+        "outcome": "2::1-0*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "obstruction": [],
+        "outcome": "3::1-2*1.2-1*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1*1.1-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3::1-2*1.2-0*1.2-1*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3::0-2*1.1-2*1.2-1*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2::0-1*1.1-0*2",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2::0-1*1.1-0*2",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::0-1*1.1-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3::1-2*1.2-0*1.2-1*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3::0-2*1.1-2*1.2-1*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted brc cra crb",
+          "terms a b c; asserted arc brc crb"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted brc cra crb",
+          "terms a b c; asserted arc brc crb"
+        ]
+      }
+    },
+    "changes": 8,
+    "cost_of_nothing_asserted": 2,
+    "cost_of_the_one_term_state": 3,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_obstructed": 3,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb bra",
+    "the_one_term_state_reaches_it": true,
+    "the_other_beginning_reaches_it": true
+  },
+  "free/without_bra": {
+    "arb_asserted_twice_reaches_what_is_given": true,
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::1-0*1"
+          },
+          {
+            "answer": "remove the obstruction",
+            "changes_performed": 2,
+            "completes_the_change": true,
+            "further": [
+              "remove bra"
+            ],
+            "result": "1::"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::1-0*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "obstruction": [
+          "bra"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "obstruction": [],
+        "outcome": "2::",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "obstruction": [],
+        "outcome": "3::2-1*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::1-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add arc"
+            ],
+            "result": "3::1-2*1.2-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add cra"
+            ],
+            "result": "3::1-0*1.2-0*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "ara"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2::0-1*1.1-0*1",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "obstruction": [],
+        "outcome": "2::1-0*2",
+        "remove_the_obstruction": null,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "answers": [
+          {
+            "answer": "refused",
+            "changes_performed": 0,
+            "completes_the_change": false,
+            "further": [],
+            "result": "2::1-0*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add brc"
+            ],
+            "result": "3::2-0*1.2-1*1"
+          },
+          {
+            "answer": "build structure",
+            "changes_performed": 2,
+            "completes_the_change": false,
+            "further": [
+              "add a term",
+              "add crb"
+            ],
+            "result": "3::1-2*1.2-0*1"
+          }
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "obstruction": [
+          "brb"
+        ],
+        "outcome": null,
+        "remove_the_obstruction": "coincides with refusal: the obstruction is the assertion the change itself adds; removing it is not adding it, and nothing changes",
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      }
+    ],
+    "builds_with_one_added_term": {
+      "add ara": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted cra crb",
+          "terms a b c; asserted brc cra"
+        ]
+      },
+      "add brb": {
+        "one_term_builds": 2,
+        "up_to_sameness": [
+          "terms a b c; asserted brc cra",
+          "terms a b c; asserted bra cra"
+        ]
+      }
+    },
+    "changes": 7,
+    "cost_of_nothing_asserted": 1,
+    "cost_of_the_one_term_state": 2,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_obstructed": 3,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb",
+    "the_one_term_state_reaches_it": true,
+    "the_other_beginning_reaches_it": true
+  },
+  "legal_states_on_the_given_terms": "infinite: `arb` i times and `bra` j times for every i, j; the names one term with nothing asserted",
+  "results_among_them": "all of them (every legal state with at least one term is a result)"
+}
