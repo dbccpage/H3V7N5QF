@@ -106,8 +106,8 @@ class Plan:
     rounds: int = 8
     census_bound: int = 5
     deep_bound: int = 3
-    deep_rounds: int = 10
-    two_term_rounds: int = 30
+    deep_rounds: int = 9
+    two_term_rounds: int = 20
     log_bound: int = 2
     log_rounds: int = 3
     reach_bound: int = 3

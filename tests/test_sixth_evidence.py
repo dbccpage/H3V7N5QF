@@ -52,8 +52,8 @@ SMALL = Plan(
 
 def test_plan() -> None:
     assert Plan().bound(Sameness.FREE) == 5 and Plan().bound(Sameness.ANCHORED) == 4
-    assert Plan().rounds == 8 and Plan().two_term_rounds == 30 and Plan().census_bound == 5
-    assert Plan().runs(Sameness.FREE) == ((5, 8), (3, 10), (2, 30))
+    assert Plan().rounds == 8 and Plan().two_term_rounds == 20 and Plan().census_bound == 5
+    assert Plan().runs(Sameness.FREE) == ((5, 8), (3, 9), (2, 20))
     assert SMALL.runs(Sameness.ANCHORED) == ((3, 4), (3, 5), (2, 6))
     assert run_tag(Sameness.FREE, True, 3, 4) == "bound3_rounds4_free_with_bra"
     assert [two_term_round_count(False, r) for r in range(8)] == [1, 6, 16, 32, 59, 98, 151, 220]
