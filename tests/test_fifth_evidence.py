@@ -23,7 +23,7 @@ from fifth.evidence import (
     write_reach,
     write_run,
 )
-from fifth.explore import Exploration, attempt, count_shortest_sequences, explore
+from fifth.explore import Exploration, attempt, count_shortest_sequences, explore, performed
 from fifth.state import MState, canonical, given
 from fourth.explore import explore as explore_fourth
 from xry.state import Sameness
@@ -178,6 +178,25 @@ def test_check_changes_sees_names_told_apart(monkeypatch: pytest.MonkeyPatch) ->
     assert check_changes(expl, False).names_told_apart_again
 
 
+def test_check_changes_reports_cost_disagreements(monkeypatch: pytest.MonkeyPatch) -> None:
+    # The cost invariant and the per-change rule always hold, so their failure
+    # branches never fire on correct code; force each to prove the check bites.
+    expl = explore(given(False, Sameness.ANCHORED), 3, 4)
+    monkeypatch.setattr(evidence, "cost_rises_by_at_most_one", lambda state, out, bra: False)
+    assert check_changes(expl, False).cost_raised_by_more_than_one
+    monkeypatch.setattr(evidence, "raises_by_one", lambda state, change, bra: True)
+    assert check_changes(expl, False).cost_rule_disagreements
+
+
+def test_check_changes_counts_a_change_that_keeps_the_round() -> None:
+    # A change never keeps the round (the cost moves by exactly one); force one
+    # edge to, so the step == 0 branch is exercised.
+    expl = explore(given(False, Sameness.ANCHORED), 3, 4)
+    state, _change, out = next(iter(performed(expl)))
+    expl.depth[out] = expl.depth[state]
+    assert check_changes(expl, False).round_kept > 0
+
+
 def test_compare_with_fourth_notices_a_difference() -> None:
     expl = explore(given(False, Sameness.ANCHORED), 3, 4)
     fourth = explore_fourth(given(False, Sameness.ANCHORED), 3, 4)
@@ -197,6 +216,24 @@ def test_free_cost_check_reports_a_disagreement(monkeypatch: pytest.MonkeyPatch)
     monkeypatch.setattr(evidence, "cost_free", lambda state, bra: -1)
     checked, mismatches = check_free_cost(2, 1)
     assert len(mismatches) == checked
+
+
+def test_two_term_binomial_check_can_fail(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    # Force the shortest-sequence counts to a wrong constant so the binomial
+    # identity fails, proving the check is not vacuous.
+    monkeypatch.setattr(evidence, "count_shortest_sequences", lambda expl: {state: 1 for state in expl.depth})
+    run = write_run(tmp_path, Sameness.ANCHORED, False, 2, 3, SMALL)
+    assert run["two_term_sequences_equal_binomial"] is False and not cli.run_ok(run)
+
+
+def test_reach_reports_a_disagreement(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    # Starve the graph search so it finds only the state itself; the names
+    # criterion then reaches pairs the search does not, proving the
+    # agreement check bites.
+    monkeypatch.setattr(evidence, "reachable_in_graph", lambda graph, s: {s})
+    got = write_reach(tmp_path, Sameness.FREE, False, SMALL)
+    assert not got["criterion_agrees_with_search"] and got["disagreements"]
+    assert not cli.reach_ok(got)
 
 
 def test_write_run_and_census_and_given_and_reach_alone(tmp_path: Path) -> None:

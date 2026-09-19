@@ -149,3 +149,22 @@ installed the fifth seed — before any work of the fifth derivation).
     records them, and the gate is clean on the tracked tree. The full test
     suite was first run before the pin was refreshed and its watchlist test
     failed on exactly those hits; re-run after the pin, all tests pass.
+
+17. **Review fixes: dropped injection tests restored, full coverage regained.**
+    A review of the derivation's pull request found four differential-check
+    failure branches in `code/fifth/evidence.py` that no test exercised: the
+    reachability `criterion_agrees_with_search` disagreement (678) and the
+    two-term binomial check (452) — for both of which the fourth derivation
+    had injection tests (`test_reach_reports_a_disagreement`,
+    `test_two_term_binomial_check_can_fail`) that the fifth dropped — and the
+    two new cost checks in `check_changes` (366 `cost_rises_by_at_most_one`,
+    368 the per-change `raises_by_one` rule), which had none. Each check is
+    gated by `run_ok`/`reach_ok`, so a real defect fails the gate, but the
+    detection logic itself was never proven to fire, against this repository's
+    injection discipline. Added `test_reach_reports_a_disagreement`,
+    `test_two_term_binomial_check_can_fail`,
+    `test_check_changes_reports_cost_disagreements`, and
+    `test_check_changes_counts_a_change_that_keeps_the_round` (the last for the
+    benign step-zero branch at 377). Line coverage returns to 100%. No
+    derivation code, evidence, claim, or claim status changed; the checks the
+    tests exercise are unchanged.
