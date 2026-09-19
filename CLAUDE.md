@@ -1559,3 +1559,305 @@ From the repository root:
 - `python code/lean_report_seventh.py` builds `lean4/` and writes
   `evidence/seventh/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Eighth derivation (`prompt/eighth/`) — plan and stopping conditions
+
+Written before any other work of the eighth derivation, as
+`prompt/eighth/prompt.md` requires. Inputs: `prompt/eighth/prompt.md` and
+`prompt/eighth/seed_prompt.md`; the seven earlier derivations (`paper/`,
+`paper/second/` … `paper/seventh/`, `code/xry/` … `code/seventh/`,
+`lean4/H3V7N5QF/` … `lean4/Seventh/`, `evidence/` … `evidence/seventh/`) are
+cited where used, never assumed. Everything above stays in force (isolation,
+no network, `prompt/` untouched, `.lake/` never committed, bookkeeping rules
+1–4, the evidence-module coverage gate). Rule 5 of the eighth task: every
+result of an earlier derivation that is used is cited and its proof
+re-checked from the eighth seed, and the re-check says whether the result
+survives the second relation — in Lean by the two projections of a
+two-relation state onto its `r` part and its `s` part (each a state of the
+sixth seed: the same terms and names, one multiplicity function), by the
+embedding of the sixth's states and changes as two-relation states asserting
+nothing with `s` (every change of the sixth is a change of the eighth on
+them), and by the fact that every change of the eighth is a change of the
+sixth on one projection and leaves the other as it is (a term or an
+identification acts on both); by observing that the statement mentions no
+relation at all; or by computing it again from the eighth seed's own
+exploration and comparing with the sixth's on the results asserting nothing
+with `s`.
+
+## What differs in the seed
+
+Two passages (`diff` against the sixth seed): "An assertion is written `xry`
+or `xsy`, where `x` and `y` are terms and `r` and `s` are the two relations"
+and "Whether `bra`, or anything written with `s`, is asserted is not given."
+Every other sentence is identical to the sixth seed's. So the state gains a
+second multiplicity function: terms, a multiplicity for each ordered pair in
+`r` and one in `s`, the names `a`, `b`; the given lives in `r` alone (`arb`
+once), and `s` begins used by nothing (chosen: C2″, the unchosen beginnings
+asserting something with `s` being results of it with the same results); the
+four kinds of change range over both relations (removing or adding an
+assertion of either; identifying two terms merges them in every assertion of
+both); sameness rewrites both at once. Everything the sixth argued from one
+multiplicity function — the size, the destroyed givens, the potential, the
+addition path, the reachability path, the counts by series, rewriting — must
+be re-examined with the second function alongside; what it argued from the
+terms and the names alone (the names once one term stay one term, the moves
+of the names, the two-change cycle) carries over.
+
+## Layout
+
+- `research/eighth/` — reading notes (not evidence).
+- `code/eighth/` — typed Python package for the eighth seed. New state
+  `DState` (terms, a multiplicity per ordered pair in `r` and in `s`, optional
+  names) with sameness under both readings (the rewriting acting on both
+  relations), the two projections `r_part`, `s_part` (each a `fourth.state.
+  MState`), the embedding `of_r` (an `MState` read as a two-relation state
+  with nothing in `s`), the size (terms plus both totals). Imported from the
+  earlier packages what one relation leaves intact: `Sameness`, the kinds of
+  change (`xry.changes.Kind`), the identification map, the cycle machinery
+  and the series of the orbit counts (`xry.orbits`, `fourth.orbits.series`,
+  `sixth.orbits` helpers), the sixth's cost, destroyed givens, FREE closed
+  form and cost-raising rule *applied to the `r` projection*, the sixth's
+  exactness rule for the shortest-sequence counts on the `r` projection, the
+  sixth's reachability criterion on the `r` projection, the statements
+  tested (on either projection), the fewest-classes count, the writers,
+  `compare_evidence`, the Lean report runner, and the sixth's exploration,
+  cost, sequence counts and reachability for the comparison. Defined afresh:
+  the change record with a relation (`Change8`), the list of changes of a
+  state (`C(n, 2) + d_r + d_s + 1 + 2n²`), `perform` on both relations, the
+  exploration, the cost in closed form (the sixth's on the `r` part plus the
+  total multiplicity of `s`), the cost-raising rule (an `s` addition always;
+  an `s` removal never; the rest the sixth's on the `r` part), reachability
+  (the names on the `r` part; the `s` part free), the independent count with
+  every cycle of the rewriting carrying two multiplicities (the `r` factor
+  as the sixth's by destroyed givens, the `s` factor free), the two-term
+  closed forms (round counts; the multinomial with the four `s` items
+  added), the joint statements (nothing in `s`; some pair asserted in both
+  relations; `r` and `s` agree everywhere; …), the comparison with the sixth
+  on the results asserting nothing with `s`, and the count of results
+  against the product of the single-relation counts (the computed sense in
+  which `s` is not an independent copy). Earlier derivations' files are not
+  modified except to correct a defect, recorded in the relevant change log.
+- `tests/test_eighth_*.py` — tests of `code/eighth/`; all of `code/` stays
+  at ≥ 95 % line and ≥ 95 % branch coverage, every `code/**/evidence.py`
+  fully covered (an injection test for every differential check);
+  `mypy --strict` passes; the prose watchlist stays clean.
+- `lean4/Eighth/` — an eighth Lean library in the same Lake package (the
+  lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Seventh`. New: `DSt` (terms, a
+  multiplicity function for each of the two relations — a function from a
+  relation tag to a multiplicity function — and the names), `WF` (both
+  projections well formed), `size8`, the projections `DSt.proj rel : MSt`,
+  the embedding `MSt.ofR : DSt` (nothing in `s`), the four kinds with a
+  relation tag as an inductive `Step8`, `Reach8`; `Step6.ofR`, `Reach6.ofR`;
+  `Step8.proj` (a change is a `Step6` on one projection and leaves the other
+  unchanged, or is a `Step6` on both); the potential `costA8`, `costB8`
+  (the sixth's on the `r` projection plus the `s` total); the raising path
+  for either relation; the reachability path (clear `s`, the sixth's path on
+  `r` through `ofR`, raise `s`).
+- `evidence/eighth/` — written by `python code/generate_eighth.py`; the
+  axiom report by `python code/lean_report_eighth.py`; `--check`
+  regenerates into a temporary folder and compares.
+- `paper/eighth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the eighth seed (`research/eighth/`)
+Sentence-by-sentence diff against the sixth seed (and the seventh's); the
+notion table with source statuses; which readings change: C2″ (what is
+given: `a`, `b`, `arb` once, `bra` once or not at all, nothing with `s` —
+chosen; a beginning asserting something with `s` is a result of it and
+reaches the same results, and its cost is the chosen beginning's formula
+with the given `s` assertions counted among the givens, proved in the paper);
+C5⁗ (what is a change: the sixth's, in either relation; an identification
+adds up the multiplicities of the merged pairs in each relation separately);
+C6 (fewest additions first: identifications, removals in `r`, removals in
+`s`, a term, additions in `r`, additions in `s`); C8′ unchanged in kind.
+Expected consequences to be proved or refuted: the results are every
+well-formed two-relation state with a term (from either beginning), so for
+every well-formed `r` state and every well-formed `s` state on the same terms
+and names the pair is a result — the results are jointly free; the sixth's
+results are exactly the results asserting nothing with `s`, at the same
+rounds and with the same shortest-sequence counts; the fewest changes to a
+result is the sixth's fewest changes to its `r` part plus the total
+multiplicity of its `s` part (the potential `size + 2·lost` with the size
+counting both relations and the destroyed givens read on `r`; per relation
+the cost is additive, and the `s` part costs exactly its total, as under the
+seventh seed); the reachability criterion is the sixth's on the `r` part
+(the names) and the `s` part imposes nothing — reachability holds jointly
+exactly when it holds for the `r` parts; mutual reachability, comparability,
+the one-way merge of the names and the two-change cycle survive; the number
+of results with `n` terms up to rewriting is not the product of the
+single-relation counts (the rewriting acts on both at once: 8 against 4 with
+two terms and one assertion in each) — the sense in which `s` is not an
+independent copy — while every statement about `s` alone that fails in some
+`s` state fails in some result and no statement about `r` constrains `s`;
+which statements hold in every result: at least one term only; a result with
+`n` terms and `d_r + d_s` asserted pairs has `C(n, 2) + d_r + d_s + 1 + 2n²`
+changes, `n` plus the related pairs in `r` of them making some `xrx`
+asserted on a result asserting none (the sixth's count on the `r` part) and
+likewise for `s`; the two-term round counts are the sixth's convolved with
+the `s` counts; the results per round grow faster than the sixth's, so lower
+bounds on rounds are declared.
+
+### Phase 2 — `code/eighth/` and `tests/`
+- the two-relation state, its sameness, projections and embedding; changes
+  (four kinds over two relations), the attempt record (outcome; whether it
+  asserts some `xrx`, some `xsx`); exploration bounded in terms and rounds;
+  full logs at a small bound;
+- cost in closed form (the sixth's on the `r` part plus the `s` total)
+  checked against the explored rounds; the FREE closed form checked against
+  the best placement; every change within the bound checked to raise the
+  cost by at most one; the cost-raising rule checked; parity checked;
+- shortest sequences by dynamic programming with the sixth's exactness rule
+  on the `r` part; the two-term multinomial (names apart, eight items);
+- an independent count of the results by terms, total multiplicity and
+  destroyed givens, every cycle of the rewriting carrying two multiplicities
+  (the `r` factor split by destroyed givens as the sixth's, the `s` factor
+  free), as the completeness certificate; its part with nothing in `s` must
+  be the sixth's count; the count of results against the product of the
+  single-relation counts;
+- the eighth exploration compared with the sixth's at the same bound and
+  rounds: the sixth's results must be exactly the results asserting nothing
+  with `s`, at the same rounds, with the same shortest-sequence counts; the
+  reachability criterion compared with the sixth's on those results;
+- reachability by the names criterion on the `r` part checked against
+  breadth-first search among the results within a small bound;
+- per result the counts of changes making some `xrx` or some `xsx` asserted,
+  checked against the sixth's formula on each projection;
+- property witnesses for "what does not follow", the joint statements
+  included;
+- deterministic evidence writer with `--check`; Lean axiom-report writer for
+  `lean4/Eighth/Axioms.lean`.
+
+### Phase 3 — `lean4/Eighth/`
+Targets, in order:
+1. `DSt`, `WF`, `size8`, `proj`, `ofR`, the two beginnings (`givenA8`,
+   `givenB8`), the operations (a term; an assertion in a relation; a removal
+   in a relation; an identification of both); `Step8`, `Reach8`; `proj` of
+   every operation (`proj_addTerm`, `proj_addAssertion_same`,
+   `proj_addAssertion_other`, …, `proj_identify`); `Step6.ofR`,
+   `Reach6.ofR` (every change of the sixth is a change of the eighth with
+   nothing in `s`); `Step8.proj` (a change of the eighth is a change of the
+   sixth on one projection and leaves the other as it is, or is a change of
+   the sixth on both); `Reach8.proj` (a sequence of the eighth projects to a
+   sequence of the sixth on either relation, no longer); well-formedness, at
+   least one term, the names once one term stay one term (through the `r`
+   projection).
+2. Cost: `lostA8`, `lostB8` (the sixth's on the `r` projection), `costA8`,
+   `costB8` (the size counting both relations plus twice the destroyed
+   givens); the potential rises by at most one per change
+   (`Step8.costA_le`, `_B`: the sixth's lemmas on the `r` projection for the
+   `r` changes and the identification; the `s` total moves by one for the
+   `s` changes and is kept by an identification, `total_identify` on the `s`
+   projection); the lower bounds; `reach8_raise` (raising the multiplicities
+   of one relation, the sixth's `reach6_raise` with a relation tag);
+   `reach8_of_contains`; the upper bound: the sixth's sequence to the `r`
+   part lifted through `ofR` (nothing in `s` along it: the identification of
+   two terms keeps an empty relation empty, `identify_zero`), then the `s`
+   additions (`fewest_changes8_A`, `_B`); on results with nothing in `s` the
+   sixth's fewest changes survive (`fewest_changes8_of_r_A`, `_B`); parity
+   (`Step8.size_step`, `Reach8.size_parity`).
+3. Reachability: `reach8_clear` (removing every `s` assertion), then the
+   sixth's `reach6_of_names` on the `r` projection through `ofR`, then the
+   `s` additions: `reach8_of_names`, `reach8_iff` (the names on the `r`
+   part decide; the `s` part imposes nothing), `result8_iff_A`, `_B` (every
+   well-formed two-relation state), `results_pair` (any well-formed `r` and
+   `s` parts on the same terms and names make a result), `reach8_symm`,
+   `reach8_total`, `merged_never_apart8`, `cycle2_8`, `Reach8.unbounded`;
+   the failures of one-way reachability through `ofR`.
+4. What survives (`Eighth/Compare.lean`): every result of the sixth is a
+   result of the eighth with nothing in `s` at the same round (`ofR`), and
+   the results of the eighth asserting nothing with `s` are the sixth's
+   (`results_r_iff`); the `r` projection of every result is a sixth result
+   and so is the `s` projection (`proj_results`); the cost is additive per
+   relation (`cost8_eq`: definitional) and the fewest changes to a result is
+   the sixth's fewest changes to its `r` part plus its `s` total; the
+   criterion survives as a statement about the `r` part's names
+   (`criterion_survives`); the `s` relation adds a term to the cost and
+   nothing to the criterion — the one interaction is through the terms and
+   the names (an identification merges both; a rewriting rewrites both).
+5. `rename8`, `Step8.rename`, `Reach8.rename`, the cost in every writing,
+   the every-writing fewest changes. Attempted once; if a step does not close
+   it is proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the eighth paper cites, into
+`evidence/eighth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/eighth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The seven earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/eighth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives the second relation; a section answering
+the task's question for the results, the reachability criterion, the cost
+and separability — per relation, jointly, or not — and how the two relations
+interact; final section: nearest known results and differences — the only
+place where outside names appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (eighth derivation)
+
+The run stops when Z1–Z9 hold, or when a blocker is hit.
+
+- Z1 Every notion in `paper/eighth/paper.md` has one recorded source status.
+- Z2 Every claim in `paper/eighth/claim_ledger.md` has evidence, or is open.
+- Z3 Every alternative is kept, or eliminated by a cited proof.
+- Z4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- Z5 `lake build` (pinned toolchain, inside `lean4/`) passes for all eight
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all eight
+  axiom reports regenerated and committed.
+- Z6 `evidence/eighth/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- Z7 Every use of an earlier result in the eighth paper is cited and
+  re-checked, with the re-check saying whether it survives the second
+  relation (ledger column "re-check").
+- Z8 The prose watchlist passes on the tracked tree; every pinned hit of the
+  eighth paper is in its final section.
+- Z9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and rounds together, as the fourth's to seventh's. A
+  result now has `2n²` pairs to assert, so the results per round grow faster
+  than the sixth's; the independent count sizes every run in advance, and
+  the targets are 4 terms (FREE) and 3 terms (ANCHORED) with 7 rounds, 3
+  terms with 8 rounds under FREE, 2 terms with 20 rounds, an ANCHORED census
+  one term higher, full attempt logs at 2 terms and 3 rounds, reachability at
+  2 terms with 5 rounds or 3 terms with 3 rounds, whichever holds under a
+  million ordered pairs. Any run that does not complete in minutes here has
+  its rounds lowered first, then its terms; the bounds used are declared in
+  the paper; the frontier is exported exactly; completeness within the bound
+  is certified by the independent count; the two-term round counts are
+  proved in closed form for every round.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–4 required; target 5 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: the seventh derivation's pull request stays open on
+  `worktree-third-derivation`, so the eighth's work goes on a branch
+  `worktree-eighth-derivation` made from the seventh's last commit, and its
+  pull request is opened against the seventh's branch.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The worktree's
+`lean4/.lake/packages` is still the local junction to the main checkout's
+pinned packages (checked before Phase 0; no download happens).
+
+## How to run (eighth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, eight derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_eighth.py` writes `evidence/eighth/`;
+  `python code/generate_eighth.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_eighth.py` builds `lean4/` and writes
+  `evidence/eighth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
