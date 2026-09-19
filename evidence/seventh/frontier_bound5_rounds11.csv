@@ -1,0 +1,1605 @@
+state,written,round_first_reached,leaves_by_the_change
+5::,terms a b c d e; asserted nothing,5,1
+5::4-4*1,terms a b c d e; asserted ere,6,1
+5::4-4*2,terms a b c d e; asserted ere(2),7,1
+5::4-4*3,terms a b c d e; asserted ere(3),8,1
+5::4-4*4,terms a b c d e; asserted ere(4),9,1
+5::4-4*5,terms a b c d e; asserted ere(5),10,1
+5::4-3*1,terms a b c d e; asserted erd,6,1
+5::4-3*1.4-4*1,terms a b c d e; asserted erd ere,7,1
+5::4-3*1.4-4*2,terms a b c d e; asserted erd ere(2),8,1
+5::4-3*1.4-4*3,terms a b c d e; asserted erd ere(3),9,1
+5::4-3*1.4-4*4,terms a b c d e; asserted erd ere(4),10,1
+5::4-3*2,terms a b c d e; asserted erd(2),7,1
+5::4-3*2.4-4*1,terms a b c d e; asserted erd(2) ere,8,1
+5::4-3*2.4-4*2,terms a b c d e; asserted erd(2) ere(2),9,1
+5::4-3*2.4-4*3,terms a b c d e; asserted erd(2) ere(3),10,1
+5::4-3*3,terms a b c d e; asserted erd(3),8,1
+5::4-3*3.4-4*1,terms a b c d e; asserted erd(3) ere,9,1
+5::4-3*3.4-4*2,terms a b c d e; asserted erd(3) ere(2),10,1
+5::4-3*4,terms a b c d e; asserted erd(4),9,1
+5::4-3*4.4-4*1,terms a b c d e; asserted erd(4) ere,10,1
+5::4-3*5,terms a b c d e; asserted erd(5),10,1
+5::4-2*1.4-3*1,terms a b c d e; asserted erc erd,7,1
+5::4-2*1.4-3*1.4-4*1,terms a b c d e; asserted erc erd ere,8,1
+5::4-2*1.4-3*1.4-4*2,terms a b c d e; asserted erc erd ere(2),9,1
+5::4-2*1.4-3*1.4-4*3,terms a b c d e; asserted erc erd ere(3),10,1
+5::4-2*1.4-3*2,terms a b c d e; asserted erc erd(2),8,1
+5::4-2*1.4-3*2.4-4*1,terms a b c d e; asserted erc erd(2) ere,9,1
+5::4-2*1.4-3*2.4-4*2,terms a b c d e; asserted erc erd(2) ere(2),10,1
+5::4-2*1.4-3*3,terms a b c d e; asserted erc erd(3),9,1
+5::4-2*1.4-3*3.4-4*1,terms a b c d e; asserted erc erd(3) ere,10,1
+5::4-2*1.4-3*4,terms a b c d e; asserted erc erd(4),10,1
+5::4-2*2.4-3*2,terms a b c d e; asserted erc(2) erd(2),9,1
+5::4-2*2.4-3*2.4-4*1,terms a b c d e; asserted erc(2) erd(2) ere,10,1
+5::4-2*2.4-3*3,terms a b c d e; asserted erc(2) erd(3),10,1
+5::4-1*1.4-2*1.4-3*1,terms a b c d e; asserted erb erc erd,8,1
+5::4-1*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted erb erc erd ere,9,1
+5::4-1*1.4-2*1.4-3*1.4-4*2,terms a b c d e; asserted erb erc erd ere(2),10,1
+5::4-1*1.4-2*1.4-3*2,terms a b c d e; asserted erb erc erd(2),9,1
+5::4-1*1.4-2*1.4-3*2.4-4*1,terms a b c d e; asserted erb erc erd(2) ere,10,1
+5::4-1*1.4-2*1.4-3*3,terms a b c d e; asserted erb erc erd(3),10,1
+5::4-1*1.4-2*2.4-3*2,terms a b c d e; asserted erb erc(2) erd(2),10,1
+5::4-0*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted era erb erc erd,9,1
+5::4-0*1.4-1*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted era erb erc erd ere,10,1
+5::4-0*1.4-1*1.4-2*1.4-3*2,terms a b c d e; asserted era erb erc erd(2),10,1
+5::3-4*1.4-4*1,terms a b c d e; asserted dre ere,7,1
+5::3-4*1.4-4*2,terms a b c d e; asserted dre ere(2),8,1
+5::3-4*1.4-4*3,terms a b c d e; asserted dre ere(3),9,1
+5::3-4*1.4-4*4,terms a b c d e; asserted dre ere(4),10,1
+5::3-4*1.4-3*1,terms a b c d e; asserted dre erd,7,1
+5::3-4*1.4-3*1.4-4*1,terms a b c d e; asserted dre erd ere,8,1
+5::3-4*1.4-3*1.4-4*2,terms a b c d e; asserted dre erd ere(2),9,1
+5::3-4*1.4-3*1.4-4*3,terms a b c d e; asserted dre erd ere(3),10,1
+5::3-4*1.4-3*2,terms a b c d e; asserted dre erd(2),8,1
+5::3-4*1.4-3*2.4-4*1,terms a b c d e; asserted dre erd(2) ere,9,1
+5::3-4*1.4-3*2.4-4*2,terms a b c d e; asserted dre erd(2) ere(2),10,1
+5::3-4*1.4-3*3,terms a b c d e; asserted dre erd(3),9,1
+5::3-4*1.4-3*3.4-4*1,terms a b c d e; asserted dre erd(3) ere,10,1
+5::3-4*1.4-3*4,terms a b c d e; asserted dre erd(4),10,1
+5::3-4*1.4-2*1,terms a b c d e; asserted dre erc,7,1
+5::3-4*1.4-2*1.4-4*1,terms a b c d e; asserted dre erc ere,8,1
+5::3-4*1.4-2*1.4-4*2,terms a b c d e; asserted dre erc ere(2),9,1
+5::3-4*1.4-2*1.4-4*3,terms a b c d e; asserted dre erc ere(3),10,1
+5::3-4*1.4-2*1.4-3*1,terms a b c d e; asserted dre erc erd,8,1
+5::3-4*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted dre erc erd ere,9,1
+5::3-4*1.4-2*1.4-3*1.4-4*2,terms a b c d e; asserted dre erc erd ere(2),10,1
+5::3-4*1.4-2*1.4-3*2,terms a b c d e; asserted dre erc erd(2),9,1
+5::3-4*1.4-2*1.4-3*2.4-4*1,terms a b c d e; asserted dre erc erd(2) ere,10,1
+5::3-4*1.4-2*1.4-3*3,terms a b c d e; asserted dre erc erd(3),10,1
+5::3-4*1.4-2*2,terms a b c d e; asserted dre erc(2),8,1
+5::3-4*1.4-2*2.4-4*1,terms a b c d e; asserted dre erc(2) ere,9,1
+5::3-4*1.4-2*2.4-4*2,terms a b c d e; asserted dre erc(2) ere(2),10,1
+5::3-4*1.4-2*2.4-3*1,terms a b c d e; asserted dre erc(2) erd,9,1
+5::3-4*1.4-2*2.4-3*1.4-4*1,terms a b c d e; asserted dre erc(2) erd ere,10,1
+5::3-4*1.4-2*2.4-3*2,terms a b c d e; asserted dre erc(2) erd(2),10,1
+5::3-4*1.4-2*3,terms a b c d e; asserted dre erc(3),9,1
+5::3-4*1.4-2*3.4-4*1,terms a b c d e; asserted dre erc(3) ere,10,1
+5::3-4*1.4-2*3.4-3*1,terms a b c d e; asserted dre erc(3) erd,10,1
+5::3-4*1.4-2*4,terms a b c d e; asserted dre erc(4),10,1
+5::3-4*1.4-1*1.4-2*1,terms a b c d e; asserted dre erb erc,8,1
+5::3-4*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted dre erb erc ere,9,1
+5::3-4*1.4-1*1.4-2*1.4-4*2,terms a b c d e; asserted dre erb erc ere(2),10,1
+5::3-4*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted dre erb erc erd,9,1
+5::3-4*1.4-1*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted dre erb erc erd ere,10,1
+5::3-4*1.4-1*1.4-2*1.4-3*2,terms a b c d e; asserted dre erb erc erd(2),10,1
+5::3-4*1.4-1*1.4-2*2,terms a b c d e; asserted dre erb erc(2),9,1
+5::3-4*1.4-1*1.4-2*2.4-4*1,terms a b c d e; asserted dre erb erc(2) ere,10,1
+5::3-4*1.4-1*1.4-2*2.4-3*1,terms a b c d e; asserted dre erb erc(2) erd,10,1
+5::3-4*1.4-1*1.4-2*3,terms a b c d e; asserted dre erb erc(3),10,1
+5::3-4*1.4-1*2.4-2*2,terms a b c d e; asserted dre erb(2) erc(2),10,1
+5::3-4*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted dre era erb erc,9,1
+5::3-4*1.4-0*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted dre era erb erc ere,10,1
+5::3-4*1.4-0*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted dre era erb erc erd,10,1
+5::3-4*1.4-0*1.4-1*1.4-2*2,terms a b c d e; asserted dre era erb erc(2),10,1
+5::3-4*2.4-4*1,terms a b c d e; asserted dre(2) ere,8,1
+5::3-4*2.4-4*2,terms a b c d e; asserted dre(2) ere(2),9,1
+5::3-4*2.4-4*3,terms a b c d e; asserted dre(2) ere(3),10,1
+5::3-4*2.4-3*1.4-4*1,terms a b c d e; asserted dre(2) erd ere,9,1
+5::3-4*2.4-3*1.4-4*2,terms a b c d e; asserted dre(2) erd ere(2),10,1
+5::3-4*2.4-3*2,terms a b c d e; asserted dre(2) erd(2),9,1
+5::3-4*2.4-3*2.4-4*1,terms a b c d e; asserted dre(2) erd(2) ere,10,1
+5::3-4*2.4-3*3,terms a b c d e; asserted dre(2) erd(3),10,1
+5::3-4*2.4-2*1,terms a b c d e; asserted dre(2) erc,8,1
+5::3-4*2.4-2*1.4-4*1,terms a b c d e; asserted dre(2) erc ere,9,1
+5::3-4*2.4-2*1.4-4*2,terms a b c d e; asserted dre(2) erc ere(2),10,1
+5::3-4*2.4-2*1.4-3*1,terms a b c d e; asserted dre(2) erc erd,9,1
+5::3-4*2.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted dre(2) erc erd ere,10,1
+5::3-4*2.4-2*1.4-3*2,terms a b c d e; asserted dre(2) erc erd(2),10,1
+5::3-4*2.4-2*2,terms a b c d e; asserted dre(2) erc(2),9,1
+5::3-4*2.4-2*2.4-4*1,terms a b c d e; asserted dre(2) erc(2) ere,10,1
+5::3-4*2.4-2*2.4-3*1,terms a b c d e; asserted dre(2) erc(2) erd,10,1
+5::3-4*2.4-2*3,terms a b c d e; asserted dre(2) erc(3),10,1
+5::3-4*2.4-1*1.4-2*1,terms a b c d e; asserted dre(2) erb erc,9,1
+5::3-4*2.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted dre(2) erb erc ere,10,1
+5::3-4*2.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted dre(2) erb erc erd,10,1
+5::3-4*2.4-1*1.4-2*2,terms a b c d e; asserted dre(2) erb erc(2),10,1
+5::3-4*2.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted dre(2) era erb erc,10,1
+5::3-4*3.4-4*1,terms a b c d e; asserted dre(3) ere,9,1
+5::3-4*3.4-4*2,terms a b c d e; asserted dre(3) ere(2),10,1
+5::3-4*3.4-3*1.4-4*1,terms a b c d e; asserted dre(3) erd ere,10,1
+5::3-4*3.4-2*1,terms a b c d e; asserted dre(3) erc,9,1
+5::3-4*3.4-2*1.4-4*1,terms a b c d e; asserted dre(3) erc ere,10,1
+5::3-4*3.4-2*1.4-3*1,terms a b c d e; asserted dre(3) erc erd,10,1
+5::3-4*3.4-2*2,terms a b c d e; asserted dre(3) erc(2),10,1
+5::3-4*3.4-1*1.4-2*1,terms a b c d e; asserted dre(3) erb erc,10,1
+5::3-4*4.4-4*1,terms a b c d e; asserted dre(4) ere,10,1
+5::3-4*4.4-2*1,terms a b c d e; asserted dre(4) erc,10,1
+5::3-3*1.4-4*1,terms a b c d e; asserted drd ere,7,1
+5::3-3*1.4-4*2,terms a b c d e; asserted drd ere(2),8,1
+5::3-3*1.4-4*3,terms a b c d e; asserted drd ere(3),9,1
+5::3-3*1.4-4*4,terms a b c d e; asserted drd ere(4),10,1
+5::3-3*1.4-3*1.4-4*1,terms a b c d e; asserted drd erd ere,8,1
+5::3-3*1.4-3*1.4-4*2,terms a b c d e; asserted drd erd ere(2),9,1
+5::3-3*1.4-3*1.4-4*3,terms a b c d e; asserted drd erd ere(3),10,1
+5::3-3*1.4-3*2.4-4*1,terms a b c d e; asserted drd erd(2) ere,9,1
+5::3-3*1.4-3*2.4-4*2,terms a b c d e; asserted drd erd(2) ere(2),10,1
+5::3-3*1.4-3*3.4-4*1,terms a b c d e; asserted drd erd(3) ere,10,1
+5::3-3*1.4-2*1,terms a b c d e; asserted drd erc,7,1
+5::3-3*1.4-2*1.4-4*1,terms a b c d e; asserted drd erc ere,8,1
+5::3-3*1.4-2*1.4-4*2,terms a b c d e; asserted drd erc ere(2),9,1
+5::3-3*1.4-2*1.4-4*3,terms a b c d e; asserted drd erc ere(3),10,1
+5::3-3*1.4-2*1.4-3*1,terms a b c d e; asserted drd erc erd,8,1
+5::3-3*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drd erc erd ere,9,1
+5::3-3*1.4-2*1.4-3*1.4-4*2,terms a b c d e; asserted drd erc erd ere(2),10,1
+5::3-3*1.4-2*1.4-3*2,terms a b c d e; asserted drd erc erd(2),9,1
+5::3-3*1.4-2*1.4-3*2.4-4*1,terms a b c d e; asserted drd erc erd(2) ere,10,1
+5::3-3*1.4-2*1.4-3*3,terms a b c d e; asserted drd erc erd(3),10,1
+5::3-3*1.4-2*2,terms a b c d e; asserted drd erc(2),8,1
+5::3-3*1.4-2*2.4-4*1,terms a b c d e; asserted drd erc(2) ere,9,1
+5::3-3*1.4-2*2.4-4*2,terms a b c d e; asserted drd erc(2) ere(2),10,1
+5::3-3*1.4-2*2.4-3*1,terms a b c d e; asserted drd erc(2) erd,9,1
+5::3-3*1.4-2*2.4-3*1.4-4*1,terms a b c d e; asserted drd erc(2) erd ere,10,1
+5::3-3*1.4-2*2.4-3*2,terms a b c d e; asserted drd erc(2) erd(2),10,1
+5::3-3*1.4-2*3,terms a b c d e; asserted drd erc(3),9,1
+5::3-3*1.4-2*3.4-4*1,terms a b c d e; asserted drd erc(3) ere,10,1
+5::3-3*1.4-2*3.4-3*1,terms a b c d e; asserted drd erc(3) erd,10,1
+5::3-3*1.4-2*4,terms a b c d e; asserted drd erc(4),10,1
+5::3-3*1.4-1*1.4-2*1,terms a b c d e; asserted drd erb erc,8,1
+5::3-3*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drd erb erc ere,9,1
+5::3-3*1.4-1*1.4-2*1.4-4*2,terms a b c d e; asserted drd erb erc ere(2),10,1
+5::3-3*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drd erb erc erd,9,1
+5::3-3*1.4-1*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drd erb erc erd ere,10,1
+5::3-3*1.4-1*1.4-2*1.4-3*2,terms a b c d e; asserted drd erb erc erd(2),10,1
+5::3-3*1.4-1*1.4-2*2,terms a b c d e; asserted drd erb erc(2),9,1
+5::3-3*1.4-1*1.4-2*2.4-4*1,terms a b c d e; asserted drd erb erc(2) ere,10,1
+5::3-3*1.4-1*1.4-2*2.4-3*1,terms a b c d e; asserted drd erb erc(2) erd,10,1
+5::3-3*1.4-1*1.4-2*3,terms a b c d e; asserted drd erb erc(3),10,1
+5::3-3*1.4-1*2.4-2*2,terms a b c d e; asserted drd erb(2) erc(2),10,1
+5::3-3*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drd era erb erc,9,1
+5::3-3*1.4-0*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drd era erb erc ere,10,1
+5::3-3*1.4-0*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drd era erb erc erd,10,1
+5::3-3*1.4-0*1.4-1*1.4-2*2,terms a b c d e; asserted drd era erb erc(2),10,1
+5::3-3*1.3-4*1.4-4*2,terms a b c d e; asserted drd dre ere(2),9,1
+5::3-3*1.3-4*1.4-4*3,terms a b c d e; asserted drd dre ere(3),10,1
+5::3-3*1.3-4*1.4-3*1.4-4*1,terms a b c d e; asserted drd dre erd ere,9,1
+5::3-3*1.3-4*1.4-3*1.4-4*2,terms a b c d e; asserted drd dre erd ere(2),10,1
+5::3-3*1.3-4*1.4-3*2.4-4*1,terms a b c d e; asserted drd dre erd(2) ere,10,1
+5::3-3*1.3-4*1.4-2*1,terms a b c d e; asserted drd dre erc,8,1
+5::3-3*1.3-4*1.4-2*1.4-4*1,terms a b c d e; asserted drd dre erc ere,9,1
+5::3-3*1.3-4*1.4-2*1.4-4*2,terms a b c d e; asserted drd dre erc ere(2),10,1
+5::3-3*1.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted drd dre erc erd,9,1
+5::3-3*1.3-4*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drd dre erc erd ere,10,1
+5::3-3*1.3-4*1.4-2*1.4-3*2,terms a b c d e; asserted drd dre erc erd(2),10,1
+5::3-3*1.3-4*1.4-2*2,terms a b c d e; asserted drd dre erc(2),9,1
+5::3-3*1.3-4*1.4-2*2.4-4*1,terms a b c d e; asserted drd dre erc(2) ere,10,1
+5::3-3*1.3-4*1.4-2*2.4-3*1,terms a b c d e; asserted drd dre erc(2) erd,10,1
+5::3-3*1.3-4*1.4-2*3,terms a b c d e; asserted drd dre erc(3),10,1
+5::3-3*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted drd dre erb erc,9,1
+5::3-3*1.3-4*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drd dre erb erc ere,10,1
+5::3-3*1.3-4*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drd dre erb erc erd,10,1
+5::3-3*1.3-4*1.4-1*1.4-2*2,terms a b c d e; asserted drd dre erb erc(2),10,1
+5::3-3*1.3-4*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drd dre era erb erc,10,1
+5::3-3*1.3-4*2.4-4*2,terms a b c d e; asserted drd dre(2) ere(2),10,1
+5::3-3*1.3-4*2.4-2*1,terms a b c d e; asserted drd dre(2) erc,9,1
+5::3-3*1.3-4*2.4-2*1.4-4*1,terms a b c d e; asserted drd dre(2) erc ere,10,1
+5::3-3*1.3-4*2.4-2*1.4-3*1,terms a b c d e; asserted drd dre(2) erc erd,10,1
+5::3-3*1.3-4*2.4-2*2,terms a b c d e; asserted drd dre(2) erc(2),10,1
+5::3-3*1.3-4*2.4-1*1.4-2*1,terms a b c d e; asserted drd dre(2) erb erc,10,1
+5::3-3*1.3-4*3.4-2*1,terms a b c d e; asserted drd dre(3) erc,10,1
+5::3-3*2.4-4*2,terms a b c d e; asserted drd(2) ere(2),9,1
+5::3-3*2.4-4*3,terms a b c d e; asserted drd(2) ere(3),10,1
+5::3-3*2.4-3*1.4-4*2,terms a b c d e; asserted drd(2) erd ere(2),10,1
+5::3-3*2.4-2*1,terms a b c d e; asserted drd(2) erc,8,1
+5::3-3*2.4-2*1.4-4*1,terms a b c d e; asserted drd(2) erc ere,9,1
+5::3-3*2.4-2*1.4-4*2,terms a b c d e; asserted drd(2) erc ere(2),10,1
+5::3-3*2.4-2*1.4-3*1,terms a b c d e; asserted drd(2) erc erd,9,1
+5::3-3*2.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drd(2) erc erd ere,10,1
+5::3-3*2.4-2*1.4-3*2,terms a b c d e; asserted drd(2) erc erd(2),10,1
+5::3-3*2.4-2*2,terms a b c d e; asserted drd(2) erc(2),9,1
+5::3-3*2.4-2*2.4-4*1,terms a b c d e; asserted drd(2) erc(2) ere,10,1
+5::3-3*2.4-2*2.4-3*1,terms a b c d e; asserted drd(2) erc(2) erd,10,1
+5::3-3*2.4-2*3,terms a b c d e; asserted drd(2) erc(3),10,1
+5::3-3*2.4-1*1.4-2*1,terms a b c d e; asserted drd(2) erb erc,9,1
+5::3-3*2.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drd(2) erb erc ere,10,1
+5::3-3*2.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drd(2) erb erc erd,10,1
+5::3-3*2.4-1*1.4-2*2,terms a b c d e; asserted drd(2) erb erc(2),10,1
+5::3-3*2.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drd(2) era erb erc,10,1
+5::3-3*2.3-4*1.4-2*1,terms a b c d e; asserted drd(2) dre erc,9,1
+5::3-3*2.3-4*1.4-2*1.4-4*1,terms a b c d e; asserted drd(2) dre erc ere,10,1
+5::3-3*2.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted drd(2) dre erc erd,10,1
+5::3-3*2.3-4*1.4-2*2,terms a b c d e; asserted drd(2) dre erc(2),10,1
+5::3-3*2.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted drd(2) dre erb erc,10,1
+5::3-3*2.3-4*2.4-2*1,terms a b c d e; asserted drd(2) dre(2) erc,10,1
+5::3-3*3.4-2*1,terms a b c d e; asserted drd(3) erc,9,1
+5::3-3*3.4-2*1.4-4*1,terms a b c d e; asserted drd(3) erc ere,10,1
+5::3-3*3.4-2*1.4-3*1,terms a b c d e; asserted drd(3) erc erd,10,1
+5::3-3*3.4-2*2,terms a b c d e; asserted drd(3) erc(2),10,1
+5::3-3*3.4-1*1.4-2*1,terms a b c d e; asserted drd(3) erb erc,10,1
+5::3-3*3.3-4*1.4-2*1,terms a b c d e; asserted drd(3) dre erc,10,1
+5::3-3*4.4-2*1,terms a b c d e; asserted drd(4) erc,10,1
+5::3-2*1.4-2*1,terms a b c d e; asserted drc erc,7,1
+5::3-2*1.4-2*1.4-4*1,terms a b c d e; asserted drc erc ere,8,1
+5::3-2*1.4-2*1.4-4*2,terms a b c d e; asserted drc erc ere(2),9,1
+5::3-2*1.4-2*1.4-4*3,terms a b c d e; asserted drc erc ere(3),10,1
+5::3-2*1.4-2*1.4-3*1,terms a b c d e; asserted drc erc erd,8,1
+5::3-2*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drc erc erd ere,9,1
+5::3-2*1.4-2*1.4-3*1.4-4*2,terms a b c d e; asserted drc erc erd ere(2),10,1
+5::3-2*1.4-2*1.4-3*2,terms a b c d e; asserted drc erc erd(2),9,1
+5::3-2*1.4-2*1.4-3*2.4-4*1,terms a b c d e; asserted drc erc erd(2) ere,10,1
+5::3-2*1.4-2*1.4-3*3,terms a b c d e; asserted drc erc erd(3),10,1
+5::3-2*1.4-2*2,terms a b c d e; asserted drc erc(2),8,1
+5::3-2*1.4-2*2.4-4*1,terms a b c d e; asserted drc erc(2) ere,9,1
+5::3-2*1.4-2*2.4-4*2,terms a b c d e; asserted drc erc(2) ere(2),10,1
+5::3-2*1.4-2*2.4-3*1,terms a b c d e; asserted drc erc(2) erd,9,1
+5::3-2*1.4-2*2.4-3*1.4-4*1,terms a b c d e; asserted drc erc(2) erd ere,10,1
+5::3-2*1.4-2*2.4-3*2,terms a b c d e; asserted drc erc(2) erd(2),10,1
+5::3-2*1.4-2*3,terms a b c d e; asserted drc erc(3),9,1
+5::3-2*1.4-2*3.4-4*1,terms a b c d e; asserted drc erc(3) ere,10,1
+5::3-2*1.4-2*3.4-3*1,terms a b c d e; asserted drc erc(3) erd,10,1
+5::3-2*1.4-2*4,terms a b c d e; asserted drc erc(4),10,1
+5::3-2*1.4-1*1,terms a b c d e; asserted drc erb,7,1
+5::3-2*1.4-1*1.4-4*1,terms a b c d e; asserted drc erb ere,8,1
+5::3-2*1.4-1*1.4-4*2,terms a b c d e; asserted drc erb ere(2),9,1
+5::3-2*1.4-1*1.4-4*3,terms a b c d e; asserted drc erb ere(3),10,1
+5::3-2*1.4-1*1.4-3*1,terms a b c d e; asserted drc erb erd,8,1
+5::3-2*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted drc erb erd ere,9,1
+5::3-2*1.4-1*1.4-3*1.4-4*2,terms a b c d e; asserted drc erb erd ere(2),10,1
+5::3-2*1.4-1*1.4-3*2,terms a b c d e; asserted drc erb erd(2),9,1
+5::3-2*1.4-1*1.4-3*2.4-4*1,terms a b c d e; asserted drc erb erd(2) ere,10,1
+5::3-2*1.4-1*1.4-3*3,terms a b c d e; asserted drc erb erd(3),10,1
+5::3-2*1.4-1*1.4-2*1,terms a b c d e; asserted drc erb erc,8,1
+5::3-2*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drc erb erc ere,9,1
+5::3-2*1.4-1*1.4-2*1.4-4*2,terms a b c d e; asserted drc erb erc ere(2),10,1
+5::3-2*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drc erb erc erd,9,1
+5::3-2*1.4-1*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drc erb erc erd ere,10,1
+5::3-2*1.4-1*1.4-2*1.4-3*2,terms a b c d e; asserted drc erb erc erd(2),10,1
+5::3-2*1.4-1*1.4-2*2,terms a b c d e; asserted drc erb erc(2),9,1
+5::3-2*1.4-1*1.4-2*2.4-4*1,terms a b c d e; asserted drc erb erc(2) ere,10,1
+5::3-2*1.4-1*1.4-2*2.4-3*1,terms a b c d e; asserted drc erb erc(2) erd,10,1
+5::3-2*1.4-1*1.4-2*3,terms a b c d e; asserted drc erb erc(3),10,1
+5::3-2*1.4-1*2,terms a b c d e; asserted drc erb(2),8,1
+5::3-2*1.4-1*2.4-4*1,terms a b c d e; asserted drc erb(2) ere,9,1
+5::3-2*1.4-1*2.4-4*2,terms a b c d e; asserted drc erb(2) ere(2),10,1
+5::3-2*1.4-1*2.4-3*1,terms a b c d e; asserted drc erb(2) erd,9,1
+5::3-2*1.4-1*2.4-3*1.4-4*1,terms a b c d e; asserted drc erb(2) erd ere,10,1
+5::3-2*1.4-1*2.4-3*2,terms a b c d e; asserted drc erb(2) erd(2),10,1
+5::3-2*1.4-1*2.4-2*1,terms a b c d e; asserted drc erb(2) erc,9,1
+5::3-2*1.4-1*2.4-2*1.4-4*1,terms a b c d e; asserted drc erb(2) erc ere,10,1
+5::3-2*1.4-1*2.4-2*1.4-3*1,terms a b c d e; asserted drc erb(2) erc erd,10,1
+5::3-2*1.4-1*2.4-2*2,terms a b c d e; asserted drc erb(2) erc(2),10,1
+5::3-2*1.4-1*3,terms a b c d e; asserted drc erb(3),9,1
+5::3-2*1.4-1*3.4-4*1,terms a b c d e; asserted drc erb(3) ere,10,1
+5::3-2*1.4-1*3.4-3*1,terms a b c d e; asserted drc erb(3) erd,10,1
+5::3-2*1.4-1*3.4-2*1,terms a b c d e; asserted drc erb(3) erc,10,1
+5::3-2*1.4-1*4,terms a b c d e; asserted drc erb(4),10,1
+5::3-2*1.4-0*1.4-1*1,terms a b c d e; asserted drc era erb,8,1
+5::3-2*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted drc era erb ere,9,1
+5::3-2*1.4-0*1.4-1*1.4-4*2,terms a b c d e; asserted drc era erb ere(2),10,1
+5::3-2*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted drc era erb erd,9,1
+5::3-2*1.4-0*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted drc era erb erd ere,10,1
+5::3-2*1.4-0*1.4-1*1.4-3*2,terms a b c d e; asserted drc era erb erd(2),10,1
+5::3-2*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drc era erb erc,9,1
+5::3-2*1.4-0*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drc era erb erc ere,10,1
+5::3-2*1.4-0*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drc era erb erc erd,10,1
+5::3-2*1.4-0*1.4-1*1.4-2*2,terms a b c d e; asserted drc era erb erc(2),10,1
+5::3-2*1.4-0*1.4-1*2,terms a b c d e; asserted drc era erb(2),9,1
+5::3-2*1.4-0*1.4-1*2.4-4*1,terms a b c d e; asserted drc era erb(2) ere,10,1
+5::3-2*1.4-0*1.4-1*2.4-3*1,terms a b c d e; asserted drc era erb(2) erd,10,1
+5::3-2*1.4-0*1.4-1*2.4-2*1,terms a b c d e; asserted drc era erb(2) erc,10,1
+5::3-2*1.4-0*1.4-1*3,terms a b c d e; asserted drc era erb(3),10,1
+5::3-2*1.4-0*2.4-1*2,terms a b c d e; asserted drc era(2) erb(2),10,1
+5::3-2*1.3-4*1.4-2*1.4-4*1,terms a b c d e; asserted drc dre erc ere,9,1
+5::3-2*1.3-4*1.4-2*1.4-4*2,terms a b c d e; asserted drc dre erc ere(2),10,1
+5::3-2*1.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted drc dre erc erd,9,1
+5::3-2*1.3-4*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drc dre erc erd ere,10,1
+5::3-2*1.3-4*1.4-2*1.4-3*2,terms a b c d e; asserted drc dre erc erd(2),10,1
+5::3-2*1.3-4*1.4-2*2,terms a b c d e; asserted drc dre erc(2),9,1
+5::3-2*1.3-4*1.4-2*2.4-4*1,terms a b c d e; asserted drc dre erc(2) ere,10,1
+5::3-2*1.3-4*1.4-2*2.4-3*1,terms a b c d e; asserted drc dre erc(2) erd,10,1
+5::3-2*1.3-4*1.4-2*3,terms a b c d e; asserted drc dre erc(3),10,1
+5::3-2*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted drc dre erb ere,9,1
+5::3-2*1.3-4*1.4-1*1.4-4*2,terms a b c d e; asserted drc dre erb ere(2),10,1
+5::3-2*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted drc dre erb erd,9,1
+5::3-2*1.3-4*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted drc dre erb erd ere,10,1
+5::3-2*1.3-4*1.4-1*1.4-3*2,terms a b c d e; asserted drc dre erb erd(2),10,1
+5::3-2*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted drc dre erb erc,9,1
+5::3-2*1.3-4*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drc dre erb erc ere,10,1
+5::3-2*1.3-4*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drc dre erb erc erd,10,1
+5::3-2*1.3-4*1.4-1*1.4-2*2,terms a b c d e; asserted drc dre erb erc(2),10,1
+5::3-2*1.3-4*1.4-1*2,terms a b c d e; asserted drc dre erb(2),9,1
+5::3-2*1.3-4*1.4-1*2.4-4*1,terms a b c d e; asserted drc dre erb(2) ere,10,1
+5::3-2*1.3-4*1.4-1*2.4-3*1,terms a b c d e; asserted drc dre erb(2) erd,10,1
+5::3-2*1.3-4*1.4-1*2.4-2*1,terms a b c d e; asserted drc dre erb(2) erc,10,1
+5::3-2*1.3-4*1.4-1*3,terms a b c d e; asserted drc dre erb(3),10,1
+5::3-2*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted drc dre era erb,9,1
+5::3-2*1.3-4*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted drc dre era erb ere,10,1
+5::3-2*1.3-4*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted drc dre era erb erd,10,1
+5::3-2*1.3-4*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drc dre era erb erc,10,1
+5::3-2*1.3-4*1.4-0*1.4-1*2,terms a b c d e; asserted drc dre era erb(2),10,1
+5::3-2*1.3-4*2.4-2*1.4-4*1,terms a b c d e; asserted drc dre(2) erc ere,10,1
+5::3-2*1.3-4*2.4-2*2,terms a b c d e; asserted drc dre(2) erc(2),10,1
+5::3-2*1.3-4*2.4-1*1.4-4*1,terms a b c d e; asserted drc dre(2) erb ere,10,1
+5::3-2*1.3-4*2.4-1*1.4-2*1,terms a b c d e; asserted drc dre(2) erb erc,10,1
+5::3-2*1.3-4*2.4-1*2,terms a b c d e; asserted drc dre(2) erb(2),10,1
+5::3-2*1.3-4*2.4-0*1.4-1*1,terms a b c d e; asserted drc dre(2) era erb,10,1
+5::3-2*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted drc drd erc ere,9,1
+5::3-2*1.3-3*1.4-2*1.4-4*2,terms a b c d e; asserted drc drd erc ere(2),10,1
+5::3-2*1.3-3*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted drc drd erc erd ere,10,1
+5::3-2*1.3-3*1.4-2*2,terms a b c d e; asserted drc drd erc(2),9,1
+5::3-2*1.3-3*1.4-2*2.4-4*1,terms a b c d e; asserted drc drd erc(2) ere,10,1
+5::3-2*1.3-3*1.4-2*2.4-3*1,terms a b c d e; asserted drc drd erc(2) erd,10,1
+5::3-2*1.3-3*1.4-2*3,terms a b c d e; asserted drc drd erc(3),10,1
+5::3-2*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted drc drd erb ere,9,1
+5::3-2*1.3-3*1.4-1*1.4-4*2,terms a b c d e; asserted drc drd erb ere(2),10,1
+5::3-2*1.3-3*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted drc drd erb erd ere,10,1
+5::3-2*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted drc drd erb erc,9,1
+5::3-2*1.3-3*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drc drd erb erc ere,10,1
+5::3-2*1.3-3*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drc drd erb erc erd,10,1
+5::3-2*1.3-3*1.4-1*1.4-2*2,terms a b c d e; asserted drc drd erb erc(2),10,1
+5::3-2*1.3-3*1.4-1*2,terms a b c d e; asserted drc drd erb(2),9,1
+5::3-2*1.3-3*1.4-1*2.4-4*1,terms a b c d e; asserted drc drd erb(2) ere,10,1
+5::3-2*1.3-3*1.4-1*2.4-3*1,terms a b c d e; asserted drc drd erb(2) erd,10,1
+5::3-2*1.3-3*1.4-1*2.4-2*1,terms a b c d e; asserted drc drd erb(2) erc,10,1
+5::3-2*1.3-3*1.4-1*3,terms a b c d e; asserted drc drd erb(3),10,1
+5::3-2*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted drc drd era erb,9,1
+5::3-2*1.3-3*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted drc drd era erb ere,10,1
+5::3-2*1.3-3*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted drc drd era erb erd,10,1
+5::3-2*1.3-3*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drc drd era erb erc,10,1
+5::3-2*1.3-3*1.4-0*1.4-1*2,terms a b c d e; asserted drc drd era erb(2),10,1
+5::3-2*1.3-3*1.3-4*1.4-2*2,terms a b c d e; asserted drc drd dre erc(2),10,1
+5::3-2*1.3-3*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted drc drd dre erb erc,10,1
+5::3-2*1.3-3*1.3-4*1.4-1*2,terms a b c d e; asserted drc drd dre erb(2),10,1
+5::3-2*1.3-3*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted drc drd dre era erb,10,1
+5::3-2*1.3-3*2.4-2*2,terms a b c d e; asserted drc drd(2) erc(2),10,1
+5::3-2*1.3-3*2.4-1*1.4-2*1,terms a b c d e; asserted drc drd(2) erb erc,10,1
+5::3-2*1.3-3*2.4-1*2,terms a b c d e; asserted drc drd(2) erb(2),10,1
+5::3-2*1.3-3*2.4-0*1.4-1*1,terms a b c d e; asserted drc drd(2) era erb,10,1
+5::3-2*2.4-2*2,terms a b c d e; asserted drc(2) erc(2),9,1
+5::3-2*2.4-2*2.4-4*1,terms a b c d e; asserted drc(2) erc(2) ere,10,1
+5::3-2*2.4-2*2.4-3*1,terms a b c d e; asserted drc(2) erc(2) erd,10,1
+5::3-2*2.4-2*3,terms a b c d e; asserted drc(2) erc(3),10,1
+5::3-2*2.4-1*1.4-2*1,terms a b c d e; asserted drc(2) erb erc,9,1
+5::3-2*2.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drc(2) erb erc ere,10,1
+5::3-2*2.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drc(2) erb erc erd,10,1
+5::3-2*2.4-1*1.4-2*2,terms a b c d e; asserted drc(2) erb erc(2),10,1
+5::3-2*2.4-1*2,terms a b c d e; asserted drc(2) erb(2),9,1
+5::3-2*2.4-1*2.4-4*1,terms a b c d e; asserted drc(2) erb(2) ere,10,1
+5::3-2*2.4-1*2.4-3*1,terms a b c d e; asserted drc(2) erb(2) erd,10,1
+5::3-2*2.4-1*2.4-2*1,terms a b c d e; asserted drc(2) erb(2) erc,10,1
+5::3-2*2.4-1*3,terms a b c d e; asserted drc(2) erb(3),10,1
+5::3-2*2.4-0*1.4-1*1,terms a b c d e; asserted drc(2) era erb,9,1
+5::3-2*2.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted drc(2) era erb ere,10,1
+5::3-2*2.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted drc(2) era erb erd,10,1
+5::3-2*2.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drc(2) era erb erc,10,1
+5::3-2*2.4-0*1.4-1*2,terms a b c d e; asserted drc(2) era erb(2),10,1
+5::3-2*2.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted drc(2) dre erb erc,10,1
+5::3-2*2.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted drc(2) dre era erb,10,1
+5::3-2*2.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted drc(2) drd erb erc,10,1
+5::3-2*2.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted drc(2) drd era erb,10,1
+5::3-2*3.4-1*1.4-2*1,terms a b c d e; asserted drc(3) erb erc,10,1
+5::3-2*3.4-0*1.4-1*1,terms a b c d e; asserted drc(3) era erb,10,1
+5::3-1*1.3-2*1.4-1*1.4-2*1,terms a b c d e; asserted drb drc erb erc,9,1
+5::3-1*1.3-2*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted drb drc erb erc ere,10,1
+5::3-1*1.3-2*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted drb drc erb erc erd,10,1
+5::3-1*1.3-2*1.4-1*1.4-2*2,terms a b c d e; asserted drb drc erb erc(2),10,1
+5::3-1*1.3-2*1.4-0*1.4-2*1,terms a b c d e; asserted drb drc era erc,9,1
+5::3-1*1.3-2*1.4-0*1.4-2*1.4-4*1,terms a b c d e; asserted drb drc era erc ere,10,1
+5::3-1*1.3-2*1.4-0*1.4-2*1.4-3*1,terms a b c d e; asserted drb drc era erc erd,10,1
+5::3-1*1.3-2*1.4-0*1.4-2*2,terms a b c d e; asserted drb drc era erc(2),10,1
+5::3-1*1.3-2*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted drb drc era erb erc,10,1
+5::3-1*1.3-2*1.4-0*2.4-2*1,terms a b c d e; asserted drb drc era(2) erc,10,1
+5::2-4*1.3-4*1.4-4*1,terms a b c d e; asserted cre dre ere,8,1
+5::2-4*1.3-4*1.4-4*2,terms a b c d e; asserted cre dre ere(2),9,1
+5::2-4*1.3-4*1.4-4*3,terms a b c d e; asserted cre dre ere(3),10,1
+5::2-4*1.3-4*1.4-3*1,terms a b c d e; asserted cre dre erd,8,1
+5::2-4*1.3-4*1.4-3*1.4-4*1,terms a b c d e; asserted cre dre erd ere,9,1
+5::2-4*1.3-4*1.4-3*1.4-4*2,terms a b c d e; asserted cre dre erd ere(2),10,1
+5::2-4*1.3-4*1.4-3*2,terms a b c d e; asserted cre dre erd(2),9,1
+5::2-4*1.3-4*1.4-3*2.4-4*1,terms a b c d e; asserted cre dre erd(2) ere,10,1
+5::2-4*1.3-4*1.4-3*3,terms a b c d e; asserted cre dre erd(3),10,1
+5::2-4*1.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted cre dre erc erd,9,1
+5::2-4*1.3-4*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted cre dre erc erd ere,10,1
+5::2-4*1.3-4*1.4-2*1.4-3*2,terms a b c d e; asserted cre dre erc erd(2),10,1
+5::2-4*1.3-4*1.4-1*1,terms a b c d e; asserted cre dre erb,8,1
+5::2-4*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted cre dre erb ere,9,1
+5::2-4*1.3-4*1.4-1*1.4-4*2,terms a b c d e; asserted cre dre erb ere(2),10,1
+5::2-4*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted cre dre erb erd,9,1
+5::2-4*1.3-4*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted cre dre erb erd ere,10,1
+5::2-4*1.3-4*1.4-1*1.4-3*2,terms a b c d e; asserted cre dre erb erd(2),10,1
+5::2-4*1.3-4*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted cre dre erb erc erd,10,1
+5::2-4*1.3-4*1.4-1*2,terms a b c d e; asserted cre dre erb(2),9,1
+5::2-4*1.3-4*1.4-1*2.4-4*1,terms a b c d e; asserted cre dre erb(2) ere,10,1
+5::2-4*1.3-4*1.4-1*2.4-3*1,terms a b c d e; asserted cre dre erb(2) erd,10,1
+5::2-4*1.3-4*1.4-1*3,terms a b c d e; asserted cre dre erb(3),10,1
+5::2-4*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted cre dre era erb,9,1
+5::2-4*1.3-4*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted cre dre era erb ere,10,1
+5::2-4*1.3-4*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted cre dre era erb erd,10,1
+5::2-4*1.3-4*1.4-0*1.4-1*2,terms a b c d e; asserted cre dre era erb(2),10,1
+5::2-4*1.3-4*2.4-4*1,terms a b c d e; asserted cre dre(2) ere,9,1
+5::2-4*1.3-4*2.4-4*2,terms a b c d e; asserted cre dre(2) ere(2),10,1
+5::2-4*1.3-4*2.4-3*1,terms a b c d e; asserted cre dre(2) erd,9,1
+5::2-4*1.3-4*2.4-3*1.4-4*1,terms a b c d e; asserted cre dre(2) erd ere,10,1
+5::2-4*1.3-4*2.4-3*2,terms a b c d e; asserted cre dre(2) erd(2),10,1
+5::2-4*1.3-4*2.4-2*1,terms a b c d e; asserted cre dre(2) erc,9,1
+5::2-4*1.3-4*2.4-2*1.4-4*1,terms a b c d e; asserted cre dre(2) erc ere,10,1
+5::2-4*1.3-4*2.4-2*1.4-3*1,terms a b c d e; asserted cre dre(2) erc erd,10,1
+5::2-4*1.3-4*2.4-2*2,terms a b c d e; asserted cre dre(2) erc(2),10,1
+5::2-4*1.3-4*2.4-1*1,terms a b c d e; asserted cre dre(2) erb,9,1
+5::2-4*1.3-4*2.4-1*1.4-4*1,terms a b c d e; asserted cre dre(2) erb ere,10,1
+5::2-4*1.3-4*2.4-1*1.4-3*1,terms a b c d e; asserted cre dre(2) erb erd,10,1
+5::2-4*1.3-4*2.4-1*1.4-2*1,terms a b c d e; asserted cre dre(2) erb erc,10,1
+5::2-4*1.3-4*2.4-1*2,terms a b c d e; asserted cre dre(2) erb(2),10,1
+5::2-4*1.3-4*2.4-0*1.4-1*1,terms a b c d e; asserted cre dre(2) era erb,10,1
+5::2-4*1.3-4*3.4-4*1,terms a b c d e; asserted cre dre(3) ere,10,1
+5::2-4*1.3-4*3.4-3*1,terms a b c d e; asserted cre dre(3) erd,10,1
+5::2-4*1.3-4*3.4-2*1,terms a b c d e; asserted cre dre(3) erc,10,1
+5::2-4*1.3-4*3.4-1*1,terms a b c d e; asserted cre dre(3) erb,10,1
+5::2-4*1.3-3*1.4-4*1,terms a b c d e; asserted cre drd ere,8,1
+5::2-4*1.3-3*1.4-4*2,terms a b c d e; asserted cre drd ere(2),9,1
+5::2-4*1.3-3*1.4-4*3,terms a b c d e; asserted cre drd ere(3),10,1
+5::2-4*1.3-3*1.4-3*1,terms a b c d e; asserted cre drd erd,8,1
+5::2-4*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted cre drd erd ere,9,1
+5::2-4*1.3-3*1.4-3*1.4-4*2,terms a b c d e; asserted cre drd erd ere(2),10,1
+5::2-4*1.3-3*1.4-3*2,terms a b c d e; asserted cre drd erd(2),9,1
+5::2-4*1.3-3*1.4-3*2.4-4*1,terms a b c d e; asserted cre drd erd(2) ere,10,1
+5::2-4*1.3-3*1.4-3*3,terms a b c d e; asserted cre drd erd(3),10,1
+5::2-4*1.3-3*1.4-2*1,terms a b c d e; asserted cre drd erc,8,1
+5::2-4*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted cre drd erc ere,9,1
+5::2-4*1.3-3*1.4-2*1.4-4*2,terms a b c d e; asserted cre drd erc ere(2),10,1
+5::2-4*1.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted cre drd erc erd,9,1
+5::2-4*1.3-3*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted cre drd erc erd ere,10,1
+5::2-4*1.3-3*1.4-2*1.4-3*2,terms a b c d e; asserted cre drd erc erd(2),10,1
+5::2-4*1.3-3*1.4-2*2,terms a b c d e; asserted cre drd erc(2),9,1
+5::2-4*1.3-3*1.4-2*2.4-4*1,terms a b c d e; asserted cre drd erc(2) ere,10,1
+5::2-4*1.3-3*1.4-2*2.4-3*1,terms a b c d e; asserted cre drd erc(2) erd,10,1
+5::2-4*1.3-3*1.4-2*3,terms a b c d e; asserted cre drd erc(3),10,1
+5::2-4*1.3-3*1.4-1*1,terms a b c d e; asserted cre drd erb,8,1
+5::2-4*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted cre drd erb ere,9,1
+5::2-4*1.3-3*1.4-1*1.4-4*2,terms a b c d e; asserted cre drd erb ere(2),10,1
+5::2-4*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted cre drd erb erd,9,1
+5::2-4*1.3-3*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted cre drd erb erd ere,10,1
+5::2-4*1.3-3*1.4-1*1.4-3*2,terms a b c d e; asserted cre drd erb erd(2),10,1
+5::2-4*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted cre drd erb erc,9,1
+5::2-4*1.3-3*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted cre drd erb erc ere,10,1
+5::2-4*1.3-3*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted cre drd erb erc erd,10,1
+5::2-4*1.3-3*1.4-1*1.4-2*2,terms a b c d e; asserted cre drd erb erc(2),10,1
+5::2-4*1.3-3*1.4-1*2,terms a b c d e; asserted cre drd erb(2),9,1
+5::2-4*1.3-3*1.4-1*2.4-4*1,terms a b c d e; asserted cre drd erb(2) ere,10,1
+5::2-4*1.3-3*1.4-1*2.4-3*1,terms a b c d e; asserted cre drd erb(2) erd,10,1
+5::2-4*1.3-3*1.4-1*2.4-2*1,terms a b c d e; asserted cre drd erb(2) erc,10,1
+5::2-4*1.3-3*1.4-1*3,terms a b c d e; asserted cre drd erb(3),10,1
+5::2-4*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted cre drd era erb,9,1
+5::2-4*1.3-3*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted cre drd era erb ere,10,1
+5::2-4*1.3-3*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted cre drd era erb erd,10,1
+5::2-4*1.3-3*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted cre drd era erb erc,10,1
+5::2-4*1.3-3*1.4-0*1.4-1*2,terms a b c d e; asserted cre drd era erb(2),10,1
+5::2-4*1.3-3*1.3-4*1.4-4*1,terms a b c d e; asserted cre drd dre ere,9,1
+5::2-4*1.3-3*1.3-4*1.4-4*2,terms a b c d e; asserted cre drd dre ere(2),10,1
+5::2-4*1.3-3*1.3-4*1.4-3*1,terms a b c d e; asserted cre drd dre erd,9,1
+5::2-4*1.3-3*1.3-4*1.4-3*1.4-4*1,terms a b c d e; asserted cre drd dre erd ere,10,1
+5::2-4*1.3-3*1.3-4*1.4-3*2,terms a b c d e; asserted cre drd dre erd(2),10,1
+5::2-4*1.3-3*1.3-4*1.4-2*1,terms a b c d e; asserted cre drd dre erc,9,1
+5::2-4*1.3-3*1.3-4*1.4-2*1.4-4*1,terms a b c d e; asserted cre drd dre erc ere,10,1
+5::2-4*1.3-3*1.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted cre drd dre erc erd,10,1
+5::2-4*1.3-3*1.3-4*1.4-2*2,terms a b c d e; asserted cre drd dre erc(2),10,1
+5::2-4*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted cre drd dre erb,9,1
+5::2-4*1.3-3*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted cre drd dre erb ere,10,1
+5::2-4*1.3-3*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted cre drd dre erb erd,10,1
+5::2-4*1.3-3*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted cre drd dre erb erc,10,1
+5::2-4*1.3-3*1.3-4*1.4-1*2,terms a b c d e; asserted cre drd dre erb(2),10,1
+5::2-4*1.3-3*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted cre drd dre era erb,10,1
+5::2-4*1.3-3*1.3-4*2.4-4*1,terms a b c d e; asserted cre drd dre(2) ere,10,1
+5::2-4*1.3-3*1.3-4*2.4-3*1,terms a b c d e; asserted cre drd dre(2) erd,10,1
+5::2-4*1.3-3*1.3-4*2.4-2*1,terms a b c d e; asserted cre drd dre(2) erc,10,1
+5::2-4*1.3-3*1.3-4*2.4-1*1,terms a b c d e; asserted cre drd dre(2) erb,10,1
+5::2-4*1.3-3*2.4-4*1,terms a b c d e; asserted cre drd(2) ere,9,1
+5::2-4*1.3-3*2.4-4*2,terms a b c d e; asserted cre drd(2) ere(2),10,1
+5::2-4*1.3-3*2.4-3*1,terms a b c d e; asserted cre drd(2) erd,9,1
+5::2-4*1.3-3*2.4-3*1.4-4*1,terms a b c d e; asserted cre drd(2) erd ere,10,1
+5::2-4*1.3-3*2.4-3*2,terms a b c d e; asserted cre drd(2) erd(2),10,1
+5::2-4*1.3-3*2.4-2*1,terms a b c d e; asserted cre drd(2) erc,9,1
+5::2-4*1.3-3*2.4-2*1.4-4*1,terms a b c d e; asserted cre drd(2) erc ere,10,1
+5::2-4*1.3-3*2.4-2*1.4-3*1,terms a b c d e; asserted cre drd(2) erc erd,10,1
+5::2-4*1.3-3*2.4-2*2,terms a b c d e; asserted cre drd(2) erc(2),10,1
+5::2-4*1.3-3*2.4-1*1,terms a b c d e; asserted cre drd(2) erb,9,1
+5::2-4*1.3-3*2.4-1*1.4-4*1,terms a b c d e; asserted cre drd(2) erb ere,10,1
+5::2-4*1.3-3*2.4-1*1.4-3*1,terms a b c d e; asserted cre drd(2) erb erd,10,1
+5::2-4*1.3-3*2.4-1*1.4-2*1,terms a b c d e; asserted cre drd(2) erb erc,10,1
+5::2-4*1.3-3*2.4-1*2,terms a b c d e; asserted cre drd(2) erb(2),10,1
+5::2-4*1.3-3*2.4-0*1.4-1*1,terms a b c d e; asserted cre drd(2) era erb,10,1
+5::2-4*1.3-3*2.3-4*1.4-4*1,terms a b c d e; asserted cre drd(2) dre ere,10,1
+5::2-4*1.3-3*2.3-4*1.4-3*1,terms a b c d e; asserted cre drd(2) dre erd,10,1
+5::2-4*1.3-3*2.3-4*1.4-2*1,terms a b c d e; asserted cre drd(2) dre erc,10,1
+5::2-4*1.3-3*2.3-4*1.4-1*1,terms a b c d e; asserted cre drd(2) dre erb,10,1
+5::2-4*1.3-3*3.4-4*1,terms a b c d e; asserted cre drd(3) ere,10,1
+5::2-4*1.3-3*3.4-3*1,terms a b c d e; asserted cre drd(3) erd,10,1
+5::2-4*1.3-3*3.4-2*1,terms a b c d e; asserted cre drd(3) erc,10,1
+5::2-4*1.3-3*3.4-1*1,terms a b c d e; asserted cre drd(3) erb,10,1
+5::2-4*1.3-2*1.4-3*1,terms a b c d e; asserted cre drc erd,8,1
+5::2-4*1.3-2*1.4-3*1.4-4*1,terms a b c d e; asserted cre drc erd ere,9,1
+5::2-4*1.3-2*1.4-3*1.4-4*2,terms a b c d e; asserted cre drc erd ere(2),10,1
+5::2-4*1.3-2*1.4-3*2,terms a b c d e; asserted cre drc erd(2),9,1
+5::2-4*1.3-2*1.4-3*2.4-4*1,terms a b c d e; asserted cre drc erd(2) ere,10,1
+5::2-4*1.3-2*1.4-3*3,terms a b c d e; asserted cre drc erd(3),10,1
+5::2-4*1.3-2*1.4-2*1.4-3*1,terms a b c d e; asserted cre drc erc erd,9,1
+5::2-4*1.3-2*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted cre drc erc erd ere,10,1
+5::2-4*1.3-2*1.4-2*1.4-3*2,terms a b c d e; asserted cre drc erc erd(2),10,1
+5::2-4*1.3-2*1.4-2*2.4-3*1,terms a b c d e; asserted cre drc erc(2) erd,10,1
+5::2-4*1.3-2*1.4-1*1,terms a b c d e; asserted cre drc erb,8,1
+5::2-4*1.3-2*1.4-1*1.4-4*1,terms a b c d e; asserted cre drc erb ere,9,1
+5::2-4*1.3-2*1.4-1*1.4-4*2,terms a b c d e; asserted cre drc erb ere(2),10,1
+5::2-4*1.3-2*1.4-1*1.4-3*1,terms a b c d e; asserted cre drc erb erd,9,1
+5::2-4*1.3-2*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted cre drc erb erd ere,10,1
+5::2-4*1.3-2*1.4-1*1.4-3*2,terms a b c d e; asserted cre drc erb erd(2),10,1
+5::2-4*1.3-2*1.4-1*1.4-2*1,terms a b c d e; asserted cre drc erb erc,9,1
+5::2-4*1.3-2*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted cre drc erb erc ere,10,1
+5::2-4*1.3-2*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted cre drc erb erc erd,10,1
+5::2-4*1.3-2*1.4-1*1.4-2*2,terms a b c d e; asserted cre drc erb erc(2),10,1
+5::2-4*1.3-2*1.4-1*2,terms a b c d e; asserted cre drc erb(2),9,1
+5::2-4*1.3-2*1.4-1*2.4-4*1,terms a b c d e; asserted cre drc erb(2) ere,10,1
+5::2-4*1.3-2*1.4-1*2.4-3*1,terms a b c d e; asserted cre drc erb(2) erd,10,1
+5::2-4*1.3-2*1.4-1*2.4-2*1,terms a b c d e; asserted cre drc erb(2) erc,10,1
+5::2-4*1.3-2*1.4-1*3,terms a b c d e; asserted cre drc erb(3),10,1
+5::2-4*1.3-2*1.4-0*1.4-1*1,terms a b c d e; asserted cre drc era erb,9,1
+5::2-4*1.3-2*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted cre drc era erb ere,10,1
+5::2-4*1.3-2*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted cre drc era erb erd,10,1
+5::2-4*1.3-2*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted cre drc era erb erc,10,1
+5::2-4*1.3-2*1.4-0*1.4-1*2,terms a b c d e; asserted cre drc era erb(2),10,1
+5::2-4*1.3-2*1.3-4*1.4-4*1,terms a b c d e; asserted cre drc dre ere,9,1
+5::2-4*1.3-2*1.3-4*1.4-4*2,terms a b c d e; asserted cre drc dre ere(2),10,1
+5::2-4*1.3-2*1.3-4*1.4-3*1.4-4*1,terms a b c d e; asserted cre drc dre erd ere,10,1
+5::2-4*1.3-2*1.3-4*1.4-3*2,terms a b c d e; asserted cre drc dre erd(2),10,1
+5::2-4*1.3-2*1.3-4*1.4-2*1,terms a b c d e; asserted cre drc dre erc,9,1
+5::2-4*1.3-2*1.3-4*1.4-2*1.4-4*1,terms a b c d e; asserted cre drc dre erc ere,10,1
+5::2-4*1.3-2*1.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted cre drc dre erc erd,10,1
+5::2-4*1.3-2*1.3-4*1.4-2*2,terms a b c d e; asserted cre drc dre erc(2),10,1
+5::2-4*1.3-2*1.3-4*1.4-1*1,terms a b c d e; asserted cre drc dre erb,9,1
+5::2-4*1.3-2*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted cre drc dre erb ere,10,1
+5::2-4*1.3-2*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted cre drc dre erb erd,10,1
+5::2-4*1.3-2*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted cre drc dre erb erc,10,1
+5::2-4*1.3-2*1.3-4*1.4-1*2,terms a b c d e; asserted cre drc dre erb(2),10,1
+5::2-4*1.3-2*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted cre drc dre era erb,10,1
+5::2-4*1.3-2*1.3-4*2.4-4*1,terms a b c d e; asserted cre drc dre(2) ere,10,1
+5::2-4*1.3-2*1.3-4*2.4-2*1,terms a b c d e; asserted cre drc dre(2) erc,10,1
+5::2-4*1.3-2*1.3-4*2.4-1*1,terms a b c d e; asserted cre drc dre(2) erb,10,1
+5::2-4*1.3-2*1.3-3*1.4-4*1,terms a b c d e; asserted cre drc drd ere,9,1
+5::2-4*1.3-2*1.3-3*1.4-4*2,terms a b c d e; asserted cre drc drd ere(2),10,1
+5::2-4*1.3-2*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted cre drc drd erd ere,10,1
+5::2-4*1.3-2*1.3-3*1.4-3*2,terms a b c d e; asserted cre drc drd erd(2),10,1
+5::2-4*1.3-2*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted cre drc drd erc ere,10,1
+5::2-4*1.3-2*1.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted cre drc drd erc erd,10,1
+5::2-4*1.3-2*1.3-3*1.4-2*2,terms a b c d e; asserted cre drc drd erc(2),10,1
+5::2-4*1.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted cre drc drd erb,9,1
+5::2-4*1.3-2*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted cre drc drd erb ere,10,1
+5::2-4*1.3-2*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted cre drc drd erb erd,10,1
+5::2-4*1.3-2*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted cre drc drd erb erc,10,1
+5::2-4*1.3-2*1.3-3*1.4-1*2,terms a b c d e; asserted cre drc drd erb(2),10,1
+5::2-4*1.3-2*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted cre drc drd era erb,10,1
+5::2-4*1.3-2*1.3-3*1.3-4*1.4-4*1,terms a b c d e; asserted cre drc drd dre ere,10,1
+5::2-4*1.3-2*1.3-3*1.3-4*1.4-2*1,terms a b c d e; asserted cre drc drd dre erc,10,1
+5::2-4*1.3-2*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted cre drc drd dre erb,10,1
+5::2-4*1.3-2*1.3-3*2.4-4*1,terms a b c d e; asserted cre drc drd(2) ere,10,1
+5::2-4*1.3-2*1.3-3*2.4-1*1,terms a b c d e; asserted cre drc drd(2) erb,10,1
+5::2-4*1.3-2*2.4-4*1,terms a b c d e; asserted cre drc(2) ere,9,1
+5::2-4*1.3-2*2.4-4*2,terms a b c d e; asserted cre drc(2) ere(2),10,1
+5::2-4*1.3-2*2.4-3*1.4-4*1,terms a b c d e; asserted cre drc(2) erd ere,10,1
+5::2-4*1.3-2*2.4-3*2,terms a b c d e; asserted cre drc(2) erd(2),10,1
+5::2-4*1.3-2*2.4-2*1.4-4*1,terms a b c d e; asserted cre drc(2) erc ere,10,1
+5::2-4*1.3-2*2.4-2*1.4-3*1,terms a b c d e; asserted cre drc(2) erc erd,10,1
+5::2-4*1.3-2*2.4-2*2,terms a b c d e; asserted cre drc(2) erc(2),10,1
+5::2-4*1.3-2*2.4-1*1,terms a b c d e; asserted cre drc(2) erb,9,1
+5::2-4*1.3-2*2.4-1*1.4-4*1,terms a b c d e; asserted cre drc(2) erb ere,10,1
+5::2-4*1.3-2*2.4-1*1.4-3*1,terms a b c d e; asserted cre drc(2) erb erd,10,1
+5::2-4*1.3-2*2.4-1*1.4-2*1,terms a b c d e; asserted cre drc(2) erb erc,10,1
+5::2-4*1.3-2*2.4-1*2,terms a b c d e; asserted cre drc(2) erb(2),10,1
+5::2-4*1.3-2*2.4-0*1.4-1*1,terms a b c d e; asserted cre drc(2) era erb,10,1
+5::2-4*1.3-2*2.3-4*1.4-4*1,terms a b c d e; asserted cre drc(2) dre ere,10,1
+5::2-4*1.3-2*2.3-4*1.4-1*1,terms a b c d e; asserted cre drc(2) dre erb,10,1
+5::2-4*1.3-2*2.3-3*1.4-4*1,terms a b c d e; asserted cre drc(2) drd ere,10,1
+5::2-4*1.3-2*2.3-3*1.4-1*1,terms a b c d e; asserted cre drc(2) drd erb,10,1
+5::2-4*1.3-2*3.4-4*1,terms a b c d e; asserted cre drc(3) ere,10,1
+5::2-4*1.3-2*3.4-1*1,terms a b c d e; asserted cre drc(3) erb,10,1
+5::2-4*1.3-1*1.4-4*1,terms a b c d e; asserted cre drb ere,8,1
+5::2-4*1.3-1*1.4-4*2,terms a b c d e; asserted cre drb ere(2),9,1
+5::2-4*1.3-1*1.4-4*3,terms a b c d e; asserted cre drb ere(3),10,1
+5::2-4*1.3-1*1.4-3*1.4-4*1,terms a b c d e; asserted cre drb erd ere,9,1
+5::2-4*1.3-1*1.4-3*1.4-4*2,terms a b c d e; asserted cre drb erd ere(2),10,1
+5::2-4*1.3-1*1.4-3*2,terms a b c d e; asserted cre drb erd(2),9,1
+5::2-4*1.3-1*1.4-3*2.4-4*1,terms a b c d e; asserted cre drb erd(2) ere,10,1
+5::2-4*1.3-1*1.4-3*3,terms a b c d e; asserted cre drb erd(3),10,1
+5::2-4*1.3-1*1.4-2*1,terms a b c d e; asserted cre drb erc,8,1
+5::2-4*1.3-1*1.4-2*1.4-4*1,terms a b c d e; asserted cre drb erc ere,9,1
+5::2-4*1.3-1*1.4-2*1.4-4*2,terms a b c d e; asserted cre drb erc ere(2),10,1
+5::2-4*1.3-1*1.4-2*1.4-3*1,terms a b c d e; asserted cre drb erc erd,9,1
+5::2-4*1.3-1*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted cre drb erc erd ere,10,1
+5::2-4*1.3-1*1.4-2*1.4-3*2,terms a b c d e; asserted cre drb erc erd(2),10,1
+5::2-4*1.3-1*1.4-2*2,terms a b c d e; asserted cre drb erc(2),9,1
+5::2-4*1.3-1*1.4-2*2.4-4*1,terms a b c d e; asserted cre drb erc(2) ere,10,1
+5::2-4*1.3-1*1.4-2*2.4-3*1,terms a b c d e; asserted cre drb erc(2) erd,10,1
+5::2-4*1.3-1*1.4-2*3,terms a b c d e; asserted cre drb erc(3),10,1
+5::2-4*1.3-1*1.4-1*1,terms a b c d e; asserted cre drb erb,8,1
+5::2-4*1.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted cre drb erb ere,9,1
+5::2-4*1.3-1*1.4-1*1.4-4*2,terms a b c d e; asserted cre drb erb ere(2),10,1
+5::2-4*1.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted cre drb erb erd,9,1
+5::2-4*1.3-1*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted cre drb erb erd ere,10,1
+5::2-4*1.3-1*1.4-1*1.4-3*2,terms a b c d e; asserted cre drb erb erd(2),10,1
+5::2-4*1.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted cre drb erb erc,9,1
+5::2-4*1.3-1*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted cre drb erb erc ere,10,1
+5::2-4*1.3-1*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted cre drb erb erc erd,10,1
+5::2-4*1.3-1*1.4-1*1.4-2*2,terms a b c d e; asserted cre drb erb erc(2),10,1
+5::2-4*1.3-1*1.4-1*2,terms a b c d e; asserted cre drb erb(2),9,1
+5::2-4*1.3-1*1.4-1*2.4-4*1,terms a b c d e; asserted cre drb erb(2) ere,10,1
+5::2-4*1.3-1*1.4-1*2.4-3*1,terms a b c d e; asserted cre drb erb(2) erd,10,1
+5::2-4*1.3-1*1.4-1*2.4-2*1,terms a b c d e; asserted cre drb erb(2) erc,10,1
+5::2-4*1.3-1*1.4-1*3,terms a b c d e; asserted cre drb erb(3),10,1
+5::2-4*1.3-1*1.4-0*1,terms a b c d e; asserted cre drb era,8,1
+5::2-4*1.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted cre drb era ere,9,1
+5::2-4*1.3-1*1.4-0*1.4-4*2,terms a b c d e; asserted cre drb era ere(2),10,1
+5::2-4*1.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted cre drb era erd,9,1
+5::2-4*1.3-1*1.4-0*1.4-3*1.4-4*1,terms a b c d e; asserted cre drb era erd ere,10,1
+5::2-4*1.3-1*1.4-0*1.4-3*2,terms a b c d e; asserted cre drb era erd(2),10,1
+5::2-4*1.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted cre drb era erc,9,1
+5::2-4*1.3-1*1.4-0*1.4-2*1.4-4*1,terms a b c d e; asserted cre drb era erc ere,10,1
+5::2-4*1.3-1*1.4-0*1.4-2*1.4-3*1,terms a b c d e; asserted cre drb era erc erd,10,1
+5::2-4*1.3-1*1.4-0*1.4-2*2,terms a b c d e; asserted cre drb era erc(2),10,1
+5::2-4*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted cre drb era erb,9,1
+5::2-4*1.3-1*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted cre drb era erb ere,10,1
+5::2-4*1.3-1*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted cre drb era erb erd,10,1
+5::2-4*1.3-1*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted cre drb era erb erc,10,1
+5::2-4*1.3-1*1.4-0*1.4-1*2,terms a b c d e; asserted cre drb era erb(2),10,1
+5::2-4*1.3-1*1.4-0*2,terms a b c d e; asserted cre drb era(2),9,1
+5::2-4*1.3-1*1.4-0*2.4-4*1,terms a b c d e; asserted cre drb era(2) ere,10,1
+5::2-4*1.3-1*1.4-0*2.4-3*1,terms a b c d e; asserted cre drb era(2) erd,10,1
+5::2-4*1.3-1*1.4-0*2.4-2*1,terms a b c d e; asserted cre drb era(2) erc,10,1
+5::2-4*1.3-1*1.4-0*2.4-1*1,terms a b c d e; asserted cre drb era(2) erb,10,1
+5::2-4*1.3-1*1.4-0*3,terms a b c d e; asserted cre drb era(3),10,1
+5::2-4*1.3-1*1.3-4*1.4-4*1,terms a b c d e; asserted cre drb dre ere,9,1
+5::2-4*1.3-1*1.3-4*1.4-4*2,terms a b c d e; asserted cre drb dre ere(2),10,1
+5::2-4*1.3-1*1.3-4*1.4-3*1.4-4*1,terms a b c d e; asserted cre drb dre erd ere,10,1
+5::2-4*1.3-1*1.3-4*1.4-3*2,terms a b c d e; asserted cre drb dre erd(2),10,1
+5::2-4*1.3-1*1.3-4*1.4-2*1,terms a b c d e; asserted cre drb dre erc,9,1
+5::2-4*1.3-1*1.3-4*1.4-2*1.4-4*1,terms a b c d e; asserted cre drb dre erc ere,10,1
+5::2-4*1.3-1*1.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted cre drb dre erc erd,10,1
+5::2-4*1.3-1*1.3-4*1.4-2*2,terms a b c d e; asserted cre drb dre erc(2),10,1
+5::2-4*1.3-1*1.3-4*1.4-1*1,terms a b c d e; asserted cre drb dre erb,9,1
+5::2-4*1.3-1*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted cre drb dre erb ere,10,1
+5::2-4*1.3-1*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted cre drb dre erb erd,10,1
+5::2-4*1.3-1*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted cre drb dre erb erc,10,1
+5::2-4*1.3-1*1.3-4*1.4-1*2,terms a b c d e; asserted cre drb dre erb(2),10,1
+5::2-4*1.3-1*1.3-4*1.4-0*1,terms a b c d e; asserted cre drb dre era,9,1
+5::2-4*1.3-1*1.3-4*1.4-0*1.4-4*1,terms a b c d e; asserted cre drb dre era ere,10,1
+5::2-4*1.3-1*1.3-4*1.4-0*1.4-3*1,terms a b c d e; asserted cre drb dre era erd,10,1
+5::2-4*1.3-1*1.3-4*1.4-0*1.4-2*1,terms a b c d e; asserted cre drb dre era erc,10,1
+5::2-4*1.3-1*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted cre drb dre era erb,10,1
+5::2-4*1.3-1*1.3-4*1.4-0*2,terms a b c d e; asserted cre drb dre era(2),10,1
+5::2-4*1.3-1*1.3-4*2.4-4*1,terms a b c d e; asserted cre drb dre(2) ere,10,1
+5::2-4*1.3-1*1.3-4*2.4-2*1,terms a b c d e; asserted cre drb dre(2) erc,10,1
+5::2-4*1.3-1*1.3-4*2.4-1*1,terms a b c d e; asserted cre drb dre(2) erb,10,1
+5::2-4*1.3-1*1.3-4*2.4-0*1,terms a b c d e; asserted cre drb dre(2) era,10,1
+5::2-4*1.3-1*1.3-3*1.4-4*1,terms a b c d e; asserted cre drb drd ere,9,1
+5::2-4*1.3-1*1.3-3*1.4-4*2,terms a b c d e; asserted cre drb drd ere(2),10,1
+5::2-4*1.3-1*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted cre drb drd erd ere,10,1
+5::2-4*1.3-1*1.3-3*1.4-3*2,terms a b c d e; asserted cre drb drd erd(2),10,1
+5::2-4*1.3-1*1.3-3*1.4-2*1,terms a b c d e; asserted cre drb drd erc,9,1
+5::2-4*1.3-1*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted cre drb drd erc ere,10,1
+5::2-4*1.3-1*1.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted cre drb drd erc erd,10,1
+5::2-4*1.3-1*1.3-3*1.4-2*2,terms a b c d e; asserted cre drb drd erc(2),10,1
+5::2-4*1.3-1*1.3-3*1.4-1*1,terms a b c d e; asserted cre drb drd erb,9,1
+5::2-4*1.3-1*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted cre drb drd erb ere,10,1
+5::2-4*1.3-1*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted cre drb drd erb erd,10,1
+5::2-4*1.3-1*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted cre drb drd erb erc,10,1
+5::2-4*1.3-1*1.3-3*1.4-1*2,terms a b c d e; asserted cre drb drd erb(2),10,1
+5::2-4*1.3-1*1.3-3*1.4-0*1,terms a b c d e; asserted cre drb drd era,9,1
+5::2-4*1.3-1*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted cre drb drd era ere,10,1
+5::2-4*1.3-1*1.3-3*1.4-0*1.4-3*1,terms a b c d e; asserted cre drb drd era erd,10,1
+5::2-4*1.3-1*1.3-3*1.4-0*1.4-2*1,terms a b c d e; asserted cre drb drd era erc,10,1
+5::2-4*1.3-1*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted cre drb drd era erb,10,1
+5::2-4*1.3-1*1.3-3*1.4-0*2,terms a b c d e; asserted cre drb drd era(2),10,1
+5::2-4*1.3-1*1.3-3*1.3-4*1.4-4*1,terms a b c d e; asserted cre drb drd dre ere,10,1
+5::2-4*1.3-1*1.3-3*1.3-4*1.4-2*1,terms a b c d e; asserted cre drb drd dre erc,10,1
+5::2-4*1.3-1*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted cre drb drd dre erb,10,1
+5::2-4*1.3-1*1.3-3*1.3-4*1.4-0*1,terms a b c d e; asserted cre drb drd dre era,10,1
+5::2-4*1.3-1*1.3-3*2.4-4*1,terms a b c d e; asserted cre drb drd(2) ere,10,1
+5::2-4*1.3-1*1.3-3*2.4-2*1,terms a b c d e; asserted cre drb drd(2) erc,10,1
+5::2-4*1.3-1*1.3-3*2.4-1*1,terms a b c d e; asserted cre drb drd(2) erb,10,1
+5::2-4*1.3-1*1.3-3*2.4-0*1,terms a b c d e; asserted cre drb drd(2) era,10,1
+5::2-4*1.3-1*1.3-2*1.4-4*1,terms a b c d e; asserted cre drb drc ere,9,1
+5::2-4*1.3-1*1.3-2*1.4-4*2,terms a b c d e; asserted cre drb drc ere(2),10,1
+5::2-4*1.3-1*1.3-2*1.4-3*1.4-4*1,terms a b c d e; asserted cre drb drc erd ere,10,1
+5::2-4*1.3-1*1.3-2*1.4-3*2,terms a b c d e; asserted cre drb drc erd(2),10,1
+5::2-4*1.3-1*1.3-2*1.4-2*1.4-4*1,terms a b c d e; asserted cre drb drc erc ere,10,1
+5::2-4*1.3-1*1.3-2*1.4-2*1.4-3*1,terms a b c d e; asserted cre drb drc erc erd,10,1
+5::2-4*1.3-1*1.3-2*1.4-2*2,terms a b c d e; asserted cre drb drc erc(2),10,1
+5::2-4*1.3-1*1.3-2*1.4-1*1,terms a b c d e; asserted cre drb drc erb,9,1
+5::2-4*1.3-1*1.3-2*1.4-1*1.4-4*1,terms a b c d e; asserted cre drb drc erb ere,10,1
+5::2-4*1.3-1*1.3-2*1.4-1*1.4-3*1,terms a b c d e; asserted cre drb drc erb erd,10,1
+5::2-4*1.3-1*1.3-2*1.4-1*1.4-2*1,terms a b c d e; asserted cre drb drc erb erc,10,1
+5::2-4*1.3-1*1.3-2*1.4-1*2,terms a b c d e; asserted cre drb drc erb(2),10,1
+5::2-4*1.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted cre drb drc era,9,1
+5::2-4*1.3-1*1.3-2*1.4-0*1.4-4*1,terms a b c d e; asserted cre drb drc era ere,10,1
+5::2-4*1.3-1*1.3-2*1.4-0*1.4-3*1,terms a b c d e; asserted cre drb drc era erd,10,1
+5::2-4*1.3-1*1.3-2*1.4-0*1.4-2*1,terms a b c d e; asserted cre drb drc era erc,10,1
+5::2-4*1.3-1*1.3-2*1.4-0*1.4-1*1,terms a b c d e; asserted cre drb drc era erb,10,1
+5::2-4*1.3-1*1.3-2*1.4-0*2,terms a b c d e; asserted cre drb drc era(2),10,1
+5::2-4*1.3-1*1.3-2*1.3-4*1.4-4*1,terms a b c d e; asserted cre drb drc dre ere,10,1
+5::2-4*1.3-1*1.3-2*1.3-4*1.4-2*1,terms a b c d e; asserted cre drb drc dre erc,10,1
+5::2-4*1.3-1*1.3-2*1.3-4*1.4-1*1,terms a b c d e; asserted cre drb drc dre erb,10,1
+5::2-4*1.3-1*1.3-2*1.3-4*1.4-0*1,terms a b c d e; asserted cre drb drc dre era,10,1
+5::2-4*1.3-1*1.3-2*1.3-3*1.4-4*1,terms a b c d e; asserted cre drb drc drd ere,10,1
+5::2-4*1.3-1*1.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted cre drb drc drd erb,10,1
+5::2-4*1.3-1*1.3-2*1.3-3*1.4-0*1,terms a b c d e; asserted cre drb drc drd era,10,1
+5::2-4*1.3-1*1.3-2*2.4-4*1,terms a b c d e; asserted cre drb drc(2) ere,10,1
+5::2-4*1.3-1*1.3-2*2.4-1*1,terms a b c d e; asserted cre drb drc(2) erb,10,1
+5::2-4*1.3-1*1.3-2*2.4-0*1,terms a b c d e; asserted cre drb drc(2) era,10,1
+5::2-4*1.3-1*2.4-4*1,terms a b c d e; asserted cre drb(2) ere,9,1
+5::2-4*1.3-1*2.4-4*2,terms a b c d e; asserted cre drb(2) ere(2),10,1
+5::2-4*1.3-1*2.4-3*1.4-4*1,terms a b c d e; asserted cre drb(2) erd ere,10,1
+5::2-4*1.3-1*2.4-3*2,terms a b c d e; asserted cre drb(2) erd(2),10,1
+5::2-4*1.3-1*2.4-2*1,terms a b c d e; asserted cre drb(2) erc,9,1
+5::2-4*1.3-1*2.4-2*1.4-4*1,terms a b c d e; asserted cre drb(2) erc ere,10,1
+5::2-4*1.3-1*2.4-2*1.4-3*1,terms a b c d e; asserted cre drb(2) erc erd,10,1
+5::2-4*1.3-1*2.4-2*2,terms a b c d e; asserted cre drb(2) erc(2),10,1
+5::2-4*1.3-1*2.4-1*1,terms a b c d e; asserted cre drb(2) erb,9,1
+5::2-4*1.3-1*2.4-1*1.4-4*1,terms a b c d e; asserted cre drb(2) erb ere,10,1
+5::2-4*1.3-1*2.4-1*1.4-3*1,terms a b c d e; asserted cre drb(2) erb erd,10,1
+5::2-4*1.3-1*2.4-1*1.4-2*1,terms a b c d e; asserted cre drb(2) erb erc,10,1
+5::2-4*1.3-1*2.4-1*2,terms a b c d e; asserted cre drb(2) erb(2),10,1
+5::2-4*1.3-1*2.4-0*1,terms a b c d e; asserted cre drb(2) era,9,1
+5::2-4*1.3-1*2.4-0*1.4-4*1,terms a b c d e; asserted cre drb(2) era ere,10,1
+5::2-4*1.3-1*2.4-0*1.4-3*1,terms a b c d e; asserted cre drb(2) era erd,10,1
+5::2-4*1.3-1*2.4-0*1.4-2*1,terms a b c d e; asserted cre drb(2) era erc,10,1
+5::2-4*1.3-1*2.4-0*1.4-1*1,terms a b c d e; asserted cre drb(2) era erb,10,1
+5::2-4*1.3-1*2.4-0*2,terms a b c d e; asserted cre drb(2) era(2),10,1
+5::2-4*1.3-1*2.3-4*1.4-4*1,terms a b c d e; asserted cre drb(2) dre ere,10,1
+5::2-4*1.3-1*2.3-4*1.4-2*1,terms a b c d e; asserted cre drb(2) dre erc,10,1
+5::2-4*1.3-1*2.3-4*1.4-1*1,terms a b c d e; asserted cre drb(2) dre erb,10,1
+5::2-4*1.3-1*2.3-4*1.4-0*1,terms a b c d e; asserted cre drb(2) dre era,10,1
+5::2-4*1.3-1*2.3-3*1.4-4*1,terms a b c d e; asserted cre drb(2) drd ere,10,1
+5::2-4*1.3-1*2.3-3*1.4-2*1,terms a b c d e; asserted cre drb(2) drd erc,10,1
+5::2-4*1.3-1*2.3-3*1.4-1*1,terms a b c d e; asserted cre drb(2) drd erb,10,1
+5::2-4*1.3-1*2.3-3*1.4-0*1,terms a b c d e; asserted cre drb(2) drd era,10,1
+5::2-4*1.3-1*2.3-2*1.4-4*1,terms a b c d e; asserted cre drb(2) drc ere,10,1
+5::2-4*1.3-1*2.3-2*1.4-1*1,terms a b c d e; asserted cre drb(2) drc erb,10,1
+5::2-4*1.3-1*2.3-2*1.4-0*1,terms a b c d e; asserted cre drb(2) drc era,10,1
+5::2-4*1.3-1*3.4-4*1,terms a b c d e; asserted cre drb(3) ere,10,1
+5::2-4*1.3-1*3.4-2*1,terms a b c d e; asserted cre drb(3) erc,10,1
+5::2-4*1.3-1*3.4-1*1,terms a b c d e; asserted cre drb(3) erb,10,1
+5::2-4*1.3-1*3.4-0*1,terms a b c d e; asserted cre drb(3) era,10,1
+5::2-4*1.3-0*1.3-1*1.4-4*1,terms a b c d e; asserted cre dra drb ere,9,1
+5::2-4*1.3-0*1.3-1*1.4-4*2,terms a b c d e; asserted cre dra drb ere(2),10,1
+5::2-4*1.3-0*1.3-1*1.4-3*1.4-4*1,terms a b c d e; asserted cre dra drb erd ere,10,1
+5::2-4*1.3-0*1.3-1*1.4-3*2,terms a b c d e; asserted cre dra drb erd(2),10,1
+5::2-4*1.3-0*1.3-1*1.4-2*1,terms a b c d e; asserted cre dra drb erc,9,1
+5::2-4*1.3-0*1.3-1*1.4-2*1.4-4*1,terms a b c d e; asserted cre dra drb erc ere,10,1
+5::2-4*1.3-0*1.3-1*1.4-2*1.4-3*1,terms a b c d e; asserted cre dra drb erc erd,10,1
+5::2-4*1.3-0*1.3-1*1.4-2*2,terms a b c d e; asserted cre dra drb erc(2),10,1
+5::2-4*1.3-0*1.3-1*1.4-1*1,terms a b c d e; asserted cre dra drb erb,9,1
+5::2-4*1.3-0*1.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted cre dra drb erb ere,10,1
+5::2-4*1.3-0*1.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted cre dra drb erb erd,10,1
+5::2-4*1.3-0*1.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted cre dra drb erb erc,10,1
+5::2-4*1.3-0*1.3-1*1.4-1*2,terms a b c d e; asserted cre dra drb erb(2),10,1
+5::2-4*1.3-0*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted cre dra drb era erb,10,1
+5::2-4*1.3-0*1.3-1*1.3-4*1.4-4*1,terms a b c d e; asserted cre dra drb dre ere,10,1
+5::2-4*1.3-0*1.3-1*1.3-4*1.4-2*1,terms a b c d e; asserted cre dra drb dre erc,10,1
+5::2-4*1.3-0*1.3-1*1.3-4*1.4-1*1,terms a b c d e; asserted cre dra drb dre erb,10,1
+5::2-4*1.3-0*1.3-1*1.3-3*1.4-4*1,terms a b c d e; asserted cre dra drb drd ere,10,1
+5::2-4*1.3-0*1.3-1*1.3-3*1.4-2*1,terms a b c d e; asserted cre dra drb drd erc,10,1
+5::2-4*1.3-0*1.3-1*1.3-3*1.4-1*1,terms a b c d e; asserted cre dra drb drd erb,10,1
+5::2-4*1.3-0*1.3-1*1.3-2*1.4-4*1,terms a b c d e; asserted cre dra drb drc ere,10,1
+5::2-4*1.3-0*1.3-1*1.3-2*1.4-1*1,terms a b c d e; asserted cre dra drb drc erb,10,1
+5::2-4*1.3-0*1.3-1*2.4-4*1,terms a b c d e; asserted cre dra drb(2) ere,10,1
+5::2-4*1.3-0*1.3-1*2.4-2*1,terms a b c d e; asserted cre dra drb(2) erc,10,1
+5::2-4*1.3-0*1.3-1*2.4-1*1,terms a b c d e; asserted cre dra drb(2) erb,10,1
+5::2-4*1.3-0*1.3-1*2.4-0*1,terms a b c d e; asserted cre dra drb(2) era,10,1
+5::2-4*2.3-4*2.4-4*1,terms a b c d e; asserted cre(2) dre(2) ere,10,1
+5::2-4*2.3-4*2.4-1*1,terms a b c d e; asserted cre(2) dre(2) erb,10,1
+5::2-4*2.3-3*1.4-4*1,terms a b c d e; asserted cre(2) drd ere,9,1
+5::2-4*2.3-3*1.4-4*2,terms a b c d e; asserted cre(2) drd ere(2),10,1
+5::2-4*2.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted cre(2) drd erd ere,10,1
+5::2-4*2.3-3*1.4-3*2,terms a b c d e; asserted cre(2) drd erd(2),10,1
+5::2-4*2.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted cre(2) drd erc ere,10,1
+5::2-4*2.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted cre(2) drd erc erd,10,1
+5::2-4*2.3-3*1.4-2*2,terms a b c d e; asserted cre(2) drd erc(2),10,1
+5::2-4*2.3-3*1.4-1*1,terms a b c d e; asserted cre(2) drd erb,9,1
+5::2-4*2.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted cre(2) drd erb ere,10,1
+5::2-4*2.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted cre(2) drd erb erd,10,1
+5::2-4*2.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted cre(2) drd erb erc,10,1
+5::2-4*2.3-3*1.4-1*2,terms a b c d e; asserted cre(2) drd erb(2),10,1
+5::2-4*2.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted cre(2) drd era erb,10,1
+5::2-4*2.3-3*1.3-4*1.4-4*1,terms a b c d e; asserted cre(2) drd dre ere,10,1
+5::2-4*2.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted cre(2) drd dre erb,10,1
+5::2-4*2.3-3*2.4-4*1,terms a b c d e; asserted cre(2) drd(2) ere,10,1
+5::2-4*2.3-3*2.4-1*1,terms a b c d e; asserted cre(2) drd(2) erb,10,1
+5::2-4*2.3-2*1.3-4*1.4-4*1,terms a b c d e; asserted cre(2) drc dre ere,10,1
+5::2-4*2.3-2*1.3-4*1.4-1*1,terms a b c d e; asserted cre(2) drc dre erb,10,1
+5::2-4*2.3-2*1.3-3*1.4-4*1,terms a b c d e; asserted cre(2) drc drd ere,10,1
+5::2-4*2.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted cre(2) drc drd erb,10,1
+5::2-4*2.3-2*2.4-1*1,terms a b c d e; asserted cre(2) drc(2) erb,10,1
+5::2-4*2.3-1*1.4-4*1,terms a b c d e; asserted cre(2) drb ere,9,1
+5::2-4*2.3-1*1.4-4*2,terms a b c d e; asserted cre(2) drb ere(2),10,1
+5::2-4*2.3-1*1.4-3*1.4-4*1,terms a b c d e; asserted cre(2) drb erd ere,10,1
+5::2-4*2.3-1*1.4-2*1.4-4*1,terms a b c d e; asserted cre(2) drb erc ere,10,1
+5::2-4*2.3-1*1.4-2*1.4-3*1,terms a b c d e; asserted cre(2) drb erc erd,10,1
+5::2-4*2.3-1*1.4-2*2,terms a b c d e; asserted cre(2) drb erc(2),10,1
+5::2-4*2.3-1*1.4-1*1,terms a b c d e; asserted cre(2) drb erb,9,1
+5::2-4*2.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted cre(2) drb erb ere,10,1
+5::2-4*2.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted cre(2) drb erb erd,10,1
+5::2-4*2.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted cre(2) drb erb erc,10,1
+5::2-4*2.3-1*1.4-1*2,terms a b c d e; asserted cre(2) drb erb(2),10,1
+5::2-4*2.3-1*1.4-0*1,terms a b c d e; asserted cre(2) drb era,9,1
+5::2-4*2.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted cre(2) drb era ere,10,1
+5::2-4*2.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted cre(2) drb era erd,10,1
+5::2-4*2.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted cre(2) drb era erc,10,1
+5::2-4*2.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted cre(2) drb era erb,10,1
+5::2-4*2.3-1*1.4-0*2,terms a b c d e; asserted cre(2) drb era(2),10,1
+5::2-4*2.3-1*1.3-4*1.4-4*1,terms a b c d e; asserted cre(2) drb dre ere,10,1
+5::2-4*2.3-1*1.3-4*1.4-1*1,terms a b c d e; asserted cre(2) drb dre erb,10,1
+5::2-4*2.3-1*1.3-4*1.4-0*1,terms a b c d e; asserted cre(2) drb dre era,10,1
+5::2-4*2.3-1*1.3-3*1.4-4*1,terms a b c d e; asserted cre(2) drb drd ere,10,1
+5::2-4*2.3-1*1.3-3*1.4-1*1,terms a b c d e; asserted cre(2) drb drd erb,10,1
+5::2-4*2.3-1*1.3-3*1.4-0*1,terms a b c d e; asserted cre(2) drb drd era,10,1
+5::2-4*2.3-1*1.3-2*1.4-4*1,terms a b c d e; asserted cre(2) drb drc ere,10,1
+5::2-4*2.3-1*1.3-2*1.4-1*1,terms a b c d e; asserted cre(2) drb drc erb,10,1
+5::2-4*2.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted cre(2) drb drc era,10,1
+5::2-4*2.3-1*2.4-4*1,terms a b c d e; asserted cre(2) drb(2) ere,10,1
+5::2-4*2.3-1*2.4-1*1,terms a b c d e; asserted cre(2) drb(2) erb,10,1
+5::2-4*2.3-1*2.4-0*1,terms a b c d e; asserted cre(2) drb(2) era,10,1
+5::2-4*2.3-0*1.3-1*1.4-4*1,terms a b c d e; asserted cre(2) dra drb ere,10,1
+5::2-4*2.3-0*1.3-1*1.4-1*1,terms a b c d e; asserted cre(2) dra drb erb,10,1
+5::2-4*3.3-3*1.4-4*1,terms a b c d e; asserted cre(3) drd ere,10,1
+5::2-4*3.3-3*1.4-1*1,terms a b c d e; asserted cre(3) drd erb,10,1
+5::2-4*3.3-1*1.4-4*1,terms a b c d e; asserted cre(3) drb ere,10,1
+5::2-4*3.3-1*1.4-1*1,terms a b c d e; asserted cre(3) drb erb,10,1
+5::2-4*3.3-1*1.4-0*1,terms a b c d e; asserted cre(3) drb era,10,1
+5::2-3*1.2-4*1.3-3*1.4-4*1,terms a b c d e; asserted crd cre drd ere,9,1
+5::2-3*1.2-4*1.3-3*1.4-4*2,terms a b c d e; asserted crd cre drd ere(2),10,1
+5::2-3*1.2-4*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted crd cre drd erd ere,10,1
+5::2-3*1.2-4*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted crd cre drd erc ere,10,1
+5::2-3*1.2-4*1.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted crd cre drd erc erd,10,1
+5::2-3*1.2-4*1.3-3*1.4-1*1,terms a b c d e; asserted crd cre drd erb,9,1
+5::2-3*1.2-4*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted crd cre drd erb ere,10,1
+5::2-3*1.2-4*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted crd cre drd erb erd,10,1
+5::2-3*1.2-4*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted crd cre drd erb erc,10,1
+5::2-3*1.2-4*1.3-3*1.4-1*2,terms a b c d e; asserted crd cre drd erb(2),10,1
+5::2-3*1.2-4*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted crd cre drd era erb,10,1
+5::2-3*1.2-4*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted crd cre drd dre erb,10,1
+5::2-3*1.2-4*1.3-3*2.4-1*1,terms a b c d e; asserted crd cre drd(2) erb,10,1
+5::2-3*1.2-4*1.3-2*1.3-4*1.4-1*1,terms a b c d e; asserted crd cre drc dre erb,10,1
+5::2-3*1.2-4*1.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted crd cre drc drd erb,10,1
+5::2-3*1.2-4*1.3-1*1.4-1*1,terms a b c d e; asserted crd cre drb erb,9,1
+5::2-3*1.2-4*1.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted crd cre drb erb ere,10,1
+5::2-3*1.2-4*1.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted crd cre drb erb erd,10,1
+5::2-3*1.2-4*1.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted crd cre drb erb erc,10,1
+5::2-3*1.2-4*1.3-1*1.4-1*2,terms a b c d e; asserted crd cre drb erb(2),10,1
+5::2-3*1.2-4*1.3-1*1.4-0*1,terms a b c d e; asserted crd cre drb era,9,1
+5::2-3*1.2-4*1.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted crd cre drb era ere,10,1
+5::2-3*1.2-4*1.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted crd cre drb era erd,10,1
+5::2-3*1.2-4*1.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted crd cre drb era erc,10,1
+5::2-3*1.2-4*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted crd cre drb era erb,10,1
+5::2-3*1.2-4*1.3-1*1.4-0*2,terms a b c d e; asserted crd cre drb era(2),10,1
+5::2-3*1.2-4*2.3-3*1.4-4*1,terms a b c d e; asserted crd cre(2) drd ere,10,1
+5::2-3*1.2-4*2.3-3*1.4-1*1,terms a b c d e; asserted crd cre(2) drd erb,10,1
+5::2-3*1.2-4*2.3-1*1.4-4*1,terms a b c d e; asserted crd cre(2) drb ere,10,1
+5::2-3*1.2-4*2.3-1*1.4-1*1,terms a b c d e; asserted crd cre(2) drb erb,10,1
+5::2-3*1.2-4*2.3-1*1.4-0*1,terms a b c d e; asserted crd cre(2) drb era,10,1
+5::2-2*1.3-3*1.4-4*1,terms a b c d e; asserted crc drd ere,8,1
+5::2-2*1.3-3*1.4-4*2,terms a b c d e; asserted crc drd ere(2),9,1
+5::2-2*1.3-3*1.4-4*3,terms a b c d e; asserted crc drd ere(3),10,1
+5::2-2*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted crc drd erd ere,9,1
+5::2-2*1.3-3*1.4-3*1.4-4*2,terms a b c d e; asserted crc drd erd ere(2),10,1
+5::2-2*1.3-3*1.4-3*2.4-4*1,terms a b c d e; asserted crc drd erd(2) ere,10,1
+5::2-2*1.3-3*1.4-2*1.4-3*1.4-4*1,terms a b c d e; asserted crc drd erc erd ere,10,1
+5::2-2*1.3-3*1.4-1*1,terms a b c d e; asserted crc drd erb,8,1
+5::2-2*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted crc drd erb ere,9,1
+5::2-2*1.3-3*1.4-1*1.4-4*2,terms a b c d e; asserted crc drd erb ere(2),10,1
+5::2-2*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted crc drd erb erd,9,1
+5::2-2*1.3-3*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted crc drd erb erd ere,10,1
+5::2-2*1.3-3*1.4-1*1.4-3*2,terms a b c d e; asserted crc drd erb erd(2),10,1
+5::2-2*1.3-3*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted crc drd erb erc erd,10,1
+5::2-2*1.3-3*1.4-1*2,terms a b c d e; asserted crc drd erb(2),9,1
+5::2-2*1.3-3*1.4-1*2.4-4*1,terms a b c d e; asserted crc drd erb(2) ere,10,1
+5::2-2*1.3-3*1.4-1*2.4-3*1,terms a b c d e; asserted crc drd erb(2) erd,10,1
+5::2-2*1.3-3*1.4-1*3,terms a b c d e; asserted crc drd erb(3),10,1
+5::2-2*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted crc drd era erb,9,1
+5::2-2*1.3-3*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted crc drd era erb ere,10,1
+5::2-2*1.3-3*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted crc drd era erb erd,10,1
+5::2-2*1.3-3*1.4-0*1.4-1*2,terms a b c d e; asserted crc drd era erb(2),10,1
+5::2-2*1.3-3*1.3-4*1.4-4*2,terms a b c d e; asserted crc drd dre ere(2),10,1
+5::2-2*1.3-3*1.3-4*1.4-3*1.4-4*1,terms a b c d e; asserted crc drd dre erd ere,10,1
+5::2-2*1.3-3*1.3-4*1.4-2*1.4-4*1,terms a b c d e; asserted crc drd dre erc ere,10,1
+5::2-2*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted crc drd dre erb,9,1
+5::2-2*1.3-3*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted crc drd dre erb ere,10,1
+5::2-2*1.3-3*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted crc drd dre erb erd,10,1
+5::2-2*1.3-3*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted crc drd dre erb erc,10,1
+5::2-2*1.3-3*1.3-4*1.4-1*2,terms a b c d e; asserted crc drd dre erb(2),10,1
+5::2-2*1.3-3*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted crc drd dre era erb,10,1
+5::2-2*1.3-3*1.3-4*2.4-1*1,terms a b c d e; asserted crc drd dre(2) erb,10,1
+5::2-2*1.3-3*2.4-4*2,terms a b c d e; asserted crc drd(2) ere(2),10,1
+5::2-2*1.3-3*2.4-2*1.4-4*1,terms a b c d e; asserted crc drd(2) erc ere,10,1
+5::2-2*1.3-3*2.4-1*1,terms a b c d e; asserted crc drd(2) erb,9,1
+5::2-2*1.3-3*2.4-1*1.4-4*1,terms a b c d e; asserted crc drd(2) erb ere,10,1
+5::2-2*1.3-3*2.4-1*1.4-3*1,terms a b c d e; asserted crc drd(2) erb erd,10,1
+5::2-2*1.3-3*2.4-1*1.4-2*1,terms a b c d e; asserted crc drd(2) erb erc,10,1
+5::2-2*1.3-3*2.4-1*2,terms a b c d e; asserted crc drd(2) erb(2),10,1
+5::2-2*1.3-3*2.4-0*1.4-1*1,terms a b c d e; asserted crc drd(2) era erb,10,1
+5::2-2*1.3-3*2.3-4*1.4-1*1,terms a b c d e; asserted crc drd(2) dre erb,10,1
+5::2-2*1.3-3*3.4-1*1,terms a b c d e; asserted crc drd(3) erb,10,1
+5::2-2*1.3-2*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted crc drc drd erc ere,10,1
+5::2-2*1.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted crc drc drd erb,9,1
+5::2-2*1.3-2*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted crc drc drd erb ere,10,1
+5::2-2*1.3-2*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted crc drc drd erb erd,10,1
+5::2-2*1.3-2*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted crc drc drd erb erc,10,1
+5::2-2*1.3-2*1.3-3*1.4-1*2,terms a b c d e; asserted crc drc drd erb(2),10,1
+5::2-2*1.3-2*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted crc drc drd era erb,10,1
+5::2-2*1.3-2*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted crc drc drd dre erb,10,1
+5::2-2*1.3-2*1.3-3*2.4-1*1,terms a b c d e; asserted crc drc drd(2) erb,10,1
+5::2-2*1.3-2*2.3-3*1.4-1*1,terms a b c d e; asserted crc drc(2) drd erb,10,1
+5::2-2*1.3-1*1.4-1*1,terms a b c d e; asserted crc drb erb,8,1
+5::2-2*1.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted crc drb erb ere,9,1
+5::2-2*1.3-1*1.4-1*1.4-4*2,terms a b c d e; asserted crc drb erb ere(2),10,1
+5::2-2*1.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted crc drb erb erd,9,1
+5::2-2*1.3-1*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted crc drb erb erd ere,10,1
+5::2-2*1.3-1*1.4-1*1.4-3*2,terms a b c d e; asserted crc drb erb erd(2),10,1
+5::2-2*1.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted crc drb erb erc,9,1
+5::2-2*1.3-1*1.4-1*1.4-2*1.4-4*1,terms a b c d e; asserted crc drb erb erc ere,10,1
+5::2-2*1.3-1*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted crc drb erb erc erd,10,1
+5::2-2*1.3-1*1.4-1*1.4-2*2,terms a b c d e; asserted crc drb erb erc(2),10,1
+5::2-2*1.3-1*1.4-1*2,terms a b c d e; asserted crc drb erb(2),9,1
+5::2-2*1.3-1*1.4-1*2.4-4*1,terms a b c d e; asserted crc drb erb(2) ere,10,1
+5::2-2*1.3-1*1.4-1*2.4-3*1,terms a b c d e; asserted crc drb erb(2) erd,10,1
+5::2-2*1.3-1*1.4-1*2.4-2*1,terms a b c d e; asserted crc drb erb(2) erc,10,1
+5::2-2*1.3-1*1.4-1*3,terms a b c d e; asserted crc drb erb(3),10,1
+5::2-2*1.3-1*1.4-0*1,terms a b c d e; asserted crc drb era,8,1
+5::2-2*1.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted crc drb era ere,9,1
+5::2-2*1.3-1*1.4-0*1.4-4*2,terms a b c d e; asserted crc drb era ere(2),10,1
+5::2-2*1.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted crc drb era erd,9,1
+5::2-2*1.3-1*1.4-0*1.4-3*1.4-4*1,terms a b c d e; asserted crc drb era erd ere,10,1
+5::2-2*1.3-1*1.4-0*1.4-3*2,terms a b c d e; asserted crc drb era erd(2),10,1
+5::2-2*1.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted crc drb era erc,9,1
+5::2-2*1.3-1*1.4-0*1.4-2*1.4-4*1,terms a b c d e; asserted crc drb era erc ere,10,1
+5::2-2*1.3-1*1.4-0*1.4-2*1.4-3*1,terms a b c d e; asserted crc drb era erc erd,10,1
+5::2-2*1.3-1*1.4-0*1.4-2*2,terms a b c d e; asserted crc drb era erc(2),10,1
+5::2-2*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted crc drb era erb,9,1
+5::2-2*1.3-1*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted crc drb era erb ere,10,1
+5::2-2*1.3-1*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted crc drb era erb erd,10,1
+5::2-2*1.3-1*1.4-0*1.4-1*1.4-2*1,terms a b c d e; asserted crc drb era erb erc,10,1
+5::2-2*1.3-1*1.4-0*1.4-1*2,terms a b c d e; asserted crc drb era erb(2),10,1
+5::2-2*1.3-1*1.4-0*2,terms a b c d e; asserted crc drb era(2),9,1
+5::2-2*1.3-1*1.4-0*2.4-4*1,terms a b c d e; asserted crc drb era(2) ere,10,1
+5::2-2*1.3-1*1.4-0*2.4-3*1,terms a b c d e; asserted crc drb era(2) erd,10,1
+5::2-2*1.3-1*1.4-0*2.4-2*1,terms a b c d e; asserted crc drb era(2) erc,10,1
+5::2-2*1.3-1*1.4-0*2.4-1*1,terms a b c d e; asserted crc drb era(2) erb,10,1
+5::2-2*1.3-1*1.4-0*3,terms a b c d e; asserted crc drb era(3),10,1
+5::2-2*1.3-1*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted crc drb dre erb ere,10,1
+5::2-2*1.3-1*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted crc drb dre erb erd,10,1
+5::2-2*1.3-1*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted crc drb dre erb erc,10,1
+5::2-2*1.3-1*1.3-4*1.4-1*2,terms a b c d e; asserted crc drb dre erb(2),10,1
+5::2-2*1.3-1*1.3-4*1.4-0*1.4-4*1,terms a b c d e; asserted crc drb dre era ere,10,1
+5::2-2*1.3-1*1.3-4*1.4-0*1.4-3*1,terms a b c d e; asserted crc drb dre era erd,10,1
+5::2-2*1.3-1*1.3-4*1.4-0*1.4-2*1,terms a b c d e; asserted crc drb dre era erc,10,1
+5::2-2*1.3-1*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted crc drb dre era erb,10,1
+5::2-2*1.3-1*1.3-4*1.4-0*2,terms a b c d e; asserted crc drb dre era(2),10,1
+5::2-2*1.3-1*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted crc drb drd erb ere,10,1
+5::2-2*1.3-1*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted crc drb drd erb erc,10,1
+5::2-2*1.3-1*1.3-3*1.4-1*2,terms a b c d e; asserted crc drb drd erb(2),10,1
+5::2-2*1.3-1*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted crc drb drd era ere,10,1
+5::2-2*1.3-1*1.3-3*1.4-0*1.4-2*1,terms a b c d e; asserted crc drb drd era erc,10,1
+5::2-2*1.3-1*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted crc drb drd era erb,10,1
+5::2-2*1.3-1*1.3-3*1.4-0*2,terms a b c d e; asserted crc drb drd era(2),10,1
+5::2-2*1.3-1*1.3-2*1.4-1*1.4-2*1,terms a b c d e; asserted crc drb drc erb erc,10,1
+5::2-2*1.3-1*1.3-2*1.4-1*2,terms a b c d e; asserted crc drb drc erb(2),10,1
+5::2-2*1.3-1*1.3-2*1.4-0*1.4-2*1,terms a b c d e; asserted crc drb drc era erc,10,1
+5::2-2*1.3-1*1.3-2*1.4-0*1.4-1*1,terms a b c d e; asserted crc drb drc era erb,10,1
+5::2-2*1.3-1*1.3-2*1.4-0*2,terms a b c d e; asserted crc drb drc era(2),10,1
+5::2-2*1.3-1*2.4-1*2,terms a b c d e; asserted crc drb(2) erb(2),10,1
+5::2-2*1.3-1*2.4-0*1.4-1*1,terms a b c d e; asserted crc drb(2) era erb,10,1
+5::2-2*1.3-1*2.4-0*2,terms a b c d e; asserted crc drb(2) era(2),10,1
+5::2-2*1.3-0*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted crc dra drb era erb,10,1
+5::2-2*1.2-4*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted crc cre drd dre erb,10,1
+5::2-2*1.2-4*1.3-3*2.4-1*1,terms a b c d e; asserted crc cre drd(2) erb,10,1
+5::2-2*1.2-4*1.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted crc cre drc drd erb,10,1
+5::2-2*1.2-4*1.3-1*1.4-4*2,terms a b c d e; asserted crc cre drb ere(2),10,1
+5::2-2*1.2-4*1.3-1*1.4-2*1.4-4*1,terms a b c d e; asserted crc cre drb erc ere,10,1
+5::2-2*1.2-4*1.3-1*1.4-1*1,terms a b c d e; asserted crc cre drb erb,9,1
+5::2-2*1.2-4*1.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted crc cre drb erb ere,10,1
+5::2-2*1.2-4*1.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted crc cre drb erb erd,10,1
+5::2-2*1.2-4*1.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted crc cre drb erb erc,10,1
+5::2-2*1.2-4*1.3-1*1.4-1*2,terms a b c d e; asserted crc cre drb erb(2),10,1
+5::2-2*1.2-4*1.3-1*1.4-0*1,terms a b c d e; asserted crc cre drb era,9,1
+5::2-2*1.2-4*1.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted crc cre drb era ere,10,1
+5::2-2*1.2-4*1.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted crc cre drb era erd,10,1
+5::2-2*1.2-4*1.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted crc cre drb era erc,10,1
+5::2-2*1.2-4*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted crc cre drb era erb,10,1
+5::2-2*1.2-4*1.3-1*1.4-0*2,terms a b c d e; asserted crc cre drb era(2),10,1
+5::2-2*1.2-4*1.3-1*1.3-4*1.4-1*1,terms a b c d e; asserted crc cre drb dre erb,10,1
+5::2-2*1.2-4*1.3-1*1.3-4*1.4-0*1,terms a b c d e; asserted crc cre drb dre era,10,1
+5::2-2*1.2-4*1.3-1*1.3-3*1.4-1*1,terms a b c d e; asserted crc cre drb drd erb,10,1
+5::2-2*1.2-4*1.3-1*1.3-3*1.4-0*1,terms a b c d e; asserted crc cre drb drd era,10,1
+5::2-2*1.2-4*1.3-1*1.3-2*1.4-1*1,terms a b c d e; asserted crc cre drb drc erb,10,1
+5::2-2*1.2-4*1.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted crc cre drb drc era,10,1
+5::2-2*1.2-4*1.3-1*2.4-1*1,terms a b c d e; asserted crc cre drb(2) erb,10,1
+5::2-2*1.2-4*1.3-1*2.4-0*1,terms a b c d e; asserted crc cre drb(2) era,10,1
+5::2-2*1.2-4*1.3-0*1.3-1*1.4-1*1,terms a b c d e; asserted crc cre dra drb erb,10,1
+5::2-2*1.2-4*2.3-1*1.4-1*1,terms a b c d e; asserted crc cre(2) drb erb,10,1
+5::2-2*1.2-4*2.3-1*1.4-0*1,terms a b c d e; asserted crc cre(2) drb era,10,1
+5::2-2*1.2-3*1.2-4*1.3-1*1.4-1*1,terms a b c d e; asserted crc crd cre drb erb,10,1
+5::2-2*1.2-3*1.2-4*1.3-1*1.4-0*1,terms a b c d e; asserted crc crd cre drb era,10,1
+5::2-2*2.3-3*2.4-1*1,terms a b c d e; asserted crc(2) drd(2) erb,10,1
+5::2-2*2.3-1*1.4-1*1,terms a b c d e; asserted crc(2) drb erb,9,1
+5::2-2*2.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted crc(2) drb erb ere,10,1
+5::2-2*2.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted crc(2) drb erb erd,10,1
+5::2-2*2.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted crc(2) drb erb erc,10,1
+5::2-2*2.3-1*1.4-1*2,terms a b c d e; asserted crc(2) drb erb(2),10,1
+5::2-2*2.3-1*1.4-0*1,terms a b c d e; asserted crc(2) drb era,9,1
+5::2-2*2.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted crc(2) drb era ere,10,1
+5::2-2*2.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted crc(2) drb era erd,10,1
+5::2-2*2.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted crc(2) drb era erc,10,1
+5::2-2*2.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted crc(2) drb era erb,10,1
+5::2-2*2.3-1*1.4-0*2,terms a b c d e; asserted crc(2) drb era(2),10,1
+5::2-2*2.2-4*1.3-1*1.4-1*1,terms a b c d e; asserted crc(2) cre drb erb,10,1
+5::2-2*2.2-4*1.3-1*1.4-0*1,terms a b c d e; asserted crc(2) cre drb era,10,1
+5::2-2*3.3-1*1.4-1*1,terms a b c d e; asserted crc(3) drb erb,10,1
+5::2-2*3.3-1*1.4-0*1,terms a b c d e; asserted crc(3) drb era,10,1
+5::2-1*1.3-1*1.4-1*1,terms a b c d e; asserted crb drb erb,8,1
+5::2-1*1.3-1*1.4-1*1.4-4*1,terms a b c d e; asserted crb drb erb ere,9,1
+5::2-1*1.3-1*1.4-1*1.4-4*2,terms a b c d e; asserted crb drb erb ere(2),10,1
+5::2-1*1.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted crb drb erb erd,9,1
+5::2-1*1.3-1*1.4-1*1.4-3*1.4-4*1,terms a b c d e; asserted crb drb erb erd ere,10,1
+5::2-1*1.3-1*1.4-1*1.4-3*2,terms a b c d e; asserted crb drb erb erd(2),10,1
+5::2-1*1.3-1*1.4-1*1.4-2*1.4-3*1,terms a b c d e; asserted crb drb erb erc erd,10,1
+5::2-1*1.3-1*1.4-1*2,terms a b c d e; asserted crb drb erb(2),9,1
+5::2-1*1.3-1*1.4-1*2.4-4*1,terms a b c d e; asserted crb drb erb(2) ere,10,1
+5::2-1*1.3-1*1.4-1*2.4-3*1,terms a b c d e; asserted crb drb erb(2) erd,10,1
+5::2-1*1.3-1*1.4-1*3,terms a b c d e; asserted crb drb erb(3),10,1
+5::2-1*1.3-1*1.4-0*1,terms a b c d e; asserted crb drb era,8,1
+5::2-1*1.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted crb drb era ere,9,1
+5::2-1*1.3-1*1.4-0*1.4-4*2,terms a b c d e; asserted crb drb era ere(2),10,1
+5::2-1*1.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted crb drb era erd,9,1
+5::2-1*1.3-1*1.4-0*1.4-3*1.4-4*1,terms a b c d e; asserted crb drb era erd ere,10,1
+5::2-1*1.3-1*1.4-0*1.4-3*2,terms a b c d e; asserted crb drb era erd(2),10,1
+5::2-1*1.3-1*1.4-0*1.4-2*1.4-3*1,terms a b c d e; asserted crb drb era erc erd,10,1
+5::2-1*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted crb drb era erb,9,1
+5::2-1*1.3-1*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted crb drb era erb ere,10,1
+5::2-1*1.3-1*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted crb drb era erb erd,10,1
+5::2-1*1.3-1*1.4-0*1.4-1*2,terms a b c d e; asserted crb drb era erb(2),10,1
+5::2-1*1.3-1*1.4-0*2,terms a b c d e; asserted crb drb era(2),9,1
+5::2-1*1.3-1*1.4-0*2.4-4*1,terms a b c d e; asserted crb drb era(2) ere,10,1
+5::2-1*1.3-1*1.4-0*2.4-3*1,terms a b c d e; asserted crb drb era(2) erd,10,1
+5::2-1*1.3-1*1.4-0*2.4-1*1,terms a b c d e; asserted crb drb era(2) erb,10,1
+5::2-1*1.3-1*1.4-0*3,terms a b c d e; asserted crb drb era(3),10,1
+5::2-1*1.3-1*1.3-4*1.4-1*1.4-4*1,terms a b c d e; asserted crb drb dre erb ere,10,1
+5::2-1*1.3-1*1.3-4*1.4-1*1.4-3*1,terms a b c d e; asserted crb drb dre erb erd,10,1
+5::2-1*1.3-1*1.3-4*1.4-1*1.4-2*1,terms a b c d e; asserted crb drb dre erb erc,10,1
+5::2-1*1.3-1*1.3-4*1.4-1*2,terms a b c d e; asserted crb drb dre erb(2),10,1
+5::2-1*1.3-1*1.3-4*1.4-0*1,terms a b c d e; asserted crb drb dre era,9,1
+5::2-1*1.3-1*1.3-4*1.4-0*1.4-4*1,terms a b c d e; asserted crb drb dre era ere,10,1
+5::2-1*1.3-1*1.3-4*1.4-0*1.4-3*1,terms a b c d e; asserted crb drb dre era erd,10,1
+5::2-1*1.3-1*1.3-4*1.4-0*1.4-2*1,terms a b c d e; asserted crb drb dre era erc,10,1
+5::2-1*1.3-1*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted crb drb dre era erb,10,1
+5::2-1*1.3-1*1.3-4*1.4-0*2,terms a b c d e; asserted crb drb dre era(2),10,1
+5::2-1*1.3-1*1.3-4*2.4-0*1,terms a b c d e; asserted crb drb dre(2) era,10,1
+5::2-1*1.3-1*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted crb drb drd erb ere,10,1
+5::2-1*1.3-1*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted crb drb drd erb erc,10,1
+5::2-1*1.3-1*1.3-3*1.4-1*2,terms a b c d e; asserted crb drb drd erb(2),10,1
+5::2-1*1.3-1*1.3-3*1.4-0*1,terms a b c d e; asserted crb drb drd era,9,1
+5::2-1*1.3-1*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted crb drb drd era ere,10,1
+5::2-1*1.3-1*1.3-3*1.4-0*1.4-3*1,terms a b c d e; asserted crb drb drd era erd,10,1
+5::2-1*1.3-1*1.3-3*1.4-0*1.4-2*1,terms a b c d e; asserted crb drb drd era erc,10,1
+5::2-1*1.3-1*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted crb drb drd era erb,10,1
+5::2-1*1.3-1*1.3-3*1.4-0*2,terms a b c d e; asserted crb drb drd era(2),10,1
+5::2-1*1.3-1*1.3-3*1.3-4*1.4-0*1,terms a b c d e; asserted crb drb drd dre era,10,1
+5::2-1*1.3-1*1.3-3*2.4-0*1,terms a b c d e; asserted crb drb drd(2) era,10,1
+5::2-1*1.3-1*1.3-2*1.4-1*1.4-2*1,terms a b c d e; asserted crb drb drc erb erc,10,1
+5::2-1*1.3-1*1.3-2*1.4-1*2,terms a b c d e; asserted crb drb drc erb(2),10,1
+5::2-1*1.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted crb drb drc era,9,1
+5::2-1*1.3-1*1.3-2*1.4-0*1.4-4*1,terms a b c d e; asserted crb drb drc era ere,10,1
+5::2-1*1.3-1*1.3-2*1.4-0*1.4-3*1,terms a b c d e; asserted crb drb drc era erd,10,1
+5::2-1*1.3-1*1.3-2*1.4-0*1.4-2*1,terms a b c d e; asserted crb drb drc era erc,10,1
+5::2-1*1.3-1*1.3-2*1.4-0*1.4-1*1,terms a b c d e; asserted crb drb drc era erb,10,1
+5::2-1*1.3-1*1.3-2*1.4-0*2,terms a b c d e; asserted crb drb drc era(2),10,1
+5::2-1*1.3-1*1.3-2*1.3-4*1.4-0*1,terms a b c d e; asserted crb drb drc dre era,10,1
+5::2-1*1.3-1*1.3-2*1.3-3*1.4-0*1,terms a b c d e; asserted crb drb drc drd era,10,1
+5::2-1*1.3-1*1.3-2*2.4-0*1,terms a b c d e; asserted crb drb drc(2) era,10,1
+5::2-1*1.3-1*2.4-1*2,terms a b c d e; asserted crb drb(2) erb(2),10,1
+5::2-1*1.3-1*2.4-0*1,terms a b c d e; asserted crb drb(2) era,9,1
+5::2-1*1.3-1*2.4-0*1.4-4*1,terms a b c d e; asserted crb drb(2) era ere,10,1
+5::2-1*1.3-1*2.4-0*1.4-3*1,terms a b c d e; asserted crb drb(2) era erd,10,1
+5::2-1*1.3-1*2.4-0*1.4-2*1,terms a b c d e; asserted crb drb(2) era erc,10,1
+5::2-1*1.3-1*2.4-0*1.4-1*1,terms a b c d e; asserted crb drb(2) era erb,10,1
+5::2-1*1.3-1*2.4-0*2,terms a b c d e; asserted crb drb(2) era(2),10,1
+5::2-1*1.3-1*2.3-4*1.4-0*1,terms a b c d e; asserted crb drb(2) dre era,10,1
+5::2-1*1.3-1*2.3-3*1.4-0*1,terms a b c d e; asserted crb drb(2) drd era,10,1
+5::2-1*1.3-1*2.3-2*1.4-0*1,terms a b c d e; asserted crb drb(2) drc era,10,1
+5::2-1*1.3-1*3.4-0*1,terms a b c d e; asserted crb drb(3) era,10,1
+5::2-1*1.3-0*1.4-0*1.4-1*1,terms a b c d e; asserted crb dra era erb,9,1
+5::2-1*1.3-0*1.4-0*1.4-1*1.4-4*1,terms a b c d e; asserted crb dra era erb ere,10,1
+5::2-1*1.3-0*1.4-0*1.4-1*1.4-3*1,terms a b c d e; asserted crb dra era erb erd,10,1
+5::2-1*1.3-0*1.4-0*1.4-1*2,terms a b c d e; asserted crb dra era erb(2),10,1
+5::2-1*1.3-0*1.3-4*1.4-0*1.4-4*1,terms a b c d e; asserted crb dra dre era ere,10,1
+5::2-1*1.3-0*1.3-4*1.4-0*1.4-3*1,terms a b c d e; asserted crb dra dre era erd,10,1
+5::2-1*1.3-0*1.3-4*1.4-0*1.4-2*1,terms a b c d e; asserted crb dra dre era erc,10,1
+5::2-1*1.3-0*1.3-4*1.4-0*1.4-1*1,terms a b c d e; asserted crb dra dre era erb,10,1
+5::2-1*1.3-0*1.3-4*1.4-0*2,terms a b c d e; asserted crb dra dre era(2),10,1
+5::2-1*1.3-0*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted crb dra drd era ere,10,1
+5::2-1*1.3-0*1.3-3*1.4-0*1.4-2*1,terms a b c d e; asserted crb dra drd era erc,10,1
+5::2-1*1.3-0*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted crb dra drd era erb,10,1
+5::2-1*1.3-0*1.3-3*1.4-0*2,terms a b c d e; asserted crb dra drd era(2),10,1
+5::2-1*1.3-0*1.3-2*1.4-0*1.4-2*1,terms a b c d e; asserted crb dra drc era erc,10,1
+5::2-1*1.3-0*1.3-2*1.4-0*1.4-1*1,terms a b c d e; asserted crb dra drc era erb,10,1
+5::2-1*1.3-0*1.3-2*1.4-0*2,terms a b c d e; asserted crb dra drc era(2),10,1
+5::2-1*1.3-0*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted crb dra drb era erb,10,1
+5::2-1*1.3-0*1.3-1*1.4-0*2,terms a b c d e; asserted crb dra drb era(2),10,1
+5::2-1*1.3-0*2.4-0*2,terms a b c d e; asserted crb dra(2) era(2),10,1
+5::1-4*1.2-4*1.3-4*1.4-4*1,terms a b c d e; asserted bre cre dre ere,9,1
+5::1-4*1.2-4*1.3-4*1.4-4*2,terms a b c d e; asserted bre cre dre ere(2),10,1
+5::1-4*1.2-4*1.3-4*1.4-3*1,terms a b c d e; asserted bre cre dre erd,9,1
+5::1-4*1.2-4*1.3-4*1.4-3*1.4-4*1,terms a b c d e; asserted bre cre dre erd ere,10,1
+5::1-4*1.2-4*1.3-4*1.4-3*2,terms a b c d e; asserted bre cre dre erd(2),10,1
+5::1-4*1.2-4*1.3-4*1.4-2*1.4-3*1,terms a b c d e; asserted bre cre dre erc erd,10,1
+5::1-4*1.2-4*1.3-4*1.4-0*1,terms a b c d e; asserted bre cre dre era,9,1
+5::1-4*1.2-4*1.3-4*1.4-0*1.4-4*1,terms a b c d e; asserted bre cre dre era ere,10,1
+5::1-4*1.2-4*1.3-4*1.4-0*1.4-3*1,terms a b c d e; asserted bre cre dre era erd,10,1
+5::1-4*1.2-4*1.3-4*1.4-0*2,terms a b c d e; asserted bre cre dre era(2),10,1
+5::1-4*1.2-4*1.3-4*2.4-4*1,terms a b c d e; asserted bre cre dre(2) ere,10,1
+5::1-4*1.2-4*1.3-4*2.4-3*1,terms a b c d e; asserted bre cre dre(2) erd,10,1
+5::1-4*1.2-4*1.3-4*2.4-2*1,terms a b c d e; asserted bre cre dre(2) erc,10,1
+5::1-4*1.2-4*1.3-4*2.4-0*1,terms a b c d e; asserted bre cre dre(2) era,10,1
+5::1-4*1.2-4*1.3-3*1.4-4*1,terms a b c d e; asserted bre cre drd ere,9,1
+5::1-4*1.2-4*1.3-3*1.4-4*2,terms a b c d e; asserted bre cre drd ere(2),10,1
+5::1-4*1.2-4*1.3-3*1.4-3*1,terms a b c d e; asserted bre cre drd erd,9,1
+5::1-4*1.2-4*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted bre cre drd erd ere,10,1
+5::1-4*1.2-4*1.3-3*1.4-3*2,terms a b c d e; asserted bre cre drd erd(2),10,1
+5::1-4*1.2-4*1.3-3*1.4-2*1,terms a b c d e; asserted bre cre drd erc,9,1
+5::1-4*1.2-4*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted bre cre drd erc ere,10,1
+5::1-4*1.2-4*1.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted bre cre drd erc erd,10,1
+5::1-4*1.2-4*1.3-3*1.4-2*2,terms a b c d e; asserted bre cre drd erc(2),10,1
+5::1-4*1.2-4*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted bre cre drd erb erc,10,1
+5::1-4*1.2-4*1.3-3*1.4-0*1,terms a b c d e; asserted bre cre drd era,9,1
+5::1-4*1.2-4*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted bre cre drd era ere,10,1
+5::1-4*1.2-4*1.3-3*1.4-0*1.4-3*1,terms a b c d e; asserted bre cre drd era erd,10,1
+5::1-4*1.2-4*1.3-3*1.4-0*1.4-2*1,terms a b c d e; asserted bre cre drd era erc,10,1
+5::1-4*1.2-4*1.3-3*1.4-0*2,terms a b c d e; asserted bre cre drd era(2),10,1
+5::1-4*1.2-4*1.3-3*1.3-4*1.4-4*1,terms a b c d e; asserted bre cre drd dre ere,10,1
+5::1-4*1.2-4*1.3-3*1.3-4*1.4-3*1,terms a b c d e; asserted bre cre drd dre erd,10,1
+5::1-4*1.2-4*1.3-3*1.3-4*1.4-2*1,terms a b c d e; asserted bre cre drd dre erc,10,1
+5::1-4*1.2-4*1.3-3*1.3-4*1.4-0*1,terms a b c d e; asserted bre cre drd dre era,10,1
+5::1-4*1.2-4*1.3-3*2.4-4*1,terms a b c d e; asserted bre cre drd(2) ere,10,1
+5::1-4*1.2-4*1.3-3*2.4-3*1,terms a b c d e; asserted bre cre drd(2) erd,10,1
+5::1-4*1.2-4*1.3-3*2.4-2*1,terms a b c d e; asserted bre cre drd(2) erc,10,1
+5::1-4*1.2-4*1.3-3*2.4-0*1,terms a b c d e; asserted bre cre drd(2) era,10,1
+5::1-4*1.2-4*1.3-2*1.4-4*1,terms a b c d e; asserted bre cre drc ere,9,1
+5::1-4*1.2-4*1.3-2*1.4-4*2,terms a b c d e; asserted bre cre drc ere(2),10,1
+5::1-4*1.2-4*1.3-2*1.4-3*1,terms a b c d e; asserted bre cre drc erd,9,1
+5::1-4*1.2-4*1.3-2*1.4-3*1.4-4*1,terms a b c d e; asserted bre cre drc erd ere,10,1
+5::1-4*1.2-4*1.3-2*1.4-3*2,terms a b c d e; asserted bre cre drc erd(2),10,1
+5::1-4*1.2-4*1.3-2*1.4-2*1,terms a b c d e; asserted bre cre drc erc,9,1
+5::1-4*1.2-4*1.3-2*1.4-2*1.4-4*1,terms a b c d e; asserted bre cre drc erc ere,10,1
+5::1-4*1.2-4*1.3-2*1.4-2*1.4-3*1,terms a b c d e; asserted bre cre drc erc erd,10,1
+5::1-4*1.2-4*1.3-2*1.4-2*2,terms a b c d e; asserted bre cre drc erc(2),10,1
+5::1-4*1.2-4*1.3-2*1.4-1*1,terms a b c d e; asserted bre cre drc erb,9,1
+5::1-4*1.2-4*1.3-2*1.4-1*1.4-4*1,terms a b c d e; asserted bre cre drc erb ere,10,1
+5::1-4*1.2-4*1.3-2*1.4-1*1.4-3*1,terms a b c d e; asserted bre cre drc erb erd,10,1
+5::1-4*1.2-4*1.3-2*1.4-1*1.4-2*1,terms a b c d e; asserted bre cre drc erb erc,10,1
+5::1-4*1.2-4*1.3-2*1.4-1*2,terms a b c d e; asserted bre cre drc erb(2),10,1
+5::1-4*1.2-4*1.3-2*1.4-0*1,terms a b c d e; asserted bre cre drc era,9,1
+5::1-4*1.2-4*1.3-2*1.4-0*1.4-4*1,terms a b c d e; asserted bre cre drc era ere,10,1
+5::1-4*1.2-4*1.3-2*1.4-0*1.4-3*1,terms a b c d e; asserted bre cre drc era erd,10,1
+5::1-4*1.2-4*1.3-2*1.4-0*1.4-2*1,terms a b c d e; asserted bre cre drc era erc,10,1
+5::1-4*1.2-4*1.3-2*1.4-0*1.4-1*1,terms a b c d e; asserted bre cre drc era erb,10,1
+5::1-4*1.2-4*1.3-2*1.4-0*2,terms a b c d e; asserted bre cre drc era(2),10,1
+5::1-4*1.2-4*1.3-2*1.3-4*1.4-4*1,terms a b c d e; asserted bre cre drc dre ere,10,1
+5::1-4*1.2-4*1.3-2*1.3-4*1.4-3*1,terms a b c d e; asserted bre cre drc dre erd,10,1
+5::1-4*1.2-4*1.3-2*1.3-4*1.4-2*1,terms a b c d e; asserted bre cre drc dre erc,10,1
+5::1-4*1.2-4*1.3-2*1.3-4*1.4-1*1,terms a b c d e; asserted bre cre drc dre erb,10,1
+5::1-4*1.2-4*1.3-2*1.3-4*1.4-0*1,terms a b c d e; asserted bre cre drc dre era,10,1
+5::1-4*1.2-4*1.3-2*1.3-3*1.4-4*1,terms a b c d e; asserted bre cre drc drd ere,10,1
+5::1-4*1.2-4*1.3-2*1.3-3*1.4-3*1,terms a b c d e; asserted bre cre drc drd erd,10,1
+5::1-4*1.2-4*1.3-2*1.3-3*1.4-2*1,terms a b c d e; asserted bre cre drc drd erc,10,1
+5::1-4*1.2-4*1.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted bre cre drc drd erb,10,1
+5::1-4*1.2-4*1.3-2*1.3-3*1.4-0*1,terms a b c d e; asserted bre cre drc drd era,10,1
+5::1-4*1.2-4*1.3-2*2.4-4*1,terms a b c d e; asserted bre cre drc(2) ere,10,1
+5::1-4*1.2-4*1.3-2*2.4-3*1,terms a b c d e; asserted bre cre drc(2) erd,10,1
+5::1-4*1.2-4*1.3-2*2.4-2*1,terms a b c d e; asserted bre cre drc(2) erc,10,1
+5::1-4*1.2-4*1.3-2*2.4-1*1,terms a b c d e; asserted bre cre drc(2) erb,10,1
+5::1-4*1.2-4*1.3-2*2.4-0*1,terms a b c d e; asserted bre cre drc(2) era,10,1
+5::1-4*1.2-4*1.3-1*1.3-2*1.4-4*1,terms a b c d e; asserted bre cre drb drc ere,10,1
+5::1-4*1.2-4*1.3-1*1.3-2*1.4-3*1,terms a b c d e; asserted bre cre drb drc erd,10,1
+5::1-4*1.2-4*1.3-1*1.3-2*1.4-2*1,terms a b c d e; asserted bre cre drb drc erc,10,1
+5::1-4*1.2-4*1.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted bre cre drb drc era,10,1
+5::1-4*1.2-4*1.3-0*1.4-4*1,terms a b c d e; asserted bre cre dra ere,9,1
+5::1-4*1.2-4*1.3-0*1.4-4*2,terms a b c d e; asserted bre cre dra ere(2),10,1
+5::1-4*1.2-4*1.3-0*1.4-3*1,terms a b c d e; asserted bre cre dra erd,9,1
+5::1-4*1.2-4*1.3-0*1.4-3*1.4-4*1,terms a b c d e; asserted bre cre dra erd ere,10,1
+5::1-4*1.2-4*1.3-0*1.4-3*2,terms a b c d e; asserted bre cre dra erd(2),10,1
+5::1-4*1.2-4*1.3-0*1.4-2*1,terms a b c d e; asserted bre cre dra erc,9,1
+5::1-4*1.2-4*1.3-0*1.4-2*1.4-4*1,terms a b c d e; asserted bre cre dra erc ere,10,1
+5::1-4*1.2-4*1.3-0*1.4-2*1.4-3*1,terms a b c d e; asserted bre cre dra erc erd,10,1
+5::1-4*1.2-4*1.3-0*1.4-2*2,terms a b c d e; asserted bre cre dra erc(2),10,1
+5::1-4*1.2-4*1.3-0*1.4-1*1.4-2*1,terms a b c d e; asserted bre cre dra erb erc,10,1
+5::1-4*1.2-4*1.3-0*1.4-0*1,terms a b c d e; asserted bre cre dra era,9,1
+5::1-4*1.2-4*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted bre cre dra era ere,10,1
+5::1-4*1.2-4*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted bre cre dra era erd,10,1
+5::1-4*1.2-4*1.3-0*1.4-0*1.4-2*1,terms a b c d e; asserted bre cre dra era erc,10,1
+5::1-4*1.2-4*1.3-0*1.4-0*2,terms a b c d e; asserted bre cre dra era(2),10,1
+5::1-4*1.2-4*1.3-0*1.3-4*1.4-4*1,terms a b c d e; asserted bre cre dra dre ere,10,1
+5::1-4*1.2-4*1.3-0*1.3-4*1.4-3*1,terms a b c d e; asserted bre cre dra dre erd,10,1
+5::1-4*1.2-4*1.3-0*1.3-4*1.4-2*1,terms a b c d e; asserted bre cre dra dre erc,10,1
+5::1-4*1.2-4*1.3-0*1.3-4*1.4-0*1,terms a b c d e; asserted bre cre dra dre era,10,1
+5::1-4*1.2-4*1.3-0*1.3-3*1.4-4*1,terms a b c d e; asserted bre cre dra drd ere,10,1
+5::1-4*1.2-4*1.3-0*1.3-3*1.4-3*1,terms a b c d e; asserted bre cre dra drd erd,10,1
+5::1-4*1.2-4*1.3-0*1.3-3*1.4-2*1,terms a b c d e; asserted bre cre dra drd erc,10,1
+5::1-4*1.2-4*1.3-0*1.3-3*1.4-0*1,terms a b c d e; asserted bre cre dra drd era,10,1
+5::1-4*1.2-4*1.3-0*1.3-2*1.4-4*1,terms a b c d e; asserted bre cre dra drc ere,10,1
+5::1-4*1.2-4*1.3-0*1.3-2*1.4-3*1,terms a b c d e; asserted bre cre dra drc erd,10,1
+5::1-4*1.2-4*1.3-0*1.3-2*1.4-2*1,terms a b c d e; asserted bre cre dra drc erc,10,1
+5::1-4*1.2-4*1.3-0*1.3-2*1.4-1*1,terms a b c d e; asserted bre cre dra drc erb,10,1
+5::1-4*1.2-4*1.3-0*1.3-2*1.4-0*1,terms a b c d e; asserted bre cre dra drc era,10,1
+5::1-4*1.2-4*1.3-0*2.4-4*1,terms a b c d e; asserted bre cre dra(2) ere,10,1
+5::1-4*1.2-4*1.3-0*2.4-3*1,terms a b c d e; asserted bre cre dra(2) erd,10,1
+5::1-4*1.2-4*1.3-0*2.4-2*1,terms a b c d e; asserted bre cre dra(2) erc,10,1
+5::1-4*1.2-4*1.3-0*2.4-0*1,terms a b c d e; asserted bre cre dra(2) era,10,1
+5::1-4*1.2-4*2.3-3*1.4-4*1,terms a b c d e; asserted bre cre(2) drd ere,10,1
+5::1-4*1.2-4*2.3-3*1.4-3*1,terms a b c d e; asserted bre cre(2) drd erd,10,1
+5::1-4*1.2-4*2.3-3*1.4-2*1,terms a b c d e; asserted bre cre(2) drd erc,10,1
+5::1-4*1.2-4*2.3-3*1.4-1*1,terms a b c d e; asserted bre cre(2) drd erb,10,1
+5::1-4*1.2-4*2.3-3*1.4-0*1,terms a b c d e; asserted bre cre(2) drd era,10,1
+5::1-4*1.2-4*2.3-2*1.4-4*1,terms a b c d e; asserted bre cre(2) drc ere,10,1
+5::1-4*1.2-4*2.3-2*1.4-3*1,terms a b c d e; asserted bre cre(2) drc erd,10,1
+5::1-4*1.2-4*2.3-2*1.4-1*1,terms a b c d e; asserted bre cre(2) drc erb,10,1
+5::1-4*1.2-4*2.3-2*1.4-0*1,terms a b c d e; asserted bre cre(2) drc era,10,1
+5::1-4*1.2-4*2.3-1*1.4-4*1,terms a b c d e; asserted bre cre(2) drb ere,10,1
+5::1-4*1.2-4*2.3-1*1.4-3*1,terms a b c d e; asserted bre cre(2) drb erd,10,1
+5::1-4*1.2-4*2.3-1*1.4-2*1,terms a b c d e; asserted bre cre(2) drb erc,10,1
+5::1-4*1.2-4*2.3-1*1.4-0*1,terms a b c d e; asserted bre cre(2) drb era,10,1
+5::1-4*1.2-4*2.3-0*1.4-4*1,terms a b c d e; asserted bre cre(2) dra ere,10,1
+5::1-4*1.2-4*2.3-0*1.4-3*1,terms a b c d e; asserted bre cre(2) dra erd,10,1
+5::1-4*1.2-4*2.3-0*1.4-2*1,terms a b c d e; asserted bre cre(2) dra erc,10,1
+5::1-4*1.2-4*2.3-0*1.4-1*1,terms a b c d e; asserted bre cre(2) dra erb,10,1
+5::1-4*1.2-4*2.3-0*1.4-0*1,terms a b c d e; asserted bre cre(2) dra era,10,1
+5::1-4*1.2-3*1.3-3*1.4-4*1,terms a b c d e; asserted bre crd drd ere,9,1
+5::1-4*1.2-3*1.3-3*1.4-4*2,terms a b c d e; asserted bre crd drd ere(2),10,1
+5::1-4*1.2-3*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted bre crd drd erd ere,10,1
+5::1-4*1.2-3*1.3-3*1.4-2*1,terms a b c d e; asserted bre crd drd erc,9,1
+5::1-4*1.2-3*1.3-3*1.4-2*1.4-4*1,terms a b c d e; asserted bre crd drd erc ere,10,1
+5::1-4*1.2-3*1.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted bre crd drd erc erd,10,1
+5::1-4*1.2-3*1.3-3*1.4-2*2,terms a b c d e; asserted bre crd drd erc(2),10,1
+5::1-4*1.2-3*1.3-3*1.4-1*1,terms a b c d e; asserted bre crd drd erb,9,1
+5::1-4*1.2-3*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted bre crd drd erb ere,10,1
+5::1-4*1.2-3*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted bre crd drd erb erd,10,1
+5::1-4*1.2-3*1.3-3*1.4-1*1.4-2*1,terms a b c d e; asserted bre crd drd erb erc,10,1
+5::1-4*1.2-3*1.3-3*1.4-1*2,terms a b c d e; asserted bre crd drd erb(2),10,1
+5::1-4*1.2-3*1.3-3*1.4-0*1,terms a b c d e; asserted bre crd drd era,9,1
+5::1-4*1.2-3*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted bre crd drd era ere,10,1
+5::1-4*1.2-3*1.3-3*1.4-0*1.4-3*1,terms a b c d e; asserted bre crd drd era erd,10,1
+5::1-4*1.2-3*1.3-3*1.4-0*1.4-2*1,terms a b c d e; asserted bre crd drd era erc,10,1
+5::1-4*1.2-3*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted bre crd drd era erb,10,1
+5::1-4*1.2-3*1.3-3*1.4-0*2,terms a b c d e; asserted bre crd drd era(2),10,1
+5::1-4*1.2-3*1.3-3*1.3-4*1.4-2*1,terms a b c d e; asserted bre crd drd dre erc,10,1
+5::1-4*1.2-3*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted bre crd drd dre erb,10,1
+5::1-4*1.2-3*1.3-3*1.3-4*1.4-0*1,terms a b c d e; asserted bre crd drd dre era,10,1
+5::1-4*1.2-3*1.3-3*2.4-2*1,terms a b c d e; asserted bre crd drd(2) erc,10,1
+5::1-4*1.2-3*1.3-3*2.4-1*1,terms a b c d e; asserted bre crd drd(2) erb,10,1
+5::1-4*1.2-3*1.3-3*2.4-0*1,terms a b c d e; asserted bre crd drd(2) era,10,1
+5::1-4*1.2-3*1.3-2*1.4-2*1.4-3*1,terms a b c d e; asserted bre crd drc erc erd,10,1
+5::1-4*1.2-3*1.3-2*1.4-1*1,terms a b c d e; asserted bre crd drc erb,9,1
+5::1-4*1.2-3*1.3-2*1.4-1*1.4-4*1,terms a b c d e; asserted bre crd drc erb ere,10,1
+5::1-4*1.2-3*1.3-2*1.4-1*1.4-3*1,terms a b c d e; asserted bre crd drc erb erd,10,1
+5::1-4*1.2-3*1.3-2*1.4-1*2,terms a b c d e; asserted bre crd drc erb(2),10,1
+5::1-4*1.2-3*1.3-2*1.4-0*1,terms a b c d e; asserted bre crd drc era,9,1
+5::1-4*1.2-3*1.3-2*1.4-0*1.4-4*1,terms a b c d e; asserted bre crd drc era ere,10,1
+5::1-4*1.2-3*1.3-2*1.4-0*1.4-3*1,terms a b c d e; asserted bre crd drc era erd,10,1
+5::1-4*1.2-3*1.3-2*1.4-0*1.4-1*1,terms a b c d e; asserted bre crd drc era erb,10,1
+5::1-4*1.2-3*1.3-2*1.4-0*2,terms a b c d e; asserted bre crd drc era(2),10,1
+5::1-4*1.2-3*1.3-2*1.3-4*1.4-2*1,terms a b c d e; asserted bre crd drc dre erc,10,1
+5::1-4*1.2-3*1.3-2*1.3-4*1.4-0*1,terms a b c d e; asserted bre crd drc dre era,10,1
+5::1-4*1.2-3*1.3-2*1.3-3*1.4-2*1,terms a b c d e; asserted bre crd drc drd erc,10,1
+5::1-4*1.2-3*1.3-2*1.3-3*1.4-0*1,terms a b c d e; asserted bre crd drc drd era,10,1
+5::1-4*1.2-3*1.3-2*2.4-0*1,terms a b c d e; asserted bre crd drc(2) era,10,1
+5::1-4*1.2-3*1.3-1*1.4-2*1,terms a b c d e; asserted bre crd drb erc,9,1
+5::1-4*1.2-3*1.3-1*1.4-2*1.4-4*1,terms a b c d e; asserted bre crd drb erc ere,10,1
+5::1-4*1.2-3*1.3-1*1.4-2*1.4-3*1,terms a b c d e; asserted bre crd drb erc erd,10,1
+5::1-4*1.2-3*1.3-1*1.4-2*2,terms a b c d e; asserted bre crd drb erc(2),10,1
+5::1-4*1.2-3*1.3-1*1.4-1*1.4-2*1,terms a b c d e; asserted bre crd drb erb erc,10,1
+5::1-4*1.2-3*1.3-1*1.4-0*1,terms a b c d e; asserted bre crd drb era,9,1
+5::1-4*1.2-3*1.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted bre crd drb era ere,10,1
+5::1-4*1.2-3*1.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted bre crd drb era erd,10,1
+5::1-4*1.2-3*1.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted bre crd drb era erc,10,1
+5::1-4*1.2-3*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted bre crd drb era erb,10,1
+5::1-4*1.2-3*1.3-1*1.4-0*2,terms a b c d e; asserted bre crd drb era(2),10,1
+5::1-4*1.2-3*1.3-1*1.3-4*1.4-0*1,terms a b c d e; asserted bre crd drb dre era,10,1
+5::1-4*1.2-3*1.3-1*1.3-3*1.4-0*1,terms a b c d e; asserted bre crd drb drd era,10,1
+5::1-4*1.2-3*1.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted bre crd drb drc era,10,1
+5::1-4*1.2-3*1.3-1*2.4-0*1,terms a b c d e; asserted bre crd drb(2) era,10,1
+5::1-4*1.2-3*1.3-0*1.4-0*1,terms a b c d e; asserted bre crd dra era,9,1
+5::1-4*1.2-3*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted bre crd dra era ere,10,1
+5::1-4*1.2-3*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted bre crd dra era erd,10,1
+5::1-4*1.2-3*1.3-0*1.4-0*1.4-2*1,terms a b c d e; asserted bre crd dra era erc,10,1
+5::1-4*1.2-3*1.3-0*1.4-0*1.4-1*1,terms a b c d e; asserted bre crd dra era erb,10,1
+5::1-4*1.2-3*1.3-0*1.4-0*2,terms a b c d e; asserted bre crd dra era(2),10,1
+5::1-4*1.2-3*1.2-4*1.3-3*1.4-4*1,terms a b c d e; asserted bre crd cre drd ere,10,1
+5::1-4*1.2-3*1.2-4*1.3-3*1.4-3*1,terms a b c d e; asserted bre crd cre drd erd,10,1
+5::1-4*1.2-3*1.2-4*1.3-3*1.4-2*1,terms a b c d e; asserted bre crd cre drd erc,10,1
+5::1-4*1.2-3*1.2-4*1.3-3*1.4-1*1,terms a b c d e; asserted bre crd cre drd erb,10,1
+5::1-4*1.2-3*1.2-4*1.3-3*1.4-0*1,terms a b c d e; asserted bre crd cre drd era,10,1
+5::1-4*1.2-3*1.2-4*1.3-1*1.4-4*1,terms a b c d e; asserted bre crd cre drb ere,10,1
+5::1-4*1.2-3*1.2-4*1.3-1*1.4-3*1,terms a b c d e; asserted bre crd cre drb erd,10,1
+5::1-4*1.2-3*1.2-4*1.3-1*1.4-0*1,terms a b c d e; asserted bre crd cre drb era,10,1
+5::1-4*1.2-3*1.2-4*1.3-0*1.4-4*1,terms a b c d e; asserted bre crd cre dra ere,10,1
+5::1-4*1.2-3*1.2-4*1.3-0*1.4-3*1,terms a b c d e; asserted bre crd cre dra erd,10,1
+5::1-4*1.2-3*1.2-4*1.3-0*1.4-2*1,terms a b c d e; asserted bre crd cre dra erc,10,1
+5::1-4*1.2-3*1.2-4*1.3-0*1.4-1*1,terms a b c d e; asserted bre crd cre dra erb,10,1
+5::1-4*1.2-3*1.2-4*1.3-0*1.4-0*1,terms a b c d e; asserted bre crd cre dra era,10,1
+5::1-4*1.2-3*2.3-3*1.4-4*1,terms a b c d e; asserted bre crd(2) drd ere,10,1
+5::1-4*1.2-3*2.3-3*1.4-2*1,terms a b c d e; asserted bre crd(2) drd erc,10,1
+5::1-4*1.2-3*2.3-3*1.4-1*1,terms a b c d e; asserted bre crd(2) drd erb,10,1
+5::1-4*1.2-3*2.3-3*1.4-0*1,terms a b c d e; asserted bre crd(2) drd era,10,1
+5::1-4*1.2-3*2.3-1*1.4-4*1,terms a b c d e; asserted bre crd(2) drb ere,10,1
+5::1-4*1.2-3*2.3-1*1.4-0*1,terms a b c d e; asserted bre crd(2) drb era,10,1
+5::1-4*1.2-3*2.3-0*1.4-4*1,terms a b c d e; asserted bre crd(2) dra ere,10,1
+5::1-4*1.2-3*2.3-0*1.4-2*1,terms a b c d e; asserted bre crd(2) dra erc,10,1
+5::1-4*1.2-3*2.3-0*1.4-1*1,terms a b c d e; asserted bre crd(2) dra erb,10,1
+5::1-4*1.2-3*2.3-0*1.4-0*1,terms a b c d e; asserted bre crd(2) dra era,10,1
+5::1-4*1.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted bre crc drd ere,9,1
+5::1-4*1.2-2*1.3-3*1.4-4*2,terms a b c d e; asserted bre crc drd ere(2),10,1
+5::1-4*1.2-2*1.3-3*1.4-3*1,terms a b c d e; asserted bre crc drd erd,9,1
+5::1-4*1.2-2*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted bre crc drd erd ere,10,1
+5::1-4*1.2-2*1.3-3*1.4-3*2,terms a b c d e; asserted bre crc drd erd(2),10,1
+5::1-4*1.2-2*1.3-3*1.4-2*1.4-3*1,terms a b c d e; asserted bre crc drd erc erd,10,1
+5::1-4*1.2-2*1.3-3*1.4-1*1,terms a b c d e; asserted bre crc drd erb,9,1
+5::1-4*1.2-2*1.3-3*1.4-1*1.4-4*1,terms a b c d e; asserted bre crc drd erb ere,10,1
+5::1-4*1.2-2*1.3-3*1.4-1*1.4-3*1,terms a b c d e; asserted bre crc drd erb erd,10,1
+5::1-4*1.2-2*1.3-3*1.4-1*2,terms a b c d e; asserted bre crc drd erb(2),10,1
+5::1-4*1.2-2*1.3-3*1.4-0*1,terms a b c d e; asserted bre crc drd era,9,1
+5::1-4*1.2-2*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted bre crc drd era ere,10,1
+5::1-4*1.2-2*1.3-3*1.4-0*1.4-3*1,terms a b c d e; asserted bre crc drd era erd,10,1
+5::1-4*1.2-2*1.3-3*1.4-0*1.4-1*1,terms a b c d e; asserted bre crc drd era erb,10,1
+5::1-4*1.2-2*1.3-3*1.4-0*2,terms a b c d e; asserted bre crc drd era(2),10,1
+5::1-4*1.2-2*1.3-3*1.3-4*1.4-4*1,terms a b c d e; asserted bre crc drd dre ere,10,1
+5::1-4*1.2-2*1.3-3*1.3-4*1.4-3*1,terms a b c d e; asserted bre crc drd dre erd,10,1
+5::1-4*1.2-2*1.3-3*1.3-4*1.4-2*1,terms a b c d e; asserted bre crc drd dre erc,10,1
+5::1-4*1.2-2*1.3-3*1.3-4*1.4-1*1,terms a b c d e; asserted bre crc drd dre erb,10,1
+5::1-4*1.2-2*1.3-3*1.3-4*1.4-0*1,terms a b c d e; asserted bre crc drd dre era,10,1
+5::1-4*1.2-2*1.3-3*2.4-4*1,terms a b c d e; asserted bre crc drd(2) ere,10,1
+5::1-4*1.2-2*1.3-3*2.4-3*1,terms a b c d e; asserted bre crc drd(2) erd,10,1
+5::1-4*1.2-2*1.3-3*2.4-2*1,terms a b c d e; asserted bre crc drd(2) erc,10,1
+5::1-4*1.2-2*1.3-3*2.4-1*1,terms a b c d e; asserted bre crc drd(2) erb,10,1
+5::1-4*1.2-2*1.3-3*2.4-0*1,terms a b c d e; asserted bre crc drd(2) era,10,1
+5::1-4*1.2-2*1.3-2*1.3-3*1.4-4*1,terms a b c d e; asserted bre crc drc drd ere,10,1
+5::1-4*1.2-2*1.3-2*1.3-3*1.4-3*1,terms a b c d e; asserted bre crc drc drd erd,10,1
+5::1-4*1.2-2*1.3-2*1.3-3*1.4-2*1,terms a b c d e; asserted bre crc drc drd erc,10,1
+5::1-4*1.2-2*1.3-2*1.3-3*1.4-1*1,terms a b c d e; asserted bre crc drc drd erb,10,1
+5::1-4*1.2-2*1.3-2*1.3-3*1.4-0*1,terms a b c d e; asserted bre crc drc drd era,10,1
+5::1-4*1.2-2*1.3-1*1.4-3*1,terms a b c d e; asserted bre crc drb erd,9,1
+5::1-4*1.2-2*1.3-1*1.4-3*1.4-4*1,terms a b c d e; asserted bre crc drb erd ere,10,1
+5::1-4*1.2-2*1.3-1*1.4-3*2,terms a b c d e; asserted bre crc drb erd(2),10,1
+5::1-4*1.2-2*1.3-1*1.4-2*1.4-3*1,terms a b c d e; asserted bre crc drb erc erd,10,1
+5::1-4*1.2-2*1.3-1*1.4-1*1.4-3*1,terms a b c d e; asserted bre crc drb erb erd,10,1
+5::1-4*1.2-2*1.3-1*1.4-0*1,terms a b c d e; asserted bre crc drb era,9,1
+5::1-4*1.2-2*1.3-1*1.4-0*1.4-4*1,terms a b c d e; asserted bre crc drb era ere,10,1
+5::1-4*1.2-2*1.3-1*1.4-0*1.4-3*1,terms a b c d e; asserted bre crc drb era erd,10,1
+5::1-4*1.2-2*1.3-1*1.4-0*1.4-2*1,terms a b c d e; asserted bre crc drb era erc,10,1
+5::1-4*1.2-2*1.3-1*1.4-0*1.4-1*1,terms a b c d e; asserted bre crc drb era erb,10,1
+5::1-4*1.2-2*1.3-1*1.4-0*2,terms a b c d e; asserted bre crc drb era(2),10,1
+5::1-4*1.2-2*1.3-1*1.3-4*1.4-4*1,terms a b c d e; asserted bre crc drb dre ere,10,1
+5::1-4*1.2-2*1.3-1*1.3-4*1.4-2*1,terms a b c d e; asserted bre crc drb dre erc,10,1
+5::1-4*1.2-2*1.3-1*1.3-4*1.4-1*1,terms a b c d e; asserted bre crc drb dre erb,10,1
+5::1-4*1.2-2*1.3-1*1.3-4*1.4-0*1,terms a b c d e; asserted bre crc drb dre era,10,1
+5::1-4*1.2-2*1.3-1*1.3-3*1.4-4*1,terms a b c d e; asserted bre crc drb drd ere,10,1
+5::1-4*1.2-2*1.3-1*1.3-3*1.4-2*1,terms a b c d e; asserted bre crc drb drd erc,10,1
+5::1-4*1.2-2*1.3-1*1.3-3*1.4-0*1,terms a b c d e; asserted bre crc drb drd era,10,1
+5::1-4*1.2-2*1.3-1*1.3-2*1.4-4*1,terms a b c d e; asserted bre crc drb drc ere,10,1
+5::1-4*1.2-2*1.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted bre crc drb drc era,10,1
+5::1-4*1.2-2*1.3-1*2.4-4*1,terms a b c d e; asserted bre crc drb(2) ere,10,1
+5::1-4*1.2-2*1.3-1*2.4-0*1,terms a b c d e; asserted bre crc drb(2) era,10,1
+5::1-4*1.2-2*1.3-0*1.4-4*1,terms a b c d e; asserted bre crc dra ere,9,1
+5::1-4*1.2-2*1.3-0*1.4-4*2,terms a b c d e; asserted bre crc dra ere(2),10,1
+5::1-4*1.2-2*1.3-0*1.4-3*1.4-4*1,terms a b c d e; asserted bre crc dra erd ere,10,1
+5::1-4*1.2-2*1.3-0*1.4-3*2,terms a b c d e; asserted bre crc dra erd(2),10,1
+5::1-4*1.2-2*1.3-0*1.4-2*1,terms a b c d e; asserted bre crc dra erc,9,1
+5::1-4*1.2-2*1.3-0*1.4-2*1.4-4*1,terms a b c d e; asserted bre crc dra erc ere,10,1
+5::1-4*1.2-2*1.3-0*1.4-2*1.4-3*1,terms a b c d e; asserted bre crc dra erc erd,10,1
+5::1-4*1.2-2*1.3-0*1.4-2*2,terms a b c d e; asserted bre crc dra erc(2),10,1
+5::1-4*1.2-2*1.3-0*1.4-1*1,terms a b c d e; asserted bre crc dra erb,9,1
+5::1-4*1.2-2*1.3-0*1.4-1*1.4-4*1,terms a b c d e; asserted bre crc dra erb ere,10,1
+5::1-4*1.2-2*1.3-0*1.4-1*1.4-3*1,terms a b c d e; asserted bre crc dra erb erd,10,1
+5::1-4*1.2-2*1.3-0*1.4-1*1.4-2*1,terms a b c d e; asserted bre crc dra erb erc,10,1
+5::1-4*1.2-2*1.3-0*1.4-1*2,terms a b c d e; asserted bre crc dra erb(2),10,1
+5::1-4*1.2-2*1.3-0*1.4-0*1,terms a b c d e; asserted bre crc dra era,9,1
+5::1-4*1.2-2*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted bre crc dra era ere,10,1
+5::1-4*1.2-2*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted bre crc dra era erd,10,1
+5::1-4*1.2-2*1.3-0*1.4-0*1.4-2*1,terms a b c d e; asserted bre crc dra era erc,10,1
+5::1-4*1.2-2*1.3-0*1.4-0*1.4-1*1,terms a b c d e; asserted bre crc dra era erb,10,1
+5::1-4*1.2-2*1.3-0*1.4-0*2,terms a b c d e; asserted bre crc dra era(2),10,1
+5::1-4*1.2-2*1.3-0*1.3-4*1.4-4*1,terms a b c d e; asserted bre crc dra dre ere,10,1
+5::1-4*1.2-2*1.3-0*1.3-4*1.4-2*1,terms a b c d e; asserted bre crc dra dre erc,10,1
+5::1-4*1.2-2*1.3-0*1.3-4*1.4-1*1,terms a b c d e; asserted bre crc dra dre erb,10,1
+5::1-4*1.2-2*1.3-0*1.3-4*1.4-0*1,terms a b c d e; asserted bre crc dra dre era,10,1
+5::1-4*1.2-2*1.3-0*1.3-3*1.4-4*1,terms a b c d e; asserted bre crc dra drd ere,10,1
+5::1-4*1.2-2*1.3-0*1.3-3*1.4-2*1,terms a b c d e; asserted bre crc dra drd erc,10,1
+5::1-4*1.2-2*1.3-0*1.3-3*1.4-1*1,terms a b c d e; asserted bre crc dra drd erb,10,1
+5::1-4*1.2-2*1.3-0*1.3-3*1.4-0*1,terms a b c d e; asserted bre crc dra drd era,10,1
+5::1-4*1.2-2*1.3-0*1.3-2*1.4-4*1,terms a b c d e; asserted bre crc dra drc ere,10,1
+5::1-4*1.2-2*1.3-0*1.3-2*1.4-2*1,terms a b c d e; asserted bre crc dra drc erc,10,1
+5::1-4*1.2-2*1.3-0*1.3-2*1.4-1*1,terms a b c d e; asserted bre crc dra drc erb,10,1
+5::1-4*1.2-2*1.3-0*1.3-2*1.4-0*1,terms a b c d e; asserted bre crc dra drc era,10,1
+5::1-4*1.2-2*1.3-0*1.3-1*1.4-4*1,terms a b c d e; asserted bre crc dra drb ere,10,1
+5::1-4*1.2-2*1.3-0*1.3-1*1.4-2*1,terms a b c d e; asserted bre crc dra drb erc,10,1
+5::1-4*1.2-2*1.3-0*1.3-1*1.4-0*1,terms a b c d e; asserted bre crc dra drb era,10,1
+5::1-4*1.2-2*1.3-0*2.4-4*1,terms a b c d e; asserted bre crc dra(2) ere,10,1
+5::1-4*1.2-2*1.3-0*2.4-2*1,terms a b c d e; asserted bre crc dra(2) erc,10,1
+5::1-4*1.2-2*1.3-0*2.4-1*1,terms a b c d e; asserted bre crc dra(2) erb,10,1
+5::1-4*1.2-2*1.3-0*2.4-0*1,terms a b c d e; asserted bre crc dra(2) era,10,1
+5::1-4*1.2-2*1.2-4*1.3-1*1.4-3*1,terms a b c d e; asserted bre crc cre drb erd,10,1
+5::1-4*1.2-2*1.2-4*1.3-1*1.4-0*1,terms a b c d e; asserted bre crc cre drb era,10,1
+5::1-4*1.2-2*1.2-4*1.3-0*1.4-4*1,terms a b c d e; asserted bre crc cre dra ere,10,1
+5::1-4*1.2-2*1.2-4*1.3-0*1.4-3*1,terms a b c d e; asserted bre crc cre dra erd,10,1
+5::1-4*1.2-2*1.2-4*1.3-0*1.4-2*1,terms a b c d e; asserted bre crc cre dra erc,10,1
+5::1-4*1.2-2*1.2-4*1.3-0*1.4-1*1,terms a b c d e; asserted bre crc cre dra erb,10,1
+5::1-4*1.2-2*1.2-4*1.3-0*1.4-0*1,terms a b c d e; asserted bre crc cre dra era,10,1
+5::1-4*1.2-2*1.2-3*1.3-1*1.4-0*1,terms a b c d e; asserted bre crc crd drb era,10,1
+5::1-4*1.2-2*1.2-3*1.3-0*1.4-4*1,terms a b c d e; asserted bre crc crd dra ere,10,1
+5::1-4*1.2-2*1.2-3*1.3-0*1.4-2*1,terms a b c d e; asserted bre crc crd dra erc,10,1
+5::1-4*1.2-2*1.2-3*1.3-0*1.4-1*1,terms a b c d e; asserted bre crc crd dra erb,10,1
+5::1-4*1.2-2*1.2-3*1.3-0*1.4-0*1,terms a b c d e; asserted bre crc crd dra era,10,1
+5::1-4*1.2-2*2.3-1*1.4-3*1,terms a b c d e; asserted bre crc(2) drb erd,10,1
+5::1-4*1.2-2*2.3-1*1.4-0*1,terms a b c d e; asserted bre crc(2) drb era,10,1
+5::1-4*1.2-2*2.3-0*1.4-4*1,terms a b c d e; asserted bre crc(2) dra ere,10,1
+5::1-4*1.2-2*2.3-0*1.4-2*1,terms a b c d e; asserted bre crc(2) dra erc,10,1
+5::1-4*1.2-2*2.3-0*1.4-1*1,terms a b c d e; asserted bre crc(2) dra erb,10,1
+5::1-4*1.2-2*2.3-0*1.4-0*1,terms a b c d e; asserted bre crc(2) dra era,10,1
+5::1-4*1.2-1*1.3-1*1.3-2*1.4-0*1,terms a b c d e; asserted bre crb drb drc era,10,1
+5::1-4*1.2-1*1.3-0*1.4-2*1,terms a b c d e; asserted bre crb dra erc,9,1
+5::1-4*1.2-1*1.3-0*1.4-2*1.4-4*1,terms a b c d e; asserted bre crb dra erc ere,10,1
+5::1-4*1.2-1*1.3-0*1.4-2*1.4-3*1,terms a b c d e; asserted bre crb dra erc erd,10,1
+5::1-4*1.2-1*1.3-0*1.4-2*2,terms a b c d e; asserted bre crb dra erc(2),10,1
+5::1-4*1.2-1*1.3-0*1.4-1*1.4-2*1,terms a b c d e; asserted bre crb dra erb erc,10,1
+5::1-4*1.2-1*1.3-0*1.4-0*1,terms a b c d e; asserted bre crb dra era,9,1
+5::1-4*1.2-1*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted bre crb dra era ere,10,1
+5::1-4*1.2-1*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted bre crb dra era erd,10,1
+5::1-4*1.2-1*1.3-0*1.4-0*1.4-2*1,terms a b c d e; asserted bre crb dra era erc,10,1
+5::1-4*1.2-1*1.3-0*1.4-0*1.4-1*1,terms a b c d e; asserted bre crb dra era erb,10,1
+5::1-4*1.2-1*1.3-0*1.4-0*2,terms a b c d e; asserted bre crb dra era(2),10,1
+5::1-4*1.2-1*1.3-0*1.3-4*1.4-2*1,terms a b c d e; asserted bre crb dra dre erc,10,1
+5::1-4*1.2-1*1.3-0*1.3-4*1.4-0*1,terms a b c d e; asserted bre crb dra dre era,10,1
+5::1-4*1.2-1*1.3-0*1.3-3*1.4-2*1,terms a b c d e; asserted bre crb dra drd erc,10,1
+5::1-4*1.2-1*1.3-0*1.3-3*1.4-0*1,terms a b c d e; asserted bre crb dra drd era,10,1
+5::1-4*1.2-1*1.3-0*1.3-2*1.4-0*1,terms a b c d e; asserted bre crb dra drc era,10,1
+5::1-4*1.2-1*1.3-0*1.3-1*1.4-0*1,terms a b c d e; asserted bre crb dra drb era,10,1
+5::1-4*1.2-1*1.3-0*2.4-2*1,terms a b c d e; asserted bre crb dra(2) erc,10,1
+5::1-4*1.2-1*1.3-0*2.4-0*1,terms a b c d e; asserted bre crb dra(2) era,10,1
+5::1-4*1.2-1*1.2-4*1.3-0*1.4-4*1,terms a b c d e; asserted bre crb cre dra ere,10,1
+5::1-4*1.2-1*1.2-4*1.3-0*1.4-1*1,terms a b c d e; asserted bre crb cre dra erb,10,1
+5::1-4*1.2-1*1.2-4*1.3-0*1.4-0*1,terms a b c d e; asserted bre crb cre dra era,10,1
+5::1-4*1.2-1*1.2-3*1.3-0*1.4-4*1,terms a b c d e; asserted bre crb crd dra ere,10,1
+5::1-4*1.2-1*1.2-3*1.3-0*1.4-0*1,terms a b c d e; asserted bre crb crd dra era,10,1
+5::1-4*1.2-1*1.2-2*1.3-0*1.4-4*1,terms a b c d e; asserted bre crb crc dra ere,10,1
+5::1-4*1.2-1*1.2-2*1.3-0*1.4-0*1,terms a b c d e; asserted bre crb crc dra era,10,1
+5::1-4*1.2-1*2.3-0*1.4-4*1,terms a b c d e; asserted bre crb(2) dra ere,10,1
+5::1-4*1.2-1*2.3-0*1.4-0*1,terms a b c d e; asserted bre crb(2) dra era,10,1
+5::1-4*1.2-0*1.3-0*1.4-4*1,terms a b c d e; asserted bre cra dra ere,9,1
+5::1-4*1.2-0*1.3-0*1.4-4*2,terms a b c d e; asserted bre cra dra ere(2),10,1
+5::1-4*1.2-0*1.3-0*1.4-3*1.4-4*1,terms a b c d e; asserted bre cra dra erd ere,10,1
+5::1-4*1.2-0*1.3-0*1.4-3*2,terms a b c d e; asserted bre cra dra erd(2),10,1
+5::1-4*1.2-0*1.3-0*1.4-2*1.4-3*1,terms a b c d e; asserted bre cra dra erc erd,10,1
+5::1-4*1.2-0*1.3-0*1.4-1*1,terms a b c d e; asserted bre cra dra erb,9,1
+5::1-4*1.2-0*1.3-0*1.4-1*1.4-4*1,terms a b c d e; asserted bre cra dra erb ere,10,1
+5::1-4*1.2-0*1.3-0*1.4-1*1.4-3*1,terms a b c d e; asserted bre cra dra erb erd,10,1
+5::1-4*1.2-0*1.3-0*1.4-1*2,terms a b c d e; asserted bre cra dra erb(2),10,1
+5::1-4*1.2-0*1.3-0*1.4-0*1,terms a b c d e; asserted bre cra dra era,9,1
+5::1-4*1.2-0*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted bre cra dra era ere,10,1
+5::1-4*1.2-0*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted bre cra dra era erd,10,1
+5::1-4*1.2-0*1.3-0*1.4-0*1.4-1*1,terms a b c d e; asserted bre cra dra era erb,10,1
+5::1-4*1.2-0*1.3-0*1.4-0*2,terms a b c d e; asserted bre cra dra era(2),10,1
+5::1-4*1.2-0*1.3-0*1.3-4*1.4-4*1,terms a b c d e; asserted bre cra dra dre ere,10,1
+5::1-4*1.2-0*1.3-0*1.3-4*1.4-1*1,terms a b c d e; asserted bre cra dra dre erb,10,1
+5::1-4*1.2-0*1.3-0*1.3-4*1.4-0*1,terms a b c d e; asserted bre cra dra dre era,10,1
+5::1-4*1.2-0*1.3-0*1.3-3*1.4-4*1,terms a b c d e; asserted bre cra dra drd ere,10,1
+5::1-4*1.2-0*1.3-0*1.3-3*1.4-1*1,terms a b c d e; asserted bre cra dra drd erb,10,1
+5::1-4*1.2-0*1.3-0*1.3-3*1.4-0*1,terms a b c d e; asserted bre cra dra drd era,10,1
+5::1-4*1.2-0*1.3-0*1.3-2*1.4-4*1,terms a b c d e; asserted bre cra dra drc ere,10,1
+5::1-4*1.2-0*1.3-0*1.3-2*1.4-1*1,terms a b c d e; asserted bre cra dra drc erb,10,1
+5::1-4*1.2-0*1.3-0*1.3-2*1.4-0*1,terms a b c d e; asserted bre cra dra drc era,10,1
+5::1-4*1.2-0*1.3-0*1.3-1*1.4-4*1,terms a b c d e; asserted bre cra dra drb ere,10,1
+5::1-4*1.2-0*1.3-0*1.3-1*1.4-0*1,terms a b c d e; asserted bre cra dra drb era,10,1
+5::1-4*1.2-0*1.3-0*2.4-4*1,terms a b c d e; asserted bre cra dra(2) ere,10,1
+5::1-4*1.2-0*1.3-0*2.4-1*1,terms a b c d e; asserted bre cra dra(2) erb,10,1
+5::1-4*1.2-0*1.3-0*2.4-0*1,terms a b c d e; asserted bre cra dra(2) era,10,1
+5::1-4*2.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted bre(2) crc drd ere,10,1
+5::1-4*2.2-2*1.3-3*1.4-0*1,terms a b c d e; asserted bre(2) crc drd era,10,1
+5::1-4*2.2-2*1.3-0*1.4-4*1,terms a b c d e; asserted bre(2) crc dra ere,10,1
+5::1-4*2.2-2*1.3-0*1.4-0*1,terms a b c d e; asserted bre(2) crc dra era,10,1
+5::1-4*2.2-0*1.3-0*1.4-4*1,terms a b c d e; asserted bre(2) cra dra ere,10,1
+5::1-4*2.2-0*1.3-0*1.4-0*1,terms a b c d e; asserted bre(2) cra dra era,10,1
+5::1-3*1.1-4*1.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted brd bre crc drd ere,10,1
+5::1-3*1.1-4*1.2-2*1.3-3*1.4-0*1,terms a b c d e; asserted brd bre crc drd era,10,1
+5::1-3*1.1-4*1.2-2*1.3-0*1.4-0*1,terms a b c d e; asserted brd bre crc dra era,10,1
+5::1-3*1.1-4*1.2-0*1.3-3*1.4-4*1,terms a b c d e; asserted brd bre cra drd ere,10,1
+5::1-3*1.1-4*1.2-0*1.3-3*1.4-0*1,terms a b c d e; asserted brd bre cra drd era,10,1
+5::1-3*1.1-4*1.2-0*1.3-0*1.4-0*1,terms a b c d e; asserted brd bre cra dra era,10,1
+5::1-1*1.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted brb crc drd ere,9,1
+5::1-1*1.2-2*1.3-3*1.4-4*2,terms a b c d e; asserted brb crc drd ere(2),10,1
+5::1-1*1.2-2*1.3-3*1.4-3*1.4-4*1,terms a b c d e; asserted brb crc drd erd ere,10,1
+5::1-1*1.2-2*1.3-3*1.4-0*1,terms a b c d e; asserted brb crc drd era,9,1
+5::1-1*1.2-2*1.3-3*1.4-0*1.4-4*1,terms a b c d e; asserted brb crc drd era ere,10,1
+5::1-1*1.2-2*1.3-3*1.4-0*1.4-3*1,terms a b c d e; asserted brb crc drd era erd,10,1
+5::1-1*1.2-2*1.3-3*1.4-0*2,terms a b c d e; asserted brb crc drd era(2),10,1
+5::1-1*1.2-2*1.3-3*1.3-4*1.4-0*1,terms a b c d e; asserted brb crc drd dre era,10,1
+5::1-1*1.2-2*1.3-3*2.4-0*1,terms a b c d e; asserted brb crc drd(2) era,10,1
+5::1-1*1.2-2*1.3-2*1.3-3*1.4-0*1,terms a b c d e; asserted brb crc drc drd era,10,1
+5::1-1*1.2-2*1.3-0*1.4-0*1,terms a b c d e; asserted brb crc dra era,9,1
+5::1-1*1.2-2*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted brb crc dra era ere,10,1
+5::1-1*1.2-2*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted brb crc dra era erd,10,1
+5::1-1*1.2-2*1.3-0*1.4-0*1.4-2*1,terms a b c d e; asserted brb crc dra era erc,10,1
+5::1-1*1.2-2*1.3-0*1.4-0*2,terms a b c d e; asserted brb crc dra era(2),10,1
+5::1-1*1.2-2*1.2-4*1.3-0*1.4-0*1,terms a b c d e; asserted brb crc cre dra era,10,1
+5::1-1*1.2-2*2.3-0*1.4-0*1,terms a b c d e; asserted brb crc(2) dra era,10,1
+5::1-1*1.2-1*1.2-2*1.3-0*1.4-0*1,terms a b c d e; asserted brb crb crc dra era,10,1
+5::1-1*1.2-0*1.3-0*1.4-0*1,terms a b c d e; asserted brb cra dra era,9,1
+5::1-1*1.2-0*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted brb cra dra era ere,10,1
+5::1-1*1.2-0*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted brb cra dra era erd,10,1
+5::1-1*1.2-0*1.3-0*1.4-0*1.4-1*1,terms a b c d e; asserted brb cra dra era erb,10,1
+5::1-1*1.2-0*1.3-0*1.4-0*2,terms a b c d e; asserted brb cra dra era(2),10,1
+5::1-1*1.1-4*1.2-0*1.3-0*1.4-0*1,terms a b c d e; asserted brb bre cra dra era,10,1
+5::1-1*2.2-0*1.3-0*1.4-0*1,terms a b c d e; asserted brb(2) cra dra era,10,1
+5::1-0*1.2-0*1.3-0*1.4-0*1,terms a b c d e; asserted bra cra dra era,9,1
+5::1-0*1.2-0*1.3-0*1.4-0*1.4-4*1,terms a b c d e; asserted bra cra dra era ere,10,1
+5::1-0*1.2-0*1.3-0*1.4-0*1.4-3*1,terms a b c d e; asserted bra cra dra era erd,10,1
+5::1-0*1.2-0*1.3-0*1.4-0*2,terms a b c d e; asserted bra cra dra era(2),10,1
+5::0-4*1.1-4*1.2-4*1.3-4*1.4-4*1,terms a b c d e; asserted are bre cre dre ere,10,1
+5::0-4*1.1-4*1.2-4*1.3-4*1.4-3*1,terms a b c d e; asserted are bre cre dre erd,10,1
+5::0-4*1.1-4*1.2-4*1.3-3*1.4-4*1,terms a b c d e; asserted are bre cre drd ere,10,1
+5::0-4*1.1-4*1.2-4*1.3-3*1.4-3*1,terms a b c d e; asserted are bre cre drd erd,10,1
+5::0-4*1.1-4*1.2-4*1.3-3*1.4-2*1,terms a b c d e; asserted are bre cre drd erc,10,1
+5::0-4*1.1-4*1.2-4*1.3-2*1.4-4*1,terms a b c d e; asserted are bre cre drc ere,10,1
+5::0-4*1.1-4*1.2-4*1.3-2*1.4-3*1,terms a b c d e; asserted are bre cre drc erd,10,1
+5::0-4*1.1-4*1.2-4*1.3-2*1.4-2*1,terms a b c d e; asserted are bre cre drc erc,10,1
+5::0-4*1.1-4*1.2-4*1.3-2*1.4-1*1,terms a b c d e; asserted are bre cre drc erb,10,1
+5::0-4*1.1-4*1.2-3*1.3-3*1.4-4*1,terms a b c d e; asserted are bre crd drd ere,10,1
+5::0-4*1.1-4*1.2-3*1.3-3*1.4-3*1,terms a b c d e; asserted are bre crd drd erd,10,1
+5::0-4*1.1-4*1.2-3*1.3-3*1.4-2*1,terms a b c d e; asserted are bre crd drd erc,10,1
+5::0-4*1.1-4*1.2-3*1.3-3*1.4-1*1,terms a b c d e; asserted are bre crd drd erb,10,1
+5::0-4*1.1-4*1.2-3*1.3-2*1.4-4*1,terms a b c d e; asserted are bre crd drc ere,10,1
+5::0-4*1.1-4*1.2-3*1.3-2*1.4-3*1,terms a b c d e; asserted are bre crd drc erd,10,1
+5::0-4*1.1-4*1.2-3*1.3-2*1.4-1*1,terms a b c d e; asserted are bre crd drc erb,10,1
+5::0-4*1.1-4*1.2-3*1.3-1*1.4-4*1,terms a b c d e; asserted are bre crd drb ere,10,1
+5::0-4*1.1-4*1.2-3*1.3-1*1.4-3*1,terms a b c d e; asserted are bre crd drb erd,10,1
+5::0-4*1.1-4*1.2-3*1.3-1*1.4-2*1,terms a b c d e; asserted are bre crd drb erc,10,1
+5::0-4*1.1-4*1.2-3*1.3-1*1.4-1*1,terms a b c d e; asserted are bre crd drb erb,10,1
+5::0-4*1.1-4*1.2-3*1.3-1*1.4-0*1,terms a b c d e; asserted are bre crd drb era,10,1
+5::0-4*1.1-4*1.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted are bre crc drd ere,10,1
+5::0-4*1.1-4*1.2-2*1.3-3*1.4-3*1,terms a b c d e; asserted are bre crc drd erd,10,1
+5::0-4*1.1-4*1.2-2*1.3-3*1.4-1*1,terms a b c d e; asserted are bre crc drd erb,10,1
+5::0-4*1.1-4*1.2-2*1.3-1*1.4-4*1,terms a b c d e; asserted are bre crc drb ere,10,1
+5::0-4*1.1-4*1.2-2*1.3-1*1.4-3*1,terms a b c d e; asserted are bre crc drb erd,10,1
+5::0-4*1.1-4*1.2-2*1.3-1*1.4-2*1,terms a b c d e; asserted are bre crc drb erc,10,1
+5::0-4*1.1-4*1.2-2*1.3-1*1.4-1*1,terms a b c d e; asserted are bre crc drb erb,10,1
+5::0-4*1.1-4*1.2-2*1.3-1*1.4-0*1,terms a b c d e; asserted are bre crc drb era,10,1
+5::0-4*1.1-4*1.2-1*1.3-0*1.4-4*1,terms a b c d e; asserted are bre crb dra ere,10,1
+5::0-4*1.1-4*1.2-1*1.3-0*1.4-3*1,terms a b c d e; asserted are bre crb dra erd,10,1
+5::0-4*1.1-3*1.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted are brd crc drd ere,10,1
+5::0-4*1.1-3*1.2-2*1.3-3*1.4-2*1,terms a b c d e; asserted are brd crc drd erc,10,1
+5::0-4*1.1-3*1.2-2*1.3-3*1.4-1*1,terms a b c d e; asserted are brd crc drd erb,10,1
+5::0-4*1.1-3*1.2-2*1.3-3*1.4-0*1,terms a b c d e; asserted are brd crc drd era,10,1
+5::0-4*1.1-3*1.2-2*1.3-2*1.4-1*1,terms a b c d e; asserted are brd crc drc erb,10,1
+5::0-4*1.1-3*1.2-2*1.3-2*1.4-0*1,terms a b c d e; asserted are brd crc drc era,10,1
+5::0-4*1.1-3*1.2-2*1.3-1*1.4-0*1,terms a b c d e; asserted are brd crc drb era,10,1
+5::0-4*1.1-3*1.2-2*1.3-0*1.4-1*1,terms a b c d e; asserted are brd crc dra erb,10,1
+5::0-4*1.1-3*1.2-1*1.3-2*1.4-4*1,terms a b c d e; asserted are brd crb drc ere,10,1
+5::0-4*1.1-3*1.2-1*1.3-2*1.4-0*1,terms a b c d e; asserted are brd crb drc era,10,1
+5::0-4*1.1-3*1.2-1*1.3-0*1.4-2*1,terms a b c d e; asserted are brd crb dra erc,10,1
+5::0-4*1.1-1*1.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted are brb crc drd ere,10,1
+5::0-4*1.1-1*1.2-2*1.3-3*1.4-3*1,terms a b c d e; asserted are brb crc drd erd,10,1
+5::0-4*1.1-1*1.2-2*1.3-3*1.4-0*1,terms a b c d e; asserted are brb crc drd era,10,1
+5::0-4*1.1-1*1.2-2*1.3-0*1.4-3*1,terms a b c d e; asserted are brb crc dra erd,10,1
+5::0-0*1.1-1*1.2-2*1.3-3*1.4-4*1,terms a b c d e; asserted ara brb crc drd ere,10,1

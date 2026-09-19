@@ -1,0 +1,51 @@
+{
+  "attempts": [
+    {
+      "adds": [
+        1,
+        0
+      ],
+      "beyond_bound": false,
+      "change": "add a term",
+      "changes_a_multiplicity_to": null,
+      "kind": "add a term",
+      "makes_some_xrx_asserted": false,
+      "outcome": "1::",
+      "performed": true,
+      "round": 1,
+      "state": "0::",
+      "written": "no terms; asserted nothing"
+    }
+  ],
+  "changes": [
+    "add a term"
+  ],
+  "cost_of_ara_once": 2,
+  "cost_of_the_one_term_state": 1,
+  "reaches_itself_in_two_changes": false,
+  "reaches_the_one_term_state": true,
+  "results_after_one_change": [
+    "terms a; asserted nothing"
+  ],
+  "size": 0,
+  "state": "no terms; asserted nothing",
+  "the_empty_state_under_the_sixth_seed": null,
+  "the_first_change_can_only_add_a_term": true,
+  "the_one_term_state_reaches_it": false,
+  "the_one_term_state_under_the_sixth_seed": {
+    "with_bra": 3,
+    "without_bra": 2
+  },
+  "the_sixth_seeds_beginnings_seen_from_here": {
+    "with_bra": {
+      "cost_here": 4,
+      "cost_under_the_sixth_seed": 0,
+      "state": "terms a b; asserted arb bra"
+    },
+    "without_bra": {
+      "cost_here": 3,
+      "cost_under_the_sixth_seed": 0,
+      "state": "terms a b; asserted arb"
+    }
+  }
+}
