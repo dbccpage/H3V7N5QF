@@ -1,0 +1,90 @@
+state,written,round,has_a_term,asserts_no_xrx,results_it_reaches,results_reaching_it,results_it_reaches_by_search,criterion_agrees_with_search,reaches_what_is_given,is_a_result_of_the_sixth_seed
+0::,no terms; asserted nothing,0,0,1,89,1,89,1,1,0
+1::,terms a; asserted nothing,1,1,1,88,89,88,1,0,1
+1::0-0*1,terms a; asserted ara,2,1,0,88,89,88,1,0,1
+2::,terms a b; asserted nothing,2,1,1,88,89,88,1,0,1
+1::0-0*2,terms a; asserted ara(2),3,1,0,88,89,88,1,0,1
+2::1-1*1,terms a b; asserted brb,3,1,0,88,89,88,1,0,1
+2::1-0*1,terms a b; asserted bra,3,1,1,88,89,88,1,0,1
+3::,terms a b c; asserted nothing,3,1,1,88,89,88,1,0,1
+1::0-0*3,terms a; asserted ara(3),4,1,0,88,89,88,1,0,1
+2::1-1*2,terms a b; asserted brb(2),4,1,0,88,89,88,1,0,1
+2::1-0*1.1-1*1,terms a b; asserted bra brb,4,1,0,88,89,88,1,0,1
+2::1-0*2,terms a b; asserted bra(2),4,1,1,88,89,88,1,0,1
+2::0-1*1.1-1*1,terms a b; asserted arb brb,4,1,0,88,89,88,1,0,1
+2::0-1*1.1-0*1,terms a b; asserted arb bra,4,1,1,88,89,88,1,0,1
+2::0-0*1.1-1*1,terms a b; asserted ara brb,4,1,0,88,89,88,1,0,1
+3::2-2*1,terms a b c; asserted crc,4,1,0,88,89,88,1,0,1
+3::2-1*1,terms a b c; asserted crb,4,1,1,88,89,88,1,0,1
+1::0-0*4,terms a; asserted ara(4),5,1,0,88,89,88,1,0,1
+2::1-1*3,terms a b; asserted brb(3),5,1,0,88,89,88,1,0,1
+2::1-0*1.1-1*2,terms a b; asserted bra brb(2),5,1,0,88,89,88,1,0,1
+2::1-0*2.1-1*1,terms a b; asserted bra(2) brb,5,1,0,88,89,88,1,0,1
+2::1-0*3,terms a b; asserted bra(3),5,1,1,88,89,88,1,0,1
+2::0-1*1.1-1*2,terms a b; asserted arb brb(2),5,1,0,88,89,88,1,0,1
+2::0-1*1.1-0*1.1-1*1,terms a b; asserted arb bra brb,5,1,0,88,89,88,1,0,1
+2::0-1*1.1-0*2,terms a b; asserted arb bra(2),5,1,1,88,89,88,1,0,1
+2::0-1*2.1-1*1,terms a b; asserted arb(2) brb,5,1,0,88,89,88,1,0,1
+2::0-0*1.1-1*2,terms a b; asserted ara brb(2),5,1,0,88,89,88,1,0,1
+2::0-0*1.1-0*1.1-1*1,terms a b; asserted ara bra brb,5,1,0,88,89,88,1,0,1
+3::2-2*2,terms a b c; asserted crc(2),5,1,0,88,89,88,1,0,1
+3::2-1*1.2-2*1,terms a b c; asserted crb crc,5,1,0,88,89,88,1,0,1
+3::2-1*2,terms a b c; asserted crb(2),5,1,1,88,89,88,1,0,1
+3::2-0*1.2-1*1,terms a b c; asserted cra crb,5,1,1,88,89,88,1,0,1
+3::1-2*1.2-2*1,terms a b c; asserted brc crc,5,1,0,88,89,88,1,0,1
+3::1-2*1.2-1*1,terms a b c; asserted brc crb,5,1,1,88,89,88,1,0,1
+3::1-2*1.2-0*1,terms a b c; asserted brc cra,5,1,1,88,89,88,1,0,1
+3::1-1*1.2-2*1,terms a b c; asserted brb crc,5,1,0,88,89,88,1,0,1
+3::1-1*1.2-0*1,terms a b c; asserted brb cra,5,1,0,88,89,88,1,0,1
+3::1-0*1.2-0*1,terms a b c; asserted bra cra,5,1,1,88,89,88,1,0,1
+1::0-0*5,terms a; asserted ara(5),6,1,0,88,89,88,1,0,1
+2::1-1*4,terms a b; asserted brb(4),6,1,0,88,89,88,1,0,1
+2::1-0*1.1-1*3,terms a b; asserted bra brb(3),6,1,0,88,89,88,1,0,1
+2::1-0*2.1-1*2,terms a b; asserted bra(2) brb(2),6,1,0,88,89,88,1,0,1
+2::1-0*3.1-1*1,terms a b; asserted bra(3) brb,6,1,0,88,89,88,1,0,1
+2::1-0*4,terms a b; asserted bra(4),6,1,1,88,89,88,1,0,1
+2::0-1*1.1-1*3,terms a b; asserted arb brb(3),6,1,0,88,89,88,1,0,1
+2::0-1*1.1-0*1.1-1*2,terms a b; asserted arb bra brb(2),6,1,0,88,89,88,1,0,1
+2::0-1*1.1-0*2.1-1*1,terms a b; asserted arb bra(2) brb,6,1,0,88,89,88,1,0,1
+2::0-1*1.1-0*3,terms a b; asserted arb bra(3),6,1,1,88,89,88,1,0,1
+2::0-1*2.1-1*2,terms a b; asserted arb(2) brb(2),6,1,0,88,89,88,1,0,1
+2::0-1*2.1-0*1.1-1*1,terms a b; asserted arb(2) bra brb,6,1,0,88,89,88,1,0,1
+2::0-1*2.1-0*2,terms a b; asserted arb(2) bra(2),6,1,1,88,89,88,1,0,1
+2::0-1*3.1-1*1,terms a b; asserted arb(3) brb,6,1,0,88,89,88,1,0,1
+2::0-0*1.1-1*3,terms a b; asserted ara brb(3),6,1,0,88,89,88,1,0,1
+2::0-0*1.1-0*1.1-1*2,terms a b; asserted ara bra brb(2),6,1,0,88,89,88,1,0,1
+2::0-0*1.1-0*2.1-1*1,terms a b; asserted ara bra(2) brb,6,1,0,88,89,88,1,0,1
+2::0-0*1.0-1*1.1-1*2,terms a b; asserted ara arb brb(2),6,1,0,88,89,88,1,0,1
+2::0-0*1.0-1*1.1-0*1.1-1*1,terms a b; asserted ara arb bra brb,6,1,0,88,89,88,1,0,1
+2::0-0*2.1-1*2,terms a b; asserted ara(2) brb(2),6,1,0,88,89,88,1,0,1
+3::2-2*3,terms a b c; asserted crc(3),6,1,0,88,89,88,1,0,1
+3::2-1*1.2-2*2,terms a b c; asserted crb crc(2),6,1,0,88,89,88,1,0,1
+3::2-1*2.2-2*1,terms a b c; asserted crb(2) crc,6,1,0,88,89,88,1,0,1
+3::2-1*3,terms a b c; asserted crb(3),6,1,1,88,89,88,1,0,1
+3::2-0*1.2-1*1.2-2*1,terms a b c; asserted cra crb crc,6,1,0,88,89,88,1,0,1
+3::2-0*1.2-1*2,terms a b c; asserted cra crb(2),6,1,1,88,89,88,1,0,1
+3::1-2*1.2-2*2,terms a b c; asserted brc crc(2),6,1,0,88,89,88,1,0,1
+3::1-2*1.2-1*1.2-2*1,terms a b c; asserted brc crb crc,6,1,0,88,89,88,1,0,1
+3::1-2*1.2-1*2,terms a b c; asserted brc crb(2),6,1,1,88,89,88,1,0,1
+3::1-2*1.2-0*1.2-2*1,terms a b c; asserted brc cra crc,6,1,0,88,89,88,1,0,1
+3::1-2*1.2-0*1.2-1*1,terms a b c; asserted brc cra crb,6,1,1,88,89,88,1,0,1
+3::1-2*1.2-0*2,terms a b c; asserted brc cra(2),6,1,1,88,89,88,1,0,1
+3::1-2*2.2-2*1,terms a b c; asserted brc(2) crc,6,1,0,88,89,88,1,0,1
+3::1-2*2.2-0*1,terms a b c; asserted brc(2) cra,6,1,1,88,89,88,1,0,1
+3::1-1*1.2-2*2,terms a b c; asserted brb crc(2),6,1,0,88,89,88,1,0,1
+3::1-1*1.2-1*1.2-2*1,terms a b c; asserted brb crb crc,6,1,0,88,89,88,1,0,1
+3::1-1*1.2-0*1.2-2*1,terms a b c; asserted brb cra crc,6,1,0,88,89,88,1,0,1
+3::1-1*1.2-0*1.2-1*1,terms a b c; asserted brb cra crb,6,1,0,88,89,88,1,0,1
+3::1-1*1.2-0*2,terms a b c; asserted brb cra(2),6,1,0,88,89,88,1,0,1
+3::1-1*1.1-2*1.2-0*1,terms a b c; asserted brb brc cra,6,1,0,88,89,88,1,0,1
+3::1-1*2.2-0*1,terms a b c; asserted brb(2) cra,6,1,0,88,89,88,1,0,1
+3::1-0*1.2-0*1.2-2*1,terms a b c; asserted bra cra crc,6,1,0,88,89,88,1,0,1
+3::1-0*1.2-0*1.2-1*1,terms a b c; asserted bra cra crb,6,1,1,88,89,88,1,0,1
+3::1-0*1.2-0*2,terms a b c; asserted bra cra(2),6,1,1,88,89,88,1,0,1
+3::0-2*1.1-2*1.2-2*1,terms a b c; asserted arc brc crc,6,1,0,88,89,88,1,0,1
+3::0-2*1.1-2*1.2-1*1,terms a b c; asserted arc brc crb,6,1,1,88,89,88,1,0,1
+3::0-2*1.1-1*1.2-2*1,terms a b c; asserted arc brb crc,6,1,0,88,89,88,1,0,1
+3::0-2*1.1-1*1.2-1*1,terms a b c; asserted arc brb crb,6,1,0,88,89,88,1,0,1
+3::0-2*1.1-1*1.2-0*1,terms a b c; asserted arc brb cra,6,1,0,88,89,88,1,0,1
+3::0-2*1.1-0*1.2-1*1,terms a b c; asserted arc bra crb,6,1,1,88,89,88,1,0,1
+3::0-0*1.1-1*1.2-2*1,terms a b c; asserted ara brb crc,6,1,0,88,89,88,1,0,1
