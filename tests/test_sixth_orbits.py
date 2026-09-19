@@ -75,7 +75,7 @@ def brute_free(n: int, total: int, one_way: bool = False, cap: int | None = None
 
 def test_counts_agree_with_listing() -> None:
     for n, upto in ((1, 4), (2, 4), (3, 3)):
-        for cap in (None, 0, 1):
+        for cap in (None, 0, 1, 2):  # cap>=2 exercises _at_least's capped "k or more" loop
             named = count_named(n, upto, cap)
             for t in range(upto + 1):
                 assert {kind: named[kind][t] for kind in NAMED_KINDS} == brute_named(n, t, cap), (n, t, cap)

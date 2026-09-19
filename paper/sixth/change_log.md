@@ -160,3 +160,16 @@ evidence module fully covered — before any work of the sixth derivation).
     regenerates. The sixth's own `python code/generate_sixth.py --check`
     matched (834 seconds), after `python code/generate_sixth.py` (957
     seconds) and `python code/lean_report_sixth.py`.
+
+16. **Review fix: cover the capped branch of `orbits._at_least`.** A review of
+    the pull request found the one uncovered branch in the sixth's code:
+    `_at_least`'s capped inner loop (`orbits.py:192-193`) runs only when
+    `cap >= 2`, but its sole caller `count_named` is invoked only with
+    `cap` in {None, 0}, and the brute-force cross-check
+    `test_counts_agree_with_listing` iterated only `cap in (None, 0, 1)`. The
+    capped path was therefore correct but unexercised, leaving the sixth below
+    the prior derivations' full coverage. Extended the cross-check to
+    `cap in (None, 0, 1, 2)`, which drives the branch and validates the capped
+    "k or more" arithmetic against enumeration. Line/branch coverage of
+    `orbits.py` returns to 100%; no derivation code, evidence, claim, or claim
+    status changed.
