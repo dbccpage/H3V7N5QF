@@ -1,0 +1,576 @@
+{
+  "anchored/with_bra": {
+    "adding_ara_gives": "terms a b; asserted ara arb bra",
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "makes_some_xrx_asserted": true,
+        "outcome": "1:00:0-0*2",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2:01:1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2:01:0-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "makes_some_xrx_asserted": false,
+        "outcome": "3:01:0-1*1.1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2:01:0-0*1.0-1*1.1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2:01:0-1*2.1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2:01:0-1*1.1-0*2",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2:01:0-1*1.1-0*1.1-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      }
+    ],
+    "changes": 8,
+    "cost_of_adding_ara": 1,
+    "cost_of_identifying_a_and_b": 1,
+    "cost_of_nothing_asserted": 2,
+    "cost_of_the_one_term_state": 3,
+    "fifth_formula_for_the_same_state": 5,
+    "identifying_a_and_b_gives": "terms a (a and b are one term); asserted ara(2)",
+    "identifying_a_and_b_reaches_what_is_given_back": false,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_make_some_xrx_asserted": 3,
+    "of_which_obstructed": 0,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb bra",
+    "the_one_term_state_reaches_it": false,
+    "the_other_beginning_reaches_it": true
+  },
+  "anchored/without_bra": {
+    "adding_ara_gives": "terms a b; asserted ara arb",
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "makes_some_xrx_asserted": true,
+        "outcome": "1:00:0-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2:01:",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "makes_some_xrx_asserted": false,
+        "outcome": "3:01:0-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2:01:0-0*1.0-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2:01:0-1*2",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2:01:0-1*1.1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2:01:0-1*1.1-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2:01:0-1*1",
+        "written": "terms a b; asserted arb"
+      }
+    ],
+    "changes": 7,
+    "cost_of_adding_ara": 1,
+    "cost_of_identifying_a_and_b": 1,
+    "cost_of_nothing_asserted": 1,
+    "cost_of_the_one_term_state": 2,
+    "fifth_formula_for_the_same_state": 3,
+    "identifying_a_and_b_gives": "terms a (a and b are one term); asserted ara",
+    "identifying_a_and_b_reaches_what_is_given_back": false,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_make_some_xrx_asserted": 3,
+    "of_which_obstructed": 0,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb",
+    "the_one_term_state_reaches_it": false,
+    "the_other_beginning_reaches_it": true
+  },
+  "free/with_bra": {
+    "adding_ara_gives": "terms a b; asserted ara arb bra",
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "makes_some_xrx_asserted": true,
+        "outcome": "1::0-0*2",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "remove arb",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2::1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2::1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "makes_some_xrx_asserted": false,
+        "outcome": "3::1-2*1.2-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2::0-1*1.1-0*1.1-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2::0-1*1.1-0*2",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2::0-1*1.1-0*2",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2::0-1*1.1-0*1.1-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::0-1*1.1-0*1",
+        "written": "terms a b; asserted arb bra"
+      }
+    ],
+    "changes": 8,
+    "cost_of_adding_ara": 1,
+    "cost_of_identifying_a_and_b": 1,
+    "cost_of_nothing_asserted": 2,
+    "cost_of_the_one_term_state": 3,
+    "fifth_formula_for_the_same_state": 5,
+    "identifying_a_and_b_gives": "terms a; asserted ara(2)",
+    "identifying_a_and_b_reaches_what_is_given_back": true,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_make_some_xrx_asserted": 3,
+    "of_which_obstructed": 0,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb bra",
+    "the_one_term_state_reaches_it": true,
+    "the_other_beginning_reaches_it": true
+  },
+  "free/without_bra": {
+    "adding_ara_gives": "terms a b; asserted ara arb",
+    "attempts": [
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "identify a and b",
+        "changes_a_multiplicity_to": null,
+        "kind": "identify two terms",
+        "makes_some_xrx_asserted": true,
+        "outcome": "1::0-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "remove bra",
+        "changes_a_multiplicity_to": 0,
+        "kind": "remove an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2::",
+        "performed": true,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          1,
+          0
+        ],
+        "beyond_bound": false,
+        "change": "add a term",
+        "changes_a_multiplicity_to": null,
+        "kind": "add a term",
+        "makes_some_xrx_asserted": false,
+        "outcome": "3::2-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add ara",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2::0-1*1.1-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add arb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2::0-1*1.1-0*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add bra",
+        "changes_a_multiplicity_to": 2,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": false,
+        "outcome": "2::1-0*2",
+        "performed": true,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      },
+      {
+        "adds": [
+          0,
+          1
+        ],
+        "beyond_bound": false,
+        "change": "add brb",
+        "changes_a_multiplicity_to": 1,
+        "kind": "add an assertion",
+        "makes_some_xrx_asserted": true,
+        "outcome": "2::1-0*1.1-1*1",
+        "performed": true,
+        "round": 1,
+        "state": "2::1-0*1",
+        "written": "terms a b; asserted bra"
+      }
+    ],
+    "changes": 7,
+    "cost_of_adding_ara": 1,
+    "cost_of_identifying_a_and_b": 1,
+    "cost_of_nothing_asserted": 1,
+    "cost_of_the_one_term_state": 2,
+    "fifth_formula_for_the_same_state": 3,
+    "identifying_a_and_b_gives": "terms a; asserted ara",
+    "identifying_a_and_b_reaches_what_is_given_back": true,
+    "nothing_asserted_reaches_what_is_given": true,
+    "of_which_make_some_xrx_asserted": 3,
+    "of_which_obstructed": 0,
+    "reaches_arb_asserted_twice": true,
+    "reaches_nothing_asserted": true,
+    "reaches_the_one_term_state": true,
+    "reaches_the_other_beginning": true,
+    "state": "terms a b; asserted arb",
+    "the_one_term_state_reaches_it": true,
+    "the_other_beginning_reaches_it": true
+  },
+  "results_among_them": "all of them (every well-formed state with at least one term is a result)",
+  "states_on_the_given_terms": "infinite: any multiplicities of arb, bra, ara, brb; the names one term with ara any number of times"
+}
