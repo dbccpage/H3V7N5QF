@@ -989,3 +989,291 @@ From the repository root:
 - `python code/lean_report_fifth.py` builds `lean4/` and writes
   `evidence/fifth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Sixth derivation (`prompt/sixth/`) — plan and stopping conditions
+
+Written before any other work of the sixth derivation, as
+`prompt/sixth/prompt.md` requires. Inputs: `prompt/sixth/prompt.md` and
+`prompt/sixth/seed_prompt.md`; the first derivation (`paper/`, `code/xry/`,
+`lean4/H3V7N5QF/`, `evidence/`), the second (`paper/second/`, `code/second/`,
+`lean4/Second/`, `evidence/second/`), the third (`paper/third/`,
+`code/third/`, `lean4/Third/`, `evidence/third/`), the fourth
+(`paper/fourth/`, `code/fourth/`, `lean4/Fourth/`, `evidence/fourth/`) and
+the fifth (`paper/fifth/`, `code/fifth/`, `lean4/Fifth/`, `evidence/fifth/`)
+are cited where used, never assumed. Everything above stays in force
+(isolation, no network, `prompt/` untouched, `.lake/` never committed,
+bookkeeping rules 1–4, the evidence-module coverage gate). Rule 5 of the
+sixth task: every result of an earlier derivation that is used is cited and
+its proof re-checked from the sixth seed, and the re-check says whether the
+result survives once `xrx` is allowed — in Lean by the embedding of the
+fifth seed's changes into the sixth's (every performed change of the fifth
+is a change of the sixth, and every *attempt* of the fifth is now a
+performed change) and a case split the other way (a change of the sixth
+whose outcome asserts no `xrx` is a change of the fifth), by observing that
+the statement mentions no legality and no change, or by computing it again
+from the sixth seed's own exploration and comparing with the fifth's on the
+results that assert no `xrx`.
+
+## What differs in the seed
+
+Two sentences are gone (`diff`): "For no term `x` may `xrx` be asserted."
+and the paragraph on obstruction ("A change that makes some `xrx` asserted
+is obstructed. An obstructed change must be answered … A refused change is
+recorded and changes nothing."). Every other sentence is identical to the
+fifth seed. So the state is the fifth's (terms, a multiplicity per ordered
+pair, names) with the diagonal pairs `xrx` now just pairs like any other;
+the changes are the fifth's four kinds with nothing forbidden: adding `xrx`
+and identifying two related terms are performed like every other change;
+there is no obstruction, no answer, no refusal and no build. Everything the
+fifth derivation argued *from legality* — which attempts are obstructed, the
+answers, the builds, the lower bound of the cost (whose identification case
+used that nothing is asserted between the merged terms), the destroyed
+givens of a state with the names one term, `arb` never asserted again after
+the names merge, the exactness of the shortest-sequence counts, the
+completeness certificate by legal states — is exactly what must be
+re-examined; what it argued from the state alone (sameness, the two maps to
+the earlier states) or from the changes without legality (the names once one
+term stay one term, the moves of the names, parity of the size, rewriting)
+carries over.
+
+## Layout
+
+- `research/sixth/` — reading notes (not evidence).
+- `code/sixth/` — typed Python package for the sixth seed. Imported from the
+  earlier packages what legality leaves intact: the counted state and its
+  sameness, support and indicator (`fourth.state`; a state with some `xrx`
+  is a state like any other now), the kinds of change (`xry.changes.Kind`),
+  the change record, the list of changes of a state, `perform`, `remove`,
+  `identify` and the two-change cycle (`fifth.changes`, `fifth.state`,
+  `fifth.explore.cycle`: none of them looks at legality), the size of what
+  is given, `has_two_way`, `contains_given`, the cycle machinery and the
+  series of the orbit counts (`xry.orbits`, `fourth.orbits.series`), the
+  statements tested (`fourth.follows`, `fifth.follows`, all of them, plus
+  "no `xrx`" now independent and "some `xrx`"), the fewest-classes count on
+  states with no `xrx` (kept only for the comparison), the writers,
+  `compare_evidence`, the Lean report runner, and the fifth derivation's
+  exploration, sequence counts, cost and reachability for the comparison.
+  Defined afresh: the attempt (every change performed; the record says
+  whether the outcome asserts some `xrx`, which is what the fifth seed would
+  have obstructed), the exploration (four kinds, nothing refused, bounded in
+  terms and rounds), the cost in closed form (the destroyed givens of a state
+  with the names one term now depend on how often `xrx` is asserted at the
+  named term), the changes that raise the cost by exactly one, the
+  reachability criterion (the names, re-derived without legality), the
+  shortest-sequence counts with their exactness (a new rule under FREE), the
+  independent count of the results by terms, total multiplicity and destroyed
+  givens with the diagonal pairs counted, the two-term closed forms (round
+  counts and multinomial sequence counts), the property witnesses. Earlier
+  derivations' files are not modified except to correct a defect, recorded in
+  the relevant change log.
+- `tests/test_sixth_*.py` — tests of `code/sixth/`; all of `code/` stays at
+  ≥ 95 % line and ≥ 95 % branch coverage, every `code/**/evidence.py` fully
+  covered (an injection test for every differential check); `mypy --strict`
+  passes; the prose watchlist stays clean.
+- `lean4/Sixth/` — a sixth Lean library in the same Lake package (the
+  lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Fifth` and reuses `MSt`, `MSt.remove`,
+  `MSt.identify`, `Contains4`, `rename4` and the fifth's rewriting lemmas;
+  new are the four kinds without legality conditions as an inductive
+  `Step6`, `Reach6`, the embeddings `Step5.toStep6`, `Reach5.toReach6`,
+  `Try5.toStep6` (nothing is obstructed), the case split `Step6.toStep5` on
+  legal outcomes, the potential `costA6`, `costB6` with the new destroyed
+  givens, and the addition path without legality (`reach6_by_additions`).
+- `evidence/sixth/` — written by `python code/generate_sixth.py`; the axiom
+  report by `python code/lean_report_sixth.py`; `--check` regenerates into a
+  temporary folder and compares.
+- `paper/sixth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the sixth seed (`research/sixth/`)
+Sentence-by-sentence diff against the fifth seed; the notion table with
+source statuses; which readings change: C5″ (identifying two related terms
+is a change; adding `xrx` is a change; the multiplicities of the pairs an
+identification merges add up, `urv`, `vru`, `uru`, `vrv` all becoming
+`uru`), C7 dropped (no obstruction, no answer), C6 (every attempt is
+performed; no refusal), C8′ unchanged in kind. Expected consequences to be
+proved or refuted: nothing is obstructed (every attempt of the fifth seed is
+a performed change); the results are every well-formed state with at least
+one term, names anywhere, and the fifth's results are exactly those with no
+`xrx`, at the same rounds; the reachability criterion survives (the names,
+re-proved without legality) and so do mutual reachability within the two
+classes, the two-change cycle, and the parity of the size; the fifth's cost
+does not survive as stated — identifying `a` and `b` in what is given is one
+change, where the fifth's potential rises by three — and the fewest changes
+is `size − size(given) + 2·lost` with `lost` the number of missing givens
+when the names are apart and `m0 + 1 − min(M(a,a), m0)` when they are one
+term; this agrees with the fifth's formula on every result with no `xrx` and
+on every result with the names apart, and differs exactly on results with
+the names one term and `xrx` asserted at the named term; the shortest
+sequences to the fifth's results with the names apart are the fifth's, and a
+result with the names one term has more (identify first, then remove
+`ara`); `arb` after the names merge is `ara`, and it can be asserted
+(the fifth's `arb_gone_for_good` fails); a result with `n` terms and `d`
+asserted pairs (diagonal included) has `C(n, 2) + d + 1 + n²` changes, none
+obstructed, and on a result with no `xrx` exactly `n` plus the number of
+related pairs of them make some `xrx` asserted; the frontier has one entry
+per result at the bound (the term), no builds; with the given terms only the
+results of round `r` grow as `r³`, so the seed's 100 rounds do not complete
+within minutes and a lower bound on rounds is declared, with the closed form
+proved for every round; the removal answer of the fifth (lower `urv`, `vru`
+to zero, then identify) and the direct identification reach different
+states, both results now.
+
+### Phase 2 — `code/sixth/` and `tests/`
+- changes (four kinds, every one performed), the attempt record (outcome;
+  whether it asserts some `xrx`), exploration (same protocol; no answers),
+  full logs at a small bound;
+- cost in closed form checked against the explored rounds; FREE closed form
+  checked against the best placement (with `xrx` multiplicities); every
+  change within the bound checked to raise the cost by at most one; the
+  changes that raise it by exactly one characterised and checked; parity
+  checked (no change keeps the round);
+- shortest sequences by dynamic programming over the cost-raising changes
+  with the exactness flag (ANCHORED: fewer terms than the bound or the names
+  apart; FREE: fewer terms than the bound or no optimal placement with the
+  names one term); the two-term multinomial closed form (names apart)
+  checked; the two-term round counts checked;
+- an independent count of the results by terms, total multiplicity and
+  destroyed givens, the diagonal pairs counted as cycles of the rewriting,
+  the states with the names one term split by how often `xrx` is asserted at
+  the named term, the FREE count split by the best placement; restricted to
+  cost within the rounds, as the completeness certificate; its part with no
+  `xrx` must be the fifth's count;
+- the sixth exploration compared with the fifth's at the same bound and
+  rounds: the fifth's results must be exactly the results with no `xrx`, at
+  the same rounds; the shortest-sequence counts must agree on those with the
+  names apart (FREE: with two or more terms) and be larger on the others;
+- reachability by the names criterion checked against breadth-first search
+  along the changes among the results within a small bound, and compared
+  with the fifth's criterion on the fifth's results (they must agree pair by
+  pair);
+- per result the count of changes whose outcome asserts some `xrx` (what the
+  fifth would have obstructed), checked against `n` plus the related pairs
+  on results with no `xrx`;
+- property witnesses for "what does not follow", including the fifth's
+  invariants that now fail;
+- deterministic evidence writer with `--check`; Lean axiom-report writer for
+  `lean4/Sixth/Axioms.lean`.
+
+### Phase 3 — `lean4/Sixth/`
+Targets, in order:
+1. `Step6` (four kinds, no legality conditions), `Reach6`; well-formedness
+   and at least one term preserved; `Step5.toStep6`, `Reach5.toReach6`,
+   `Try5.toStep6` (every attempt of the fifth is a change of the sixth:
+   nothing is obstructed); `Step6.toStep5` when the state and the outcome
+   are legal; `Step6.legal_iff` (a change makes some `xrx` asserted exactly
+   when it adds some `xrx` or identifies two related terms — the fifth's
+   obstruction characterisation restated as a fact about legality, no longer
+   a bar); the names once one term stay one term; `arb_gone_for_good`
+   refuted by witness (identify `a`, `b` in what is given: `ara` asserted).
+2. Cost: `lost6A`, `lost6B` (the names one term: `m0 + 1 − min(M(a,a), m0)`),
+   `cost6A`, `cost6B`; the potential rises by at most one per change
+   (`Step6.costA_le`, `_B`; the identification case no longer assumes nothing
+   between the merged terms); the lower bounds; `reach6_by_additions` (the
+   fourth's proof without legality, `xrx` added like any pair); the upper
+   bounds — names apart: the missing givens removed, then additions; names
+   one term: `m0 − min(M(a,a), m0)` givens removed, the identification, then
+   additions from the one-term state asserting `ara` `min(M(a,a), m0)`
+   times; `fewest_changes6_A`, `_B`; on legal states `lost6 = lost5`, so the
+   fifth's fewest changes survive there (`fewest_changes6_of_legal_A`, `_B`)
+   and fail off them (witness); on states containing what is given the size
+   difference (the fourth's) still; `Step6.size_step`, `Reach6.size_parity`.
+3. Reachability: `reach6_clear`, `reach6_collapse` (identifications now
+   unconditional), the moves of the names (the fifth's, re-proved or cited
+   where they mention no legality), `reach6_iff` (a well-formed state is
+   reachable from a well-formed state exactly when the names, if one term at
+   the start, are one term at the end), `result6_iff_A`, `_B` (every
+   well-formed state is a result of either beginning), `reach6_symm`,
+   `reach6_total`, `merged_never_apart`, `cycle2`, `Reach6.unbounded`; the
+   failures of one-way reachability through the embedding.
+4. What survives (`Sixth/Compare.lean`): every result of the fifth is a
+   result of the sixth at the same round (embedding); the sixth has results
+   the fifth has not (`ara` added to what is given); the criterion survives
+   (same statement, no legality); the cost survives on legal states and on
+   states with the names apart, and fails with a witness; the obstruction
+   notion: every attempt is a change (`Try5.toStep6`); the answer notion: the
+   fifth's removal answer and the direct identification reach different
+   states, both results (`remove_answer_differs`); the fifth's
+   `remove_obstruction_first_or_last5` does not survive without legality
+   (witness: `uru` asserted before the identification).
+5. `Step6.rename`, `Reach6.rename`, the cost in every writing, the
+   every-writing forms of the fewest changes. Attempted once; if a step does
+   not close it is proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the sixth paper cites, into
+`evidence/sixth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/sixth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The five earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/sixth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives `xrx` being allowed; a section answering
+the task's question for the results, the reachability criterion, the cost,
+and the obstruction and answer notions; final section: nearest known results
+and differences — the only place where outside names appear),
+`claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit.
+
+## Stopping conditions (sixth derivation)
+
+The run stops when X1–X9 hold, or when a blocker is hit.
+
+- X1 Every notion in `paper/sixth/paper.md` has one recorded source status.
+- X2 Every claim in `paper/sixth/claim_ledger.md` has evidence, or is open.
+- X3 Every alternative is kept, or eliminated by a cited proof.
+- X4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- X5 `lake build` (pinned toolchain, inside `lean4/`) passes for all six
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all six
+  axiom reports regenerated and committed.
+- X6 `evidence/sixth/` regenerates byte-identically (`--check`); the earlier
+  derivations' evidence still regenerates byte-identically.
+- X7 Every use of an earlier result in the sixth paper is cited and
+  re-checked, with the re-check saying whether it survives `xrx` being
+  allowed (ledger column "re-check").
+- X8 The prose watchlist passes on the tracked tree; every pinned hit of the
+  sixth paper is in its final section.
+- X9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and rounds together, as the fourth's and fifth's. A
+  result now has `n²` pairs instead of `n² − n`, so the results per round
+  grow faster; the targets are 4 terms (FREE) and 3 terms (ANCHORED) with 6
+  rounds, 3 terms with 8 rounds, 2 terms with as many rounds as complete in
+  a few minutes (planned 40; the seed's 100 do not complete, since the
+  results with the given terms only grow as `r³`), an ANCHORED counts-only
+  census one term higher, full attempt logs at 2 terms, reachability at 3
+  terms with 4 rounds. Any run that does not complete in minutes here has
+  its rounds lowered first, then its terms; the bounds used are declared in
+  the paper; the frontier is exported exactly; completeness within the bound
+  is certified by the independent count; the two-term round counts are
+  proved in closed form for every round.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–4 required; target 5 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The worktree's
+`lean4/.lake/packages` is still the local junction to the main checkout's
+pinned packages (checked before Phase 0; no download happens).
+
+## How to run (sixth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, six derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_sixth.py` writes `evidence/sixth/`;
+  `python code/generate_sixth.py --check` compares with a fresh regeneration;
+- `python code/lean_report_sixth.py` builds `lean4/` and writes
+  `evidence/sixth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
