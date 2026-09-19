@@ -1277,3 +1277,285 @@ From the repository root:
 - `python code/lean_report_sixth.py` builds `lean4/` and writes
   `evidence/sixth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Seventh derivation (`prompt/seventh/`) — plan and stopping conditions
+
+Written before any other work of the seventh derivation, as
+`prompt/seventh/prompt.md` requires. Inputs: `prompt/seventh/prompt.md` and
+`prompt/seventh/seed_prompt.md`; the six earlier derivations (`paper/`,
+`paper/second/` … `paper/sixth/`, `code/xry/` … `code/sixth/`,
+`lean4/H3V7N5QF/` … `lean4/Sixth/`, `evidence/` … `evidence/sixth/`) are
+cited where used, never assumed. Everything above stays in force (isolation,
+no network, `prompt/` untouched, `.lake/` never committed, bookkeeping rules
+1–4, the evidence-module coverage gate). Rule 5 of the seventh task: every
+result of an earlier derivation that is used is cited and its proof
+re-checked from the seventh seed, and the re-check says whether the result
+survives once there is no given datum and no names — in Lean by the two maps
+between the sixth's states and the seventh's (*forgetting* the names of a
+sixth state gives a seventh state, and every change of the sixth is a change
+of the seventh on the forgotten states; *naming* a seventh state with a term
+— both names on one of its terms — gives a sixth state, and every change of
+the seventh on a state with a term is a change of the sixth on the named
+states, the names following the merge), by observing that the statement
+mentions neither the given nor the names, or by computing it again from the
+seventh seed's own exploration and comparing with the sixth's on the results
+with at least one term (names forgotten).
+
+## What differs in the seed
+
+One passage (`diff`): "Given: `arb` is asserted with multiplicity one.
+Whether `bra` is asserted is not given." becomes "Nothing is given: to begin
+with there are no terms and nothing is asserted." Every other sentence is
+identical to the sixth seed. So the state loses its names (there is no `a`,
+no `b`, nothing given to anchor a rewriting to), the beginning is the empty
+state (no terms, nothing asserted), and there is one beginning and one
+reading of sameness: with no names, the rewritings "keeping the names" are
+all rewritings, so ANCHORED and FREE coincide. Everything the sixth argued
+*from the given* — the destroyed givens and the cost measured from what is
+given, containment of the given, the names criterion for reachability, the
+one-way merge of the names, `bra` as an alternative — must be re-derived from
+the empty beginning or dropped; what it argued from the state and the changes
+alone (the four kinds, the size moving by one, the addition path, the
+two-change cycle, the counts by series with the diagonal pairs, rewriting)
+carries over through the two maps.
+
+## Layout
+
+- `research/seventh/` — reading notes (not evidence).
+- `code/seventh/` — typed Python package for the seventh seed. Imported from
+  the earlier packages what the given and the names leave intact: the
+  counted state with its names left out (`fourth.state.MState` with
+  `names = None`, its sameness under any rewriting, `support`, `of_state`,
+  `rewrite`, the cache of least writings), `remove` and `identify`
+  (`fifth.state`), the change record, the four kinds, the list of changes
+  and `perform` (`fifth.changes`; on the empty state the list is "add a
+  term" alone), the two-change cycle (`fifth.explore.cycle`; none on the
+  empty state), the count of all well-formed states by terms and total
+  multiplicity with the diagonal pairs among the cycles
+  (`sixth.orbits.count_free`), the cycle machinery (`xry.orbits`), the
+  statements tested that mention no name (`fourth.follows` UNNAMED and
+  COUNTED, `fifth.follows` EXTRA_UNNAMED, `sixth.follows.some_xrx`), the
+  fewest-classes count on states with no `xrx`, the writers,
+  `compare_evidence`, the Lean report runner, and the sixth derivation's
+  exploration, cost and reachability for the comparison. Defined afresh: the
+  empty beginning; what a result adds to what is given (its terms and its
+  total multiplicity, nothing being given); the attempt record; the
+  exploration from an empty state; the cost in closed form (the size:
+  terms plus the sum of the multiplicities); the changes that raise the cost
+  by exactly one (the two additions, and nothing else); reachability (a
+  result reaches another exactly when the other has a term or the first is
+  empty); the shortest-sequence counts (exact for every result within any
+  bound holding it: a shortest sequence is additions only); the independent
+  count of the results by terms and total multiplicity, the empty state
+  included, restricted to size within the rounds; the two-term closed form
+  (`(C(t+3, 3) + [t even](t/2 + 1)) / 2` results with two terms and total
+  `t`); the comparison with the sixth by forgetting the names; the property
+  witnesses. Earlier derivations' files are not modified except to correct a
+  defect, recorded in the relevant change log.
+- `tests/test_seventh_*.py` — tests of `code/seventh/`; all of `code/` stays
+  at ≥ 95 % line and ≥ 95 % branch coverage, every `code/**/evidence.py`
+  fully covered (an injection test for every differential check);
+  `mypy --strict` passes; the prose watchlist stays clean.
+- `lean4/Seventh/` — a seventh Lean library in the same Lake package (the
+  lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Sixth`. New: a state without names
+  `NSt` (terms, a multiplicity for each ordered pair), `WF`, `size`, the
+  empty state, the four operations (the sixth's definitions with the names
+  left out); the two maps `MSt.forget : MSt → NSt` and `NSt.name : NSt → ℕ →
+  MSt` (both names on one term); `Step7` (four kinds, no names), `Reach7`;
+  `Step6.forget`, `Reach6.forget`, `Step7.name`, `Reach7.name`; the cost
+  (the size), the addition path through `name`, the has-a-term criterion.
+- `evidence/seventh/` — written by `python code/generate_seventh.py`; the
+  axiom report by `python code/lean_report_seventh.py`; `--check`
+  regenerates into a temporary folder and compares.
+- `paper/seventh/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the seventh seed (`research/seventh/`)
+Sentence-by-sentence diff against the sixth seed; the notion table with
+source statuses; which readings change: C2 (what is given) is replaced by
+the seed (nothing; the empty state, one beginning); C4 (sameness) collapses
+to one reading (no names to keep; derived, not chosen); C5‴ unchanged;
+C6 unchanged (round 0 is the empty state; round 1 the one-term state
+asserting nothing — the first change can only add a term); C8′ (bound on
+terms and rounds) unchanged in kind. Expected consequences to be proved or
+refuted: the first change adds a term and nothing else is a change on the
+empty state; once a state has a term every later state has a term, so the
+empty state is a result (round 0) that is never returned to — the seventh's
+one irreversible change, in place of the sixth's merge of the names; the size
+moves by exactly one per change and additions alone reach every well-formed
+state from the empty one, so the fewest changes to a result is its size, with
+no destroyed givens (nothing is given to destroy), and every shortest
+sequence is additions only; the results are every well-formed state, the
+empty one included — the sixth's results (any rewriting) are exactly the
+results with at least one term, and every sixth result with the names kept is
+a seventh result once the names are forgotten; reachability: a result reaches
+another exactly when the other has a term or the first is empty; mutual
+among the results with a term, one-way out of the empty state; the sixth's
+FREE criterion ("always") survives on states with a term; the two-change
+cycle at every state with a term, none at the empty state; the cost of the
+sixth measured from what is given does not survive (the one-term state
+asserting nothing costs one change here and two there), the fourth's size
+difference survives with `size(given) = 0`; the names and the given have no
+referent, and "separability" — read as telling the two named terms apart, the
+sixth's one-way property — has nothing to apply to and is replaced by
+"having a term"; no tested statement about the asserting holds in every
+result (the empty state fails "at least one term"; every other statement
+fails somewhere): nothing about the asserting is forced from nothing, and
+what is forced is the first change, the cost of every result and the one-way
+exit from the empty state; a result with `n` terms and `d` asserted pairs has
+`C(n, 2) + d + 1 + n²` changes; the results of round `r` with at most two
+terms are `[r = 0] + [r ≥ 1] + [r ≥ 2]·(C(r+1, 3) + [r even]·r/2) / 2`, so the
+seed's 100 rounds with two terms hold about two million results and a lower
+bound on rounds is declared with the closed form proved for every round.
+
+### Phase 2 — `code/seventh/` and `tests/`
+- the empty beginning; changes (the fifth's four kinds, every one performed;
+  the attempt record with the outcome and whether it asserts some `xrx`);
+  the exploration from the empty state, bounded in terms and rounds; full
+  attempt logs at a small bound;
+- cost in closed form (the size) checked against the explored rounds; every
+  change within the bound checked to move the size by exactly one; the
+  changes that raise the cost by one characterised (the additions) and
+  checked; parity checked (no change keeps the round);
+- shortest sequences by dynamic programming over the additions, exact for
+  every explored result; the one-term closed form (one sequence) checked;
+- an independent count of the results by terms and total multiplicity (the
+  sixth's `count_free`, the empty state added), restricted to size within
+  the rounds, as the completeness certificate; the two-term closed form
+  checked against it and against the two-term run;
+- the seventh exploration compared with the sixth's (any rewriting, both
+  `bra` alternatives, run at the same bound on terms and enough rounds): the
+  results with at least one term must be exactly the sixth's results whose
+  sixth-seed cost is within the sixth's rounds, and the sixth's round of each
+  must be its sixth-seed cost formula; the sixth's ANCHORED results with the
+  names forgotten must be exactly the seventh's results with a term (the
+  computed form of the citation);
+- reachability by the has-a-term criterion checked against breadth-first
+  search along the changes among the results within a small bound, and
+  compared with the sixth's FREE criterion on the results with a term;
+- property witnesses for "what does not follow", including the sixth's
+  everywhere-true "at least one term", which now fails at the empty state;
+- deterministic evidence writer with `--check`; Lean axiom-report writer for
+  `lean4/Seventh/Axioms.lean`.
+
+### Phase 3 — `lean4/Seventh/`
+Targets, in order:
+1. `NSt`, `WF`, `size`, `total`, `empty`, the four operations; `forget`,
+   `name`, `forget_name`, `name_wf`; `Step7` (four kinds), `Reach7`;
+   `Step6.forget`, `Reach6.forget` (every change of the sixth is a change of
+   the seventh on the forgotten states); `Step7.name`, `Reach7.name` (every
+   change of the seventh on a state with a term is a change of the sixth on
+   the named states, the names following the merge); well-formedness kept;
+   the outcome of every change on a well-formed state has a term
+   (`Step7.nonempty_out`), so `Reach7.nonempty`; the first change from the
+   empty state adds a term (`first_change_adds_term`); the empty state is
+   reached from a well-formed state only from itself in zero changes
+   (`reach7_empty_iff`).
+2. Cost: `Step7.size_step` (the size moves by exactly one either way),
+   `Reach7.size_le` (lower bound), `reach7_addTerms`, `reach7_of_contains`
+   (the sixth's addition path through `name` once a term is there),
+   `reach7_by_additions` (upper bound: from the empty state, every
+   well-formed state in exactly its size), `fewest_changes7` (both bounds),
+   `Reach7.size_parity`, `shortest_are_additions` (a sequence from the empty
+   state of length the size uses additions only), `cost_oneTerm`.
+3. Reachability: `reach7_of_nonempty` (the sixth's `reach6_of_names` through
+   `name`), `reach7_iff` (a well-formed state is reachable from a well-formed
+   state exactly when it has a term or the start is empty), `result7_iff`
+   (every well-formed state is a result), `empty_is_a_result`,
+   `reach7_symm` (mutual among states with a term), `reach7_total`,
+   `empty_never_returned`, `cycle2_7` (the sixth's through `name`),
+   `Reach7.unbounded`, `no_cycle_at_empty`.
+4. What survives (`Seventh/Compare.lean`): every result of the sixth (either
+   beginning) is a result of the seventh with its names forgotten; every
+   result of the seventh with a term is a result of the sixth once named;
+   the seventh has a result no earlier seed has (the empty state:
+   `Reach6.nonempty`); the sixth's criterion survives on states with a term
+   as "always" and gains the empty-state clause; the sixth's cost does not
+   survive (witness: the one-term state, `costA6 (name oneTerm) − 3 = 2`
+   against 1); the size difference survives with nothing given; the one-way
+   merge of the names becomes trivial through `name` (`c = c`) and is
+   replaced by the one-way exit from the empty state.
+5. `rename7`, `Step7.rename`, `Reach7.rename`, `size_rename7`,
+   `fewest_changes7_every_writing`. Attempted once; if a step does not close
+   it is proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the seventh paper cites, into
+`evidence/seventh/lean_axioms.txt`.
+
+### Phase 4 — `evidence/seventh/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The six earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/seventh/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives with nothing given; a section answering the
+task's question for the results, the reachability criterion, the cost, and
+the notions of names, given and separability; final section: nearest known
+results and differences — the only place where outside names appear),
+`claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (seventh derivation)
+
+The run stops when Y1–Y9 hold, or when a blocker is hit.
+
+- Y1 Every notion in `paper/seventh/paper.md` has one recorded source status.
+- Y2 Every claim in `paper/seventh/claim_ledger.md` has evidence, or is open.
+- Y3 Every alternative is kept, or eliminated by a cited proof.
+- Y4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- Y5 `lake build` (pinned toolchain, inside `lean4/`) passes for all seven
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all seven
+  axiom reports regenerated and committed.
+- Y6 `evidence/seventh/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- Y7 Every use of an earlier result in the seventh paper is cited and
+  re-checked, with the re-check saying whether it survives with nothing
+  given and no names (ledger column "re-check").
+- Y8 The prose watchlist passes on the tracked tree; every pinned hit of the
+  seventh paper is in its final section.
+- Y9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and rounds together, as the fourth's to sixth's. One
+  beginning and one reading, so fewer runs than the sixth: the targets are
+  5 terms with 10 rounds (the results of round `r` are the well-formed
+  states of size `r`), 3 terms with 12 rounds, 2 terms with 30 rounds (the
+  seed's 100 do not complete for size: about two million results), a
+  counts-only census at 6 terms with 10 rounds, full attempt logs at 2
+  terms and 4 rounds, reachability among the results of 3 terms and 6
+  rounds. Any run that does not complete in minutes here has its rounds
+  lowered first, then its terms; the bounds used are declared in the paper;
+  the frontier is exported exactly; completeness within the bound is
+  certified by the independent count; the two-term round counts are proved
+  in closed form for every round.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–4 required; target 5 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The worktree's
+`lean4/.lake/packages` is still the local junction to the main checkout's
+pinned packages (checked before Phase 0: `lake build` of the six libraries
+completes with nothing to do; no download happens).
+
+## How to run (seventh derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, seven derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_seventh.py` writes `evidence/seventh/`;
+  `python code/generate_seventh.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_seventh.py` builds `lean4/` and writes
+  `evidence/seventh/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
