@@ -1861,3 +1861,355 @@ From the repository root:
 - `python code/lean_report_eighth.py` builds `lean4/` and writes
   `evidence/eighth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Ninth derivation (`prompt/ninth/`) — plan and stopping conditions
+
+Written before any other work of the ninth derivation, as
+`prompt/ninth/prompt.md` requires. Inputs: `prompt/ninth/prompt.md` and
+`prompt/ninth/seed_prompt.md`; the eight earlier derivations (`paper/`,
+`paper/second/` … `paper/eighth/`, `code/xry/` … `code/eighth/`,
+`lean4/H3V7N5QF/` … `lean4/Eighth/`, `evidence/` … `evidence/eighth/`) are
+cited where used, never assumed. Everything above stays in force (isolation,
+no network, `prompt/` untouched, `.lake/` never committed, bookkeeping rules
+1–4, the evidence-module coverage gate). Rule 5 of the ninth task: every
+result of an earlier derivation that is used is cited and its proof
+re-checked from the ninth seed, and the re-check says whether the result
+survives with nothing given *and* two relations — in particular whether the
+seventh's collapses (cost = size, reachability = has a term, one sameness)
+and the eighth's independence (results a product, cost a sum, count not a
+product) survive together, and where they interfere. In Lean the re-check is
+by two pairs of maps: *forgetting* the names of an eighth state gives a
+ninth state and every change of the eighth is a change of the ninth on the
+forgotten states; *naming* a ninth state with a term (both names on one of
+its terms) gives an eighth state and every change of the ninth on a state
+with a term is a change of the eighth on the named states; the two
+*projections* of a ninth state onto its `r` part and its `s` part are each a
+state of the seventh seed, every change of the ninth is a change of the
+seventh on a part and leaves the other part as it is, or is a change of the
+seventh on both; and *embedding* a seventh state as a ninth state asserting
+nothing with `s` turns every change of the seventh into one of the ninth. Or
+by observing that the statement mentions neither the given, nor the names,
+nor a second relation; or by computing it again from the ninth seed's own
+exploration and comparing with the seventh's on the results asserting
+nothing with `s` and with the eighth's on the results with a term.
+
+## What differs in the seed
+
+One passage (`diff` against the eighth seed): "Given: `arb` is asserted with
+multiplicity one. Whether `bra`, or anything written with `s`, is asserted
+is not given." becomes "Nothing is given: to begin with there are no terms
+and nothing is asserted." Against the seventh seed one sentence differs: an
+assertion is written `xry` or `xsy`, `r` and `s` being the two relations.
+Every other sentence is the sixth seed's word for word. So the state is the
+eighth's with its names left out (terms, a multiplicity for each ordered
+pair in `r` and one in `s`), the beginning is the empty state, there is one
+beginning and one reading of sameness (no names to keep, so ANCHORED and
+FREE coincide, as under the seventh), and the four kinds of change range
+over both relations as under the eighth. Everything the eighth argued *from
+the given* (the destroyed givens on the `r` part, the cost measured from
+`arb`, the names criterion, the one-way merge, `bra`, the asymmetry between
+`r` and `s`) must be re-derived from the empty beginning or dropped;
+everything the seventh argued *from one relation* (the size as the cost
+with one total, the count by series with one multiplicity per cycle, the
+one-term states having one shortest sequence) must be re-examined with the
+second relation alongside; what both argued from the terms and the changes
+alone (the size moving by one, the addition path, the two-change cycle, the
+first change adding a term, rewriting) carries over through the maps.
+
+## Layout
+
+- `research/ninth/` — reading notes (not evidence).
+- `code/ninth/` — typed Python package for the ninth seed. Imported from the
+  earlier packages what the empty beginning and the second relation leave
+  intact: the two-relation state with its names left out (`eighth.state.
+  DState` with `names = None`, its sameness under any rewriting acting on
+  both relations, `canonical`, `rewrite`, `pair`, `of_r`, `remove`,
+  `identify`, the cache of least writings), the change record with a
+  relation, the four kinds, the list of changes and `perform`
+  (`eighth.changes`; on the empty state the list is "add a term" alone),
+  the count of changes making some `xrx` or `xsx` asserted per part
+  (`eighth.changes.attempt_counts`), the two-change cycle
+  (`eighth.explore.cycle`; none on the empty state), the count of all
+  well-formed two-relation states by terms and total multiplicity with two
+  multiplicities on every cycle (`eighth.orbits.count_free`) and the product
+  of the single-relation counts (`eighth.orbits.product_count`), the
+  seventh's single-relation count (`seventh.orbits.count_results`), the
+  statements tested that mention no name (`eighth.follows.on_part`, the
+  unnamed and counted statements of the fourth to sixth, the eighth's joint
+  statements), the counts a change can lower (`eighth.invariants.lowered`),
+  the seventh's cost and criterion on a part and the eighth's cost and
+  criterion for the comparison, the writers, `compare_evidence`, the Lean
+  report runner, and the seventh's and eighth's explorations and sequence
+  counts for the comparison. Defined afresh: the empty beginning; what a
+  result adds to what is given (its terms and both totals); the exchange of
+  the two relations (`swap`); the attempt record; the exploration from an
+  empty state with two relations; the cost in closed form (the size: terms
+  plus both totals, which is the seventh's cost of the `r` part plus the `s`
+  total and *not* the sum of the seventh's costs of the two parts, which
+  counts the terms twice); the changes that raise the cost by exactly one
+  (the additions of either relation); reachability (has a term, or the
+  start is empty); the shortest-sequence counts (exact for every result;
+  the one-term closed form `C(p + q, p)` for `ara` `p` times and `asa` `q`
+  times, where the seventh had one sequence); the independent count of the
+  results by terms and total multiplicity, the empty state included,
+  restricted to size within the rounds; the two-term closed form
+  `(C(t + 7, 7) + [t even]·C(t/2 + 3, 3)) / 2`; the count of results left
+  unchanged by exchanging the relations (the seventh's count at half the
+  total); the comparison with the seventh (nothing in `s`, and by the
+  exchange nothing in `r`) and with the eighth (names forgotten); the
+  property witnesses. Earlier derivations' files are not modified except to
+  correct a defect, recorded in the relevant change log.
+- `tests/test_ninth_*.py` — tests of `code/ninth/`; all of `code/` stays at
+  ≥ 95 % line and ≥ 95 % branch coverage, every `code/**/evidence.py` fully
+  covered (an injection test for every differential check); `mypy --strict`
+  passes; the prose watchlist stays clean.
+- `lean4/Ninth/` — a ninth Lean library in the same Lake package (the
+  lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Eighth`. New: a two-relation state
+  without names `NDSt` (terms, a multiplicity function for each relation),
+  `WF`, `size`, the empty state, the four operations (the eighth's with the
+  names left out), the exchange of the relations `swap`; the maps
+  `DSt.forget : DSt → NDSt`, `NDSt.name : NDSt → ℕ → DSt`, `NDSt.proj : NDSt
+  → Rel → NSt` and `NSt.ofR : NSt → NDSt`; `Step9` (four kinds over two
+  relations, no names), `Reach9`; `Step8.forget`, `Reach8.forget`,
+  `Step9.name`, `Reach9.name`, `Step9.proj`, `Reach9.proj`, `Step7.ofR`,
+  `Reach7.ofR`; the cost (the size), the addition path through `name`, the
+  has-a-term criterion, the comparison with the seventh and the eighth.
+- `evidence/ninth/` — written by `python code/generate_ninth.py`; the axiom
+  report by `python code/lean_report_ninth.py`; `--check` regenerates into a
+  temporary folder and compares.
+- `paper/ninth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the ninth seed (`research/ninth/`)
+Sentence-by-sentence diff against the eighth seed and the seventh's; the
+notion table with source statuses; which readings change: C2 (what is
+given) is replaced by the seed (nothing; the empty state; one beginning);
+C4 (sameness) collapses to one reading (no names; derived as under the
+seventh) acting on both relations at once (as under the eighth); C5⁗ (what
+is a change: the eighth's, in either relation, an identification adding up
+the multiplicities of the merged pairs in each relation separately)
+unchanged; C6 (round 0 the empty state; round 1 the one-term state alone;
+the order of changes: identifications, removals in `r`, in `s`, a term,
+additions in `r`, in `s`) unchanged in kind; C8′ (bound on terms and
+rounds) unchanged in kind. Expected consequences to be proved or refuted:
+the first change adds a term and nothing else is a change on the empty
+state; a term once there stays, so the empty state is a result (round 0)
+never returned to; the size (terms plus both totals) moves by exactly one
+per change and additions alone reach every well-formed state, so the fewest
+changes to a result is its size — the seventh's collapse survives — and it
+is the seventh's cost of the `r` part plus the `s` total — the eighth's
+additivity survives — while the sum of the seventh's costs of the two parts
+overcounts the terms, which the two relations share: the cost is a sum of
+the two relations' totals and one count of terms, not of two per-relation
+costs; the results are every well-formed two-relation state, the empty one
+included, and they are jointly free (any two well-formed parts on the same
+terms make a result: the eighth's product survives); the seventh's results
+are exactly the results asserting nothing with `s`, and, by the exchange of
+the relations, exactly those asserting nothing with `r`; the eighth's
+results (any rewriting, either beginning) are exactly the results with a
+term, and its results with the names kept, once forgotten, are results;
+reachability is "has a term, or the start is empty" — the seventh's
+criterion on the shared terms, which is the eighth's "the `s` part imposes
+nothing" with nothing left for the `r` part to impose either; mutual among
+the results with a term, one-way out of the empty state; the count of
+results with `n ≥ 2` terms is not the product of the seventh's
+single-relation counts — the eighth's non-product survives verbatim, since
+the eighth's count under any rewriting is this seed's count — and equals it
+for `n ≤ 1`; the exchange of the two relations is a symmetry of the results,
+the cost and reachability (new: the eighth's given broke it); the seventh's
+"one-term results have one shortest sequence" fails: the additions of the
+two relations interleave, `C(p + q, p)` sequences; no tested statement holds
+in every result; a result with `n` terms and `d_r + d_s` asserted pairs has
+`C(n, 2) + d_r + d_s + 1 + 2n²` changes and the empty state one; the results
+of round `r` with at most two terms are `[r = 0] + [r ≥ 1]·r + [r ≥ 2]·(C(r
++ 5, 7) + [r even]·C(r/2 + 2, 3)) / 2`, so the seed's 100 rounds with two
+terms hold about 10^11 results and a lower bound on rounds is declared with
+the closed form proved for every round.
+
+### Phase 2 — `code/ninth/` and `tests/`
+- the empty beginning; changes (the eighth's four kinds over two relations,
+  every one performed; the attempt record with the outcome and whether it
+  asserts some `xrx`, some `xsx`); the exploration from the empty state,
+  bounded in terms and rounds; full attempt logs at a small bound;
+- cost in closed form (the size) checked against the explored rounds; every
+  change within the bound checked to move the size by exactly one; the
+  changes that raise the cost by one characterised (the additions) and
+  checked; parity checked (no change keeps the round); the cost compared
+  with the seventh's on each part (the `r` cost plus the `s` total equals
+  it; the sum of both parts' costs exceeds it by the terms);
+- shortest sequences by dynamic programming over the additions, exact for
+  every explored result; the one-term closed form `C(p + q, p)` checked;
+- an independent count of the results by terms and total multiplicity (the
+  eighth's `count_free`, the empty state added), restricted to size within
+  the rounds, as the completeness certificate; the two-term closed form
+  checked against it and against the two-term run; the product of the
+  seventh's counts recorded beside it (equal for `n ≤ 1`, exceeded for
+  `n ≥ 2`); the results unchanged by the exchange of the relations counted
+  and checked against the seventh's count at half the total;
+- the ninth exploration compared with the seventh's at the same bound and
+  rounds: the results asserting nothing with `s`, read as their `r` parts,
+  with their rounds and their shortest-sequence counts, must be the
+  seventh's; likewise the results asserting nothing with `r` read as their
+  `s` parts; every result's exchange must be a result at the same round with
+  the same sequence count;
+- the ninth exploration compared with the eighth's (any rewriting, both
+  `bra` alternatives, at the same bound on terms and four rounds fewer): the
+  results with a term whose eighth-seed cost is within the eighth's rounds
+  must be exactly the eighth's results, each at the round its eighth-seed
+  cost gives; the eighth's results with the names kept, once forgotten, must
+  be results (the computed form of the citation);
+- reachability by the has-a-term criterion checked against breadth-first
+  search along the changes among the results within a small bound, and
+  compared with the seventh's criterion on each part and with the eighth's
+  criterion on the results with a term;
+- per result the counts of changes making some `xrx` or some `xsx`
+  asserted, checked against the eighth's function on each part;
+- property witnesses for "what does not follow", the joint statements and
+  the exchange included;
+- deterministic evidence writer with `--check`; Lean axiom-report writer for
+  `lean4/Ninth/Axioms.lean`.
+
+### Phase 3 — `lean4/Ninth/`
+Targets, in order:
+1. `NDSt`, `WF`, `size`, `empty`, the four operations, `swap`; `forget`,
+   `name`, `proj`, `ofR` and their commutations with the operations
+   (definitional where possible); `Step9` (four kinds), `Reach9`;
+   `Step8.forget`, `Reach8.forget`; `Step9.name`, `Reach9.name`;
+   `Step9.proj`, `Reach9.proj`; `Step7.ofR`, `Reach7.ofR`; `Step9.swap`,
+   `Reach9.swap`; well-formedness kept; the outcome of every change on a
+   well-formed state has a term, so a term stays (`Step9.nonempty`,
+   `Reach9.nonempty`); the first change adds a term
+   (`first_change_adds_term9`); the empty state is reached only from itself
+   in zero changes (`reach9_empty_iff`).
+2. Cost: `Step9.size_step` (the size moves by exactly one), `Reach9.size_le`,
+   `fewest_changes9_lower`, `reach9_addTerms` (the terms one by one),
+   `reach9_raise` (one relation's multiplicities, the eighth's `reach8_raise`
+   through `name`), `reach9_by_additions` (from the empty state every
+   well-formed state in exactly its size), `fewest_changes9`,
+   `Reach9.size_parity`, `shortest_are_additions9`, `cost_oneTerm9`;
+   `size9_eq` (the size is the seventh's size of the `r` part plus the `s`
+   total: the eighth's additivity with the seventh's cost) and
+   `size9_add_card` (the sum of the two parts' sizes is the size plus the
+   terms: the per-relation costs do not add up, the terms being shared),
+   with the one-term witness; `size9_swap`.
+3. Reachability: `reach9_of_nonempty` (the eighth's `reach8_of_names`
+   through `name`), `reach9_iff`, `result9_iff`, `results_pair9` (jointly
+   free), `empty_is_a_result9`, `reach9_symm`, `reach9_total`,
+   `empty_never_returned9`, `no_cycle_at_empty9`, `cycle2_9`,
+   `Reach9.unbounded`, the failures of one-way reachability among states
+   with a term (`no_return_fails9`, `antisymm_fails9`,
+   `length_not_unique9`), `reach9_swap`.
+4. What survives (`Ninth/Compare.lean`): from the seventh — every result of
+   the seventh is a result of the ninth with nothing in `s` at the same
+   round (`results_ofR7`), the results asserting nothing with `s` are the
+   seventh's (`results_r_iff9`) and by the exchange so are those asserting
+   nothing with `r` (`results_s_iff9`), both parts of every result are
+   seventh results (`proj_results9`), the cost survives as the size and adds
+   up with the terms counted once (`cost_survives7`), the criterion survives
+   on each part (`criterion_survives7`); from the eighth — every result of
+   the eighth (either beginning, either reading) is a result of the ninth
+   with its names forgotten (`results_forget8_A`, `_B`), every result of the
+   ninth with a term is a result of the eighth once named
+   (`results_name8`), the empty state is new (`empty_is_new9`), the
+   criterion survives on states with a term as "always"
+   (`criterion_survives8`), the eighth's cost does not survive
+   (`eighth_cost_fails`: the one-term state, one change here, two there),
+   the size difference survives with nothing given
+   (`size_difference_survives9`), the non-product count is the eighth's own
+   (paper), the names and the one-way merge are vacuous
+   (`names_merged_vacuous9`), the interaction of the relations is still
+   through the terms alone (`interaction9`).
+5. `rename9`, `Step9.rename`, `Reach9.rename`, `size_rename9`,
+   `rename9_empty`, `fewest_changes9_every_writing`. Attempted once; if a
+   step does not close it is proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the ninth paper cites, into
+`evidence/ninth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/ninth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The eight earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/ninth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives with nothing given and two relations; a
+section answering the task's question: whether the seventh's collapses and
+the eighth's independence hold together, and where they do not — the
+shared terms in the cost, the shared rewriting in the count, the
+interleaving in the shortest sequences, the exchange symmetry; final
+section: nearest known results and differences — the only place where
+outside names appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (ninth derivation)
+
+The run stops when AA1–AA9 hold, or when a blocker is hit.
+
+- AA1 Every notion in `paper/ninth/paper.md` has one recorded source status.
+- AA2 Every claim in `paper/ninth/claim_ledger.md` has evidence, or is open.
+- AA3 Every alternative is kept, or eliminated by a cited proof.
+- AA4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- AA5 `lake build` (pinned toolchain, inside `lean4/`) passes for all nine
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all nine
+  axiom reports regenerated and committed.
+- AA6 `evidence/ninth/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- AA7 Every use of an earlier result in the ninth paper is cited and
+  re-checked, with the re-check saying whether it survives with nothing
+  given and two relations (ledger column "re-check").
+- AA8 The prose watchlist passes on the tracked tree; every pinned hit of
+  the ninth paper is in its final section.
+- AA9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and rounds together, as the fourth's to eighth's. One
+  beginning and one reading, so three explorations as the seventh's; the
+  results of round `r` are the well-formed two-relation states of size `r`,
+  which the independent count gives in advance (1, 1, 3, 8, 29, 104, 420,
+  1 783, 8 115, 38 813, 194 888, … without any bound on terms). Targets: 5
+  terms with 8 rounds (10 416 results), 3 terms with 9 rounds, 2 terms with
+  12 rounds (22 021 results; the seed's 100 rounds with two terms hold
+  about 10^11), a counts-only census at 6 terms with 8 rounds, full attempt
+  logs at 2 terms and 3 rounds, reachability among the results of 3 terms
+  and 5 rounds along the changes among those of 3 terms and 7 rounds. The
+  eighth's explorations for the comparison run at the same bound on terms
+  with four rounds fewer (every eighth result of cost `c` has size at most
+  `c + 4`), under both readings and from both beginnings. Any run that does
+  not complete in minutes here has its rounds lowered first, then its terms;
+  the bounds used are declared in the paper; the frontier is exported
+  exactly; completeness within the bound is certified by the independent
+  count; the two-term round counts are proved in closed form for every
+  round.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–4 required; target 5 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `worktree-ninth-derivation`, made from `main` after the eighth's
+  pull request was merged; the pull request is opened against `main`.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The worktree's
+`lean4/.lake/packages` is still the local junction to the main checkout's
+pinned packages (checked before Phase 0: `lake build` of the eight
+libraries completes with nothing to do; no download happens).
+
+## How to run (ninth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, nine derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_ninth.py` writes `evidence/ninth/`;
+  `python code/generate_ninth.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_ninth.py` builds `lean4/` and writes
+  `evidence/ninth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
