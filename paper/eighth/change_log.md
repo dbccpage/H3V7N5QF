@@ -147,3 +147,15 @@ the one in which the third to seventh derivations were made.
     eighth's own `python code/generate_eighth.py --check` matched (1 067
     seconds, beside other runs), after `python code/generate_eighth.py`
     (1 032 seconds) and `python code/lean_report_eighth.py`.
+
+14. **Phase 6 repair of ledger/paper mismatches (no code, no evidence).**
+    §0 now lists D3 and D4(iv) among the derived claims proved in the paper
+    and checked by computation only, matching O3. D3 no longer cites
+    `Step8.proj` as Lean evidence for the change-count (that theorem splits
+    a change onto a part; the count is `attempts_equal_formula`). R1 axioms
+    are `std`, matching `givenA8_a` / `givenA8_b`. R2 cites
+    `given.json` (`of_which_obstructed`) and `summary.json`
+    (`given.attempts_not_performed`). Chosen C1′ re-checks 4:C1′ on a part.
+    C10, N4, N5, N7, N8 re-check cells now say jointly, on a part, or
+    through the embedding. Findings and Lean are unchanged. Committed
+    from `main`; `prompt/` unchanged.
