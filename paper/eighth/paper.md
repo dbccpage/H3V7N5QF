@@ -98,8 +98,10 @@ listed in §8.
    multiplicities on every cycle of the rewriting (D10). Everything claimed
    as derived is in Lean, the every-writing statements included (target 5
    of the plan closed on the single attempt); proved in the paper and
-   checked by computation only: the within-bound completeness (D10), the
-   two-term closed forms (D11), the fate of the unchosen beginnings with
+   checked by computation only: the change-count of a result and which
+   changes make some loop asserted (D3), which changes raise the cost by
+   exactly one (D4(iv)), the within-bound completeness (D10), the two-term
+   closed forms (D11), the fate of the unchosen beginnings with
    something in `s` (C2″) and of the unchosen reading of identification
    (D15).
 
@@ -128,7 +130,7 @@ sixth seed's word for word.
 |---|---|---|
 | term, letter, assertion `xry` or `xsy`, the two relations, multiplicity | given (G1, G2⁗) | |
 | adding raises a multiplicity by one; removing lowers it by one | given (G2⁗) | in either relation |
-| asserted = multiplicity at least one; the two-relation state | chosen (4:C1′ on each part) | the fourth's model twice, on the same terms: `DState`, Lean `DSt` |
+| asserted = multiplicity at least one; the two-relation state | chosen (C1′; 4:C1′ on each part) | the fourth's model twice, on the same terms: `DState`, Lean `DSt` |
 | the `r` part, the `s` part | derived (§4, `DSt.proj`) | each a state of the sixth seed |
 | a state of the sixth seed as a two-relation state | derived (`MSt.ofR`) | nothing in `s` |
 | `xrx`, `xsx` are assertions | given (G2⁗) | nothing forbids them |
@@ -157,8 +159,9 @@ sixth seed's word for word.
 
 ## 3. Readings that had to be chosen
 
-C3, C4, C6, C9 are the earlier derivations', restated; C8′ is the fourth's
-to sixth's; C2″ and C5⁗ are the sixth's C2′ and C5‴ with the second relation.
+C1′ is 4:C1′ on each part; C3, C4, C6, C9 are the earlier derivations',
+restated; C8′ is the fourth's to sixth's; C2″ and C5⁗ are the sixth's C2′
+and C5‴ with the second relation.
 
 **C2″. To begin with: the terms `a` and `b`; `arb` once; `bra` once or not
 at all; nothing with `s`.** The seed flags `bra` and "anything written with
@@ -252,12 +255,13 @@ relations and lost by both at once (§7).
 A result with `n` terms and `d_r + d_s` asserted pairs, diagonal pairs
 included, has `C(n, 2) + d_r + d_s + 1 + 2n²` changes, every one performed
 (the sixth's count with the assertions of the second relation added;
-computed: `attempts_equal_formula` true in every run). On a result asserting
+computed: `attempts_equal_formula` true in every run; the formula is not a
+Lean statement, O3). On a result asserting
 no `xrx`, `n` plus the number of related pairs *in `r`* of its changes make
 some `xrx` asserted, and on a result asserting no `xsx`, `n` plus the related
 pairs *in `s`* make some `xsx` asserted: 6:D3's characterisation on each part
-(`Step8.proj`: the change that makes `xrx` asserted is a change of the sixth
-on the `r` part; computed with the sixth's own function on each part,
+(`Step8.proj` splits a change onto a part, or leaves the part as it is; it
+does not count the list; computed with the sixth's own function on each part,
 `xrx_making_equal_sixth_formula`, `xsx_making_equal_sixth_formula` true in
 every run).
 
@@ -761,9 +765,9 @@ re-check given at its citation.
 - O2. Results beyond the declared bounds, listed: the frontier is exported
   (both parts); the census counts at 4 terms; the seed's 100 rounds with two
   terms are given in closed form (D11), not listed.
-- O3. Lean statements of D4(iv), of the exactness of the shortest-sequence
-  counts (D10), of D11, of D15 and of the non-product count (D10): proved in
-  the paper and checked by computation.
+- O3. Lean statements of D3, of D4(iv), of the exactness of the
+  shortest-sequence counts (D10), of D11, of D15 and of the non-product
+  count (D10): proved in the paper and checked by computation.
 - O4. The cost from a beginning asserting something with `s`: the formula
   of C2″, proved in the paper, not computed.
 - O5. The earlier papers' O1 (multiplicity) stays closed by the fourth seed;
