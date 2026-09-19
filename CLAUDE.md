@@ -64,6 +64,16 @@ Package `code/xry/`:
 - deterministic evidence writer (`python -m xry`), and a Lean axiom-report
   writer.
 `tests/`: pytest, `--cov-branch`, fail under 95% line or 95% branch.
+`python code/xry/gate.py coverage.json` checks the two rates separately and,
+on top of the 95% floor, requires every `code/**/evidence.py` to be *fully*
+covered. Each `evidence.py` holds families of differential checks (a computed
+value against a closed form, a criterion against a search, one derivation
+against the last); each has a branch that records a disagreement, dead on
+correct code. The discipline is that every such check carries an injection
+test that forces the disagreement and proves the branch fires — it lapsed in
+three successive derivations, so the gate now makes a dead (uncovered) branch
+a hard failure. Drive it with an injection test, or, if a line is genuinely
+unreachable, mark it `# pragma: no cover`; never leave it silently uncovered.
 `mypy --strict` must pass.
 
 ### Phase 3 — `lean4/`
