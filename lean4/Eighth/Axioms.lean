@@ -31,6 +31,12 @@ derivations that the eighth paper cites and re-checks.
 #print axioms Seed.Eighth.size_ofR
 #print axioms Seed.Eighth.wf_proj
 #print axioms Seed.Eighth.givenA8_wf
+#print axioms Seed.Eighth.givenA8_a
+#print axioms Seed.Eighth.givenA8_b
+#print axioms Seed.Eighth.givenB8_a
+#print axioms Seed.Eighth.givenB8_b
+#print axioms Seed.Eighth.givenA8_proj
+#print axioms Seed.Eighth.not_ne
 #print axioms Seed.Eighth.givenB8_wf
 #print axioms Seed.Eighth.size_givenA8
 #print axioms Seed.Eighth.size_givenB8
@@ -123,6 +129,10 @@ derivations that the eighth paper cites and re-checks.
 #print axioms Seed.Eighth.fewest_changes8_every_writing_B
 
 -- Earlier derivations, cited and re-checked by the eighth paper
+#print axioms Seed.bra_not_derived
+#print axioms Seed.bra_not_refuted
+#print axioms Seed.Fifth.contains_fails
+#print axioms Seed.Fifth.reach5_clear
 #print axioms Seed.Fourth.total_addTerm
 #print axioms Seed.Fourth.total_addAssertion
 #print axioms Seed.Fourth.size_addTerm

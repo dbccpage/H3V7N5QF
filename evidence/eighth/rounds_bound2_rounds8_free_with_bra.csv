@@ -1,0 +1,10 @@
+round,new_results_within_bound,results_so_far_within_bound,changes_attempted_so_far,of_which_making_some_xrx_asserted,of_which_making_some_xsx_asserted,new_results_asserting_nothing_with_s,new_results_sixth_derivation,new_results_with_the_names_one_term,new_results_without_bound_by_formula,new_results_with_two_terms_by_closed_form
+0,1,1,0,0,0,1,1,0,1,
+1,6,7,12,3,2,4,4,0,7,
+2,32,39,78,15,12,13,13,0,44,
+3,102,141,462,68,60,21,21,0,225,
+4,292,433,1766,202,190,34,34,0,1191,
+5,688,1121,5689,518,506,47,47,0,6402,
+6,1500,2621,15233,1127,1121,70,70,0,35408,
+7,2946,5567,36559,2252,2259,93,93,0,201321,
+8,5482,11049,79257,4127,4154,127,127,0,1180045,
