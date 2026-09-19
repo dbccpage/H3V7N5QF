@@ -706,3 +706,276 @@ From the repository root:
 - `python code/lean_report_fourth.py` builds `lean4/` and writes
   `evidence/fourth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Fifth derivation (`prompt/fifth/`) — plan and stopping conditions
+
+Written before any other work of the fifth derivation, as
+`prompt/fifth/prompt.md` requires. Inputs: `prompt/fifth/prompt.md` and
+`prompt/fifth/seed_prompt.md`; the first derivation (`paper/`, `code/xry/`,
+`lean4/H3V7N5QF/`, `evidence/`), the second (`paper/second/`, `code/second/`,
+`lean4/Second/`, `evidence/second/`), the third (`paper/third/`,
+`code/third/`, `lean4/Third/`, `evidence/third/`) and the fourth
+(`paper/fourth/`, `code/fourth/`, `lean4/Fourth/`, `evidence/fourth/`) are
+cited where used, never assumed. Everything above stays in force (isolation,
+no network, `prompt/` untouched, `.lake/` never committed, bookkeeping rules
+1–4). Rule 5 of the fifth task: every result of an earlier derivation that is
+used is cited and its proof re-checked from the fifth seed, and the re-check
+says whether the result survives removal lowering a multiplicity and
+identification merging terms — in Lean by an explicit embedding of the
+fourth seed's changes into the fifth's (every addition is still a change) and
+a case split the other way (a change of the fifth is a removal, an
+identification, or a change of the fourth), by the support map to the first
+seed's states where the statement is about states asserting nothing twice,
+by observing that the statement mentions no change at all, or by computing it
+again from the fifth seed's own exploration and comparing with the fourth's
+on the results that contain what is given.
+
+## What differs in the seed
+
+Two sentences: "Adding an assertion raises its multiplicity by one; removing
+an assertion lowers it by one." and "A change is exactly one of: identifying
+two terms; removing an assertion; adding a term; adding an assertion. Nothing
+else is a change. Identifying two terms replaces both by one term in every
+assertion." Every other sentence is identical to the fourth seed (`diff`). So
+the state stays the fourth's (terms, a multiplicity per ordered pair, names),
+and the changes are the first seed's four kinds on it. What the fourth
+derivation argued from "a change only adds" — containment, one-way
+reachability, cost as the size difference, every sequence of the same length,
+the carrying map, no multiplicity ever decreasing — is exactly what must be
+re-examined; what it argued from the state alone (sameness, the two maps to
+the earlier states, the counts by series) carries over.
+
+## Layout
+
+- `research/fifth/` — reading notes (not evidence).
+- `code/fifth/` — typed Python package for the fifth seed. Imported from the
+  earlier packages what removal and identification leave intact: the counted
+  state and its sameness, support and indicator (`fourth.state`, unchanged:
+  the state does not change), the kinds of change and the answer kinds
+  (`xry.changes.Kind`, `AnswerKind`), the identification map on written terms
+  (`xry.changes.identification_map`), the reading of a build through a map
+  with multiplicities adding up (`fourth.changes.image`, `is_build_of` for an
+  obstructed addition, `one_term_builds`), the size of what is given
+  (`xry.cost.given_size`), `has_two_way`, the cycle machinery of the orbit
+  counts and the series per cycle (`xry.orbits`, `fourth.orbits.series`),
+  the statements tested (`fourth.follows`, all of them, plus new ones), the
+  fewest-classes count (`fourth.invariants.fewest_classes`, kept only to
+  show it can now decrease), the writers, `compare_evidence`, the Lean
+  report runner, and the fourth derivation's exploration, sequence counts and
+  reachability for the comparison. Defined afresh: the four kinds of change
+  on counted states (identification with the multiplicities of the pairs that
+  become one pair adding up; removal lowering one multiplicity by one;
+  removing what is not asserted is not a change), obstruction (adding `xrx`;
+  identifying two related terms), the answers (refuse; remove the obstruction
+  — now a sequence of removals then the identification; build), the
+  exploration (four kinds, bounded in terms and rounds), the cost in closed
+  form (size difference plus twice the destroyed givens, size counting
+  multiplicities — the first derivation's formula on counted states),
+  reachability (the names-merged criterion; total under FREE), the counts
+  of shortest sequences with their exactness, the independent count by
+  series split by how the named terms stand (the first derivation's five
+  kinds), the property witnesses. Earlier derivations' files are not modified
+  except to correct a defect, recorded in the relevant change log.
+- `tests/test_fifth_*.py` — tests of `code/fifth/`; all of `code/` stays at
+  ≥ 95 % line and ≥ 95 % branch coverage; `mypy --strict` passes; the prose
+  watchlist stays clean.
+- `lean4/Fifth/` — a fifth Lean library in the same Lake package (the
+  lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Fourth` and reuses `MSt`; new are
+  `MSt.remove`, `MSt.identify` (the multiplicity of a pair of the outcome is
+  the sum over the pairs that become it), the four kinds as an inductive
+  `Step5`, `Reach5`, the embedding `Step4.toStep5`, the case split
+  `Step5.cases4`, the map to the first seed's `Step` on the supports of
+  states asserting nothing twice, and the potential `costA5`, `costB5`.
+- `evidence/fifth/` — written by `python code/generate_fifth.py`; the axiom
+  report by `python code/lean_report_fifth.py`; `--check` regenerates into a
+  temporary folder and compares.
+- `paper/fifth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the fifth seed (`research/fifth/`)
+Sentence-by-sentence diff against the fourth seed and against the first; the
+notion table with source statuses; which readings change: C5 (adding what is
+asserted is a change, as in the fourth; removing what is not asserted is not;
+identifying a term with itself is not; new: the multiplicities of the pairs an
+identification merges add up — chosen; the unchosen "the larger of the two"
+reading is shown to give the same results and the same cost, since every
+proof identifies terms only in states with nothing asserted between the
+merged pairs or asserts only that a merged multiplicity is at least each
+part); C7 (the obstruction of an identification is the assertions between
+the two terms with their multiplicities; removing it is `M(u,v) + M(v,u)`
+removals then the identification; for adding `xrx` removing the obstruction
+is not adding it, which is refusal — as the first derivation had it); C8
+(bound on terms and on rounds, as the fourth). Expected consequences to be
+proved or refuted: a multiplicity can go down (removing `arb`) and up again;
+containment, the carrying map, "no multiplicity decreases", "every sequence
+has the same length" and one-way reachability are refuted by witnesses; the
+cost rises by at most one per change with the first derivation's potential
+(size plus twice the destroyed givens, size counting multiplicities) and is
+attained, so the fewest changes is that formula and the round of a result is
+its cost; every legal state with at least one term is a result (the results
+extend from "containing what is given" to everything); a result is reachable
+from a result exactly when the names, once one term, stay one term (ANCHORED)
+and always (FREE) — reachability is mutual within these classes; every result
+with `a ≠ b` reaches what is given; every result reaches itself in two
+changes, so infinitely many sequences reach every result; the fourth
+derivation's results are exactly the results containing what is given, at the
+same rounds, with the same shortest sequences; the fourth's cost survives on
+those results only; the number of changes of a result is
+`C(n, 2) + d + 1 + n²` (`d` the number of asserted pairs), `n` plus the
+number of related unordered pairs of them obstructed; the one-term builds for
+adding `xrx` are the fourth's two; the answer "remove the obstruction" is
+available for every obstructed identification and reaches nothing new.
+
+### Phase 2 — `code/fifth/` and `tests/`
+- changes (four kinds), obstruction, answers, exploration (same protocol:
+  identifications and removals first — no addition — then a term, then the
+  assertions), full logs at a small bound;
+- cost in closed form checked against the explored rounds; FREE closed form
+  checked against the best placement; every change within the bound checked
+  to raise the cost by at most one; the changes that raise it by exactly one
+  characterised (a term, an assertion that restores no given, the removal of
+  a given, the identification of `a` with `b`) and checked;
+- the number of shortest sequences reaching each result by dynamic
+  programming over the cost-raising changes, with a per-result exactness
+  flag (exact when the result has fewer terms than the bound or `a ≠ b`);
+  the two-term closed form where it still holds; a witness that every result
+  is reached by sequences of unbounded length;
+- an independent count of the results by terms, total multiplicity and how
+  the named terms stand (the first derivation's five kinds, counted by the
+  fourth's series), restricted to cost within the rounds, as the completeness
+  certificate; the FREE count with the one-way split;
+- the fifth exploration compared with the fourth's at the same bound and
+  rounds: the fourth's results must be exactly the fifth's results containing
+  what is given, at the same rounds, with the same shortest-sequence counts
+  (the computed form of the citation);
+- reachability by the names criterion checked against breadth-first search
+  between every pair of results within a small bound, and compared with the
+  fourth's containment on the fourth's results (containment must imply
+  reachability; the pairs reachable now and not before are counted; mutual
+  pairs counted);
+- property witnesses for "what does not follow", including the fourth's
+  invariants that now fail;
+- deterministic evidence writer with `--check`; Lean axiom-report writer for
+  `lean4/Fifth/Axioms.lean`.
+
+### Phase 3 — `lean4/Fifth/`
+Targets, in order:
+1. `MSt.remove`, `MSt.identify`; `Step5` (four kinds), `Reach5`; legality,
+   well-formedness, at least one term preserved; `Step4.toStep5`,
+   `Reach4.toReach5`; the case split of a `Step5` into a removal, an
+   identification or a `Step4`; on states asserting nothing twice a `Step5`
+   is a `Step` of the first seed on the supports; names once one term stay
+   one term, and `arb` is then never asserted again (the first derivation's
+   `Reach.names_stay_merged`, `Reach.arb_gone_for_good`, re-proved).
+2. Obstruction: an attempt is obstructed exactly when it adds some `xrx` or
+   identifies two related terms; removal and adding a term are never
+   obstructed; adding an asserted `xry` (`x ≠ y`) is unobstructed; an
+   obstruction of an identification persists through every change but a
+   removal of it (the first's `obstruction_persists` with multiplicities).
+   Refutations by witness: a multiplicity can decrease (`arb` removed);
+   containment, the carrying map and one-way reachability fail; two
+   sequences of different lengths reach one result.
+3. Cost: the potential `size + 2·lost` rises by at most one per change
+   (`Step5.costA_le`, `Step5.costB_le`; total multiplicity is preserved by an
+   identification and lowered by one by a removal); the lower bound; the
+   upper bound by removing the missing givens (and identifying `a`, `b` where
+   the target has them one term) then the fourth's additions
+   (`reach4_by_additions` through the embedding); fewest changes exactly
+   (`fewest_changes5_A`, `_B`); every legal well-formed state is a result
+   (`result5_iff`); on results containing what is given the cost is the size
+   difference (the fourth's cost survives there and only there).
+4. Reachability: a legal well-formed state is reachable from a well-formed
+   state exactly when the names, if one term at the start, are one term at
+   the end (`reach5_iff`); reachability is mutual on states with the names
+   apart and on states with them one term, one-way between the two classes;
+   every result with `a ≠ b` reaches what is given; every state reaches
+   itself in two changes, so the lengths of the sequences to a result are
+   unbounded.
+5. Answers: the removal of an obstruction is a sequence of performed changes
+   (`M(u,v) + M(v,u)` removals then the identification); removing first or
+   removing the `uru` that results last gives the same state; builds are
+   the fourth's two additions through the embedding; every answer is a
+   sequence of unobstructed changes.
+6. `rename` for the four kinds (`rename4_remove`, `rename4_identify`,
+   `Step5.rename`, `Reach5.rename`); the cost is the same in every writing.
+   Attempted once; if a step does not close it is proved in the paper and
+   marked "not in Lean".
+7. What survives: on the fourth's results (states containing what is
+   given), `Reach4` implies `Reach5` in the same number of changes and the
+   fewest changes agree; the reachability criterion, one-way reachability and
+   uniform sequence length are refuted on those very results (witnesses).
+`#print axioms` for every theorem the fifth paper cites, into
+`evidence/fifth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/fifth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The first, second, third and fourth derivations' `--check` and
+Lean reports are re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/fifth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives removal and identification; a section
+answering the task's question for the results, the reachability criterion,
+the cost and one-way reachability; final section: nearest known results and
+differences — the only place where outside names appear), `claim_ledger.md`,
+`change_log.md`.
+
+### Phase 6 — audit against "Done", commit.
+
+## Stopping conditions (fifth derivation)
+
+The run stops when W1–W9 hold, or when a blocker is hit.
+
+- W1 Every notion in `paper/fifth/paper.md` has one recorded source status.
+- W2 Every claim in `paper/fifth/claim_ledger.md` has evidence, or is open.
+- W3 Every alternative is kept, or eliminated by a cited proof.
+- W4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/`; `python -m mypy`
+  passes.
+- W5 `lake build` (pinned toolchain, inside `lean4/`) passes for all five
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all five
+  axiom reports regenerated and committed.
+- W6 `evidence/fifth/` regenerates byte-identically (`--check`); the earlier
+  derivations' evidence still regenerates byte-identically.
+- W7 Every use of an earlier result in the fifth paper is cited and
+  re-checked, with the re-check saying whether it survives removal and
+  identification (ledger column "re-check").
+- W8 The prose watchlist passes on the tracked tree; every pinned hit of the
+  fifth paper is in its final section.
+- W9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: as the fourth's, on terms and rounds together — 5 terms (FREE) and
+  4 terms (ANCHORED) with 8 rounds; 3 terms with 12 rounds; 2 terms with all
+  100 rounds (the results per round stay finite: about `2r` at round `r`
+  with names kept); an ANCHORED counts-only census at 5 terms; full attempt
+  logs at 2 terms; reachability at 3 terms. A result now has about twice as
+  many changes as under the fourth seed, so any run that does not complete
+  in minutes here has its rounds lowered first, then its terms; the bounds
+  used are declared in the paper.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–5 and 7 required; target 6 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The worktree's
+`lean4/.lake/packages` is still the local junction to the main checkout's
+pinned packages (checked before Phase 0; no download happens).
+
+## How to run (fifth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, five derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_fifth.py` writes `evidence/fifth/`;
+  `python code/generate_fifth.py --check` compares with a fresh regeneration;
+- `python code/lean_report_fifth.py` builds `lean4/` and writes
+  `evidence/fifth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
