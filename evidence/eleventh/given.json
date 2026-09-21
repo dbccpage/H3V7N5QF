@@ -1,0 +1,53 @@
+{
+  "apart_is_not_coarser_than_collide": false,
+  "bell_0_1_2_3": [
+    1,
+    1,
+    2,
+    5
+  ],
+  "changes": [
+    "add a term"
+  ],
+  "coarser_of_apart_is_collide": true,
+  "collide_keeps_two_terms": true,
+  "collision_forbids_coarser": true,
+  "empty_determines": true,
+  "empty_writings": [
+    []
+  ],
+  "identify_drops_a_term": true,
+  "injective_is_injective": true,
+  "one_term_cost": 1,
+  "one_term_determines": true,
+  "one_term_writing": [
+    [
+      0
+    ]
+  ],
+  "r_collision_not_s": true,
+  "reaches_itself_in_two_changes": false,
+  "read_from_apart": {
+    "r": {
+      "0,0": 0,
+      "0,1": 1,
+      "1,0": 0,
+      "1,1": 0
+    },
+    "s": {
+      "0,0": 0,
+      "0,1": 0,
+      "1,0": 0,
+      "1,1": 0
+    }
+  },
+  "read_from_collide": null,
+  "size": 0,
+  "state": "no terms; asserted nothing",
+  "two_term_between_collide_determines": false,
+  "two_term_between_collide_determines_r": false,
+  "two_term_between_collide_determines_s": true,
+  "two_term_between_injective_determines": true,
+  "two_term_empty_collide_determines": true,
+  "two_term_empty_injective_determines": true
+}

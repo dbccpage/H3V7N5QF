@@ -1,0 +1,21 @@
+{"change": "add a term", "kind": "add a term", "outcome": "1::|", "performed": true, "state": "0::|", "writings": ["()"]}
+{"change": "add a term", "kind": "add a term", "outcome": "2::|", "performed": true, "state": "1::|", "writings": ["(0,)"]}
+{"change": "add ara", "kind": "add an assertion", "outcome": "1::0-0*1|", "performed": true, "state": "1::|", "writings": ["(0,)"]}
+{"change": "add asa", "kind": "add an assertion", "outcome": "1::|0-0*1", "performed": true, "state": "1::|", "writings": ["(0,)"]}
+{"change": "remove asa", "kind": "remove an assertion", "outcome": "1::|", "performed": true, "state": "1::|0-0*1", "writings": ["(0,)"]}
+{"change": "add a term", "kind": "add a term", "outcome": "2::|1-1*1", "performed": true, "state": "1::|0-0*1", "writings": ["(0,)"]}
+{"change": "add ara", "kind": "add an assertion", "outcome": "1::0-0*1|0-0*1", "performed": true, "state": "1::|0-0*1", "writings": ["(0,)"]}
+{"change": "add asa", "kind": "add an assertion", "outcome": "1::|0-0*2", "performed": true, "state": "1::|0-0*1", "writings": ["(0,)"]}
+{"change": "remove ara", "kind": "remove an assertion", "outcome": "1::|", "performed": true, "state": "1::0-0*1|", "writings": ["(0,)"]}
+{"change": "add a term", "kind": "add a term", "outcome": "2::1-1*1|", "performed": true, "state": "1::0-0*1|", "writings": ["(0,)"]}
+{"change": "add ara", "kind": "add an assertion", "outcome": "1::0-0*2|", "performed": true, "state": "1::0-0*1|", "writings": ["(0,)"]}
+{"change": "add asa", "kind": "add an assertion", "outcome": "1::0-0*1|0-0*1", "performed": true, "state": "1::0-0*1|", "writings": ["(0,)"]}
+{"change": "identify a and b", "kind": "identify two terms", "outcome": "1::|", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add ara", "kind": "add an assertion", "outcome": "2::1-1*1|", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add arb", "kind": "add an assertion", "outcome": "2::1-0*1|", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add bra", "kind": "add an assertion", "outcome": "2::1-0*1|", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add brb", "kind": "add an assertion", "outcome": "2::1-1*1|", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add asa", "kind": "add an assertion", "outcome": "2::|1-1*1", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add asb", "kind": "add an assertion", "outcome": "2::|1-0*1", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add bsa", "kind": "add an assertion", "outcome": "2::|1-0*1", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
+{"change": "add bsb", "kind": "add an assertion", "outcome": "2::|1-1*1", "performed": true, "state": "2::|", "writings": ["(0, 0)", "(0, 1)"]}
