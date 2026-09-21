@@ -2467,3 +2467,250 @@ From the repository root:
 - `python code/lean_report_tenth.py` builds `lean4/` and writes
   `evidence/tenth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Eleventh derivation (`prompt/eleventh/`) — plan and stopping conditions
+
+Written before any other work of the eleventh derivation, as
+`prompt/eleventh/prompt.md` requires. Inputs: `prompt/eleventh/prompt.md` and
+`prompt/eleventh/seed_prompt.md`; the ten earlier derivations (`paper/`,
+`paper/second/` … `paper/tenth/`, `code/xry/` … `code/tenth/`,
+`lean4/H3V7N5QF/` … `lean4/Tenth/`, `evidence/` … `evidence/tenth/`) are
+cited where used, never assumed. Everything above stays in force
+(isolation, no network, `prompt/` untouched, `.lake/` never committed,
+bookkeeping rules 1–4, the evidence-module coverage gate). Rule 5 of the
+eleventh task: every result of an earlier derivation that is used is cited
+and its proof re-checked from the eleventh seed, and the re-check says
+whether the result survives once a writing can collide terms it does not
+identify — in particular whether the ninth's one sameness, has-a-term
+reachability, and jointly free results survive. In Lean the re-check is by
+the identity on the ninth's states (`NDSt`) and the identity on the ninth's
+changes (`Step9` as `Step11`): a writing is a function from terms to
+letters, recorded as a reading of a result, not as a third multiplicity
+beside `r` and `s`; every change of the ninth is a change of the eleventh
+and conversely. The unchosen reading that puts the writing into the result
+is kept and computed separately. Or by observing that the statement
+mentions no writing; or by computing it again from the eleventh seed's own
+exploration and comparing with the ninth's on every result.
+
+## What differs in the seed
+
+One passage (`diff` against the ninth seed) is added after the four kinds:
+
+"A writing of terms may give two terms the same letter while they remain
+two terms. Assertions are read from the writing. If two terms are written
+the same and their assertions differ, the writing does not determine the
+assertions."
+
+Every other sentence is identical to the ninth seed (`diff`), and so to
+the eighth with the seventh's empty beginning. The tenth seed's leftover
+passage is not in this seed. The state stays the ninth's (terms, a
+multiplicity for each ordered pair in `r` and in `s`, no names); the
+beginning stays empty; the four kinds are the ninth's; nothing is
+forbidden. What the ninth argued from the state and the four kinds alone
+(the size as the cost, the has-a-term criterion, jointly free results, the
+count by series, the exchange) must be re-examined with a writing that can
+collide terms without identifying them; what it argued from terms and
+multiplicities without mentioning a writing carries over through the
+identity on states.
+
+The ninth's sameness already treats two results that differ only in how
+their terms are written as the same result; here a writing can collide two
+terms without identifying them. The task's question is when the writing
+determines the assertions, what a collision (same writing, different
+assertions) forbids of every coarser writing, whether a collision in one
+relation constrains the other, and which of the ninth's results survive
+once writing and identifying are two different things.
+
+## Layout
+
+- `research/eleventh/` — reading notes (not evidence).
+- `code/eleventh/` — typed Python package for the eleventh seed. Imported
+  from the earlier packages what writing leaves intact: the two-relation
+  state without names (`eighth.state.DState` with `names = None`, the
+  ninth's empty beginning, `swap`, sameness, `canonical`), the four kinds,
+  the list of changes and `perform` (`eighth.changes` / `ninth.changes`),
+  the two-change cycle, the ninth's cost (the size), reachability (has a
+  term), independent count (`ninth.orbits`), the ninth's exploration,
+  sequence counts and comparisons with the seventh and the eighth, the
+  statements tested (`ninth.follows`), the writers, `compare_evidence`,
+  the Lean report runner. Defined afresh: a writing of terms (letters, not
+  necessarily injective); when a writing determines the assertions
+  (constant multiplicity on every letter-pair rectangle, in each
+  relation); a collision (two terms the same letter, the rectangle not
+  constant); coarser writings; whether a collision of one relation
+  constrains the other; the unchosen reading that tags a result with a
+  writing, and the witnesses that it yields results the ninth does not;
+  the comparison with the ninth (same results, rounds, shortest-sequence
+  counts under the chosen reading). Earlier derivations' files are not
+  modified except to correct a defect, recorded in the relevant change
+  log.
+- `tests/test_eleventh_*.py` — tests of `code/eleventh/`; all of `code/`
+  stays at ≥ 95 % line and ≥ 95 % branch coverage, every
+  `code/**/evidence.py` fully covered (an injection test for every
+  differential check); `mypy --strict` passes; the prose watchlist stays
+  clean.
+- `lean4/Eleventh/` — an eleventh Lean library in the same Lake package
+  (the lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Tenth` (and through it `Ninth`).
+  New: a writing `ℕ → ℕ`; `determines` (every letter-pair rectangle
+  constant in both relations); `injOn` writings determine; coarser
+  writings inherit failure to determine; a collision of one relation need
+  not be a collision of the other; `Step11` as `Step9`; `Reach11`; the
+  identity maps `Step9.toStep11`, `Step11.toStep9`; identifying drops a
+  term, a colliding writing does not; the comparison with the ninth; the
+  unchosen labeled state `Labeled` and the witnesses that its results are
+  not the ninth's.
+- `evidence/eleventh/` — written by `python code/generate_eleventh.py`;
+  the axiom report by `python code/lean_report_eleventh.py`; `--check`
+  regenerates into a temporary folder and compares.
+- `paper/eleventh/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the eleventh seed (`research/eleventh/`)
+Sentence-by-sentence diff against the ninth seed; the notion table with
+source statuses; which readings change: C6 gains a clause (a writing of
+terms may collide two terms that remain two; assertions are read from the
+writing; a writing that writes two terms the same whose assertions differ
+does not determine the assertions); C5⁗ unchanged (the four kinds;
+identifying is not writing); C2, C4, C8′ unchanged in kind. New chosen
+reading C-W1: a writing is a function from a result's terms to letters,
+not a field of the result; a result remains a two-relation state up to
+sameness; the writing determines the assertions exactly when, in each
+relation, the multiplicity is constant on every rectangle of terms that
+share a pair of letters. "Coarser" means a writing that writes together
+every pair the first writing writes together, and possibly more. New
+unchosen reading C-W2, kept: the writing (up to renaming letters) is part
+of the result. Expected consequences to be proved or refuted: an
+injective writing always determines; a collision forbids every coarser
+writing from determining; a collision in one relation does not constrain
+the other; writing is not identifying (the two terms remain); under C-W1
+the ninth's cost, has-a-term criterion, jointly free results and
+non-product count survive; under C-W2 they do not as a count of results
+(more writings than states).
+
+### Phase 2 — `code/eleventh/` and `tests/`
+- writings of a state's terms (restricted growth strings); determination
+  and collision, by relation and jointly; coarser writings; exploration
+  reusing the ninth's; full logs at a small bound;
+- every writing of every explored result checked: injective writings
+  determine; a collision forbids every coarser writing; a collision of
+  `r` need not be a collision of `s`; identifying two terms drops a term,
+  writing them the same does not;
+- the eleventh exploration compared with the ninth's at the same bound
+  and rounds: the results, rounds and shortest-sequence counts must be
+  the ninth's (the computed form of the citation under C-W1);
+- the unchosen labeled reading explored at a small bound: more results
+  than the ninth's (Bell number of writings per state);
+- reachability, independent count, two-term closed form reused from the
+  ninth and re-checked;
+- property witnesses for "what does not follow", including writing
+  statements;
+- deterministic evidence writer with `--check`; Lean axiom-report writer
+  for `lean4/Eleventh/Axioms.lean`.
+
+### Phase 3 — `lean4/Eleventh/`
+Targets, in order:
+1. `Writing` (`ℕ → ℕ`); `determines`, `determinesRel`; injective
+   writings determine (`inj_determines`); `Step11` as `Step9`; `Reach11`
+   as `Reach9`; `Step9.toStep11`, `Step11.toStep9`; well-formedness, at
+   least one term, the empty state, the first change, inherited through
+   the identity (cited, re-checked).
+2. Coarser writings: if `w` does not determine then neither does any
+   coarser writing (`coarser_of_not_determines`); a collision of one
+   relation need not be a collision of the other (`r_collision_not_s`);
+   identifying two terms drops a term (`identify_drops_a_term`); a
+   colliding writing leaves both terms (`collide_keeps_terms`); writing
+   is not a multiplicity (`writing_not_assertion`).
+3. What survives (`Eleventh/Compare.lean`): the ninth's results, cost
+   (`fewest_changes11`), reachability (`reach11_iff`), jointly free
+   results (`results_pair11`) and the identity on states (`toNDSt`);
+   writing is not a third relation (`no_third_rel`); injective writings
+   determine (`split_injective`); a leftover of one relation does not
+   constrain the other (`no_cross_constraint`); the unchosen label
+   (`Labeled`) has results the ninth has not (`labeled_extra`).
+4. `Step11.swap`, `determines_swap` (exchange carries writings with the
+   relations). Attempted once; if a step does not close it is proved in
+   the paper and marked "not in Lean".
+`#print axioms` for every theorem the eleventh paper cites, into
+`evidence/eleventh/lean_axioms.txt`.
+
+### Phase 4 — `evidence/eleventh/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The ten earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/eleventh/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives colliding writings; a section answering
+the task's question: when the writing determines the assertions, what a
+collision forbids of coarser writings, whether a collision of one
+relation constrains the other, and which of the ninth's cost,
+reachability, results and count survive; final section: nearest known
+results and differences — the only place where outside names appear),
+`claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (eleventh derivation)
+
+The run stops when AC1–AC9 hold, or when a blocker is hit.
+
+- AC1 Every notion in `paper/eleventh/paper.md` has one recorded source
+  status.
+- AC2 Every claim in `paper/eleventh/claim_ledger.md` has evidence, or is
+  open.
+- AC3 Every alternative is kept, or eliminated by a cited proof.
+- AC4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- AC5 `lake build` (pinned toolchain, inside `lean4/`) passes for all
+  eleven libraries; no `sorry`, `admit`, or declared axiom in `lean4/`;
+  all eleven axiom reports regenerated and committed.
+- AC6 `evidence/eleventh/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- AC7 Every use of an earlier result in the eleventh paper is cited and
+  re-checked, with the re-check saying whether it survives a writing that
+  can collide terms it does not identify (ledger column "re-check").
+- AC8 The prose watchlist passes on the tracked tree; every pinned hit of
+  the eleventh paper is in its final section.
+- AC9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and on rounds together, as the ninth's, since under
+  C-W1 the results of round `r` are the ninth's. Targets: 3 terms with 6
+  rounds, 3 terms with 5, 2 terms with 8, full attempt logs at 2 terms
+  and 3 rounds; the unchosen labeled reading at 2 terms with 4 rounds
+  (writings of the ninth's states). Any run that does not complete in
+  minutes here has its rounds lowered first, then its terms; the bounds
+  used are declared in the paper; the frontier is exported exactly;
+  completeness within the bound is certified by the ninth's independent
+  count (C-W1) and by a labeled count (C-W2).
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–3 required; target 4 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `worktree-eleventh-derivation`, made from the tenth's last
+  commit; the pull request is opened against `worktree-tenth-derivation`
+  if that branch is not yet on `main`, otherwise against `main`.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The
+checkout's `lean4/.lake/packages` is the pinned packages of this same
+repository (checked before Phase 0; no download happens).
+
+## How to run (eleventh derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, eleven derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_eleventh.py` writes `evidence/eleventh/`;
+  `python code/generate_eleventh.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_eleventh.py` builds `lean4/` and writes
+  `evidence/eleventh/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
