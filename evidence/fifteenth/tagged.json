@@ -1,0 +1,92 @@
+{
+  "beginning": {
+    "admission": "not-admitted",
+    "cost": 0,
+    "state": "0::|"
+  },
+  "bound_on_terms": 2,
+  "extra_results": 36,
+  "more_results_than_the_ninth": true,
+  "ninth_results": 101,
+  "one_term_admitted_cost": 2,
+  "one_term_not_admitted_cost": 1,
+  "one_term_size": 1,
+  "rounds": 5,
+  "tagged_cost_exceeds_size": true,
+  "tagged_cost_failure_count": 36,
+  "tagged_cost_failures": [
+    {
+      "admission": "admitted",
+      "size": 0,
+      "state": "0::|",
+      "tagged_cost": 1
+    },
+    {
+      "admission": "admitted",
+      "size": 1,
+      "state": "1::|",
+      "tagged_cost": 2
+    },
+    {
+      "admission": "admitted",
+      "size": 2,
+      "state": "1::|0-0*1",
+      "tagged_cost": 3
+    },
+    {
+      "admission": "admitted",
+      "size": 2,
+      "state": "1::0-0*1|",
+      "tagged_cost": 3
+    },
+    {
+      "admission": "admitted",
+      "size": 2,
+      "state": "2::|",
+      "tagged_cost": 3
+    },
+    {
+      "admission": "admitted",
+      "size": 3,
+      "state": "1::|0-0*2",
+      "tagged_cost": 4
+    },
+    {
+      "admission": "admitted",
+      "size": 3,
+      "state": "1::0-0*1|0-0*1",
+      "tagged_cost": 4
+    },
+    {
+      "admission": "admitted",
+      "size": 3,
+      "state": "1::0-0*2|",
+      "tagged_cost": 4
+    },
+    {
+      "admission": "admitted",
+      "size": 3,
+      "state": "2::|1-1*1",
+      "tagged_cost": 4
+    },
+    {
+      "admission": "admitted",
+      "size": 3,
+      "state": "2::|1-0*1",
+      "tagged_cost": 4
+    },
+    {
+      "admission": "admitted",
+      "size": 3,
+      "state": "2::1-1*1|",
+      "tagged_cost": 4
+    },
+    {
+      "admission": "admitted",
+      "size": 3,
+      "state": "2::1-0*1|",
+      "tagged_cost": 4
+    }
+  ],
+  "tagged_results": 137
+}

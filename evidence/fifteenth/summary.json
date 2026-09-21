@@ -1,0 +1,291 @@
+{
+  "given": {
+    "admission_not_a_kind": true,
+    "admission_not_assertion": true,
+    "admission_of_the_first_outcome": "not-admitted",
+    "changes_on_the_empty_state": 1,
+    "r_and_s_same_admission": true,
+    "reaching_does_not_admit": true
+  },
+  "plan": {
+    "bound": 3,
+    "deep_bound": 3,
+    "deep_rounds": 5,
+    "log_bound": 2,
+    "log_rounds": 3,
+    "rounds": 6,
+    "tagged_bound": 2,
+    "tagged_rounds": 5,
+    "two_term_rounds": 8
+  },
+  "reading": "C-A1 admission recorded with the result, not in the state; C-A2 admission in the result, unchosen, kept",
+  "runs": {
+    "bound2_rounds3_log": {
+      "admission_statements_holding_of_every_result": [
+        "is_not_admitted",
+        "can_be_admitted"
+      ],
+      "admissions": {
+        "admitted": 0,
+        "assertion_records": [],
+        "cannot_admit": [],
+        "checked": 21,
+        "cross_relation_disagree": [],
+        "kind_records": [],
+        "not_admitted": 21,
+        "of_relation": [],
+        "reaching_admits": [],
+        "reaching_never_admits": true,
+        "split_agrees": true
+      },
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "empty_not_admitted": 1,
+      "empty_reaching_admits": 0,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fifteenth_results": 12,
+        "independent_count": 12,
+        "missing_results": [],
+        "ninth_results": 12,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 12,
+      "results_reached_from_what_is_given": 12,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 11,
+      "rounds": 3,
+      "statements_holding_in_every_result": [
+        "passes_on_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "passes_on_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s"
+      ],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true
+    },
+    "bound2_rounds8": {
+      "admission_statements_holding_of_every_result": [
+        "is_not_admitted",
+        "can_be_admitted"
+      ],
+      "admissions": {
+        "admitted": 0,
+        "assertion_records": [],
+        "cannot_admit": [],
+        "checked": 7986,
+        "cross_relation_disagree": [],
+        "kind_records": [],
+        "not_admitted": 7986,
+        "of_relation": [],
+        "reaching_admits": [],
+        "reaching_never_admits": true,
+        "split_agrees": true
+      },
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "empty_not_admitted": 1,
+      "empty_reaching_admits": 0,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fifteenth_results": 1556,
+        "independent_count": 1556,
+        "missing_results": [],
+        "ninth_results": 1556,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 1556,
+      "results_reached_from_what_is_given": 1556,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 1555,
+      "rounds": 8,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true
+    },
+    "bound3_rounds5": {
+      "admission_statements_holding_of_every_result": [
+        "is_not_admitted",
+        "can_be_admitted"
+      ],
+      "admissions": {
+        "admitted": 0,
+        "assertion_records": [],
+        "cannot_admit": [],
+        "checked": 442,
+        "cross_relation_disagree": [],
+        "kind_records": [],
+        "not_admitted": 442,
+        "of_relation": [],
+        "reaching_admits": [],
+        "reaching_never_admits": true,
+        "split_agrees": true
+      },
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "empty_not_admitted": 1,
+      "empty_reaching_admits": 0,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fifteenth_results": 140,
+        "independent_count": 140,
+        "missing_results": [],
+        "ninth_results": 140,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 140,
+      "results_reached_from_what_is_given": 140,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 139,
+      "rounds": 5,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null
+    },
+    "bound3_rounds6": {
+      "admission_statements_holding_of_every_result": [
+        "is_not_admitted",
+        "can_be_admitted"
+      ],
+      "admissions": {
+        "admitted": 0,
+        "assertion_records": [],
+        "cannot_admit": [],
+        "checked": 1987,
+        "cross_relation_disagree": [],
+        "kind_records": [],
+        "not_admitted": 1987,
+        "of_relation": [],
+        "reaching_admits": [],
+        "reaching_never_admits": true,
+        "split_agrees": true
+      },
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "empty_not_admitted": 1,
+      "empty_reaching_admits": 0,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fifteenth_results": 518,
+        "independent_count": 518,
+        "missing_results": [],
+        "ninth_results": 518,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 518,
+      "results_reached_from_what_is_given": 518,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 517,
+      "rounds": 6,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null
+    }
+  },
+  "tagged": {
+    "beginning": {
+      "admission": "not-admitted",
+      "cost": 0,
+      "state": "0::|"
+    },
+    "bound_on_terms": 2,
+    "extra_results": 36,
+    "more_results_than_the_ninth": true,
+    "ninth_results": 101,
+    "one_term_admitted_cost": 2,
+    "one_term_not_admitted_cost": 1,
+    "one_term_size": 1,
+    "rounds": 5,
+    "tagged_cost_exceeds_size": true,
+    "tagged_cost_failure_count": 36,
+    "tagged_cost_failures": [
+      {
+        "admission": "admitted",
+        "size": 0,
+        "state": "0::|",
+        "tagged_cost": 1
+      },
+      {
+        "admission": "admitted",
+        "size": 1,
+        "state": "1::|",
+        "tagged_cost": 2
+      },
+      {
+        "admission": "admitted",
+        "size": 2,
+        "state": "1::|0-0*1",
+        "tagged_cost": 3
+      },
+      {
+        "admission": "admitted",
+        "size": 2,
+        "state": "1::0-0*1|",
+        "tagged_cost": 3
+      },
+      {
+        "admission": "admitted",
+        "size": 2,
+        "state": "2::|",
+        "tagged_cost": 3
+      },
+      {
+        "admission": "admitted",
+        "size": 3,
+        "state": "1::|0-0*2",
+        "tagged_cost": 4
+      },
+      {
+        "admission": "admitted",
+        "size": 3,
+        "state": "1::0-0*1|0-0*1",
+        "tagged_cost": 4
+      },
+      {
+        "admission": "admitted",
+        "size": 3,
+        "state": "1::0-0*2|",
+        "tagged_cost": 4
+      },
+      {
+        "admission": "admitted",
+        "size": 3,
+        "state": "2::|1-1*1",
+        "tagged_cost": 4
+      },
+      {
+        "admission": "admitted",
+        "size": 3,
+        "state": "2::|1-0*1",
+        "tagged_cost": 4
+      },
+      {
+        "admission": "admitted",
+        "size": 3,
+        "state": "2::1-1*1|",
+        "tagged_cost": 4
+      },
+      {
+        "admission": "admitted",
+        "size": 3,
+        "state": "2::1-0*1|",
+        "tagged_cost": 4
+      }
+    ],
+    "tagged_results": 137
+  }
+}

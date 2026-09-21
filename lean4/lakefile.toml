@@ -1,6 +1,6 @@
 name = "H3V7N5QF"
 version = "0.1.0"
-defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth", "Thirteenth", "Fourteenth"]
+defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth"]
 
 [[require]]
 name = "mathlib"
@@ -61,3 +61,7 @@ name = "Thirteenth"
 # The fourteenth derivation (`prompt/fourteenth/`); imports `Thirteenth`.
 [[lean_lib]]
 name = "Fourteenth"
+
+# The fifteenth derivation (`prompt/fifteenth/`); imports `Fourteenth`.
+[[lean_lib]]
+name = "Fifteenth"
