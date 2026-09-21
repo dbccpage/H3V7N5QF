@@ -300,3 +300,17 @@ reading of the seed.
     was added; each `--check` matched a fresh regeneration and each Lean
     report rewrote its axiom file byte-identically. The ninth derivation's
     own changes are logged in `paper/ninth/change_log.md`.
+
+## Changes made during the tenth derivation (`prompt/tenth/`)
+
+28. **`lean4/lakefile.toml`: a tenth library target `Tenth` and
+    `defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth",
+    "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]`.** Made by the tenth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the tenth
+    derivation touched; recorded here as `prompt/tenth/prompt.md` requires
+    for any change to an earlier derivation's file. Nothing in
+    `lean4/H3V7N5QF/` … `lean4/Ninth/`, `code/xry/` … `code/ninth/`, the
+    earlier test sets, the earlier papers, ledgers, or `evidence/` through
+    `evidence/ninth/` was modified. The tenth derivation's own changes are
+    logged in `paper/tenth/change_log.md`.
