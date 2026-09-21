@@ -2970,3 +2970,257 @@ From the repository root:
 - `python code/lean_report_twelfth.py` builds `lean4/` and writes
   `evidence/twelfth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Thirteenth derivation (`prompt/thirteenth/`) — plan and stopping conditions
+
+Written before any other work of the thirteenth derivation, as
+`prompt/thirteenth/prompt.md` requires. Inputs: `prompt/thirteenth/prompt.md` and
+`prompt/thirteenth/seed_prompt.md`; the twelve earlier derivations (`paper/`,
+`paper/second/` … `paper/twelfth/`, `code/xry/` … `code/twelfth/`,
+`lean4/H3V7N5QF/` … `lean4/Twelfth/`, `evidence/` … `evidence/twelfth/`)
+are cited where used, never assumed. Everything above stays in force
+(isolation, no network, `prompt/` untouched, `.lake/` never committed,
+bookkeeping rules 1–4, the evidence-module coverage gate). Rule 5 of the
+thirteenth task: every result of an earlier derivation that is used is cited
+and its proof re-checked from the thirteenth seed, and the re-check says
+whether the result survives once a coarser writing of an assertion forgets
+whether it was written with `r` or with `s` — in particular whether the
+ninth's jointly free results, additive cost, and non-product count survive.
+In Lean the re-check is by the identity on the ninth's states (`NDSt`) and
+the identity on the ninth's changes (`Step9` as `Step13`): the coarser
+writing is computed from the two multiplicities (their sum, a seventh
+state), recorded with the result, and is not a third multiplicity beside
+`r` and `s`; every change of the ninth is a change of the thirteenth and
+conversely. The unchosen reading that takes the coarser writing as the
+result (so two finer results that differ only in which relation wrote their
+assertions may be the same coarser result) is kept and computed separately.
+Or by observing that the statement mentions no coarser writing; or by
+computing it again from the thirteenth seed's own exploration and comparing
+with the ninth's on every result.
+
+## What differs in the seed
+
+One passage (`diff` against the ninth seed) is added after the four kinds:
+
+"A coarser writing of an assertion forgets whether it was written with `r`
+or with `s`. For every result, record also its coarser writing. Two results
+that differ only in which relation wrote their assertions may be the same
+coarser result."
+
+Every other sentence is identical to the ninth seed (`diff`), and so to
+the eighth with the seventh's empty beginning. The tenth seed's leftover
+passage, the eleventh seed's colliding-writing passage, and the twelfth
+seed's identification-record passage are not in this seed. The state stays
+the ninth's (terms, a multiplicity for each ordered pair in `r` and in `s`,
+no names); the beginning stays empty; the four kinds are the ninth's;
+nothing is forbidden. What the ninth argued from the state and the four
+kinds alone (the size as the cost, the has-a-term criterion, jointly free
+results, the count by series, the exchange) must be re-examined with a
+coarser writing that forgets the relation; what it argued from terms and
+multiplicities without mentioning a writing of the relation carries over
+through the identity on states.
+
+The eighth and ninth already have two relations and an exchange of them;
+they do not record a writing that forgets which relation asserted. The
+task's question is when the coarser writing determines the finer one, when
+two finer results that disagree in which relation wrote the assertion are
+the same coarser result, whether the ninth's cost and reachability descend
+to the coarser writing, and which of the ninth's results survive.
+
+## Layout
+
+- `research/thirteenth/` — reading notes (not evidence).
+- `code/thirteenth/` — typed Python package for the thirteenth seed. Imported
+  from the earlier packages what the coarser writing leaves intact: the
+  two-relation state without names (`eighth.state.DState` with
+  `names = None`, the ninth's empty beginning, `swap`, sameness,
+  `canonical`), the four kinds, the list of changes and `perform`
+  (`eighth.changes` / `ninth.changes`), the two-change cycle, the ninth's
+  cost (the size), reachability (has a term), independent count
+  (`ninth.orbits`), the ninth's exploration, sequence counts and
+  comparisons with the seventh and the eighth, the statements tested
+  (`ninth.follows`), the writers, `compare_evidence`, the Lean report
+  runner. Defined afresh: the coarser writing (one multiplicity, the sum
+  of `r` and `s`); when that writing determines the finer one; when two
+  finer results are the same coarser result; whether a coarser collision
+  of one pair constrains another; the unchosen reading that takes the
+  coarser writing as the result, and the witnesses that it yields fewer
+  results than the ninth; the comparison with the ninth (same results,
+  rounds, shortest-sequence counts under the chosen reading). Earlier
+  derivations' files are not modified except to correct a defect,
+  recorded in the relevant change log.
+- `tests/test_thirteenth_*.py` — tests of `code/thirteenth/`; all of `code/`
+  stays at ≥ 95 % line and ≥ 95 % branch coverage, every
+  `code/**/evidence.py` fully covered (an injection test for every
+  differential check); `mypy --strict` passes; the prose watchlist stays
+  clean.
+- `lean4/Thirteenth/` — a thirteenth Lean library in the same Lake package
+  (the lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Twelfth` (and through it `Ninth`).
+  New: the coarser writing `coarse` (`NDSt → NSt`); the coarser writing
+  of one state is the sum of the two projections (`coarse_eq_sum`);
+  exchanging the relations keeps it (`coarse_swap`); it determines the
+  finer one exactly when nothing is asserted (`determines_iff_nothing`);
+  adding in `r` and adding in `s` land on the same coarser writing
+  (`coarse_addAssertion_r_s`); `Step13` as `Step9`; `Reach13`; the
+  identity maps `Step9.toStep13`, `Step13.toStep9`; the comparison with
+  the ninth; the unchosen coarser result and the witnesses that its
+  results are not the ninth's count.
+- `evidence/thirteenth/` — written by `python code/generate_thirteenth.py`;
+  the axiom report by `python code/lean_report_thirteenth.py`; `--check`
+  regenerates into a temporary folder and compares.
+- `paper/thirteenth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the thirteenth seed (`research/thirteenth/`)
+Sentence-by-sentence diff against the ninth seed; the notion table with
+source statuses; which readings change: C6 gains a clause (every result is
+recorded also in a coarser writing that forgets whether an assertion was
+written with `r` or with `s`; two results that differ only in which
+relation wrote their assertions may be the same coarser result); C5⁗
+unchanged (the four kinds); C2, C4, C8′ unchanged in kind. New chosen
+reading C-C1: the coarser writing of a two-relation state is the
+one-relation state whose multiplicity at each pair is the sum of the `r`
+and `s` multiplicities (a seventh state); it is computed from the result,
+recorded as extra data, not a third multiplicity beside `r` and `s`; a
+result remains a two-relation state up to sameness. New unchosen reading
+C-C2, kept: the result *is* the coarser writing (two finer states with
+the same sum are one result). Expected consequences to be proved or
+refuted: the coarser writing determines the finer one exactly when
+nothing is asserted; `0 r 1` and `0 s 1` are different finer results and
+the same coarser result; adding in `r` and adding in `s` land on the
+same coarser writing; a coarser collision on one pair does not force a
+collision on another; under C-C1 the ninth's cost, has-a-term criterion,
+jointly free results and non-product count survive; under C-C2 the cost
+and the has-a-term criterion descend (the size and the terms are the
+same) while the count of results and jointly-free-as-a-product do not
+(the quotient identifies splits of the same sum).
+
+### Phase 2 — `code/thirteenth/` and `tests/`
+- coarser writings; determination; same coarser result; exploration
+  reusing the ninth's with the coarser writing filled on every result;
+  full logs at a small bound;
+- every explored result checked: the coarser writing is the sum; swap
+  keeps it; it determines the finer one iff nothing is asserted; some
+  pair of finer results share a coarser writing and differ in which
+  relation wrote the assertion;
+- the thirteenth exploration compared with the ninth's at the same bound
+  and rounds: the results, rounds and shortest-sequence counts must be
+  the ninth's (the computed form of the citation under C-C1);
+- the unchosen coarser reading explored at a small bound: fewer results
+  than the ninth's (same sum, different splits);
+- reachability, independent count, two-term closed form reused from the
+  ninth and re-checked;
+- property witnesses for "what does not follow", including coarser
+  statements;
+- deterministic evidence writer with `--check`; Lean axiom-report writer
+  for `lean4/Thirteenth/Axioms.lean`.
+
+### Phase 3 — `lean4/Thirteenth/`
+Targets, in order:
+1. `coarse`, `determines`; the coarser writing is the sum of the two
+   projections (`coarse_eq_sum`); exchanging the relations keeps it
+   (`coarse_swap`); `Step13` as `Step9`; `Reach13` as `Reach9`;
+   `Step9.toStep13`, `Step13.toStep9`; well-formedness, at least one
+   term, the empty state, the first change, inherited through the
+   identity (cited, re-checked).
+2. The coarser writing determines the finer one when nothing is
+   asserted (`determines_of_nothing`) and fails on `0 r 1`
+   (`not_determines_twoBetween`); adding in `r` and adding in `s` land
+   on the same coarser writing (`coarse_addAssertion_r_s`); the coarser
+   writing is not a multiplicity of a third relation
+   (`coarse_not_assertion`); the size descends (`size_coarse`).
+3. What survives (`Thirteenth/Compare.lean`): the ninth's results, cost
+   (`fewest_changes13`), reachability (`reach13_iff`), jointly free
+   results (`results_pair13`) and the identity on states (`toNDSt`); the
+   coarser writing is not a third relation (`no_third_rel`); a coarser
+   collision of one pair does not constrain the other
+   (`no_cross_constraint`); the unchosen coarser tag has results the
+   ninth's count has not (`coarse_extra`: two finer, one coarser).
+4. `Step13.swap`, `coarse_swap` (exchange carries coarser writings with
+   the relations). Attempted once; if a step does not close it is proved
+   in the paper and marked "not in Lean".
+`#print axioms` for every theorem the thirteenth paper cites, into
+`evidence/thirteenth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/thirteenth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The twelve earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/thirteenth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives a coarser writing that forgets the
+relation; a section answering the task's question: when the coarser
+writing determines the finer one, when two finer results are the same
+coarser result, whether the ninth's cost and reachability descend, and
+which of the ninth's results and count survive; final section: nearest
+known results and differences — the only place where outside names
+appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (thirteenth derivation)
+
+The run stops when AE1–AE9 hold, or when a blocker is hit.
+
+- AE1 Every notion in `paper/thirteenth/paper.md` has one recorded source
+  status.
+- AE2 Every claim in `paper/thirteenth/claim_ledger.md` has evidence, or is
+  open.
+- AE3 Every alternative is kept, or eliminated by a cited proof.
+- AE4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch coverage over all of `code/` and
+  every evidence module fully covered; `python -m mypy` passes.
+- AE5 `lake build` (pinned toolchain, inside `lean4/`) passes for all
+  thirteen libraries; no `sorry`, `admit`, or declared axiom in `lean4/`;
+  all thirteen axiom reports regenerated and committed.
+- AE6 `evidence/thirteenth/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- AE7 Every use of an earlier result in the thirteenth paper is cited and
+  re-checked, with the re-check saying whether it survives a coarser
+  writing that forgets which relation asserted (ledger column "re-check").
+- AE8 The prose watchlist passes on the tracked tree; every pinned hit of
+  the thirteenth paper is in its final section.
+- AE9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and on rounds together, as the ninth's, since under
+  C-C1 the results of round `r` are the ninth's. Targets: 3 terms with 6
+  rounds, 3 terms with 5, 2 terms with 8, full attempt logs at 2 terms
+  and 3 rounds; the unchosen coarser reading at 2 terms with 5 rounds
+  (coarser writings of the ninth's states). Any run that does not
+  complete in minutes here has its rounds lowered first, then its terms;
+  the bounds used are declared in the paper; the frontier is exported
+  exactly; completeness within the bound is certified by the ninth's
+  independent count (C-C1) and by a coarser count (C-C2).
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–3 required; target 4 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `worktree-thirteenth-derivation`, made from the twelfth's last
+  commit; the pull request is opened against
+  `worktree-twelfth-derivation` if that branch is not yet on `main`,
+  otherwise against `main`.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The
+checkout's `lean4/.lake/packages` is the pinned packages of this same
+repository (checked before Phase 0; no download happens).
+
+## How to run (thirteenth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, thirteen derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_thirteenth.py` writes `evidence/thirteenth/`;
+  `python code/generate_thirteenth.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_thirteenth.py` builds `lean4/` and writes
+  `evidence/thirteenth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
