@@ -3224,3 +3224,253 @@ From the repository root:
 - `python code/lean_report_thirteenth.py` builds `lean4/` and writes
   `evidence/thirteenth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Fourteenth derivation (`prompt/fourteenth/`) — plan and stopping conditions
+
+Written before any other work of the fourteenth derivation, as
+`prompt/fourteenth/prompt.md` requires. Inputs: `prompt/fourteenth/prompt.md` and
+`prompt/fourteenth/seed_prompt.md`; the thirteen earlier derivations (`paper/`,
+`paper/second/` … `paper/thirteenth/`, `code/xry/` … `code/thirteenth/`,
+`lean4/H3V7N5QF/` … `lean4/Thirteenth/`, `evidence/` … `evidence/thirteenth/`)
+are cited where used, never assumed. Everything above stays in force
+(isolation, no network, `prompt/` untouched, `.lake/` never committed,
+bookkeeping rules 1–4, the evidence-module coverage gate). Rule 5 of the
+fourteenth task: every result of an earlier derivation that is used is cited
+and its proof re-checked from the fourteenth seed, and the re-check says
+whether the result survives once a leftover is a writing that is not an
+assertion — in particular whether the ninth's jointly free results and
+size-as-cost survive. In Lean the re-check is by the identity on the ninth's
+states (`NDSt`) and the identity on the ninth's changes (`Step9` as
+`Step14`): leftover is a writing of the change, recorded with the change,
+neither `xry` nor `xsy`, and is not a third multiplicity beside `r` and `s`;
+every change of the ninth is a change of the fourteenth and conversely. The
+unchosen reading that puts the leftover writing into the result as a field
+is kept and computed separately. Or by observing that the statement mentions
+no leftover; or by computing it again from the fourteenth seed's own
+exploration and comparing with the ninth's on every result.
+
+## What differs in the seed
+
+One passage (`diff` against the ninth seed) is added after the four kinds:
+
+"After every change, record what that change leaves. A leftover is written
+neither `xry` nor `xsy`. A leftover is not an assertion and is not an
+answer."
+
+Every other sentence is identical to the ninth seed (`diff`), and so to the
+eighth with the seventh's empty beginning. The tenth seed's three-outcome
+grading, the eleventh seed's colliding-writing passage, the twelfth seed's
+identification-record passage, and the thirteenth seed's coarser-writing
+passage are not in this seed. The state stays the ninth's (terms, a
+multiplicity for each ordered pair in `r` and in `s`, no names); the
+beginning stays empty; the four kinds are the ninth's; nothing is forbidden.
+What the ninth argued from the state and the four kinds alone (the size as
+the cost, the has-a-term criterion, jointly free results, the count by
+series, the exchange) must be re-examined with a leftover that is a third
+kind of writing; what it argued from terms and multiplicities without
+mentioning leftover carries over through the identity on states.
+
+The tenth seed, if run, grades leftovers as three outcomes of the four kinds
+of change. Here the leftover is a third kind of writing, not an assertion of
+either relation, and it is not an answer to a change. The task's question is
+whether a leftover can be identified with an assertion of `r` or of `s`,
+whether clearing it is one of the four kinds, whether a leftover of one
+relation is a leftover of the other, and which of the ninth's results
+survive once a leftover is not an answer.
+
+## Layout
+
+- `research/fourteenth/` — reading notes (not evidence).
+- `code/fourteenth/` — typed Python package for the fourteenth seed. Imported
+  from the earlier packages what leftover-as-writing leaves intact: the
+  two-relation state without names (`eighth.state.DState` with
+  `names = None`, the ninth's empty beginning, `swap`, sameness,
+  `canonical`), the four kinds, the list of changes and `perform`
+  (`eighth.changes` / `ninth.changes`), the two-change cycle, the ninth's
+  cost (the size), reachability (has a term), independent count
+  (`ninth.orbits`), the ninth's exploration, sequence counts and
+  comparisons with the seventh and the eighth, the statements tested
+  (`ninth.follows`), the writers, `compare_evidence`, the Lean report
+  runner. Defined afresh: the leftover writing (neither `xry` nor `xsy`);
+  whether that writing is an assertion of `r` or of `s`; whether clearing
+  it is one of the four kinds; whether leftover of a removal in one
+  relation is leftover of a removal in the other (same pair, no relation
+  in the writing); the unchosen reading that tags a result with the
+  leftover writing, and the witnesses that it yields results the ninth
+  does not; the comparison with the ninth (same results, rounds,
+  shortest-sequence counts under the chosen reading). Earlier
+  derivations' files are not modified except to correct a defect,
+  recorded in the relevant change log.
+- `tests/test_fourteenth_*.py` — tests of `code/fourteenth/`; all of `code/`
+  stays at ≥ 95 % line and ≥ 95 % branch coverage, every
+  `code/**/evidence.py` fully covered (an injection test for every
+  differential check); `mypy --strict` passes; the prose watchlist stays
+  clean.
+- `lean4/Fourteenth/` — a fourteenth Lean library in the same Lake package
+  (the lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Thirteenth` (and through it `Ninth`).
+  New: the leftover writing `LeftWriting` / `leftover`; leftover of a
+  removal ignores the relation (`leftover_remove_r_s`); leftover is not
+  an assertion (`leftover_not_assertion`); leftover is not an answer;
+  clearing leftover is not one of the four kinds; `Step14` as `Step9`;
+  `Reach14`; the identity maps `Step9.toStep14`, `Step14.toStep9`; the
+  comparison with the ninth; the unchosen tagged state `Tagged` and the
+  witnesses that its results are not the ninth's.
+- `evidence/fourteenth/` — written by `python code/generate_fourteenth.py`;
+  the axiom report by `python code/lean_report_fourteenth.py`; `--check`
+  regenerates into a temporary folder and compares.
+- `paper/fourteenth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the fourteenth seed (`research/fourteenth/`)
+Sentence-by-sentence diff against the ninth seed; the notion table with
+source statuses; which readings change: C6 gains a clause (after every
+change, record what that change leaves as a leftover writing neither
+`xry` nor `xsy`; leftover is not an assertion and is not an answer); C5⁗
+unchanged (the four kinds; leftover is not a fifth kind); C2, C4, C8′
+unchanged in kind. New chosen reading C-F1: leftover is a writing of the
+change, computed from the start and the change (additions write nothing;
+a removal writes the pair with a third letter `ℓ`, not `r` or `s`; an
+identification writes the two terms with `∼`, not an assertion); it is
+kept with the result of that change as extra data on the attempt, not as
+a third multiplicity beside `r` and `s`; a result remains a two-relation
+state up to sameness. New unchosen reading C-F2, kept: the leftover
+writing is a field of the result, replaced by each later change. Expected
+consequences to be proved or refuted: leftover cannot be identified with
+an assertion of `r` or of `s` (it is written neither `xry` nor `xsy` and
+is not an assertion); clearing leftover is not one of the four kinds
+(leftover is not a term and not an assertion; leftover is not an answer;
+nothing else is a change); leftover of a removal in `r` of a pair is the
+same leftover writing as leftover of a removal in `s` of that pair (the
+writing names no relation); under C-F1 the ninth's cost, has-a-term
+criterion, jointly free results and non-product count survive; under C-F2
+they do not as a count of results (same underlying state, different
+leftover writings).
+
+### Phase 2 — `code/fourteenth/` and `tests/`
+- leftover writings; not an assertion of `r` or of `s`; not an answer;
+  not a kind of change; leftover of one relation is leftover of the
+  other as writings of the same pair; exploration reusing the ninth's
+  with leftover filled on every change; full logs at a small bound;
+- every change within the bound checked: leftover is written neither
+  `xry` nor `xsy`; leftover of `r`-removal equals leftover of
+  `s`-removal of the same pair; additions write nothing; identifications
+  write a merge, not an assertion;
+- the fourteenth exploration compared with the ninth's at the same bound
+  and rounds: the results, rounds and shortest-sequence counts must be
+  the ninth's (the computed form of the citation under C-F1);
+- the unchosen tagged reading explored at a small bound: more results
+  than the ninth's (same state, different leftover writings);
+- reachability, independent count, two-term closed form reused from the
+  ninth and re-checked;
+- property witnesses for "what does not follow", including leftover
+  statements;
+- deterministic evidence writer with `--check`; Lean axiom-report writer
+  for `lean4/Fourteenth/Axioms.lean`.
+
+### Phase 3 — `lean4/Fourteenth/`
+Targets, in order:
+1. `LeftWriting`, `leftover`; leftover of a removal is the pair, ignoring
+   the relation (`leftover_remove`, `leftover_remove_r_s`); `Step14` as
+   `Step9`; `Reach14` as `Reach9`; `Step9.toStep14`, `Step14.toStep9`;
+   well-formedness, at least one term, the empty state, the first change,
+   inherited through the identity (cited, re-checked).
+2. Leftover is not an assertion (`leftover_not_assertion`); leftover of
+   `r` and of `s` on the same pair agree (`r_leftover_is_s`); leftover is
+   not an answer; clearing leftover is not one of the four kinds
+   (`clearing_not_a_kind`); leftover is not a multiplicity
+   (`leftover_not_in_M`).
+3. What survives (`Fourteenth/Compare.lean`): the ninth's results, cost
+   (`fewest_changes14`), reachability (`reach14_iff`), jointly free
+   results (`results_pair14`) and the identity on states (`toNDSt`);
+   leftover is not a third relation (`no_third_rel`); leftover of one
+   relation does not constrain the other (`no_cross_constraint`); the
+   unchosen tagged tag (`Tagged`) has results the ninth has not
+   (`tagged_extra`).
+4. `Step14.swap`, leftover of a swapped removal (exchange carries leftover
+   writings with the pairs, not the relations). Attempted once; if a step
+   does not close it is proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the fourteenth paper cites, into
+`evidence/fourteenth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/fourteenth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The thirteen earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/fourteenth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives a leftover that is a writing and not an
+assertion; a section answering the task's question: whether leftover can
+be identified with an assertion of `r` or of `s`, whether clearing it is
+one of the four kinds, whether leftover of one relation is leftover of
+the other, and which of the ninth's cost, reachability, results and count
+survive; final section: nearest known results and differences — the only
+place where outside names appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (fourteenth derivation)
+
+The run stops when AF1–AF9 hold, or when a blocker is hit.
+
+- AF1 Every notion in `paper/fourteenth/paper.md` has one recorded source
+  status.
+- AF2 Every claim in `paper/fourteenth/claim_ledger.md` has evidence, or is
+  open.
+- AF3 Every alternative is kept, or eliminated by a cited proof.
+- AF4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch coverage over all of `code/` and
+  every evidence module fully covered; `python -m mypy` passes.
+- AF5 `lake build` (pinned toolchain, inside `lean4/`) passes for all
+  fourteen libraries; no `sorry`, `admit`, or declared axiom in `lean4/`;
+  all fourteen axiom reports regenerated and committed.
+- AF6 `evidence/fourteenth/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- AF7 Every use of an earlier result in the fourteenth paper is cited and
+  re-checked, with the re-check saying whether it survives a leftover
+  that is a writing and not an assertion (ledger column "re-check").
+- AF8 The prose watchlist passes on the tracked tree; every pinned hit of
+  the fourteenth paper is in its final section.
+- AF9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and on rounds together, as the ninth's, since under
+  C-F1 the results of round `r` are the ninth's. Targets: 3 terms with 6
+  rounds, 3 terms with 5, 2 terms with 8, full attempt logs at 2 terms
+  and 3 rounds; the unchosen tagged reading at 2 terms with 5 rounds
+  (leftover writings on the ninth's states). Any run that does not
+  complete in minutes here has its rounds lowered first, then its terms;
+  the bounds used are declared in the paper; the frontier is exported
+  exactly; completeness within the bound is certified by the ninth's
+  independent count (C-F1) and by a tagged count (C-F2).
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–3 required; target 4 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `worktree-fourteenth-derivation`, made from the thirteenth's last
+  commit; the pull request is opened against
+  `worktree-thirteenth-derivation` if that branch is not yet on `main`,
+  otherwise against `main`.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The
+checkout's `lean4/.lake/packages` is the pinned packages of this same
+repository (checked before Phase 0; no download happens).
+
+## How to run (fourteenth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, fourteen derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_fourteenth.py` writes `evidence/fourteenth/`;
+  `python code/generate_fourteenth.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_fourteenth.py` builds `lean4/` and writes
+  `evidence/fourteenth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
