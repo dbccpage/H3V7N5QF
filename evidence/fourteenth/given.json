@@ -1,0 +1,28 @@
+{
+  "ara_and_asa_same_leftover": true,
+  "changes": [
+    "add a term"
+  ],
+  "empty_changes": 1,
+  "first_leftover_is_answer": false,
+  "first_leftover_is_assertion": false,
+  "first_leftover_is_xry": false,
+  "first_leftover_is_xsy": false,
+  "leftover_of_the_first_change": "nothing",
+  "merge_written_is_not_assertion": true,
+  "one_term_cost": 1,
+  "outcome_of_the_first_change": "terms a; asserted nothing",
+  "pair_written_uses_neither_r_nor_s": true,
+  "r_and_s_same_leftover": true,
+  "r_leftover_is_assertion": false,
+  "reaches_itself_in_two_changes": false,
+  "remove_ara_leftover": "0\u21130",
+  "remove_asa_on_both_leftover": "0\u21130",
+  "remove_r_leftover": "0\u21131",
+  "remove_s_leftover": "0\u21131",
+  "size": 0,
+  "state": "no terms; asserted nothing",
+  "the_first_change_leaves_nothing": true,
+  "two_term_between_identify_leftover": "0\u223c1",
+  "two_term_empty_identify_leftover": "0\u223c1"
+}

@@ -1,0 +1,22 @@
+{"beyond_bound": false, "change": "add a term", "kind": "add a term", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "1::|", "performed": true, "state": "0::|"}
+{"beyond_bound": false, "change": "add a term", "kind": "add a term", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::|", "performed": true, "state": "1::|"}
+{"beyond_bound": false, "change": "add ara", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "1::0-0*1|", "performed": true, "state": "1::|"}
+{"beyond_bound": false, "change": "add asa", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "1::|0-0*1", "performed": true, "state": "1::|"}
+{"beyond_bound": false, "change": "remove asa", "kind": "remove an assertion", "leftover": "0\u21130", "leftover_kind": "pair", "outcome": "1::|", "performed": true, "state": "1::|0-0*1"}
+{"beyond_bound": false, "change": "add a term", "kind": "add a term", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::|1-1*1", "performed": true, "state": "1::|0-0*1"}
+{"beyond_bound": false, "change": "add ara", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "1::0-0*1|0-0*1", "performed": true, "state": "1::|0-0*1"}
+{"beyond_bound": false, "change": "add asa", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "1::|0-0*2", "performed": true, "state": "1::|0-0*1"}
+{"beyond_bound": false, "change": "remove ara", "kind": "remove an assertion", "leftover": "0\u21130", "leftover_kind": "pair", "outcome": "1::|", "performed": true, "state": "1::0-0*1|"}
+{"beyond_bound": false, "change": "add a term", "kind": "add a term", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::1-1*1|", "performed": true, "state": "1::0-0*1|"}
+{"beyond_bound": false, "change": "add ara", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "1::0-0*2|", "performed": true, "state": "1::0-0*1|"}
+{"beyond_bound": false, "change": "add asa", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "1::0-0*1|0-0*1", "performed": true, "state": "1::0-0*1|"}
+{"beyond_bound": false, "change": "identify a and b", "kind": "identify two terms", "leftover": "0\u223c1", "leftover_kind": "merge", "outcome": "1::|", "performed": true, "state": "2::|"}
+{"beyond_bound": true, "change": "add a term", "kind": "add a term", "leftover": "nothing", "leftover_kind": "nothing", "outcome": null, "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add ara", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::1-1*1|", "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add arb", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::1-0*1|", "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add bra", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::1-0*1|", "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add brb", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::1-1*1|", "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add asa", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::|1-1*1", "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add asb", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::|1-0*1", "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add bsa", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::|1-0*1", "performed": true, "state": "2::|"}
+{"beyond_bound": false, "change": "add bsb", "kind": "add an assertion", "leftover": "nothing", "leftover_kind": "nothing", "outcome": "2::|1-1*1", "performed": true, "state": "2::|"}

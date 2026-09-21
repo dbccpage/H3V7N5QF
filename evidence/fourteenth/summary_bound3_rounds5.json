@@ -1,0 +1,40 @@
+{
+  "bound_on_terms": 3,
+  "empty_changes": 1,
+  "empty_nothing": 1,
+  "leftover_statements_holding_of_every_change": [],
+  "leftovers": {
+    "additions_not_nothing": [],
+    "answer_writings": [],
+    "assertion_writings": [],
+    "checked": 442,
+    "clearing_kind": [],
+    "cross_relation_disagree": [],
+    "identify_not_merge": [],
+    "merge": 40,
+    "nothing": 346,
+    "pair": 56,
+    "removals_not_pair": [],
+    "split_agrees": true,
+    "three_kinds_inhabited": true
+  },
+  "ninth_derivation": {
+    "explored_equals_independent_count": true,
+    "extra_results": [],
+    "fourteenth_results": 140,
+    "independent_count": 140,
+    "missing_results": [],
+    "ninth_results": 140,
+    "round_disagreements": [],
+    "same_results": true,
+    "sequence_disagreements": []
+  },
+  "results": 140,
+  "results_reached_from_what_is_given": 140,
+  "results_that_reach_what_is_given": 1,
+  "results_with_a_term": 139,
+  "rounds": 5,
+  "statements_holding_in_every_result": [],
+  "the_first_round_is_the_one_term_state_alone": true,
+  "two_term_rounds_equal_closed_form": null
+}
