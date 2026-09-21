@@ -2213,3 +2213,257 @@ From the repository root:
 - `python code/lean_report_ninth.py` builds `lean4/` and writes
   `evidence/ninth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Tenth derivation (`prompt/tenth/`) — plan and stopping conditions
+
+Written before any other work of the tenth derivation, as
+`prompt/tenth/prompt.md` requires. Inputs: `prompt/tenth/prompt.md` and
+`prompt/tenth/seed_prompt.md`; the nine earlier derivations (`paper/`,
+`paper/second/` … `paper/ninth/`, `code/xry/` … `code/ninth/`,
+`lean4/H3V7N5QF/` … `lean4/Ninth/`, `evidence/` … `evidence/ninth/`) are
+cited where used, never assumed. Everything above stays in force (isolation,
+no network, `prompt/` untouched, `.lake/` never committed, bookkeeping rules
+1–4, the evidence-module coverage gate). Rule 5 of the tenth task: every
+result of an earlier derivation that is used is cited and its proof
+re-checked from the tenth seed, and the re-check says whether the result
+survives once every change carries a leftover outcome — in particular
+whether the ninth's collapses (cost is the size, reachability is having a
+term, one sameness) and independence (results jointly free, cost a sum of
+the two totals with the terms counted once, count not a product) survive
+once the seed records what each change leaves. In Lean the re-check is by
+the identity on the ninth's states (`NDSt`) and the identity on the ninth's
+changes (`Step9` as `Step10`): leftover is recorded on the change, not as a
+third multiplicity beside `r` and `s`; every change of the ninth is a
+change of the tenth and conversely. The unchosen reading that puts leftover
+status into the result is kept and computed separately. Or by observing
+that the statement mentions no leftover; or by computing it again from the
+tenth seed's own exploration and comparing with the ninth's on every
+result.
+
+## What differs in the seed
+
+One passage (`diff` against the ninth seed) is added after the four kinds:
+
+"After every change, record what that change leaves. A leftover is not an
+assertion. Nothing left, a leftover that a later change of the four kinds
+can clear, and a leftover that none of them can, are three outcomes.
+Declare which, for every change."
+
+Every other sentence is identical to the ninth seed (`diff`), and so to the
+eighth with the seventh's empty beginning. The state stays the ninth's
+(terms, a multiplicity for each ordered pair in `r` and in `s`, no names);
+the beginning stays empty; the four kinds are the ninth's; nothing is
+forbidden. What the ninth argued from the state and the four kinds alone
+(the size as the cost, the has-a-term criterion, jointly free results, the
+count by series, the exchange) must be re-examined with a leftover outcome
+on every change; what it argued from terms and multiplicities without
+mentioning the attempt record carries over through the identity on states.
+
+The first seed had a forbidden `xrx` and a binary obstruction; the sixth
+dropped both. This seed records, after every change, a three-way leftover
+that is not an assertion. The task's question is whether that leftover is a
+third kind of record beside the two relations, whether the three outcomes
+split the ninth's changes, whether a leftover of one relation constrains
+the other, and which of the ninth's results survive.
+
+## Layout
+
+- `research/tenth/` — reading notes (not evidence).
+- `code/tenth/` — typed Python package for the tenth seed. Imported from
+  the earlier packages what leftover leaves intact: the two-relation state
+  without names (`eighth.state.DState` with `names = None`, the ninth's
+  empty beginning, `swap`, sameness, `canonical`), the four kinds, the list
+  of changes and `perform` (`eighth.changes` / `ninth.changes`), the
+  two-change cycle, the ninth's cost (the size), reachability (has a term),
+  independent count (`ninth.orbits`), the ninth's exploration, sequence
+  counts and comparisons with the seventh and the eighth, the statements
+  tested (`ninth.follows`), the writers, `compare_evidence`, the Lean
+  report runner. Defined afresh: the leftover outcome of a change (three
+  values); the attempt record carrying that outcome; the classification of
+  every change of the ninth (additions leave nothing; a removal leaves a
+  leftover that adding that assertion clears; an identification leaves a
+  leftover that none of the four kinds can clear); whether a leftover of
+  one relation constrains the other; the unchosen reading that tags a
+  result with leftover status, and the witnesses that it yields results the
+  ninth does not; the comparison with the ninth (same results, rounds,
+  shortest-sequence counts under the chosen reading). Earlier derivations'
+  files are not modified except to correct a defect, recorded in the
+  relevant change log.
+- `tests/test_tenth_*.py` — tests of `code/tenth/`; all of `code/` stays
+  at ≥ 95 % line and ≥ 95 % branch coverage, every `code/**/evidence.py`
+  fully covered (an injection test for every differential check);
+  `mypy --strict` passes; the prose watchlist stays clean.
+- `lean4/Tenth/` — a tenth Lean library in the same Lake package (the
+  lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Ninth`. New: the three leftover
+  outcomes `LeftOver`; `Step9.leftOver` (which outcome a change has);
+  `clears` (a later change that restores what a removal took); `Step10`
+  as `Step9` with the leftover recorded; `Reach10`; the identity maps
+  `Step9.toStep10`, `Step10.toStep9`; the comparison with the ninth; the
+  unchosen tagged state `Tagged` and the witnesses that its results are
+  not the ninth's.
+- `evidence/tenth/` — written by `python code/generate_tenth.py`; the axiom
+  report by `python code/lean_report_tenth.py`; `--check` regenerates into
+  a temporary folder and compares.
+- `paper/tenth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the tenth seed (`research/tenth/`)
+Sentence-by-sentence diff against the ninth seed; the notion table with
+source statuses; which readings change: C6 gains a clause (every attempt
+records a leftover outcome; the leftover is not an assertion and is not
+counted among terms or assertions added); C5⁗ unchanged (the four kinds);
+C2, C4, C8′ unchanged in kind. New chosen reading C-L1: leftover is
+recorded on the change, not as a field of the result; a result remains a
+two-relation state up to sameness; the three outcomes are declared by
+kind, with "a later change of the four kinds can clear" read as: there is
+one change of the four kinds on the outcome that restores what the leftover
+records (the removed assertion), and "none of them can" read as: no one
+change of the four kinds restores the two terms that were identified. New
+unchosen reading C-L2, kept: leftover status is part of the result (a
+three-valued tag, Uncleared absorbing). Expected consequences to be proved
+or refuted: leftover is not a third multiplicity beside `r` and `s` under
+C-L1 (it is a classification of the ninth's changes); the three outcomes
+split the ninth's four kinds (additions / removals / identifications);
+a leftover of a removal in one relation is cleared only by adding that
+assertion in the same relation, so it does not constrain the other
+relation's later changes; an identification leftover is not of one
+relation (identification acts on both); under C-L1 the ninth's cost, the
+has-a-term criterion, jointly free results and the non-product count
+survive (the states and the changes are the ninth's); under C-L2 they do
+not (witnesses: the one-term state asserting nothing, reached with three
+tags at three costs).
+
+### Phase 2 — `code/tenth/` and `tests/`
+- leftover outcomes; the classification of every change of the ninth;
+  the attempt record carrying the outcome; exploration reusing the ninth's
+  with the leftover field filled; full logs at a small bound;
+- every change within the bound checked to have exactly one of the three
+  outcomes, by kind; a removal leftover cleared by adding that assertion
+  and not by a change of the other relation; an identification leftover
+  not cleared by any one later change of the four kinds; additions leaving
+  nothing;
+- the tenth exploration compared with the ninth's at the same bound and
+  rounds: the results, rounds and shortest-sequence counts must be the
+  ninth's (the computed form of the citation under C-L1);
+- the unchosen tagged reading explored at a small bound: more results than
+  the ninth's, cost not the size, jointly free parts with a shared tag;
+- reachability, independent count, two-term closed form reused from the
+  ninth and re-checked;
+- property witnesses for "what does not follow", including leftover
+  statements;
+- deterministic evidence writer with `--check`; Lean axiom-report writer
+  for `lean4/Tenth/Axioms.lean`.
+
+### Phase 3 — `lean4/Tenth/`
+Targets, in order:
+1. `LeftOver` (three constructors); `Step9.leftOver`; additions have
+   `nothingLeft`; a removal has `clearable`; an identification has
+   `uncleared`; `Step10` as `Step9`; `Reach10` as `Reach9`;
+   `Step9.toStep10`, `Step10.toStep9` (every change of the ninth is a
+   change of the tenth and conversely); well-formedness, at least one
+   term, the empty state, the first change, inherited through the
+   identity (cited, re-checked).
+2. Clearing: a removal of `q` at `(x, y)` is cleared by adding that
+   assertion in `q` (`clears_remove`); a change of the other relation
+   does not clear it (`other_rel_not_clear`); no one `Step9` after an
+   identification restores the two identified terms
+   (`identify_not_cleared`); leftover is not an assertion
+   (`leftover_not_assertion`: the outcome is `LeftOver`, not a
+   multiplicity).
+3. What survives (`Tenth/Compare.lean`): the ninth's results, cost
+   (`fewest_changes10`), reachability (`reach10_iff`), jointly free
+   results (`results_pair10`) and the identity on states (`toNDSt`);
+   leftover is not a third relation (`no_third_rel`); the three outcomes
+   split the kinds (`split_kinds`); a leftover of one relation does not
+   constrain the other (`no_cross_constraint`); the unchosen tag
+   (`Tagged`) has results the ninth has not (`tagged_extra`) and a cost
+   that is not the size (`tagged_cost_fails`).
+4. `Step10.swap`, `leftOver_swap` (exchange carries leftovers with the
+   relations). Attempted once; if a step does not close it is proved in
+   the paper and marked "not in Lean".
+`#print axioms` for every theorem the tenth paper cites, into
+`evidence/tenth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/tenth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The nine earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/tenth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives leftover outcomes; a section answering
+the task's question: whether leftover is a third record beside the two
+relations, whether the three outcomes split the ninth's changes, whether
+a leftover of one relation constrains the other, and which of the ninth's
+cost, reachability, results and count survive; final section: nearest
+known results and differences — the only place where outside names
+appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (tenth derivation)
+
+The run stops when AB1–AB9 hold, or when a blocker is hit.
+
+- AB1 Every notion in `paper/tenth/paper.md` has one recorded source status.
+- AB2 Every claim in `paper/tenth/claim_ledger.md` has evidence, or is open.
+- AB3 Every alternative is kept, or eliminated by a cited proof.
+- AB4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- AB5 `lake build` (pinned toolchain, inside `lean4/`) passes for all ten
+  libraries; no `sorry`, `admit`, or declared axiom in `lean4/`; all ten
+  axiom reports regenerated and committed.
+- AB6 `evidence/tenth/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- AB7 Every use of an earlier result in the tenth paper is cited and
+  re-checked, with the re-check saying whether it survives leftover
+  outcomes on every change (ledger column "re-check").
+- AB8 The prose watchlist passes on the tracked tree; every pinned hit of
+  the tenth paper is in its final section.
+- AB9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and on rounds together, as the ninth's, since under
+  C-L1 the results of round `r` are the ninth's. Targets: 5 terms with 8
+  rounds, 3 terms with 9, 2 terms with 12, a counts-only census at 6 terms
+  with 8 rounds, full attempt logs at 2 terms and 3 rounds, reachability
+  among the results of 3 terms and 5 rounds along the changes among those
+  of 3 terms and 7 rounds. The ninth's exploration for the comparison runs
+  at the same bounds. The unchosen tagged reading is explored at 2 terms
+  with 4 rounds (three tags on the ninth's states). Any run that does not
+  complete in minutes here has its rounds lowered first, then its terms;
+  the bounds used are declared in the paper; the frontier is exported
+  exactly; completeness within the bound is certified by the ninth's
+  independent count (C-L1) and by a tagged count (C-L2).
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–3 required; target 4 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `worktree-tenth-derivation`, made from the ninth's last commit
+  with the tenth-through-fifteenth seeds merged; the pull request is
+  opened against `worktree-ninth-derivation` if that branch is not yet on
+  `main`, otherwise against `main`.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The
+checkout's `lean4/.lake/packages` is the pinned packages of this same
+repository (checked before Phase 0; no download happens).
+
+## How to run (tenth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, ten derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_tenth.py` writes `evidence/tenth/`;
+  `python code/generate_tenth.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_tenth.py` builds `lean4/` and writes
+  `evidence/tenth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
