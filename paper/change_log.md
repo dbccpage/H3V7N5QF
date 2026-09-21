@@ -276,3 +276,27 @@ reading of the seed.
     seven earlier `--check`s and the seven earlier Lean reports were re-run
     after the edit (`paper/eighth/change_log.md`). The eighth derivation's
     own changes are logged in `paper/eighth/change_log.md`.
+
+## Changes made during the ninth derivation (`prompt/ninth/`)
+
+27. **`lean4/lakefile.toml`: a ninth library target `Ninth` and
+    `defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth",
+    "Sixth", "Seventh", "Eighth", "Ninth"]`.** Made by the ninth derivation.
+    Not a defect correction: it is the build configuration of the shared Lake
+    package, and the only earlier-derivation file the ninth derivation
+    touched; recorded here as `prompt/ninth/prompt.md` requires for any
+    change to an earlier derivation's file. Nothing in `lean4/H3V7N5QF/`,
+    `lean4/Second/`, `lean4/Third/`, `lean4/Fourth/`, `lean4/Fifth/`,
+    `lean4/Sixth/`, `lean4/Seventh/`, `lean4/Eighth/`, `code/xry/`,
+    `code/second/`, `code/third/`, `code/fourth/`, `code/fifth/`,
+    `code/sixth/`, `code/seventh/`, `code/eighth/`, the earlier test sets, the
+    earlier papers, ledgers, `evidence/`, `evidence/second/`,
+    `evidence/third/`, `evidence/fourth/`, `evidence/fifth/`,
+    `evidence/sixth/`, `evidence/seventh/` or `evidence/eighth/` changed.
+    The eight earlier `--check`s (`python code/generate.py --check` through
+    `python code/generate_eighth.py --check`) and the eight earlier Lean
+    reports (`python code/lean_report.py` through
+    `python code/lean_report_eighth.py`) were re-run after the ninth library
+    was added; each `--check` matched a fresh regeneration and each Lean
+    report rewrote its axiom file byte-identically. The ninth derivation's
+    own changes are logged in `paper/ninth/change_log.md`.
