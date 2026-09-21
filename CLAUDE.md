@@ -3474,3 +3474,251 @@ From the repository root:
 - `python code/lean_report_fourteenth.py` builds `lean4/` and writes
   `evidence/fourteenth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Fifteenth derivation (`prompt/fifteenth/`) — plan and stopping conditions
+
+Written before any other work of the fifteenth derivation, as
+`prompt/fifteenth/prompt.md` requires. Inputs: `prompt/fifteenth/prompt.md` and
+`prompt/fifteenth/seed_prompt.md`; the fourteen earlier derivations (`paper/`,
+`paper/second/` … `paper/fourteenth/`, `code/xry/` … `code/fourteenth/`,
+`lean4/H3V7N5QF/` … `lean4/Fourteenth/`, `evidence/` … `evidence/fourteenth/`)
+are cited where used, never assumed. Everything above stays in force
+(isolation, no network, `prompt/` untouched, `.lake/` never committed,
+bookkeeping rules 1–4, the evidence-module coverage gate). Rule 5 of the
+fifteenth task: every result of an earlier derivation that is used is cited
+and its proof re-checked from the fifteenth seed, and the re-check says
+whether the result survives once a reached result is not thereby admitted —
+in particular whether the ninth's jointly free results, size-as-cost, and
+has-a-term reachability survive. In Lean the re-check is by the identity on
+the ninth's states (`NDSt`) and the identity on the ninth's changes (`Step9`
+as `Step15`): admission is a record of a result, neither `xry` nor `xsy`,
+and is not a third multiplicity beside `r` and `s`; every change of the
+ninth is a change of the fifteenth and conversely. The unchosen reading that
+puts the admission record into the result as a field is kept and computed
+separately. Or by observing that the statement mentions no admission; or by
+computing it again from the fifteenth seed's own exploration and comparing
+with the ninth's on every result.
+
+## What differs in the seed
+
+One passage (`diff` against the ninth seed) is added after the four kinds:
+
+"A result of the changes is reached. Whether it is admitted is not given by
+the reaching. Record for every result whether it is admitted. Reaching a
+result does not make it admitted."
+
+Every other sentence is identical to the ninth seed (`diff`), and so to the
+eighth with the seventh's empty beginning. The tenth seed's leftover
+passage, the eleventh seed's colliding-writing passage, the twelfth seed's
+identification-record passage, the thirteenth seed's coarser-writing
+passage, and the fourteenth seed's leftover-as-writing passage are not in
+this seed. The state stays the ninth's (terms, a multiplicity for each
+ordered pair in `r` and in `s`, no names); the beginning stays empty; the
+four kinds are the ninth's; nothing is forbidden. What the ninth argued from
+the state and the four kinds alone (the size as the cost, the has-a-term
+criterion, jointly free results, the count by series, the exchange) must be
+re-examined with an admission record that reaching does not give; what it
+argued from terms and multiplicities without mentioning admission carries
+over through the identity on states.
+
+The ninth treated every well-formed two-relation state as a result. The
+first seed recorded a refused change and changed nothing; it did not
+separate reaching from admitting. The task's question is whether admission
+is independent of the two relations, whether every reached result can be
+admitted, whether an admitted result in one relation constrains the other,
+and which of the ninth's results survive once reaching does not admit.
+
+## Layout
+
+- `research/fifteenth/` — reading notes (not evidence).
+- `code/fifteenth/` — typed Python package for the fifteenth seed. Imported
+  from the earlier packages what admission-not-given-by-reaching leaves
+  intact: the two-relation state without names (`eighth.state.DState` with
+  `names = None`, the ninth's empty beginning, `swap`, sameness,
+  `canonical`), the four kinds, the list of changes and `perform`
+  (`eighth.changes` / `ninth.changes`), the two-change cycle, the ninth's
+  cost (the size), reachability (has a term), independent count
+  (`ninth.orbits`), the ninth's exploration, sequence counts and
+  comparisons with the seventh and the eighth, the statements tested
+  (`ninth.follows`), the writers, `compare_evidence`, the Lean report
+  runner. Defined afresh: the admission record (neither `xry` nor `xsy`);
+  whether that record is an assertion of `r` or of `s`; whether admitting
+  is one of the four kinds; whether admission of a result in one relation
+  constrains the other; whether every reached result can be admitted; the
+  unchosen reading that tags a result with the admission record, and the
+  witnesses that it yields results the ninth does not; the comparison with
+  the ninth (same results, rounds, shortest-sequence counts under the
+  chosen reading). Earlier derivations' files are not modified except to
+  correct a defect, recorded in the relevant change log.
+- `tests/test_fifteenth_*.py` — tests of `code/fifteenth/`; all of `code/`
+  stays at ≥ 95 % line and ≥ 95 % branch coverage, every
+  `code/**/evidence.py` fully covered (an injection test for every
+  differential check); `mypy --strict` passes; the prose watchlist stays
+  clean.
+- `lean4/Fifteenth/` — a fifteenth Lean library in the same Lake package
+  (the lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Fourteenth` (and through it `Ninth`).
+  New: the admission record `Admission` / `admitted`; reaching does not
+  admit (`reaching_does_not_admit`); every reached result can be admitted
+  (`every_reached_can_be_admitted`); admission is not an assertion
+  (`admission_not_assertion`); admission is not a change of the four kinds;
+  `Step15` as `Step9`; `Reach15`; the identity maps `Step9.toStep15`,
+  `Step15.toStep9`; the comparison with the ninth; the unchosen tagged
+  state `Tagged` and the witnesses that its results are not the ninth's.
+- `evidence/fifteenth/` — written by `python code/generate_fifteenth.py`;
+  the axiom report by `python code/lean_report_fifteenth.py`; `--check`
+  regenerates into a temporary folder and compares.
+- `paper/fifteenth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the fifteenth seed (`research/fifteenth/`)
+Sentence-by-sentence diff against the ninth seed; the notion table with
+source statuses; which readings change: C6 gains a clause (a result of the
+changes is reached; whether it is admitted is not given by the reaching;
+record for every result whether it is admitted; reaching a result does not
+make it admitted); C5⁗ unchanged (the four kinds; admitting is not a fifth
+kind); C2, C4, C8′ unchanged in kind. New chosen reading C-A1: admission is
+a record of a result, computed independently of the path that reached it
+(reaching leaves the record as not-admitted; every reached result can be
+admitted by a record that is not a change of the four kinds); it is kept
+with the result as extra data, not as a third multiplicity beside `r` and
+`s`; a result remains a two-relation state up to sameness. New unchosen
+reading C-A2, kept: the admission record is a field of the result, so the
+unadmitted and admitted copies of one ninth state are different results.
+Expected consequences to be proved or refuted: admission is independent of
+the two relations (it is not an assertion of `r` or of `s` and names no
+relation); every reached result can be admitted (the record is available
+for every well-formed two-relation state); an admitted result does not
+constrain the other relation (admission is of the result, not of a
+projection); under C-A1 the ninth's cost, has-a-term criterion, jointly
+free results and non-product count survive; under C-A2 they do not as a
+count of results (same underlying state, different admission records).
+
+### Phase 2 — `code/fifteenth/` and `tests/`
+- admission records; not an assertion of `r` or of `s`; not a kind of
+  change; reaching does not admit; every reached result can be admitted;
+  admission of one relation does not constrain the other; exploration
+  reusing the ninth's with admission filled on every result; full logs at
+  a small bound;
+- every result within the bound checked: reaching leaves not-admitted;
+  every reached result can be admitted; admission is written neither
+  `xry` nor `xsy`; admission of a result with something in `r` only and
+  something in `s` only is the same record;
+- the fifteenth exploration compared with the ninth's at the same bound
+  and rounds: the results, rounds and shortest-sequence counts must be
+  the ninth's (the computed form of the citation under C-A1);
+- the unchosen tagged reading explored at a small bound: more results
+  than the ninth's (same state, admitted and not);
+- reachability, independent count, two-term closed form reused from the
+  ninth and re-checked;
+- property witnesses for "what does not follow", including admission
+  statements;
+- deterministic evidence writer with `--check`; Lean axiom-report writer
+  for `lean4/Fifteenth/Axioms.lean`.
+
+### Phase 3 — `lean4/Fifteenth/`
+Targets, in order:
+1. `Admission`, `admitted`; reaching a result does not admit
+   (`reaching_does_not_admit`); `Step15` as `Step9`; `Reach15` as
+   `Reach9`; `Step9.toStep15`, `Step15.toStep9`; well-formedness, at
+   least one term, the empty state, the first change, inherited through
+   the identity (cited, re-checked).
+2. Admission is not an assertion (`admission_not_assertion`); admission
+   of `r` and of `s` on one result agree (`r_admission_is_s`); admission
+   is not one of the four kinds (`admission_not_a_kind`); every reached
+   result can be admitted (`every_reached_can_be_admitted`); admission is
+   not a multiplicity (`admission_not_in_M`).
+3. What survives (`Fifteenth/Compare.lean`): the ninth's results, cost
+   (`fewest_changes15`), reachability (`reach15_iff`), jointly free
+   results (`results_pair15`) and the identity on states (`toNDSt`);
+   admission is not a third relation (`no_third_rel`); admission of one
+   relation does not constrain the other (`no_cross_constraint`); the
+   unchosen tagged tag (`Tagged`) has results the ninth has not
+   (`tagged_extra`).
+4. `Step15.swap`, admission of a swapped result (exchange keeps the
+   admission record; it names no relation). Attempted once; if a step
+   does not close it is proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the fifteenth paper cites, into
+`evidence/fifteenth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/fifteenth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The fourteen earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/fifteenth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives a reached result not thereby admitted; a
+section answering the task's question: whether admission is independent of
+the two relations, whether every reached result can be admitted, whether
+an admitted result in one relation constrains the other, and which of the
+ninth's cost, reachability, results and count survive; final section:
+nearest known results and differences — the only place where outside names
+appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (fifteenth derivation)
+
+The run stops when AG1–AG9 hold, or when a blocker is hit.
+
+- AG1 Every notion in `paper/fifteenth/paper.md` has one recorded source
+  status.
+- AG2 Every claim in `paper/fifteenth/claim_ledger.md` has evidence, or is
+  open.
+- AG3 Every alternative is kept, or eliminated by a cited proof.
+- AG4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch coverage over all of `code/` and
+  every evidence module fully covered; `python -m mypy` passes.
+- AG5 `lake build` (pinned toolchain, inside `lean4/`) passes for all
+  fifteen libraries; no `sorry`, `admit`, or declared axiom in `lean4/`;
+  all fifteen axiom reports regenerated and committed.
+- AG6 `evidence/fifteenth/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- AG7 Every use of an earlier result in the fifteenth paper is cited and
+  re-checked, with the re-check saying whether it survives a reached
+  result not thereby admitted (ledger column "re-check").
+- AG8 The prose watchlist passes on the tracked tree; every pinned hit of
+  the fifteenth paper is in its final section.
+- AG9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and on rounds together, as the ninth's, since under
+  C-A1 the results of round `r` are the ninth's. Targets: 3 terms with 6
+  rounds, 3 terms with 5, 2 terms with 8, full attempt logs at 2 terms
+  and 3 rounds; the unchosen tagged reading at 2 terms with 5 rounds
+  (admission records on the ninth's states). Any run that does not
+  complete in minutes here has its rounds lowered first, then its terms;
+  the bounds used are declared in the paper; the frontier is exported
+  exactly; completeness within the bound is certified by the ninth's
+  independent count (C-A1) and by a tagged count (C-A2).
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–3 required; target 4 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `worktree-fifteenth-derivation`, made from the fourteenth's last
+  commit; the pull request is opened against
+  `worktree-fourteenth-derivation` if that branch is not yet on `main`,
+  otherwise against `main`.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The
+checkout's `lean4/.lake/packages` is the pinned packages of this same
+repository (checked before Phase 0; no download happens).
+
+## How to run (fifteenth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, fifteen derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`, and
+  `python ci/check_prose_watchlist.py`;
+- `python code/generate_fifteenth.py` writes `evidence/fifteenth/`;
+  `python code/generate_fifteenth.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_fifteenth.py` builds `lean4/` and writes
+  `evidence/fifteenth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
