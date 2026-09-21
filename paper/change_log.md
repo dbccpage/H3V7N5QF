@@ -342,3 +342,17 @@ reading of the seed.
     ledgers, or `evidence/` through `evidence/eleventh/` was modified. The
     twelfth derivation's own changes are logged in
     `paper/twelfth/change_log.md`.
+
+## Changes made during the thirteenth derivation (`prompt/thirteenth/`)
+
+31. **`lean4/lakefile.toml`: a thirteenth library target `Thirteenth` and
+    `defaultTargets = [..., "Twelfth", "Thirteenth"]`.** Made by the thirteenth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the
+    thirteenth derivation touched; recorded here as
+    `prompt/thirteenth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Twelfth/`,
+    `code/xry/` … `code/twelfth/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/twelfth/` was modified. The
+    thirteenth derivation's own changes are logged in
+    `paper/thirteenth/change_log.md`.
