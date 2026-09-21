@@ -1,0 +1,93 @@
+{
+  "beginning": {
+    "cost": 0,
+    "record": null,
+    "state": "0::|"
+  },
+  "bound_on_terms": 2,
+  "extra_results": 47,
+  "more_results_than_the_ninth": true,
+  "ninth_results": 101,
+  "one_term_identified_cost": 3,
+  "one_term_plain_cost": 1,
+  "one_term_size": 1,
+  "plain_and_identified_are_two_results": true,
+  "recorded_cost_equals_size": false,
+  "recorded_cost_failure_count": 47,
+  "recorded_cost_failures": [
+    {
+      "has_record": true,
+      "recorded_cost": 3,
+      "size": 1,
+      "state": "1::|"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 4,
+      "size": 2,
+      "state": "2::|"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 4,
+      "size": 2,
+      "state": "1::0-0*1|"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 4,
+      "size": 2,
+      "state": "1::|0-0*1"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 4,
+      "size": 2,
+      "state": "1::|0-0*1"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 4,
+      "size": 2,
+      "state": "1::|0-0*1"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 4,
+      "size": 2,
+      "state": "1::0-0*1|"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 4,
+      "size": 2,
+      "state": "1::0-0*1|"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 5,
+      "size": 3,
+      "state": "2::|1-1*1"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 5,
+      "size": 3,
+      "state": "1::0-0*1|0-0*1"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 5,
+      "size": 3,
+      "state": "1::|0-0*2"
+    },
+    {
+      "has_record": true,
+      "recorded_cost": 5,
+      "size": 1,
+      "state": "1::|"
+    }
+  ],
+  "recorded_results": 148,
+  "rounds": 5
+}
