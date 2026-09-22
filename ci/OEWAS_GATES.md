@@ -71,11 +71,20 @@ form) and showing it survives where the repaired form bites.
 
 This is mutation testing pointed at the checks: variation (the mutation) and
 selection (the check that must kill the mutant). A check under no selective
-pressure is unfit as a detector, whatever its coverage. The registry is the
-**antigen panel** -- domain-specific by design, maintained by hand; it
-currently covers the three checks that had vacuous forms (tenth, fourteenth,
-fifteenth). The next tightening is to enumerate every disagreement field and
-require a bite case per field, so an unregistered check cannot hide.
+pressure is unfit as a detector, whatever its coverage.
+
+The panel is **complete over the check surface**: it enumerates every
+list-valued field of each derivation's `*Check` dataclass (33 fields across
+the tenth-fifteenth) and requires a bite case for each. A new disagreement
+field with no bite case fails the gate as *uncovered*; a bite case naming a
+field that no longer exists fails too. So a check cannot be added, or quietly
+made vacuous, without the gate noticing. Differential fields (the vacuity
+risk) are perturbed through their record function at every binding site; guard
+fields (`assertion_records`, `cannot_admit`, ...) are perturbed through the
+predicate that gates them -- each field is proven reachable by the mutation
+designed to trigger it. The **antigen panel** is domain-specific by design and
+maintained by hand; extending it to a new derivation is a new panel of the
+same shape.
 
 ## Anti-skills are detectors, not encyclopedia entries
 
