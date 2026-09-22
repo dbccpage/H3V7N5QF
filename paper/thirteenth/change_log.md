@@ -34,3 +34,20 @@ Each material change, and its reason. Newest last. Commits are on the branch
    gained `paper/thirteenth/paper.md` (hits of graph-theory terms in §10).
    Reason: the gate tracks every watched hit; the body of the paper has
    none.
+
+6. **Review repairs (pull request #29).** Each item corrects a defect found
+   at review; the committed swap-collapse counts move (see below).
+   - *The "swap collapses" count treated differing written tuples as
+     different results.* `invariants.py` `swap_collapses` and
+     `follows.py` `swap_same_coarse` tested `state.r != state.s` for "the
+     exchange is a different finer result". A state and its exchange can have
+     differing `r` and `s` tuples yet be the same result up to renaming the
+     terms (for example `2::1-1*1|0-0*1`, whose exchange renames to itself).
+     Both now test `not same(state, swap(state))`. The committed
+     `swap_collapses` fall accordingly: 1532→1516 at 2/8, 130→124 at 3/5,
+     502→492 at 3/6 (8 at 2/3 unchanged); the CSV column and `coarse_verdicts`
+     follow. A regression test pins that a self-symmetric state is excluded.
+   - *Claims narrowed to their evidence.* D10 is an identity (the C-C1
+     exploration wraps the ninth's), so only the independent count is a
+     check. K2 is attributed to the committed 2-term 8-round run, not a
+     2-term 4-round run the evidence does not contain.

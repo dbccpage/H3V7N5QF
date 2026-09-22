@@ -29,7 +29,7 @@ from ninth.changes import (
 )
 
 from eleventh.state import DState, Labeled, canonical
-from eleventh.writing import writings
+from eleventh.writing import writing_orbits
 
 __all__ = [
     "KINDS",
@@ -47,5 +47,13 @@ __all__ = [
 
 
 def labeled_of(state: DState) -> tuple[Labeled, ...]:
-    """Every writing of `state`, as labeled results (C-W2)."""
-    return tuple(Labeled(canonical(state), w) for w in writings(state.n))
+    """Each distinct writing of `state`, as a labeled result (C-W2).
+
+    Writings that an automorphism of the state carries onto each other label
+    the same result (they differ only in how the terms are written), so it is
+    the orbits of the writings under the state's automorphisms, not every
+    restricted-growth string, that count.  At two terms every writing is its
+    own orbit, so this agrees with the earlier per-writing reading there.
+    """
+    c = canonical(state)
+    return tuple(Labeled(c, w) for w in writing_orbits(c))

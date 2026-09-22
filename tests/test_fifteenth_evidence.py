@@ -81,8 +81,18 @@ def test_check_admissions_reports_disagreements(monkeypatch: pytest.MonkeyPatch)
     assert edges.not_admitted == edges.checked and edges.admitted == 0
     monkeypatch.setattr("fifteenth.explore.admission_of_reaching", lambda _s: admitted_record())
     forced = check_admissions(expl)
-    assert forced.reaching_admits and forced.cross_relation_disagree
+    assert forced.reaching_admits
     monkeypatch.setattr("fifteenth.explore.admission_of_reaching", evidence.admission_of_reaching)
+    # A relation-dependent record makes an asymmetric result disagree with its
+    # r/s exchange, so the cross-relation check fires.
+    from fifteenth.admission import admitted_record as _adm, not_admitted_record as _nadm
+
+    monkeypatch.setattr(
+        "fifteenth.invariants.admission_of_reaching",
+        lambda s: _adm() if s.total_r > s.total_s else _nadm(),
+    )
+    assert check_admissions(expl).cross_relation_disagree
+    monkeypatch.setattr("fifteenth.invariants.admission_of_reaching", evidence.admission_of_reaching)
     monkeypatch.setattr("fifteenth.invariants.can_admit", lambda _s: False)
     assert check_admissions(expl).cannot_admit
     monkeypatch.setattr("fifteenth.invariants.can_admit", lambda _s: True)
@@ -137,8 +147,9 @@ def test_compare_with_ninth_notices(monkeypatch: pytest.MonkeyPatch) -> None:
     expl2 = explore(empty(), 2, 3)
     gone = next(s for s in list(expl2.depth) if s.n == 0)
     expl2.depth.pop(gone)
-    ninth_depth = explore_ninth(empty(), 2, 3).depth
-    assert gone not in expl2.depth and gone in ninth_depth
+    lost = compare_with_ninth(expl2)
+    assert not ninth_ok(lost) and lost["missing_results"] == [gone.key()]
+    assert not lost["explored_equals_independent_count"]
     fake = dict(good)
     fake["round_disagreements"] = ["shifted"]
     assert not ninth_ok(fake)

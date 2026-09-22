@@ -16,6 +16,7 @@ Unchosen, kept (C-F2)
 from __future__ import annotations
 
 from dataclasses import dataclass
+from itertools import permutations
 
 from ninth.state import (
     RELATIONS,
@@ -41,7 +42,12 @@ from ninth.state import (
     written,
 )
 
-from fourteenth.leftover import LeftWriting, leftover_nothing
+from fourteenth.leftover import (
+    LeftWriting,
+    leftover_merge_survivor,
+    leftover_nothing,
+    leftover_pair,
+)
 
 __all__ = [
     "RELATIONS",
@@ -61,6 +67,7 @@ __all__ = [
     "of_r",
     "of_s",
     "pair",
+    "canonical_tagged",
     "remove",
     "rewrite",
     "same",
@@ -91,3 +98,42 @@ class Tagged:
 def tagged_start() -> Tagged:
     """The empty beginning, tagged nothing (no incoming change)."""
     return Tagged(empty(), leftover_nothing())
+
+
+def canonical_tagged(state: DState, leftover: LeftWriting) -> Tagged:
+    """The canonical tagged result of a state and the leftover of the change that reached it.
+
+    Under C-F2 a result is a state with the leftover of the incoming change,
+    counted up to writing.  The state and the leftover's terms must be
+    renumbered *together*, so that the tag names the result's own terms: two
+    results the same up to a term-renaming that also carries the leftover are
+    one result.  The leftover's terms are given in the state's numbering — a
+    removal's pair `(x, y)`, or an identification's surviving term `min(x, y)`
+    (the other term is gone from the result).  This minimizes `(r, s, terms)`
+    over the renumberings, so the state is `canonical(state)` and the tag is
+    read in that same numbering.
+    """
+    n = state.n
+    if leftover.kind == "nothing":
+        return Tagged(canonical(state), leftover_nothing())
+    if leftover.kind == "pair":
+        terms: tuple[int, ...] = (leftover.x, leftover.y)
+    else:  # a merge: only the surviving term is in the result and is writing-invariant
+        terms = (min(leftover.x, leftover.y),)
+    best_key: tuple[tuple[int, ...], tuple[int, ...], tuple[int, ...]] | None = None
+    best_state: DState | None = None
+    best_terms: tuple[int, ...] = ()
+    for perm in permutations(range(n)):
+        moved_state = rewrite(state, perm)
+        moved_terms = tuple(perm[t] for t in terms)
+        key = (moved_state.r, moved_state.s, moved_terms)
+        if best_key is None or key < best_key:
+            best_key = key
+            best_state = moved_state
+            best_terms = moved_terms
+    assert best_state is not None  # range(n) has at least the identity permutation
+    if leftover.kind == "pair":
+        tag = leftover_pair(best_terms[0], best_terms[1])
+    else:
+        tag = leftover_merge_survivor(best_terms[0])
+    return Tagged(best_state, tag)

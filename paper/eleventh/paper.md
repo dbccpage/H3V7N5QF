@@ -29,9 +29,9 @@ is compared with the ninth's at the same bound.
    the writing does not determine the assertions.
 2. **A writing is not identifying, and is not a third relation.** Under the
    chosen reading C-W1 it is a function from a result's terms to letters, not
-   a multiplicity beside `r` and `s` (D6, `no_third_rel`). Identifying two
-   terms drops a term; writing them the same leaves both (D8,
-   `writing_not_identify`).
+   a multiplicity beside `r` and `s` — by construction, the state having no
+   place for it (D6). Identifying two terms drops a term; a writing is not a
+   change of the state at all, so it leaves both (D8, `writing_not_identify`).
 3. **An injective writing always determines the assertions** (D3,
    `inj_determines`, `apart_determines_twoBetween`). A writing determines
    exactly when, in each relation, the multiplicity is constant on every
@@ -44,10 +44,12 @@ is compared with the ninth's at the same bound.
    `r` and determines `s` (D5, `r_collision_not_s`, `no_cross_constraint`).
 6. **The ninth's cost, reachability, jointly free results and non-product
    count survive under C-W1** (D9–D11): the states and the changes are the
-   ninth's. Under C-W2 they do not as a *count of results*: the two-term
-   state asserting nothing is two labeled results, one per writing (D12,
-   `labeled_extra`). The fewest changes to a labeled result is still the
-   size (`labeled_cost_is_size`).
+   ninth's. Under C-W2 they do not as a *count of results*: a result is a
+   state with a writing of its terms up to the state's automorphisms, and the
+   two-term state asserting nothing is two labeled results (its two writings
+   lie in different orbits; D12). The fewest changes to a labeled result is
+   still the size (computed; the Lean `labeled_cost_is_size` only unfolds the
+   definition).
 
 ## 1. What the seed gives
 
@@ -80,7 +82,35 @@ letter-pair rectangle. A writing `w'` is coarser than `w` when it writes
 together every pair `w` writes together, and possibly more.
 
 **C-W2 (unchosen, kept).** A result is a ninth state together with a writing
-of its terms (up to renaming letters). Both computed.
+of its terms, counted up to renaming letters *and* up to the state's own
+automorphisms — two writings a term-symmetry of the state carries onto each
+other label the same result, since results that differ only in how their
+terms are written are the same. `labeled_of` returns one writing per orbit,
+and the count is cross-checked against Burnside's orbit count
+(`labeled_equals_orbit_count`), independent of that enumeration. At two terms
+every writing is its own orbit, so this equals the count of writings there,
+and the committed two-term evidence is unchanged; the distinction first bites
+at three terms, where the three "one pair shares a letter" writings are one
+orbit. Both computed.
+
+An earlier reading paired a state with *every* restricted-growth writing,
+which at three or more terms counts a labeled result once per symmetric copy;
+that was corrected at review (change log; the two-term evidence did not move).
+
+**The reading of "determines" (chosen), and the alternative not taken.**
+"Determines" is read as: in each relation the multiplicity is constant on
+every letter-pair rectangle, so the assertions can be *read back* from the
+writing alone. The seed gives only the converse direction (two terms written
+the same whose assertions differ do not determine); a weaker reading is
+available — "no two terms sharing a letter have differing assertions read
+term by term" — which asks only that same-lettered terms agree, not that
+distinct letter-pairs are separated. The two disagree: two terms with `0 r 0`
+and `1 r 1`, written the same, agree term by term yet leave `0 r 1`
+unreadable, so the rectangle reading calls them undetermined and the weaker
+one determined. The rectangle reading is chosen because "determines" is used
+here to mean the assertions are recoverable from the writing, which the
+weaker reading does not deliver; the weaker reading is recorded and
+eliminated on that ground rather than kept.
 
 C3, C5⁗, C6, C8′, C9 of the ninth paper, unchanged in kind. Bounds used here
 (C8′): 3 terms with 6 rounds; 3 terms with 5; 2 terms with 8; full logs at 2
@@ -103,17 +133,24 @@ Two terms, `0 r 1` once, nothing with `s`, both written the same letter:
 `r` is not determined, `s` is. Lean `r_collision_not_s`,
 `no_cross_constraint`; `given.json` `r_collision_not_s`.
 
-**D6.** A writing is not a third multiplicity beside `r` and `s`. Lean
-`no_third_rel`, `writing_not_assertion`. The state is `NDSt`.
+**D6.** A writing is not a third multiplicity beside `r` and `s`. This is
+the chosen reading C-W1, by construction: the state is `NDSt`, which has no
+field for a writing. The Lean `no_third_rel` and `writing_not_assertion` are
+`⟨rfl, rfl⟩` about the two projections and do not mention a writing; they are
+not cited as a proof of D6.
 
-**D8.** Identifying two terms drops a term; writing them the same leaves
-both. Lean `identify_drops_a_term`, `collide_keeps_terms`,
-`writing_not_identify`; `given.json` `identify_drops_a_term`,
-`collide_keeps_two_terms`.
+**D8.** Identifying two terms drops a term (`identify_drops_a_term`, a
+genuine card fact). A writing is not a change of the state, so writing two
+terms the same leaves the state and its two terms as they were; the Lean
+`collide_keeps_terms` records only that the two-term state has two terms
+(`twoTerms9.T.card = 2`), the writing being absent from the statement because
+it is absent from the state. `writing_not_identify` bundles the two; `given.json`
+`identify_drops_a_term`, `collide_keeps_two_terms`.
 
 The writing statements (injective; determines; collides; collides in `r`
 only) each hold of some writing of some result and fail of some writing of
-some result within 2 terms and 4 rounds (`writing_verdicts`).
+some result within 2 terms and 8 rounds (`writing_verdicts`;
+`writing_statements_holding_of_every_writing` empty there).
 
 ## 5. What of the ninth survives
 
@@ -122,9 +159,13 @@ some result within 2 terms and 4 rounds (`writing_verdicts`).
 among terms or assertions.
 
 **D10.** The C-W1 results, rounds and shortest-sequence counts are the
-ninth's at the same bound (`compare_with_ninth`; `ninth_ok` in every run).
-Completeness is the ninth's independent count. The count is not a product
-for `n ≥ 2` (9:D10, no change: a writing is not in the count).
+ninth's at the same bound. This is an identity, not a second computation:
+the C-W1 exploration is the ninth's (`eleventh.explore.explore` wraps
+`ninth.explore.explore`), so the result, round and sequence comparisons in
+`compare_with_ninth` agree by construction and show only determinism. The one
+independent check is the count: every run's explored results equal the
+ninth's orbit count (`explored_equals_independent_count`). The count is not a
+product for `n ≥ 2` (9:D10, no change: a writing is not in the count).
 
 **D11.** Reachability is having a term, or the start is empty. Lean
 `reach11_iff`. Jointly free results: `results_pair11`. The exchange carries
@@ -132,12 +173,18 @@ determination (`determines_swap`) and carries every change (`Step11.swap`).
 
 ## 6. The unchosen label
 
-**D12.** Under C-W2 a ninth state may be several results. The two-term state
-asserting nothing is reached with writing `(0, 1)` and with writing `(0, 0)`
-(`labeled_extra`); those are different results, both at cost 2, the size.
-The labeled exploration at 2 terms and 4 rounds has more results than the
-ninth's (`labeled.json`). The ninth's "fewest changes is the size" survives
-on labeled results (`labeled_cost_is_size`); the ninth's *count* does not.
+**D12.** Under C-W2 a ninth state may be several results, one per writing
+orbit. The two-term state asserting nothing has two writings, `(0, 1)` and
+`(0, 0)`, in different orbits, so it is two labeled results, both at cost 2,
+the size (computed, `labeled.json`). The Lean `labeled_extra` shows only that
+two `Labeled` records with different letter *functions* are unequal — its
+`letter : ℕ → ℕ` is neither up to renaming letters nor restricted to the
+terms — so it illustrates rather than proves "two results"; the two-results
+count is the computed `labeled_of`. The labeled exploration at 2 terms and 4
+rounds has more results than the ninth's (`labeled.json`). The ninth's
+"fewest changes is the size" survives on labeled results (computed;
+`labeled_cost_is_size` is a definitional unfold, `t.size = t.state.size`);
+the ninth's *count* does not.
 
 ## 7. The task's questions
 
@@ -190,5 +237,6 @@ References are from memory; no network was used, so they are unchecked.
 - **Enumeration of two-coloured multigraphs up to relabelling.** D9–D11 are
   the ninth's: the results up to writing are the ninth's, the distance from
   empty is vertices plus arcs of either colour, a writing not counted. D12
-  is that tagging each result with a partition of its vertices makes that
-  count fail (the two-vertex empty graph, two partitions, two results).
+  is that tagging each result with a partition of its vertices, up to the
+  graph's automorphisms, makes that count fail (the two-vertex empty graph,
+  two partitions, two results).

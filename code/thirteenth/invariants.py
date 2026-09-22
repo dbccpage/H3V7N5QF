@@ -22,7 +22,7 @@ from thirteenth.coarse import (
     splits,
     swap_keeps_coarse,
 )
-from ninth.state import swap
+from ninth.state import same, swap
 
 from thirteenth.explore import Exploration
 
@@ -71,7 +71,7 @@ def check_coarses(expl: Exploration) -> CoarseCheck:
                 out.not_determines_when_empty.append(written)
         if splits(state) != _splits_of(state):
             out.splits_mismatch.append(written)
-        if state.r != state.s and same_coarser(state, swap(state)):
+        if not same(state, swap(state)) and same_coarser(state, swap(state)):
             out.swap_collapses += 1
         if state.n >= 1:
             if add_r_or_s_same_coarser(state, 0, 0):

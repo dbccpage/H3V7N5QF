@@ -86,10 +86,16 @@ def test_check_leftovers_reports_disagreements(monkeypatch: pytest.MonkeyPatch) 
     forced = check_leftovers(expl)
     assert forced.removals_not_pair and forced.identify_not_merge
     monkeypatch.setattr("fourteenth.explore.leftover_of", evidence.leftover_of)
-    monkeypatch.setattr("fourteenth.invariants.leftover_pair", lambda _x, _y: leftover_pair(9, 9))
+    # Make the leftover relation-dependent, so a removal in `s` disagrees with
+    # the removal in `r` of the same pair (the cross-relation check fires only
+    # where both removals are legal changes).
+    monkeypatch.setattr(
+        "fourteenth.invariants.leftover_of",
+        lambda s, c: leftover_pair(9, 9) if c.rel == "s" else evidence.leftover_of(s, c),
+    )
     forced_cross = check_leftovers(expl)
     assert forced_cross.cross_relation_disagree
-    monkeypatch.setattr("fourteenth.invariants.leftover_pair", leftover_pair)
+    monkeypatch.setattr("fourteenth.invariants.leftover_of", evidence.leftover_of)
     monkeypatch.setattr("fourteenth.leftover.LeftWriting.is_assertion", lambda self: True)
     assert check_leftovers(expl).assertion_writings
     monkeypatch.setattr("fourteenth.leftover.LeftWriting.is_assertion", lambda self: False)

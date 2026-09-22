@@ -47,9 +47,12 @@ is compared with the ninth's at the same bound.
 6. **The ninth's cost, reachability, jointly free results and non-product
    count survive under C-M1** (D9–D11): the states and the changes are the
    ninth's. Under C-M2 they do not as a *count of results*: the one-term
-   state asserting nothing is two recorded results, one never identified
-   and one tagged by identifying two isolated terms (D12, `recorded_extra`).
-   The fewest changes to the tagged result is 3, not the size 1.
+   state asserting nothing is several recorded results — within the 2-term
+   5-round bound, six: the never-identified one at cost 1, the empty-record
+   one (identifying two isolated terms) at cost 3, and four more at cost 5
+   (`recorded.json`). The Lean `recorded_extra` shows only that two of them
+   differ. The fewest changes to the empty-record one is 3, not the size 1
+   (computed).
 
 ## 1. What the seed gives
 
@@ -115,8 +118,11 @@ puts that assertion on the loop of the surviving term, and no one change
 splits it back. Lean `nonempty_not_restored`; `given.json`
 `two_term_between_restored` is false.
 
-**D6.** The record is not a third multiplicity beside `r` and `s`. Lean
-`no_third_rel`, `record_not_assertion`. The state is `NDSt`.
+**D6.** The record is not a third multiplicity beside `r` and `s`. This is
+the chosen reading C-M1, by construction: the state is `NDSt`, with no field
+for a record. Lean `no_third_rel`, `record_not_assertion` are `⟨rfl, rfl⟩`
+about the projections and do not mention a record; they are not cited as a
+proof of D6.
 
 **D8.** Identifying two terms drops a term. Lean `identify_drops_a_term`;
 `given.json` `identify_drops_a_term`. The record does not put the dropped
@@ -125,9 +131,14 @@ term back.
 The record statements (empty record; nonempty record; the two records
 differ; `r` merged two pairs; the start is restored; the `r` record is
 determined by `r`) each hold of some identification of some result and fail
-of some identification of some result within 2 terms and 4 rounds
-(`record_verdicts`), except determination, which holds of every
-identification (D3).
+of some identification of some result within 2 terms and 8 rounds
+(`record_verdicts`; `record_statements_holding_of_every_identification` is
+`['determined']` in the committed `summary_bound2_rounds8.json`), except
+determination, which holds of every identification (D3). Determination holds
+of every identification because it is true by construction of C-M1: the
+record of a relation is read from that relation alone, so it is a chosen
+reading, not an emergent fact (Lean `record_determined_by_rel`, stated for
+`r` and closed by `simp [recordRel]`, is definitional).
 
 ## 5. What of the ninth survives
 
@@ -136,9 +147,13 @@ identification (D3).
 among terms or assertions.
 
 **D10.** The C-M1 results, rounds and shortest-sequence counts are the
-ninth's at the same bound (`compare_with_ninth`; `ninth_ok` in every run).
-Completeness is the ninth's independent count. The count is not a product
-for `n ≥ 2` (9:D10, no change: a record is not in the count).
+ninth's at the same bound. This is an identity, not a second computation:
+the C-M1 exploration is the ninth's (`twelfth.explore.explore` wraps
+`ninth.explore.explore`), so the result, round and sequence comparisons in
+`compare_with_ninth` agree by construction and show only determinism. The one
+independent check is the count: every run's explored results equal the
+ninth's orbit count (`explored_equals_independent_count`). The count is not a
+product for `n ≥ 2` (9:D10, no change: a record is not in the count).
 
 **D11.** Reachability is having a term, or the start is empty. Lean
 `reach12_iff`. Jointly free results: `results_pair12`. The exchange carries
@@ -148,14 +163,17 @@ records (`recordRel_swap`, `recordOf_swap`) and carries every change
 ## 6. The unchosen recorded tag
 
 **D12.** Under C-M2 a ninth state may be several results. The one-term
-state asserting nothing is reached with no record (one change: add a term)
-and with the empty identification record of two isolated terms (three
-changes). Lean `recorded_extra`; those are different results. The recorded
-exploration at 2 terms and 5 rounds has more results than the ninth's
-(`recorded.json`). The ninth's "fewest changes is the size" fails on the
-tagged one-term result (cost 3, size 1); it survives on the untagged one
-(`recorded_cost_is_size` is the ninth's size of the underlying state, not
-the BFS round).
+state asserting nothing is reached with no record (one change: add a term),
+with the empty identification record of two isolated terms (three changes),
+and with four further records at five changes — six in all within the bound
+(`recorded.json`). The Lean `recorded_extra` shows only that two of them
+(the plain one and the empty-record one, tagged by a Bool) differ; the count
+of six is computed. The recorded exploration at 2 terms and 5 rounds has more
+results than the ninth's (`recorded.json`). The ninth's "fewest changes is
+the size" fails on every recorded result carrying a record (the empty-record
+one-term result costs 3, size 1, computed); it survives on the untagged one.
+Note `recorded_cost_is_size` (Lean) is `rfl` — the ninth's size of the
+underlying state — and is not a statement about the BFS round.
 
 ## 7. The task's questions
 

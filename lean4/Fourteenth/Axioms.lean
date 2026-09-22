@@ -24,6 +24,8 @@ import Fourteenth.Rename
 #print axioms Seed.Fourteenth.results_pair14
 #print axioms Seed.Fourteenth.no_third_rel
 #print axioms Seed.Fourteenth.r_leftover_is_s
+#print axioms Seed.Fourteenth.twoBoth_remove_r
+#print axioms Seed.Fourteenth.twoBoth_remove_s
 #print axioms Seed.Fourteenth.no_cross_constraint
 #print axioms Seed.Fourteenth.tagged_one_nothing
 #print axioms Seed.Fourteenth.tagged_cost_fails

@@ -3,7 +3,7 @@ from __future__ import annotations
 from ninth.changes import Change, Kind, changes
 from ninth.state import DState, empty
 from fourteenth.changes import leftover_counts, leftover_of_outcome, tagged_perform
-from fourteenth.leftover import leftover_merge, leftover_nothing
+from fourteenth.leftover import leftover_merge, leftover_merge_survivor, leftover_nothing
 from fourteenth.state import Tagged, added, has_term, tagged_start, written
 
 
@@ -29,6 +29,7 @@ def test_tagged_perform_records_the_incoming_leftover() -> None:
     assert nxt.state == DState.of(1, [], []) and nxt.leftover == leftover_nothing()
     two = Tagged(DState.of(2, [(0, 1)], []), leftover_nothing())
     merged = tagged_perform(two, Change(Kind.IDENTIFY, "", 0, 1))
-    assert merged.leftover == leftover_merge(0, 1) and merged.state.n == 1
+    # The canonical tag keeps the surviving term alone (the other is gone).
+    assert merged.leftover == leftover_merge_survivor(0) and merged.state.n == 1
     assert leftover_counts(DState.of(2, [(0, 1)], []))[3] >= 1
     assert any(c.kind is Kind.IDENTIFY for c in changes(DState.of(2, [], [])))

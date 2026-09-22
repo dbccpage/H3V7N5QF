@@ -21,7 +21,7 @@ from tenth.evidence import (
     write_run,
     write_tagged,
 )
-from tenth.explore import explore
+from tenth.explore import explore, leftover_performed
 from tenth.invariants import check_leftovers
 from tenth.leftover import LeftOver
 
@@ -121,15 +121,52 @@ def test_compare_with_ninth_notices(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(evidence, "count_shortest_sequences", real_seq)
     shallow = explore(empty(), 3, 1)
     assert compare_with_ninth(shallow)["explored_equals_independent_count"]
+    # A shifted round or a lost result is refused by the sequence count itself,
+    # so the count is held at the unshifted exploration's to reach the round
+    # and result comparisons.
     shifted = explore(empty(), 2, 3)
+    fair = real_seq(shifted)
+    monkeypatch.setattr(evidence, "count_shortest_sequences", lambda _e: fair)
     one = next(s for s in shifted.depth if s.n == 1)
-    ninth_depth = explore_ninth(empty(), 2, 3).depth
     shifted.depth[one] += 1
-    assert shifted.depth[one] != ninth_depth[one]
+    moved = compare_with_ninth(shifted)
+    assert not ninth_ok(moved) and moved["round_disagreements"] == [one.key()]
     expl2 = explore(empty(), 2, 3)
     gone = next(s for s in list(expl2.depth) if s.n == 0)
     expl2.depth.pop(gone)
-    assert gone not in expl2.depth and gone in ninth_depth
+    lost = compare_with_ninth(expl2)
+    assert not ninth_ok(lost) and lost["missing_results"] == [gone.key()]
+    assert not lost["explored_equals_independent_count"]
+
+
+def test_bare_criterion_agrees_with_the_search_and_catches_a_wrong_outcome(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from tenth.invariants import bare, bare_criterion
+    from tenth.leftover import leftover_of, restores_in_one
+    from tenth.changes import Change, Kind, changes
+
+    loop_on_one = DState.of(2, [(1, 1)], [])
+    ident = Change(Kind.IDENTIFY, "", 0, 1)
+    assert bare(loop_on_one, 0) and not bare(loop_on_one, 1)
+    assert bare_criterion(loop_on_one, ident) is LeftOver.CLEARABLE is leftover_of(loop_on_one, ident)
+    two_loops = DState.of(2, [(0, 0)], [(1, 1)])
+    assert bare_criterion(two_loops, ident) is LeftOver.UNCLEARED is leftover_of(two_loops, ident)
+    expl = explore(empty(), 3, 4)
+    seen = 0
+    for state, change, _out, _left in leftover_performed(expl):
+        if change.kind is Kind.IDENTIFY:
+            seen += 1
+            assert (bare_criterion(state, change) is LeftOver.CLEARABLE) == restores_in_one(state, change)
+    assert seen > 0 and all(c.kind is not Kind.IDENTIFY for c in changes(empty()))
+    flipped = {LeftOver.CLEARABLE: LeftOver.UNCLEARED, LeftOver.UNCLEARED: LeftOver.CLEARABLE}
+
+    def wrong(state: DState, change: Change) -> LeftOver:
+        right = leftover_of(state, change)
+        return flipped.get(right, right) if change.kind is Kind.IDENTIFY else right
+
+    monkeypatch.setattr("tenth.explore.leftover_of", wrong)
+    assert check_leftovers(expl).identify_disagreements
 
 
 def test_tagged_and_leftovers_ok_can_fail() -> None:

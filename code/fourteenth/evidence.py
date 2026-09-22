@@ -156,6 +156,10 @@ def write_given(out: Path) -> dict[str, object]:
     one = DState.of(1, [], [])
     two = DState.of(2, [], [])
     between = DState.of(2, [(0, 1)], [])
+    # `0 r 1` and `0 s 1` both asserted, so removing the pair is a legal change
+    # in either relation — the D5 witness needs two real changes, not one
+    # change and a non-change.
+    between_both = DState.of(2, [(0, 1)], [(0, 1)])
     identify_two = Change(Kind.IDENTIFY, "", 0, 1)
     remove_r = Change(Kind.REMOVE, "r", 0, 1)
     remove_s = Change(Kind.REMOVE, "s", 0, 1)
@@ -164,8 +168,9 @@ def write_given(out: Path) -> dict[str, object]:
     remove_asa = Change(Kind.REMOVE, "s", 0, 0)
     both = DState.of(1, [(0, 0)], [(0, 0)])
     first_leftover = leftover_of(start, first[0])
-    r_leftover = leftover_of(between, remove_r)
-    s_leftover = leftover_of(between, remove_s)
+    r_leftover = leftover_of(between_both, remove_r)
+    s_leftover = leftover_of(between_both, remove_s)
+    assert between_both.has("r", 0, 1) and between_both.has("s", 0, 1)
     doc: dict[str, object] = {
         "state": written(start),
         "size": start.size,

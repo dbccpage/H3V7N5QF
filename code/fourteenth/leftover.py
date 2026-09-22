@@ -35,6 +35,7 @@ __all__ = [
     "LeftWriting",
     "clearing_is_a_kind",
     "leftover_merge",
+    "leftover_merge_survivor",
     "leftover_nothing",
     "leftover_of",
     "leftover_pair",
@@ -51,12 +52,20 @@ class LeftWriting:
     y: int = -1
 
     def written(self) -> str:
-        """The leftover in letters.  Never `xry` and never `xsy`."""
+        """The leftover in letters.  Never `xry` and never `xsy`.
+
+        A merge writing carries the two identified terms (`u∼v`) on the change
+        it records (C-F1); the canonical tag of a result (C-F2) keeps only the
+        surviving term, `y = -1`, written `∼u`, because the other term is gone
+        from the result and naming it would name an absent term.
+        """
         if self.kind == "nothing":
             return "nothing"
         if self.kind == "pair":
             return f"{self.x}ℓ{self.y}"
         if self.kind == "merge":
+            if self.y < 0:
+                return f"∼{self.x}"
             return f"{self.x}∼{self.y}"
         raise ValueError("a leftover is nothing, a pair, or a merge")  # pragma: no cover
 
@@ -93,6 +102,11 @@ def leftover_pair(x: int, y: int) -> LeftWriting:
 def leftover_merge(u: int, v: int) -> LeftWriting:
     """The leftover writing of an identification: the two terms, not an assertion."""
     return LeftWriting("merge", u, v)
+
+
+def leftover_merge_survivor(u: int) -> LeftWriting:
+    """The canonical merge tag of a result (C-F2): the surviving term alone, `∼u`."""
+    return LeftWriting("merge", u, -1)
 
 
 def other_relation(rel: str) -> str:

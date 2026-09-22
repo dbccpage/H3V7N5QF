@@ -6,20 +6,48 @@ Derived (paper, `lean4/Tenth/`)
     assertion and not by a change of the other relation.  Identifications
     leave a leftover that is clearable exactly when a later change restores
     the start.
+
+Derived (paper D8), and checked here independently of `leftover_of`
+    An identification is restored by one later change exactly when one of
+    the two identified terms is bare: in no assertion of either relation, as
+    either term of the pair.  One change back to the start's number of terms
+    must add a term, and an added term is bare, so the start must be the
+    outcome plus one bare term.  Identifying two terms that are not bare
+    keeps the count of bare terms, and adding one raises it, so no one
+    change restores the start; identifying a bare term into another leaves
+    the other's assertions as they were, and adding a bare term restores the
+    start.  `bare_criterion` computes that from the start alone, without
+    performing any change, and `check_leftovers` compares it with the
+    search `leftover_of` makes.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from ninth.changes import Kind, is_addition
-from ninth.state import same
+from ninth.changes import Change, Kind, is_addition
+from ninth.state import DState, same
 
 from tenth.changes import other_clears, perform
 from tenth.explore import Exploration, leftover_performed
-from tenth.leftover import LeftOver, clearing_change, leftover_of, restores_in_one
+from tenth.leftover import LeftOver, clearing_change
 
-__all__ = ["LeftoverCheck", "check_leftovers"]
+__all__ = ["LeftoverCheck", "bare", "bare_criterion", "check_leftovers"]
+
+
+def bare(state: DState, t: int) -> bool:
+    """Is term `t` in no assertion of either relation, as either term of the pair?"""
+    n = state.n
+    return all(
+        mult[t * n + u] == 0 and mult[u * n + t] == 0 for mult in (state.r, state.s) for u in range(n)
+    )
+
+
+def bare_criterion(state: DState, change: Change) -> LeftOver:
+    """The leftover of an identification by D8's criterion: clearable iff one of the two terms is bare."""
+    if bare(state, change.x) or bare(state, change.y):
+        return LeftOver.CLEARABLE
+    return LeftOver.UNCLEARED
 
 
 @dataclass
@@ -60,10 +88,6 @@ def check_leftovers(expl: Exploration) -> LeftoverCheck:
                 out.clearing_failed.append(written)
             if other_clears(state, change):
                 out.other_relation_cleared.append(written)
-        if change.kind is Kind.IDENTIFY:
-            expected = LeftOver.CLEARABLE if restores_in_one(state, change) else LeftOver.UNCLEARED
-            if leftover is not expected:
-                out.identify_disagreements.append(written)
-            if leftover_of(state, change) is not leftover:
-                out.identify_disagreements.append(written)
+        if change.kind is Kind.IDENTIFY and leftover is not bare_criterion(state, change):
+            out.identify_disagreements.append(written)
     return out

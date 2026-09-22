@@ -22,6 +22,7 @@ import Twelfth.Rename
 #print axioms Seed.Twelfth.recorded_extra
 #print axioms Seed.Twelfth.recorded_cost_is_size
 #print axioms Seed.Twelfth.recordRel_swap
+#print axioms Seed.Twelfth.recordOf_swap
 #print axioms Seed.Twelfth.Step12.swap
 #print axioms Seed.Ninth.fewest_changes9
 #print axioms Seed.Ninth.reach9_iff

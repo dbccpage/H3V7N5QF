@@ -41,14 +41,16 @@ of change. That grading is not in this seed.
    untouched: leftover of that later addition is nothing (`leftoverAdd`).
 4. **Leftover of one relation is leftover of the other, as writings.** A
    removal of `(x, y)` in `r` and a removal of `(x, y)` in `s` have the same
-   leftover writing `xℓy` (D5, `leftover_remove_r_s`, `r_leftover_is_s`).
-   The writing names no relation. Both changes exist on a state that asserts
-   the pair in each relation (`twoBoth_remove_r`, `twoBoth_remove_s`).
+   leftover writing `xℓy` — by construction, since the writing names no
+   relation (D5). Both changes exist on a state that asserts the pair in each
+   relation (`twoBoth_remove_r`, `twoBoth_remove_s`, now in the axiom report).
 5. **The ninth's cost, reachability, jointly free results and non-product
    count survive under C-F1** (D9–D11): the states and the changes are the
    ninth's. Under C-F2 they do not as a count of results: the one-term state
-   asserting nothing is two tagged results, and the pair tag `0ℓ0` costs 3
-   against size 1 (D12, `tagged_cost_fails`).
+   asserting nothing is three tagged results — tagged nothing at cost 1, and a
+   pair tag `0ℓ0` and a merge tag `∼0`, both at cost 3 against size 1 (D12).
+   A route of 3 to the pair tag is shown in Lean (`tagged_cost_fails`, an
+   upper bound); that 3 is the fewest is computed.
 6. Leftover is not a third relation (`no_third_rel`). The tenth's
    three-outcome grading is a different seed.
 
@@ -82,7 +84,14 @@ identification of `u` and `v` leaves those two terms written `u∼v`. The
 letter `ℓ` is neither `r` nor `s`.
 
 **C-F2 (unchosen, kept).** A result is a ninth state together with the leftover
-writing of the incoming change; the beginning is tagged nothing. Both computed.
+writing of the incoming change, counted up to writing: the state and the
+writing's terms are renumbered *together* (`canonical_tagged`), so the tag
+names the result's own terms. A removal's tag keeps its pair; an
+identification's tag keeps only the surviving term (`∼u`), the other term
+being gone from the result — naming it would name an absent term. An earlier
+version canonicalized the state but not the tag, which merged and split
+tagged results wrongly and named absent terms; that was corrected at review
+(change log), moving the 2-term 5-round count from 130 to 131. Both computed.
 
 C3, C5⁗, C6, C8′, C9 of the ninth paper, unchanged in kind. Bounds used here
 (C8′): 3 terms with 6 rounds; 3 terms with 5; 2 terms with 8; full logs at 2
@@ -96,22 +105,31 @@ the C-F1 results is the ninth's independent count at those bounds (D10).
 `leftover_identify`. The leftover writing of a removal is `xℓy`
 (`given.json` `pair_written_uses_neither_r_nor_s`).
 
-**D4.** Leftover is not an answer. Lean `leftover_not_answer`. The first
-seed's answers (refuse, remove the obstruction, build) are not in this seed;
-leftover is a writing of a performed change.
+**D4.** Leftover is not an answer, by construction: `is_answer()` returns
+false for every leftover writing. The Lean `leftover_not_answer` is
+`L = .nothing ∨ L ≠ .nothing`, a tautology, and does not establish it; the
+content is that this seed has no answer field.
 
 **D5.** Leftover of a removal in `r` of a pair is leftover of a removal in
-`s` of that pair. Lean `leftover_remove_r_s`, `r_leftover_is_s`; both
-`Step9.remove` exist on `twoBoth` (`twoBoth_remove_r`, `twoBoth_remove_s`).
-Computed: `given.json` `r_and_s_same_leftover`.
+`s` of that pair — by construction, since `leftover_pair` names no relation.
+The Lean `leftover_remove_r_s` is `leftoverRemove x y = leftoverRemove x y`
+(definitional). The witnesses `twoBoth_remove_r`, `twoBoth_remove_s` (now in
+the axiom report) show both removals are legal changes on a state asserting
+the pair in each relation. Computed: `given.json` `r_and_s_same_leftover`,
+where the two removals are both legal (the state asserts `0 r 1` and `0 s 1`);
+the cross-relation check in `code/fourteenth/invariants.py` compares the two
+legal removals' writings on every such state (a consistency check — they
+agree by construction).
 
 **D6.** Clearing leftover is not one of the four kinds. Leftover of a
 removal is not nothing (`leftover_remove_ne_nothing`); leftover of an
 addition is nothing (`clearing_not_a_kind`). The four kinds act on terms
 and on assertions; leftover is neither. Nothing else is a change (G6).
 
-**D7.** Leftover is not a third multiplicity beside `r` and `s`. Lean
-`no_third_rel`, `leftover_not_in_M`. The state is `NDSt`.
+**D7.** Leftover is not a third multiplicity beside `r` and `s`. This is the
+chosen reading C-F1, by construction: the state is `NDSt`, with no field for
+leftover. Lean `no_third_rel`, `leftover_not_in_M` are `rfl` about the
+projections and do not mention leftover; they are not cited as a proof of D7.
 
 **D8.** An identification leaves a merge writing, not an assertion.
 `leftover_identify`; `given.json` `two_term_between_identify_leftover`.
@@ -128,23 +146,32 @@ none.
 among terms or assertions.
 
 **D10.** The C-F1 results, rounds and shortest-sequence counts are the
-ninth's at the same bound (`compare_with_ninth`; `ninth_ok` in every run).
-Completeness is the ninth's independent count. The count is not a product
-for `n ≥ 2` (9:D10, no change: leftover is not in the count).
+ninth's at the same bound. This is an identity, not a second computation:
+the C-F1 exploration is the ninth's (`fourteenth.explore.explore` wraps
+`ninth.explore.explore`), so the result, round and sequence comparisons in
+`compare_with_ninth` agree by construction and show only determinism. The one
+independent check is the count: every run's explored results equal the
+ninth's orbit count (`explored_equals_independent_count`). The count is not a
+product for `n ≥ 2` (9:D10, no change: leftover is not in the count).
 
 **D11.** Reachability is having a term, or the start is empty. Lean
-`reach14_iff`. Jointly free results: `results_pair14`. The exchange carries
-leftover of an addition and of a removal (`leftover_swap_addTerm`,
-`leftover_swap_remove`, `Step14.swap`).
+`reach14_iff`. Jointly free results: `results_pair14`. That the exchange
+carries the leftover of an addition and of a removal is definitional
+(`leftover_swap_addTerm` is `leftoverAdd = leftoverAdd`; `leftover_swap_remove`
+that the pair is unmoved), since neither writing names a relation; the change
+itself is carried by `Step14.swap`.
 
 ## 6. The unchosen tag
 
 **D12.** Under C-F2 a ninth state may be several results. The one-term state
-asserting nothing is reached tagged nothing in one change
-(`tagged_one_nothing`) and tagged `0ℓ0` in three (`tagged_cost_fails`);
-those are different results (`tagged_extra`). The tagged exploration at 2
-terms and 5 rounds has 130 results against the ninth's 101 (`tagged.json`).
-The ninth's "fewest changes is the size" fails for the pair tag (3 against 1).
+asserting nothing is three results: tagged nothing in one change
+(`tagged_one_nothing`), tagged with the pair `0ℓ0`, and tagged with the merge
+`∼0`, the last two in three changes; those are different results
+(`tagged_extra`). The Lean `tagged_cost_fails` exhibits a route of 3 to the
+pair tag, an upper bound; that 3 is the fewest is computed. The tagged
+exploration at 2 terms and 5 rounds has 131 results against the ninth's 101
+(`tagged.json`). The ninth's "fewest changes is the size" fails for the pair
+and merge tags (3 against 1, computed).
 
 ## 7. The task's questions
 
@@ -169,8 +196,8 @@ Each item has two legal witnesses, or a proof of independence.
 - Leftover is always nothing — fails: a removal (`0ℓ0`); holds: the first
   change (adding a term).
 - Leftover of a removal in `r` differs from leftover of a removal in `s` of
-  the same pair — fails: D5; holds: leftover of a removal of `(0,1)` versus
-  leftover of a removal of `(1,0)` when those pairs differ.
+  the same pair — refuted by D5: the writing names no relation, so the two
+  are equal by construction; there is no witness where they differ.
 - Every leftover writing is an assertion — fails: every performed change
   (D3); there is no holding witness among leftovers (G15).
 - The ninth's count of results is the tagged count — fails: C-F2 at 2 terms

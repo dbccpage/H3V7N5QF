@@ -24,17 +24,23 @@ Cited from the ninth derivation (`ninth.state`) and re-checked
 from __future__ import annotations
 
 from collections import defaultdict
+from itertools import permutations
 
-from ninth.state import RELATIONS, DState
+from ninth.state import RELATIONS, DState, rewrite
 
 __all__ = [
+    "automorphisms",
     "bell",
     "coarser_than",
     "determines",
     "determines_rel",
     "injective",
+    "orbit_count_burnside",
+    "permute_writing",
     "read_from",
+    "restricted_growth",
     "terms_after_writing",
+    "writing_orbits",
     "writings",
 ]
 
@@ -66,6 +72,66 @@ def writings(n: int) -> tuple[tuple[int, ...], ...]:
 def bell(n: int) -> int:
     """How many writings of `n` terms there are, up to renaming letters."""
     return len(writings(n))
+
+
+def restricted_growth(writing: tuple[int, ...]) -> tuple[int, ...]:
+    """The writing with letters renamed by first occurrence (its class up to renaming letters)."""
+    seen: dict[int, int] = {}
+    out: list[int] = []
+    for letter in writing:
+        if letter not in seen:
+            seen[letter] = len(seen)
+        out.append(seen[letter])
+    return tuple(out)
+
+
+def permute_writing(writing: tuple[int, ...], p: tuple[int, ...]) -> tuple[int, ...]:
+    """The writing after the terms are rewritten by `p` (term `t` becomes term `p[t]`).
+
+    In the same convention as `rewrite`: the letter of term `t` moves to term
+    `p[t]`, so the result is read back up to renaming letters.
+    """
+    n = len(writing)
+    moved = [0] * n
+    for t in range(n):
+        moved[p[t]] = writing[t]
+    return restricted_growth(tuple(moved))
+
+
+def automorphisms(state: DState) -> tuple[tuple[int, ...], ...]:
+    """The term permutations that leave `state` unchanged (its automorphisms)."""
+    return tuple(p for p in permutations(range(state.n)) if rewrite(state, p) == state)
+
+
+def writing_orbits(state: DState) -> tuple[tuple[int, ...], ...]:
+    """One writing of `state` per orbit under its automorphisms — its distinct labeled writings.
+
+    Two writings that a term-automorphism of `state` carries onto each other
+    (up to renaming letters) label the same result, since results that differ
+    only in how their terms are written are the same.
+    """
+    autos = automorphisms(state)
+    seen: set[tuple[int, ...]] = set()
+    reps: list[tuple[int, ...]] = []
+    for w in writings(state.n):
+        rep = min(permute_writing(w, p) for p in autos)
+        if rep not in seen:
+            seen.add(rep)
+            reps.append(rep)
+    return tuple(reps)
+
+
+def orbit_count_burnside(state: DState) -> int:
+    """The number of distinct writings by Burnside's count, independent of `writing_orbits`.
+
+    The number of orbits of the writings under the automorphisms equals the
+    average, over the automorphisms, of the writings each one fixes.
+    """
+    autos = automorphisms(state)
+    fixed_total = 0
+    for p in autos:
+        fixed_total += sum(1 for w in writings(state.n) if permute_writing(w, p) == w)
+    return fixed_total // len(autos)
 
 
 def injective(writing: tuple[int, ...]) -> bool:

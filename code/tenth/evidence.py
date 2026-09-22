@@ -26,7 +26,7 @@ from ninth.orbits import count_results, two_term_round_count
 from ninth.state import DState, empty, written
 from xry.evidence import _write_csv, _write_json, compare_evidence, write_manifest
 
-from tenth.changes import Change, Kind, first_changes, leftover_counts, other_clears
+from tenth.changes import Change, Kind, first_changes, is_addition, leftover_counts, other_clears
 from tenth.cost import cost, tagged_cost
 from tenth.explore import (
     Exploration,
@@ -201,7 +201,7 @@ def write_leftovers(out: Path, expl: Exploration, tag: str) -> dict[str, object]
                 change.rel or "",
                 leftover.value,
                 arrived.key(),
-                int(is_addition_kind(change.kind)),
+                int(is_addition(change)),
             ]
         )
     _write_csv(
@@ -210,11 +210,6 @@ def write_leftovers(out: Path, expl: Exploration, tag: str) -> dict[str, object]
         rows,
     )
     return leftover_summary(edges)
-
-
-def is_addition_kind(kind: Kind) -> bool:
-    """Is this kind an addition?"""
-    return kind in (Kind.ADD_TERM, Kind.ADD_ASSERTION)
 
 
 def leftover_summary(edges: LeftoverCheck) -> dict[str, object]:
@@ -374,8 +369,6 @@ def write_all(out: Path, plan: Plan | None = None) -> dict[str, object]:
     given = write_given(out)
     runs: dict[str, object] = {}
     for bound, rounds in plan.runs():
-        keep = bound == plan.log_bound and rounds >= plan.log_rounds
-        # keep the log only on the two-term run at log_rounds by a dedicated call
         runs[run_tag(bound, rounds)] = write_run(out, bound, rounds, plan, keep_log=False)
     log = write_run(out, plan.log_bound, plan.log_rounds, plan, keep_log=True)
     runs[run_tag(plan.log_bound, plan.log_rounds) + "_log"] = log

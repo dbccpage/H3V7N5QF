@@ -28,7 +28,7 @@ from ninth.follows import (
     verdict,
 )
 from ninth.follows import verdicts as verdicts_ninth
-from ninth.state import DState
+from ninth.state import DState, same
 
 from thirteenth.coarse import determines, same_coarser, splits
 from thirteenth.explore import Exploration
@@ -67,8 +67,13 @@ def unique_split(state: DState) -> bool:
 
 
 def swap_same_coarse(state: DState) -> bool:
-    """Exchanging the relations keeps the coarser writing and is a different finer result."""
-    return same_coarser(state, swap(state)) and state.r != state.s
+    """Exchanging the relations keeps the coarser writing and is a different finer result.
+
+    "Different finer result" is difference up to writing (`not same`), not a
+    difference in the written multiplicity tuples: a state and its exchange can
+    have `r != s` yet be the same result up to renaming the terms.
+    """
+    return same_coarser(state, swap(state)) and not same(state, swap(state))
 
 
 def both_relations(state: DState) -> bool:

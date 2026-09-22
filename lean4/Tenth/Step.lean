@@ -8,7 +8,12 @@ Leftover is recorded on the change (C-L1) as a function of the start and the
 outcome: additions raise the size and leave nothing; a removal keeps the
 terms and leaves a leftover cleared by adding that assertion; an
 identification drops a term and leaves a leftover that a later change can
-clear exactly when some one `Step9` restores the start.
+clear exactly when some one `Step9` restores the start up to writing: to
+some rewriting `rename9 π s` of it, since two results that differ only in how
+their terms are written are the same result.  (An earlier version asked for
+`Step9 t s` exactly, which made the outcome depend on which of the two terms
+the identification kept, and disagreed with `code/tenth/leftover.py`, which
+compares up to writing; see `paper/tenth/change_log.md`.)
 -/
 
 namespace Seed.Tenth
@@ -16,11 +21,18 @@ namespace Seed.Tenth
 open Seed Seed.Ninth Seed.Eighth NDSt
 open Classical
 
+/-- Rewriting by the permutation that moves nothing leaves a state as it was. -/
+theorem rename9_refl (s : NDSt) : rename9 (Equiv.refl ℕ) s = s := by
+  apply NDSt.ext
+  · simp [rename9]
+  · funext q p
+    simp [rename9]
+
 /-- Which leftover outcome the change from `s` to `t` has (C-L1). -/
 noncomputable def leftoverOf (s t : NDSt) : LeftOver :=
   if t.size = s.size + 1 then .nothingLeft
   else if t.T.card = s.T.card then .clearable
-  else if ∃ _ : Step9 t s, True then .clearable
+  else if ∃ π : Equiv.Perm ℕ, ∃ _ : Step9 t (rename9 π s), True then .clearable
   else .uncleared
 
 abbrev Step10 : NDSt → NDSt → Prop := Step9
@@ -81,8 +93,9 @@ theorem leftover_identify_twoEmpty :
     omega
   have hT : ¬ (twoEmpty.identify 0 1).T.card = twoEmpty.T.card := by
     simp [identify_twoEmpty, twoEmpty_T]
-  have hex : ∃ _ : Step9 (twoEmpty.identify 0 1) twoEmpty, True :=
-    Exists.intro identify_twoEmpty_restored trivial
-  simp [leftoverOf, hsize, hT, hex]
+  have hex : ∃ π : Equiv.Perm ℕ, ∃ _ : Step9 (twoEmpty.identify 0 1) (rename9 π twoEmpty), True :=
+    ⟨Equiv.refl ℕ, by rw [rename9_refl]; exact identify_twoEmpty_restored, trivial⟩
+  simp only [leftoverOf, hsize, hT, if_false]
+  rw [if_pos hex]
 
 end Seed.Tenth

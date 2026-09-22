@@ -31,24 +31,26 @@ leftover-as-writing are not in this seed.
    changes is reached; whether it is admitted is not given by the
    reaching; record for every result whether it is admitted; reaching a
    result does not make it admitted.
-2. **Admission is independent of the two relations.** It is not an
-   assertion of `r` or of `s` (G15, D3, `admission_not_assertion`). The
-   record names no relation. Admission of a result asserting only in `r`
-   is the same record as admission of a result asserting only in `s`
-   (D5, `r_admission_is_s`).
-3. **Every reached result can be admitted.** Reaching leaves not-admitted
-   (D4, `reaching_does_not_admit`). Recording admission is not one of the
-   four kinds (D6, `admission_not_a_kind`, `every_reached_can_be_admitted`).
-   Nothing else is a change (G6).
-4. **An admitted result does not constrain the other relation.** Admission
-   is of the result, not of a projection (D5, D8, `no_cross_constraint`).
+2. **Admission is independent of the two relations** — by construction of
+   the chosen reading C-A1. The record is `admitted`/`not-admitted`, which is
+   not an assertion of `r` or of `s` and names no relation (D3). Admission of
+   a result asserting only in `r` is the same record as admission of a result
+   asserting only in `s` (D5), the record being relation-blind; the
+   consistency check compares a result with its own `r/s` exchange.
+3. **Every reached result can be admitted** — this is the chosen reading
+   C-A1, not a derived fact: reaching leaves not-admitted (D4), and recording
+   admission is a separate act, not one of the four kinds (D6). Nothing else
+   is a change (G6).
+4. **An admitted result does not constrain the other relation** (D5, D8) —
+   again by construction: admission is of the result, not of a projection.
    Both `Step9.remove` exist on `twoBoth`.
 5. **The ninth's cost, reachability, jointly free results and non-product
    count survive under C-A1** (D9–D11): the states and the changes are the
    ninth's. Under C-A2 they do not as a count of results: the one-term
-   state asserting nothing is two tagged results, and the admitted copy
-   costs 2 against size 1 (D12, `tagged_cost_fails`).
-6. Admission is not a third relation (`no_third_rel`).
+   state asserting nothing is two tagged results, and the admitted copy costs
+   2 against size 1 (D12: a route of 2 in Lean, `tagged_cost_fails`, an upper
+   bound; that 2 is the fewest is computed).
+6. Admission is not a third relation — by construction (the state is `NDSt`).
 
 ## 1. What the seed gives
 
@@ -91,39 +93,53 @@ the C-A1 results is the ninth's independent count at those bounds (D10).
 
 ## 4. What admission is
 
-**D3.** Admission is not an assertion of `r` or of `s`. Lean
-`admission_not_assertion`, `reaching_does_not_admit`, `admitted_is_admitted`.
-The writings are `not-admitted` and `admitted`
-(`given.json` `admitted_written_uses_neither_r_nor_s`).
+**D3.** Admission is not an assertion of `r` or of `s`, by construction: the
+record is `not-admitted`/`admitted`, containing neither `r` nor `s`. The Lean
+`admission_not_assertion` is a case split on the two constructors and does not
+by itself say the record is not an assertion; `reaching_does_not_admit` is
+`reaching = .notAdmitted` (definitional). Computed: `given.json`
+`admitted_written_uses_neither_r_nor_s`.
 
-**D4.** Reaching a result does not make it admitted. Lean
+**D4.** Reaching a result does not make it admitted — the chosen reading
+C-A1: `admission_of_reaching` is not-admitted for every result. The Lean
 `reaching_does_not_admit`, `first_change_does_not_admit`,
-`step_reaches_not_admitted`. Computed: `given.json`
-`the_first_change_does_not_admit`; every performed change within the bound
-leaves not-admitted (`admissions_*.csv`).
+`step_reaches_not_admitted` are all `reaching = .notAdmitted`, definitional.
+Computed: `given.json` `the_first_change_does_not_admit`; every performed
+change within the bound leaves not-admitted (`admissions_*.csv`).
 
 **D5.** Admission of a result asserting only in `r` is the same record as
-admission of a result asserting only in `s`. Lean `r_admission_is_s`,
-`r_admission_is_s_result`; both `Step9.remove` exist on `twoBoth`
-(`twoBoth_remove_r`, `twoBoth_remove_s`). Computed: `given.json`
-`r_and_s_same_admission`.
+admission of a result asserting only in `s` — by construction, the record
+naming no relation. The Lean `r_admission_is_s` is `reaching = reaching`
+(definitional). The witnesses `twoBoth_remove_r`, `twoBoth_remove_s` show
+both removals are legal. Computed: `given.json` `r_and_s_same_admission`, and
+the consistency check in `code/fifteenth/invariants.py` compares the record
+of each result with the record of its `r/s` exchange (`swap`), which a
+relation-dependent record would break.
 
-**D6.** Admitting is not one of the four kinds. Lean `admission_not_a_kind`,
-`every_reached_can_be_admitted` (`StepTagged.record`, not a `Step9`). The
-four kinds act on terms and on assertions; admission is neither. Nothing
-else is a change (G6).
+**D6.** Admitting is not one of the four kinds (`admission_not_a_kind`, i.e.
+`reaching = .notAdmitted`, definitional). That **every reached result can be
+admitted** is the chosen reading C-A1, not a derived fact: the Lean
+`every_reached_can_be_admitted` is the `StepTagged.record` constructor of the
+unchosen reading C-A2, exhibiting the admitted copy, not proving reachedness
+implies admissibility. The four kinds act on terms and on assertions;
+admission is neither. Nothing else is a change (G6).
 
-**D7.** Admission is not a third multiplicity beside `r` and `s`. Lean
-`no_third_rel`, `admission_not_in_M`. The state is `NDSt`.
+**D7.** Admission is not a third multiplicity beside `r` and `s`, by
+construction: the state is `NDSt`, with no admission field. Lean
+`no_third_rel`, `admission_not_in_M` are `rfl` on the projections and do not
+mention admission.
 
-**D8.** An admitted result does not constrain the other relation.
-`no_cross_constraint`; `admission_not_of_relation`. Admission is of the
-result, not of a projection.
+**D8.** An admitted result does not constrain the other relation — by
+construction (admission is of the result, not of a projection). Lean
+`no_cross_constraint` is `rfl` with two `Step9.remove` facts on `twoBoth`,
+and `admission_not_of_relation` is `reaching = .notAdmitted`; neither
+mentions a constraint.
 
 The admission statements about a result (is not admitted; is admitted; is
 an assertion record; can be admitted) under C-A1: "is not admitted" and
 "can be admitted" hold of every reached result; "is admitted" and "is an
-assertion record" hold of none (`admission_verdicts`).
+assertion record" hold of none (`admission_verdicts`). All four are settled
+by the chosen reading, not emergent.
 
 ## 5. What of the ninth survives
 
@@ -132,32 +148,41 @@ assertion record" hold of none (`admission_verdicts`).
 among terms or assertions.
 
 **D10.** The C-A1 results, rounds and shortest-sequence counts are the
-ninth's at the same bound (`compare_with_ninth`; `ninth_ok` in every run).
-Completeness is the ninth's independent count. The count is not a product
-for `n ≥ 2` (9:D10, no change: admission is not in the count).
+ninth's at the same bound. This is an identity, not a second computation:
+the C-A1 exploration is the ninth's (`fifteenth.explore.explore` wraps
+`ninth.explore.explore`), so the result, round and sequence comparisons in
+`compare_with_ninth` agree by construction and show only determinism. The one
+independent check is the count: every run's explored results equal the
+ninth's orbit count (`explored_equals_independent_count`). The count is not a
+product for `n ≥ 2` (9:D10, no change: admission is not in the count).
 
 **D11.** Reachability is having a term, or the start is empty. Lean
-`reach15_iff`. Jointly free results: `results_pair15`. The exchange keeps
-the admission record (`admission_swap`, `admission_swap_admitted`,
-`Step15.swap`).
+`reach15_iff`. Jointly free results: `results_pair15`. That the exchange keeps
+the admission record is definitional (`admission_swap`,
+`admission_swap_admitted` are `reaching = reaching` / `admitted = admitted`),
+since the record names no relation; the change itself is carried by
+`Step15.swap`.
 
 ## 6. The unchosen tag
 
 **D12.** Under C-A2 a ninth state may be several results. The one-term state
 asserting nothing is reached not-admitted in one change
-(`tagged_one_nothing`) and admitted in two (`tagged_cost_fails`); those are
-different results (`tagged_extra`). The tagged exploration at 2 terms and 5
-rounds has 137 results against the ninth's 101 (`tagged.json`). The ninth's
-"fewest changes is the size" fails for the admitted tag (2 against 1).
+(`tagged_one_nothing`) and admitted in two; those are different results
+(`tagged_extra`). The Lean `tagged_cost_fails` exhibits a route of 2 to the
+admitted copy, an upper bound; that 2 is the fewest is computed. The tagged
+exploration at 2 terms and 5 rounds has 137 results against the ninth's 101
+(`tagged.json`). The ninth's "fewest changes is the size" fails for the
+admitted tag (2 against 1, computed).
 
 ## 7. The task's questions
 
-- **Is admission independent of the two relations?** Yes (D3, D5, D7): it
-  is not an assertion of `r` or of `s`, it names no relation, and it is not
-  a third multiplicity.
-- **Can every reached result be admitted?** Yes (D4, D6): reaching leaves
-  not-admitted; recording admission is available for every ninth state and
-  is not a change of the four kinds.
+- **Is admission independent of the two relations?** Yes, by construction of
+  C-A1 (D3, D5, D7): the record is not an assertion of `r` or of `s`, names
+  no relation, and is not a third multiplicity.
+- **Can every reached result be admitted?** Yes — this is the chosen reading
+  C-A1 (D4, D6), not a derived fact: reaching leaves not-admitted, and
+  recording admission is a separate act available for every ninth state, not
+  a change of the four kinds.
 - **Does an admitted result in one relation constrain the other?** No
   (D5, D8): admission is of the result, not of a projection.
 - **Which of the ninth's cost, reachability, results and count survive?**
@@ -168,13 +193,18 @@ rounds has 137 results against the ninth's 101 (`tagged.json`). The ninth's
 
 Each item has two legal witnesses, or a proof of independence.
 
-- Reaching a result admits it — fails: every reached result under C-A1
-  (D4); there is no holding witness among C-A1 results.
+- Reaching a result admits it — refuted by the chosen reading C-A1 (D4):
+  reaching leaves not-admitted, so there is no witness where it holds. This
+  is a chosen reading, not a statement with two witnesses.
 - Admission of a result asserting only in `r` differs from admission of a
-  result asserting only in `s` — fails: D5; holds: the two records
-  not-admitted and admitted on one ninth state (C-A2).
-- Every admission record is an assertion — fails: every reached result
-  (D3); there is no holding witness among admission records (G15).
+  result asserting only in `s` — refuted by D5 (the record names no
+  relation), so the two agree by construction and there is no witness where
+  they differ. (The two records not-admitted and admitted on one ninth state
+  under C-A2 witness a *different* statement — that a state has two admission
+  copies — not this one.)
+- Every admission record is an assertion — refuted (D3): the record is
+  `admitted`/`not-admitted`, never an assertion, so there is no witness
+  where it holds.
 - The ninth's count of results is the tagged count — fails: C-A2 at 2 terms
   and 5 rounds; holds: C-A1, identity on states.
 

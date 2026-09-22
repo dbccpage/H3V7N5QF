@@ -36,3 +36,32 @@ Each material change, and its reason. Newest last. Commits are on the branch
    gained `paper/fourteenth/paper.md` (hits of graph-theory terms in §10).
    Reason: the gate tracks every watched hit; the body of the paper has
    none.
+
+6. **Review repairs (pull request #30).** The tagged (C-F2) count moves from
+   130 to 131; each item corrects a defect found at review.
+   - *The tagged reading numbered the leftover tag inconsistently with the
+     result.* `tagged_perform` canonicalized the result state but kept the
+     leftover tag in the pre-change numbering, so it merged and split tagged
+     results wrongly and named absent terms. The state and the tag's terms
+     are now renumbered together (`state.py` `canonical_tagged`). An
+     identification's tag keeps only the surviving term (`∼u`), the other
+     being gone from the result. The 2-term 5-round count becomes 131
+     (extra 30), matching an independent joint-canonical recount.
+   - *The D5 witness used a non-change.* `given.json` removed `0 s 1` from a
+     state asserting nothing in `s`, which is not a change. The witness now
+     asserts the pair in both relations, so both removals are legal; the
+     cross-relation check in `invariants.py` is guarded by `has(...)` so it
+     compares two real changes.
+   - *The axiom report was missing cited theorems.* `twoBoth_remove_r` and
+     `twoBoth_remove_s` (§0.4/D5) had no `#print axioms` line;
+     `Fourteenth/Axioms.lean` now reports them and
+     `evidence/fourteenth/lean_axioms.txt` was regenerated.
+   - *Claims narrowed to their evidence.* D5, D7 and D4 are by construction
+     (the pair writing names no relation; the state has no leftover field; no
+     answer field); their Lean theorems are definitional (`leftover_remove_r_s`
+     is `x = x`; `no_third_rel` is `rfl`; `leftover_not_answer` is a
+     tautology) and are no longer cited as proofs. D10 is an identity (the
+     C-F1 exploration wraps the ninth's), so only the independent count is a
+     check. D12's `tagged_cost_fails` is an upper bound (a route of 3); the
+     minimum of 3 is computed. §8's D5 item is refuted, not given a bogus
+     holding witness.

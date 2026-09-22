@@ -18,6 +18,8 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Fourteenth.results_pair14' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fourteenth.no_third_rel' depends on axioms: [propext, Quot.sound]
 'Seed.Fourteenth.r_leftover_is_s' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.twoBoth_remove_r' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.twoBoth_remove_s' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fourteenth.no_cross_constraint' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fourteenth.tagged_one_nothing' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fourteenth.tagged_cost_fails' depends on axioms: [propext, Classical.choice, Quot.sound]

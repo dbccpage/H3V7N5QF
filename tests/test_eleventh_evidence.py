@@ -120,22 +120,46 @@ def test_compare_with_ninth_notices(monkeypatch: pytest.MonkeyPatch) -> None:
     seq = compare_with_ninth(expl)
     assert seq["sequence_disagreements"]
     monkeypatch.setattr(evidence, "count_shortest_sequences", real_seq)
+    # A shifted round or a lost result is refused by the sequence count itself,
+    # so it is held at the unshifted count to reach the round and result checks.
     shifted = explore(empty(), 2, 3)
+    fair = real_seq(shifted)
+    monkeypatch.setattr(evidence, "count_shortest_sequences", lambda _e: fair)
     one = next(s for s in shifted.depth if s.n == 1)
-    ninth_depth = explore_ninth(empty(), 2, 3).depth
     shifted.depth[one] += 1
-    assert shifted.depth[one] != ninth_depth[one]
+    moved = compare_with_ninth(shifted)
+    assert not ninth_ok(moved) and moved["round_disagreements"] == [one.key()]
     expl2 = explore(empty(), 2, 3)
     gone = next(s for s in list(expl2.depth) if s.n == 0)
     expl2.depth.pop(gone)
-    assert gone not in expl2.depth and gone in ninth_depth
+    lost = compare_with_ninth(expl2)
+    assert not ninth_ok(lost) and lost["missing_results"] == [gone.key()]
+    assert not lost["explored_equals_independent_count"]
+
+
+def test_labeled_of_merges_automorphic_writings_at_three_terms() -> None:
+    from eleventh.changes import labeled_of
+    from eleventh.writing import orbit_count_burnside, writings
+
+    bare_three = DState.of(3, [], [])
+    labeled = labeled_of(bare_three)
+    writings_seen = {lab.writing for lab in labeled}
+    # The five writings of three terms are all-same, all-distinct, and three
+    # "one pair shares a letter" writings; under the bare state's full symmetry
+    # those three are one orbit, so five writings give three labeled results.
+    assert len(labeled) == len(writings_seen) == orbit_count_burnside(bare_three) == 3
+    assert len(writings(3)) == 5
+    assert (0, 0, 1) in writings_seen and (0, 1, 0) not in writings_seen and (0, 1, 1) not in writings_seen
+    # At two terms every writing is its own orbit, so nothing merges there.
+    for state in (DState.of(2, [], []), DState.of(2, [(0, 1)], []), DState.of(2, [(0, 0)], [(1, 1)])):
+        assert len(labeled_of(state)) == orbit_count_burnside(state) == len(writings(2)) == 2
 
 
 def test_labeled_and_writings_ok_can_fail() -> None:
     assert not labeled_ok(
         {
             "more_results_than_the_ninth": False,
-            "labeled_equals_bell_sum": True,
+            "labeled_equals_orbit_count": True,
             "labeled_cost_equals_size": True,
             "two_term_empty_apart_cost": 2,
             "two_term_empty_size": 2,

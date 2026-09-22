@@ -129,7 +129,13 @@ writing has a term exactly when the finer state has one (`coarse_has_term`).
 The coarser statements (determines the finer one; unique split; exchange
 is a different finer result with the same coarser writing; both relations
 used) each hold of some result and fail of some result within 2 terms and
-4 rounds (`coarse_verdicts`). None holds of every result.
+8 rounds (`coarse_verdicts`; `coarse_statements_holding_of_every_result`
+empty in the committed `summary_bound2_rounds8.json`). None holds of every
+result. "A different finer result with the same coarser writing" is read as
+difference up to writing (`not same`), not as differing written tuples: a
+state and its exchange can have differing `r` and `s` tuples yet be the same
+result up to renaming the terms, and those are excluded (corrected at
+review; change log).
 
 ## 5. What of the ninth survives
 
@@ -139,11 +145,15 @@ not counted among terms or assertions. The size of the coarser writing is
 that same number, so the cost *descends*.
 
 **D10.** The C-C1 results, rounds and shortest-sequence counts are the
-ninth's at the same bound (`compare_with_ninth`; `ninth_ok` in every run:
-518 results at 3 terms and 6 rounds, 140 at 3 and 5, 1556 at 2 and 8, 12
-at 2 and 3). Completeness is the ninth's independent count. The count is
-not a product for `n ≥ 2` (9:D10, no change: a coarser writing is not in
-the C-C1 count).
+ninth's at the same bound. This is an identity, not a second computation:
+the C-C1 exploration is the ninth's (`thirteenth.explore.explore` wraps
+`ninth.explore.explore`), so the result, round and sequence comparisons in
+`compare_with_ninth` agree by construction and show only determinism (518
+results at 3 terms and 6 rounds, 140 at 3 and 5, 1556 at 2 and 8, 12 at 2
+and 3). The one independent check is the count: every run's explored results
+equal the ninth's orbit count (`explored_equals_independent_count`). The
+count is not a product for `n ≥ 2` (9:D10, no change: a coarser writing is
+not in the C-C1 count).
 
 **D11.** Reachability is having a term, or the start is empty. Lean
 `reach13_iff`. Jointly free results: `results_pair13`. The exchange keeps

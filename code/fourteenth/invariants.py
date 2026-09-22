@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from ninth.changes import Change, Kind, is_addition
 
 from fourteenth.explore import Exploration, leftover_performed
-from fourteenth.leftover import clearing_is_a_kind, leftover_of, leftover_pair
+from fourteenth.leftover import clearing_is_a_kind, leftover_of
 
 __all__ = ["LeftoverCheck", "check_leftovers"]
 
@@ -55,9 +55,15 @@ def check_leftovers(expl: Exploration) -> LeftoverCheck:
         if change.kind is Kind.REMOVE:
             if writing.kind != "pair" or writing.x != change.x or writing.y != change.y:
                 out.removals_not_pair.append(written)
-            other = Change(Kind.REMOVE, "s" if change.rel == "r" else "r", change.x, change.y)
-            if leftover_of(state, other) != leftover_pair(change.x, change.y):
-                out.cross_relation_disagree.append(written)
+            # D5, checked only where both removals are legal changes: removing
+            # the pair in the other relation leaves the same writing (the pair
+            # names no relation).  Guarded by `has`, so it compares two real
+            # changes rather than a change against a non-change.
+            other_rel = "s" if change.rel == "r" else "r"
+            if state.has(other_rel, change.x, change.y):
+                other = Change(Kind.REMOVE, other_rel, change.x, change.y)
+                if leftover_of(state, other) != leftover_of(state, change):
+                    out.cross_relation_disagree.append(written)
         if change.kind is Kind.IDENTIFY and (writing.kind != "merge" or leftover_of(state, change) != writing):
             out.identify_not_merge.append(written)
         if writing.is_assertion():

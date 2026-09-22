@@ -40,7 +40,7 @@ derivation.
 | D6 | The coarser writing is not a third multiplicity beside `r` and `s` | derived | Lean `no_third_rel`, `coarse_not_assertion` | std | identity on `NDSt` | a seed sentence making the coarser writing a multiplicity of a third relation |
 | D8 | The size of the coarser writing equals the size of the finer state; having a term is preserved | derived + computed | Lean `size_coarse`, `coarse_cost_descends`, `coarse_has_term`; `given.json` `size_descends_between` | std | 9:D4 identity on size | a coarser writing whose size differs from its finer state's |
 | D9 | Under C-C1 fewest changes is the size; the cost descends | derived + computed | Lean `fewest_changes13`; `summary_*.json` `ninth_derivation.same_results` | std | 9:D4 identity | a C-C1 result whose round is not its size |
-| D10 | C-C1 results, rounds, sequences and count are the ninth's; count not a product for `n ≥ 2` | derived (paper) + computed | `compare_with_ninth`; `ninth_ok` in every run; 9:D10 for the non-product | — | 9:D5, 9:D10 computed again / no change | a C-C1 result the ninth lacks, or the reverse |
+| D10 | C-C1 results, rounds, sequences and count are the ninth's; count not a product for `n ≥ 2` | derived (identity) + computed | the C-C1 exploration wraps the ninth's, so `same_results`, rounds and sequences agree by construction; the one independent check is `explored_equals_independent_count` (the ninth's orbit count); 9:D10 for the non-product | — | 9:D5, 9:D10 identity / no change | an explored count different from the independent count |
 | D11 | Reachability is having a term; jointly free results; exchange keeps the coarser writing | derived | Lean `reach13_iff`, `results_pair13`, `coarse_swap`, `Step13.swap`, `coarse_has_term` | std | 9:D8, 9:D5, 9:D16 identity | a pair the criterion admits with no sequence |
 | D12 | Under C-C2 `0 r 1` and `0 s 1` are one result; 25 coarser results against 101 ninth results at 2 terms / 5 rounds; cost-as-size survives | derived + computed | Lean `coarse_extra`; `coarse.json` | std | 9:D4 survives as size; 9:D5, 9:D10 fail as a count | equal coarser and ninth counts at that bound; a coarser cost not equal to the size |
 
@@ -49,7 +49,7 @@ derivation.
 | ID | Statement | Status | Evidence | Axioms | Re-check | What would falsify it |
 |---|---|---|---|---|---|---|
 | K1 | `0 r 1` and `0 s 1` same coarser, different finer; empty determines; size descends; add-`r` / add-`s` same coarser | computed | `given.json` | — | — | those witnesses failing |
-| K2 | Coarser statements about a result do not follow | computed | `coarse_verdicts`; `coarse_statements_holding_of_every_result` is empty at 3 or more rounds | — | 9:D14 for state statements, identity | a coarser statement true of every result within 2 terms and 4 rounds |
+| K2 | Coarser statements about a result do not follow | computed | `coarse_verdicts`; `coarse_statements_holding_of_every_result` empty in the committed `summary_bound2_rounds8.json`. The exchange statement counts a result different from its exchange up to writing (`not same`), not merely differing `r`/`s` tuples (corrected at review) | — | 9:D14 for state statements, identity | a coarser statement true of every result within 2 terms and 8 rounds |
 | K3 | C-C2 at 2 terms and 5 rounds has 25 results against the ninth's 101; seventh independent count agrees | computed | `coarse.json` | — | 9:K results computed again and quotiented | equal coarser and ninth counts at that bound |
 
 ## Open

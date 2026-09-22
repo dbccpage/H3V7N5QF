@@ -34,3 +34,23 @@ Each material change, and its reason. Newest last. Commits are on the branch
    gained `paper/twelfth/paper.md` (hits of graph-theory terms in §10).
    Reason: the gate tracks every watched hit; the body of the paper has
    none.
+
+6. **Review repairs (pull request #28).** No computed number moved; each
+   item corrects a defect found at review.
+   - *The count of recorded results on the one-term empty state was wrong in
+     the prose.* §0 item 6 and §6/D12 said "two recorded results"; within the
+     2-term 5-round bound there are six (one at cost 1, one at cost 3, four at
+     cost 5), as `recorded.json` already shows. The prose now states six and
+     notes the Lean `recorded_extra` shows only that two of them differ.
+   - *The axiom report was missing a cited theorem.* §5/D11 cites
+     `recordOf_swap`; `Twelfth/Axioms.lean` had no `#print axioms` line for
+     it. One was added and `evidence/twelfth/lean_axioms.txt` regenerated.
+   - *Claims narrowed to their evidence.* D3 (the record of a relation is
+     read from that relation) and D6 (the record is not a third multiplicity)
+     are by construction of C-M1, not emergent; their Lean theorems are
+     definitional (`record_determined_by_rel` is `simp [recordRel]` and
+     stated for `r`; `no_third_rel` is `rfl`) and are no longer cited as
+     proofs. D10 is an identity (the C-M1 exploration wraps the ninth's), so
+     only the independent count is a check. D12's `recorded_cost_is_size` is
+     a definitional unfold. K2 is attributed to the committed 2-term 8-round
+     run, not a 2-term 4-round run the evidence does not contain.

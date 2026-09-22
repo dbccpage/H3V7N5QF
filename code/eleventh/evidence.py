@@ -47,6 +47,7 @@ from eleventh.writing import (
     determines,
     determines_rel,
     injective,
+    orbit_count_burnside,
     read_from,
     terms_after_writing,
 )
@@ -351,7 +352,7 @@ def write_labeled(out: Path, bound: int, rounds: int) -> dict[str, object]:
     extra = len(expl.depth) - len(ninth.depth)
     expected = 0
     for state in ninth.depth:
-        expected += bell(state.n)
+        expected += orbit_count_burnside(state)
     size_failures = []
     for labeled, depth in expl.depth.items():
         if depth != labeled.size:
@@ -370,7 +371,8 @@ def write_labeled(out: Path, bound: int, rounds: int) -> dict[str, object]:
         "ninth_results": len(ninth.depth),
         "extra_results": extra,
         "more_results_than_the_ninth": extra > 0,
-        "labeled_equals_bell_sum": len(expl.depth) == expected,
+        "labeled_equals_orbit_count": len(expl.depth) == expected,
+        "orbit_count": expected,
         "two_term_empty_apart_cost": labeled_cost(expl, apart),
         "two_term_empty_collide_cost": labeled_cost(expl, collide),
         "two_term_empty_size": two.size,
@@ -389,7 +391,7 @@ def labeled_ok(block: dict[str, object]) -> bool:
     """C-W2 has extra results; cost of a labeled result is still the size."""
     return bool(
         block["more_results_than_the_ninth"]
-        and block["labeled_equals_bell_sum"]
+        and block["labeled_equals_orbit_count"]
         and block["labeled_cost_equals_size"]
         and block["two_term_empty_apart_cost"] == block["two_term_empty_size"] == 2
         and block["two_term_empty_collide_cost"] == 2

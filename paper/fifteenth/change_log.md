@@ -36,3 +36,29 @@ Each material change, and its reason. Newest last. Commits are on the branch
    gained `paper/fifteenth/paper.md` (hits of graph-theory terms in §10).
    Reason: the gate tracks every watched hit; the body of the paper has
    none.
+
+6. **Review repairs (pull request #31).** No committed number moved; each
+   item corrects a defect found at review.
+   - *The cross-relation check compared a value with a copy of itself.*
+     `check_admissions` compared `admission_of_reaching(arrived)` with the
+     record it had already computed from the same function on the same state,
+     so it could not disagree. It now compares each result's record with the
+     record of its `r/s` exchange (`swap`), which a relation-dependent record
+     would break; a test drives it with such a record.
+   - *Two injection tests never called the code under test.* In
+     `test_compare_with_ninth_notices` the lost-result case removed a result
+     and asserted only its own change; it now calls `compare_with_ninth` and
+     asserts the missing result and the failed independent count.
+   - *Claims narrowed to their evidence.* The admission model is a constant
+     under the chosen reading C-A1 (reaching leaves not-admitted; every
+     result can be admitted; the record names no relation), so D3–D8 are by
+     construction, not derived; their Lean theorems are definitional
+     (`reaching_does_not_admit`, `admission_not_a_kind`, `r_admission_is_s`,
+     `admission_swap` are `reaching = .notAdmitted` or `x = x`; `no_third_rel`
+     is `rfl`) and are no longer cited as proofs. "Every reached result can be
+     admitted" (D6) is the chosen reading C-A1, not a derived fact; its Lean
+     `every_reached_can_be_admitted` is the C-A2 record constructor. D10 is an
+     identity (the C-A1 exploration wraps the ninth's), so only the
+     independent count is a check. D12's `tagged_cost_fails` is an upper bound
+     (a route of 2); the minimum of 2 is computed. §8's items are refuted by
+     the chosen reading rather than given absent or mismatched witnesses.

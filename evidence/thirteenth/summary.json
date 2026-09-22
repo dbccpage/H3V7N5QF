@@ -105,7 +105,7 @@
         "not_swap": [],
         "split_agrees": true,
         "splits_mismatch": [],
-        "swap_collapses": 1532
+        "swap_collapses": 1516
       },
       "empty_changes": 1,
       "ninth_derivation": {
@@ -144,7 +144,7 @@
         "not_swap": [],
         "split_agrees": true,
         "splits_mismatch": [],
-        "swap_collapses": 130
+        "swap_collapses": 124
       },
       "empty_changes": 1,
       "ninth_derivation": {
@@ -183,7 +183,7 @@
         "not_swap": [],
         "split_agrees": true,
         "splits_mismatch": [],
-        "swap_collapses": 502
+        "swap_collapses": 492
       },
       "empty_changes": 1,
       "ninth_derivation": {

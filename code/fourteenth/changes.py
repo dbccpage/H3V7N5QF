@@ -33,7 +33,7 @@ from ninth.changes import (
 )
 
 from fourteenth.leftover import LeftWriting, leftover_of
-from fourteenth.state import DState, Tagged, canonical
+from fourteenth.state import DState, Tagged, canonical_tagged
 
 __all__ = [
     "KINDS",
@@ -67,9 +67,14 @@ def leftover_counts(state: DState) -> tuple[int, int, int, int]:
 
 
 def tagged_perform(tagged: Tagged, change: Change) -> Tagged:
-    """Perform `change` on a tagged state: the leftover of this change becomes the tag."""
-    out = canonical(perform(tagged.state, change))
-    return Tagged(out, leftover_of(tagged.state, change))
+    """Perform `change` on a tagged state: the leftover of this change becomes the tag.
+
+    The result state and the leftover's terms are renumbered together
+    (`canonical_tagged`), so the tag names the result's own terms rather than
+    the pre-change numbering.
+    """
+    out = perform(tagged.state, change)
+    return canonical_tagged(out, leftover_of(tagged.state, change))
 
 
 def leftover_of_outcome(state: DState, change: Change) -> LeftWriting:

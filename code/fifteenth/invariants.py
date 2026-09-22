@@ -11,6 +11,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from ninth.state import swap
+
 from fifteenth.admission import (
     admission_is_a_kind,
     admission_of_reaching,
@@ -56,7 +58,10 @@ def check_admissions(expl: Exploration) -> AdmissionCheck:
             out.kind_records.append(written)
         if record.is_of_relation(change.rel or "r") or record.is_of_relation(other_relation(change.rel) if change.rel else "s"):
             out.of_relation.append(written)
-        other = admission_of_reaching(arrived)
-        if other != record:
+        # D5: admission names no relation, so the record of a result is the
+        # record of its r/s exchange.  Comparing the result with its own swap
+        # (not a value against a copy of itself) is a real check: a
+        # relation-dependent record makes an asymmetric result disagree.
+        if admission_of_reaching(arrived) != admission_of_reaching(swap(arrived)):
             out.cross_relation_disagree.append(written)
     return out
