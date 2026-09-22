@@ -51,3 +51,10 @@ Each material change, and its reason. Newest last. Commits are on the branch
      exploration wraps the ninth's), so only the independent count is a
      check. K2 is attributed to the committed 2-term 8-round run, not a
      2-term 4-round run the evidence does not contain.
+
+7. **Definitional-citation gate (`ci/check_definitional_citations.py`).** The
+   new OEWAS gate flagged D6 ("the coarser writing is not a third
+   multiplicity") as marked *derived* on `no_third_rel`/`coarse_not_assertion`,
+   which are `rfl` on the projections and never name the coarser writing. D6
+   is now marked chosen by construction (the state is `NDSt`, no coarse
+   field); the Lean is definitional, not a proof of it.

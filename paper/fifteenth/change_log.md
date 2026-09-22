@@ -62,3 +62,8 @@ Each material change, and its reason. Newest last. Commits are on the branch
      independent count is a check. D12's `tagged_cost_fails` is an upper bound
      (a route of 2); the minimum of 2 is computed. §8's items are refuted by
      the chosen reading rather than given absent or mismatched witnesses.
+
+7. **Definitional-citation gate.** The gate flagged D11's ledger row for
+   citing `admission_swap`/`admission_swap_admitted` (`reaching = reaching`,
+   `admitted = admitted`) as *derived*; the row now discloses that the
+   exchange-keeps-record part is definitional (matching the paper §5).
