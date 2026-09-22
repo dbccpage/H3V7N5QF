@@ -1,11 +1,12 @@
 """The dynamic mutation-bite gate (`ci/check_mutation_bite.py`).
 
-No hosted CI, so this test IS the gate: every registered differential check
-must bite under a derivation mutation.  The gate is injection-proven by
-reconstructing the ORIGINAL vacuous form of the fifteenth's cross-relation
-check -- comparing a result's admission record with a copy of itself -- and
-showing it survives the mutation, which the gate reports.  A gate is proved by
-biting, not by being green (`ci/OEWAS_GATES.md`).
+No hosted CI, so this test IS the gate: every disagreement field of every
+derivation's check dataclass must bite under its registered mutation, and the
+panel must cover every field.  The gate is injection-proven three ways: a
+reconstructed vacuous check does not bite (and is reported), removing a bite
+case is reported as an uncovered field, and the whole panel is green on the
+repository.  A gate is proved by biting, not by being green
+(`ci/OEWAS_GATES.md`).
 """
 
 from __future__ import annotations
@@ -26,16 +27,30 @@ def test_gate_is_clean() -> None:
     assert cmb.main([]) == 0
 
 
-def test_every_registered_check_bites() -> None:
-    for case in cmb.registry():
-        assert cmb.run_case(case) is None, case.name
+def test_every_field_is_covered_and_bites() -> None:
+    for panel in cmb.panels():
+        assert cmb.check_panel(panel) == [], panel.derivation
 
 
-def _vacuous_fifteenth_case() -> cmb.BiteCase:
-    """The fifteenth's cross-relation check as it was BEFORE the repair: it
-    compared `admission_of_reaching(arrived)` with the `record` the generator
-    already computed as `admission_of_reaching(out)` for the same state -- a
-    value against a copy of itself."""
+def test_panel_covers_exactly_the_disagreement_fields() -> None:
+    for panel in cmb.panels():
+        fields = cmb.disagreement_fields(panel.check_class)
+        assert set(panel.cases) == set(fields), panel.derivation
+
+
+def test_removing_a_bite_case_is_reported_as_uncovered() -> None:
+    panel = next(p for p in cmb.panels() if p.derivation == "fifteenth")
+    dropped = dict(panel.cases)
+    del dropped["cross_relation_disagree"]
+    crippled = cmb.Panel(panel.derivation, panel.check_class, panel.signals, dropped)
+    problems = cmb.check_panel(crippled)
+    assert any("cross_relation_disagree" in p and "uncovered" in p for p in problems)
+
+
+def test_gate_catches_a_vacuous_check() -> None:
+    """A vacuous cross-relation check -- comparing a result's admission record
+    with a copy of itself -- does not bite under the mutation, and the panel
+    reports it."""
     import fifteenth.explore as fexplore
     import fifteenth.invariants as finv
     from fifteenth.admission import Admission
@@ -43,39 +58,28 @@ def _vacuous_fifteenth_case() -> cmb.BiteCase:
     from fifteenth.invariants import AdmissionCheck
     from ninth.state import DState, empty
 
-    def vacuous_check(expl: Any) -> AdmissionCheck:
+    def vacuous_signals() -> frozenset[str]:
         out = AdmissionCheck()
-        for _state, _change, arrived, record in admission_performed(expl):
+        for _state, _change, arrived, record in admission_performed(explore(empty(), 2, 4)):
             out.checked += 1
-            # late-bound access, so the mutation is seen; both sides are the
-            # admission of the same state, so they can never disagree.
-            if getattr(finv, "admission_of_reaching")(arrived) != record:
+            if getattr(finv, "admission_of_reaching")(arrived) != record:  # a value vs a copy of itself
                 out.cross_relation_disagree.append("x")
-        return out
+        return cmb._nonempty_lists(out)
 
-    def signals() -> frozenset[str]:
-        return cmb._nonempty_lists(vacuous_check(explore(empty(), 2, 4)))
-
-    @contextmanager
-    def mutate() -> Iterator[None]:
+    def relation_dependent() -> Any:
         def wrong(s: Any) -> Admission:
             return Admission(True) if isinstance(s, DState) and s.total_r > s.total_s else Admission(False)
 
-        with cmb.patch_everywhere("fifteenth", "admission_of_reaching", wrong):
-            yield
+        return cmb.everywhere("fifteenth", "admission_of_reaching", wrong)
 
-    del fexplore  # imported to ensure the module is loaded so patch_everywhere sees it
-    return cmb.BiteCase("probe: vacuous cross-relation", signals, mutate, "cross_relation_disagree")
-
-
-def test_gate_catches_a_vacuous_check() -> None:
-    reason = cmb.run_case(_vacuous_fifteenth_case())
-    assert reason is not None and "does not bite" in reason
+    del fexplore  # loaded so patch_everywhere sees its binding
+    panel = cmb.Panel("probe", AdmissionCheck, vacuous_signals, {"cross_relation_disagree": relation_dependent})
+    problems = cmb.check_panel(panel)
+    assert any("cross_relation_disagree" in p and "does not bite" in p for p in problems)
 
 
 def test_repaired_check_bites_where_the_vacuous_one_does_not() -> None:
-    # same mutation, same field: the repaired check (compares against the r/s
-    # swap) bites; the vacuous one (compares against itself) does not.
-    repaired = next(c for c in cmb.registry() if c.field == "cross_relation_disagree" and "fifteenth" in c.name)
-    assert cmb.run_case(repaired) is None
-    assert cmb.run_case(_vacuous_fifteenth_case()) is not None
+    fifteenth = next(p for p in cmb.panels() if p.derivation == "fifteenth")
+    # the real fifteenth panel's cross-relation field bites (compares against the swap)
+    problems = [p for p in cmb.check_panel(fifteenth) if "cross_relation_disagree" in p]
+    assert problems == []
