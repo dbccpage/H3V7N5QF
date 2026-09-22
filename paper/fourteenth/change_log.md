@@ -65,3 +65,8 @@ Each material change, and its reason. Newest last. Commits are on the branch
      check. D12's `tagged_cost_fails` is an upper bound (a route of 3); the
      minimum of 3 is computed. §8's D5 item is refuted, not given a bogus
      holding witness.
+
+7. **Definitional-citation gate.** The gate flagged D11's ledger row for
+   citing `leftover_swap_addTerm` (`leftoverAdd = leftoverAdd`) as *derived*;
+   the row now discloses that the exchange-carries-leftover part is
+   definitional (matching the paper §5, which already said so).
