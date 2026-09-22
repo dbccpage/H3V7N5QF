@@ -54,18 +54,44 @@ exempt. Reach: it reads Lean *source*, not the elaborated proof, so a proof
 definitional only after elaboration is missed; `#print axioms` would close
 that at the cost of a Lean build.
 
-## The dynamic layer (specified, not yet built)
+## Gate: mutation must bite (`check_mutation_bite.py`)
 
 The static self-comparison gate cannot see a vacuous check whose two sides
-are equal by computation rather than by syntax. The general form is a
-**mutation-bite** requirement, an extension of the existing injection
-discipline: for every differential check, some test must drive its
-disagreement branch by perturbing the **derivation under test**, not a shared
-reference. A check whose two sides are the same computation cannot be made to
-disagree by a one-sided perturbation, so it fails the requirement. This
-subsumes both gates dynamically; it is left as the next detector because it
-needs a small per-derivation registry of (perturbation, check) pairs, which
-is exactly the injection tests formalized.
+are equal by *computation* rather than by *syntax*. This dynamic gate closes
+that: it is a **fitness assay** for the checks. For each registered
+differential check it runs the derivation on a small exploration (the
+baseline must be clean), perturbs a *derivation-specific* record function
+(`admission_of_reaching`, `leftover_of`) **at every binding site**, and
+requires the check's disagreement field to fire. A check whose two sides are
+the same computation stays equal under the uniform perturbation -- it does not
+bite -- and fails the gate; a check that uses an independent oracle or a
+transformed argument bites and passes. It is injection-proven by
+reconstructing a real vacuous check (the fifteenth's original cross-relation
+form) and showing it survives where the repaired form bites.
+
+This is mutation testing pointed at the checks: variation (the mutation) and
+selection (the check that must kill the mutant). A check under no selective
+pressure is unfit as a detector, whatever its coverage. The registry is the
+**antigen panel** -- domain-specific by design, maintained by hand; it
+currently covers the three checks that had vacuous forms (tenth, fourteenth,
+fifteenth). The next tightening is to enumerate every disagreement field and
+require a bite case per field, so an unregistered check cannot hide.
+
+## Anti-skills are detectors, not encyclopedia entries
+
+The reason a hand-written skill/anti-skill library becomes an unfileable pile
+is that it stores knowledge **generatively** -- as descriptions of good and
+bad patterns, which cannot be enumerated, organized, or scoped to a domain. A
+biological immune system has the same problem and does not solve it by
+cataloguing pathogens; it stores **antibodies** -- detectors -- and grows them
+from exposure. These gates follow that: an anti-skill here is never a
+paragraph, it is an executable assay with an injection proof that it fires on
+the real defect and stays silent on healthy code. Detectors are
+*discriminative*, not generative -- you never enumerate all the ways to be
+wrong, you only recognize a specific wrong when it appears -- and each domain
+carries its own **antigen panel**, grown from that domain's real defects. The
+filing system is the gate structure itself: detector + injection proof +
+panel. That is where a skill/anti-skill goes; it does not go in a prompt.
 
 ## On growing this into OEWAS without forcing it
 
