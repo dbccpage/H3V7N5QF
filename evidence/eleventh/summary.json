@@ -1,0 +1,205 @@
+{
+  "given": {
+    "changes_on_the_empty_state": 1,
+    "collide_keeps_two_terms": true,
+    "identify_drops_a_term": true,
+    "r_collision_not_s": true
+  },
+  "labeled": {
+    "apart_and_collide_are_two_results": true,
+    "beginning": {
+      "cost": 0,
+      "state": "0::|",
+      "writing": []
+    },
+    "bound_on_terms": 2,
+    "extra_results": 25,
+    "labeled_cost_equals_size": true,
+    "labeled_cost_failure_count": 0,
+    "labeled_cost_failures": [],
+    "labeled_equals_orbit_count": true,
+    "labeled_of_two": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "labeled_results": 61,
+    "more_results_than_the_ninth": true,
+    "ninth_results": 36,
+    "orbit_count": 61,
+    "rounds": 4,
+    "two_term_empty_apart_cost": 2,
+    "two_term_empty_collide_cost": 2,
+    "two_term_empty_size": 2
+  },
+  "plan": {
+    "bound": 3,
+    "deep_bound": 3,
+    "deep_rounds": 5,
+    "labeled_bound": 2,
+    "labeled_rounds": 4,
+    "log_bound": 2,
+    "log_rounds": 3,
+    "rounds": 6,
+    "two_term_rounds": 8
+  },
+  "reading": "C-W1 writing on the result as a reading; C-W2 writing in the result, unchosen, kept",
+  "runs": {
+    "bound2_rounds3_log": {
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "eleventh_results": 12,
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 12,
+        "missing_results": [],
+        "ninth_results": 12,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 12,
+      "results_reached_from_what_is_given": 12,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 11,
+      "rounds": 3,
+      "statements_holding_in_every_result": [
+        "passes_on_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "passes_on_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s"
+      ],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true,
+      "writing_statements_holding_of_every_writing": [],
+      "writings": {
+        "checked": 17,
+        "coarser_of_collision_determines": [],
+        "collide_dropped_a_term": [],
+        "colliding": 4,
+        "determining": 13,
+        "identify_kept_both_terms": [],
+        "injective_not_determining": [],
+        "injective_writings": 12,
+        "r_not_s": 2,
+        "split_agrees": true
+      }
+    },
+    "bound2_rounds8": {
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "eleventh_results": 1556,
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 1556,
+        "missing_results": [],
+        "ninth_results": 1556,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 1556,
+      "results_reached_from_what_is_given": 1556,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 1555,
+      "rounds": 8,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true,
+      "writing_statements_holding_of_every_writing": [],
+      "writings": {
+        "checked": 3075,
+        "coarser_of_collision_determines": [],
+        "collide_dropped_a_term": [],
+        "colliding": 1516,
+        "determining": 1559,
+        "identify_kept_both_terms": [],
+        "injective_not_determining": [],
+        "injective_writings": 1556,
+        "r_not_s": 116,
+        "split_agrees": true
+      }
+    },
+    "bound3_rounds5": {
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "eleventh_results": 140,
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 140,
+        "missing_results": [],
+        "ninth_results": 140,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 140,
+      "results_reached_from_what_is_given": 140,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 139,
+      "rounds": 5,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null,
+      "writing_statements_holding_of_every_writing": [],
+      "writings": {
+        "checked": 381,
+        "coarser_of_collision_determines": [],
+        "collide_dropped_a_term": [],
+        "colliding": 227,
+        "determining": 154,
+        "identify_kept_both_terms": [],
+        "injective_not_determining": [],
+        "injective_writings": 140,
+        "r_not_s": 66,
+        "split_agrees": true
+      }
+    },
+    "bound3_rounds6": {
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "eleventh_results": 518,
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 518,
+        "missing_results": [],
+        "ninth_results": 518,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 518,
+      "results_reached_from_what_is_given": 518,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 517,
+      "rounds": 6,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null,
+      "writing_statements_holding_of_every_writing": [],
+      "writings": {
+        "checked": 1737,
+        "coarser_of_collision_determines": [],
+        "collide_dropped_a_term": [],
+        "colliding": 1191,
+        "determining": 546,
+        "identify_kept_both_terms": [],
+        "injective_not_determining": [],
+        "injective_writings": 518,
+        "r_not_s": 239,
+        "split_agrees": true
+      }
+    }
+  }
+}

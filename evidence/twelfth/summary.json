@@ -1,0 +1,285 @@
+{
+  "given": {
+    "changes_on_the_empty_state": 1,
+    "empty_restored": true,
+    "identify_drops_a_term": true,
+    "nonempty_not_restored": true,
+    "r_record_not_s": true
+  },
+  "plan": {
+    "bound": 3,
+    "deep_bound": 3,
+    "deep_rounds": 5,
+    "log_bound": 2,
+    "log_rounds": 3,
+    "recorded_bound": 2,
+    "recorded_rounds": 5,
+    "rounds": 6,
+    "two_term_rounds": 8
+  },
+  "reading": "C-M1 record on the identification; C-M2 record in the result, unchosen, kept",
+  "recorded": {
+    "beginning": {
+      "cost": 0,
+      "record": null,
+      "state": "0::|"
+    },
+    "bound_on_terms": 2,
+    "extra_results": 47,
+    "more_results_than_the_ninth": true,
+    "ninth_results": 101,
+    "one_term_identified_cost": 3,
+    "one_term_plain_cost": 1,
+    "one_term_size": 1,
+    "plain_and_identified_are_two_results": true,
+    "recorded_cost_equals_size": false,
+    "recorded_cost_failure_count": 47,
+    "recorded_cost_failures": [
+      {
+        "has_record": true,
+        "recorded_cost": 3,
+        "size": 1,
+        "state": "1::|"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 4,
+        "size": 2,
+        "state": "2::|"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 4,
+        "size": 2,
+        "state": "1::0-0*1|"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 4,
+        "size": 2,
+        "state": "1::|0-0*1"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 4,
+        "size": 2,
+        "state": "1::|0-0*1"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 4,
+        "size": 2,
+        "state": "1::|0-0*1"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 4,
+        "size": 2,
+        "state": "1::0-0*1|"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 4,
+        "size": 2,
+        "state": "1::0-0*1|"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 5,
+        "size": 3,
+        "state": "2::|1-1*1"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 5,
+        "size": 3,
+        "state": "1::0-0*1|0-0*1"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 5,
+        "size": 3,
+        "state": "1::|0-0*2"
+      },
+      {
+        "has_record": true,
+        "recorded_cost": 5,
+        "size": 1,
+        "state": "1::|"
+      }
+    ],
+    "recorded_results": 148,
+    "rounds": 5
+  },
+  "runs": {
+    "bound2_rounds3_log": {
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 12,
+        "missing_results": [],
+        "ninth_results": 12,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": [],
+        "twelfth_results": 12
+      },
+      "record_statements_holding_of_every_identification": [
+        "empty_record",
+        "restored",
+        "determined"
+      ],
+      "records": {
+        "checked": 1,
+        "differs": 0,
+        "empty_not_restored_isolated": [],
+        "empty_records": 1,
+        "identifications": 1,
+        "nonempty_records": 0,
+        "nonempty_restored": [],
+        "not_determined_by_rel": [],
+        "r_not_s": 0,
+        "restored_empty": 1,
+        "split_agrees": true,
+        "swap_mismatch": []
+      },
+      "results": 12,
+      "results_reached_from_what_is_given": 12,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 11,
+      "rounds": 3,
+      "statements_holding_in_every_result": [
+        "passes_on_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "passes_on_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s"
+      ],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true
+    },
+    "bound2_rounds8": {
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 1556,
+        "missing_results": [],
+        "ninth_results": 1556,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": [],
+        "twelfth_results": 1556
+      },
+      "record_statements_holding_of_every_identification": [
+        "determined"
+      ],
+      "records": {
+        "checked": 651,
+        "differs": 614,
+        "empty_not_restored_isolated": [],
+        "empty_records": 1,
+        "identifications": 651,
+        "nonempty_records": 650,
+        "nonempty_restored": [],
+        "not_determined_by_rel": [],
+        "r_not_s": 614,
+        "restored_empty": 1,
+        "split_agrees": true,
+        "swap_mismatch": []
+      },
+      "results": 1556,
+      "results_reached_from_what_is_given": 1556,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 1555,
+      "rounds": 8,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true
+    },
+    "bound3_rounds5": {
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 140,
+        "missing_results": [],
+        "ninth_results": 140,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": [],
+        "twelfth_results": 140
+      },
+      "record_statements_holding_of_every_identification": [
+        "determined"
+      ],
+      "records": {
+        "checked": 40,
+        "differs": 32,
+        "empty_not_restored_isolated": [],
+        "empty_records": 6,
+        "identifications": 40,
+        "nonempty_records": 34,
+        "nonempty_restored": [],
+        "not_determined_by_rel": [],
+        "r_not_s": 32,
+        "restored_empty": 1,
+        "split_agrees": true,
+        "swap_mismatch": []
+      },
+      "results": 140,
+      "results_reached_from_what_is_given": 140,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 139,
+      "rounds": 5,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null
+    },
+    "bound3_rounds6": {
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "independent_count": 518,
+        "missing_results": [],
+        "ninth_results": 518,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": [],
+        "twelfth_results": 518
+      },
+      "record_statements_holding_of_every_identification": [
+        "determined"
+      ],
+      "records": {
+        "checked": 202,
+        "differs": 182,
+        "empty_not_restored_isolated": [],
+        "empty_records": 9,
+        "identifications": 202,
+        "nonempty_records": 193,
+        "nonempty_restored": [],
+        "not_determined_by_rel": [],
+        "r_not_s": 182,
+        "restored_empty": 1,
+        "split_agrees": true,
+        "swap_mismatch": []
+      },
+      "results": 518,
+      "results_reached_from_what_is_given": 518,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 517,
+      "rounds": 6,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null
+    }
+  }
+}

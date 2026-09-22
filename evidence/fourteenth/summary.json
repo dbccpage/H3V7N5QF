@@ -1,0 +1,282 @@
+{
+  "given": {
+    "changes_on_the_empty_state": 1,
+    "leftover_not_answer": true,
+    "leftover_not_assertion": true,
+    "leftover_of_the_first_change": "nothing",
+    "r_and_s_same_leftover": true
+  },
+  "plan": {
+    "bound": 3,
+    "deep_bound": 3,
+    "deep_rounds": 5,
+    "log_bound": 2,
+    "log_rounds": 3,
+    "rounds": 6,
+    "tagged_bound": 2,
+    "tagged_rounds": 5,
+    "two_term_rounds": 8
+  },
+  "reading": "C-F1 leftover writing on the change; C-F2 leftover writing in the result, unchosen, kept",
+  "runs": {
+    "bound2_rounds3_log": {
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "empty_nothing": 1,
+      "leftover_statements_holding_of_every_change": [],
+      "leftovers": {
+        "additions_not_nothing": [],
+        "answer_writings": [],
+        "assertion_writings": [],
+        "checked": 21,
+        "clearing_kind": [],
+        "cross_relation_disagree": [],
+        "identify_not_merge": [],
+        "merge": 1,
+        "nothing": 18,
+        "pair": 2,
+        "removals_not_pair": [],
+        "split_agrees": true,
+        "three_kinds_inhabited": true
+      },
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fourteenth_results": 12,
+        "independent_count": 12,
+        "missing_results": [],
+        "ninth_results": 12,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 12,
+      "results_reached_from_what_is_given": 12,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 11,
+      "rounds": 3,
+      "statements_holding_in_every_result": [
+        "passes_on_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "passes_on_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s"
+      ],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true
+    },
+    "bound2_rounds8": {
+      "bound_on_terms": 2,
+      "empty_changes": 1,
+      "empty_nothing": 1,
+      "leftover_statements_holding_of_every_change": [],
+      "leftovers": {
+        "additions_not_nothing": [],
+        "answer_writings": [],
+        "assertion_writings": [],
+        "checked": 7986,
+        "clearing_kind": [],
+        "cross_relation_disagree": [],
+        "identify_not_merge": [],
+        "merge": 651,
+        "nothing": 5293,
+        "pair": 2042,
+        "removals_not_pair": [],
+        "split_agrees": true,
+        "three_kinds_inhabited": true
+      },
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fourteenth_results": 1556,
+        "independent_count": 1556,
+        "missing_results": [],
+        "ninth_results": 1556,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 1556,
+      "results_reached_from_what_is_given": 1556,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 1555,
+      "rounds": 8,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": true
+    },
+    "bound3_rounds5": {
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "empty_nothing": 1,
+      "leftover_statements_holding_of_every_change": [],
+      "leftovers": {
+        "additions_not_nothing": [],
+        "answer_writings": [],
+        "assertion_writings": [],
+        "checked": 442,
+        "clearing_kind": [],
+        "cross_relation_disagree": [],
+        "identify_not_merge": [],
+        "merge": 40,
+        "nothing": 346,
+        "pair": 56,
+        "removals_not_pair": [],
+        "split_agrees": true,
+        "three_kinds_inhabited": true
+      },
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fourteenth_results": 140,
+        "independent_count": 140,
+        "missing_results": [],
+        "ninth_results": 140,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 140,
+      "results_reached_from_what_is_given": 140,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 139,
+      "rounds": 5,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null
+    },
+    "bound3_rounds6": {
+      "bound_on_terms": 3,
+      "empty_changes": 1,
+      "empty_nothing": 1,
+      "leftover_statements_holding_of_every_change": [],
+      "leftovers": {
+        "additions_not_nothing": [],
+        "answer_writings": [],
+        "assertion_writings": [],
+        "checked": 1987,
+        "clearing_kind": [],
+        "cross_relation_disagree": [],
+        "identify_not_merge": [],
+        "merge": 202,
+        "nothing": 1513,
+        "pair": 272,
+        "removals_not_pair": [],
+        "split_agrees": true,
+        "three_kinds_inhabited": true
+      },
+      "ninth_derivation": {
+        "explored_equals_independent_count": true,
+        "extra_results": [],
+        "fourteenth_results": 518,
+        "independent_count": 518,
+        "missing_results": [],
+        "ninth_results": 518,
+        "round_disagreements": [],
+        "same_results": true,
+        "sequence_disagreements": []
+      },
+      "results": 518,
+      "results_reached_from_what_is_given": 518,
+      "results_that_reach_what_is_given": 1,
+      "results_with_a_term": 517,
+      "rounds": 6,
+      "statements_holding_in_every_result": [],
+      "the_first_round_is_the_one_term_state_alone": true,
+      "two_term_rounds_equal_closed_form": null
+    }
+  },
+  "tagged": {
+    "beginning": {
+      "cost": 0,
+      "leftover": "nothing",
+      "state": "0::|"
+    },
+    "bound_on_terms": 2,
+    "extra_results": 30,
+    "more_results_than_the_ninth": true,
+    "ninth_results": 101,
+    "one_term_nothing_cost": 1,
+    "one_term_pair_cost": 3,
+    "one_term_size": 1,
+    "rounds": 5,
+    "tagged_cost_exceeds_size": true,
+    "tagged_cost_failure_count": 30,
+    "tagged_cost_failures": [
+      {
+        "leftover": "0\u21130",
+        "size": 1,
+        "state": "1::|",
+        "tagged_cost": 3
+      },
+      {
+        "leftover": "\u223c0",
+        "size": 1,
+        "state": "1::|",
+        "tagged_cost": 3
+      },
+      {
+        "leftover": "0\u21130",
+        "size": 2,
+        "state": "1::|0-0*1",
+        "tagged_cost": 4
+      },
+      {
+        "leftover": "0\u21130",
+        "size": 2,
+        "state": "1::0-0*1|",
+        "tagged_cost": 4
+      },
+      {
+        "leftover": "\u223c0",
+        "size": 2,
+        "state": "1::|0-0*1",
+        "tagged_cost": 4
+      },
+      {
+        "leftover": "0\u21130",
+        "size": 2,
+        "state": "2::|",
+        "tagged_cost": 4
+      },
+      {
+        "leftover": "0\u21131",
+        "size": 2,
+        "state": "2::|",
+        "tagged_cost": 4
+      },
+      {
+        "leftover": "\u223c0",
+        "size": 2,
+        "state": "1::0-0*1|",
+        "tagged_cost": 4
+      },
+      {
+        "leftover": "0\u21130",
+        "size": 3,
+        "state": "1::|0-0*2",
+        "tagged_cost": 5
+      },
+      {
+        "leftover": "0\u21130",
+        "size": 3,
+        "state": "1::0-0*1|0-0*1",
+        "tagged_cost": 5
+      },
+      {
+        "leftover": "0\u21130",
+        "size": 3,
+        "state": "1::0-0*2|",
+        "tagged_cost": 5
+      },
+      {
+        "leftover": "\u223c0",
+        "size": 3,
+        "state": "1::|0-0*2",
+        "tagged_cost": 5
+      }
+    ],
+    "tagged_results": 131
+  }
+}

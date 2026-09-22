@@ -1,0 +1,54 @@
+{
+  "changes": [
+    "add a term"
+  ],
+  "empty_changes": 1,
+  "identify_drops_a_term": true,
+  "one_term_cost": 1,
+  "r_determined_by_r": true,
+  "r_record_not_s": true,
+  "reaches_itself_in_two_changes": false,
+  "s_determined_by_s": true,
+  "size": 0,
+  "state": "no terms; asserted nothing",
+  "three_term_outgoing": [
+    [
+      true,
+      false
+    ]
+  ],
+  "two_term_between_r_loop": [
+    "xy"
+  ],
+  "two_term_between_record": {
+    "r": {
+      "incoming": [],
+      "loop": [
+        "xy"
+      ],
+      "outgoing": []
+    },
+    "s": {
+      "incoming": [],
+      "loop": [],
+      "outgoing": []
+    }
+  },
+  "two_term_between_restored": false,
+  "two_term_between_s_empty": true,
+  "two_term_both_records_agree": true,
+  "two_term_empty_record": {
+    "r": {
+      "incoming": [],
+      "loop": [],
+      "outgoing": []
+    },
+    "s": {
+      "incoming": [],
+      "loop": [],
+      "outgoing": []
+    }
+  },
+  "two_term_empty_record_empty": true,
+  "two_term_empty_restored": true
+}

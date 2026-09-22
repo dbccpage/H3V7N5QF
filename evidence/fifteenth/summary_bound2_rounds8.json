@@ -1,0 +1,42 @@
+{
+  "admission_statements_holding_of_every_result": [
+    "is_not_admitted",
+    "can_be_admitted"
+  ],
+  "admissions": {
+    "admitted": 0,
+    "assertion_records": [],
+    "cannot_admit": [],
+    "checked": 7986,
+    "cross_relation_disagree": [],
+    "kind_records": [],
+    "not_admitted": 7986,
+    "of_relation": [],
+    "reaching_admits": [],
+    "reaching_never_admits": true,
+    "split_agrees": true
+  },
+  "bound_on_terms": 2,
+  "empty_changes": 1,
+  "empty_not_admitted": 1,
+  "empty_reaching_admits": 0,
+  "ninth_derivation": {
+    "explored_equals_independent_count": true,
+    "extra_results": [],
+    "fifteenth_results": 1556,
+    "independent_count": 1556,
+    "missing_results": [],
+    "ninth_results": 1556,
+    "round_disagreements": [],
+    "same_results": true,
+    "sequence_disagreements": []
+  },
+  "results": 1556,
+  "results_reached_from_what_is_given": 1556,
+  "results_that_reach_what_is_given": 1,
+  "results_with_a_term": 1555,
+  "rounds": 8,
+  "statements_holding_in_every_result": [],
+  "the_first_round_is_the_one_term_state_alone": true,
+  "two_term_rounds_equal_closed_form": true
+}

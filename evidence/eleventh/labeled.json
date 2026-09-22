@@ -1,0 +1,32 @@
+{
+  "apart_and_collide_are_two_results": true,
+  "beginning": {
+    "cost": 0,
+    "state": "0::|",
+    "writing": []
+  },
+  "bound_on_terms": 2,
+  "extra_results": 25,
+  "labeled_cost_equals_size": true,
+  "labeled_cost_failure_count": 0,
+  "labeled_cost_failures": [],
+  "labeled_equals_orbit_count": true,
+  "labeled_of_two": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "labeled_results": 61,
+  "more_results_than_the_ninth": true,
+  "ninth_results": 36,
+  "orbit_count": 61,
+  "rounds": 4,
+  "two_term_empty_apart_cost": 2,
+  "two_term_empty_collide_cost": 2,
+  "two_term_empty_size": 2
+}

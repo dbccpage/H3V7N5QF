@@ -1,0 +1,21 @@
+{"change": "add a term", "coarse": "1::", "kind": "add a term", "outcome": "1::|", "performed": true, "state": "0::|"}
+{"change": "add a term", "coarse": "2::", "kind": "add a term", "outcome": "2::|", "performed": true, "state": "1::|"}
+{"change": "add ara", "coarse": "1::0-0*1", "kind": "add an assertion", "outcome": "1::0-0*1|", "performed": true, "state": "1::|"}
+{"change": "add asa", "coarse": "1::0-0*1", "kind": "add an assertion", "outcome": "1::|0-0*1", "performed": true, "state": "1::|"}
+{"change": "remove asa", "coarse": "1::", "kind": "remove an assertion", "outcome": "1::|", "performed": true, "state": "1::|0-0*1"}
+{"change": "add a term", "coarse": "2::1-1*1", "kind": "add a term", "outcome": "2::|1-1*1", "performed": true, "state": "1::|0-0*1"}
+{"change": "add ara", "coarse": "1::0-0*2", "kind": "add an assertion", "outcome": "1::0-0*1|0-0*1", "performed": true, "state": "1::|0-0*1"}
+{"change": "add asa", "coarse": "1::0-0*2", "kind": "add an assertion", "outcome": "1::|0-0*2", "performed": true, "state": "1::|0-0*1"}
+{"change": "remove ara", "coarse": "1::", "kind": "remove an assertion", "outcome": "1::|", "performed": true, "state": "1::0-0*1|"}
+{"change": "add a term", "coarse": "2::1-1*1", "kind": "add a term", "outcome": "2::1-1*1|", "performed": true, "state": "1::0-0*1|"}
+{"change": "add ara", "coarse": "1::0-0*2", "kind": "add an assertion", "outcome": "1::0-0*2|", "performed": true, "state": "1::0-0*1|"}
+{"change": "add asa", "coarse": "1::0-0*2", "kind": "add an assertion", "outcome": "1::0-0*1|0-0*1", "performed": true, "state": "1::0-0*1|"}
+{"change": "identify a and b", "coarse": "1::", "kind": "identify two terms", "outcome": "1::|", "performed": true, "state": "2::|"}
+{"change": "add ara", "coarse": "2::1-1*1", "kind": "add an assertion", "outcome": "2::1-1*1|", "performed": true, "state": "2::|"}
+{"change": "add arb", "coarse": "2::1-0*1", "kind": "add an assertion", "outcome": "2::1-0*1|", "performed": true, "state": "2::|"}
+{"change": "add bra", "coarse": "2::1-0*1", "kind": "add an assertion", "outcome": "2::1-0*1|", "performed": true, "state": "2::|"}
+{"change": "add brb", "coarse": "2::1-1*1", "kind": "add an assertion", "outcome": "2::1-1*1|", "performed": true, "state": "2::|"}
+{"change": "add asa", "coarse": "2::1-1*1", "kind": "add an assertion", "outcome": "2::|1-1*1", "performed": true, "state": "2::|"}
+{"change": "add asb", "coarse": "2::1-0*1", "kind": "add an assertion", "outcome": "2::|1-0*1", "performed": true, "state": "2::|"}
+{"change": "add bsa", "coarse": "2::1-0*1", "kind": "add an assertion", "outcome": "2::|1-0*1", "performed": true, "state": "2::|"}
+{"change": "add bsb", "coarse": "2::1-1*1", "kind": "add an assertion", "outcome": "2::|1-1*1", "performed": true, "state": "2::|"}

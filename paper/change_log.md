@@ -300,3 +300,88 @@ reading of the seed.
     was added; each `--check` matched a fresh regeneration and each Lean
     report rewrote its axiom file byte-identically. The ninth derivation's
     own changes are logged in `paper/ninth/change_log.md`.
+
+## Changes made during the tenth derivation (`prompt/tenth/`)
+
+28. **`lean4/lakefile.toml`: a tenth library target `Tenth` and
+    `defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth",
+    "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]`.** Made by the tenth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the tenth
+    derivation touched; recorded here as `prompt/tenth/prompt.md` requires
+    for any change to an earlier derivation's file. Nothing in
+    `lean4/H3V7N5QF/` … `lean4/Ninth/`, `code/xry/` … `code/ninth/`, the
+    earlier test sets, the earlier papers, ledgers, or `evidence/` through
+    `evidence/ninth/` was modified. The tenth derivation's own changes are
+    logged in `paper/tenth/change_log.md`.
+
+## Changes made during the eleventh derivation (`prompt/eleventh/`)
+
+29. **`lean4/lakefile.toml`: an eleventh library target `Eleventh` and
+    `defaultTargets = [..., "Tenth", "Eleventh"]`.** Made by the eleventh
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the
+    eleventh derivation touched; recorded here as
+    `prompt/eleventh/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Tenth/`,
+    `code/xry/` … `code/tenth/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/tenth/` was modified. The
+    eleventh derivation's own changes are logged in
+    `paper/eleventh/change_log.md`.
+
+## Changes made during the twelfth derivation (`prompt/twelfth/`)
+
+30. **`lean4/lakefile.toml`: a twelfth library target `Twelfth` and
+    `defaultTargets = [..., "Eleventh", "Twelfth"]`.** Made by the twelfth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the
+    twelfth derivation touched; recorded here as
+    `prompt/twelfth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Eleventh/`,
+    `code/xry/` … `code/eleventh/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/eleventh/` was modified. The
+    twelfth derivation's own changes are logged in
+    `paper/twelfth/change_log.md`.
+
+## Changes made during the thirteenth derivation (`prompt/thirteenth/`)
+
+31. **`lean4/lakefile.toml`: a thirteenth library target `Thirteenth` and
+    `defaultTargets = [..., "Twelfth", "Thirteenth"]`.** Made by the thirteenth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the
+    thirteenth derivation touched; recorded here as
+    `prompt/thirteenth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Twelfth/`,
+    `code/xry/` … `code/twelfth/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/twelfth/` was modified. The
+    thirteenth derivation's own changes are logged in
+    `paper/thirteenth/change_log.md`.
+
+## Changes made during the fourteenth derivation (`prompt/fourteenth/`)
+
+32. **`lean4/lakefile.toml`: a fourteenth library target `Fourteenth` and
+    `defaultTargets = [..., "Thirteenth", "Fourteenth"]`.** Made by the fourteenth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the
+    fourteenth derivation touched; recorded here as
+    `prompt/fourteenth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Thirteenth/`,
+    `code/xry/` … `code/thirteenth/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/thirteenth/` was modified. The
+    fourteenth derivation's own changes are logged in
+    `paper/fourteenth/change_log.md`.
+
+## Changes made during the fifteenth derivation (`prompt/fifteenth/`)
+
+33. **`lean4/lakefile.toml`: a fifteenth library target `Fifteenth` and
+    `defaultTargets = [..., "Fourteenth", "Fifteenth"]`.** Made by the fifteenth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the
+    fifteenth derivation touched; recorded here as
+    `prompt/fifteenth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Fourteenth/`,
+    `code/xry/` … `code/fourteenth/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/fourteenth/` was modified. The
+    fifteenth derivation's own changes are logged in
+    `paper/fifteenth/change_log.md`.
+

@@ -1,0 +1,22 @@
+{
+  "beginning": {
+    "coarse": "0::",
+    "cost": 0,
+    "state": "0::|"
+  },
+  "between_and_swap_differ_finer": true,
+  "between_and_swap_same_coarse": true,
+  "bound_on_terms": 2,
+  "coarse_cost_equals_size": true,
+  "coarse_cost_failure_count": 0,
+  "coarse_cost_failures": [],
+  "coarse_results": 25,
+  "explored_equals_seventh_count": true,
+  "extra_results": -76,
+  "fewer_results_than_the_ninth": true,
+  "ninth_results": 101,
+  "one_term_coarse_cost": 1,
+  "one_term_size": 1,
+  "rounds": 5,
+  "seventh_independent_count": 25
+}

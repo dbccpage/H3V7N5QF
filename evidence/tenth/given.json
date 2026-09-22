@@ -1,0 +1,19 @@
+{
+  "changes": [
+    "add a term"
+  ],
+  "leftover_of_the_first_change": "nothing left",
+  "one_term_cost": 1,
+  "other_relation_clears_a_removal": false,
+  "outcome_of_the_first_change": "terms a; asserted nothing",
+  "reaches_itself_in_two_changes": false,
+  "remove_ara_leftover": "a leftover that a later change of the four kinds can clear",
+  "size": 0,
+  "state": "no terms; asserted nothing",
+  "the_first_change_leaves_nothing": true,
+  "three_outcomes_inhabited": true,
+  "two_term_between_identify_leftover": "a leftover that none of them can",
+  "two_term_between_identify_restored_in_one": false,
+  "two_term_empty_identify_leftover": "a leftover that a later change of the four kinds can clear",
+  "two_term_empty_identify_restored_in_one": true
+}

@@ -1,0 +1,27 @@
+{
+  "add_r_or_s_same_coarser": true,
+  "added_r_key": "2::0-1*1|",
+  "added_s_key": "2::|0-1*1",
+  "both_relations_splits": 3,
+  "changes": [
+    "add a term"
+  ],
+  "coarse_key_between": "2::1-0*1",
+  "coarse_of_between": "2::0-1*1",
+  "coarse_of_swapped": "2::0-1*1",
+  "empty_changes": 1,
+  "empty_determines": true,
+  "one_term_cost": 1,
+  "one_term_determines": true,
+  "r_and_s_same_coarser": true,
+  "r_and_s_same_finer": false,
+  "reaches_itself_in_two_changes": false,
+  "size": 0,
+  "size_descends_between": true,
+  "size_descends_empty": true,
+  "state": "no terms; asserted nothing",
+  "swap_keeps_coarse_both": true,
+  "two_term_between_determines": false,
+  "two_term_between_splits": 2,
+  "two_term_empty_determines": true
+}

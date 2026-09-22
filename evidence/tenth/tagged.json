@@ -1,0 +1,56 @@
+{
+  "beginning": {
+    "cost": 0,
+    "leftover": "nothing left",
+    "state": "0::|"
+  },
+  "bound_on_terms": 2,
+  "extra_results": 6,
+  "more_results_than_the_ninth": true,
+  "ninth_results": 36,
+  "one_term_clearable_cost": 3,
+  "one_term_nothing_left_cost": 1,
+  "one_term_size": 1,
+  "rounds": 4,
+  "tagged_cost_exceeds_size": true,
+  "tagged_cost_failure_count": 6,
+  "tagged_cost_failures": [
+    {
+      "leftover": "a leftover that a later change of the four kinds can clear",
+      "size": 1,
+      "state": "1::|",
+      "tagged_cost": 3
+    },
+    {
+      "leftover": "a leftover that a later change of the four kinds can clear",
+      "size": 2,
+      "state": "1::|0-0*1",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "a leftover that a later change of the four kinds can clear",
+      "size": 2,
+      "state": "1::0-0*1|",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "a leftover that a later change of the four kinds can clear",
+      "size": 2,
+      "state": "2::|",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "a leftover that none of them can",
+      "size": 2,
+      "state": "1::|0-0*1",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "a leftover that none of them can",
+      "size": 2,
+      "state": "1::0-0*1|",
+      "tagged_cost": 4
+    }
+  ],
+  "tagged_results": 42
+}

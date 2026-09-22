@@ -1,0 +1,92 @@
+{
+  "beginning": {
+    "cost": 0,
+    "leftover": "nothing",
+    "state": "0::|"
+  },
+  "bound_on_terms": 2,
+  "extra_results": 30,
+  "more_results_than_the_ninth": true,
+  "ninth_results": 101,
+  "one_term_nothing_cost": 1,
+  "one_term_pair_cost": 3,
+  "one_term_size": 1,
+  "rounds": 5,
+  "tagged_cost_exceeds_size": true,
+  "tagged_cost_failure_count": 30,
+  "tagged_cost_failures": [
+    {
+      "leftover": "0\u21130",
+      "size": 1,
+      "state": "1::|",
+      "tagged_cost": 3
+    },
+    {
+      "leftover": "\u223c0",
+      "size": 1,
+      "state": "1::|",
+      "tagged_cost": 3
+    },
+    {
+      "leftover": "0\u21130",
+      "size": 2,
+      "state": "1::|0-0*1",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "0\u21130",
+      "size": 2,
+      "state": "1::0-0*1|",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "\u223c0",
+      "size": 2,
+      "state": "1::|0-0*1",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "0\u21130",
+      "size": 2,
+      "state": "2::|",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "0\u21131",
+      "size": 2,
+      "state": "2::|",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "\u223c0",
+      "size": 2,
+      "state": "1::0-0*1|",
+      "tagged_cost": 4
+    },
+    {
+      "leftover": "0\u21130",
+      "size": 3,
+      "state": "1::|0-0*2",
+      "tagged_cost": 5
+    },
+    {
+      "leftover": "0\u21130",
+      "size": 3,
+      "state": "1::0-0*1|0-0*1",
+      "tagged_cost": 5
+    },
+    {
+      "leftover": "0\u21130",
+      "size": 3,
+      "state": "1::0-0*2|",
+      "tagged_cost": 5
+    },
+    {
+      "leftover": "\u223c0",
+      "size": 3,
+      "state": "1::|0-0*2",
+      "tagged_cost": 5
+    }
+  ],
+  "tagged_results": 131
+}
