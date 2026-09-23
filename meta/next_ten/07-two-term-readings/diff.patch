@@ -1,0 +1,5 @@
+--- prompt/eighteenth/seed_prompt.md
++++ meta/next_ten/07-two-term-readings/seed_prompt.md
+@@ -16 +16 @@
+-Attempt every change, fewest additions first. For every result, record how many terms and assertions it adds to what is given. Two results that differ only in how their terms are written are different results.
++Attempt every change, fewest additions first. For every result, record how many terms and assertions it adds to what is given. A reading names at most two terms and records the assertions between them. Two results are the same if every such reading gives the same record.

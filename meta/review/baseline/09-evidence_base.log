@@ -1,0 +1,6 @@
+free/without_bra: 9846 results, checks pass
+free/with_bra: 9846 results, checks pass
+anchored/without_bra: 2973 results, checks pass
+anchored/with_bra: 2973 results, checks pass
+given and free cost: checks pass
+evidence: matches a fresh regeneration

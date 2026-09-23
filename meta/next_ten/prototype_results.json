@@ -1,0 +1,68 @@
+[
+  {
+    "candidate": "C19",
+    "bound": "one term, two changes",
+    "witness": [
+      "0::",
+      "1::",
+      "0::"
+    ],
+    "parent_return_step": false,
+    "edited_return_step": true,
+    "decision": "keep; a new change creates a path back to the beginning"
+  },
+  {
+    "candidate": "C08",
+    "bound": "one term, two assertions, two leftovers, four rounds",
+    "parent_new_per_round": [
+      1,
+      1,
+      2,
+      4,
+      2
+    ],
+    "edited_new_per_round": [
+      1,
+      1,
+      2,
+      4,
+      2
+    ],
+    "parent_only_results": 0,
+    "refused_edge": [
+      "1::|#0-0*1",
+      "1::0-0*1|#"
+    ],
+    "decision": "demote: the changed edge has an existing direct-addition target and the bounded result sets agree"
+  },
+  {
+    "candidate": "C06",
+    "bound": "the given two terms, one partial step",
+    "parent_witness": [
+      "2:01:0-1",
+      "2:01:0-0"
+    ],
+    "parent_obstructed": true,
+    "ban_removed_but_obstruction_unchanged": true,
+    "decision": "drop pending a precise answer rule; deleting the ban alone does not decide whether the obstructed outcome is performed"
+  },
+  {
+    "candidate": "C21",
+    "bound": "two terms, two assertions, three rounds",
+    "parent_new_per_round": [
+      1,
+      1,
+      3,
+      7
+    ],
+    "guarded_new_per_round": [
+      1,
+      1,
+      3,
+      6
+    ],
+    "witness": "1::0-0*1|0-0*1",
+    "guarded_reaches_witness": false,
+    "decision": "keep; the guard changes the bounded result set"
+  }
+]

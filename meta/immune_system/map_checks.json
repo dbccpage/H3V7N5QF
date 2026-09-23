@@ -1,0 +1,26 @@
+{
+  "universe": "all 0-2-term states with binary multiplicities; named square uses every name placement",
+  "one_relation_states": 19,
+  "two_relation_states": 261,
+  "sixth_to_ninth_square": {
+    "checked": 66,
+    "disagreements": []
+  },
+  "eighth_to_seventh_square": {
+    "checked": 1028,
+    "disagreements": []
+  },
+  "ninth_to_seventh_square": {
+    "checked": 516,
+    "disagreements": []
+  },
+  "ofR_proj_reachability_adjunction": {
+    "checked": 4959,
+    "disagreements": []
+  },
+  "projection_stutters_on_s_addition": {
+    "before": "1::|",
+    "after": "1::|0-0*1",
+    "r_part": "1::"
+  }
+}

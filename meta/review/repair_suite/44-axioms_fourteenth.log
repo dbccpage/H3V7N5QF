@@ -1,0 +1,33 @@
+lake build: passed
+sorry / admit / declared axiom in lean4/ (outside comments): none
+#print axioms (Fourteenth/Axioms.lean):
+'Seed.Fourteenth.leftover_addTerm' does not depend on any axioms
+'Seed.Fourteenth.leftover_addAssertion' does not depend on any axioms
+'Seed.Fourteenth.leftover_remove' does not depend on any axioms
+'Seed.Fourteenth.leftover_identify' does not depend on any axioms
+'Seed.Fourteenth.leftover_remove_r_s' does not depend on any axioms
+'Seed.Fourteenth.leftover_remove_r_s_twoBoth' does not depend on any axioms
+'Seed.Fourteenth.leftover_not_assertion' does not depend on any axioms
+'Seed.Fourteenth.leftover_not_in_M' depends on axioms: [propext, Quot.sound]
+'Seed.Fourteenth.leftover_remove_ne_nothing' does not depend on any axioms
+'Seed.Fourteenth.clearing_not_a_kind' does not depend on any axioms
+'Seed.Fourteenth.first_change_leftover' does not depend on any axioms
+'Seed.Fourteenth.leftover_not_answer' depends on axioms: [propext]
+'Seed.Fourteenth.fewest_changes14' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.reach14_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.results_pair14' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.no_third_rel' depends on axioms: [propext, Quot.sound]
+'Seed.Fourteenth.r_leftover_is_s' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.twoBoth_remove_r' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.twoBoth_remove_s' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.no_cross_constraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.tagged_one_nothing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.tagged_cost_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.tagged_extra' depends on axioms: [propext, Quot.sound]
+'Seed.Fourteenth.add_remove' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fourteenth.leftover_swap_addTerm' does not depend on any axioms
+'Seed.Fourteenth.leftover_swap_remove' does not depend on any axioms
+'Seed.Fourteenth.Step14.swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.fewest_changes9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.reach9_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.results_pair9' depends on axioms: [propext, Classical.choice, Quot.sound]

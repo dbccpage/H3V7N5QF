@@ -1,0 +1,7 @@
+bound3_rounds6: 518 results, checks pass
+bound3_rounds5: 140 results, checks pass
+bound2_rounds8: 1556 results, checks pass
+bound2_rounds3_log: 12 results, checks pass
+recorded: 148 results, checks pass
+given: r-record not s, identify drops a term, empty restored, checks pass
+check: identical

@@ -1,0 +1,7 @@
+bound3_rounds6: 518 results, checks pass
+bound3_rounds5: 140 results, checks pass
+bound2_rounds8: 1556 results, checks pass
+bound2_rounds3_log: 12 results, checks pass
+tagged: 137 results, checks pass
+given: admission independent of r and s, not an assertion, not a kind, reaching does not admit, checks pass
+check: identical

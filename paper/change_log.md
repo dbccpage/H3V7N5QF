@@ -440,3 +440,15 @@ reading of the seed.
     put it before). Nothing in `lean4/H3V7N5QF/` … `lean4/Seventeenth/`,
     `code/xry/` … `code/seventeenth/`, or `evidence/` through
     `evidence/seventeenth/` was modified.
+
+39. **Fenced whole-repo review and proposal area (2026-09-23).** Added
+    `meta/` for the 21-derivation audit, correspondence and Genesis
+    comparisons, local receipts, and ten future seed proposals. Its
+    categorical and biological vocabulary is outside the derivational seal:
+    no `meta/` file is an input to a blind seed, paper, or theorem. Added
+    ten digest entries to `ci/prose_watchlist.json` for that vocabulary
+    and the external repository name, with deliberate pins for tracked
+    review prose. The preexisting per-paper pins are checked unchanged by
+    `meta/review/check_paper_pins.py`. This independent branch has no
+    repair-branch theorem, generator, or axiom-report changes; `prompt/`
+    remains untouched.

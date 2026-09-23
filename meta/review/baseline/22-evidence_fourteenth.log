@@ -1,0 +1,7 @@
+bound3_rounds6: 518 results, checks pass
+bound3_rounds5: 140 results, checks pass
+bound2_rounds8: 1556 results, checks pass
+bound2_rounds3_log: 12 results, checks pass
+tagged: 131 results, checks pass
+given: leftover of r is leftover of s, not an assertion, not an answer, checks pass
+check: identical

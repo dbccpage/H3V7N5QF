@@ -1,0 +1,5 @@
+--- prompt/seventeenth/seed_prompt.md
++++ meta/next_ten/05-refusal-memory/seed_prompt.md
+@@ -13 +13 @@
+-A change that makes some `xrx` asserted is obstructed. An obstructed change must be answered: remove the obstruction, or build structure by further changes; declare which, and record the change, the obstruction, and the answer. A refused change is recorded and changes nothing.
++A change that makes some `xrx` asserted is obstructed. An obstructed change must be answered: remove the obstruction, or build structure by further changes; declare which, and record the change, the obstruction, and the answer. A refused change is recorded and changes nothing. Its written form is kept with that result; the next attempt at the same written change is performed even if it makes some `xrx` asserted.

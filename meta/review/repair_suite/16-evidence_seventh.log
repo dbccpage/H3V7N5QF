@@ -1,0 +1,7 @@
+bound5_rounds11: 22686 results, checks pass
+bound3_rounds14: 29191 results, checks pass
+bound2_rounds40: 56111 results, checks pass
+reachability: 7921 pairs, checks pass
+census bound6_rounds12: 82749 results, checks pass
+given and counts: checks pass
+evidence\seventh: matches a fresh regeneration
