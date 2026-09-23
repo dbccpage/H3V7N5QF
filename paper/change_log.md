@@ -385,3 +385,18 @@ reading of the seed.
     fifteenth derivation's own changes are logged in
     `paper/fifteenth/change_log.md`.
 
+
+## Changes made during the sixteenth derivation (`prompt/sixteenth/`)
+
+34. **`lean4/lakefile.toml`: a sixteenth library target `Sixteenth` and
+    `defaultTargets = [..., "Fifteenth", "Sixteenth"]`.** Made by the sixteenth
+    derivation. Not a defect correction: it is the build configuration of
+    the shared Lake package, and the only earlier-derivation file the
+    sixteenth derivation touched; recorded here as
+    `prompt/sixteenth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Fifteenth/`,
+    `code/xry/` … `code/fifteenth/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/fifteenth/` was modified. The
+    shared `ci/` gates gained a sixteenth panel and record noun, logged in
+    `paper/sixteenth/change_log.md`, as are the sixteenth derivation's own
+    changes.

@@ -1,0 +1,67 @@
+{
+  "count": {
+    "new_results_per_round": [
+      1,
+      1,
+      3,
+      8,
+      28,
+      85,
+      260
+    ],
+    "reading": "a count of unadmitted leftovers per pair (C-R1, chosen)",
+    "results": 386
+  },
+  "drop": {
+    "bound_on_terms": 2,
+    "explored_equals_independent_count": true,
+    "first_identity_failure": null,
+    "new_results_per_round": [
+      1,
+      1,
+      3,
+      8,
+      28,
+      85,
+      260
+    ],
+    "reachability": {
+      "carrying_criterion_disagreements_with_search": 10284,
+      "ninth_criterion_disagreements_with_search": 0,
+      "ordered_pairs": 15876,
+      "results": 126
+    },
+    "reading": "an identification drops the leftovers naming a merged term (C-R3, unchosen)",
+    "results": 386,
+    "round_equals_potential_for_every_result": true,
+    "round_potential_mismatches": [],
+    "rounds": 6,
+    "same_relation_identity_failures": 0
+  },
+  "set": {
+    "bound_on_terms": 2,
+    "explored_equals_independent_count": true,
+    "first_identity_failure": "1::|0-0*1#0-0*1 remove asa",
+    "new_results_per_round": [
+      1,
+      1,
+      3,
+      8,
+      28,
+      84,
+      256
+    ],
+    "reachability": {
+      "carrying_criterion_disagreements_with_search": 7479,
+      "ninth_criterion_disagreements_with_search": 2653,
+      "ordered_pairs": 15625,
+      "results": 125
+    },
+    "reading": "a leftover of a pair is recorded or not (C-R2, unchosen)",
+    "results": 381,
+    "round_equals_potential_for_every_result": true,
+    "round_potential_mismatches": [],
+    "rounds": 6,
+    "same_relation_identity_failures": 10
+  }
+}

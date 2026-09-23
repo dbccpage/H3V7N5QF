@@ -272,8 +272,49 @@ def _thirteenth() -> Panel:
     return Panel("thirteenth", CoarseCheck, signals, cases)
 
 
+def _sixteenth() -> Panel:
+    from fourteenth.leftover import leftover_nothing, leftover_pair
+    from sixteenth.changes import Change16, Kind, changes16 as real_changes
+    from sixteenth.explore import explore16
+    from sixteenth.invariants import RecordCheck, check_records
+    from sixteenth.state import add_assertion16, admit16, empty16
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(check_records(explore16(empty16(), 2, 4)))
+
+    def extra_admission() -> Any:
+        def wrong(rs: Any) -> Any:
+            listed = real_changes(rs)
+            return (*listed, Change16(Kind.ADD_ASSERTION, "r", 0, 0, True)) if rs.n >= 1 else listed
+
+        return _one("sixteenth.invariants.changes16", wrong)
+
+    cases: dict[str, Mutation] = {
+        # the potential: a constant leaves every change unmoved, and every round off
+        "potential_not_moved_by_one": lambda: _one("sixteenth.invariants.potential", lambda _rs: 0),
+        "round_not_potential": lambda: _one("sixteenth.invariants.potential", lambda _rs: 0),
+        # the direction rule: calling every change a raise makes admissions and identifications disagree
+        "direction_mismatch": lambda: _one("sixteenth.invariants.raises_potential", lambda _c: True),
+        # the mass: a falling measure fails on every direct addition
+        "mass_fell": lambda: _one("sixteenth.invariants.mass", lambda rs: -(rs.state.m + rs.record_total)),
+        "diagonal_mass_fell": lambda: _one("sixteenth.invariants.diag_mass", lambda rs: -rs.diagonal_mass),
+        # the identity: an admission that forgets to consume the leftover
+        "same_relation_not_identity": lambda: _one("sixteenth.invariants.admit16", add_assertion16),
+        # the other relation: a canonical form that collapses everything, or a direct addition that consumes
+        "other_relation_same_as_start": lambda: _one("sixteenth.invariants.canonical16", lambda rs: rs.n),
+        "other_relation_same_as_direct": lambda: _one("sixteenth.invariants.add_assertion16", admit16),
+        # the writings, perturbed at every binding site
+        "admission_left_something": lambda: everywhere("sixteenth", "leftover_of16", lambda _s, _c: leftover_pair(0, 0)),
+        "writing_not_the_fourteenth": lambda: everywhere("sixteenth", "leftover_of16", lambda _s, _c: leftover_nothing()),
+        "unadmitted_asserted": lambda: _one("fourteenth.leftover.LeftWriting.is_assertion", lambda self: True),
+        # the listing: an admission of a pair nobody recorded
+        "admissions_not_recorded": extra_admission,
+    }
+    return Panel("sixteenth", RecordCheck, signals, cases)
+
+
 def panels() -> list[Panel]:
-    return [_tenth(), _eleventh(), _twelfth(), _thirteenth(), _fourteenth(), _fifteenth()]
+    return [_tenth(), _eleventh(), _twelfth(), _thirteenth(), _fourteenth(), _fifteenth(), _sixteenth()]
 
 
 def main(argv: list[str] | None = None) -> int:

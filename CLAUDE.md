@@ -3722,3 +3722,357 @@ From the repository root:
 - `python code/lean_report_fifteenth.py` builds `lean4/` and writes
   `evidence/fifteenth/lean_axioms.txt`;
 - the earlier derivations' commands are unchanged (see above).
+
+---
+
+# Sixteenth derivation (`prompt/sixteenth/`) — plan and stopping conditions
+
+Written before any other work of the sixteenth derivation, as
+`prompt/sixteenth/prompt.md` requires. Inputs: `prompt/sixteenth/prompt.md`
+and `prompt/sixteenth/seed_prompt.md`; the fifteen earlier derivations
+(`paper/`, `paper/second/` … `paper/fifteenth/`, `code/xry/` …
+`code/fifteenth/`, `lean4/H3V7N5QF/` … `lean4/Fifteenth/`, `evidence/` …
+`evidence/fifteenth/`) are cited where used, never assumed. Everything above
+stays in force (isolation, no network, `prompt/` untouched, `.lake/` never
+committed, bookkeeping rules 1–4, the evidence-module coverage gate, and now
+the three `ci/` gates of `ci/OEWAS_GATES.md`). Rule 5 of the sixteenth task:
+every result of an earlier derivation that is used is cited and its proof
+re-checked from the sixteenth seed, and the re-check says whether the result
+survives once the record feeds back into the state. In Lean the re-check is
+through two maps: the *projection* of a sixteenth state to a ninth state
+(`RSt.toNDSt`: the terms and the two multiplicity functions, the record
+forgotten) and the *embedding* of a ninth state as a sixteenth state with an
+empty record (`NDSt.ofNDSt`). Every change of the sixteenth projects to a
+change of the ninth (an admission projects to an addition of an assertion);
+every addition and identification of the ninth is a change of the sixteenth
+on the embedded states, and a removal of the ninth is a change of the
+sixteenth whose outcome carries one recorded leftover — the embedding is
+*not* a map of changes on removals, and that is the whole difference. Or by
+observing that the statement mentions no record; or by computing it again
+from the sixteenth's own exploration and comparing with the ninth's on the
+results with an empty record. A claim of the tenth to fifteenth that held
+*by construction* because the record sat off the result is re-examined here
+and downgraded to chosen / by construction, refuted with a witness, or
+re-proved, as the evidence requires.
+
+## What differs in the seed
+
+One sentence (`diff` against the fourteenth seed): "A leftover is not an
+assertion and is not an answer." becomes
+
+"A recorded leftover `xℓy` may be admitted, adding the assertion `xry` or
+the assertion `xsy`; an unadmitted leftover is not an assertion."
+
+Every other sentence is identical to the fourteenth seed (`diff`), and so to
+the ninth with the record passage. The state can no longer be the ninth's:
+a recorded leftover may later be admitted, so the unadmitted leftovers must
+be carried by the state (a leftover recorded off the result could not feed
+back). The fourteenth's leftover *writing* survives (additions leave
+nothing; a removal leaves the pair written `xℓy`; an identification leaves
+the merge writing); what changes is where the pair writing lives and what
+it can do.
+
+## Readings
+
+- **C-R1 (chosen).** A state is a ninth state together with its *record*:
+  for every ordered pair of its terms, how many leftovers `xℓy` are recorded
+  and not admitted (a count, since each removal records one leftover and
+  "record what that change leaves" is said of every change). A removal of
+  `xqy` (`q` either relation) lowers the multiplicity by one and raises the
+  record of `(x, y)` by one. An *admission* of a recorded `xℓy` into `q`
+  raises the multiplicity of `xqy` by one and lowers the record of `(x, y)`
+  by one; it is a change — the kind "adding an assertion", performed by
+  admitting rather than directly — and it leaves nothing. The leftover
+  names no relation, so a leftover left by a removal in `r` may be admitted
+  into `s`. An identification replaces both terms by one in the record as
+  in every assertion (the record of the merged pairs adds up). The merge
+  writing of an identification is recorded on the change, as under the
+  fourteenth's C-F1, and is not admissible: it is not written `xℓy`. Two
+  results are the same when a rewriting of the terms carries the two
+  relations *and* the record of one onto the other. The attempt order is
+  fewest additions first: identifications, removals in `r`, in `s`, a term,
+  the direct additions in `r`, in `s`, then the admissions in `r`, in `s`
+  (an admission adds an assertion; it is listed after the direct additions).
+- **C-R2 (unchosen, kept, computed).** The record is a set: a leftover of a
+  pair is recorded or not, and a second removal of the same pair records
+  nothing new. Explored at a small bound; its count and its cost compared.
+- **C-R3 (unchosen, kept, computed).** An identification drops the
+  leftovers naming either merged term instead of carrying them to the
+  surviving term. Explored at a small bound; compared.
+- **Set aside, with the sentence that refuses each:** *admission is not a
+  change* (it adds the assertion `xry`, and adding an assertion is one of
+  the four kinds); *an admitted leftover stays recorded and may be admitted
+  again* (an unadmitted leftover is not an assertion, so an admitted one is
+  the assertion it added; a second admission would add an assertion from no
+  leftover); *the merge writing is part of the result* (the fourteenth's
+  C-F2, cited: it multiplies results without changing what any change can
+  do, since it can never be admitted; not recomputed).
+
+## Expected consequences, to be proved or refuted
+
+1. **Same relation.** Removing `xqy` and then admitting `xℓy` into `q` is
+   the identity on the state, record included (Lean, computed on every
+   removal within the bound).
+2. **Other relation.** Removing `xqy` and then admitting `xℓy` into the
+   other relation is a result different from the start (the `q` total
+   falls, the other rises, and no rewriting changes a total) and different
+   from removing then adding directly (the record differs by one leftover);
+   its ninth state is reachable from the empty beginning by additions alone,
+   so no *ninth* state is new — what is new is the pairing of a state with
+   an emptier record.
+3. **Termination.** The feedback does not terminate: remove then admit is a
+   two-change cycle at every state with an assertion, and the record is
+   unbounded (add, remove, add, remove, …). A finite bound on terms and on
+   rounds is declared, the frontier exported, completeness within it
+   certified by an independent count.
+4. **Cost.** The potential `size + 2·record` (size the ninth's; record the
+   number of unadmitted leftovers) rises by exactly one on an addition and
+   on a removal and falls by exactly one on an admission and on an
+   identification, so the fewest changes from the empty beginning to a
+   result is exactly its potential, and no shortest sequence admits or
+   identifies: an assertion that arrives by admission costs three changes
+   (add, remove, admit) where a direct addition costs one. Between results
+   an admission can be the only route (the identity pair of item 1).
+5. **Mass.** The sum of both totals and the record never falls along a
+   change (a removal moves one unit into the record, an admission moves it
+   back, an identification merges, additions raise), nor does its diagonal
+   part; so the ninth's has-a-term criterion fails — the one-term state
+   asserting `ara` once never returns to the one-term state asserting
+   nothing — and reachability among the results with a term is one-way
+   along the mass again (Lean: the two invariants and the witness).
+6. **Reachability criterion (computed; partly in Lean).** A result reaches
+   another exactly when the first is empty, or there is a map of the terms
+   of the first into the terms of the second under which every pair of the
+   second receives at most its own mass. Checked against breadth-first
+   search on every ordered pair of results within a small bound; necessity
+   of the two mass invariants and sufficiency with the same terms in Lean.
+7. **Results and count.** Every well-formed state (a ninth state with any
+   record over its terms) is a result; the ninth's results are exactly the
+   results with an empty record, at the same rounds; the count by (terms,
+   potential) is the orbit count with a third factor `1 / (1 − x^{2L})` per
+   cycle of pairs beside the two `1 / (1 − x^L)` factors; the one-term
+   results of round `k ≥ 1` number `(⌊(k−1)/2⌋ + 1)·(⌈(k−1)/2⌉ + 1)`.
+8. **What survives.** The ninth's cost survives on the results with an empty
+   record and fails off them; the has-a-term criterion fails; jointly free
+   results survive with any record; the count survives as the count of the
+   empty-record results; the two-change cycle survives (a term added and
+   identified away; remove then admit) but the ninth's add-then-remove is no
+   longer a cycle — it leaves a leftover; the fourteenth's "leftover is not
+   an assertion" survives as "an *unadmitted* leftover is not an assertion";
+   "leftover of `r` is leftover of `s`" survives and now has force (it is
+   what admits an `r` leftover into `s`); "clearing leftover is not one of
+   the four kinds" fails — an admission clears a leftover and is adding an
+   assertion; "leftover is not a third multiplicity" is re-examined: the
+   record is a count per pair kept in the state, but it is not asserted, is
+   not raised by an addition, and is not a third relation.
+
+## Layout
+
+- `research/sixteenth/` — reading notes (not evidence).
+- `code/sixteenth/` — typed Python package for the sixteenth seed. Imported
+  from the earlier packages what the feedback leaves intact: the ninth's
+  two-relation state, `perform` of the four kinds on it, `changes`, `Kind`,
+  `canonical`, `rewrite`, `swap` (`ninth.state`, `ninth.changes`,
+  `eighth.state`), the fourteenth's leftover writings (`fourteenth.leftover`:
+  `LeftWriting`, `leftover_of`, `leftover_pair`, `leftover_nothing`,
+  `leftover_merge`), the cycle machinery and the series of the orbit counts
+  (`xry.orbits`, `fourth.orbits.series`, `sixth.orbits.diag_cycles`), the
+  ninth's exploration, orbit count and criterion for the comparison, the
+  writers, `compare_evidence`, the Lean report runner. Defined afresh: the
+  state with a record (`RState`) and its sameness (the rewriting acting on
+  the record too), the five changes (`Change16`: the four kinds and the
+  admission), `perform`, the exploration with its frontier and
+  shortest-sequence counts, the potential and the cost rule, the mass
+  invariants, the reachability criterion and the search, the independent
+  count with the third factor and the one-term closed form, the checks
+  (`RecordCheck`), the statements tested, the two unchosen readings, the
+  comparison with the ninth and with the fourteenth, the evidence writer.
+  Earlier derivations' files are not modified except to correct a defect,
+  recorded in the relevant change log; `ci/check_mutation_bite.py` gains a
+  sixteenth panel and `ci/check_definitional_citations.py` the sixteenth's
+  record noun (both recorded in `paper/sixteenth/change_log.md`).
+- `tests/test_sixteenth_*.py` — tests of `code/sixteenth/`; all of `code/`
+  stays at ≥ 95 % line and ≥ 95 % branch coverage, every
+  `code/**/evidence.py` fully covered (an injection test for every
+  differential check); `mypy --strict` passes; the prose watchlist stays
+  clean; the vacuous-check, definitional-citation and mutation-bite gates
+  pass, the last with a sixteenth panel in which every disagreement field of
+  `RecordCheck` bites under its mutation.
+- `lean4/Sixteenth/` — a sixteenth Lean library in the same Lake package
+  (the lakefile gains the library target and a default target; recorded in
+  `paper/change_log.md`). It imports `Fifteenth` (and through it `Ninth` and
+  `Fourteenth`). New: `RSt` (a ninth state and a record function on pairs),
+  `WF`, `potential`, `mass`, the projection `toNDSt` and the embedding
+  `ofNDSt`, the five operations, `Step16` (five constructors), `Reach16`,
+  the maps of changes, the same-relation identity, the other-relation
+  witnesses, the cost theorems, the mass invariants, the failure of the
+  has-a-term criterion, the results, the comparison with the ninth and the
+  fourteenth, and `rename16` (attempted).
+- `evidence/sixteenth/` — written by `python code/generate_sixteenth.py`;
+  the axiom report by `python code/lean_report_sixteenth.py`; `--check`
+  regenerates into a temporary folder and compares.
+- `paper/sixteenth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the sixteenth seed (`research/sixteenth/`)
+Sentence-by-sentence diff against the fourteenth seed; the notion table with
+source statuses; the readings above with what refuses each set-aside one;
+the expected consequences; which "by construction" claims of the tenth to
+fifteenth are re-examined.
+
+### Phase 2 — `code/sixteenth/` and `tests/`
+- the state with a record, canonical form and sameness over the record;
+  the five changes; `perform`; the leftover writing of every change reused
+  from the fourteenth; the admissibility of a writing (a pair writing of a
+  recorded pair, never a merge writing, never nothing);
+- the exploration (same protocol; admissions attempted after the direct
+  additions), the frontier (attempts leaving the bound on terms), the
+  shortest-sequence counts (the changes raising the potential by one), full
+  logs at a small bound;
+- the potential checked to move by exactly one on every change within the
+  bound, up on additions and removals, down on admissions and
+  identifications; the round of every result checked to be its potential;
+  the same-relation identity checked on every removal within the bound; the
+  other-relation outcome checked to differ from the start and from the
+  direct addition; the mass and its diagonal part checked never to fall;
+- the reachability criterion checked against breadth-first search on every
+  ordered pair of results within a small bound, and compared with the
+  ninth's criterion (the pairs the ninth admits and the sixteenth refuses,
+  counted);
+- the independent count with the third factor as the completeness
+  certificate; the ninth's count recovered as the empty-record part; the
+  one-term closed form checked;
+- the comparison with the ninth: the empty-record results, their rounds and
+  their shortest-sequence counts must be the ninth's; the comparison with
+  the fourteenth: the leftover writing of every change of the four kinds is
+  the fourteenth's;
+- the unchosen readings C-R2 and C-R3 explored at a small bound and
+  compared (counts, cost, the identity of item 1);
+- property witnesses for "what does not follow";
+- the checks as a dataclass `RecordCheck` whose every disagreement field is
+  driven by an injection test and by a mutation in the sixteenth panel of
+  `ci/check_mutation_bite.py`;
+- deterministic evidence writer with `--check`; Lean axiom-report writer
+  for `lean4/Sixteenth/Axioms.lean`.
+
+### Phase 3 — `lean4/Sixteenth/`
+Targets, in order:
+1. `RSt`, `WF`, `potential`, `mass`, `toNDSt`, `ofNDSt`, the five
+   operations; `Step16`, `Reach16`; `Step16.proj` (every change projects to
+   a `Step9`), `Step9.embed` (an addition or an identification embeds; a
+   removal embeds to the state with one leftover recorded), `Step16.wf`, a
+   term stays, the first change adds a term, the empty state is never
+   returned to.
+2. `remove_admit_same` (the identity), `remove_admit_other_ne` (the start
+   and the direct-addition outcome both differ), `admit_lowers_record`,
+   `remove_raises_record`; the leftover of an admission is nothing.
+3. Cost: `Step16.potential_step` (exactly one, with the direction by kind),
+   `Reach16.potential_le`, `fewest_changes16` (lower bound by the potential;
+   upper bound by the ninth's additions through the embedding and then an
+   addition-removal pair per recorded leftover), `no_admission_on_shortest`
+   (a sequence from the empty beginning of length the potential admits and
+   identifies nothing, by a count of the falling changes).
+4. Reachability: `Reach16.mass_le`, `Reach16.diag_le` (necessity),
+   `has_term_criterion_fails16` (the witness), `reach16_same_terms`
+   (sufficiency with the same terms), `result16_iff` (every well-formed
+   state is a result), `cycle2_16` (remove then admit; a term added and
+   identified away), `add_remove_not_cycle16` (the ninth's cycle leaves a
+   leftover).
+5. What survives (`Sixteenth/Compare.lean`): the ninth's cost on the
+   empty-record results (`fewest_changes16_of_empty_record`) and its failure
+   off them; the ninth's results as the empty-record results
+   (`results_ninth_iff16`); jointly free results with any record; the
+   fourteenth's `leftover_remove_r_s` as a step admitting an `r` leftover
+   into `s` (`r_leftover_admitted_into_s`); `clearing_is_a_kind16` (an
+   admission clears a leftover and is a `Step16`); the record is not raised
+   by any addition (`record_not_raised_by_addition`).
+6. `rename16`, `Step16.rename`, `Reach16.rename`, the potential in every
+   writing. Attempted once; if a step does not close it is proved in the
+   paper and marked "not in Lean".
+`#print axioms` for every theorem the sixteenth paper cites, into
+`evidence/sixteenth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/sixteenth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The fifteen earlier derivations' `--check` and Lean reports are
+re-run to confirm their evidence still regenerates.
+
+### Phase 5 — `paper/sixteenth/`
+`paper.md` (findings; every use of an earlier derivation cited with the
+re-check and whether it survives the feedback; a section answering the
+task's questions: the same-relation identity, the other-relation result,
+termination, the cost, reachability, the result set and the count, and
+which earlier collapses and independence survive; final section: nearest
+known results and differences — the only place where outside names appear),
+`claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, push, pull request.
+
+## Stopping conditions (sixteenth derivation)
+
+The run stops when AH1–AH10 hold, or when a blocker is hit.
+
+- AH1 Every notion in `paper/sixteenth/paper.md` has one recorded source
+  status.
+- AH2 Every claim in `paper/sixteenth/claim_ledger.md` has evidence, or is
+  open.
+- AH3 Every non-isomorphic alternative is kept, or eliminated by a cited
+  proof; results are quotiented only under the implemented sameness.
+- AH4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch coverage over all of `code/` and
+  every evidence module fully covered; `python -m mypy` passes.
+- AH5 `lake build` (pinned toolchain, inside `lean4/`) passes for all
+  sixteen libraries; no `sorry`, `admit`, or declared axiom in `lean4/`;
+  all sixteen axiom reports regenerated and committed.
+- AH6 `evidence/sixteenth/` regenerates byte-identically (`--check`); the
+  earlier derivations' evidence still regenerates byte-identically.
+- AH7 Every use of an earlier result in the sixteenth paper is cited and
+  re-checked, with the re-check saying whether it survives the feedback
+  (ledger column "re-check"); every "by construction" claim of the tenth to
+  fifteenth that the feedback touches is re-examined.
+- AH8 The prose watchlist passes on the tracked tree; every pinned hit of
+  the sixteenth paper is in its final section.
+- AH9 `python ci/check_vacuous_checks.py`,
+  `python ci/check_definitional_citations.py` and
+  `python ci/check_mutation_bite.py` pass, the last with a sixteenth panel
+  covering every disagreement field of `RecordCheck`.
+- AH10 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and on rounds together. Targets: 3 terms with 6 rounds;
+  2 terms with 8 rounds; full attempt logs at 2 terms and 3 rounds;
+  reachability by search among the results of 2 terms and 5 rounds (and,
+  if it completes in minutes, 3 terms and 4 rounds); the unchosen readings
+  at 2 terms with 6 rounds. Any run that does not complete in minutes here
+  has its rounds lowered first, then its terms; the bounds used are
+  declared in the paper; the frontier is exported exactly; completeness
+  within the bound is certified by the independent count.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–5 required; target 6 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `worktree-sixteenth-derivation`, made from `main`; the pull
+  request is opened against `main` and not merged.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question. The
+checkout's `lean4/.lake/packages` holds the pinned packages of this same
+repository (checked before Phase 0: `Mathlib.olean` present; no download
+happens during the derivation).
+
+## How to run (sixteenth derivation)
+
+From the repository root:
+- `python -m pytest` (all tests, sixteen derivations), then
+  `python code/xry/gate.py coverage.json`, `python -m mypy`,
+  `python ci/check_prose_watchlist.py`, `python ci/check_vacuous_checks.py`,
+  `python ci/check_definitional_citations.py` and
+  `python ci/check_mutation_bite.py`;
+- `python code/generate_sixteenth.py` writes `evidence/sixteenth/`;
+  `python code/generate_sixteenth.py --check` compares with a fresh
+  regeneration;
+- `python code/lean_report_sixteenth.py` builds `lean4/` and writes
+  `evidence/sixteenth/lean_axioms.txt`;
+- the earlier derivations' commands are unchanged (see above).
