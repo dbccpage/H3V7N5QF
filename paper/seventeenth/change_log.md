@@ -40,3 +40,5 @@ cycle: the same lake process was still compiling Mathlib (oleans 1599 of 8311 at
 cycle: the same lake process was still compiling Mathlib (oleans 1905 of 8311 at 05:56, newest `LinearAlgebra/AffineSpace/Midpoint.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
 
 cycle: the same lake process was still compiling Mathlib (oleans 2229 of 8311 at 06:16, newest `RingTheory/MatrixPolynomialAlgebra.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
+
+cycle: the same lake process was still compiling Mathlib (oleans 2549 of 8311 at 06:36, newest `FieldTheory/IntermediateField/Adjoin/Algebra.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
