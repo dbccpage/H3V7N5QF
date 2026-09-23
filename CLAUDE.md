@@ -4079,6 +4079,52 @@ From the repository root:
 
 ---
 
+# Eighteenth derivation (`prompt/eighteenth/`) — plan and stopping conditions
+
+Written before the rest of the eighteenth derivation, as `prompt/eighteenth/prompt.md`
+requires. Inputs: `prompt/eighteenth/prompt.md` and `prompt/eighteenth/seed_prompt.md`.
+The parent is the base (`paper/`, `code/xry/`, `lean4/H3V7N5QF/`, `evidence/`).
+The base is cited where used, and the citation says whether the result used the
+sentence that two writings are the same result. `prompt/` is not modified.
+`.lake/` is not committed.
+
+## What differs
+
+One sentence. The base says two results that differ only in how their terms
+are written are the same result. This seed says they are different results.
+The changes, the obstruction, and what is given are the base's.
+
+## Plan
+
+The chosen sameness is equality of the written state. The base's `canonical`
+is not applied to an outcome. Both of the base's readings of what is given
+(`bra` or not; names kept or not) are run. The unchosen reading that any
+rewriting, including one no change produces, is a result, is kept and counted:
+with the letters the changes assign it is the set of permutations of the
+terms; with an unbounded supply of letters it is infinite. The declared bound
+is 3 terms and 12 rounds, which is past the last round that reaches a new
+result inside the bound. The frontier is the attempts that add a fourth term.
+
+Lean records that swapping the two terms of what is given is a different
+state from what is given and from the other beginning. The base does not
+formalise the rewriting it quotients by; that limit stays named.
+
+## Stopping
+
+Stop when the paper, the ledger and the change log are written, the gates in
+the prompt pass, and the evidence regenerates. Open claims stay open with a
+falsifier. No `sorry`.
+
+## How to run
+
+From the repository root: `python -m pytest`, `python -m mypy`,
+`python ci/check_prose_watchlist.py`, `python ci/check_vacuous_checks.py`,
+`python ci/check_definitional_citations.py`, `python ci/check_mutation_bite.py`,
+`python code/run_eighteenth.py --check`, and
+`lake +leanprover/lean4:v4.33.1 -d lean4 build Eighteenth` with `$LASTEXITCODE`
+read on its own line. `python code/lean_report_eighteenth.py` writes the
+axiom report.
+---
 # Seventeenth derivation (`prompt/seventeenth/`) — plan and stopping conditions
 
 Written before any other work of the seventeenth derivation, as

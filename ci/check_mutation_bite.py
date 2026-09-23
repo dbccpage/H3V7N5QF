@@ -313,6 +313,23 @@ def _sixteenth() -> Panel:
     return Panel("sixteenth", RecordCheck, signals, cases)
 
 
+def _eighteenth() -> Panel:
+    from eighteenth.evidence import WritingCheck, audit
+    from xry.state import Sameness, given, rewrite
+
+    def signals() -> frozenset[str]:
+        start = given(False, Sameness.ANCHORED)
+        return _nonempty_lists(audit([start], start, rewrite(start, (1, 0))))
+
+    cases: dict[str, Mutation] = {
+        "writings_called_the_same": lambda: _one(
+            "eighteenth.evidence.same_written", lambda _left, _right: True
+        ),
+        "orbit_formula_fails": lambda: _one(
+            "eighteenth.evidence.orbit_splits_factorial", lambda _state: False
+        ),
+    }
+    return Panel("eighteenth", WritingCheck, signals, cases)
 def _seventeenth() -> Panel:
     from xry.changes import Answer, AnswerKind
     from xry.state import Sameness, State
@@ -377,6 +394,7 @@ def panels() -> list[Panel]:
         _fourteenth(),
         _fifteenth(),
         _sixteenth(),
+        _eighteenth(),
         _seventeenth(),
     ]
 
