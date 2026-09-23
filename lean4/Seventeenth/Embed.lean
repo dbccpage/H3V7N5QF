@@ -40,7 +40,7 @@ theorem Step.unobstructed17 {s s' : St} (h : Step s s') :
     · exact h1 hmem
     · exact h2 hmem
 
-theorem Step17.toStep {s s' : St} (h : Step17 s s') (hs : LoopFree s) (hu : h.unobstructed) :
+theorem Step17.toStep {s s' : St} (h : Step17 s s') (_hs : LoopFree s) (hu : h.unobstructed) :
     Step s s' := by
   cases h with
   | addTerm t ht => exact Step.addTerm s t ht
@@ -56,7 +56,7 @@ theorem Step17.toStep {s s' : St} (h : Step17 s s') (hs : LoopFree s) (hu : h.un
     exact Step.identify s u v hu' hv huv
       (fun h => hnot (Or.inl h)) (fun h => hnot (Or.inr h))
 
-theorem Reach.toReach17 {s t : St} {n : ℕ} (h : Reach s t n) (hs : LoopFree s) :
+theorem Reach.toReach17 {s t : St} {n : ℕ} (h : Reach s t n) (_hs : LoopFree s) :
     Reach17 s t n := by
   induction h with
   | refl => exact Reach17.refl _

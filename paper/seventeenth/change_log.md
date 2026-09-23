@@ -46,3 +46,10 @@ cycle: the same lake process was still compiling Mathlib (oleans 2549 of 8311 at
 6. `lake build Seventeenth` exited 1. The failure was in `Seventeenth/Step.lean`, not in Mathlib: `obstructedM1` matched on `Step17` with the target state fixed, and that match does not eliminate into `Prop`. The target state is now a pattern. `Classical.not_not` is an `Iff`, so `loopFree_out` uses `.mp`. `not_not` and `tauto` are gone from the identify case. `lake +leanprover/lean4:v4.33.1 -d lean4 build Seventeenth` then exited 0.
 
 cycle: fixed the Seventeenth Lean build (EXIT=0); next write `evidence/seventeenth/lean_axioms.txt` and close O1.
+
+7. `python code/lean_report_seventeenth.py` passed. `evidence/seventeenth/lean_axioms.txt`
+   records `lake build: passed`, no `sorry` / `admit` / declared axiom, and
+   `#print axioms` for every cited theorem. Each depends only on `propext`,
+   `Classical.choice` and `Quot.sound`. O1 is closed (K4). O2–O5 stay open.
+
+cycle: wrote the axiom report and closed O1; the seventeenth derivation's gates are the remaining check before the branch is finished.

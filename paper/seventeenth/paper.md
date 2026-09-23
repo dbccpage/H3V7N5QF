@@ -9,9 +9,8 @@ namespace `Seed.Seventeenth` are in `lean4/Seventeenth/`; names in `Seed` are
 the base's. Computed files are in `evidence/seventeenth/`, written by
 `python code/run_seventeenth.py`. The axiom report is
 `evidence/seventeenth/lean_axioms.txt`, written by
-`python code/lean_report_seventeenth.py` when the build has passed; until
-that file is committed the Lean proofs are in the sources and the printed
-axioms are open (O1).
+`python code/lean_report_seventeenth.py`. Every theorem it prints depends
+only on `propext`, `Classical.choice` and `Quot.sound`.
 
 Every notion below carries one source status: **given** (said by the seed),
 **chosen** (a reading fixed here where the seed is silent; the unchosen
@@ -347,11 +346,6 @@ exists, and it is not proved to be the fewest among all sequences.
 
 ## 9. Open
 
-- **O1.** `#print axioms` for the theorems cited here is not yet in
-  `evidence/seventeenth/lean_axioms.txt`. The proofs are in
-  `lean4/Seventeenth/` and name no `sorry`, `admit`, or declared axiom; the
-  printed axioms wait on the build. Until the report is committed, no claim
-  above is marked with an axiom count.
 - **O2.** A closed form for the fewest A-perform changes. The base formula
   is refuted as a lower bound (section 4). No replacement is proved.
 - **O3.** Whether an A-perform sequence that exceeds the term bound and
