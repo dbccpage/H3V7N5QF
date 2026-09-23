@@ -9,22 +9,26 @@ disagreement between two computations that do not call each other:
 * M1 against M2, on loop-free states and on the loopy witness;
 * the base answer "remove the obstruction" against perform-then-remove;
 * a refusal against the state it was refused on.
+
+The frontier has two kinds of entry: `|terms`, an attempt whose outcome has
+more terms than the bound, and `|rounds`, a result first reached in the last
+round, whose changes the round bound left unattempted. `results_*.csv`
+records, for every result, what it adds to what is given.
 """
 
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 from pathlib import Path
 
 from xry.changes import AnswerKind, Change, Kind, answers, changes, perform
 from xry.cost import cost
-from xry.evidence import compare_evidence, write_manifest
-from xry.explore import explore
-from xry.state import Sameness, State, canonical, given
+from xry.evidence import _write_csv, compare_evidence, write_manifest
+from xry.explore import explore, order
+from xry.state import Sameness, State, added, canonical, given
 
 from seventeenth.explore import (
-    added_loop,
     by_cost,
     closure_perform,
     closure_unobstructed,
@@ -56,6 +60,16 @@ class LoopCheck:
     perform_results: int
     frontier: tuple[str, ...] = ()
     by_run: tuple[str, ...] = ()
+    unexpanded_by_run: tuple[str, ...] = ()
+
+
+def disagreements(report: LoopCheck) -> dict[str, list[str]]:
+    """Every disagreement list of `report`, by field name."""
+    return {
+        field.name: getattr(report, field.name)
+        for field in fields(report)
+        if isinstance(getattr(report, field.name), list)
+    }
 
 
 def _depth_diff(left: dict[State, int], right: dict[State, int]) -> list[str]:
@@ -64,7 +78,8 @@ def _depth_diff(left: dict[State, int], right: dict[State, int]) -> list[str]:
     return sorted(bad)
 
 
-def _runs(bound: int, rounds: int) -> tuple[tuple[bool, Sameness], ...]:
+def _runs() -> tuple[tuple[bool, Sameness], ...]:
+    """The four runs: `bra` asserted or not, under both readings of sameness."""
     return tuple((bra, sameness) for bra in (False, True) for sameness in Sameness)
 
 
@@ -86,7 +101,8 @@ def check_bounds(bound: int, rounds: int) -> LoopCheck:
     perform_n = 0
     frontier: list[str] = []
     by_run: list[str] = []
-    for bra, sameness in _runs(bound, rounds):
+    unexpanded: list[str] = []
+    for bra, sameness in _runs():
         start = given(bra, sameness)
         tag = f"{sameness.value}/{bra}"
         replace = closure_unobstructed(start, bound, rounds)
@@ -94,9 +110,12 @@ def check_bounds(bound: int, rounds: int) -> LoopCheck:
         base = explore(start, bound, rounds)
         frontier.extend(f"{tag}:replace:{item}" for item in replace.frontier)
         frontier.extend(f"{tag}:perform:{item}" for item in performed.frontier)
+        frontier.extend(f"{tag}:replace:{key}|rounds" for key in replace.unexpanded)
+        frontier.extend(f"{tag}:perform:{key}|rounds" for key in performed.unexpanded)
         replace_n += len(replace.depth)
         perform_n += len(performed.depth)
         by_run.append(f"{tag}:replace:{len(replace.depth)}:perform:{len(performed.depth)}")
+        unexpanded.append(f"{tag}:replace:{len(replace.unexpanded)}:perform:{len(performed.unexpanded)}")
         for state in replace.depth:
             if has_xrx(state):
                 replace_has.append(f"{tag}:{state.key()}")
@@ -111,9 +130,6 @@ def check_bounds(bound: int, rounds: int) -> LoopCheck:
             misses.append(f"{tag}:{witness.key()}")
         elif cost(witness, bra) <= length:
             not_above.append(f"{tag}:{witness.key()}")
-        extra = added_loop(bra, sameness)
-        if extra not in performed.depth:
-            misses.append(f"{tag}:{extra.key()}")
         for state in replace.depth:
             for change in changes(state):
                 if obstructed_m1(state, change) != outcome_has_xrx(state, change):
@@ -147,6 +163,7 @@ def check_bounds(bound: int, rounds: int) -> LoopCheck:
         perform_n,
         tuple(sorted(set(frontier))),
         tuple(by_run),
+        tuple(unexpanded),
     )
 
 
@@ -178,22 +195,50 @@ def _refusal_changes(bra: bool, sameness: Sameness) -> bool:
 
 def passes(report: LoopCheck) -> bool:
     """Every disagreement list is empty."""
-    return not any(
-        (
-            report.replace_has_xrx,
-            report.replace_not_base,
-            report.replace_cost_mismatch,
-            report.replace_not_formula,
-            report.perform_misses_witness,
-            report.perform_cost_not_above,
-            report.m_disagree_loopfree,
-            report.m_agree_on_loop,
-            report.remove_first_differs,
-            report.refusal_changes_something,
-            report.loop_beginning_in_replace,
-            report.loop_beginning_not_in_perform,
-        )
-    )
+    return not any(disagreements(report).values())
+
+
+RESULT_HEADER = (
+    "run",
+    "reading",
+    "state",
+    "written",
+    "terms",
+    "assertions",
+    "terms_added_to_given",
+    "assertions_added_to_given",
+    "round_first_reached",
+    "asserts_xrx",
+)
+
+
+def result_rows(bound: int, rounds: int) -> list[list[object]]:
+    """One row per result of each run and reading: what it adds to what is given, and when."""
+    rows: list[list[object]] = []
+    for bra, sameness in _runs():
+        start = given(bra, sameness)
+        tag = f"{sameness.value}/{bra}"
+        for reading, closed in (
+            ("replace", closure_unobstructed(start, bound, rounds)),
+            ("perform", closure_perform(start, bound, rounds)),
+        ):
+            for state in sorted(closed.depth, key=lambda s: (closed.depth[s], order(s))):
+                terms, assertions = added(state)
+                rows.append(
+                    [
+                        tag,
+                        reading,
+                        state.key(),
+                        state.written(),
+                        state.n,
+                        state.m,
+                        terms,
+                        assertions,
+                        closed.depth[state],
+                        int(has_xrx(state)),
+                    ]
+                )
+    return rows
 
 
 @dataclass(frozen=True)
@@ -207,7 +252,7 @@ class Plan:
 
 
 def write_all(out: Path, plan: Plan | None = None) -> dict[str, object]:
-    """Write `summary.json` and the small attempt log. Return the summary."""
+    """Write `summary.json`, the result rows, and the small attempt log. Return the summary."""
     chosen = plan or Plan()
     out.mkdir(parents=True, exist_ok=True)
     report = check_bounds(chosen.bound, chosen.rounds)
@@ -215,31 +260,23 @@ def write_all(out: Path, plan: Plan | None = None) -> dict[str, object]:
         "bound": chosen.bound,
         "rounds": chosen.rounds,
         "passes": passes(report),
-        "runs": 4,
+        "runs": len(_runs()),
         "replace_results_summed_over_runs": report.replace_results,
         "perform_results_summed_over_runs": report.perform_results,
-        "replace_has_xrx": report.replace_has_xrx,
-        "replace_not_base": report.replace_not_base,
-        "replace_cost_mismatch": report.replace_cost_mismatch,
-        "replace_not_formula": report.replace_not_formula,
-        "perform_misses_witness": report.perform_misses_witness,
-        "perform_cost_not_above": report.perform_cost_not_above,
-        "m_disagree_loopfree": report.m_disagree_loopfree,
-        "m_agree_on_loop": report.m_agree_on_loop,
-        "remove_first_differs": report.remove_first_differs,
-        "refusal_changes_something": report.refusal_changes_something,
-        "loop_beginning_in_replace": report.loop_beginning_in_replace,
-        "loop_beginning_not_in_perform": report.loop_beginning_not_in_perform,
         "frontier": list(report.frontier),
         "by_run": list(report.by_run),
+        "unexpanded_by_run": list(report.unexpanded_by_run),
     }
+    summary.update(disagreements(report))
     (out / "summary.json").write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
         newline="\n",
     )
+    results_name = f"results_bound{chosen.bound}_rounds{chosen.rounds}.csv"
+    _write_csv(out / results_name, RESULT_HEADER, result_rows(chosen.bound, chosen.rounds))
     lines: list[str] = []
-    for bra, sameness in _runs(chosen.log_bound, chosen.log_rounds):
+    for bra, sameness in _runs():
         start = given(bra, sameness)
         for run in (
             closure_unobstructed(start, chosen.log_bound, chosen.log_rounds, keep_log=True),

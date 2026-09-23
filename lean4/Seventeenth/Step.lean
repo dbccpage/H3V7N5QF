@@ -31,9 +31,9 @@ inductive Step17 : St → St → Type
       Step17 s (s.identify u v)
 
 /-- M1: the assertions that would become some `xrx`. An existing `xrx` does
-not obstruct an unrelated change. The target state is a pattern, not a fixed
-index: `Step17` is a proposition, and a match on a fixed index does not
-eliminate into `Prop`. -/
+not obstruct an unrelated change. The target state is matched as a pattern,
+not as a fixed index: the match with a fixed target did not elaborate
+(`paper/seventeenth/change_log.md`, entry 6). -/
 def Step17.obstructedM1 {s : St} : {s' : St} → Step17 s s' → Prop
   | _, addTerm _ _ _ => False
   | _, addAssertion _ x y _ _ _ => x = y

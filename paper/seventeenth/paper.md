@@ -57,11 +57,15 @@ against `xry.explore` on the results that assert no `xrx`).
 7. The process does not terminate: adding a term is never obstructed under
    M1 and produces a new state, so every round has a new result if no bound
    is imposed (derived, written). Declared bound: 3 terms and 6 rounds, both
-   beginnings, both readings of sameness. Within it A-replace is complete,
-   certified by listing every loop-free state whose base cost is at most 6.
-   A-perform is the breadth-first closure; states past the term bound are
-   the exported frontier; there is no separate count of every state that
-   asserts `xrx` (the count is partial).
+   beginnings, both readings of sameness. The frontier exports both cuts:
+   every attempt whose outcome has more than 3 terms, and every result first
+   reached in round 6, whose changes the round bound left unattempted. The
+   round bound binds: every A-perform run, and A-replace with names kept,
+   still found new results in round 6 (computed, `unexpanded_by_run`).
+   Within the declared bound A-replace is certified by listing every
+   loop-free state whose base cost is at most 6. A-perform is the
+   breadth-first closure; there is no separate count of every state that
+   asserts `xrx` (the count is partial, O4).
 
 ## 1. What the seed gives
 
@@ -104,7 +108,8 @@ to withdraw it.
 | result | chosen (C6) | up to sameness; under A-replace, a loop-free state; under A-perform, any outcome of `perform` |
 | sameness, two readings | given (G12); chosen (C4) | both kept |
 | round; one performed change counts one | chosen (C6) | a refusal counts as an attempt and not as a change |
-| bound, frontier | given (G13); the numbers chosen (C8) | |
+| bound, frontier | given (G13); the numbers chosen (C8) | the frontier has a `\|terms` entry for each attempt past the term bound and a `\|rounds` entry for each result the round bound left unexpanded |
+| what a result adds to what is given | given (G11) | recorded per result in `results_bound3_rounds6.csv` (K5) |
 | `has_xrx` | derived | true when some `xrx` is asserted |
 | base cost | cited (1:D8) | re-checked: a lower bound along A-replace; not along A-perform |
 
@@ -147,7 +152,7 @@ results first reached in round `k − 1`, fewest additions first (the base's
 **C8.** Bound: 3 terms and 6 rounds, for all four runs (both values of `bra`,
 both readings of sameness). Full attempt log at 2 terms and 3 rounds. The
 plan's wider bounds were not run; this is the bound that is certified. 100
-rounds are not listed (D11).
+rounds are not listed (D10).
 
 ## 4. What follows
 
@@ -177,8 +182,8 @@ reconstructs the struck sentence: only together with not entering the
 obstructed change.
 
 **The base's unobstructed steps are these steps.** Every base `Step` is an
-unobstructed `Step17` (`Step.toStep17`, `Step.unobstructed17`). On a
-loop-free state, an unobstructed `Step17` is a base `Step`
+unobstructed `Step17` (`Step.toStep17`, `Step.unobstructed17`). Every
+unobstructed `Step17` is a base `Step`, with no hypothesis on the state
 (`Step17.toStep`). Sequences match (`Reach.toReach17`, `Reach17.toReach`).
 The base's side-conditions (no added `xrx`; an identification only of
 unrelated terms) are exactly M1, not an extra ban.
@@ -233,7 +238,7 @@ loop-freeness (`loopFree_rename`).
 unobstructed under M1 and is entered under both readings. The new term was
 not there, so the outcome is a different state, with one more term. From
 any state, repeating it produces a new result at every later round. No
-bound on terms was given (C3, the base's reading, kept). The seed's 100
+bound on terms was given (1:C3, the base's reading, kept). The seed's 100
 rounds are therefore not a last round. The declared bound is the cut, not
 a theorem that the process stops.
 
@@ -284,26 +289,34 @@ Declared bound (C8): 3 terms, 6 rounds, four runs. The check
 - the set of A-replace results with the set of loop-free states of at most
   3 terms whose base cost is at most 6 (listed by masks and name placements,
   then the least writing — not by walking the changes);
-- the A-perform closure against the one-step witnesses;
+- the A-perform closure against the one-step identification witness;
 - M1 against M2 on the A-replace results, and on `loopyWitness`;
 - the base's remove-answer against perform-then-remove;
 - the refusal of adding `ara` against the state it was refused on;
 - the two unchosen beginnings against both closures.
 
 Every disagreement list is empty (`summary.json`, `passes` true). The four
-runs, from `by_run`:
+runs, from `by_run`, with the results first reached in round 6 from
+`unexpanded_by_run` in brackets:
 
 | Run | A-replace | A-perform |
 |---|---|---|
-| any rewriting, `bra` not asserted | 20 | 105 |
-| names kept, `bra` not asserted | 85 | 486 |
-| any rewriting, `bra` asserted | 20 | 111 |
-| names kept, `bra` asserted | 76 | 486 |
+| any rewriting, `bra` not asserted | 20 (1) | 105 (17) |
+| names kept, `bra` not asserted | 85 (15) | 486 (171) |
+| any rewriting, `bra` asserted | 20 (0) | 111 (15) |
+| names kept, `bra` asserted | 76 (10) | 486 (171) |
 
-Summed: 201 A-replace results and 1188 A-perform results. The attempts that leave the term
-bound are `frontier`, one line each, prefixed by the run and the reading.
-The attempt log at 2 terms and 3 rounds is
-`attempts_bound2_rounds3.jsonl`.
+Summed: 201 A-replace results and 1188 A-perform results. The frontier,
+one line each and prefixed by the run and the reading, has two kinds of
+entry: `|terms`, an attempt whose outcome has more than 3 terms (874), and
+`|rounds`, a result first reached in round 6, whose changes the round bound
+left unattempted (400). Together they are the exact frontier of the
+declared bound. Only the A-replace run with any rewriting and `bra`
+asserted has no `|rounds` entry: it finished inside 3 terms before round 6.
+`results_bound3_rounds6.csv` records, for each of the 1389 results, the run,
+the reading, how many terms and assertions it adds to what is given, the
+round it is first reached, and whether it asserts `xrx` (G11). The attempt
+log at 2 terms and 3 rounds is `attempts_bound2_rounds3.jsonl`.
 
 The A-replace listing is the completeness certificate inside the bound: a
 loop-free state of at most 3 terms is a result exactly when its base cost
@@ -312,9 +325,10 @@ restricted to this bound, computed again.
 
 The A-perform closure is not certified against a listing of every
 well-formed state. A state can assert `xrx`, and the base cost is not its
-round, so the legal-state count does not apply. The frontier is the exact
-set of attempts that left the term bound. Paths that leave the bound and
-return are not searched (O3). The round recorded for an A-perform result is
+round, so the legal-state count does not apply. Every A-perform run still
+found new results in round 6, so the round bound, not exhaustion, ended
+it; whether it would grow further inside 3 terms is not decided (O4).
+Paths that leave the term bound and return are not searched (O3). The round recorded for an A-perform result is
 the shortest sequence that stays inside the bound; a path of that length
 exists, and it is not proved to be the fewest among all sequences.
 

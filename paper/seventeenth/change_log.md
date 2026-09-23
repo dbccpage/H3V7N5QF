@@ -53,3 +53,34 @@ cycle: fixed the Seventeenth Lean build (EXIT=0); next write `evidence/seventeen
    `Classical.choice` and `Quot.sound`. O1 is closed (K4). O2–O5 stay open.
 
 cycle: wrote the axiom report and closed O1; the seventeenth derivation's gates are the remaining check before the branch is finished.
+
+8. Review of pull request 39 (2026-09-23). Entries 1–7 and the cycle notes
+   above are left as written; this entry corrects them.
+   - Entry 7 said the report has "`#print axioms` for every cited theorem".
+     It did not: ten cited theorems had no line (`loopyWitness_hasXrx`,
+     `identify_givenA_reach`, `oneLoop_hasXrx`, `add_ara_reach`, and
+     `wf`, `nonempty`, `names_stay_merged` for both `Reach17` and
+     `ReachAll`). They are added to `Seventeenth/Axioms.lean` and the
+     report is regenerated. `tests/test_seventeenth_leanreport.py` now
+     fails when a theorem of `lean4/Seventeenth/` cited in the ledger or
+     the paper has no line in `lean_axioms.txt`.
+   - The frontier listed only attempts that leave the term bound, but the
+     round bound also cut the closures: every A-perform run and the
+     names-kept A-replace runs still found new results in round 6. The
+     frontier now also lists those 400 results as `|rounds` entries, with
+     per-run counts in `unexpanded_by_run` (K2).
+   - What each result adds to what is given (G11) was not recorded. It is
+     now, for all 1389 results, in `results_bound3_rounds6.csv` (K5).
+   - `Step17.toStep`, `Reach.toReach17` and `Reach17.toReach` took a
+     loop-free hypothesis they never used. It is dropped, and D4 states the
+     embedding with no hypothesis on the state.
+   - D1 marks its second sentence as true by the definition of M1. D7's
+     re-check now says the base theorem is cited, not re-proved. The
+     paper's references to C3 and D11, which named no row of this ledger,
+     now read 1:C3 and D10.
+   - The `ara` half of `perform_misses_witness` named the same state as
+     `loop_beginning_not_in_perform`, and is removed. `passes` and the
+     summary now read the disagreement lists off the `LoopCheck` fields.
+   - Two shared files changed by this derivation were not logged: the
+     seventeenth panel in `ci/check_mutation_bite.py`, and the paper's
+     pinned hits in `ci/prose_watchlist.json`.

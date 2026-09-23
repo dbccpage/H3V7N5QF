@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -9,7 +10,9 @@ import lean_report_seventeenth
 from seventeenth import leanreport
 from xry.leanreport import Runner
 
-AXIOMS = "'Seed.Seventeenth.t' does not depend on any axioms\r\n\r\n'Seed.Seventeenth.u' depends on axioms: [propext]\n"
+REPO = Path(__file__).resolve().parents[1]
+
+AXIOMS ="'Seed.Seventeenth.t' does not depend on any axioms\r\n\r\n'Seed.Seventeenth.u' depends on axioms: [propext]\n"
 
 
 def lean_dir(tmp_path: Path, body: str = "theorem t : True := trivial\n") -> Path:
@@ -55,6 +58,23 @@ def test_report_fails_loudly(tmp_path: Path) -> None:
 
     with pytest.raises(RuntimeError, match="standard axioms"):
         leanreport.report(root, odd)
+
+
+def test_every_cited_seventeenth_theorem_is_reported() -> None:
+    """Each theorem of `lean4/Seventeenth/` that the ledger or the paper cites
+    has its `#print axioms` line in the committed `lean_axioms.txt`."""
+    lean = "\n".join(
+        path.read_text(encoding="utf-8") for path in sorted((REPO / "lean4" / "Seventeenth").glob("*.lean"))
+    )
+    theorems = set(re.findall(r"(?m)^theorem\s+([\w.']+)", lean))
+    cited: set[str] = set()
+    for doc in ("claim_ledger.md", "paper.md"):
+        text = (REPO / "paper" / "seventeenth" / doc).read_text(encoding="utf-8")
+        cited.update(re.findall(r"`([\w.']+)`", text))
+    report = (REPO / "evidence" / "seventeenth" / "lean_axioms.txt").read_text(encoding="utf-8")
+    printed = set(re.findall(r"'Seed\.Seventeenth\.([\w.']+)'", report))
+    assert theorems & cited, "no cited theorem found: the census is empty"
+    assert not sorted((theorems & cited) - printed), sorted((theorems & cited) - printed)
 
 
 def test_main_writes_the_report_and_the_manifest(

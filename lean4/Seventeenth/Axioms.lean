@@ -12,6 +12,7 @@ in `evidence/seventeenth/lean_axioms.txt`.
 open Seed.Seventeenth
 
 #print axioms hasXrx_iff_not_legal
+#print axioms loopyWitness_hasXrx
 #print axioms adding_xrx_obstructed
 #print axioms adding_xrx_step_obstructed
 #print axioms m1_iff_m2_of_loopFree
@@ -23,6 +24,12 @@ open Seed.Seventeenth
 #print axioms loopy_m1_allows
 #print axioms loopy_m2_obstructs
 #print axioms Reach17.loopFree
+#print axioms Reach17.wf
+#print axioms Reach17.nonempty
+#print axioms Reach17.names_stay_merged
+#print axioms ReachAll.wf
+#print axioms ReachAll.nonempty
+#print axioms ReachAll.names_stay_merged
 #print axioms Step.toStep17
 #print axioms Step.unobstructed17
 #print axioms Step17.toStep
@@ -33,11 +40,14 @@ open Seed.Seventeenth
 #print axioms fewest_changes17_A
 #print axioms fewest_changes17_B
 #print axioms identify_givenA_step
+#print axioms identify_givenA_reach
+#print axioms oneLoop_hasXrx
 #print axioms mergedA_hasXrx
 #print axioms names_merged_with_loop
 #print axioms cost_not_lower_bound_A
 #print axioms cost_not_lower_bound_B
 #print axioms arb_not_gone
+#print axioms add_ara_reach
 #print axioms add_ara_hasXrx
 #print axioms add_ara_not_unobstructed
 #print axioms remove_first_eq_perform_first

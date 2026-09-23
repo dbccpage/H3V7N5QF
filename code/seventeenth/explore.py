@@ -38,11 +38,18 @@ class StepRecord:
 
 @dataclass
 class Closure:
-    """States reached, by round, and the attempts that leave the term bound."""
+    """States reached, by round, and where the declared bound cut the closure.
+
+    `frontier` lists the attempts that leave the term bound. `unexpanded`
+    lists the results first reached in the last round: the round bound left
+    their changes unattempted. Both are empty only for a closure that
+    finished inside the bound.
+    """
 
     depth: dict[State, int]
     frontier: tuple[str, ...]
     log: tuple[StepRecord, ...] = ()
+    unexpanded: tuple[str, ...] = ()
 
 
 def closure(
@@ -56,7 +63,8 @@ def closure(
     """Breadth-first closure under `perform`.
 
     `enter_obstructed` is A-perform when true and A-replace when false.
-    An outcome with more than `bound` terms is frontier, not a result.
+    An outcome with more than `bound` terms is frontier, not a result. A
+    result first reached in round `rounds` is unexpanded.
     """
     if rounds < 0 or bound < start.n:
         raise ValueError("the bound is below the start, or the rounds are negative")
@@ -92,7 +100,8 @@ def closure(
                         )
                     )
         wave = sorted(found, key=order)
-    return Closure(depth, tuple(sorted(set(frontier))), tuple(log))
+    unexpanded = tuple(sorted(state.key() for state in wave))
+    return Closure(depth, tuple(sorted(set(frontier))), tuple(log), unexpanded)
 
 
 def closure_unobstructed(start: State, bound: int, rounds: int, keep_log: bool = False) -> Closure:

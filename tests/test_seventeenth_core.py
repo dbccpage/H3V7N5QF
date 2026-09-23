@@ -59,6 +59,8 @@ def test_perform_reaches_the_witnesses_and_the_formula_does_not_bound_them() -> 
             assert reached.depth[witness] == 1
             assert cost(witness, bra) > 1
             assert with_loop(bra, sameness) in reached.depth
+            # Adding `ara` to what is given is the `ara` beginning itself.
+            assert added_loop(bra, sameness) == with_loop(bra, sameness)
             assert with_other_loop(bra, sameness) in reached.depth
             assert has_xrx(with_other_loop(bra, sameness))
             assert with_loop(bra, sameness) not in closure_unobstructed(start, 2, 4).depth
@@ -86,6 +88,15 @@ def test_closure_rejects_a_bound_below_the_start_and_logs() -> None:
     replaced = closure_unobstructed(start, 2, 1, keep_log=True)
     assert any(record.obstructed and not record.entered for record in replaced.log)
     assert any("terms" in line for line in replaced.frontier)
+
+
+def test_closure_reports_what_the_round_bound_left_unexpanded() -> None:
+    start = given(False, Sameness.FREE)
+    cut = closure_unobstructed(start, 2, 1)
+    assert cut.unexpanded
+    assert set(cut.unexpanded) == {state.key() for state, depth in cut.depth.items() if depth == 1}
+    assert closure_unobstructed(start, 2, 20).unexpanded == ()
+    assert closure_perform(start, 2, 0).unexpanded == (canonical(start).key(),)
 
 
 def test_loopfree_enumeration_skips_the_diagonal() -> None:

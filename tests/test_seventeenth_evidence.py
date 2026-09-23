@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import dataclasses
 import json
 from pathlib import Path
 
@@ -11,7 +12,15 @@ from xry.state import Sameness, State
 import run_seventeenth
 from seventeenth import __main__ as cli
 from seventeenth import evidence
-from seventeenth.evidence import LoopCheck, Plan, check_bounds, passes, write_all
+from seventeenth.evidence import (
+    RESULT_HEADER,
+    LoopCheck,
+    Plan,
+    check_bounds,
+    disagreements,
+    passes,
+    write_all,
+)
 from seventeenth.explore import Closure, closure_unobstructed, with_loop
 from seventeenth.loop import obstructed_m1
 
@@ -26,6 +35,7 @@ def test_check_bounds_passes_and_records_both_readings() -> None:
     assert report.perform_results > report.replace_results
     assert not report.replace_has_xrx
     assert len(report.by_run) == 4
+    assert len(report.unexpanded_by_run) == 4
     assert report.frontier
 
 
@@ -33,6 +43,12 @@ def test_passes_rejects_a_disagreement() -> None:
     blank = check_bounds(2, 1)
     # rounds 1 still passes; a hand-filled list does not
     assert passes(blank)
+    # One round leaves every round-1 result unexpanded: those are frontier too.
+    assert any(item.endswith("|rounds") for item in blank.frontier)
+    names = list(disagreements(blank))
+    assert len(names) == 12
+    for name in names:
+        assert not passes(dataclasses.replace(blank, **{name: ["x"]})), name
     failed = LoopCheck(
         ["x"],
         [],
@@ -59,6 +75,13 @@ def test_write_all_round_trip(tmp_path: Path) -> None:
     assert json.loads(text)["passes"] is True
     log = (tmp_path / "attempts_bound2_rounds2.jsonl").read_text(encoding="utf-8")
     assert "replace" in log and "perform" in log
+    unexpanded = summary["unexpanded_by_run"]
+    assert isinstance(unexpanded, list) and len(unexpanded) == 4
+    rows = (tmp_path / "results_bound2_rounds4.csv").read_text(encoding="utf-8").splitlines()
+    assert rows[0] == ",".join(RESULT_HEADER)
+    readings = {row.split(",")[1] for row in rows[1:]}
+    assert readings == {"replace", "perform"}
+    assert any(row.endswith(",1") for row in rows[1:]) and any(row.endswith(",0") for row in rows[1:])
     again = write_all(tmp_path)
     assert again["bound"] == Plan.bound and again["passes"] is True
     assert run_seventeenth.__name__ == "run_seventeenth"

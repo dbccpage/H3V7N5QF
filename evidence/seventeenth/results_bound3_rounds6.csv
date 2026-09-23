@@ -1,0 +1,1390 @@
+run,reading,state,written,terms,assertions,terms_added_to_given,assertions_added_to_given,round_first_reached,asserts_xrx
+free/False,replace,2::0-1,terms a b; asserted arb,2,1,0,0,0,0
+free/False,replace,2::,terms a b; asserted nothing,2,0,0,-1,1,0
+free/False,replace,2::0-1.1-0,terms a b; asserted arb bra,2,2,0,1,1,0
+free/False,replace,3::0-1,terms a b c; asserted arb,3,1,1,0,1,0
+free/False,replace,1::,terms a; asserted nothing,1,0,-1,-1,2,0
+free/False,replace,3::,terms a b c; asserted nothing,3,0,1,-1,2,0
+free/False,replace,3::0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,2,0
+free/False,replace,3::0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,2,0
+free/False,replace,3::0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,2,0
+free/False,replace,3::0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,2,0
+free/False,replace,3::0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,3,0
+free/False,replace,3::0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,3,0
+free/False,replace,3::0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,3,0
+free/False,replace,3::0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,3,0
+free/False,replace,3::0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,4,0
+free/False,replace,3::0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,4,0
+free/False,replace,3::0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,4,0
+free/False,replace,3::0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,4,0
+free/False,replace,3::0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,5,0
+free/False,replace,3::0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,6,0
+free/False,perform,2::0-1,terms a b; asserted arb,2,1,0,0,0,0
+free/False,perform,1::0-0,terms a; asserted ara,1,1,-1,0,1,1
+free/False,perform,2::,terms a b; asserted nothing,2,0,0,-1,1,0
+free/False,perform,2::0-0.0-1,terms a b; asserted ara arb,2,2,0,1,1,1
+free/False,perform,2::0-0.1-0,terms a b; asserted ara bra,2,2,0,1,1,1
+free/False,perform,2::0-1.1-0,terms a b; asserted arb bra,2,2,0,1,1,0
+free/False,perform,3::0-1,terms a b c; asserted arb,3,1,1,0,1,0
+free/False,perform,1::,terms a; asserted nothing,1,0,-1,-1,2,0
+free/False,perform,2::0-0,terms a b; asserted ara,2,1,0,0,2,1
+free/False,perform,2::0-0.0-1.1-0,terms a b; asserted ara arb bra,2,3,0,2,2,1
+free/False,perform,2::0-0.0-1.1-1,terms a b; asserted ara arb brb,2,3,0,2,2,1
+free/False,perform,3::,terms a b c; asserted nothing,3,0,1,-1,2,0
+free/False,perform,3::0-0.0-1,terms a b c; asserted ara arb,3,2,1,1,2,1
+free/False,perform,3::0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,2,0
+free/False,perform,3::0-0.1-0,terms a b c; asserted ara bra,3,2,1,1,2,1
+free/False,perform,3::0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,2,0
+free/False,perform,3::0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,2,0
+free/False,perform,3::0-2.1-1,terms a b c; asserted arc brb,3,2,1,1,2,1
+free/False,perform,3::0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,2,0
+free/False,perform,2::0-0.1-1,terms a b; asserted ara brb,2,2,0,1,3,1
+free/False,perform,2::0-0.0-1.1-0.1-1,terms a b; asserted ara arb bra brb,2,4,0,3,3,1
+free/False,perform,3::0-0,terms a b c; asserted ara,3,1,1,0,3,1
+free/False,perform,3::0-0.0-1.0-2,terms a b c; asserted ara arb arc,3,3,1,2,3,1
+free/False,perform,3::0-0.0-1.1-0,terms a b c; asserted ara arb bra,3,3,1,2,3,1
+free/False,perform,3::0-0.0-2.1-0,terms a b c; asserted ara arc bra,3,3,1,2,3,1
+free/False,perform,3::0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,3,0
+free/False,perform,3::0-0.0-1.1-1,terms a b c; asserted ara arb brb,3,3,1,2,3,1
+free/False,perform,3::0-0.0-2.1-1,terms a b c; asserted ara arc brb,3,3,1,2,3,1
+free/False,perform,3::0-1.0-2.1-1,terms a b c; asserted arb arc brb,3,3,1,2,3,1
+free/False,perform,3::0-2.1-0.1-1,terms a b c; asserted arc bra brb,3,3,1,2,3,1
+free/False,perform,3::0-0.0-2.1-2,terms a b c; asserted ara arc brc,3,3,1,2,3,1
+free/False,perform,3::0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,3,0
+free/False,perform,3::0-0.1-0.2-0,terms a b c; asserted ara bra cra,3,3,1,2,3,1
+free/False,perform,3::0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,3,0
+free/False,perform,3::0-0.1-1.2-0,terms a b c; asserted ara brb cra,3,3,1,2,3,1
+free/False,perform,3::0-1.1-1.2-0,terms a b c; asserted arb brb cra,3,3,1,2,3,1
+free/False,perform,3::0-2.1-1.2-0,terms a b c; asserted arc brb cra,3,3,1,2,3,1
+free/False,perform,3::0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,3,0
+free/False,perform,3::0-0.0-1.0-2.1-0,terms a b c; asserted ara arb arc bra,3,4,1,3,4,1
+free/False,perform,3::0-0.1-1,terms a b c; asserted ara brb,3,2,1,1,4,1
+free/False,perform,3::0-0.0-1.0-2.1-1,terms a b c; asserted ara arb arc brb,3,4,1,3,4,1
+free/False,perform,3::0-0.0-1.1-0.1-1,terms a b c; asserted ara arb bra brb,3,4,1,3,4,1
+free/False,perform,3::0-0.0-2.1-0.1-1,terms a b c; asserted ara arc bra brb,3,4,1,3,4,1
+free/False,perform,3::0-1.0-2.1-0.1-1,terms a b c; asserted arb arc bra brb,3,4,1,3,4,1
+free/False,perform,3::0-0.0-1.0-2.1-2,terms a b c; asserted ara arb arc brc,3,4,1,3,4,1
+free/False,perform,3::0-0.0-2.1-0.1-2,terms a b c; asserted ara arc bra brc,3,4,1,3,4,1
+free/False,perform,3::0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,4,0
+free/False,perform,3::0-0.0-2.1-1.1-2,terms a b c; asserted ara arc brb brc,3,4,1,3,4,1
+free/False,perform,3::0-0.0-1.1-0.2-0,terms a b c; asserted ara arb bra cra,3,4,1,3,4,1
+free/False,perform,3::0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,4,0
+free/False,perform,3::0-0.0-1.1-1.2-0,terms a b c; asserted ara arb brb cra,3,4,1,3,4,1
+free/False,perform,3::0-0.0-2.1-1.2-0,terms a b c; asserted ara arc brb cra,3,4,1,3,4,1
+free/False,perform,3::0-1.0-2.1-1.2-0,terms a b c; asserted arb arc brb cra,3,4,1,3,4,1
+free/False,perform,3::0-0.1-0.1-1.2-0,terms a b c; asserted ara bra brb cra,3,4,1,3,4,1
+free/False,perform,3::0-1.1-0.1-1.2-0,terms a b c; asserted arb bra brb cra,3,4,1,3,4,1
+free/False,perform,3::0-2.1-0.1-1.2-0,terms a b c; asserted arc bra brb cra,3,4,1,3,4,1
+free/False,perform,3::0-0.0-1.1-2.2-0,terms a b c; asserted ara arb brc cra,3,4,1,3,4,1
+free/False,perform,3::0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,4,0
+free/False,perform,3::0-0.1-0.1-2.2-0,terms a b c; asserted ara bra brc cra,3,4,1,3,4,1
+free/False,perform,3::0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,4,0
+free/False,perform,3::0-0.1-1.1-2.2-0,terms a b c; asserted ara brb brc cra,3,4,1,3,4,1
+free/False,perform,3::0-0.1-1.2-0.2-1,terms a b c; asserted ara brb cra crb,3,4,1,3,4,1
+free/False,perform,3::0-0.0-1.1-1.2-2,terms a b c; asserted ara arb brb crc,3,4,1,3,4,1
+free/False,perform,3::0-0.0-1.0-2.1-0.1-1,terms a b c; asserted ara arb arc bra brb,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.0-2.1-0.1-2,terms a b c; asserted ara arb arc bra brc,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.0-2.1-1.1-2,terms a b c; asserted ara arb arc brb brc,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.0-2.1-0.2-0,terms a b c; asserted ara arb arc bra cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.0-2.1-1.2-0,terms a b c; asserted ara arb arc brb cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.1-0.1-1.2-0,terms a b c; asserted ara arb bra brb cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-2.1-0.1-1.2-0,terms a b c; asserted ara arc bra brb cra,3,5,1,4,5,1
+free/False,perform,3::0-1.0-2.1-0.1-1.2-0,terms a b c; asserted arb arc bra brb cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.0-2.1-2.2-0,terms a b c; asserted ara arb arc brc cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.1-0.1-2.2-0,terms a b c; asserted ara arb bra brc cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-2.1-0.1-2.2-0,terms a b c; asserted ara arc bra brc cra,3,5,1,4,5,1
+free/False,perform,3::0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,5,0
+free/False,perform,3::0-0.0-1.1-1.1-2.2-0,terms a b c; asserted ara arb brb brc cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-2.1-1.1-2.2-0,terms a b c; asserted ara arc brb brc cra,3,5,1,4,5,1
+free/False,perform,3::0-1.0-2.1-1.1-2.2-0,terms a b c; asserted arb arc brb brc cra,3,5,1,4,5,1
+free/False,perform,3::0-0.1-0.1-1.1-2.2-0,terms a b c; asserted ara bra brb brc cra,3,5,1,4,5,1
+free/False,perform,3::0-2.1-0.1-1.1-2.2-0,terms a b c; asserted arc bra brb brc cra,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.1-1.2-0.2-1,terms a b c; asserted ara arb brb cra crb,3,5,1,4,5,1
+free/False,perform,3::0-0.0-2.1-1.2-0.2-1,terms a b c; asserted ara arc brb cra crb,3,5,1,4,5,1
+free/False,perform,3::0-1.0-2.1-1.2-0.2-1,terms a b c; asserted arb arc brb cra crb,3,5,1,4,5,1
+free/False,perform,3::0-0.1-1.2-2,terms a b c; asserted ara brb crc,3,3,1,2,5,1
+free/False,perform,3::0-0.0-1.0-2.1-1.2-2,terms a b c; asserted ara arb arc brb crc,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.1-0.1-1.2-2,terms a b c; asserted ara arb bra brb crc,3,5,1,4,5,1
+free/False,perform,3::0-0.0-2.1-0.1-1.2-2,terms a b c; asserted ara arc bra brb crc,3,5,1,4,5,1
+free/False,perform,3::0-0.0-2.1-1.1-2.2-2,terms a b c; asserted ara arc brb brc crc,3,5,1,4,5,1
+free/False,perform,3::0-0.0-1.0-2.1-0.1-1.1-2,terms a b c; asserted ara arb arc bra brb brc,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.0-2.1-0.1-1.2-0,terms a b c; asserted ara arb arc bra brb cra,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.0-2.1-0.1-2.2-0,terms a b c; asserted ara arb arc bra brc cra,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.0-2.1-1.1-2.2-0,terms a b c; asserted ara arb arc brb brc cra,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.1-0.1-1.1-2.2-0,terms a b c; asserted ara arb bra brb brc cra,3,6,1,5,6,1
+free/False,perform,3::0-0.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted ara arc bra brb brc cra,3,6,1,5,6,1
+free/False,perform,3::0-1.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted arb arc bra brb brc cra,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.0-2.1-1.2-0.2-1,terms a b c; asserted ara arb arc brb cra crb,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.1-0.1-1.2-0.2-1,terms a b c; asserted ara arb bra brb cra crb,3,6,1,5,6,1
+free/False,perform,3::0-0.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted ara arc bra brb cra crb,3,6,1,5,6,1
+free/False,perform,3::0-1.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted arb arc bra brb cra crb,3,6,1,5,6,1
+free/False,perform,3::0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,6,0
+free/False,perform,3::0-0.0-2.1-1.1-2.2-0.2-1,terms a b c; asserted ara arc brb brc cra crb,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.0-2.1-0.1-1.2-2,terms a b c; asserted ara arb arc bra brb crc,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.0-2.1-1.1-2.2-2,terms a b c; asserted ara arb arc brb brc crc,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.1-0.1-1.2-0.2-2,terms a b c; asserted ara arb bra brb cra crc,3,6,1,5,6,1
+free/False,perform,3::0-0.0-1.1-1.1-2.2-0.2-2,terms a b c; asserted ara arb brb brc cra crc,3,6,1,5,6,1
+anchored/False,replace,2:01:0-1,terms a b; asserted arb,2,1,0,0,0,0
+anchored/False,replace,2:01:,terms a b; asserted nothing,2,0,0,-1,1,0
+anchored/False,replace,2:01:0-1.1-0,terms a b; asserted arb bra,2,2,0,1,1,0
+anchored/False,replace,3:01:0-1,terms a b c; asserted arb,3,1,1,0,1,0
+anchored/False,replace,1:00:,terms a (a and b are one term); asserted nothing,1,0,-1,-1,2,0
+anchored/False,replace,2:10:0-1,terms b a; asserted bra,2,1,0,0,2,0
+anchored/False,replace,3:01:,terms a b c; asserted nothing,3,0,1,-1,2,0
+anchored/False,replace,3:01:0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,2,0
+anchored/False,replace,3:01:0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,2,0
+anchored/False,replace,3:02:0-2.1-0,terms a c b; asserted arb cra,3,2,1,1,2,0
+anchored/False,replace,3:10:0-2.1-0,terms b a c; asserted brc arb,3,2,1,1,2,0
+anchored/False,replace,3:02:0-2.1-2,terms a c b; asserted arb crb,3,2,1,1,2,0
+anchored/False,replace,2:00:,terms a c (a and b are one term); asserted nothing,2,0,0,-1,3,0
+anchored/False,replace,3:02:0-1,terms a c b; asserted arc,3,1,1,0,3,0
+anchored/False,replace,3:10:0-1,terms b a c; asserted bra,3,1,1,0,3,0
+anchored/False,replace,3:12:0-1,terms c a b; asserted cra,3,1,1,0,3,0
+anchored/False,replace,3:20:0-1,terms b c a; asserted brc,3,1,1,0,3,0
+anchored/False,replace,3:21:0-1,terms c b a; asserted crb,3,1,1,0,3,0
+anchored/False,replace,3:01:0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,3,0
+anchored/False,replace,3:02:0-1.0-2.1-0,terms a c b; asserted arc arb cra,3,3,1,2,3,0
+anchored/False,replace,3:10:0-1.0-2.1-0,terms b a c; asserted bra brc arb,3,3,1,2,3,0
+anchored/False,replace,3:01:0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,3,0
+anchored/False,replace,3:02:0-1.0-2.1-2,terms a c b; asserted arc arb crb,3,3,1,2,3,0
+anchored/False,replace,3:12:0-1.0-2.1-2,terms c a b; asserted cra crb arb,3,3,1,2,3,0
+anchored/False,replace,3:01:0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,3,0
+anchored/False,replace,3:10:0-1.1-0.2-0,terms b a c; asserted bra arb crb,3,3,1,2,3,0
+anchored/False,replace,3:20:0-1.1-0.2-0,terms b c a; asserted brc crb arb,3,3,1,2,3,0
+anchored/False,replace,3:01:0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,3,0
+anchored/False,replace,2:00:0-1,terms a c (a and b are one term); asserted arc,2,1,0,0,4,0
+anchored/False,replace,2:11:0-1,terms c a (a and b are one term); asserted cra,2,1,0,0,4,0
+anchored/False,replace,3:00:,terms a c d (a and b are one term); asserted nothing,3,0,1,-1,4,0
+anchored/False,replace,3:10:0-1.0-2,terms b a c; asserted bra brc,3,2,1,1,4,0
+anchored/False,replace,3:12:0-1.0-2,terms c a b; asserted cra crb,3,2,1,1,4,0
+anchored/False,replace,3:02:0-1.1-0,terms a c b; asserted arc cra,3,2,1,1,4,0
+anchored/False,replace,3:20:0-1.1-0,terms b c a; asserted brc crb,3,2,1,1,4,0
+anchored/False,replace,3:01:0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,4,0
+anchored/False,replace,3:12:0-2.1-0,terms c a b; asserted crb arc,3,2,1,1,4,0
+anchored/False,replace,3:20:0-2.1-0,terms b c a; asserted bra crb,3,2,1,1,4,0
+anchored/False,replace,3:21:0-2.1-0,terms c b a; asserted cra brc,3,2,1,1,4,0
+anchored/False,replace,3:01:0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,4,0
+anchored/False,replace,3:20:0-2.1-2,terms b c a; asserted bra cra,3,2,1,1,4,0
+anchored/False,replace,3:01:0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,4,0
+anchored/False,replace,3:02:0-1.0-2.1-0.1-2,terms a c b; asserted arc arb cra crb,3,4,1,3,4,0
+anchored/False,replace,3:01:0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,4,0
+anchored/False,replace,3:10:0-1.0-2.1-0.2-0,terms b a c; asserted bra brc arb crb,3,4,1,3,4,0
+anchored/False,replace,3:01:0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,4,0
+anchored/False,replace,3:02:0-1.0-2.1-2.2-0,terms a c b; asserted arc arb crb bra,3,4,1,3,4,0
+anchored/False,replace,3:12:0-1.0-2.1-2.2-0,terms c a b; asserted cra crb arb brc,3,4,1,3,4,0
+anchored/False,replace,3:20:0-1.0-2.1-2.2-0,terms b c a; asserted brc bra cra arb,3,4,1,3,4,0
+anchored/False,replace,3:02:0-2.1-0.1-2.2-0,terms a c b; asserted arb cra crb bra,3,4,1,3,4,0
+anchored/False,replace,3:10:0-2.1-0.1-2.2-0,terms b a c; asserted brc arb arc crb,3,4,1,3,4,0
+anchored/False,replace,2:00:0-1.1-0,terms a c (a and b are one term); asserted arc cra,2,2,0,1,5,0
+anchored/False,replace,3:00:0-1,terms a c d (a and b are one term); asserted arc,3,1,1,0,5,0
+anchored/False,replace,3:11:0-1,terms c a d (a and b are one term); asserted cra,3,1,1,0,5,0
+anchored/False,replace,3:22:0-1,terms c d a (a and b are one term); asserted crd,3,1,1,0,5,0
+anchored/False,replace,3:12:0-1.0-2.1-0,terms c a b; asserted cra crb arc,3,3,1,2,5,0
+anchored/False,replace,3:20:0-1.0-2.1-0,terms b c a; asserted brc bra crb,3,3,1,2,5,0
+anchored/False,replace,3:21:0-1.0-2.1-0,terms c b a; asserted crb cra brc,3,3,1,2,5,0
+anchored/False,replace,3:10:0-1.0-2.1-2,terms b a c; asserted bra brc arc,3,3,1,2,5,0
+anchored/False,replace,3:20:0-1.0-2.1-2,terms b c a; asserted brc bra cra,3,3,1,2,5,0
+anchored/False,replace,3:21:0-1.0-2.1-2,terms c b a; asserted crb cra bra,3,3,1,2,5,0
+anchored/False,replace,3:02:0-1.1-0.2-0,terms a c b; asserted arc cra bra,3,3,1,2,5,0
+anchored/False,replace,3:12:0-1.1-0.2-0,terms c a b; asserted cra arc brc,3,3,1,2,5,0
+anchored/False,replace,3:21:0-1.1-0.2-0,terms c b a; asserted crb brc arc,3,3,1,2,5,0
+anchored/False,replace,3:02:0-1.1-2.2-0,terms a c b; asserted arc crb bra,3,3,1,2,5,0
+anchored/False,replace,3:01:0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,5,0
+anchored/False,replace,3:02:0-1.0-2.1-0.1-2.2-0,terms a c b; asserted arc arb cra crb bra,3,5,1,4,5,0
+anchored/False,replace,3:10:0-1.0-2.1-0.1-2.2-0,terms b a c; asserted bra brc arb arc crb,3,5,1,4,5,0
+anchored/False,replace,3:12:0-1.0-2.1-0.1-2.2-0,terms c a b; asserted cra crb arc arb brc,3,5,1,4,5,0
+anchored/False,replace,3:20:0-1.0-2.1-0.1-2.2-0,terms b c a; asserted brc bra crb cra arb,3,5,1,4,5,0
+anchored/False,replace,3:00:0-1.0-2,terms a c d (a and b are one term); asserted arc ard,3,2,1,1,6,0
+anchored/False,replace,3:11:0-1.0-2,terms c a d (a and b are one term); asserted cra crd,3,2,1,1,6,0
+anchored/False,replace,3:00:0-1.1-0,terms a c d (a and b are one term); asserted arc cra,3,2,1,1,6,0
+anchored/False,replace,3:22:0-1.1-0,terms c d a (a and b are one term); asserted crd drc,3,2,1,1,6,0
+anchored/False,replace,3:00:0-2.1-0,terms a c d (a and b are one term); asserted ard cra,3,2,1,1,6,0
+anchored/False,replace,3:11:0-2.1-0,terms c a d (a and b are one term); asserted crd arc,3,2,1,1,6,0
+anchored/False,replace,3:22:0-2.1-0,terms c d a (a and b are one term); asserted cra drc,3,2,1,1,6,0
+anchored/False,replace,3:00:0-2.1-2,terms a c d (a and b are one term); asserted ard crd,3,2,1,1,6,0
+anchored/False,replace,3:22:0-2.1-2,terms c d a (a and b are one term); asserted cra dra,3,2,1,1,6,0
+anchored/False,replace,3:20:0-1.0-2.1-0.1-2,terms b c a; asserted brc bra crb cra,3,4,1,3,6,0
+anchored/False,replace,3:12:0-1.0-2.1-0.2-0,terms c a b; asserted cra crb arc brc,3,4,1,3,6,0
+anchored/False,replace,3:10:0-1.0-2.1-2.2-0,terms b a c; asserted bra brc arc crb,3,4,1,3,6,0
+anchored/False,replace,3:21:0-1.0-2.1-2.2-0,terms c b a; asserted crb cra bra arc,3,4,1,3,6,0
+anchored/False,replace,3:01:0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,6,0
+anchored/False,replace,3:01:0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,6,0
+anchored/False,perform,2:01:0-1,terms a b; asserted arb,2,1,0,0,0,0
+anchored/False,perform,1:00:0-0,terms a (a and b are one term); asserted ara,1,1,-1,0,1,1
+anchored/False,perform,2:01:,terms a b; asserted nothing,2,0,0,-1,1,0
+anchored/False,perform,2:01:0-0.0-1,terms a b; asserted ara arb,2,2,0,1,1,1
+anchored/False,perform,2:10:0-0.1-0,terms b a; asserted brb arb,2,2,0,1,1,1
+anchored/False,perform,2:01:0-1.1-0,terms a b; asserted arb bra,2,2,0,1,1,0
+anchored/False,perform,3:01:0-1,terms a b c; asserted arb,3,1,1,0,1,0
+anchored/False,perform,1:00:,terms a (a and b are one term); asserted nothing,1,0,-1,-1,2,0
+anchored/False,perform,2:00:0-0,terms a c (a and b are one term); asserted ara,2,1,0,0,2,1
+anchored/False,perform,2:01:0-0,terms a b; asserted ara,2,1,0,0,2,1
+anchored/False,perform,2:10:0-0,terms b a; asserted brb,2,1,0,0,2,1
+anchored/False,perform,2:10:0-1,terms b a; asserted bra,2,1,0,0,2,0
+anchored/False,perform,2:01:0-0.0-1.1-0,terms a b; asserted ara arb bra,2,3,0,2,2,1
+anchored/False,perform,2:10:0-0.0-1.1-0,terms b a; asserted brb bra arb,2,3,0,2,2,1
+anchored/False,perform,2:01:0-0.0-1.1-1,terms a b; asserted ara arb brb,2,3,0,2,2,1
+anchored/False,perform,3:01:,terms a b c; asserted nothing,3,0,1,-1,2,0
+anchored/False,perform,3:01:0-0.0-1,terms a b c; asserted ara arb,3,2,1,1,2,1
+anchored/False,perform,3:01:0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,2,0
+anchored/False,perform,3:10:0-0.1-0,terms b a c; asserted brb arb,3,2,1,1,2,1
+anchored/False,perform,3:01:0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,2,0
+anchored/False,perform,3:02:0-2.1-0,terms a c b; asserted arb cra,3,2,1,1,2,0
+anchored/False,perform,3:10:0-2.1-0,terms b a c; asserted brc arb,3,2,1,1,2,0
+anchored/False,perform,3:02:0-2.1-1,terms a c b; asserted arb crc,3,2,1,1,2,1
+anchored/False,perform,3:02:0-2.1-2,terms a c b; asserted arb crb,3,2,1,1,2,0
+anchored/False,perform,2:00:,terms a c (a and b are one term); asserted nothing,2,0,0,-1,3,0
+anchored/False,perform,2:00:0-0.0-1,terms a c (a and b are one term); asserted ara arc,2,2,0,1,3,1
+anchored/False,perform,2:10:0-0.0-1,terms b a; asserted brb bra,2,2,0,1,3,1
+anchored/False,perform,2:00:0-0.1-0,terms a c (a and b are one term); asserted ara cra,2,2,0,1,3,1
+anchored/False,perform,2:01:0-0.1-0,terms a b; asserted ara bra,2,2,0,1,3,1
+anchored/False,perform,2:00:0-0.1-1,terms a c (a and b are one term); asserted ara crc,2,2,0,1,3,1
+anchored/False,perform,2:01:0-0.1-1,terms a b; asserted ara brb,2,2,0,1,3,1
+anchored/False,perform,2:01:0-0.0-1.1-0.1-1,terms a b; asserted ara arb bra brb,2,4,0,3,3,1
+anchored/False,perform,3:00:0-0,terms a c d (a and b are one term); asserted ara,3,1,1,0,3,1
+anchored/False,perform,3:01:0-0,terms a b c; asserted ara,3,1,1,0,3,1
+anchored/False,perform,3:10:0-0,terms b a c; asserted brb,3,1,1,0,3,1
+anchored/False,perform,3:12:0-0,terms c a b; asserted crc,3,1,1,0,3,1
+anchored/False,perform,3:02:0-1,terms a c b; asserted arc,3,1,1,0,3,0
+anchored/False,perform,3:10:0-1,terms b a c; asserted bra,3,1,1,0,3,0
+anchored/False,perform,3:12:0-1,terms c a b; asserted cra,3,1,1,0,3,0
+anchored/False,perform,3:20:0-1,terms b c a; asserted brc,3,1,1,0,3,0
+anchored/False,perform,3:21:0-1,terms c b a; asserted crb,3,1,1,0,3,0
+anchored/False,perform,3:01:0-0.0-1.0-2,terms a b c; asserted ara arb arc,3,3,1,2,3,1
+anchored/False,perform,3:01:0-0.0-1.1-0,terms a b c; asserted ara arb bra,3,3,1,2,3,1
+anchored/False,perform,3:10:0-0.0-1.1-0,terms b a c; asserted brb bra arb,3,3,1,2,3,1
+anchored/False,perform,3:02:0-0.0-2.1-0,terms a c b; asserted ara arb cra,3,3,1,2,3,1
+anchored/False,perform,3:10:0-0.0-2.1-0,terms b a c; asserted brb brc arb,3,3,1,2,3,1
+anchored/False,perform,3:01:0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,3,0
+anchored/False,perform,3:02:0-1.0-2.1-0,terms a c b; asserted arc arb cra,3,3,1,2,3,0
+anchored/False,perform,3:10:0-1.0-2.1-0,terms b a c; asserted bra brc arb,3,3,1,2,3,0
+anchored/False,perform,3:01:0-0.0-1.1-1,terms a b c; asserted ara arb brb,3,3,1,2,3,1
+anchored/False,perform,3:02:0-0.0-2.1-1,terms a c b; asserted ara arb crc,3,3,1,2,3,1
+anchored/False,perform,3:01:0-1.0-2.1-1,terms a b c; asserted arb arc brb,3,3,1,2,3,1
+anchored/False,perform,3:02:0-1.0-2.1-1,terms a c b; asserted arc arb crc,3,3,1,2,3,1
+anchored/False,perform,3:02:0-2.1-0.1-1,terms a c b; asserted arb cra crc,3,3,1,2,3,1
+anchored/False,perform,3:10:0-2.1-0.1-1,terms b a c; asserted brc arb ara,3,3,1,2,3,1
+anchored/False,perform,3:02:0-0.0-2.1-2,terms a c b; asserted ara arb crb,3,3,1,2,3,1
+anchored/False,perform,3:12:0-0.0-2.1-2,terms c a b; asserted crc crb arb,3,3,1,2,3,1
+anchored/False,perform,3:01:0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,3,0
+anchored/False,perform,3:02:0-1.0-2.1-2,terms a c b; asserted arc arb crb,3,3,1,2,3,0
+anchored/False,perform,3:12:0-1.0-2.1-2,terms c a b; asserted cra crb arb,3,3,1,2,3,0
+anchored/False,perform,3:10:0-0.1-0.2-0,terms b a c; asserted brb arb crb,3,3,1,2,3,1
+anchored/False,perform,3:01:0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,3,0
+anchored/False,perform,3:10:0-1.1-0.2-0,terms b a c; asserted bra arb crb,3,3,1,2,3,0
+anchored/False,perform,3:20:0-1.1-0.2-0,terms b c a; asserted brc crb arb,3,3,1,2,3,0
+anchored/False,perform,3:20:0-0.1-1.2-0,terms b c a; asserted brb crc arb,3,3,1,2,3,1
+anchored/False,perform,3:01:0-1.1-1.2-0,terms a b c; asserted arb brb cra,3,3,1,2,3,1
+anchored/False,perform,3:20:0-1.1-1.2-0,terms b c a; asserted brc crc arb,3,3,1,2,3,1
+anchored/False,perform,3:02:0-2.1-1.2-0,terms a c b; asserted arb crc bra,3,3,1,2,3,1
+anchored/False,perform,3:01:0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,3,0
+anchored/False,perform,2:11:0-0,terms c a (a and b are one term); asserted crc,2,1,0,0,4,1
+anchored/False,perform,2:00:0-1,terms a c (a and b are one term); asserted arc,2,1,0,0,4,0
+anchored/False,perform,2:11:0-1,terms c a (a and b are one term); asserted cra,2,1,0,0,4,0
+anchored/False,perform,2:00:0-0.0-1.1-0,terms a c (a and b are one term); asserted ara arc cra,2,3,0,2,4,1
+anchored/False,perform,2:00:0-0.0-1.1-1,terms a c (a and b are one term); asserted ara arc crc,2,3,0,2,4,1
+anchored/False,perform,2:10:0-0.0-1.1-1,terms b a; asserted brb bra ara,2,3,0,2,4,1
+anchored/False,perform,2:11:0-0.0-1.1-1,terms c a (a and b are one term); asserted crc cra ara,2,3,0,2,4,1
+anchored/False,perform,3:00:,terms a c d (a and b are one term); asserted nothing,3,0,1,-1,4,0
+anchored/False,perform,3:00:0-0.0-1,terms a c d (a and b are one term); asserted ara arc,3,2,1,1,4,1
+anchored/False,perform,3:02:0-0.0-1,terms a c b; asserted ara arc,3,2,1,1,4,1
+anchored/False,perform,3:10:0-0.0-1,terms b a c; asserted brb bra,3,2,1,1,4,1
+anchored/False,perform,3:12:0-0.0-1,terms c a b; asserted crc cra,3,2,1,1,4,1
+anchored/False,perform,3:20:0-0.0-1,terms b c a; asserted brb brc,3,2,1,1,4,1
+anchored/False,perform,3:21:0-0.0-1,terms c b a; asserted crc crb,3,2,1,1,4,1
+anchored/False,perform,3:10:0-1.0-2,terms b a c; asserted bra brc,3,2,1,1,4,0
+anchored/False,perform,3:12:0-1.0-2,terms c a b; asserted cra crb,3,2,1,1,4,0
+anchored/False,perform,3:00:0-0.1-0,terms a c d (a and b are one term); asserted ara cra,3,2,1,1,4,1
+anchored/False,perform,3:01:0-0.1-0,terms a b c; asserted ara bra,3,2,1,1,4,1
+anchored/False,perform,3:02:0-0.1-0,terms a c b; asserted ara cra,3,2,1,1,4,1
+anchored/False,perform,3:12:0-0.1-0,terms c a b; asserted crc arc,3,2,1,1,4,1
+anchored/False,perform,3:20:0-0.1-0,terms b c a; asserted brb crb,3,2,1,1,4,1
+anchored/False,perform,3:21:0-0.1-0,terms c b a; asserted crc brc,3,2,1,1,4,1
+anchored/False,perform,3:02:0-1.1-0,terms a c b; asserted arc cra,3,2,1,1,4,0
+anchored/False,perform,3:20:0-1.1-0,terms b c a; asserted brc crb,3,2,1,1,4,0
+anchored/False,perform,3:01:0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,4,0
+anchored/False,perform,3:12:0-2.1-0,terms c a b; asserted crb arc,3,2,1,1,4,0
+anchored/False,perform,3:20:0-2.1-0,terms b c a; asserted bra crb,3,2,1,1,4,0
+anchored/False,perform,3:21:0-2.1-0,terms c b a; asserted cra brc,3,2,1,1,4,0
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0,terms a b c; asserted ara arb arc bra,3,4,1,3,4,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-0,terms a c b; asserted ara arc arb cra,3,4,1,3,4,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-0,terms b a c; asserted brb bra brc arb,3,4,1,3,4,1
+anchored/False,perform,3:00:0-0.1-1,terms a c d (a and b are one term); asserted ara crc,3,2,1,1,4,1
+anchored/False,perform,3:01:0-0.1-1,terms a b c; asserted ara brb,3,2,1,1,4,1
+anchored/False,perform,3:02:0-0.1-1,terms a c b; asserted ara crc,3,2,1,1,4,1
+anchored/False,perform,3:20:0-0.1-1,terms b c a; asserted brb crc,3,2,1,1,4,1
+anchored/False,perform,3:01:0-2.1-1,terms a b c; asserted arc brb,3,2,1,1,4,1
+anchored/False,perform,3:10:0-2.1-1,terms b a c; asserted brc ara,3,2,1,1,4,1
+anchored/False,perform,3:11:0-2.1-1,terms c a d (a and b are one term); asserted crd ara,3,2,1,1,4,1
+anchored/False,perform,3:12:0-2.1-1,terms c a b; asserted crb ara,3,2,1,1,4,1
+anchored/False,perform,3:20:0-2.1-1,terms b c a; asserted bra crc,3,2,1,1,4,1
+anchored/False,perform,3:21:0-2.1-1,terms c b a; asserted cra brb,3,2,1,1,4,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-1,terms a b c; asserted ara arb arc brb,3,4,1,3,4,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-1,terms a c b; asserted ara arc arb crc,3,4,1,3,4,1
+anchored/False,perform,3:01:0-0.0-1.1-0.1-1,terms a b c; asserted ara arb bra brb,3,4,1,3,4,1
+anchored/False,perform,3:02:0-0.0-2.1-0.1-1,terms a c b; asserted ara arb cra crc,3,4,1,3,4,1
+anchored/False,perform,3:10:0-0.0-2.1-0.1-1,terms b a c; asserted brb brc arb ara,3,4,1,3,4,1
+anchored/False,perform,3:01:0-1.0-2.1-0.1-1,terms a b c; asserted arb arc bra brb,3,4,1,3,4,1
+anchored/False,perform,3:02:0-1.0-2.1-0.1-1,terms a c b; asserted arc arb cra crc,3,4,1,3,4,1
+anchored/False,perform,3:10:0-1.0-2.1-0.1-1,terms b a c; asserted bra brc arb ara,3,4,1,3,4,1
+anchored/False,perform,3:01:0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,4,0
+anchored/False,perform,3:20:0-2.1-2,terms b c a; asserted bra cra,3,2,1,1,4,0
+anchored/False,perform,3:01:0-0.0-1.0-2.1-2,terms a b c; asserted ara arb arc brc,3,4,1,3,4,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-2,terms a c b; asserted ara arc arb crb,3,4,1,3,4,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-2,terms c a b; asserted crc cra crb arb,3,4,1,3,4,1
+anchored/False,perform,3:02:0-0.0-2.1-0.1-2,terms a c b; asserted ara arb cra crb,3,4,1,3,4,1
+anchored/False,perform,3:10:0-0.0-2.1-0.1-2,terms b a c; asserted brb brc arb arc,3,4,1,3,4,1
+anchored/False,perform,3:12:0-0.0-2.1-0.1-2,terms c a b; asserted crc crb arc arb,3,4,1,3,4,1
+anchored/False,perform,3:01:0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,4,0
+anchored/False,perform,3:02:0-1.0-2.1-0.1-2,terms a c b; asserted arc arb cra crb,3,4,1,3,4,0
+anchored/False,perform,3:02:0-0.0-2.1-1.1-2,terms a c b; asserted ara arb crc crb,3,4,1,3,4,1
+anchored/False,perform,3:01:0-0.0-1.1-0.2-0,terms a b c; asserted ara arb bra cra,3,4,1,3,4,1
+anchored/False,perform,3:10:0-0.0-1.1-0.2-0,terms b a c; asserted brb bra arb crb,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.0-1.1-0.2-0,terms b c a; asserted brb brc crb arb,3,4,1,3,4,1
+anchored/False,perform,3:01:0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,4,0
+anchored/False,perform,3:10:0-1.0-2.1-0.2-0,terms b a c; asserted bra brc arb crb,3,4,1,3,4,0
+anchored/False,perform,3:01:0-0.0-1.1-1.2-0,terms a b c; asserted ara arb brb cra,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.0-1.1-1.2-0,terms b c a; asserted brb brc crc arb,3,4,1,3,4,1
+anchored/False,perform,3:02:0-0.0-2.1-1.2-0,terms a c b; asserted ara arb crc bra,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.0-2.1-1.2-0,terms b c a; asserted brb bra crc arb,3,4,1,3,4,1
+anchored/False,perform,3:01:0-1.0-2.1-1.2-0,terms a b c; asserted arb arc brb cra,3,4,1,3,4,1
+anchored/False,perform,3:02:0-1.0-2.1-1.2-0,terms a c b; asserted arc arb crc bra,3,4,1,3,4,1
+anchored/False,perform,3:20:0-1.0-2.1-1.2-0,terms b c a; asserted brc bra crc arb,3,4,1,3,4,1
+anchored/False,perform,3:10:0-0.1-0.1-1.2-0,terms b a c; asserted brb arb ara crb,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.1-0.1-1.2-0,terms b c a; asserted brb crb crc arb,3,4,1,3,4,1
+anchored/False,perform,3:01:0-1.1-0.1-1.2-0,terms a b c; asserted arb bra brb cra,3,4,1,3,4,1
+anchored/False,perform,3:10:0-1.1-0.1-1.2-0,terms b a c; asserted bra arb ara crb,3,4,1,3,4,1
+anchored/False,perform,3:20:0-1.1-0.1-1.2-0,terms b c a; asserted brc crb crc arb,3,4,1,3,4,1
+anchored/False,perform,3:02:0-2.1-0.1-1.2-0,terms a c b; asserted arb cra crc bra,3,4,1,3,4,1
+anchored/False,perform,3:10:0-2.1-0.1-1.2-0,terms b a c; asserted brc arb ara crb,3,4,1,3,4,1
+anchored/False,perform,3:20:0-2.1-0.1-1.2-0,terms b c a; asserted bra crb crc arb,3,4,1,3,4,1
+anchored/False,perform,3:01:0-0.0-1.1-2.2-0,terms a b c; asserted ara arb brc cra,3,4,1,3,4,1
+anchored/False,perform,3:12:0-0.0-1.1-2.2-0,terms c a b; asserted crc cra arb brc,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.0-1.1-2.2-0,terms b c a; asserted brb brc cra arb,3,4,1,3,4,1
+anchored/False,perform,3:01:0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,4,0
+anchored/False,perform,3:02:0-1.0-2.1-2.2-0,terms a c b; asserted arc arb crb bra,3,4,1,3,4,0
+anchored/False,perform,3:12:0-1.0-2.1-2.2-0,terms c a b; asserted cra crb arb brc,3,4,1,3,4,0
+anchored/False,perform,3:20:0-1.0-2.1-2.2-0,terms b c a; asserted brc bra cra arb,3,4,1,3,4,0
+anchored/False,perform,3:10:0-0.1-0.1-2.2-0,terms b a c; asserted brb arb arc crb,3,4,1,3,4,1
+anchored/False,perform,3:12:0-0.1-0.1-2.2-0,terms c a b; asserted crc arc arb brc,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.1-0.1-2.2-0,terms b c a; asserted brb crb cra arb,3,4,1,3,4,1
+anchored/False,perform,3:02:0-2.1-0.1-2.2-0,terms a c b; asserted arb cra crb bra,3,4,1,3,4,0
+anchored/False,perform,3:10:0-2.1-0.1-2.2-0,terms b a c; asserted brc arb arc crb,3,4,1,3,4,0
+anchored/False,perform,3:12:0-0.1-1.1-2.2-0,terms c a b; asserted crc ara arb brc,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.1-1.1-2.2-0,terms b c a; asserted brb crc cra arb,3,4,1,3,4,1
+anchored/False,perform,3:20:0-0.1-1.2-0.2-1,terms b c a; asserted brb crc arb arc,3,4,1,3,4,1
+anchored/False,perform,3:01:0-0.0-1.1-1.2-2,terms a b c; asserted ara arb brb crc,3,4,1,3,4,1
+anchored/False,perform,2:11:0-0.0-1,terms c a (a and b are one term); asserted crc cra,2,2,0,1,5,1
+anchored/False,perform,2:11:0-0.1-0,terms c a (a and b are one term); asserted crc arc,2,2,0,1,5,1
+anchored/False,perform,2:00:0-1.1-0,terms a c (a and b are one term); asserted arc cra,2,2,0,1,5,0
+anchored/False,perform,2:00:0-0.0-1.1-0.1-1,terms a c (a and b are one term); asserted ara arc cra crc,2,4,0,3,5,1
+anchored/False,perform,3:11:0-0,terms c a d (a and b are one term); asserted crc,3,1,1,0,5,1
+anchored/False,perform,3:00:0-1,terms a c d (a and b are one term); asserted arc,3,1,1,0,5,0
+anchored/False,perform,3:11:0-1,terms c a d (a and b are one term); asserted cra,3,1,1,0,5,0
+anchored/False,perform,3:22:0-1,terms c d a (a and b are one term); asserted crd,3,1,1,0,5,0
+anchored/False,perform,3:00:0-0.0-1.0-2,terms a c d (a and b are one term); asserted ara arc ard,3,3,1,2,5,1
+anchored/False,perform,3:10:0-0.0-1.0-2,terms b a c; asserted brb bra brc,3,3,1,2,5,1
+anchored/False,perform,3:12:0-0.0-1.0-2,terms c a b; asserted crc cra crb,3,3,1,2,5,1
+anchored/False,perform,3:00:0-0.0-1.1-0,terms a c d (a and b are one term); asserted ara arc cra,3,3,1,2,5,1
+anchored/False,perform,3:02:0-0.0-1.1-0,terms a c b; asserted ara arc cra,3,3,1,2,5,1
+anchored/False,perform,3:12:0-0.0-1.1-0,terms c a b; asserted crc cra arc,3,3,1,2,5,1
+anchored/False,perform,3:20:0-0.0-1.1-0,terms b c a; asserted brb brc crb,3,3,1,2,5,1
+anchored/False,perform,3:21:0-0.0-1.1-0,terms c b a; asserted crc crb brc,3,3,1,2,5,1
+anchored/False,perform,3:00:0-0.0-2.1-0,terms a c d (a and b are one term); asserted ara ard cra,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.0-2.1-0,terms a b c; asserted ara arc bra,3,3,1,2,5,1
+anchored/False,perform,3:12:0-0.0-2.1-0,terms c a b; asserted crc crb arc,3,3,1,2,5,1
+anchored/False,perform,3:20:0-0.0-2.1-0,terms b c a; asserted brb bra crb,3,3,1,2,5,1
+anchored/False,perform,3:21:0-0.0-2.1-0,terms c b a; asserted crc cra brc,3,3,1,2,5,1
+anchored/False,perform,3:12:0-1.0-2.1-0,terms c a b; asserted cra crb arc,3,3,1,2,5,0
+anchored/False,perform,3:20:0-1.0-2.1-0,terms b c a; asserted brc bra crb,3,3,1,2,5,0
+anchored/False,perform,3:21:0-1.0-2.1-0,terms c b a; asserted crb cra brc,3,3,1,2,5,0
+anchored/False,perform,3:00:0-0.0-1.1-1,terms a c d (a and b are one term); asserted ara arc crc,3,3,1,2,5,1
+anchored/False,perform,3:02:0-0.0-1.1-1,terms a c b; asserted ara arc crc,3,3,1,2,5,1
+anchored/False,perform,3:10:0-0.0-1.1-1,terms b a c; asserted brb bra ara,3,3,1,2,5,1
+anchored/False,perform,3:11:0-0.0-1.1-1,terms c a d (a and b are one term); asserted crc cra ara,3,3,1,2,5,1
+anchored/False,perform,3:12:0-0.0-1.1-1,terms c a b; asserted crc cra ara,3,3,1,2,5,1
+anchored/False,perform,3:20:0-0.0-1.1-1,terms b c a; asserted brb brc crc,3,3,1,2,5,1
+anchored/False,perform,3:21:0-0.0-1.1-1,terms c b a; asserted crc crb brb,3,3,1,2,5,1
+anchored/False,perform,3:00:0-0.0-2.1-1,terms a c d (a and b are one term); asserted ara ard crc,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.0-2.1-1,terms a b c; asserted ara arc brb,3,3,1,2,5,1
+anchored/False,perform,3:10:0-0.0-2.1-1,terms b a c; asserted brb brc ara,3,3,1,2,5,1
+anchored/False,perform,3:11:0-0.0-2.1-1,terms c a d (a and b are one term); asserted crc crd ara,3,3,1,2,5,1
+anchored/False,perform,3:12:0-0.0-2.1-1,terms c a b; asserted crc crb ara,3,3,1,2,5,1
+anchored/False,perform,3:20:0-0.0-2.1-1,terms b c a; asserted brb bra crc,3,3,1,2,5,1
+anchored/False,perform,3:21:0-0.0-2.1-1,terms c b a; asserted crc cra brb,3,3,1,2,5,1
+anchored/False,perform,3:10:0-1.0-2.1-1,terms b a c; asserted bra brc ara,3,3,1,2,5,1
+anchored/False,perform,3:11:0-1.0-2.1-1,terms c a d (a and b are one term); asserted cra crd ara,3,3,1,2,5,1
+anchored/False,perform,3:12:0-1.0-2.1-1,terms c a b; asserted cra crb ara,3,3,1,2,5,1
+anchored/False,perform,3:20:0-1.0-2.1-1,terms b c a; asserted brc bra crc,3,3,1,2,5,1
+anchored/False,perform,3:21:0-1.0-2.1-1,terms c b a; asserted crb cra brb,3,3,1,2,5,1
+anchored/False,perform,3:01:0-2.1-0.1-1,terms a b c; asserted arc bra brb,3,3,1,2,5,1
+anchored/False,perform,3:11:0-2.1-0.1-1,terms c a d (a and b are one term); asserted crd arc ara,3,3,1,2,5,1
+anchored/False,perform,3:12:0-2.1-0.1-1,terms c a b; asserted crb arc ara,3,3,1,2,5,1
+anchored/False,perform,3:20:0-2.1-0.1-1,terms b c a; asserted bra crb crc,3,3,1,2,5,1
+anchored/False,perform,3:21:0-2.1-0.1-1,terms c b a; asserted cra brc brb,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0.1-1,terms a b c; asserted ara arb arc bra brb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-0.1-1,terms a c b; asserted ara arc arb cra crc,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-0.1-1,terms b a c; asserted brb bra brc arb ara,3,5,1,4,5,1
+anchored/False,perform,3:00:0-0.0-2.1-2,terms a c d (a and b are one term); asserted ara ard crd,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.0-2.1-2,terms a b c; asserted ara arc brc,3,3,1,2,5,1
+anchored/False,perform,3:10:0-0.0-2.1-2,terms b a c; asserted brb brc arc,3,3,1,2,5,1
+anchored/False,perform,3:20:0-0.0-2.1-2,terms b c a; asserted brb bra cra,3,3,1,2,5,1
+anchored/False,perform,3:21:0-0.0-2.1-2,terms c b a; asserted crc cra bra,3,3,1,2,5,1
+anchored/False,perform,3:10:0-1.0-2.1-2,terms b a c; asserted bra brc arc,3,3,1,2,5,0
+anchored/False,perform,3:20:0-1.0-2.1-2,terms b c a; asserted brc bra cra,3,3,1,2,5,0
+anchored/False,perform,3:21:0-1.0-2.1-2,terms c b a; asserted crb cra bra,3,3,1,2,5,0
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0.1-2,terms a b c; asserted ara arb arc bra brc,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-0.1-2,terms a c b; asserted ara arc arb cra crb,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-0.1-2,terms b a c; asserted brb bra brc arb arc,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-0.1-2,terms c a b; asserted crc cra crb arc arb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-1.1-2,terms a b c; asserted ara arb arc brb brc,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-1.1-2,terms a c b; asserted ara arc arb crc crb,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-1.1-2,terms c a b; asserted crc cra crb ara arb,3,5,1,4,5,1
+anchored/False,perform,3:00:0-0.1-0.2-0,terms a c d (a and b are one term); asserted ara cra dra,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.1-0.2-0,terms a b c; asserted ara bra cra,3,3,1,2,5,1
+anchored/False,perform,3:12:0-0.1-0.2-0,terms c a b; asserted crc arc brc,3,3,1,2,5,1
+anchored/False,perform,3:02:0-1.1-0.2-0,terms a c b; asserted arc cra bra,3,3,1,2,5,0
+anchored/False,perform,3:12:0-1.1-0.2-0,terms c a b; asserted cra arc brc,3,3,1,2,5,0
+anchored/False,perform,3:21:0-1.1-0.2-0,terms c b a; asserted crb brc arc,3,3,1,2,5,0
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0.2-0,terms a b c; asserted ara arb arc bra cra,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-0.2-0,terms b a c; asserted brb bra brc arb crb,3,5,1,4,5,1
+anchored/False,perform,3:00:0-0.1-1.2-0,terms a c d (a and b are one term); asserted ara crc dra,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.1-1.2-0,terms a b c; asserted ara brb cra,3,3,1,2,5,1
+anchored/False,perform,3:02:0-0.1-1.2-0,terms a c b; asserted ara crc bra,3,3,1,2,5,1
+anchored/False,perform,3:10:0-0.1-1.2-0,terms b a c; asserted brb ara crb,3,3,1,2,5,1
+anchored/False,perform,3:11:0-0.1-1.2-0,terms c a d (a and b are one term); asserted crc ara drc,3,3,1,2,5,1
+anchored/False,perform,3:12:0-0.1-1.2-0,terms c a b; asserted crc ara brc,3,3,1,2,5,1
+anchored/False,perform,3:21:0-0.1-1.2-0,terms c b a; asserted crc brb arc,3,3,1,2,5,1
+anchored/False,perform,3:02:0-1.1-1.2-0,terms a c b; asserted arc crc bra,3,3,1,2,5,1
+anchored/False,perform,3:10:0-1.1-1.2-0,terms b a c; asserted bra ara crb,3,3,1,2,5,1
+anchored/False,perform,3:11:0-1.1-1.2-0,terms c a d (a and b are one term); asserted cra ara drc,3,3,1,2,5,1
+anchored/False,perform,3:12:0-1.1-1.2-0,terms c a b; asserted cra ara brc,3,3,1,2,5,1
+anchored/False,perform,3:21:0-1.1-1.2-0,terms c b a; asserted crb brb arc,3,3,1,2,5,1
+anchored/False,perform,3:01:0-2.1-1.2-0,terms a b c; asserted arc brb cra,3,3,1,2,5,1
+anchored/False,perform,3:10:0-2.1-1.2-0,terms b a c; asserted brc ara crb,3,3,1,2,5,1
+anchored/False,perform,3:11:0-2.1-1.2-0,terms c a d (a and b are one term); asserted crd ara drc,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-1.2-0,terms a b c; asserted ara arb arc brb cra,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-1.2-0,terms a c b; asserted ara arc arb crc bra,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-1.2-0,terms b c a; asserted brb brc bra crc arb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-0.0-1.1-0.1-1.2-0,terms a b c; asserted ara arb bra brb cra,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-1.1-0.1-1.2-0,terms b a c; asserted brb bra arb ara crb,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-1.1-0.1-1.2-0,terms b c a; asserted brb brc crb crc arb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-2.1-0.1-1.2-0,terms a c b; asserted ara arb cra crc bra,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-2.1-0.1-1.2-0,terms b a c; asserted brb brc arb ara crb,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-2.1-0.1-1.2-0,terms b c a; asserted brb bra crb crc arb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-1.0-2.1-0.1-1.2-0,terms a b c; asserted arb arc bra brb cra,3,5,1,4,5,1
+anchored/False,perform,3:02:0-1.0-2.1-0.1-1.2-0,terms a c b; asserted arc arb cra crc bra,3,5,1,4,5,1
+anchored/False,perform,3:10:0-1.0-2.1-0.1-1.2-0,terms b a c; asserted bra brc arb ara crb,3,5,1,4,5,1
+anchored/False,perform,3:20:0-1.0-2.1-0.1-1.2-0,terms b c a; asserted brc bra crb crc arb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-1.1-2.2-0,terms a c b; asserted arc crb bra,3,3,1,2,5,0
+anchored/False,perform,3:01:0-0.0-1.0-2.1-2.2-0,terms a b c; asserted ara arb arc brc cra,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-2.2-0,terms a c b; asserted ara arc arb crb bra,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-2.2-0,terms c a b; asserted crc cra crb arb brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-2.2-0,terms b c a; asserted brb brc bra cra arb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-0.0-1.1-0.1-2.2-0,terms a b c; asserted ara arb bra brc cra,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-1.1-0.1-2.2-0,terms b a c; asserted brb bra arb arc crb,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.0-1.1-0.1-2.2-0,terms c a b; asserted crc cra arc arb brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-1.1-0.1-2.2-0,terms b c a; asserted brb brc crb cra arb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-2.1-0.1-2.2-0,terms a c b; asserted ara arb cra crb bra,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-2.1-0.1-2.2-0,terms b a c; asserted brb brc arb arc crb,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.0-2.1-0.1-2.2-0,terms c a b; asserted crc crb arc arb brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-2.1-0.1-2.2-0,terms b c a; asserted brb bra crb cra arb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,5,0
+anchored/False,perform,3:02:0-1.0-2.1-0.1-2.2-0,terms a c b; asserted arc arb cra crb bra,3,5,1,4,5,0
+anchored/False,perform,3:10:0-1.0-2.1-0.1-2.2-0,terms b a c; asserted bra brc arb arc crb,3,5,1,4,5,0
+anchored/False,perform,3:12:0-1.0-2.1-0.1-2.2-0,terms c a b; asserted cra crb arc arb brc,3,5,1,4,5,0
+anchored/False,perform,3:20:0-1.0-2.1-0.1-2.2-0,terms b c a; asserted brc bra crb cra arb,3,5,1,4,5,0
+anchored/False,perform,3:01:0-0.0-1.1-1.1-2.2-0,terms a b c; asserted ara arb brb brc cra,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.0-1.1-1.1-2.2-0,terms c a b; asserted crc cra ara arb brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-1.1-1.1-2.2-0,terms b c a; asserted brb brc crc cra arb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-2.1-1.1-2.2-0,terms a c b; asserted ara arb crc crb bra,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.0-2.1-1.1-2.2-0,terms c a b; asserted crc crb ara arb brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-2.1-1.1-2.2-0,terms b c a; asserted brb bra crc cra arb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-1.0-2.1-1.1-2.2-0,terms a b c; asserted arb arc brb brc cra,3,5,1,4,5,1
+anchored/False,perform,3:02:0-1.0-2.1-1.1-2.2-0,terms a c b; asserted arc arb crc crb bra,3,5,1,4,5,1
+anchored/False,perform,3:12:0-1.0-2.1-1.1-2.2-0,terms c a b; asserted cra crb ara arb brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-1.0-2.1-1.1-2.2-0,terms b c a; asserted brc bra crc cra arb,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.1-0.1-1.1-2.2-0,terms b a c; asserted brb arb ara arc crb,3,5,1,4,5,1
+anchored/False,perform,3:12:0-0.1-0.1-1.1-2.2-0,terms c a b; asserted crc arc ara arb brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.1-0.1-1.1-2.2-0,terms b c a; asserted brb crb crc cra arb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-2.1-0.1-1.1-2.2-0,terms a c b; asserted arb cra crc crb bra,3,5,1,4,5,1
+anchored/False,perform,3:10:0-2.1-0.1-1.1-2.2-0,terms b a c; asserted brc arb ara arc crb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-0.0-1.1-1.2-0.2-1,terms a b c; asserted ara arb brb cra crb,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-1.1-1.2-0.2-1,terms b c a; asserted brb brc crc arb arc,3,5,1,4,5,1
+anchored/False,perform,3:21:0-0.0-1.1-1.2-0.2-1,terms c b a; asserted crc crb brb arc arb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-2.1-1.2-0.2-1,terms a c b; asserted ara arb crc bra brc,3,5,1,4,5,1
+anchored/False,perform,3:20:0-0.0-2.1-1.2-0.2-1,terms b c a; asserted brb bra crc arb arc,3,5,1,4,5,1
+anchored/False,perform,3:21:0-0.0-2.1-1.2-0.2-1,terms c b a; asserted crc cra brb arc arb,3,5,1,4,5,1
+anchored/False,perform,3:01:0-1.0-2.1-1.2-0.2-1,terms a b c; asserted arb arc brb cra crb,3,5,1,4,5,1
+anchored/False,perform,3:02:0-1.0-2.1-1.2-0.2-1,terms a c b; asserted arc arb crc bra brc,3,5,1,4,5,1
+anchored/False,perform,3:00:0-0.1-1.2-2,terms a c d (a and b are one term); asserted ara crc drd,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.1-1.2-2,terms a b c; asserted ara brb crc,3,3,1,2,5,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-1.2-2,terms a b c; asserted ara arb arc brb crc,3,5,1,4,5,1
+anchored/False,perform,3:01:0-0.0-1.1-0.1-1.2-2,terms a b c; asserted ara arb bra brb crc,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-2.1-0.1-1.2-2,terms a c b; asserted ara arb cra crc brb,3,5,1,4,5,1
+anchored/False,perform,3:10:0-0.0-2.1-0.1-1.2-2,terms b a c; asserted brb brc arb ara crc,3,5,1,4,5,1
+anchored/False,perform,3:02:0-0.0-2.1-1.1-2.2-2,terms a c b; asserted ara arb crc crb brb,3,5,1,4,5,1
+anchored/False,perform,2:11:0-0.0-1.1-0,terms c a (a and b are one term); asserted crc cra arc,2,3,0,2,6,1
+anchored/False,perform,3:11:0-0.0-1,terms c a d (a and b are one term); asserted crc cra,3,2,1,1,6,1
+anchored/False,perform,3:22:0-0.0-1,terms c d a (a and b are one term); asserted crc crd,3,2,1,1,6,1
+anchored/False,perform,3:00:0-1.0-2,terms a c d (a and b are one term); asserted arc ard,3,2,1,1,6,0
+anchored/False,perform,3:11:0-1.0-2,terms c a d (a and b are one term); asserted cra crd,3,2,1,1,6,0
+anchored/False,perform,3:11:0-0.1-0,terms c a d (a and b are one term); asserted crc arc,3,2,1,1,6,1
+anchored/False,perform,3:22:0-0.1-0,terms c d a (a and b are one term); asserted crc drc,3,2,1,1,6,1
+anchored/False,perform,3:00:0-1.1-0,terms a c d (a and b are one term); asserted arc cra,3,2,1,1,6,0
+anchored/False,perform,3:22:0-1.1-0,terms c d a (a and b are one term); asserted crd drc,3,2,1,1,6,0
+anchored/False,perform,3:00:0-2.1-0,terms a c d (a and b are one term); asserted ard cra,3,2,1,1,6,0
+anchored/False,perform,3:11:0-2.1-0,terms c a d (a and b are one term); asserted crd arc,3,2,1,1,6,0
+anchored/False,perform,3:22:0-2.1-0,terms c d a (a and b are one term); asserted cra drc,3,2,1,1,6,0
+anchored/False,perform,3:00:0-0.0-1.0-2.1-0,terms a c d (a and b are one term); asserted ara arc ard cra,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-0,terms c a b; asserted crc cra crb arc,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-0,terms b c a; asserted brb brc bra crb,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-1.0-2.1-0,terms c b a; asserted crc crb cra brc,3,4,1,3,6,1
+anchored/False,perform,3:22:0-0.1-1,terms c d a (a and b are one term); asserted crc drd,3,2,1,1,6,1
+anchored/False,perform,3:00:0-2.1-1,terms a c d (a and b are one term); asserted ard crc,3,2,1,1,6,1
+anchored/False,perform,3:22:0-2.1-1,terms c d a (a and b are one term); asserted cra drd,3,2,1,1,6,1
+anchored/False,perform,3:00:0-0.0-1.0-2.1-1,terms a c d (a and b are one term); asserted ara arc ard crc,3,4,1,3,6,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-1,terms b a c; asserted brb bra brc ara,3,4,1,3,6,1
+anchored/False,perform,3:11:0-0.0-1.0-2.1-1,terms c a d (a and b are one term); asserted crc cra crd ara,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-1,terms c a b; asserted crc cra crb ara,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-1,terms b c a; asserted brb brc bra crc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-1.0-2.1-1,terms c b a; asserted crc crb cra brb,3,4,1,3,6,1
+anchored/False,perform,3:00:0-0.0-1.1-0.1-1,terms a c d (a and b are one term); asserted ara arc cra crc,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.0-1.1-0.1-1,terms a c b; asserted ara arc cra crc,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-1.1-0.1-1,terms b c a; asserted brb brc crb crc,3,4,1,3,6,1
+anchored/False,perform,3:00:0-0.0-2.1-0.1-1,terms a c d (a and b are one term); asserted ara ard cra crc,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-2.1-0.1-1,terms a b c; asserted ara arc bra brb,3,4,1,3,6,1
+anchored/False,perform,3:11:0-0.0-2.1-0.1-1,terms c a d (a and b are one term); asserted crc crd arc ara,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.0-2.1-0.1-1,terms c a b; asserted crc crb arc ara,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-2.1-0.1-1,terms b c a; asserted brb bra crb crc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-2.1-0.1-1,terms c b a; asserted crc cra brc brb,3,4,1,3,6,1
+anchored/False,perform,3:11:0-1.0-2.1-0.1-1,terms c a d (a and b are one term); asserted cra crd arc ara,3,4,1,3,6,1
+anchored/False,perform,3:12:0-1.0-2.1-0.1-1,terms c a b; asserted cra crb arc ara,3,4,1,3,6,1
+anchored/False,perform,3:20:0-1.0-2.1-0.1-1,terms b c a; asserted brc bra crb crc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-1.0-2.1-0.1-1,terms c b a; asserted crb cra brc brb,3,4,1,3,6,1
+anchored/False,perform,3:00:0-2.1-2,terms a c d (a and b are one term); asserted ard crd,3,2,1,1,6,0
+anchored/False,perform,3:22:0-2.1-2,terms c d a (a and b are one term); asserted cra dra,3,2,1,1,6,0
+anchored/False,perform,3:00:0-0.0-1.0-2.1-2,terms a c d (a and b are one term); asserted ara arc ard crd,3,4,1,3,6,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-2,terms b a c; asserted brb bra brc arc,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-2,terms b c a; asserted brb brc bra cra,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-1.0-2.1-2,terms c b a; asserted crc crb cra bra,3,4,1,3,6,1
+anchored/False,perform,3:00:0-0.0-2.1-0.1-2,terms a c d (a and b are one term); asserted ara ard cra crd,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-2.1-0.1-2,terms a b c; asserted ara arc bra brc,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-2.1-0.1-2,terms b c a; asserted brb bra crb cra,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-2.1-0.1-2,terms c b a; asserted crc cra brc bra,3,4,1,3,6,1
+anchored/False,perform,3:20:0-1.0-2.1-0.1-2,terms b c a; asserted brc bra crb cra,3,4,1,3,6,0
+anchored/False,perform,3:00:0-0.0-2.1-1.1-2,terms a c d (a and b are one term); asserted ara ard crc crd,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-2.1-1.1-2,terms a b c; asserted ara arc brb brc,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-2.1-1.1-2,terms b c a; asserted brb bra crc cra,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0.1-1.1-2,terms a b c; asserted ara arb arc bra brb brc,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-0.1-1.1-2,terms a c b; asserted ara arc arb cra crc crb,3,6,1,5,6,1
+anchored/False,perform,3:00:0-0.0-1.1-0.2-0,terms a c d (a and b are one term); asserted ara arc cra dra,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.0-1.1-0.2-0,terms a c b; asserted ara arc cra bra,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.0-1.1-0.2-0,terms c a b; asserted crc cra arc brc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-1.1-0.2-0,terms c b a; asserted crc crb brc arc,3,4,1,3,6,1
+anchored/False,perform,3:12:0-1.0-2.1-0.2-0,terms c a b; asserted cra crb arc brc,3,4,1,3,6,0
+anchored/False,perform,3:00:0-0.0-1.1-1.2-0,terms a c d (a and b are one term); asserted ara arc crc dra,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.0-1.1-1.2-0,terms a c b; asserted ara arc crc bra,3,4,1,3,6,1
+anchored/False,perform,3:10:0-0.0-1.1-1.2-0,terms b a c; asserted brb bra ara crb,3,4,1,3,6,1
+anchored/False,perform,3:11:0-0.0-1.1-1.2-0,terms c a d (a and b are one term); asserted crc cra ara drc,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.0-1.1-1.2-0,terms c a b; asserted crc cra ara brc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-1.1-1.2-0,terms c b a; asserted crc crb brb arc,3,4,1,3,6,1
+anchored/False,perform,3:00:0-0.0-2.1-1.2-0,terms a c d (a and b are one term); asserted ara ard crc dra,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-2.1-1.2-0,terms a b c; asserted ara arc brb cra,3,4,1,3,6,1
+anchored/False,perform,3:10:0-0.0-2.1-1.2-0,terms b a c; asserted brb brc ara crb,3,4,1,3,6,1
+anchored/False,perform,3:11:0-0.0-2.1-1.2-0,terms c a d (a and b are one term); asserted crc crd ara drc,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.0-2.1-1.2-0,terms c a b; asserted crc crb ara brc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-2.1-1.2-0,terms c b a; asserted crc cra brb arc,3,4,1,3,6,1
+anchored/False,perform,3:10:0-1.0-2.1-1.2-0,terms b a c; asserted bra brc ara crb,3,4,1,3,6,1
+anchored/False,perform,3:11:0-1.0-2.1-1.2-0,terms c a d (a and b are one term); asserted cra crd ara drc,3,4,1,3,6,1
+anchored/False,perform,3:12:0-1.0-2.1-1.2-0,terms c a b; asserted cra crb ara brc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-1.0-2.1-1.2-0,terms c b a; asserted crb cra brb arc,3,4,1,3,6,1
+anchored/False,perform,3:00:0-0.1-0.1-1.2-0,terms a c d (a and b are one term); asserted ara cra crc dra,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.1-0.1-1.2-0,terms a b c; asserted ara bra brb cra,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.1-0.1-1.2-0,terms a c b; asserted ara cra crc bra,3,4,1,3,6,1
+anchored/False,perform,3:11:0-0.1-0.1-1.2-0,terms c a d (a and b are one term); asserted crc arc ara drc,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.1-0.1-1.2-0,terms c a b; asserted crc arc ara brc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.1-0.1-1.2-0,terms c b a; asserted crc brc brb arc,3,4,1,3,6,1
+anchored/False,perform,3:02:0-1.1-0.1-1.2-0,terms a c b; asserted arc cra crc bra,3,4,1,3,6,1
+anchored/False,perform,3:11:0-1.1-0.1-1.2-0,terms c a d (a and b are one term); asserted cra arc ara drc,3,4,1,3,6,1
+anchored/False,perform,3:12:0-1.1-0.1-1.2-0,terms c a b; asserted cra arc ara brc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-1.1-0.1-1.2-0,terms c b a; asserted crb brc brb arc,3,4,1,3,6,1
+anchored/False,perform,3:01:0-2.1-0.1-1.2-0,terms a b c; asserted arc bra brb cra,3,4,1,3,6,1
+anchored/False,perform,3:11:0-2.1-0.1-1.2-0,terms c a d (a and b are one term); asserted crd arc ara drc,3,4,1,3,6,1
+anchored/False,perform,3:12:0-2.1-0.1-1.2-0,terms c a b; asserted crb arc ara brc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-2.1-0.1-1.2-0,terms c b a; asserted cra brc brb arc,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0.1-1.2-0,terms a b c; asserted ara arb arc bra brb cra,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-0.1-1.2-0,terms a c b; asserted ara arc arb cra crc bra,3,6,1,5,6,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-0.1-1.2-0,terms b a c; asserted brb bra brc arb ara crb,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-0.1-1.2-0,terms b c a; asserted brb brc bra crb crc arb,3,6,1,5,6,1
+anchored/False,perform,3:00:0-0.0-1.1-2.2-0,terms a c d (a and b are one term); asserted ara arc crd dra,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.0-1.1-2.2-0,terms a c b; asserted ara arc crb bra,3,4,1,3,6,1
+anchored/False,perform,3:10:0-0.0-1.1-2.2-0,terms b a c; asserted brb bra arc crb,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-1.1-2.2-0,terms c b a; asserted crc crb bra arc,3,4,1,3,6,1
+anchored/False,perform,3:10:0-1.0-2.1-2.2-0,terms b a c; asserted bra brc arc crb,3,4,1,3,6,0
+anchored/False,perform,3:21:0-1.0-2.1-2.2-0,terms c b a; asserted crb cra bra arc,3,4,1,3,6,0
+anchored/False,perform,3:00:0-0.1-0.1-2.2-0,terms a c d (a and b are one term); asserted ara cra crd dra,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.1-0.1-2.2-0,terms a b c; asserted ara bra brc cra,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.1-0.1-2.2-0,terms a c b; asserted ara cra crb bra,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.1-0.1-2.2-0,terms c b a; asserted crc brc bra arc,3,4,1,3,6,1
+anchored/False,perform,3:01:0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,6,0
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0.1-2.2-0,terms a b c; asserted ara arb arc bra brc cra,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-0.1-2.2-0,terms a c b; asserted ara arc arb cra crb bra,3,6,1,5,6,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-0.1-2.2-0,terms b a c; asserted brb bra brc arb arc crb,3,6,1,5,6,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-0.1-2.2-0,terms c a b; asserted crc cra crb arc arb brc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-0.1-2.2-0,terms b c a; asserted brb brc bra crb cra arb,3,6,1,5,6,1
+anchored/False,perform,3:00:0-0.1-1.1-2.2-0,terms a c d (a and b are one term); asserted ara crc crd dra,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.1-1.1-2.2-0,terms a b c; asserted ara brb brc cra,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.1-1.1-2.2-0,terms a c b; asserted ara crc crb bra,3,4,1,3,6,1
+anchored/False,perform,3:10:0-0.1-1.1-2.2-0,terms b a c; asserted brb ara arc crb,3,4,1,3,6,1
+anchored/False,perform,3:11:0-0.1-1.1-2.2-0,terms c a d (a and b are one term); asserted crc ara ard drc,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.1-1.1-2.2-0,terms c b a; asserted crc brb bra arc,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-1.1-2.2-0,terms a b c; asserted ara arb arc brb brc cra,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-1.1-2.2-0,terms a c b; asserted ara arc arb crc crb bra,3,6,1,5,6,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-1.1-2.2-0,terms c a b; asserted crc cra crb ara arb brc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-1.1-2.2-0,terms b c a; asserted brb brc bra crc cra arb,3,6,1,5,6,1
+anchored/False,perform,3:01:0-0.0-1.1-0.1-1.1-2.2-0,terms a b c; asserted ara arb bra brb brc cra,3,6,1,5,6,1
+anchored/False,perform,3:10:0-0.0-1.1-0.1-1.1-2.2-0,terms b a c; asserted brb bra arb ara arc crb,3,6,1,5,6,1
+anchored/False,perform,3:12:0-0.0-1.1-0.1-1.1-2.2-0,terms c a b; asserted crc cra arc ara arb brc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-1.1-0.1-1.1-2.2-0,terms b c a; asserted brb brc crb crc cra arb,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-2.1-0.1-1.1-2.2-0,terms a c b; asserted ara arb cra crc crb bra,3,6,1,5,6,1
+anchored/False,perform,3:10:0-0.0-2.1-0.1-1.1-2.2-0,terms b a c; asserted brb brc arb ara arc crb,3,6,1,5,6,1
+anchored/False,perform,3:12:0-0.0-2.1-0.1-1.1-2.2-0,terms c a b; asserted crc crb arc ara arb brc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-2.1-0.1-1.1-2.2-0,terms b c a; asserted brb bra crb crc cra arb,3,6,1,5,6,1
+anchored/False,perform,3:01:0-1.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted arb arc bra brb brc cra,3,6,1,5,6,1
+anchored/False,perform,3:02:0-1.0-2.1-0.1-1.1-2.2-0,terms a c b; asserted arc arb cra crc crb bra,3,6,1,5,6,1
+anchored/False,perform,3:10:0-1.0-2.1-0.1-1.1-2.2-0,terms b a c; asserted bra brc arb ara arc crb,3,6,1,5,6,1
+anchored/False,perform,3:12:0-1.0-2.1-0.1-1.1-2.2-0,terms c a b; asserted cra crb arc ara arb brc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-1.0-2.1-0.1-1.1-2.2-0,terms b c a; asserted brc bra crb crc cra arb,3,6,1,5,6,1
+anchored/False,perform,3:00:0-0.1-1.2-0.2-1,terms a c d (a and b are one term); asserted ara crc dra drc,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.1-1.2-0.2-1,terms a b c; asserted ara brb cra crb,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.1-1.2-0.2-1,terms a c b; asserted ara crc bra brc,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-1.2-0.2-1,terms a b c; asserted ara arb arc brb cra crb,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-1.2-0.2-1,terms a c b; asserted ara arc arb crc bra brc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-1.0-2.1-1.2-0.2-1,terms b c a; asserted brb brc bra crc arb arc,3,6,1,5,6,1
+anchored/False,perform,3:21:0-0.0-1.0-2.1-1.2-0.2-1,terms c b a; asserted crc crb cra brb arc arb,3,6,1,5,6,1
+anchored/False,perform,3:01:0-0.0-1.1-0.1-1.2-0.2-1,terms a b c; asserted ara arb bra brb cra crb,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-1.1-0.1-1.2-0.2-1,terms b c a; asserted brb brc crb crc arb arc,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-2.1-0.1-1.2-0.2-1,terms a c b; asserted ara arb cra crc bra brc,3,6,1,5,6,1
+anchored/False,perform,3:10:0-0.0-2.1-0.1-1.2-0.2-1,terms b a c; asserted brb brc arb ara crb cra,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-2.1-0.1-1.2-0.2-1,terms b c a; asserted brb bra crb crc arb arc,3,6,1,5,6,1
+anchored/False,perform,3:21:0-0.0-2.1-0.1-1.2-0.2-1,terms c b a; asserted crc cra brc brb arc arb,3,6,1,5,6,1
+anchored/False,perform,3:01:0-1.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted arb arc bra brb cra crb,3,6,1,5,6,1
+anchored/False,perform,3:02:0-1.0-2.1-0.1-1.2-0.2-1,terms a c b; asserted arc arb cra crc bra brc,3,6,1,5,6,1
+anchored/False,perform,3:10:0-1.0-2.1-0.1-1.2-0.2-1,terms b a c; asserted bra brc arb ara crb cra,3,6,1,5,6,1
+anchored/False,perform,3:20:0-1.0-2.1-0.1-1.2-0.2-1,terms b c a; asserted brc bra crb crc arb arc,3,6,1,5,6,1
+anchored/False,perform,3:21:0-1.0-2.1-0.1-1.2-0.2-1,terms c b a; asserted crb cra brc brb arc arb,3,6,1,5,6,1
+anchored/False,perform,3:01:0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,6,0
+anchored/False,perform,3:02:0-0.0-2.1-1.1-2.2-0.2-1,terms a c b; asserted ara arb crc crb bra brc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-2.1-1.1-2.2-0.2-1,terms b c a; asserted brb bra crc cra arb arc,3,6,1,5,6,1
+anchored/False,perform,3:00:0-0.0-1.1-1.2-2,terms a c d (a and b are one term); asserted ara arc crc drd,3,4,1,3,6,1
+anchored/False,perform,3:02:0-0.0-1.1-1.2-2,terms a c b; asserted ara arc crc brb,3,4,1,3,6,1
+anchored/False,perform,3:10:0-0.0-1.1-1.2-2,terms b a c; asserted brb bra ara crc,3,4,1,3,6,1
+anchored/False,perform,3:11:0-0.0-1.1-1.2-2,terms c a d (a and b are one term); asserted crc cra ara drd,3,4,1,3,6,1
+anchored/False,perform,3:12:0-0.0-1.1-1.2-2,terms c a b; asserted crc cra ara brb,3,4,1,3,6,1
+anchored/False,perform,3:20:0-0.0-1.1-1.2-2,terms b c a; asserted brb brc crc ara,3,4,1,3,6,1
+anchored/False,perform,3:21:0-0.0-1.1-1.2-2,terms c b a; asserted crc crb brb ara,3,4,1,3,6,1
+anchored/False,perform,3:22:0-0.0-1.1-1.2-2,terms c d a (a and b are one term); asserted crc crd drd ara,3,4,1,3,6,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-0.1-1.2-2,terms a b c; asserted ara arb arc bra brb crc,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-0.1-1.2-2,terms a c b; asserted ara arc arb cra crc brb,3,6,1,5,6,1
+anchored/False,perform,3:10:0-0.0-1.0-2.1-0.1-1.2-2,terms b a c; asserted brb bra brc arb ara crc,3,6,1,5,6,1
+anchored/False,perform,3:01:0-0.0-1.0-2.1-1.1-2.2-2,terms a b c; asserted ara arb arc brb brc crc,3,6,1,5,6,1
+anchored/False,perform,3:02:0-0.0-1.0-2.1-1.1-2.2-2,terms a c b; asserted ara arc arb crc crb brb,3,6,1,5,6,1
+anchored/False,perform,3:12:0-0.0-1.0-2.1-1.1-2.2-2,terms c a b; asserted crc cra crb ara arb brb,3,6,1,5,6,1
+anchored/False,perform,3:01:0-0.0-1.1-0.1-1.2-0.2-2,terms a b c; asserted ara arb bra brb cra crc,3,6,1,5,6,1
+anchored/False,perform,3:10:0-0.0-1.1-0.1-1.2-0.2-2,terms b a c; asserted brb bra arb ara crb crc,3,6,1,5,6,1
+anchored/False,perform,3:20:0-0.0-1.1-0.1-1.2-0.2-2,terms b c a; asserted brb brc crb crc arb ara,3,6,1,5,6,1
+anchored/False,perform,3:01:0-0.0-1.1-1.1-2.2-0.2-2,terms a b c; asserted ara arb brb brc cra crc,3,6,1,5,6,1
+free/True,replace,2::0-1.1-0,terms a b; asserted arb bra,2,2,0,1,0,0
+free/True,replace,2::0-1,terms a b; asserted arb,2,1,0,0,1,0
+free/True,replace,3::0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,1,0
+free/True,replace,2::,terms a b; asserted nothing,2,0,0,-1,2,0
+free/True,replace,3::0-1,terms a b c; asserted arb,3,1,1,0,2,0
+free/True,replace,3::0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,2,0
+free/True,replace,3::0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,2,0
+free/True,replace,1::,terms a; asserted nothing,1,0,-1,-1,3,0
+free/True,replace,3::,terms a b c; asserted nothing,3,0,1,-1,3,0
+free/True,replace,3::0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,3,0
+free/True,replace,3::0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,3,0
+free/True,replace,3::0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,3,0
+free/True,replace,3::0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,3,0
+free/True,replace,3::0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,3,0
+free/True,replace,3::0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,3,0
+free/True,replace,3::0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,3,0
+free/True,replace,3::0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,4,0
+free/True,replace,3::0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,4,0
+free/True,replace,3::0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,4,0
+free/True,replace,3::0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,5,0
+free/True,perform,2::0-1.1-0,terms a b; asserted arb bra,2,2,0,1,0,0
+free/True,perform,1::0-0,terms a; asserted ara,1,1,-1,0,1,1
+free/True,perform,2::0-1,terms a b; asserted arb,2,1,0,0,1,0
+free/True,perform,2::0-0.0-1.1-0,terms a b; asserted ara arb bra,2,3,0,2,1,1
+free/True,perform,3::0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,1,0
+free/True,perform,1::,terms a; asserted nothing,1,0,-1,-1,2,0
+free/True,perform,2::,terms a b; asserted nothing,2,0,0,-1,2,0
+free/True,perform,2::0-0,terms a b; asserted ara,2,1,0,0,2,1
+free/True,perform,2::0-0.0-1,terms a b; asserted ara arb,2,2,0,1,2,1
+free/True,perform,2::0-0.1-0,terms a b; asserted ara bra,2,2,0,1,2,1
+free/True,perform,2::0-0.0-1.1-0.1-1,terms a b; asserted ara arb bra brb,2,4,0,3,2,1
+free/True,perform,3::0-1,terms a b c; asserted arb,3,1,1,0,2,0
+free/True,perform,3::0-0.0-1.1-0,terms a b c; asserted ara arb bra,3,3,1,2,2,1
+free/True,perform,3::0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,2,0
+free/True,perform,3::0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,2,0
+free/True,perform,3::0-2.1-1.2-0,terms a b c; asserted arc brb cra,3,3,1,2,2,1
+free/True,perform,2::0-0.1-1,terms a b; asserted ara brb,2,2,0,1,3,1
+free/True,perform,2::0-0.0-1.1-1,terms a b; asserted ara arb brb,2,3,0,2,3,1
+free/True,perform,3::,terms a b c; asserted nothing,3,0,1,-1,3,0
+free/True,perform,3::0-0,terms a b c; asserted ara,3,1,1,0,3,1
+free/True,perform,3::0-0.0-1,terms a b c; asserted ara arb,3,2,1,1,3,1
+free/True,perform,3::0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,3,0
+free/True,perform,3::0-0.1-0,terms a b c; asserted ara bra,3,2,1,1,3,1
+free/True,perform,3::0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,3,0
+free/True,perform,3::0-0.0-1.0-2.1-0,terms a b c; asserted ara arb arc bra,3,4,1,3,3,1
+free/True,perform,3::0-2.1-1,terms a b c; asserted arc brb,3,2,1,1,3,1
+free/True,perform,3::0-0.0-1.1-0.1-1,terms a b c; asserted ara arb bra brb,3,4,1,3,3,1
+free/True,perform,3::0-1.0-2.1-0.1-1,terms a b c; asserted arb arc bra brb,3,4,1,3,3,1
+free/True,perform,3::0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,3,0
+free/True,perform,3::0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,3,0
+free/True,perform,3::0-0.0-1.1-0.2-0,terms a b c; asserted ara arb bra cra,3,4,1,3,3,1
+free/True,perform,3::0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,3,0
+free/True,perform,3::0-0.0-2.1-1.2-0,terms a b c; asserted ara arc brb cra,3,4,1,3,3,1
+free/True,perform,3::0-1.0-2.1-1.2-0,terms a b c; asserted arb arc brb cra,3,4,1,3,3,1
+free/True,perform,3::0-1.1-0.1-1.2-0,terms a b c; asserted arb bra brb cra,3,4,1,3,3,1
+free/True,perform,3::0-2.1-0.1-1.2-0,terms a b c; asserted arc bra brb cra,3,4,1,3,3,1
+free/True,perform,3::0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,3,0
+free/True,perform,3::0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,3,0
+free/True,perform,3::0-0.0-1.0-2,terms a b c; asserted ara arb arc,3,3,1,2,4,1
+free/True,perform,3::0-0.0-2.1-0,terms a b c; asserted ara arc bra,3,3,1,2,4,1
+free/True,perform,3::0-0.1-1,terms a b c; asserted ara brb,3,2,1,1,4,1
+free/True,perform,3::0-0.0-1.1-1,terms a b c; asserted ara arb brb,3,3,1,2,4,1
+free/True,perform,3::0-0.0-2.1-1,terms a b c; asserted ara arc brb,3,3,1,2,4,1
+free/True,perform,3::0-1.0-2.1-1,terms a b c; asserted arb arc brb,3,3,1,2,4,1
+free/True,perform,3::0-2.1-0.1-1,terms a b c; asserted arc bra brb,3,3,1,2,4,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1,terms a b c; asserted ara arb arc bra brb,3,5,1,4,4,1
+free/True,perform,3::0-0.0-2.1-2,terms a b c; asserted ara arc brc,3,3,1,2,4,1
+free/True,perform,3::0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,4,0
+free/True,perform,3::0-0.0-1.0-2.1-0.1-2,terms a b c; asserted ara arb arc bra brc,3,5,1,4,4,1
+free/True,perform,3::0-0.1-0.2-0,terms a b c; asserted ara bra cra,3,3,1,2,4,1
+free/True,perform,3::0-0.0-1.0-2.1-0.2-0,terms a b c; asserted ara arb arc bra cra,3,5,1,4,4,1
+free/True,perform,3::0-0.1-1.2-0,terms a b c; asserted ara brb cra,3,3,1,2,4,1
+free/True,perform,3::0-1.1-1.2-0,terms a b c; asserted arb brb cra,3,3,1,2,4,1
+free/True,perform,3::0-0.0-1.0-2.1-1.2-0,terms a b c; asserted ara arb arc brb cra,3,5,1,4,4,1
+free/True,perform,3::0-0.0-1.1-0.1-1.2-0,terms a b c; asserted ara arb bra brb cra,3,5,1,4,4,1
+free/True,perform,3::0-0.0-2.1-0.1-1.2-0,terms a b c; asserted ara arc bra brb cra,3,5,1,4,4,1
+free/True,perform,3::0-1.0-2.1-0.1-1.2-0,terms a b c; asserted arb arc bra brb cra,3,5,1,4,4,1
+free/True,perform,3::0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,4,0
+free/True,perform,3::0-0.0-1.0-2.1-2.2-0,terms a b c; asserted ara arb arc brc cra,3,5,1,4,4,1
+free/True,perform,3::0-0.0-1.1-0.1-2.2-0,terms a b c; asserted ara arb bra brc cra,3,5,1,4,4,1
+free/True,perform,3::0-0.0-2.1-0.1-2.2-0,terms a b c; asserted ara arc bra brc cra,3,5,1,4,4,1
+free/True,perform,3::0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,4,0
+free/True,perform,3::0-0.0-2.1-1.1-2.2-0,terms a b c; asserted ara arc brb brc cra,3,5,1,4,4,1
+free/True,perform,3::0-1.0-2.1-1.1-2.2-0,terms a b c; asserted arb arc brb brc cra,3,5,1,4,4,1
+free/True,perform,3::0-2.1-0.1-1.1-2.2-0,terms a b c; asserted arc bra brb brc cra,3,5,1,4,4,1
+free/True,perform,3::0-0.0-2.1-1.2-0.2-1,terms a b c; asserted ara arc brb cra crb,3,5,1,4,4,1
+free/True,perform,3::0-1.0-2.1-1.2-0.2-1,terms a b c; asserted arb arc brb cra crb,3,5,1,4,4,1
+free/True,perform,3::0-0.0-1.1-0.1-1.2-2,terms a b c; asserted ara arb bra brb crc,3,5,1,4,4,1
+free/True,perform,3::0-0.0-1.0-2.1-1,terms a b c; asserted ara arb arc brb,3,4,1,3,5,1
+free/True,perform,3::0-0.0-2.1-0.1-1,terms a b c; asserted ara arc bra brb,3,4,1,3,5,1
+free/True,perform,3::0-0.0-1.0-2.1-2,terms a b c; asserted ara arb arc brc,3,4,1,3,5,1
+free/True,perform,3::0-0.0-2.1-0.1-2,terms a b c; asserted ara arc bra brc,3,4,1,3,5,1
+free/True,perform,3::0-0.0-2.1-1.1-2,terms a b c; asserted ara arc brb brc,3,4,1,3,5,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1.1-2,terms a b c; asserted ara arb arc bra brb brc,3,6,1,5,5,1
+free/True,perform,3::0-0.0-1.1-1.2-0,terms a b c; asserted ara arb brb cra,3,4,1,3,5,1
+free/True,perform,3::0-0.1-0.1-1.2-0,terms a b c; asserted ara bra brb cra,3,4,1,3,5,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1.2-0,terms a b c; asserted ara arb arc bra brb cra,3,6,1,5,5,1
+free/True,perform,3::0-0.0-1.1-2.2-0,terms a b c; asserted ara arb brc cra,3,4,1,3,5,1
+free/True,perform,3::0-0.1-0.1-2.2-0,terms a b c; asserted ara bra brc cra,3,4,1,3,5,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-2.2-0,terms a b c; asserted ara arb arc bra brc cra,3,6,1,5,5,1
+free/True,perform,3::0-0.1-1.1-2.2-0,terms a b c; asserted ara brb brc cra,3,4,1,3,5,1
+free/True,perform,3::0-0.0-1.0-2.1-1.1-2.2-0,terms a b c; asserted ara arb arc brb brc cra,3,6,1,5,5,1
+free/True,perform,3::0-0.0-1.1-0.1-1.1-2.2-0,terms a b c; asserted ara arb bra brb brc cra,3,6,1,5,5,1
+free/True,perform,3::0-0.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted ara arc bra brb brc cra,3,6,1,5,5,1
+free/True,perform,3::0-1.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted arb arc bra brb brc cra,3,6,1,5,5,1
+free/True,perform,3::0-0.1-1.2-0.2-1,terms a b c; asserted ara brb cra crb,3,4,1,3,5,1
+free/True,perform,3::0-0.0-1.0-2.1-1.2-0.2-1,terms a b c; asserted ara arb arc brb cra crb,3,6,1,5,5,1
+free/True,perform,3::0-0.0-1.1-0.1-1.2-0.2-1,terms a b c; asserted ara arb bra brb cra crb,3,6,1,5,5,1
+free/True,perform,3::0-0.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted ara arc bra brb cra crb,3,6,1,5,5,1
+free/True,perform,3::0-1.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted arb arc bra brb cra crb,3,6,1,5,5,1
+free/True,perform,3::0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,5,0
+free/True,perform,3::0-0.0-2.1-1.1-2.2-0.2-1,terms a b c; asserted ara arc brb brc cra crb,3,6,1,5,5,1
+free/True,perform,3::0-0.1-1.2-2,terms a b c; asserted ara brb crc,3,3,1,2,5,1
+free/True,perform,3::0-0.0-1.1-1.2-2,terms a b c; asserted ara arb brb crc,3,4,1,3,5,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1.2-2,terms a b c; asserted ara arb arc bra brb crc,3,6,1,5,5,1
+free/True,perform,3::0-0.0-1.1-0.1-1.2-0.2-2,terms a b c; asserted ara arb bra brb cra crc,3,6,1,5,5,1
+free/True,perform,3::0-0.0-1.0-2.1-1.1-2,terms a b c; asserted ara arb arc brb brc,3,5,1,4,6,1
+free/True,perform,3::0-0.0-1.1-1.1-2.2-0,terms a b c; asserted ara arb brb brc cra,3,5,1,4,6,1
+free/True,perform,3::0-0.1-0.1-1.1-2.2-0,terms a b c; asserted ara bra brb brc cra,3,5,1,4,6,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted ara arb arc bra brb brc cra,3,7,1,6,6,1
+free/True,perform,3::0-0.0-1.1-1.2-0.2-1,terms a b c; asserted ara arb brb cra crb,3,5,1,4,6,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted ara arb arc bra brb cra crb,3,7,1,6,6,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted ara arb arc bra brc cra crb,3,7,1,6,6,1
+free/True,perform,3::0-0.0-1.0-2.1-1.1-2.2-0.2-1,terms a b c; asserted ara arb arc brb brc cra crb,3,7,1,6,6,1
+free/True,perform,3::0-0.0-1.0-2.1-1.2-2,terms a b c; asserted ara arb arc brb crc,3,5,1,4,6,1
+free/True,perform,3::0-0.0-2.1-0.1-1.2-2,terms a b c; asserted ara arc bra brb crc,3,5,1,4,6,1
+free/True,perform,3::0-0.0-2.1-1.1-2.2-2,terms a b c; asserted ara arc brb brc crc,3,5,1,4,6,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1.1-2.2-2,terms a b c; asserted ara arb arc bra brb brc crc,3,7,1,6,6,1
+free/True,perform,3::0-0.0-1.0-2.1-0.1-1.2-0.2-2,terms a b c; asserted ara arb arc bra brb cra crc,3,7,1,6,6,1
+free/True,perform,3::0-0.0-1.0-2.1-1.1-2.2-0.2-2,terms a b c; asserted ara arb arc brb brc cra crc,3,7,1,6,6,1
+free/True,perform,3::0-0.0-2.1-0.1-1.1-2.2-0.2-2,terms a b c; asserted ara arc bra brb brc cra crc,3,7,1,6,6,1
+anchored/True,replace,2:01:0-1.1-0,terms a b; asserted arb bra,2,2,0,1,0,0
+anchored/True,replace,2:01:0-1,terms a b; asserted arb,2,1,0,0,1,0
+anchored/True,replace,2:10:0-1,terms b a; asserted bra,2,1,0,0,1,0
+anchored/True,replace,3:01:0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,1,0
+anchored/True,replace,2:01:,terms a b; asserted nothing,2,0,0,-1,2,0
+anchored/True,replace,3:01:0-1,terms a b c; asserted arb,3,1,1,0,2,0
+anchored/True,replace,3:10:0-1,terms b a c; asserted bra,3,1,1,0,2,0
+anchored/True,replace,3:01:0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,2,0
+anchored/True,replace,3:10:0-1.0-2.1-0,terms b a c; asserted bra brc arb,3,3,1,2,2,0
+anchored/True,replace,3:01:0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,2,0
+anchored/True,replace,3:10:0-1.1-0.2-0,terms b a c; asserted bra arb crb,3,3,1,2,2,0
+anchored/True,replace,1:00:,terms a (a and b are one term); asserted nothing,1,0,-1,-1,3,0
+anchored/True,replace,3:01:,terms a b c; asserted nothing,3,0,1,-1,3,0
+anchored/True,replace,3:01:0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,3,0
+anchored/True,replace,3:10:0-1.0-2,terms b a c; asserted bra brc,3,2,1,1,3,0
+anchored/True,replace,3:01:0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,3,0
+anchored/True,replace,3:02:0-2.1-0,terms a c b; asserted arb cra,3,2,1,1,3,0
+anchored/True,replace,3:10:0-2.1-0,terms b a c; asserted brc arb,3,2,1,1,3,0
+anchored/True,replace,3:20:0-2.1-0,terms b c a; asserted bra crb,3,2,1,1,3,0
+anchored/True,replace,3:02:0-2.1-2,terms a c b; asserted arb crb,3,2,1,1,3,0
+anchored/True,replace,3:20:0-2.1-2,terms b c a; asserted bra cra,3,2,1,1,3,0
+anchored/True,replace,3:01:0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,3,0
+anchored/True,replace,3:01:0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,3,0
+anchored/True,replace,3:10:0-1.0-2.1-0.2-0,terms b a c; asserted bra brc arb crb,3,4,1,3,3,0
+anchored/True,replace,3:02:0-1.0-2.1-2.2-0,terms a c b; asserted arc arb crb bra,3,4,1,3,3,0
+anchored/True,replace,3:20:0-1.0-2.1-2.2-0,terms b c a; asserted brc bra cra arb,3,4,1,3,3,0
+anchored/True,replace,3:02:0-2.1-0.1-2.2-0,terms a c b; asserted arb cra crb bra,3,4,1,3,3,0
+anchored/True,replace,2:00:,terms a c (a and b are one term); asserted nothing,2,0,0,-1,4,0
+anchored/True,replace,3:02:0-1,terms a c b; asserted arc,3,1,1,0,4,0
+anchored/True,replace,3:12:0-1,terms c a b; asserted cra,3,1,1,0,4,0
+anchored/True,replace,3:20:0-1,terms b c a; asserted brc,3,1,1,0,4,0
+anchored/True,replace,3:21:0-1,terms c b a; asserted crb,3,1,1,0,4,0
+anchored/True,replace,3:02:0-1.0-2.1-0,terms a c b; asserted arc arb cra,3,3,1,2,4,0
+anchored/True,replace,3:20:0-1.0-2.1-0,terms b c a; asserted brc bra crb,3,3,1,2,4,0
+anchored/True,replace,3:01:0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,4,0
+anchored/True,replace,3:02:0-1.0-2.1-2,terms a c b; asserted arc arb crb,3,3,1,2,4,0
+anchored/True,replace,3:10:0-1.0-2.1-2,terms b a c; asserted bra brc arc,3,3,1,2,4,0
+anchored/True,replace,3:12:0-1.0-2.1-2,terms c a b; asserted cra crb arb,3,3,1,2,4,0
+anchored/True,replace,3:20:0-1.0-2.1-2,terms b c a; asserted brc bra cra,3,3,1,2,4,0
+anchored/True,replace,3:21:0-1.0-2.1-2,terms c b a; asserted crb cra bra,3,3,1,2,4,0
+anchored/True,replace,3:02:0-1.1-0.2-0,terms a c b; asserted arc cra bra,3,3,1,2,4,0
+anchored/True,replace,3:20:0-1.1-0.2-0,terms b c a; asserted brc crb arb,3,3,1,2,4,0
+anchored/True,replace,3:01:0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,4,0
+anchored/True,replace,3:02:0-1.1-2.2-0,terms a c b; asserted arc crb bra,3,3,1,2,4,0
+anchored/True,replace,3:01:0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,4,0
+anchored/True,replace,3:02:0-1.0-2.1-0.1-2.2-0,terms a c b; asserted arc arb cra crb bra,3,5,1,4,4,0
+anchored/True,replace,3:10:0-1.0-2.1-0.1-2.2-0,terms b a c; asserted bra brc arb arc crb,3,5,1,4,4,0
+anchored/True,replace,3:20:0-1.0-2.1-0.1-2.2-0,terms b c a; asserted brc bra crb cra arb,3,5,1,4,4,0
+anchored/True,replace,2:00:0-1,terms a c (a and b are one term); asserted arc,2,1,0,0,5,0
+anchored/True,replace,2:11:0-1,terms c a (a and b are one term); asserted cra,2,1,0,0,5,0
+anchored/True,replace,3:00:,terms a c d (a and b are one term); asserted nothing,3,0,1,-1,5,0
+anchored/True,replace,3:12:0-1.0-2,terms c a b; asserted cra crb,3,2,1,1,5,0
+anchored/True,replace,3:02:0-1.1-0,terms a c b; asserted arc cra,3,2,1,1,5,0
+anchored/True,replace,3:20:0-1.1-0,terms b c a; asserted brc crb,3,2,1,1,5,0
+anchored/True,replace,3:12:0-2.1-0,terms c a b; asserted crb arc,3,2,1,1,5,0
+anchored/True,replace,3:21:0-2.1-0,terms c b a; asserted cra brc,3,2,1,1,5,0
+anchored/True,replace,3:01:0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,5,0
+anchored/True,replace,3:02:0-1.0-2.1-0.1-2,terms a c b; asserted arc arb cra crb,3,4,1,3,5,0
+anchored/True,replace,3:20:0-1.0-2.1-0.1-2,terms b c a; asserted brc bra crb cra,3,4,1,3,5,0
+anchored/True,replace,3:01:0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,5,0
+anchored/True,replace,3:10:0-1.0-2.1-2.2-0,terms b a c; asserted bra brc arc crb,3,4,1,3,5,0
+anchored/True,replace,3:12:0-1.0-2.1-2.2-0,terms c a b; asserted cra crb arb brc,3,4,1,3,5,0
+anchored/True,replace,3:21:0-1.0-2.1-2.2-0,terms c b a; asserted crb cra bra arc,3,4,1,3,5,0
+anchored/True,replace,3:01:0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,5,0
+anchored/True,replace,3:10:0-2.1-0.1-2.2-0,terms b a c; asserted brc arb arc crb,3,4,1,3,5,0
+anchored/True,replace,3:01:0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,5,0
+anchored/True,replace,2:00:0-1.1-0,terms a c (a and b are one term); asserted arc cra,2,2,0,1,6,0
+anchored/True,replace,3:00:0-1,terms a c d (a and b are one term); asserted arc,3,1,1,0,6,0
+anchored/True,replace,3:11:0-1,terms c a d (a and b are one term); asserted cra,3,1,1,0,6,0
+anchored/True,replace,3:22:0-1,terms c d a (a and b are one term); asserted crd,3,1,1,0,6,0
+anchored/True,replace,3:12:0-1.0-2.1-0,terms c a b; asserted cra crb arc,3,3,1,2,6,0
+anchored/True,replace,3:21:0-1.0-2.1-0,terms c b a; asserted crb cra brc,3,3,1,2,6,0
+anchored/True,replace,3:12:0-1.1-0.2-0,terms c a b; asserted cra arc brc,3,3,1,2,6,0
+anchored/True,replace,3:21:0-1.1-0.2-0,terms c b a; asserted crb brc arc,3,3,1,2,6,0
+anchored/True,replace,3:12:0-1.0-2.1-0.1-2.2-0,terms c a b; asserted cra crb arc arb brc,3,5,1,4,6,0
+anchored/True,replace,3:21:0-1.0-2.1-0.1-2.2-0,terms c b a; asserted crb cra brc bra arc,3,5,1,4,6,0
+anchored/True,perform,2:01:0-1.1-0,terms a b; asserted arb bra,2,2,0,1,0,0
+anchored/True,perform,1:00:0-0,terms a (a and b are one term); asserted ara,1,1,-1,0,1,1
+anchored/True,perform,2:01:0-1,terms a b; asserted arb,2,1,0,0,1,0
+anchored/True,perform,2:10:0-1,terms b a; asserted bra,2,1,0,0,1,0
+anchored/True,perform,2:01:0-0.0-1.1-0,terms a b; asserted ara arb bra,2,3,0,2,1,1
+anchored/True,perform,2:10:0-0.0-1.1-0,terms b a; asserted brb bra arb,2,3,0,2,1,1
+anchored/True,perform,3:01:0-1.1-0,terms a b c; asserted arb bra,3,2,1,1,1,0
+anchored/True,perform,1:00:,terms a (a and b are one term); asserted nothing,1,0,-1,-1,2,0
+anchored/True,perform,2:01:,terms a b; asserted nothing,2,0,0,-1,2,0
+anchored/True,perform,2:00:0-0,terms a c (a and b are one term); asserted ara,2,1,0,0,2,1
+anchored/True,perform,2:01:0-0.0-1,terms a b; asserted ara arb,2,2,0,1,2,1
+anchored/True,perform,2:10:0-0.0-1,terms b a; asserted brb bra,2,2,0,1,2,1
+anchored/True,perform,2:01:0-0.1-0,terms a b; asserted ara bra,2,2,0,1,2,1
+anchored/True,perform,2:10:0-0.1-0,terms b a; asserted brb arb,2,2,0,1,2,1
+anchored/True,perform,2:01:0-0.0-1.1-0.1-1,terms a b; asserted ara arb bra brb,2,4,0,3,2,1
+anchored/True,perform,3:01:0-1,terms a b c; asserted arb,3,1,1,0,2,0
+anchored/True,perform,3:10:0-1,terms b a c; asserted bra,3,1,1,0,2,0
+anchored/True,perform,3:01:0-0.0-1.1-0,terms a b c; asserted ara arb bra,3,3,1,2,2,1
+anchored/True,perform,3:10:0-0.0-1.1-0,terms b a c; asserted brb bra arb,3,3,1,2,2,1
+anchored/True,perform,3:01:0-1.0-2.1-0,terms a b c; asserted arb arc bra,3,3,1,2,2,0
+anchored/True,perform,3:10:0-1.0-2.1-0,terms b a c; asserted bra brc arb,3,3,1,2,2,0
+anchored/True,perform,3:01:0-1.1-0.2-0,terms a b c; asserted arb bra cra,3,3,1,2,2,0
+anchored/True,perform,3:10:0-1.1-0.2-0,terms b a c; asserted bra arb crb,3,3,1,2,2,0
+anchored/True,perform,3:02:0-2.1-1.2-0,terms a c b; asserted arb crc bra,3,3,1,2,2,1
+anchored/True,perform,2:00:,terms a c (a and b are one term); asserted nothing,2,0,0,-1,3,0
+anchored/True,perform,2:01:0-0,terms a b; asserted ara,2,1,0,0,3,1
+anchored/True,perform,2:10:0-0,terms b a; asserted brb,2,1,0,0,3,1
+anchored/True,perform,2:00:0-0.0-1,terms a c (a and b are one term); asserted ara arc,2,2,0,1,3,1
+anchored/True,perform,2:00:0-0.1-0,terms a c (a and b are one term); asserted ara cra,2,2,0,1,3,1
+anchored/True,perform,2:00:0-0.1-1,terms a c (a and b are one term); asserted ara crc,2,2,0,1,3,1
+anchored/True,perform,2:01:0-0.0-1.1-1,terms a b; asserted ara arb brb,2,3,0,2,3,1
+anchored/True,perform,2:10:0-0.0-1.1-1,terms b a; asserted brb bra ara,2,3,0,2,3,1
+anchored/True,perform,3:01:,terms a b c; asserted nothing,3,0,1,-1,3,0
+anchored/True,perform,3:00:0-0,terms a c d (a and b are one term); asserted ara,3,1,1,0,3,1
+anchored/True,perform,3:01:0-0.0-1,terms a b c; asserted ara arb,3,2,1,1,3,1
+anchored/True,perform,3:10:0-0.0-1,terms b a c; asserted brb bra,3,2,1,1,3,1
+anchored/True,perform,3:01:0-1.0-2,terms a b c; asserted arb arc,3,2,1,1,3,0
+anchored/True,perform,3:10:0-1.0-2,terms b a c; asserted bra brc,3,2,1,1,3,0
+anchored/True,perform,3:01:0-0.1-0,terms a b c; asserted ara bra,3,2,1,1,3,1
+anchored/True,perform,3:10:0-0.1-0,terms b a c; asserted brb arb,3,2,1,1,3,1
+anchored/True,perform,3:01:0-2.1-0,terms a b c; asserted arc bra,3,2,1,1,3,0
+anchored/True,perform,3:02:0-2.1-0,terms a c b; asserted arb cra,3,2,1,1,3,0
+anchored/True,perform,3:10:0-2.1-0,terms b a c; asserted brc arb,3,2,1,1,3,0
+anchored/True,perform,3:20:0-2.1-0,terms b c a; asserted bra crb,3,2,1,1,3,0
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0,terms a b c; asserted ara arb arc bra,3,4,1,3,3,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0,terms b a c; asserted brb bra brc arb,3,4,1,3,3,1
+anchored/True,perform,3:02:0-2.1-1,terms a c b; asserted arb crc,3,2,1,1,3,1
+anchored/True,perform,3:20:0-2.1-1,terms b c a; asserted bra crc,3,2,1,1,3,1
+anchored/True,perform,3:01:0-0.0-1.1-0.1-1,terms a b c; asserted ara arb bra brb,3,4,1,3,3,1
+anchored/True,perform,3:01:0-1.0-2.1-0.1-1,terms a b c; asserted arb arc bra brb,3,4,1,3,3,1
+anchored/True,perform,3:10:0-1.0-2.1-0.1-1,terms b a c; asserted bra brc arb ara,3,4,1,3,3,1
+anchored/True,perform,3:02:0-2.1-2,terms a c b; asserted arb crb,3,2,1,1,3,0
+anchored/True,perform,3:20:0-2.1-2,terms b c a; asserted bra cra,3,2,1,1,3,0
+anchored/True,perform,3:01:0-1.0-2.1-0.1-2,terms a b c; asserted arb arc bra brc,3,4,1,3,3,0
+anchored/True,perform,3:01:0-0.0-1.1-0.2-0,terms a b c; asserted ara arb bra cra,3,4,1,3,3,1
+anchored/True,perform,3:10:0-0.0-1.1-0.2-0,terms b a c; asserted brb bra arb crb,3,4,1,3,3,1
+anchored/True,perform,3:01:0-1.0-2.1-0.2-0,terms a b c; asserted arb arc bra cra,3,4,1,3,3,0
+anchored/True,perform,3:10:0-1.0-2.1-0.2-0,terms b a c; asserted bra brc arb crb,3,4,1,3,3,0
+anchored/True,perform,3:02:0-0.0-2.1-1.2-0,terms a c b; asserted ara arb crc bra,3,4,1,3,3,1
+anchored/True,perform,3:20:0-0.0-2.1-1.2-0,terms b c a; asserted brb bra crc arb,3,4,1,3,3,1
+anchored/True,perform,3:02:0-1.0-2.1-1.2-0,terms a c b; asserted arc arb crc bra,3,4,1,3,3,1
+anchored/True,perform,3:20:0-1.0-2.1-1.2-0,terms b c a; asserted brc bra crc arb,3,4,1,3,3,1
+anchored/True,perform,3:01:0-1.1-0.1-1.2-0,terms a b c; asserted arb bra brb cra,3,4,1,3,3,1
+anchored/True,perform,3:10:0-1.1-0.1-1.2-0,terms b a c; asserted bra arb ara crb,3,4,1,3,3,1
+anchored/True,perform,3:02:0-2.1-0.1-1.2-0,terms a c b; asserted arb cra crc bra,3,4,1,3,3,1
+anchored/True,perform,3:20:0-2.1-0.1-1.2-0,terms b c a; asserted bra crb crc arb,3,4,1,3,3,1
+anchored/True,perform,3:02:0-1.0-2.1-2.2-0,terms a c b; asserted arc arb crb bra,3,4,1,3,3,0
+anchored/True,perform,3:20:0-1.0-2.1-2.2-0,terms b c a; asserted brc bra cra arb,3,4,1,3,3,0
+anchored/True,perform,3:02:0-2.1-0.1-2.2-0,terms a c b; asserted arb cra crb bra,3,4,1,3,3,0
+anchored/True,perform,2:11:0-0,terms c a (a and b are one term); asserted crc,2,1,0,0,4,1
+anchored/True,perform,2:00:0-1,terms a c (a and b are one term); asserted arc,2,1,0,0,4,0
+anchored/True,perform,2:11:0-1,terms c a (a and b are one term); asserted cra,2,1,0,0,4,0
+anchored/True,perform,2:00:0-0.0-1.1-0,terms a c (a and b are one term); asserted ara arc cra,2,3,0,2,4,1
+anchored/True,perform,2:01:0-0.1-1,terms a b; asserted ara brb,2,2,0,1,4,1
+anchored/True,perform,2:00:0-0.0-1.1-1,terms a c (a and b are one term); asserted ara arc crc,2,3,0,2,4,1
+anchored/True,perform,2:11:0-0.0-1.1-1,terms c a (a and b are one term); asserted crc cra ara,2,3,0,2,4,1
+anchored/True,perform,3:00:,terms a c d (a and b are one term); asserted nothing,3,0,1,-1,4,0
+anchored/True,perform,3:01:0-0,terms a b c; asserted ara,3,1,1,0,4,1
+anchored/True,perform,3:10:0-0,terms b a c; asserted brb,3,1,1,0,4,1
+anchored/True,perform,3:12:0-0,terms c a b; asserted crc,3,1,1,0,4,1
+anchored/True,perform,3:02:0-1,terms a c b; asserted arc,3,1,1,0,4,0
+anchored/True,perform,3:12:0-1,terms c a b; asserted cra,3,1,1,0,4,0
+anchored/True,perform,3:20:0-1,terms b c a; asserted brc,3,1,1,0,4,0
+anchored/True,perform,3:21:0-1,terms c b a; asserted crb,3,1,1,0,4,0
+anchored/True,perform,3:00:0-0.0-1,terms a c d (a and b are one term); asserted ara arc,3,2,1,1,4,1
+anchored/True,perform,3:01:0-0.0-1.0-2,terms a b c; asserted ara arb arc,3,3,1,2,4,1
+anchored/True,perform,3:10:0-0.0-1.0-2,terms b a c; asserted brb bra brc,3,3,1,2,4,1
+anchored/True,perform,3:00:0-0.1-0,terms a c d (a and b are one term); asserted ara cra,3,2,1,1,4,1
+anchored/True,perform,3:01:0-0.0-2.1-0,terms a b c; asserted ara arc bra,3,3,1,2,4,1
+anchored/True,perform,3:02:0-0.0-2.1-0,terms a c b; asserted ara arb cra,3,3,1,2,4,1
+anchored/True,perform,3:10:0-0.0-2.1-0,terms b a c; asserted brb brc arb,3,3,1,2,4,1
+anchored/True,perform,3:20:0-0.0-2.1-0,terms b c a; asserted brb bra crb,3,3,1,2,4,1
+anchored/True,perform,3:02:0-1.0-2.1-0,terms a c b; asserted arc arb cra,3,3,1,2,4,0
+anchored/True,perform,3:20:0-1.0-2.1-0,terms b c a; asserted brc bra crb,3,3,1,2,4,0
+anchored/True,perform,3:00:0-0.1-1,terms a c d (a and b are one term); asserted ara crc,3,2,1,1,4,1
+anchored/True,perform,3:01:0-0.0-1.1-1,terms a b c; asserted ara arb brb,3,3,1,2,4,1
+anchored/True,perform,3:10:0-0.0-1.1-1,terms b a c; asserted brb bra ara,3,3,1,2,4,1
+anchored/True,perform,3:11:0-2.1-1,terms c a d (a and b are one term); asserted crd ara,3,2,1,1,4,1
+anchored/True,perform,3:02:0-0.0-2.1-1,terms a c b; asserted ara arb crc,3,3,1,2,4,1
+anchored/True,perform,3:20:0-0.0-2.1-1,terms b c a; asserted brb bra crc,3,3,1,2,4,1
+anchored/True,perform,3:01:0-1.0-2.1-1,terms a b c; asserted arb arc brb,3,3,1,2,4,1
+anchored/True,perform,3:02:0-1.0-2.1-1,terms a c b; asserted arc arb crc,3,3,1,2,4,1
+anchored/True,perform,3:10:0-1.0-2.1-1,terms b a c; asserted bra brc ara,3,3,1,2,4,1
+anchored/True,perform,3:20:0-1.0-2.1-1,terms b c a; asserted brc bra crc,3,3,1,2,4,1
+anchored/True,perform,3:01:0-2.1-0.1-1,terms a b c; asserted arc bra brb,3,3,1,2,4,1
+anchored/True,perform,3:02:0-2.1-0.1-1,terms a c b; asserted arb cra crc,3,3,1,2,4,1
+anchored/True,perform,3:10:0-2.1-0.1-1,terms b a c; asserted brc arb ara,3,3,1,2,4,1
+anchored/True,perform,3:20:0-2.1-0.1-1,terms b c a; asserted bra crb crc,3,3,1,2,4,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1,terms a b c; asserted ara arb arc bra brb,3,5,1,4,4,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-1,terms b a c; asserted brb bra brc arb ara,3,5,1,4,4,1
+anchored/True,perform,3:02:0-0.0-2.1-2,terms a c b; asserted ara arb crb,3,3,1,2,4,1
+anchored/True,perform,3:12:0-0.0-2.1-2,terms c a b; asserted crc crb arb,3,3,1,2,4,1
+anchored/True,perform,3:20:0-0.0-2.1-2,terms b c a; asserted brb bra cra,3,3,1,2,4,1
+anchored/True,perform,3:21:0-0.0-2.1-2,terms c b a; asserted crc cra bra,3,3,1,2,4,1
+anchored/True,perform,3:01:0-1.0-2.1-2,terms a b c; asserted arb arc brc,3,3,1,2,4,0
+anchored/True,perform,3:02:0-1.0-2.1-2,terms a c b; asserted arc arb crb,3,3,1,2,4,0
+anchored/True,perform,3:10:0-1.0-2.1-2,terms b a c; asserted bra brc arc,3,3,1,2,4,0
+anchored/True,perform,3:12:0-1.0-2.1-2,terms c a b; asserted cra crb arb,3,3,1,2,4,0
+anchored/True,perform,3:20:0-1.0-2.1-2,terms b c a; asserted brc bra cra,3,3,1,2,4,0
+anchored/True,perform,3:21:0-1.0-2.1-2,terms c b a; asserted crb cra bra,3,3,1,2,4,0
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-2,terms a b c; asserted ara arb arc bra brc,3,5,1,4,4,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-2,terms b a c; asserted brb bra brc arb arc,3,5,1,4,4,1
+anchored/True,perform,3:01:0-0.1-0.2-0,terms a b c; asserted ara bra cra,3,3,1,2,4,1
+anchored/True,perform,3:10:0-0.1-0.2-0,terms b a c; asserted brb arb crb,3,3,1,2,4,1
+anchored/True,perform,3:02:0-1.1-0.2-0,terms a c b; asserted arc cra bra,3,3,1,2,4,0
+anchored/True,perform,3:20:0-1.1-0.2-0,terms b c a; asserted brc crb arb,3,3,1,2,4,0
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.2-0,terms a b c; asserted ara arb arc bra cra,3,5,1,4,4,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.2-0,terms b a c; asserted brb bra brc arb crb,3,5,1,4,4,1
+anchored/True,perform,3:02:0-0.1-1.2-0,terms a c b; asserted ara crc bra,3,3,1,2,4,1
+anchored/True,perform,3:20:0-0.1-1.2-0,terms b c a; asserted brb crc arb,3,3,1,2,4,1
+anchored/True,perform,3:01:0-1.1-1.2-0,terms a b c; asserted arb brb cra,3,3,1,2,4,1
+anchored/True,perform,3:02:0-1.1-1.2-0,terms a c b; asserted arc crc bra,3,3,1,2,4,1
+anchored/True,perform,3:10:0-1.1-1.2-0,terms b a c; asserted bra ara crb,3,3,1,2,4,1
+anchored/True,perform,3:20:0-1.1-1.2-0,terms b c a; asserted brc crc arb,3,3,1,2,4,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-1.2-0,terms a c b; asserted ara arc arb crc bra,3,5,1,4,4,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-1.2-0,terms b c a; asserted brb brc bra crc arb,3,5,1,4,4,1
+anchored/True,perform,3:01:0-0.0-1.1-0.1-1.2-0,terms a b c; asserted ara arb bra brb cra,3,5,1,4,4,1
+anchored/True,perform,3:10:0-0.0-1.1-0.1-1.2-0,terms b a c; asserted brb bra arb ara crb,3,5,1,4,4,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-1.2-0,terms a c b; asserted ara arb cra crc bra,3,5,1,4,4,1
+anchored/True,perform,3:20:0-0.0-2.1-0.1-1.2-0,terms b c a; asserted brb bra crb crc arb,3,5,1,4,4,1
+anchored/True,perform,3:01:0-1.0-2.1-0.1-1.2-0,terms a b c; asserted arb arc bra brb cra,3,5,1,4,4,1
+anchored/True,perform,3:02:0-1.0-2.1-0.1-1.2-0,terms a c b; asserted arc arb cra crc bra,3,5,1,4,4,1
+anchored/True,perform,3:10:0-1.0-2.1-0.1-1.2-0,terms b a c; asserted bra brc arb ara crb,3,5,1,4,4,1
+anchored/True,perform,3:20:0-1.0-2.1-0.1-1.2-0,terms b c a; asserted brc bra crb crc arb,3,5,1,4,4,1
+anchored/True,perform,3:01:0-1.1-2.2-0,terms a b c; asserted arb brc cra,3,3,1,2,4,0
+anchored/True,perform,3:02:0-1.1-2.2-0,terms a c b; asserted arc crb bra,3,3,1,2,4,0
+anchored/True,perform,3:02:0-0.0-1.0-2.1-2.2-0,terms a c b; asserted ara arc arb crb bra,3,5,1,4,4,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-2.2-0,terms b c a; asserted brb brc bra cra arb,3,5,1,4,4,1
+anchored/True,perform,3:01:0-0.0-1.1-0.1-2.2-0,terms a b c; asserted ara arb bra brc cra,3,5,1,4,4,1
+anchored/True,perform,3:10:0-0.0-1.1-0.1-2.2-0,terms b a c; asserted brb bra arb arc crb,3,5,1,4,4,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-2.2-0,terms a c b; asserted ara arb cra crb bra,3,5,1,4,4,1
+anchored/True,perform,3:20:0-0.0-2.1-0.1-2.2-0,terms b c a; asserted brb bra crb cra arb,3,5,1,4,4,1
+anchored/True,perform,3:01:0-1.0-2.1-0.1-2.2-0,terms a b c; asserted arb arc bra brc cra,3,5,1,4,4,0
+anchored/True,perform,3:02:0-1.0-2.1-0.1-2.2-0,terms a c b; asserted arc arb cra crb bra,3,5,1,4,4,0
+anchored/True,perform,3:10:0-1.0-2.1-0.1-2.2-0,terms b a c; asserted bra brc arb arc crb,3,5,1,4,4,0
+anchored/True,perform,3:20:0-1.0-2.1-0.1-2.2-0,terms b c a; asserted brc bra crb cra arb,3,5,1,4,4,0
+anchored/True,perform,3:02:0-0.0-2.1-1.1-2.2-0,terms a c b; asserted ara arb crc crb bra,3,5,1,4,4,1
+anchored/True,perform,3:20:0-0.0-2.1-1.1-2.2-0,terms b c a; asserted brb bra crc cra arb,3,5,1,4,4,1
+anchored/True,perform,3:02:0-1.0-2.1-1.1-2.2-0,terms a c b; asserted arc arb crc crb bra,3,5,1,4,4,1
+anchored/True,perform,3:20:0-1.0-2.1-1.1-2.2-0,terms b c a; asserted brc bra crc cra arb,3,5,1,4,4,1
+anchored/True,perform,3:02:0-2.1-0.1-1.1-2.2-0,terms a c b; asserted arb cra crc crb bra,3,5,1,4,4,1
+anchored/True,perform,3:02:0-0.0-2.1-1.2-0.2-1,terms a c b; asserted ara arb crc bra brc,3,5,1,4,4,1
+anchored/True,perform,3:20:0-0.0-2.1-1.2-0.2-1,terms b c a; asserted brb bra crc arb arc,3,5,1,4,4,1
+anchored/True,perform,3:02:0-1.0-2.1-1.2-0.2-1,terms a c b; asserted arc arb crc bra brc,3,5,1,4,4,1
+anchored/True,perform,3:01:0-0.0-1.1-0.1-1.2-2,terms a b c; asserted ara arb bra brb crc,3,5,1,4,4,1
+anchored/True,perform,2:11:0-0.0-1,terms c a (a and b are one term); asserted crc cra,2,2,0,1,5,1
+anchored/True,perform,2:11:0-0.1-0,terms c a (a and b are one term); asserted crc arc,2,2,0,1,5,1
+anchored/True,perform,2:00:0-1.1-0,terms a c (a and b are one term); asserted arc cra,2,2,0,1,5,0
+anchored/True,perform,2:00:0-0.0-1.1-0.1-1,terms a c (a and b are one term); asserted ara arc cra crc,2,4,0,3,5,1
+anchored/True,perform,3:11:0-0,terms c a d (a and b are one term); asserted crc,3,1,1,0,5,1
+anchored/True,perform,3:00:0-1,terms a c d (a and b are one term); asserted arc,3,1,1,0,5,0
+anchored/True,perform,3:11:0-1,terms c a d (a and b are one term); asserted cra,3,1,1,0,5,0
+anchored/True,perform,3:22:0-1,terms c d a (a and b are one term); asserted crd,3,1,1,0,5,0
+anchored/True,perform,3:02:0-0.0-1,terms a c b; asserted ara arc,3,2,1,1,5,1
+anchored/True,perform,3:12:0-0.0-1,terms c a b; asserted crc cra,3,2,1,1,5,1
+anchored/True,perform,3:20:0-0.0-1,terms b c a; asserted brb brc,3,2,1,1,5,1
+anchored/True,perform,3:21:0-0.0-1,terms c b a; asserted crc crb,3,2,1,1,5,1
+anchored/True,perform,3:12:0-1.0-2,terms c a b; asserted cra crb,3,2,1,1,5,0
+anchored/True,perform,3:00:0-0.0-1.0-2,terms a c d (a and b are one term); asserted ara arc ard,3,3,1,2,5,1
+anchored/True,perform,3:02:0-0.1-0,terms a c b; asserted ara cra,3,2,1,1,5,1
+anchored/True,perform,3:12:0-0.1-0,terms c a b; asserted crc arc,3,2,1,1,5,1
+anchored/True,perform,3:20:0-0.1-0,terms b c a; asserted brb crb,3,2,1,1,5,1
+anchored/True,perform,3:21:0-0.1-0,terms c b a; asserted crc brc,3,2,1,1,5,1
+anchored/True,perform,3:02:0-1.1-0,terms a c b; asserted arc cra,3,2,1,1,5,0
+anchored/True,perform,3:20:0-1.1-0,terms b c a; asserted brc crb,3,2,1,1,5,0
+anchored/True,perform,3:00:0-0.0-1.1-0,terms a c d (a and b are one term); asserted ara arc cra,3,3,1,2,5,1
+anchored/True,perform,3:12:0-2.1-0,terms c a b; asserted crb arc,3,2,1,1,5,0
+anchored/True,perform,3:21:0-2.1-0,terms c b a; asserted cra brc,3,2,1,1,5,0
+anchored/True,perform,3:00:0-0.0-2.1-0,terms a c d (a and b are one term); asserted ara ard cra,3,3,1,2,5,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-0,terms a c b; asserted ara arc arb cra,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-0,terms b c a; asserted brb brc bra crb,3,4,1,3,5,1
+anchored/True,perform,3:01:0-0.1-1,terms a b c; asserted ara brb,3,2,1,1,5,1
+anchored/True,perform,3:02:0-0.1-1,terms a c b; asserted ara crc,3,2,1,1,5,1
+anchored/True,perform,3:20:0-0.1-1,terms b c a; asserted brb crc,3,2,1,1,5,1
+anchored/True,perform,3:00:0-0.0-1.1-1,terms a c d (a and b are one term); asserted ara arc crc,3,3,1,2,5,1
+anchored/True,perform,3:11:0-0.0-1.1-1,terms c a d (a and b are one term); asserted crc cra ara,3,3,1,2,5,1
+anchored/True,perform,3:01:0-2.1-1,terms a b c; asserted arc brb,3,2,1,1,5,1
+anchored/True,perform,3:10:0-2.1-1,terms b a c; asserted brc ara,3,2,1,1,5,1
+anchored/True,perform,3:12:0-2.1-1,terms c a b; asserted crb ara,3,2,1,1,5,1
+anchored/True,perform,3:21:0-2.1-1,terms c b a; asserted cra brb,3,2,1,1,5,1
+anchored/True,perform,3:00:0-0.0-2.1-1,terms a c d (a and b are one term); asserted ara ard crc,3,3,1,2,5,1
+anchored/True,perform,3:11:0-0.0-2.1-1,terms c a d (a and b are one term); asserted crc crd ara,3,3,1,2,5,1
+anchored/True,perform,3:11:0-1.0-2.1-1,terms c a d (a and b are one term); asserted cra crd ara,3,3,1,2,5,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-1,terms a b c; asserted ara arb arc brb,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-1,terms a c b; asserted ara arc arb crc,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-1,terms b a c; asserted brb bra brc ara,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-1,terms b c a; asserted brb brc bra crc,3,4,1,3,5,1
+anchored/True,perform,3:11:0-2.1-0.1-1,terms c a d (a and b are one term); asserted crd arc ara,3,3,1,2,5,1
+anchored/True,perform,3:01:0-0.0-2.1-0.1-1,terms a b c; asserted ara arc bra brb,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-1,terms a c b; asserted ara arb cra crc,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.0-2.1-0.1-1,terms b a c; asserted brb brc arb ara,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-2.1-0.1-1,terms b c a; asserted brb bra crb crc,3,4,1,3,5,1
+anchored/True,perform,3:02:0-1.0-2.1-0.1-1,terms a c b; asserted arc arb cra crc,3,4,1,3,5,1
+anchored/True,perform,3:20:0-1.0-2.1-0.1-1,terms b c a; asserted brc bra crb crc,3,4,1,3,5,1
+anchored/True,perform,3:01:0-2.1-2,terms a b c; asserted arc brc,3,2,1,1,5,0
+anchored/True,perform,3:00:0-0.0-2.1-2,terms a c d (a and b are one term); asserted ara ard crd,3,3,1,2,5,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-2,terms a b c; asserted ara arb arc brc,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-2,terms a c b; asserted ara arc arb crb,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-2,terms b a c; asserted brb bra brc arc,3,4,1,3,5,1
+anchored/True,perform,3:12:0-0.0-1.0-2.1-2,terms c a b; asserted crc cra crb arb,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-2,terms b c a; asserted brb brc bra cra,3,4,1,3,5,1
+anchored/True,perform,3:21:0-0.0-1.0-2.1-2,terms c b a; asserted crc crb cra bra,3,4,1,3,5,1
+anchored/True,perform,3:01:0-0.0-2.1-0.1-2,terms a b c; asserted ara arc bra brc,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-2,terms a c b; asserted ara arb cra crb,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.0-2.1-0.1-2,terms b a c; asserted brb brc arb arc,3,4,1,3,5,1
+anchored/True,perform,3:12:0-0.0-2.1-0.1-2,terms c a b; asserted crc crb arc arb,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-2.1-0.1-2,terms b c a; asserted brb bra crb cra,3,4,1,3,5,1
+anchored/True,perform,3:21:0-0.0-2.1-0.1-2,terms c b a; asserted crc cra brc bra,3,4,1,3,5,1
+anchored/True,perform,3:02:0-1.0-2.1-0.1-2,terms a c b; asserted arc arb cra crb,3,4,1,3,5,0
+anchored/True,perform,3:20:0-1.0-2.1-0.1-2,terms b c a; asserted brc bra crb cra,3,4,1,3,5,0
+anchored/True,perform,3:02:0-0.0-2.1-1.1-2,terms a c b; asserted ara arb crc crb,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-2.1-1.1-2,terms b c a; asserted brb bra crc cra,3,4,1,3,5,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1.1-2,terms a b c; asserted ara arb arc bra brb brc,3,6,1,5,5,1
+anchored/True,perform,3:00:0-0.1-0.2-0,terms a c d (a and b are one term); asserted ara cra dra,3,3,1,2,5,1
+anchored/True,perform,3:02:0-0.0-1.1-0.2-0,terms a c b; asserted ara arc cra bra,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-1.1-0.2-0,terms b c a; asserted brb brc crb arb,3,4,1,3,5,1
+anchored/True,perform,3:00:0-0.1-1.2-0,terms a c d (a and b are one term); asserted ara crc dra,3,3,1,2,5,1
+anchored/True,perform,3:11:0-0.1-1.2-0,terms c a d (a and b are one term); asserted crc ara drc,3,3,1,2,5,1
+anchored/True,perform,3:11:0-1.1-1.2-0,terms c a d (a and b are one term); asserted cra ara drc,3,3,1,2,5,1
+anchored/True,perform,3:01:0-0.0-1.1-1.2-0,terms a b c; asserted ara arb brb cra,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-1.1-1.2-0,terms a c b; asserted ara arc crc bra,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.0-1.1-1.2-0,terms b a c; asserted brb bra ara crb,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-1.1-1.2-0,terms b c a; asserted brb brc crc arb,3,4,1,3,5,1
+anchored/True,perform,3:11:0-2.1-1.2-0,terms c a d (a and b are one term); asserted crd ara drc,3,3,1,2,5,1
+anchored/True,perform,3:01:0-1.0-2.1-1.2-0,terms a b c; asserted arb arc brb cra,3,4,1,3,5,1
+anchored/True,perform,3:10:0-1.0-2.1-1.2-0,terms b a c; asserted bra brc ara crb,3,4,1,3,5,1
+anchored/True,perform,3:01:0-0.1-0.1-1.2-0,terms a b c; asserted ara bra brb cra,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.1-0.1-1.2-0,terms a c b; asserted ara cra crc bra,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.1-0.1-1.2-0,terms b a c; asserted brb arb ara crb,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.1-0.1-1.2-0,terms b c a; asserted brb crb crc arb,3,4,1,3,5,1
+anchored/True,perform,3:02:0-1.1-0.1-1.2-0,terms a c b; asserted arc cra crc bra,3,4,1,3,5,1
+anchored/True,perform,3:20:0-1.1-0.1-1.2-0,terms b c a; asserted brc crb crc arb,3,4,1,3,5,1
+anchored/True,perform,3:01:0-2.1-0.1-1.2-0,terms a b c; asserted arc bra brb cra,3,4,1,3,5,1
+anchored/True,perform,3:10:0-2.1-0.1-1.2-0,terms b a c; asserted brc arb ara crb,3,4,1,3,5,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1.2-0,terms a b c; asserted ara arb arc bra brb cra,3,6,1,5,5,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-0.1-1.2-0,terms a c b; asserted ara arc arb cra crc bra,3,6,1,5,5,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-1.2-0,terms b a c; asserted brb bra brc arb ara crb,3,6,1,5,5,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-0.1-1.2-0,terms b c a; asserted brb brc bra crb crc arb,3,6,1,5,5,1
+anchored/True,perform,3:01:0-0.0-1.1-2.2-0,terms a b c; asserted ara arb brc cra,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-1.1-2.2-0,terms a c b; asserted ara arc crb bra,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.0-1.1-2.2-0,terms b a c; asserted brb bra arc crb,3,4,1,3,5,1
+anchored/True,perform,3:12:0-0.0-1.1-2.2-0,terms c a b; asserted crc cra arb brc,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.0-1.1-2.2-0,terms b c a; asserted brb brc cra arb,3,4,1,3,5,1
+anchored/True,perform,3:21:0-0.0-1.1-2.2-0,terms c b a; asserted crc crb bra arc,3,4,1,3,5,1
+anchored/True,perform,3:01:0-1.0-2.1-2.2-0,terms a b c; asserted arb arc brc cra,3,4,1,3,5,0
+anchored/True,perform,3:10:0-1.0-2.1-2.2-0,terms b a c; asserted bra brc arc crb,3,4,1,3,5,0
+anchored/True,perform,3:12:0-1.0-2.1-2.2-0,terms c a b; asserted cra crb arb brc,3,4,1,3,5,0
+anchored/True,perform,3:21:0-1.0-2.1-2.2-0,terms c b a; asserted crb cra bra arc,3,4,1,3,5,0
+anchored/True,perform,3:01:0-0.1-0.1-2.2-0,terms a b c; asserted ara bra brc cra,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.1-0.1-2.2-0,terms a c b; asserted ara cra crb bra,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.1-0.1-2.2-0,terms b a c; asserted brb arb arc crb,3,4,1,3,5,1
+anchored/True,perform,3:12:0-0.1-0.1-2.2-0,terms c a b; asserted crc arc arb brc,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.1-0.1-2.2-0,terms b c a; asserted brb crb cra arb,3,4,1,3,5,1
+anchored/True,perform,3:21:0-0.1-0.1-2.2-0,terms c b a; asserted crc brc bra arc,3,4,1,3,5,1
+anchored/True,perform,3:01:0-2.1-0.1-2.2-0,terms a b c; asserted arc bra brc cra,3,4,1,3,5,0
+anchored/True,perform,3:10:0-2.1-0.1-2.2-0,terms b a c; asserted brc arb arc crb,3,4,1,3,5,0
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-2.2-0,terms a b c; asserted ara arb arc bra brc cra,3,6,1,5,5,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-0.1-2.2-0,terms a c b; asserted ara arc arb cra crb bra,3,6,1,5,5,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-2.2-0,terms b a c; asserted brb bra brc arb arc crb,3,6,1,5,5,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-0.1-2.2-0,terms b c a; asserted brb brc bra crb cra arb,3,6,1,5,5,1
+anchored/True,perform,3:02:0-0.1-1.1-2.2-0,terms a c b; asserted ara crc crb bra,3,4,1,3,5,1
+anchored/True,perform,3:12:0-0.1-1.1-2.2-0,terms c a b; asserted crc ara arb brc,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.1-1.1-2.2-0,terms b c a; asserted brb crc cra arb,3,4,1,3,5,1
+anchored/True,perform,3:21:0-0.1-1.1-2.2-0,terms c b a; asserted crc brb bra arc,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-1.1-2.2-0,terms a c b; asserted ara arc arb crc crb bra,3,6,1,5,5,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-1.1-2.2-0,terms b c a; asserted brb brc bra crc cra arb,3,6,1,5,5,1
+anchored/True,perform,3:01:0-0.0-1.1-0.1-1.1-2.2-0,terms a b c; asserted ara arb bra brb brc cra,3,6,1,5,5,1
+anchored/True,perform,3:10:0-0.0-1.1-0.1-1.1-2.2-0,terms b a c; asserted brb bra arb ara arc crb,3,6,1,5,5,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-1.1-2.2-0,terms a c b; asserted ara arb cra crc crb bra,3,6,1,5,5,1
+anchored/True,perform,3:20:0-0.0-2.1-0.1-1.1-2.2-0,terms b c a; asserted brb bra crb crc cra arb,3,6,1,5,5,1
+anchored/True,perform,3:01:0-1.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted arb arc bra brb brc cra,3,6,1,5,5,1
+anchored/True,perform,3:02:0-1.0-2.1-0.1-1.1-2.2-0,terms a c b; asserted arc arb cra crc crb bra,3,6,1,5,5,1
+anchored/True,perform,3:10:0-1.0-2.1-0.1-1.1-2.2-0,terms b a c; asserted bra brc arb ara arc crb,3,6,1,5,5,1
+anchored/True,perform,3:20:0-1.0-2.1-0.1-1.1-2.2-0,terms b c a; asserted brc bra crb crc cra arb,3,6,1,5,5,1
+anchored/True,perform,3:02:0-0.1-1.2-0.2-1,terms a c b; asserted ara crc bra brc,3,4,1,3,5,1
+anchored/True,perform,3:20:0-0.1-1.2-0.2-1,terms b c a; asserted brb crc arb arc,3,4,1,3,5,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-1.2-0.2-1,terms a c b; asserted ara arc arb crc bra brc,3,6,1,5,5,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-1.2-0.2-1,terms b c a; asserted brb brc bra crc arb arc,3,6,1,5,5,1
+anchored/True,perform,3:01:0-0.0-1.1-0.1-1.2-0.2-1,terms a b c; asserted ara arb bra brb cra crb,3,6,1,5,5,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-1.2-0.2-1,terms a c b; asserted ara arb cra crc bra brc,3,6,1,5,5,1
+anchored/True,perform,3:20:0-0.0-2.1-0.1-1.2-0.2-1,terms b c a; asserted brb bra crb crc arb arc,3,6,1,5,5,1
+anchored/True,perform,3:01:0-1.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted arb arc bra brb cra crb,3,6,1,5,5,1
+anchored/True,perform,3:02:0-1.0-2.1-0.1-1.2-0.2-1,terms a c b; asserted arc arb cra crc bra brc,3,6,1,5,5,1
+anchored/True,perform,3:10:0-1.0-2.1-0.1-1.2-0.2-1,terms b a c; asserted bra brc arb ara crb cra,3,6,1,5,5,1
+anchored/True,perform,3:20:0-1.0-2.1-0.1-1.2-0.2-1,terms b c a; asserted brc bra crb crc arb arc,3,6,1,5,5,1
+anchored/True,perform,3:01:0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted arb arc bra brc cra crb,3,6,1,5,5,0
+anchored/True,perform,3:02:0-0.0-2.1-1.1-2.2-0.2-1,terms a c b; asserted ara arb crc crb bra brc,3,6,1,5,5,1
+anchored/True,perform,3:20:0-0.0-2.1-1.1-2.2-0.2-1,terms b c a; asserted brb bra crc cra arb arc,3,6,1,5,5,1
+anchored/True,perform,3:00:0-0.1-1.2-2,terms a c d (a and b are one term); asserted ara crc drd,3,3,1,2,5,1
+anchored/True,perform,3:01:0-0.0-1.1-1.2-2,terms a b c; asserted ara arb brb crc,3,4,1,3,5,1
+anchored/True,perform,3:10:0-0.0-1.1-1.2-2,terms b a c; asserted brb bra ara crc,3,4,1,3,5,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1.2-2,terms a b c; asserted ara arb arc bra brb crc,3,6,1,5,5,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-1.2-2,terms b a c; asserted brb bra brc arb ara crc,3,6,1,5,5,1
+anchored/True,perform,3:01:0-0.0-1.1-0.1-1.2-0.2-2,terms a b c; asserted ara arb bra brb cra crc,3,6,1,5,5,1
+anchored/True,perform,3:10:0-0.0-1.1-0.1-1.2-0.2-2,terms b a c; asserted brb bra arb ara crb crc,3,6,1,5,5,1
+anchored/True,perform,2:11:0-0.0-1.1-0,terms c a (a and b are one term); asserted crc cra arc,2,3,0,2,6,1
+anchored/True,perform,3:11:0-0.0-1,terms c a d (a and b are one term); asserted crc cra,3,2,1,1,6,1
+anchored/True,perform,3:22:0-0.0-1,terms c d a (a and b are one term); asserted crc crd,3,2,1,1,6,1
+anchored/True,perform,3:00:0-1.0-2,terms a c d (a and b are one term); asserted arc ard,3,2,1,1,6,0
+anchored/True,perform,3:11:0-1.0-2,terms c a d (a and b are one term); asserted cra crd,3,2,1,1,6,0
+anchored/True,perform,3:12:0-0.0-1.0-2,terms c a b; asserted crc cra crb,3,3,1,2,6,1
+anchored/True,perform,3:11:0-0.1-0,terms c a d (a and b are one term); asserted crc arc,3,2,1,1,6,1
+anchored/True,perform,3:22:0-0.1-0,terms c d a (a and b are one term); asserted crc drc,3,2,1,1,6,1
+anchored/True,perform,3:00:0-1.1-0,terms a c d (a and b are one term); asserted arc cra,3,2,1,1,6,0
+anchored/True,perform,3:22:0-1.1-0,terms c d a (a and b are one term); asserted crd drc,3,2,1,1,6,0
+anchored/True,perform,3:02:0-0.0-1.1-0,terms a c b; asserted ara arc cra,3,3,1,2,6,1
+anchored/True,perform,3:12:0-0.0-1.1-0,terms c a b; asserted crc cra arc,3,3,1,2,6,1
+anchored/True,perform,3:20:0-0.0-1.1-0,terms b c a; asserted brb brc crb,3,3,1,2,6,1
+anchored/True,perform,3:21:0-0.0-1.1-0,terms c b a; asserted crc crb brc,3,3,1,2,6,1
+anchored/True,perform,3:00:0-2.1-0,terms a c d (a and b are one term); asserted ard cra,3,2,1,1,6,0
+anchored/True,perform,3:11:0-2.1-0,terms c a d (a and b are one term); asserted crd arc,3,2,1,1,6,0
+anchored/True,perform,3:22:0-2.1-0,terms c d a (a and b are one term); asserted cra drc,3,2,1,1,6,0
+anchored/True,perform,3:12:0-0.0-2.1-0,terms c a b; asserted crc crb arc,3,3,1,2,6,1
+anchored/True,perform,3:21:0-0.0-2.1-0,terms c b a; asserted crc cra brc,3,3,1,2,6,1
+anchored/True,perform,3:12:0-1.0-2.1-0,terms c a b; asserted cra crb arc,3,3,1,2,6,0
+anchored/True,perform,3:21:0-1.0-2.1-0,terms c b a; asserted crb cra brc,3,3,1,2,6,0
+anchored/True,perform,3:00:0-0.0-1.0-2.1-0,terms a c d (a and b are one term); asserted ara arc ard cra,3,4,1,3,6,1
+anchored/True,perform,3:22:0-0.1-1,terms c d a (a and b are one term); asserted crc drd,3,2,1,1,6,1
+anchored/True,perform,3:02:0-0.0-1.1-1,terms a c b; asserted ara arc crc,3,3,1,2,6,1
+anchored/True,perform,3:12:0-0.0-1.1-1,terms c a b; asserted crc cra ara,3,3,1,2,6,1
+anchored/True,perform,3:20:0-0.0-1.1-1,terms b c a; asserted brb brc crc,3,3,1,2,6,1
+anchored/True,perform,3:21:0-0.0-1.1-1,terms c b a; asserted crc crb brb,3,3,1,2,6,1
+anchored/True,perform,3:00:0-2.1-1,terms a c d (a and b are one term); asserted ard crc,3,2,1,1,6,1
+anchored/True,perform,3:22:0-2.1-1,terms c d a (a and b are one term); asserted cra drd,3,2,1,1,6,1
+anchored/True,perform,3:01:0-0.0-2.1-1,terms a b c; asserted ara arc brb,3,3,1,2,6,1
+anchored/True,perform,3:10:0-0.0-2.1-1,terms b a c; asserted brb brc ara,3,3,1,2,6,1
+anchored/True,perform,3:12:0-0.0-2.1-1,terms c a b; asserted crc crb ara,3,3,1,2,6,1
+anchored/True,perform,3:21:0-0.0-2.1-1,terms c b a; asserted crc cra brb,3,3,1,2,6,1
+anchored/True,perform,3:12:0-1.0-2.1-1,terms c a b; asserted cra crb ara,3,3,1,2,6,1
+anchored/True,perform,3:21:0-1.0-2.1-1,terms c b a; asserted crb cra brb,3,3,1,2,6,1
+anchored/True,perform,3:00:0-0.0-1.0-2.1-1,terms a c d (a and b are one term); asserted ara arc ard crc,3,4,1,3,6,1
+anchored/True,perform,3:11:0-0.0-1.0-2.1-1,terms c a d (a and b are one term); asserted crc cra crd ara,3,4,1,3,6,1
+anchored/True,perform,3:00:0-0.0-1.1-0.1-1,terms a c d (a and b are one term); asserted ara arc cra crc,3,4,1,3,6,1
+anchored/True,perform,3:12:0-2.1-0.1-1,terms c a b; asserted crb arc ara,3,3,1,2,6,1
+anchored/True,perform,3:21:0-2.1-0.1-1,terms c b a; asserted cra brc brb,3,3,1,2,6,1
+anchored/True,perform,3:00:0-0.0-2.1-0.1-1,terms a c d (a and b are one term); asserted ara ard cra crc,3,4,1,3,6,1
+anchored/True,perform,3:11:0-0.0-2.1-0.1-1,terms c a d (a and b are one term); asserted crc crd arc ara,3,4,1,3,6,1
+anchored/True,perform,3:11:0-1.0-2.1-0.1-1,terms c a d (a and b are one term); asserted cra crd arc ara,3,4,1,3,6,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-0.1-1,terms a c b; asserted ara arc arb cra crc,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-0.1-1,terms b c a; asserted brb brc bra crb crc,3,5,1,4,6,1
+anchored/True,perform,3:00:0-2.1-2,terms a c d (a and b are one term); asserted ard crd,3,2,1,1,6,0
+anchored/True,perform,3:22:0-2.1-2,terms c d a (a and b are one term); asserted cra dra,3,2,1,1,6,0
+anchored/True,perform,3:01:0-0.0-2.1-2,terms a b c; asserted ara arc brc,3,3,1,2,6,1
+anchored/True,perform,3:10:0-0.0-2.1-2,terms b a c; asserted brb brc arc,3,3,1,2,6,1
+anchored/True,perform,3:00:0-0.0-1.0-2.1-2,terms a c d (a and b are one term); asserted ara arc ard crd,3,4,1,3,6,1
+anchored/True,perform,3:00:0-0.0-2.1-0.1-2,terms a c d (a and b are one term); asserted ara ard cra crd,3,4,1,3,6,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-0.1-2,terms a c b; asserted ara arc arb cra crb,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-1.0-2.1-0.1-2,terms c a b; asserted crc cra crb arc arb,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-0.1-2,terms b c a; asserted brb brc bra crb cra,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-1.0-2.1-0.1-2,terms c b a; asserted crc crb cra brc bra,3,5,1,4,6,1
+anchored/True,perform,3:00:0-0.0-2.1-1.1-2,terms a c d (a and b are one term); asserted ara ard crc crd,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-1.1-2,terms a b c; asserted ara arb arc brb brc,3,5,1,4,6,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-1.1-2,terms a c b; asserted ara arc arb crc crb,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-1.1-2,terms b a c; asserted brb bra brc ara arc,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-1.0-2.1-1.1-2,terms c a b; asserted crc cra crb ara arb,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-1.1-2,terms b c a; asserted brb brc bra crc cra,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-1.0-2.1-1.1-2,terms c b a; asserted crc crb cra brb bra,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.1-0.2-0,terms c a b; asserted crc arc brc,3,3,1,2,6,1
+anchored/True,perform,3:12:0-1.1-0.2-0,terms c a b; asserted cra arc brc,3,3,1,2,6,0
+anchored/True,perform,3:21:0-1.1-0.2-0,terms c b a; asserted crb brc arc,3,3,1,2,6,0
+anchored/True,perform,3:00:0-0.0-1.1-0.2-0,terms a c d (a and b are one term); asserted ara arc cra dra,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.1-1.2-0,terms a b c; asserted ara brb cra,3,3,1,2,6,1
+anchored/True,perform,3:10:0-0.1-1.2-0,terms b a c; asserted brb ara crb,3,3,1,2,6,1
+anchored/True,perform,3:12:0-0.1-1.2-0,terms c a b; asserted crc ara brc,3,3,1,2,6,1
+anchored/True,perform,3:21:0-0.1-1.2-0,terms c b a; asserted crc brb arc,3,3,1,2,6,1
+anchored/True,perform,3:12:0-1.1-1.2-0,terms c a b; asserted cra ara brc,3,3,1,2,6,1
+anchored/True,perform,3:21:0-1.1-1.2-0,terms c b a; asserted crb brb arc,3,3,1,2,6,1
+anchored/True,perform,3:00:0-0.0-1.1-1.2-0,terms a c d (a and b are one term); asserted ara arc crc dra,3,4,1,3,6,1
+anchored/True,perform,3:11:0-0.0-1.1-1.2-0,terms c a d (a and b are one term); asserted crc cra ara drc,3,4,1,3,6,1
+anchored/True,perform,3:01:0-2.1-1.2-0,terms a b c; asserted arc brb cra,3,3,1,2,6,1
+anchored/True,perform,3:10:0-2.1-1.2-0,terms b a c; asserted brc ara crb,3,3,1,2,6,1
+anchored/True,perform,3:00:0-0.0-2.1-1.2-0,terms a c d (a and b are one term); asserted ara ard crc dra,3,4,1,3,6,1
+anchored/True,perform,3:11:0-0.0-2.1-1.2-0,terms c a d (a and b are one term); asserted crc crd ara drc,3,4,1,3,6,1
+anchored/True,perform,3:11:0-1.0-2.1-1.2-0,terms c a d (a and b are one term); asserted cra crd ara drc,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-1.2-0,terms a b c; asserted ara arb arc brb cra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-1.2-0,terms b a c; asserted brb bra brc ara crb,3,5,1,4,6,1
+anchored/True,perform,3:00:0-0.1-0.1-1.2-0,terms a c d (a and b are one term); asserted ara cra crc dra,3,4,1,3,6,1
+anchored/True,perform,3:11:0-0.1-0.1-1.2-0,terms c a d (a and b are one term); asserted crc arc ara drc,3,4,1,3,6,1
+anchored/True,perform,3:11:0-1.1-0.1-1.2-0,terms c a d (a and b are one term); asserted cra arc ara drc,3,4,1,3,6,1
+anchored/True,perform,3:02:0-0.0-1.1-0.1-1.2-0,terms a c b; asserted ara arc cra crc bra,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-1.1-0.1-1.2-0,terms b c a; asserted brb brc crb crc arb,3,5,1,4,6,1
+anchored/True,perform,3:11:0-2.1-0.1-1.2-0,terms c a d (a and b are one term); asserted crd arc ara drc,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.0-2.1-0.1-1.2-0,terms a b c; asserted ara arc bra brb cra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-2.1-0.1-1.2-0,terms b a c; asserted brb brc arb ara crb,3,5,1,4,6,1
+anchored/True,perform,3:00:0-0.0-1.1-2.2-0,terms a c d (a and b are one term); asserted ara arc crd dra,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-2.2-0,terms a b c; asserted ara arb arc brc cra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-2.2-0,terms b a c; asserted brb bra brc arc crb,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-1.0-2.1-2.2-0,terms c a b; asserted crc cra crb arb brc,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-1.0-2.1-2.2-0,terms c b a; asserted crc crb cra bra arc,3,5,1,4,6,1
+anchored/True,perform,3:00:0-0.1-0.1-2.2-0,terms a c d (a and b are one term); asserted ara cra crd dra,3,4,1,3,6,1
+anchored/True,perform,3:02:0-0.0-1.1-0.1-2.2-0,terms a c b; asserted ara arc cra crb bra,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-1.1-0.1-2.2-0,terms c a b; asserted crc cra arc arb brc,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-1.1-0.1-2.2-0,terms b c a; asserted brb brc crb cra arb,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-1.1-0.1-2.2-0,terms c b a; asserted crc crb brc bra arc,3,5,1,4,6,1
+anchored/True,perform,3:01:0-0.0-2.1-0.1-2.2-0,terms a b c; asserted ara arc bra brc cra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-2.1-0.1-2.2-0,terms b a c; asserted brb brc arb arc crb,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-2.1-0.1-2.2-0,terms c a b; asserted crc crb arc arb brc,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-2.1-0.1-2.2-0,terms c b a; asserted crc cra brc bra arc,3,5,1,4,6,1
+anchored/True,perform,3:12:0-1.0-2.1-0.1-2.2-0,terms c a b; asserted cra crb arc arb brc,3,5,1,4,6,0
+anchored/True,perform,3:21:0-1.0-2.1-0.1-2.2-0,terms c b a; asserted crb cra brc bra arc,3,5,1,4,6,0
+anchored/True,perform,3:00:0-0.1-1.1-2.2-0,terms a c d (a and b are one term); asserted ara crc crd dra,3,4,1,3,6,1
+anchored/True,perform,3:11:0-0.1-1.1-2.2-0,terms c a d (a and b are one term); asserted crc ara ard drc,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.0-1.1-1.1-2.2-0,terms a b c; asserted ara arb brb brc cra,3,5,1,4,6,1
+anchored/True,perform,3:02:0-0.0-1.1-1.1-2.2-0,terms a c b; asserted ara arc crc crb bra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-1.1-1.1-2.2-0,terms b a c; asserted brb bra ara arc crb,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-1.1-1.1-2.2-0,terms c a b; asserted crc cra ara arb brc,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-1.1-1.1-2.2-0,terms b c a; asserted brb brc crc cra arb,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-1.1-1.1-2.2-0,terms c b a; asserted crc crb brb bra arc,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-2.1-1.1-2.2-0,terms c a b; asserted crc crb ara arb brc,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-2.1-1.1-2.2-0,terms c b a; asserted crc cra brb bra arc,3,5,1,4,6,1
+anchored/True,perform,3:01:0-1.0-2.1-1.1-2.2-0,terms a b c; asserted arb arc brb brc cra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-1.0-2.1-1.1-2.2-0,terms b a c; asserted bra brc ara arc crb,3,5,1,4,6,1
+anchored/True,perform,3:12:0-1.0-2.1-1.1-2.2-0,terms c a b; asserted cra crb ara arb brc,3,5,1,4,6,1
+anchored/True,perform,3:21:0-1.0-2.1-1.1-2.2-0,terms c b a; asserted crb cra brb bra arc,3,5,1,4,6,1
+anchored/True,perform,3:01:0-0.1-0.1-1.1-2.2-0,terms a b c; asserted ara bra brb brc cra,3,5,1,4,6,1
+anchored/True,perform,3:02:0-0.1-0.1-1.1-2.2-0,terms a c b; asserted ara cra crc crb bra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.1-0.1-1.1-2.2-0,terms b a c; asserted brb arb ara arc crb,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.1-0.1-1.1-2.2-0,terms c a b; asserted crc arc ara arb brc,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.1-0.1-1.1-2.2-0,terms b c a; asserted brb crb crc cra arb,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.1-0.1-1.1-2.2-0,terms c b a; asserted crc brc brb bra arc,3,5,1,4,6,1
+anchored/True,perform,3:01:0-2.1-0.1-1.1-2.2-0,terms a b c; asserted arc bra brb brc cra,3,5,1,4,6,1
+anchored/True,perform,3:10:0-2.1-0.1-1.1-2.2-0,terms b a c; asserted brc arb ara arc crb,3,5,1,4,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1.1-2.2-0,terms a b c; asserted ara arb arc bra brb brc cra,3,7,1,6,6,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-0.1-1.1-2.2-0,terms a c b; asserted ara arc arb cra crc crb bra,3,7,1,6,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-1.1-2.2-0,terms b a c; asserted brb bra brc arb ara arc crb,3,7,1,6,6,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-0.1-1.1-2.2-0,terms b c a; asserted brb brc bra crb crc cra arb,3,7,1,6,6,1
+anchored/True,perform,3:00:0-0.1-1.2-0.2-1,terms a c d (a and b are one term); asserted ara crc dra drc,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.0-1.1-1.2-0.2-1,terms a b c; asserted ara arb brb cra crb,3,5,1,4,6,1
+anchored/True,perform,3:02:0-0.0-1.1-1.2-0.2-1,terms a c b; asserted ara arc crc bra brc,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-1.1-1.2-0.2-1,terms b a c; asserted brb bra ara crb cra,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-1.1-1.2-0.2-1,terms c a b; asserted crc cra ara brc bra,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-1.1-1.2-0.2-1,terms b c a; asserted brb brc crc arb arc,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-1.1-1.2-0.2-1,terms c b a; asserted crc crb brb arc arb,3,5,1,4,6,1
+anchored/True,perform,3:12:0-0.0-2.1-1.2-0.2-1,terms c a b; asserted crc crb ara brc bra,3,5,1,4,6,1
+anchored/True,perform,3:21:0-0.0-2.1-1.2-0.2-1,terms c b a; asserted crc cra brb arc arb,3,5,1,4,6,1
+anchored/True,perform,3:01:0-1.0-2.1-1.2-0.2-1,terms a b c; asserted arb arc brb cra crb,3,5,1,4,6,1
+anchored/True,perform,3:10:0-1.0-2.1-1.2-0.2-1,terms b a c; asserted bra brc ara crb cra,3,5,1,4,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1.2-0.2-1,terms a b c; asserted ara arb arc bra brb cra crb,3,7,1,6,6,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-0.1-1.2-0.2-1,terms a c b; asserted ara arc arb cra crc bra brc,3,7,1,6,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-1.2-0.2-1,terms b a c; asserted brb bra brc arb ara crb cra,3,7,1,6,6,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-0.1-1.2-0.2-1,terms b c a; asserted brb brc bra crb crc arb arc,3,7,1,6,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-2.2-0.2-1,terms a b c; asserted ara arb arc bra brc cra crb,3,7,1,6,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-2.2-0.2-1,terms b a c; asserted brb bra brc arb arc crb cra,3,7,1,6,6,1
+anchored/True,perform,3:12:0-0.0-1.0-2.1-0.1-2.2-0.2-1,terms c a b; asserted crc cra crb arc arb brc bra,3,7,1,6,6,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-1.1-2.2-0.2-1,terms a c b; asserted ara arc arb crc crb bra brc,3,7,1,6,6,1
+anchored/True,perform,3:12:0-0.0-1.0-2.1-1.1-2.2-0.2-1,terms c a b; asserted crc cra crb ara arb brc bra,3,7,1,6,6,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-1.1-2.2-0.2-1,terms b c a; asserted brb brc bra crc cra arb arc,3,7,1,6,6,1
+anchored/True,perform,3:21:0-0.0-1.0-2.1-1.1-2.2-0.2-1,terms c b a; asserted crc crb cra brb bra arc arb,3,7,1,6,6,1
+anchored/True,perform,3:01:0-0.1-1.2-2,terms a b c; asserted ara brb crc,3,3,1,2,6,1
+anchored/True,perform,3:00:0-0.0-1.1-1.2-2,terms a c d (a and b are one term); asserted ara arc crc drd,3,4,1,3,6,1
+anchored/True,perform,3:11:0-0.0-1.1-1.2-2,terms c a d (a and b are one term); asserted crc cra ara drd,3,4,1,3,6,1
+anchored/True,perform,3:22:0-0.0-1.1-1.2-2,terms c d a (a and b are one term); asserted crc crd drd ara,3,4,1,3,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-1.2-2,terms a b c; asserted ara arb arc brb crc,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-1.2-2,terms b a c; asserted brb bra brc ara crc,3,5,1,4,6,1
+anchored/True,perform,3:01:0-0.0-2.1-0.1-1.2-2,terms a b c; asserted ara arc bra brb crc,3,5,1,4,6,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-1.2-2,terms a c b; asserted ara arb cra crc brb,3,5,1,4,6,1
+anchored/True,perform,3:10:0-0.0-2.1-0.1-1.2-2,terms b a c; asserted brb brc arb ara crc,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-2.1-0.1-1.2-2,terms b c a; asserted brb bra crb crc ara,3,5,1,4,6,1
+anchored/True,perform,3:02:0-0.0-2.1-1.1-2.2-2,terms a c b; asserted ara arb crc crb brb,3,5,1,4,6,1
+anchored/True,perform,3:20:0-0.0-2.1-1.1-2.2-2,terms b c a; asserted brb bra crc cra ara,3,5,1,4,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1.1-2.2-2,terms a b c; asserted ara arb arc bra brb brc crc,3,7,1,6,6,1
+anchored/True,perform,3:01:0-0.0-1.0-2.1-0.1-1.2-0.2-2,terms a b c; asserted ara arb arc bra brb cra crc,3,7,1,6,6,1
+anchored/True,perform,3:10:0-0.0-1.0-2.1-0.1-1.2-0.2-2,terms b a c; asserted brb bra brc arb ara crb crc,3,7,1,6,6,1
+anchored/True,perform,3:02:0-0.0-1.0-2.1-1.1-2.2-0.2-2,terms a c b; asserted ara arc arb crc crb bra brb,3,7,1,6,6,1
+anchored/True,perform,3:20:0-0.0-1.0-2.1-1.1-2.2-0.2-2,terms b c a; asserted brb brc bra crc cra arb ara,3,7,1,6,6,1
+anchored/True,perform,3:02:0-0.0-2.1-0.1-1.1-2.2-0.2-2,terms a c b; asserted ara arb cra crc crb bra brb,3,7,1,6,6,1
