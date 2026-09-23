@@ -26,7 +26,8 @@
       "layer_mismatch": [],
       "frontier_mismatch": [],
       "additions_track_rounds": [],
-      "differs_from_base": []
+      "differs_from_base": [],
+      "o2_closure_differs": []
     },
     {
       "bra": false,
@@ -52,7 +53,8 @@
       "layer_mismatch": [],
       "frontier_mismatch": [],
       "additions_track_rounds": [],
-      "differs_from_base": []
+      "differs_from_base": [],
+      "o2_closure_differs": []
     },
     {
       "bra": true,
@@ -78,7 +80,8 @@
       "layer_mismatch": [],
       "frontier_mismatch": [],
       "additions_track_rounds": [],
-      "differs_from_base": []
+      "differs_from_base": [],
+      "o2_closure_differs": []
     },
     {
       "bra": true,
@@ -104,7 +107,8 @@
       "layer_mismatch": [],
       "frontier_mismatch": [],
       "additions_track_rounds": [],
-      "differs_from_base": []
+      "differs_from_base": [],
+      "o2_closure_differs": []
     }
   ],
   "capped_by_round_2": [
@@ -130,6 +134,21 @@
         "3:01:0-2.1-0",
         "3:12:0-2.1-0",
         "3:01:0-2.1-2"
+      ],
+      "o1_expansions_to_round_2": 4,
+      "o1_at_that_cap_is_round_2": true,
+      "matched_leave": [
+        "3:01:0-1.0-2",
+        "3:01:0-1.1-0",
+        "3:02:0-2.1-0",
+        "3:10:0-2.1-0",
+        "3:02:0-2.1-2"
+      ],
+      "matched_enter": [
+        "2:00:",
+        "2:00:0-1",
+        "2:11:0-1",
+        "3:00:"
       ]
     },
     {
@@ -160,6 +179,20 @@
         "3:02:0-2.1-0",
         "3:10:0-2.1-0",
         "3:02:0-2.1-2"
+      ],
+      "o1_expansions_to_round_2": 4,
+      "o1_at_that_cap_is_round_2": true,
+      "matched_leave": [
+        "3:10:0-1",
+        "3:01:0-1.0-2.1-0",
+        "3:10:0-1.0-2.1-0",
+        "3:01:0-1.1-0.2-0",
+        "3:10:0-1.1-0.2-0"
+      ],
+      "matched_enter": [
+        "1:00:",
+        "2:00:",
+        "3:01:"
       ]
     }
   ]

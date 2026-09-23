@@ -313,103 +313,6 @@ def _sixteenth() -> Panel:
     return Panel("sixteenth", RecordCheck, signals, cases)
 
 
-def _nineteenth() -> Panel:
-    from nineteenth.evidence import PartialCheck, audit
-    from nineteenth.explore import explore_partial as real_partial
-    from xry.state import Sameness, State
-
-    def signals() -> frozenset[str]:
-        return _nonempty_lists(audit(False, Sameness.ANCHORED, 2, 2))
-
-    def plant(cooccur_state: State | None, broad_states: tuple[State, ...], performed: bool) -> Any:
-        def wrong(start: Any, bound: int, rounds: int = 12, cooccur_only: bool = False, keep_log: bool = False) -> Any:
-            del keep_log
-            exp = real_partial(start, bound, rounds, cooccur_only, False)
-            exp.depth = dict(exp.depth)
-            if cooccur_only:
-                if cooccur_state is not None:
-                    exp.depth[cooccur_state] = 1
-                if performed:
-                    exp.performed_partials = 1
-            else:
-                for state in broad_states:
-                    exp.depth[state] = 1
-            return exp
-
-        return _one("nineteenth.evidence.explore_partial", wrong)
-
-    cases: dict[str, Mutation] = {
-        "sets_differ": lambda: plant(State.of(2, [(1, 0)], (1, 0)), (), False),
-        "extra_beyond_base": lambda: plant(None, (State.of(3, [], (0, 1)),), False),
-        "term_dropped": lambda: plant(None, (State.of(1, [], (0, 0)),), False),
-        "cooccur_performed": lambda: plant(None, (), True),
-        "obstruction_not_between": lambda: _one("nineteenth.evidence.obstructed", lambda _state, _partial: False),
-        "removal_answer_outside": lambda: _one(
-            "nineteenth.evidence.canonical", lambda _state: State.of(3, [], (0, 0))
-        ),
-    }
-    return Panel("nineteenth", PartialCheck, signals, cases)
-
-
-def _twentieth() -> Panel:
-    from twentieth.evidence import OrderCheck, audit
-    from twentieth.order import _bfs as real_bfs
-    from xry.state import State
-
-    def signals() -> frozenset[str]:
-        return _nonempty_lists(audit(False, 2, 4))
-
-    def shorten(drop_bound: bool, only_root: bool) -> Any:
-        def wrong(start: Any, bound: int, rounds: int, by_additions: bool) -> dict[State, int]:
-            depth = real_bfs(start, bound, rounds, by_additions)
-            if drop_bound and by_additions:
-                return {state: depth[state] for state in depth if state.n < bound}
-            if only_root and not by_additions:
-                root = min(depth, key=lambda state: depth[state])
-                return {root: 0}
-            return depth
-
-        return _one("twentieth.evidence._bfs", wrong)
-
-    cases: dict[str, Mutation] = {
-        "layer_mismatch": lambda: shorten(True, False),
-        "frontier_mismatch": lambda: shorten(True, False),
-        "differs_from_base": lambda: shorten(False, True),
-        "additions_track_rounds": lambda: _one("twentieth.evidence.rankings_differ", lambda _depth: None),
-    }
-    return Panel("twentieth", OrderCheck, signals, cases)
-
-
-def _twentyfirst() -> Panel:
-    from twentyfirst.evidence import RefusalCheck, audit
-    from xry.state import Sameness
-
-    def signals() -> frozenset[str]:
-        return _nonempty_lists(audit(False, Sameness.ANCHORED, 2, 4))
-
-    cases: dict[str, Mutation] = {
-        "outside_the_base": lambda: _one("twentyfirst.evidence.refusal_changes", lambda _answer, _state: True),
-        "answer_buys_a_result": lambda: _one("twentyfirst.evidence.answer_is_new", lambda _got, _depth: True),
-        "stopped_at_the_start": lambda: _one("twentyfirst.evidence.has_unobstructed", lambda _state: False),
-    }
-    return Panel("twentyfirst", RefusalCheck, signals, cases)
-def _eighteenth() -> Panel:
-    from eighteenth.evidence import WritingCheck, audit
-    from xry.state import Sameness, given, rewrite
-
-    def signals() -> frozenset[str]:
-        start = given(False, Sameness.ANCHORED)
-        return _nonempty_lists(audit([start], start, rewrite(start, (1, 0))))
-
-    cases: dict[str, Mutation] = {
-        "writings_called_the_same": lambda: _one(
-            "eighteenth.evidence.same_written", lambda _left, _right: True
-        ),
-        "orbit_formula_fails": lambda: _one(
-            "eighteenth.evidence.orbit_splits_factorial", lambda _state: False
-        ),
-    }
-    return Panel("eighteenth", WritingCheck, signals, cases)
 def _seventeenth() -> Panel:
     from xry.changes import Answer, AnswerKind
     from xry.state import Sameness, State
@@ -465,6 +368,116 @@ def _seventeenth() -> Panel:
     return Panel("seventeenth", LoopCheck, signals, cases)
 
 
+def _eighteenth() -> Panel:
+    from eighteenth.evidence import WritingCheck, audit
+    from eighteenth.explore import explore_written
+    from xry.state import Sameness, given, rewrite
+
+    def signals() -> frozenset[str]:
+        start = given(False, Sameness.ANCHORED)
+        depth = explore_written(start, 2, 4).depth
+        return _nonempty_lists(audit(depth, False, start, rewrite(start, (1, 0))))
+
+    cases: dict[str, Mutation] = {
+        "writings_called_the_same": lambda: _one(
+            "eighteenth.evidence.same_written", lambda _left, _right: True
+        ),
+        "orbit_formula_fails": lambda: _one(
+            "eighteenth.evidence.orbit_splits_factorial", lambda _state: False
+        ),
+        "rounds_below_the_base_cost": lambda: _one("eighteenth.evidence.cost", lambda _state, _bra: 99),
+    }
+    return Panel("eighteenth", WritingCheck, signals, cases)
+
+
+def _nineteenth() -> Panel:
+    from nineteenth.evidence import PartialCheck, audit
+    from nineteenth.explore import explore_partial as real_partial
+    from xry.state import Sameness, State
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(audit(False, Sameness.ANCHORED, 2, 2))
+
+    def plant(cooccur_state: State | None, broad_states: tuple[State, ...], performed: bool) -> Any:
+        def wrong(start: Any, bound: int, rounds: int = 12, cooccur_only: bool = False, keep_log: bool = False) -> Any:
+            del keep_log
+            exp = real_partial(start, bound, rounds, cooccur_only, False)
+            exp.depth = dict(exp.depth)
+            if cooccur_only:
+                if cooccur_state is not None:
+                    exp.depth[cooccur_state] = 1
+                if performed:
+                    exp.performed_partials = 1
+            else:
+                for state in broad_states:
+                    exp.depth[state] = 1
+            return exp
+
+        return _one("nineteenth.evidence.explore_partial", wrong)
+
+    cases: dict[str, Mutation] = {
+        "sets_differ": lambda: plant(State.of(2, [(1, 0)], (1, 0)), (), False),
+        "extra_beyond_base": lambda: plant(None, (State.of(3, [], (0, 1)),), False),
+        "term_dropped": lambda: plant(None, (State.of(1, [], (0, 0)),), False),
+        "cooccur_performed": lambda: plant(None, (), True),
+        "obstruction_not_between": lambda: _one("nineteenth.evidence.obstructed", lambda _state, _partial: False),
+        "removal_answer_outside": lambda: _one(
+            "nineteenth.evidence.canonical", lambda _state: State.of(3, [], (0, 0))
+        ),
+    }
+    return Panel("nineteenth", PartialCheck, signals, cases)
+
+
+def _twentieth() -> Panel:
+    from twentieth.evidence import OrderCheck, audit
+    from twentieth.order import _bfs as real_bfs
+    from twentieth.order import additions_priority as real_priority
+    from xry.state import State
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(audit(False, 2, 4))
+
+    def shorten(drop_bound: bool, only_root: bool) -> Any:
+        def wrong(start: Any, bound: int, rounds: int, by_additions: bool) -> dict[State, int]:
+            depth = real_bfs(start, bound, rounds, by_additions)
+            if drop_bound and by_additions:
+                return {state: depth[state] for state in depth if state.n < bound}
+            if only_root and not by_additions:
+                root = min(depth, key=lambda state: depth[state])
+                return {root: 0}
+            return depth
+
+        return _one("twentieth.evidence._bfs", wrong)
+
+    cases: dict[str, Mutation] = {
+        "layer_mismatch": lambda: shorten(True, False),
+        "frontier_mismatch": lambda: shorten(True, False),
+        "differs_from_base": lambda: shorten(False, True),
+        "additions_track_rounds": lambda: _one("twentieth.evidence.rankings_differ", lambda _depth: None),
+        "o2_closure_differs": lambda: _one(
+            "twentieth.evidence.additions_priority",
+            lambda start, bound, _expansions: real_priority(start, bound, 1),
+        ),
+    }
+    return Panel("twentieth", OrderCheck, signals, cases)
+
+
+def _twentyfirst() -> Panel:
+    from twentyfirst.evidence import RefusalCheck, audit
+    from xry.state import Sameness
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(audit(False, Sameness.ANCHORED, 2, 4))
+
+    cases: dict[str, Mutation] = {
+        # Perform what the seed refuses: the refusing closure leaves the base's.
+        "outside_the_base": lambda: _one("twentyfirst.refusal.refused", lambda _outcome: False),
+        "answer_buys_a_result": lambda: _one("twentyfirst.evidence.answer_is_new", lambda _got, _depth: True),
+        "stopped_at_the_start": lambda: _one("twentyfirst.evidence.has_unobstructed", lambda _state: False),
+    }
+    return Panel("twentyfirst", RefusalCheck, signals, cases)
+
+
 def panels() -> list[Panel]:
     return [
         _tenth(),
@@ -480,6 +493,7 @@ def panels() -> list[Panel]:
         _twentieth(),
         _twentyfirst(),
     ]
+
 
 def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):

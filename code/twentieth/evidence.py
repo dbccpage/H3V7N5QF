@@ -1,7 +1,8 @@
 """Evidence that the round is the number of changes.
 
 The disagreement lists are empty on the real exploration. Each has a branch
-that records a failure, driven by the tests.
+that records a failure, driven by the tests and by the twentieth panel of
+`ci/check_mutation_bite.py`.
 """
 
 from __future__ import annotations
@@ -14,7 +15,10 @@ from xry.evidence import write_manifest
 from xry.explore import explore, order
 from xry.state import Sameness, State, added, given
 
-from twentieth.order import _bfs, additions_priority, frontiers, rankings_differ
+from twentieth.order import _bfs, additions_priority, changes_priority, frontiers, rankings_differ
+
+#: A cap no closure inside the bound reaches: a run stops when nothing is pending.
+UNCAPPED = 10**9
 
 
 @dataclass
@@ -25,6 +29,7 @@ class OrderCheck:
     frontier_mismatch: list[str]
     additions_track_rounds: list[str]
     differs_from_base: list[str]
+    o2_closure_differs: list[str]
 
 
 def audit(bra: bool, bound: int = 3, rounds: int = 12, sameness: Sameness = Sameness.ANCHORED) -> OrderCheck:
@@ -46,7 +51,11 @@ def audit(bra: bool, bound: int = 3, rounds: int = 12, sameness: Sameness = Same
         if base.depth.get(state) != by_changes.get(state)
     )
     tracked = [] if rankings_differ(base.depth) is not None else ["no witness"]
-    return OrderCheck(mismatch, frontier, tracked, differs)
+    # Both readings run until nothing is pending: O2 by additions, O1 round by round.
+    exhausted = additions_priority(start, bound, UNCAPPED)
+    finished = _bfs(start, bound, UNCAPPED, False)
+    o2_differs = sorted(state.key() for state in set(exhausted) ^ set(finished))
+    return OrderCheck(mismatch, frontier, tracked, differs, o2_differs)
 
 
 def witness(depth: dict[State, int]) -> dict[str, object] | None:
@@ -65,18 +74,30 @@ def witness(depth: dict[State, int]) -> dict[str, object] | None:
 
 
 def capped(bra: bool, bound: int = 3, rounds: int = 12) -> dict[str, object]:
-    """Unchosen reading: stop after expanding as many results as round 2 has reached."""
+    """Unchosen reading, stopped before its closure is finished.
+
+    The plan's cap expands as many results as O1 has reached by round 2. O1
+    itself needs fewer expansions to reach them (only the results of rounds 0
+    and 1 are expanded), so O2 at that cap has also spent more expansions.
+    The matched comparison gives O2 the expansions O1 uses.
+    """
     start = given(bra, Sameness.ANCHORED)
     base = explore(start, bound, rounds)
     early = {state for state, depth in base.depth.items() if depth <= 2}
     priority = additions_priority(start, bound, len(early))
     leave = sorted(early - set(priority), key=order)
     enter = sorted(set(priority) - early, key=order)
+    o1_budget = sum(1 for depth in base.depth.values() if depth <= 1)
+    matched = set(additions_priority(start, bound, o1_budget))
     return {
         "bra": bra,
         "expanded": len(early),
         "leave": [state.key() for state in leave],
         "enter": [state.key() for state in enter],
+        "o1_expansions_to_round_2": o1_budget,
+        "o1_at_that_cap_is_round_2": set(changes_priority(start, bound, o1_budget)) == early,
+        "matched_leave": [state.key() for state in sorted(early - matched, key=order)],
+        "matched_enter": [state.key() for state in sorted(matched - early, key=order)],
     }
 
 
@@ -97,6 +118,7 @@ def measure(bra: bool, sameness: Sameness, bound: int, rounds: int) -> dict[str,
         "frontier_mismatch": check.frontier_mismatch,
         "additions_track_rounds": check.additions_track_rounds,
         "differs_from_base": check.differs_from_base,
+        "o2_closure_differs": check.o2_closure_differs,
     }
 
 
