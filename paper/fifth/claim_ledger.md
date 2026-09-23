@@ -128,8 +128,8 @@ fourth's results" means it holds exactly for states containing what is given;
 
 | ID | Statement | Status | Evidence | Axioms | Re-check | What would settle it |
 |---|---|---|---|---|---|---|
-| O1 | The seed read with multiplicity | closed by the fourth seed | — | — | 4:O1 | — |
-| O2 | Number of new results in rounds beyond the bound | given by the series and the cost formula (D14, `layer_counts`); not listed | — | — | 4:O2 | a listing |
+| O1 | The seed read with multiplicity | closed by the fourth seed | `prompt/fourth/seed_prompt.md`; 4:O1 | — | 4:O1 | — |
+| O2 | Number of new results in rounds beyond the bound | given by the series and the cost formula (D14, `layer_counts`); not listed | D14 `layer_counts`; `rounds_*.csv` | — | 4:O2 | a listing |
 | O3 | Results beyond the declared bounds, listed | open | frontier exported (both parts); census counts at 5 terms | — | 4:O3 | a larger run |
 | O4 | Other readings of "build structure" | open as to records; closed as to results (D10) | paper §3 (C7) | — | 4:O4 | — |
 | O5 | A closed form for the number of shortest sequences with three or more terms, or with the names one term | open | computed per result within the bound (K7); two terms, no destroyed given: `C(i + j, i)` (D17) | — | 4:O5 | a formula agreeing with every computed count |

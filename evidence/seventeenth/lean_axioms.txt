@@ -48,3 +48,15 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Seventeenth.Reach17.rename' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Seventeenth.ReachAll.rename' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Seventeenth.loopFree_rename' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.arb_gone_for_good' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Step.legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.adding_xrx_always_obstructed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.bra_not_derived' depends on axioms: [propext]
+'Seed.bra_not_refuted' does not depend on any axioms
+'Seed.fewest_changes_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_B' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.given_distinct' does not depend on any axioms
+'Seed.identify_legal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.remove_obstruction_first_or_last' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.two_states_on_given_terms' depends on axioms: [propext, Classical.choice, Quot.sound]

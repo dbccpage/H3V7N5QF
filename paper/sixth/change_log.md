@@ -173,3 +173,7 @@ evidence module fully covered — before any work of the sixth derivation).
     "k or more" arithmetic against enumeration. Line/branch coverage of
     `orbits.py` returns to 100%; no derivation code, evidence, claim, or claim
     status changed.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F007: printed the cited Fifth containment witness and own identification theorem, then regenerated the Lean report and manifest. F013: filled O1/O2 evidence with the fourth seed and own series/round references. No claim or theorem statement changed.

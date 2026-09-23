@@ -107,3 +107,7 @@ Each material change, and its reason. Newest last. Commits are on the branch
     `Reach16.diag_le` and a Lean sufficiency for an arbitrary carrying map;
     neither exists (O3, O4). Item 4's "targets 1–5 closed" is left as
     written; those two targets of item 4 in the plan were not closed.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F010: printed two cited theorems, Reach16.swap and remove_add9, then regenerated the Lean report and manifest. No theorem statement changed.

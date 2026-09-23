@@ -58,3 +58,17 @@ open Seed.Seventeenth
 #print axioms Reach17.rename
 #print axioms ReachAll.rename
 #print axioms loopFree_rename
+
+-- Whole-repo review: cited base theorems, in addition to the own theorems above.
+#print axioms Seed.Reach.arb_gone_for_good
+#print axioms Seed.Reach.legal
+#print axioms Seed.Step.legal
+#print axioms Seed.adding_xrx_always_obstructed
+#print axioms Seed.bra_not_derived
+#print axioms Seed.bra_not_refuted
+#print axioms Seed.fewest_changes_A
+#print axioms Seed.fewest_changes_B
+#print axioms Seed.given_distinct
+#print axioms Seed.identify_legal_iff
+#print axioms Seed.remove_obstruction_first_or_last
+#print axioms Seed.two_states_on_given_terms

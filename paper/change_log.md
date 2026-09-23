@@ -440,3 +440,13 @@ reading of the seed.
     put it before). Nothing in `lean4/H3V7N5QF/` … `lean4/Seventeenth/`,
     `code/xry/` … `code/seventeenth/`, or `evidence/` through
     `evidence/seventeenth/` was modified.
+
+39. **Whole-repo review citation detector (2026-09-23).** Findings F001–F010
+    identified cited Lean names absent from ten derivations' own axiom
+    reports. The shared `ci/check_axiom_citations.py` checks backticked
+    theorem/lemma citations against each Lean-generated report. Its test
+    removes and restores the second derivation's real `Reach.legal` report
+    line, proving the missing-line defect fires. `ci/OEWAS_GATES.md` records
+    the exact reach and limits. The individual `Axioms.lean`, regenerated
+    report and manifest edits are logged in their derivations' change logs;
+    no theorem statement or seed is changed.

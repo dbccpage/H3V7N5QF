@@ -8,7 +8,7 @@ import pytest
 
 from eighth import __main__ as cli
 from eighth import evidence
-from eighth.changes import Change, Kind, attempt_counts
+from eighth.changes import Change, Kind, attempt_counts, changes
 from eighth.evidence import (
     Plan,
     check_changes,
@@ -213,6 +213,31 @@ def test_given_notices_a_loop_count_off_the_formula(tmp_path: Path, monkeypatch:
     real = attempt_counts
     monkeypatch.setattr(evidence, "attempt_counts", lambda state: (real(state)[0], real(state)[1] + 1, real(state)[2]))
     assert write_given(tmp_path)["beginnings_whose_loop_counts_differ_from_formula"] == 4
+
+
+def test_given_relation_counts_follow_the_change_list(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    write_given(tmp_path)
+    original = json.loads((tmp_path / "given.json").read_text(encoding="utf-8"))
+    for bra in (False, True):
+        row = original[f"anchored/{'with_bra' if bra else 'without_bra'}"]
+        assert row["of_which_in_r"] == 1 + int(bra) + 4
+        assert row["of_which_in_s"] == 4
+
+    real_changes = changes
+    monkeypatch.setattr(
+        evidence,
+        "changes",
+        lambda state: tuple(
+            c for c in real_changes(state)
+            if not (c.kind is Kind.ADD_ASSERTION and c.rel == "r" and c.x == 0 and c.y == 0)
+        ),
+    )
+    write_given(tmp_path)
+    altered = json.loads((tmp_path / "given.json").read_text(encoding="utf-8"))
+    for bra in (False, True):
+        label = f"anchored/{'with_bra' if bra else 'without_bra'}"
+        assert altered[label]["of_which_in_r"] == original[label]["of_which_in_r"] - 1
+        assert altered[label]["of_which_in_s"] == original[label]["of_which_in_s"]
 
 
 def test_write_run_and_census_alone(tmp_path: Path) -> None:

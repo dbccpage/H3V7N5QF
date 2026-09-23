@@ -176,3 +176,5 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Fifth.rename4_identify' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fifth.exists_writing5' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fifth.build_answer5' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifth.contains_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Sixth.step_identify_given' depends on axioms: [propext, Classical.choice, Quot.sound]

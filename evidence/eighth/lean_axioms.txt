@@ -141,3 +141,4 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Sixth.costA6_rename' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Sixth.costB6_rename' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Sixth.no_return_fails6' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Sixth.reach6_raise' depends on axioms: [propext, Classical.choice, Quot.sound]

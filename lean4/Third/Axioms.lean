@@ -152,3 +152,6 @@ open Seed Seed.Second Seed.Third
 #print axioms costB_eq_size_of_reach3
 #print axioms fewest_changes_lower_A
 #print axioms fewest_changes_lower_B
+
+-- Whole-repo review: cited second-derivation step bound.
+#print axioms Seed.Second.Step3.size_le

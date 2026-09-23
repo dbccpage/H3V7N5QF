@@ -127,7 +127,7 @@ extends it; "does not survive" means it is false for counted states.
 | ID | Statement | Status | Evidence | Axioms | Re-check | What would settle it |
 |---|---|---|---|---|---|---|
 | O1 | The seed read with multiplicity of assertions | closed: given by the fourth seed | `prompt/fourth/seed_prompt.md`; this derivation | — | 1:O1, 2:O1, 3:O1 closed | — |
-| O2 | Number of new results in rounds beyond the bound | given by the series for any round (D14, `layer_counts`); computed to round 20 in every `rounds_*.csv`, to round 100 with two terms (D17); not listed | — | — | 3:O2 | a listing |
+| O2 | Number of new results in rounds beyond the bound | given by the series for any round (D14, `layer_counts`); computed to round 20 in every `rounds_*.csv`, to round 100 with two terms (D17); not listed | D14 `layer_counts`; D17; `rounds_*.csv` | — | 3:O2 | a listing |
 | O3 | Results beyond the declared bounds, listed | open | frontier exported (both parts); census counts at 5 terms | — | 3:O3 | a larger run |
 | O4 | Other readings of "build structure" | open as to records; closed as to results (D10) | paper §3 (C7) | — | 3:O4 | — |
 | O5 | A closed form for the number of sequences reaching a result with three or more terms | open | computed per result within the bound (K7); two terms closed (D17) | — | 3:O5 narrowed | a formula agreeing with every computed count |
