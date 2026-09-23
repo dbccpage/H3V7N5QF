@@ -4124,3 +4124,260 @@ From the repository root: `python -m pytest`, `python -m mypy`,
 `lake +leanprover/lean4:v4.33.1 -d lean4 build Eighteenth` with `$LASTEXITCODE`
 read on its own line. `python code/lean_report_eighteenth.py` writes the
 axiom report.
+---
+# Seventeenth derivation (`prompt/seventeenth/`) — plan and stopping conditions
+
+Written before any other work of the seventeenth derivation, as
+`prompt/seventeenth/prompt.md` requires. Inputs: `prompt/seventeenth/prompt.md`
+and `prompt/seventeenth/seed_prompt.md`. The parent is the base derivation
+(`prompt/seed_prompt.md`, `paper/paper.md`, `code/xry/`, `lean4/H3V7N5QF/`,
+`evidence/`), not the sixteenth. Later derivations are not inputs. Everything
+above stays in force (isolation, no network, `prompt/` untouched, `.lake/`
+never committed, bookkeeping rules 1–4, the evidence-module coverage gate).
+Rule 5 of the seventeenth task: every result of the base that is used is
+cited and its proof re-checked from this seed — whether it rested on the
+struck ban ("for no term `x` may `xrx` be asserted") or only on the
+obstruction procedure, which is kept. In Lean the re-check is an embedding
+of the base's unobstructed steps into this seed's steps on loop-free states,
+and a case split the other way; a theorem that assumed `Legal` as a given is
+re-proved without that hypothesis or downgraded. Or by computing this seed's
+exploration and comparing it with the base's on the results that assert no
+`xrx`.
+
+## What differs in the seed
+
+One sentence is struck (`diff` against `prompt/seed_prompt.md`): "For no
+term `x` may `xrx` be asserted." Every other sentence is identical,
+including the obstruction paragraph. So a change that makes some `xrx`
+asserted is still obstructed and must still be answered (refuse / remove
+the obstruction / build structure). What the base argued *from the ban*
+— `Legal` as a filter on states, `a ≠ b` via `given_distinct`, the
+would-be outcome of an obstructed change not being a result, the orbit
+count of states with no diagonal — must be re-examined. What it argued
+from the four kinds and from the obstruction test on a loop-free state
+carries over once that test is re-proved without taking the ban as a
+given.
+
+## Layout
+
+- `research/seventeenth/` — reading notes (not evidence).
+- `code/seventeenth/` — typed Python. Imported from `code/xry/` what the
+  struck ban leaves intact: `State` (a state may hold `xrx`; `legal` is
+  the predicate "no `xrx`", no longer a given), sameness, the four kinds,
+  `perform`, the base obstruction (`obstruction`: the assertions that
+  would become `xrx`), `answers`, `explore` (unobstructed steps only),
+  `cost`, and the legal orbit counts. Defined afresh: the predicate
+  `has_xrx`; a second obstruction test (the outcome asserts some `xrx`);
+  the exploration that *performs* an obstructed change and records its
+  outcome; the comparison with the base exploration; witnesses that the
+  base cost is not a lower bound on that exploration; the count of states
+  with the diagonal admitted. The launcher is `code/run_seventeenth.py`
+  (`--check` regenerates into a temporary folder and compares). Base
+  files are not modified except to correct a defect, recorded in
+  `paper/change_log.md`.
+- `tests/test_seventeenth_*.py` — tests of `code/seventeenth/`; all of
+  `code/` stays at ≥ 95 % line and ≥ 95 % branch coverage, every
+  `code/**/evidence.py` fully covered; `mypy --strict` passes; the prose
+  watchlist stays clean.
+- `lean4/Seventeenth/` — a seventeenth Lean library in the same Lake
+  package (the lakefile gains the library target and a default target;
+  recorded in `paper/change_log.md` because that file is from the base).
+  It imports `H3V7N5QF`. `LoopFree` is a predicate, not a hypothesis of
+  the seed. `Step17` is the base `Step` with no `Legal` side-condition on
+  the state; `Step17.unobstructed` is the step that does not make an
+  `xrx`. The base's unobstructed `Step` embeds and, on a loop-free state,
+  a `Step17` that stays loop-free is a base `Step`.
+- `evidence/seventeenth/` — written by `python code/run_seventeenth.py`.
+- `paper/seventeenth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+- `ci/check_mutation_bite.py` — a seventeenth panel, same shape as the
+  others (one mutation per disagreement field).
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the seed (`research/seventeenth/`)
+Sentence-by-sentence diff against the base seed. The notion table.
+Readings kept:
+
+- **A-replace** (the base's C7, kept): an obstructed change is not
+  entered. Refusal changes nothing. Removing the obstruction is the
+  removals, then the change (which is then unobstructed). Building is
+  additions only, as in the base. The exploration is the base's.
+- **A-perform** (dropped by the base because no state may hold `xrx`;
+  the ban is struck, so the reading is kept): the obstructed change is
+  performed and its outcome is a result, then answered. Refusal still
+  changes nothing (it does not perform). Removing the obstruction of an
+  identification after the identification, and before it, end at the
+  same state; only the after-path has an `xrx` in between.
+- **M1** (chosen, the base's obstruction): the obstruction is the
+  assertions that would become some `xrx` — for an identification, those
+  of `xry`, `yrx` that are asserted; for adding `xrx`, that assertion.
+  An existing `xrx` does not by itself obstruct an unrelated change.
+- **M2** (unchosen, kept): a change is obstructed when its outcome
+  asserts some `xrx`, whether newly made or already there.
+
+Expected, to be proved or refuted, not assumed:
+
+- On a loop-free state M1 and M2 name the same changes (the base's D3
+  without taking `Legal` as a given: the "related, hence obstructed"
+  direction never used `Legal`; the converse uses loop-freeness of the
+  start, not the ban). On a state that already asserts `ara`, identifying
+  two other terms with nothing between them is obstructed under M2 and
+  not under M1.
+- Under A-replace, from either beginning (no `xrx`), every result asserts
+  no `xrx`. The implemented predicate `has_xrx` is false on every
+  reached result. The obstruction procedure plus "do not enter an
+  obstructed change" reconstructs the irreflexivity the ban imposed.
+  The base's results, rounds, cost, and legal orbit count survive, by
+  the embedding and by comparing explorations.
+- Under A-perform the predicate is true: adding `ara` to what is given,
+  and identifying `a` with `b` while `arb` is asserted, are changes, and
+  each outcome asserts some `xrx`. Those outcomes were forbidden by the
+  ban and are valid now ("any outcome is valid"). The ban is not
+  redundant under this reading. The base cost is not a lower bound
+  (identifying `a` with `b` is one change; the base formula returns 3
+  on the one-term state asserting `ara`). `a` and `b` need not stay two
+  terms. After that identification `ara` is asserted, so "once `a` and
+  `b` are one term, `arb` is never asserted again" fails if `ara` counts
+  as what `arb` became, and holds only as a statement about two terms.
+- What does not follow: that every well-formed state asserts no `xrx`;
+  that A-replace and A-perform have the same results; that M1 and M2
+  disagree on a loop-free state; that the base cost is the fewest
+  changes once an obstructed change is performed.
+
+The beginning is still the two states on the terms `a`, `b` asserting
+`arb`, with `bra` or not (chosen, C2). Unchosen: a beginning that also
+asserts `ara` or `brb`. Under A-replace those are not results of the
+chosen beginning (adding `xrx` is not entered). Under A-perform they
+are one addition away. Both are computed; neither is dropped.
+
+### Phase 2 — `code/seventeenth/` and `tests/`
+- `has_xrx`; M1 reused; M2; agreement on every loop-free state within
+  the bound; one witness that they differ on a state with `ara`.
+- A-replace exploration is `xry.explore`, compared result-for-result and
+  round-for-round with a fresh call, both beginnings, both readings of
+  sameness, at the declared bound. `has_xrx` checked false on each.
+- A-perform exploration: breadth-first under `perform` of every change,
+  obstructed or not, fewest additions first, same bound on terms and
+  rounds. `has_xrx` checked true. The two witnesses above recorded.
+  Answers of the base recorded beside each obstructed change; the
+  perform-first and remove-first identifications compared.
+- Base cost checked against A-replace rounds (must agree) and against
+  the A-perform witness (must disagree: round 1, formula 3).
+- Independent count: A-replace reuses `xry.orbits` (legal states) as the
+  completeness certificate. A-perform counts states with the diagonal
+  pairs included, if the exploration's scope is proved to be all
+  well-formed states within the bound; otherwise the frontier is
+  exported and the count is marked partial.
+- Property witnesses for "what does not follow".
+- `code/run_seventeenth.py` with `--check`. A Lean axiom-report writer
+  for `lean4/Seventeenth/Axioms.lean`, same shape as
+  `code/lean_report.py`.
+
+### Phase 3 — `lean4/Seventeenth/`
+Targets, in order:
+
+1. `LoopFree`; `Step17` (four kinds, no `Legal` hypothesis); `Reach17`;
+   `unobstructed`; `adding_xrx_obstructed` with no `Legal` hypothesis;
+   on a loop-free state, an identification is obstructed under M1 iff
+   under M2 iff the two terms are related. `has_xrx` of an unobstructed
+   step from a loop-free state is false.
+2. Embedding: every unobstructed `Step17` on a loop-free state is a
+   base `Step`, and conversely. `Reach17` along unobstructed steps from
+   a loop-free start stays loop-free and coincides with the base `Reach`.
+   The base cost, cited, is the fewest changes along those steps.
+3. A-perform: `perform` of adding `xrx` and of identifying related terms
+   are steps; the outcome asserts `xrx` (`xrx_reached`); the base cost
+   of that one-term outcome is not the length (`cost_not_lower_bound`);
+   `a` and `b` are one term there (`names_merged_with_loop`).
+4. Answers: remove-first and perform-first end at the same state
+   (the base's `remove_obstruction_first_or_last`, re-checked; it no
+   longer shows the intermediate is not a result). Refusal changes
+   nothing.
+5. `rename` for `Step17`. Attempted once; if it does not close, the
+   step is proved in the paper and marked "not in Lean".
+
+`#print axioms` for every theorem the seventeenth paper cites, into
+`evidence/seventeenth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/seventeenth/`
+Generated, hashed (`MANIFEST.sha256`), regenerated and compared with
+`--check`. The base `python code/generate.py --check` is re-run to
+confirm the base evidence still regenerates.
+
+### Phase 5 — `paper/seventeenth/`
+`paper.md` (findings; every use of a base result cited with the
+re-check and whether it rested on the ban; a section answering whether
+the obstruction rule reconstructs irreflexivity, whether any reachable
+result asserts `xrx`, and which base results survive; final section:
+nearest known results and differences — the only place outside names
+appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit, pull request to `main`.
+
+## Stopping conditions (seventeenth derivation)
+
+The run stops when AI1–AI9 hold, or when a blocker is hit.
+
+- AI1 Every notion in `paper/seventeenth/paper.md` has one recorded
+  source status.
+- AI2 Every claim in `paper/seventeenth/claim_ledger.md` has evidence,
+  or is open.
+- AI3 A-replace, A-perform, M1 and M2 are kept, or eliminated by a cited
+  proof. The beginnings with `ara` or `brb` are kept or eliminated by a
+  cited proof.
+- AI4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- AI5 `lake +leanprover/lean4:v4.33.1 -d lean4 build` passes (exit code
+  read on its own); no `sorry`, `admit`, or declared axiom in `lean4/`;
+  the axiom report regenerated and committed.
+- AI6 `evidence/seventeenth/` regenerates byte-identically (`--check`);
+  the base `evidence/` still regenerates byte-identically.
+- AI7 Every use of a base result is cited and re-checked, and the
+  re-check says whether it rested on the ban (ledger column "re-check").
+- AI8 The prose watchlist passes; `ci/check_vacuous_checks.py`,
+  `ci/check_definitional_citations.py` and `ci/check_mutation_bite.py`
+  pass, the last with a seventeenth panel covering every disagreement
+  field. Every pinned hit of the seventeenth paper is in its final
+  section.
+- AI9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms, as the base, and on rounds for A-perform (a state
+  has `n²` possible assertions, not `n² − n`). Targets: A-replace at 4
+  terms (names kept) and 3 terms (any rewriting) with the base's round
+  cap; A-perform at 3 terms with 4 rounds and 2 terms with 8 rounds;
+  full attempt logs at 2 terms and 3 rounds. Any run that does not
+  complete in minutes here has its rounds lowered first, then its
+  terms. The bounds used are declared in the paper; the frontier is
+  exported exactly; completeness within the bound is certified by the
+  independent count where the count is proved, and marked partial
+  where it is not.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–4 required; target 5 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `derivation/seventeenth`, made from `main` after the
+  seventeenth-through-twentyfirst seeds were merged. The pull request
+  is opened against `main`.
+
+Blockers (stop and report): anything that would need the network, a
+file outside the repository, a change to `prompt/`, or a question. The
+checkout's `lean4/.lake/packages` holds the pinned packages of this
+same repository (checked before Phase 0; no download happens).
+
+## How to run (seventeenth derivation)
+
+From the repository root:
+- `python -m pytest`, then `python code/xry/gate.py coverage.json`,
+  `python -m mypy`, `python ci/check_prose_watchlist.py`,
+  `python ci/check_vacuous_checks.py`,
+  `python ci/check_definitional_citations.py`, and
+  `python ci/check_mutation_bite.py`;
+- `python code/run_seventeenth.py` writes `evidence/seventeenth/`;
+  `python code/run_seventeenth.py --check` compares with a fresh
+  regeneration;
+- the Lean build is `lake +leanprover/lean4:v4.33.1 -d lean4 build`,
+  with the exit code read on its own line;
+- the base derivation's commands are unchanged (see above).
