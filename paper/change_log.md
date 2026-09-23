@@ -400,3 +400,14 @@ reading of the seed.
     shared `ci/` gates gained a sixteenth panel and record noun, logged in
     `paper/sixteenth/change_log.md`, as are the sixteenth derivation's own
     changes.
+
+## Changes made during the nineteenth, twentieth, and twenty-first derivations
+
+35. **`lean4/lakefile.toml`: library targets `Nineteenth`, `Twentieth`, and
+    `Twentyfirst`, and the same three names on `defaultTargets`.** Made by
+    this run. Not a defect correction: it is the build configuration of the
+    shared Lake package. Each library imports `H3V7N5QF` only. Nothing in
+    `lean4/H3V7N5QF/` … `lean4/Sixteenth/`, `code/xry/` … `code/sixteenth/`,
+    the earlier test sets, the earlier papers, or `evidence/` through
+    `evidence/sixteenth/` was modified. `ci/check_mutation_bite.py` gained
+    one panel per derivation, logged in each paper's `change_log.md`.
