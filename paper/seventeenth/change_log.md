@@ -34,3 +34,5 @@ cycle: wrote the Lean library (`Step17`, the embedding, the A-perform witness, a
 cycle: wrote the paper, the ledger, the frontier and the report writer; pytest, the coverage gate, mypy, the prose watchlist, the three ci gates and evidence `--check` are green; next read the single lake exit and, if it is 0, write `lean_axioms.txt` and open nothing further until that file is committed.
 
 cycle: left the one `lake build Seventeenth` running (Mathlib oleans advancing, about 1294 of 8311 at 05:19; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
+
+cycle: the same lake process was still compiling Mathlib (oleans 1599 of 8311 at 05:36, newest `Algebra/Star/StarProjection.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
