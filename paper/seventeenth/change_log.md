@@ -25,3 +25,10 @@
    in hand.
 
 cycle: wrote the Lean library (`Step17`, the embedding, the A-perform witness, answers, rename) and the lakefile target; next get `lake build` green, then the paper, the ledger, and `evidence/seventeenth/`.
+
+5. Paper, ledger, and the evidence frontier. Both unchosen beginnings
+   (`ara`, `brb`) are checked. `code/seventeenth/leanreport.py` writes the
+   axiom report and has not been run: this Lake rejects `-j`, so the build
+   is one process with `LEAN_NUM_THREADS=4`, still compiling dependencies.
+
+cycle: wrote the paper, the ledger, the frontier and the report writer; pytest, the coverage gate, mypy, the prose watchlist, the three ci gates and evidence `--check` are green; next read the single lake exit and, if it is 0, write `lean_axioms.txt` and open nothing further until that file is committed.

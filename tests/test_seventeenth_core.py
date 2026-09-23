@@ -20,6 +20,7 @@ from seventeenth.explore import (
     loopfree_states,
     loopy_witness,
     with_loop,
+    with_other_loop,
 )
 from seventeenth.loop import has_xrx, obstructed_m1, outcome_has_xrx, readings_agree
 
@@ -58,7 +59,10 @@ def test_perform_reaches_the_witnesses_and_the_formula_does_not_bound_them() -> 
             assert reached.depth[witness] == 1
             assert cost(witness, bra) > 1
             assert with_loop(bra, sameness) in reached.depth
+            assert with_other_loop(bra, sameness) in reached.depth
+            assert has_xrx(with_other_loop(bra, sameness))
             assert with_loop(bra, sameness) not in closure_unobstructed(start, 2, 4).depth
+            assert with_other_loop(bra, sameness) not in closure_unobstructed(start, 2, 4).depth
 
 
 def test_remove_first_matches_perform_first() -> None:

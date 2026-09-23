@@ -31,6 +31,7 @@ from seventeenth.explore import (
     identified,
     loopy_witness,
     with_loop,
+    with_other_loop,
 )
 from seventeenth.loop import has_xrx, obstructed_m1, outcome_has_xrx
 
@@ -53,6 +54,8 @@ class LoopCheck:
     loop_beginning_not_in_perform: list[str]
     replace_results: int
     perform_results: int
+    frontier: tuple[str, ...] = ()
+    by_run: tuple[str, ...] = ()
 
 
 def _depth_diff(left: dict[State, int], right: dict[State, int]) -> list[str]:
@@ -81,14 +84,19 @@ def check_bounds(bound: int, rounds: int) -> LoopCheck:
     begin_out: list[str] = []
     replace_n = 0
     perform_n = 0
+    frontier: list[str] = []
+    by_run: list[str] = []
     for bra, sameness in _runs(bound, rounds):
         start = given(bra, sameness)
         tag = f"{sameness.value}/{bra}"
         replace = closure_unobstructed(start, bound, rounds)
         performed = closure_perform(start, bound, rounds)
         base = explore(start, bound, rounds)
+        frontier.extend(f"{tag}:replace:{item}" for item in replace.frontier)
+        frontier.extend(f"{tag}:perform:{item}" for item in performed.frontier)
         replace_n += len(replace.depth)
         perform_n += len(performed.depth)
+        by_run.append(f"{tag}:replace:{len(replace.depth)}:perform:{len(performed.depth)}")
         for state in replace.depth:
             if has_xrx(state):
                 replace_has.append(f"{tag}:{state.key()}")
@@ -110,11 +118,11 @@ def check_bounds(bound: int, rounds: int) -> LoopCheck:
             for change in changes(state):
                 if obstructed_m1(state, change) != outcome_has_xrx(state, change):
                     disagree.append(f"{tag}:{state.key()}:{change.written(state)}")
-        begin = with_loop(bra, sameness)
-        if begin in replace.depth:
-            begin_in.append(f"{tag}:{begin.key()}")
-        if begin not in performed.depth:
-            begin_out.append(f"{tag}:{begin.key()}")
+        for begin in (with_loop(bra, sameness), with_other_loop(bra, sameness)):
+            if begin in replace.depth:
+                begin_in.append(f"{tag}:{begin.key()}")
+            if begin not in performed.depth:
+                begin_out.append(f"{tag}:{begin.key()}")
         if _remove_first_differs(bra, sameness):
             remove_differs.append(tag)
         if _refusal_changes(bra, sameness):
@@ -137,6 +145,8 @@ def check_bounds(bound: int, rounds: int) -> LoopCheck:
         sorted(begin_out),
         replace_n,
         perform_n,
+        tuple(sorted(set(frontier))),
+        tuple(by_run),
     )
 
 
@@ -220,6 +230,8 @@ def write_all(out: Path, plan: Plan | None = None) -> dict[str, object]:
         "refusal_changes_something": report.refusal_changes_something,
         "loop_beginning_in_replace": report.loop_beginning_in_replace,
         "loop_beginning_not_in_perform": report.loop_beginning_not_in_perform,
+        "frontier": list(report.frontier),
+        "by_run": list(report.by_run),
     }
     (out / "summary.json").write_text(
         json.dumps(summary, indent=2, sort_keys=True) + "\n",

@@ -25,6 +25,8 @@ def test_check_bounds_passes_and_records_both_readings() -> None:
     assert report.replace_results > 0
     assert report.perform_results > report.replace_results
     assert not report.replace_has_xrx
+    assert len(report.by_run) == 4
+    assert report.frontier
 
 
 def test_passes_rejects_a_disagreement() -> None:

@@ -150,13 +150,23 @@ def added_loop(bra: bool, sameness: Sameness) -> State:
     return canonical(perform(given(bra, sameness), Change(Kind.ADD_ASSERTION, 0, 0)))
 
 
-def with_loop(bra: bool, sameness: Sameness) -> State:
-    """The unchosen beginning: what is given, and also `ara`."""
-    pairs: list[tuple[int, int]] = [(0, 1), (0, 0)]
+def _with_loop_on(bra: bool, sameness: Sameness, at: int) -> State:
+    """What is given, plus `xrx` on term `at` (0 is `a`, 1 is `b`)."""
+    pairs: list[tuple[int, int]] = [(0, 1), (at, at)]
     if bra:
         pairs.append((1, 0))
     names = (0, 1) if sameness is Sameness.ANCHORED else None
     return canonical(State.of(2, pairs, names))
+
+
+def with_loop(bra: bool, sameness: Sameness) -> State:
+    """The unchosen beginning: what is given, and also `ara`."""
+    return _with_loop_on(bra, sameness, 0)
+
+
+def with_other_loop(bra: bool, sameness: Sameness) -> State:
+    """The unchosen beginning: what is given, and also `brb`."""
+    return _with_loop_on(bra, sameness, 1)
 
 
 def loopy_witness() -> tuple[State, Change]:
