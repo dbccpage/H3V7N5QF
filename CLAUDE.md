@@ -4381,3 +4381,132 @@ From the repository root:
 - the Lean build is `lake +leanprover/lean4:v4.33.1 -d lean4 build`,
   with the exit code read on its own line;
 - the base derivation's commands are unchanged (see above).
+
+---
+# Nineteenth, twentieth, and twenty-first derivations — plan and stopping conditions
+
+Written before the rest of this run, as `prompt/nineteenth/prompt.md`,
+`prompt/twentieth/prompt.md`, and `prompt/twentyfirst/prompt.md` require.
+Each seed is the base seed (`prompt/seed_prompt.md`) with one sentence
+changed. The parent is the base (`paper/`, `code/xry/`, `lean4/H3V7N5QF/`,
+`evidence/`). Later derivations are not inputs. Everything above stays in
+force (isolation, no network, `prompt/` untouched, `.lake/` never committed,
+bookkeeping rules 1–4, the evidence-module coverage gate, the three `ci/`
+gates). Rule 5: every base result that is used is cited and re-checked from
+the changed sentence. The three runs share one branch because each diffs the
+base and the user asked for all three; each keeps its own code, Lean
+library, evidence, and paper.
+
+## Nineteenth — identification rewrites one chosen assertion
+
+The sentence "Identifying two terms replaces both by one term in every
+assertion" becomes "in one chosen assertion".
+
+- **P1 (chosen).** A partial identification picks two terms `u < v`, one
+  asserted pair that mentions at least one of them, and a survivor in
+  `{u, v}`. That one pair is rewritten; the terms stay. A rewrite that
+  leaves the pair unchanged is not a change. The other three kinds are the
+  base's. An outcome that asserts some `xrx` is obstructed and refused.
+- **P2 (unchosen, kept).** Only a pair in which the two terms already both
+  occur. Every such rewrite is a loop, so every such change is obstructed.
+- **Set aside.** Dropping a term while rewriting only one assertion: an
+  assertion that still names the dropped term is not a state of the base
+  (assertions are between terms that are there). Not explored.
+
+Expected, to be proved or refuted: a partial never changes the number of
+terms, so the base's global identification (it erases a term) is not a
+sequence of partials; the reachable results are the base results in which
+the two names stay two terms; P1 and P2 reach the same results; adding a
+term is never obstructed, so the process does not terminate.
+
+## Twentieth — fewest total changes first
+
+The sentence "Attempt every change, fewest additions first" becomes
+"Attempt every change, fewest total changes first".
+
+- **O1 (chosen).** A round is one performed change on a result already
+  reached. The base exploration already spreads that way. "Fewest additions
+  first" only lists the attempts inside a round. Both listings are run.
+- **O2 (unchosen, kept).** Fewest additions is a global priority: expand the
+  reached result with the smallest number of terms and assertions added,
+  and stop after expanding as many results as O1 has reached by round 2.
+
+Expected: under O1 the layers, the term-bound frontier, and the base
+closure agree, at either beginning and either sameness. The recorded
+additions do not equal the round. Under O2, before the closure is finished,
+results enter and leave. "Complete within the term bound" is not an
+artifact of the listing. Adding a term is never obstructed, so the process
+does not terminate.
+
+## Twenty-first — an obstructed change is refused
+
+The sentence that an obstructed change must be answered is replaced by
+"An obstructed change is refused." The ban on `xrx` stays.
+
+- **R1 (chosen).** Refusal changes nothing. The exploration is the base's
+  unobstructed steps. The base's answers are computed and compared; they
+  are not performed as extra routes.
+- No second exploration: the base already spreads along unobstructed steps
+  and only checks answers afterwards (base D10). Re-checked, not assumed.
+
+Expected: the reachable set is the base's, so it is not smaller; no answer
+inside the bound buys a result the base lacks; the start has unobstructed
+changes, so an alternative does not stop at the first obstruction; adding
+a term is never obstructed, so the process does not terminate.
+
+## Layout
+
+- `code/nineteenth/`, `code/twentieth/`, `code/twentyfirst/` with
+  `code/run_*.py`.
+- `tests/test_nineteenth.py`, `tests/test_twentieth.py`,
+  `tests/test_twentyfirst.py`.
+- `lean4/Nineteenth/`, `lean4/Twentieth/`, `lean4/Twentyfirst/`, each
+  importing `H3V7N5QF`. The lakefile gains the three targets (recorded in
+  `paper/change_log.md`).
+- `evidence/nineteenth/`, `evidence/twentieth/`, `evidence/twentyfirst/`.
+- `paper/nineteenth/`, `paper/twentieth/`, `paper/twentyfirst/`.
+- `ci/check_mutation_bite.py` gains three panels.
+
+## Stopping conditions
+
+The run stops when AJ1–AJ9 hold, or when a blocker is hit.
+
+- AJ1 Every notion in the three papers has one recorded source status.
+- AJ2 Every claim in the three ledgers has evidence, or is open.
+- AJ3 P1/P2, O1/O2, and R1 are kept or eliminated by a cited proof.
+- AJ4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- AJ5 `lake +leanprover/lean4:v4.33.1 -d lean4 build` of the three new
+  libraries passes (exit code read on its own); no `sorry`, `admit`, or
+  declared axiom in `lean4/`; the three axiom reports regenerated.
+- AJ6 Each new `evidence/` regenerates byte-identically (`--check`); the
+  base `evidence/` still regenerates.
+- AJ7 Every use of a base result is cited and re-checked (ledger column
+  "re-check").
+- AJ8 The prose watchlist, vacuous-check, definitional-citation, and
+  mutation-bite gates pass, the last with a panel per derivation covering
+  every disagreement field.
+- AJ9 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounds: 3 terms and 12 rounds (the base closure inside 3 terms has finished
+by then). The frontier is the attempts that would add a fourth term. No
+change is invented to reach 100 rounds.
+
+Blockers: anything that would need the network, a file outside the
+repository, a change to `prompt/`, or a question. `lean4/.lake/packages`
+stays the pinned checkout; no `lake update`.
+
+## How to run
+
+From the repository root:
+
+- `python -m pytest`, then `python code/xry/gate.py coverage.json`,
+  `python -m mypy`, and the four `ci/check_*.py` gates;
+- `python code/run_nineteenth.py`, `python code/run_twentieth.py`,
+  `python code/run_twentyfirst.py`, each with `--check`;
+- `python code/lean_report_nineteenth.py`,
+  `python code/lean_report_twentieth.py`,
+  `python code/lean_report_twentyfirst.py`;
+- `lake +leanprover/lean4:v4.33.1 -d lean4 build Nineteenth Twentieth Twentyfirst`,
+  then read the exit code on its own line.

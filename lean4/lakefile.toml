@@ -1,6 +1,6 @@
 name = "H3V7N5QF"
 version = "0.1.0"
-defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth", "Eighteenth"]
+defaultTargets = ["H3V7N5QF", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh", "Twelfth", "Thirteenth", "Fourteenth", "Fifteenth", "Sixteenth", "Seventeenth", "Eighteenth", "Nineteenth", "Twentieth", "Twentyfirst"]
 
 [[require]]
 name = "mathlib"
@@ -70,10 +70,22 @@ name = "Fifteenth"
 [[lean_lib]]
 name = "Sixteenth"
 
+# The seventeenth derivation (`prompt/seventeenth/`); imports `H3V7N5QF`.
+[[lean_lib]]
+name = "Seventeenth"
+
 # The eighteenth derivation (`prompt/eighteenth/`); imports `H3V7N5QF`.
 [[lean_lib]]
 name = "Eighteenth"
 
-# The seventeenth derivation (`prompt/seventeenth/`); imports `H3V7N5QF`.
+# The nineteenth derivation (`prompt/nineteenth/`); imports `H3V7N5QF`.
 [[lean_lib]]
-name = "Seventeenth"
+name = "Nineteenth"
+
+# The twentieth derivation (`prompt/twentieth/`); imports `H3V7N5QF`.
+[[lean_lib]]
+name = "Twentieth"
+
+# The twenty-first derivation (`prompt/twentyfirst/`); imports `H3V7N5QF`.
+[[lean_lib]]
+name = "Twentyfirst"

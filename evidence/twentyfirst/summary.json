@@ -1,0 +1,50 @@
+{
+  "bound": 3,
+  "rounds": 12,
+  "runs": [
+    {
+      "bra": false,
+      "sameness": "anchored",
+      "results": 109,
+      "last_new_round": 10,
+      "frontier_exits": 700,
+      "answers_checked": 1641,
+      "outside_the_base": [],
+      "answer_buys_a_result": [],
+      "stopped_at_the_start": []
+    },
+    {
+      "bra": false,
+      "sameness": "free",
+      "results": 20,
+      "last_new_round": 6,
+      "frontier_exits": 112,
+      "answers_checked": 276,
+      "outside_the_base": [],
+      "answer_buys_a_result": [],
+      "stopped_at_the_start": []
+    },
+    {
+      "bra": true,
+      "sameness": "anchored",
+      "results": 109,
+      "last_new_round": 11,
+      "frontier_exits": 700,
+      "answers_checked": 1641,
+      "outside_the_base": [],
+      "answer_buys_a_result": [],
+      "stopped_at_the_start": []
+    },
+    {
+      "bra": true,
+      "sameness": "free",
+      "results": 20,
+      "last_new_round": 5,
+      "frontier_exits": 112,
+      "answers_checked": 276,
+      "outside_the_base": [],
+      "answer_buys_a_result": [],
+      "stopped_at_the_start": []
+    }
+  ]
+}

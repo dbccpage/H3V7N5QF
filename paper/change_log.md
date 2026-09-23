@@ -412,3 +412,14 @@ reading of the seed.
     derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Sixteenth/`,
     `code/xry/` … `code/sixteenth/`, the earlier test sets, the earlier papers,
     ledgers, or `evidence/` through `evidence/sixteenth/` was modified.
+
+## Changes made during the nineteenth, twentieth, and twenty-first derivations
+
+36. **`lean4/lakefile.toml`: library targets `Nineteenth`, `Twentieth`, and
+    `Twentyfirst`, and the same three names on `defaultTargets`.** Made by
+    this run. Not a defect correction: it is the build configuration of the
+    shared Lake package. Each library imports `H3V7N5QF` only. Nothing in
+    `lean4/H3V7N5QF/` … `lean4/Sixteenth/`, `code/xry/` … `code/sixteenth/`,
+    the earlier test sets, the earlier papers, or `evidence/` through
+    `evidence/sixteenth/` was modified. `ci/check_mutation_bite.py` gained
+    one panel per derivation, logged in each paper's `change_log.md`.
