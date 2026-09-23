@@ -36,3 +36,5 @@ cycle: wrote the paper, the ledger, the frontier and the report writer; pytest, 
 cycle: left the one `lake build Seventeenth` running (Mathlib oleans advancing, about 1294 of 8311 at 05:19; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
 
 cycle: the same lake process was still compiling Mathlib (oleans 1599 of 8311 at 05:36, newest `Algebra/Star/StarProjection.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
+
+cycle: the same lake process was still compiling Mathlib (oleans 1905 of 8311 at 05:56, newest `LinearAlgebra/AffineSpace/Midpoint.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
