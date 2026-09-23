@@ -1,0 +1,344 @@
+{"bra": false, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1::0-0", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2::0-0.0-1", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1.1-0", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2::0-0.1-0", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1::", "reading": "replace", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::", "reading": "replace", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2::0-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2::0-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1::0-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1.1-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2::", "reading": "replace", "round": 3, "sameness": "free", "state": "1::"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "1::0-0", "reading": "replace", "round": 3, "sameness": "free", "state": "1::"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1.1-0", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.1-0", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "1::", "reading": "perform", "round": 2, "sameness": "free", "state": "1::0-0"}
+{"bra": false, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "1::0-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1::", "reading": "perform", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::", "reading": "perform", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2::", "reading": "perform", "round": 3, "sameness": "free", "state": "1::"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "1::"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-0.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-1.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-0.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-0.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-1"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-0.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-0.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-1"}
+{"bra": false, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-0.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-1"}
+{"bra": false, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1:00:0-0", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0.0-1", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0.1-0", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1:00:", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1:00:0-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1.1-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0.0-1.1-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2:00:", "reading": "replace", "round": 3, "sameness": "anchored", "state": "1:00:"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "1:00:0-0", "reading": "replace", "round": 3, "sameness": "anchored", "state": "1:00:"}
+{"bra": false, "change": "identify b and a", "entered": false, "obstructed": true, "outcome": "1:00:0-0", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-1", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0.0-1", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0.1-0", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0.1-0", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "1:00:", "reading": "perform", "round": 2, "sameness": "anchored", "state": "1:00:0-0"}
+{"bra": false, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "1:00:0-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1:00:", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0.0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": false, "change": "identify b and a", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": false, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-0.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2:00:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "1:00:"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "1:00:"}
+{"bra": false, "change": "identify a and c", "entered": true, "obstructed": false, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:00:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": false, "change": "add arc", "entered": true, "obstructed": false, "outcome": "2:00:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": false, "change": "add cra", "entered": true, "obstructed": false, "outcome": "2:00:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": false, "change": "add crc", "entered": true, "obstructed": true, "outcome": "2:00:0-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:01:0-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0"}
+{"bra": false, "change": "identify b and a", "entered": true, "obstructed": false, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0"}
+{"bra": false, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:10:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0"}
+{"bra": false, "change": "identify b and a", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": false, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": false, "change": "identify b and a", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": false, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": false, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:10:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": false, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": false, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-1"}
+{"bra": false, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:10:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-1"}
+{"bra": false, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:0-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-1"}
+{"bra": false, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-1"}
+{"bra": false, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-1"}
+{"bra": false, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1.1-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-1"}
+{"bra": true, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1::0-0", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1.1-0", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "replace", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1::0-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2::0-0.0-1", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1.1-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2::0-0.1-0", "reading": "replace", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1::", "reading": "replace", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::", "reading": "replace", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2::0-0", "reading": "replace", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "replace", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2::0-0", "reading": "replace", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1.1-0", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 1, "sameness": "free", "state": "2::0-1.1-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "1::", "reading": "perform", "round": 2, "sameness": "free", "state": "1::0-0"}
+{"bra": true, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "1::0-0"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-1"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-0.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-0.1-1", "reading": "perform", "round": 2, "sameness": "free", "state": "2::0-0.0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2::", "reading": "perform", "round": 3, "sameness": "free", "state": "1::"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "1::"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1::", "reading": "perform", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::", "reading": "perform", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-0.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2::0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.1-0"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1::0-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2::0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3::0-0.0-1.1-0.1-1", "reading": "perform", "round": 3, "sameness": "free", "state": "2::0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1:00:0-0", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1.1-0", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0.0-1.1-0", "reading": "replace", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "identify a and b", "entered": false, "obstructed": true, "outcome": "1:00:0-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0.0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0.1-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "identify b and a", "entered": false, "obstructed": true, "outcome": "1:00:0-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0.0-1", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0.1-0", "reading": "replace", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1:00:", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add ara", "entered": false, "obstructed": true, "outcome": "2:01:0-0", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add brb", "entered": false, "obstructed": true, "outcome": "2:10:0-0", "reading": "replace", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1.1-0", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0.0-1.1-0", "reading": "perform", "round": 1, "sameness": "anchored", "state": "2:01:0-1.1-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "1:00:", "reading": "perform", "round": 2, "sameness": "anchored", "state": "1:00:0-0"}
+{"bra": true, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "1:00:0-0"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-1"}
+{"bra": true, "change": "identify b and a", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0.0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-1"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:0-0.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0.1-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0"}
+{"bra": true, "change": "identify b and a", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": true, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:01:0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:10:0-0.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-0.0-1.1-0", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-0.1-1", "reading": "perform", "round": 2, "sameness": "anchored", "state": "2:10:0-0.0-1.1-0"}
+{"bra": true, "change": "add a term", "entered": true, "obstructed": false, "outcome": "2:00:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "1:00:"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "1:00:"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": false, "outcome": "1:00:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:"}
+{"bra": true, "change": "identify a and c", "entered": true, "obstructed": false, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:00:", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": true, "change": "add arc", "entered": true, "obstructed": false, "outcome": "2:00:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": true, "change": "add cra", "entered": true, "obstructed": false, "outcome": "2:00:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": true, "change": "add crc", "entered": true, "obstructed": true, "outcome": "2:00:0-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:00:0-0"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:01:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1"}
+{"bra": true, "change": "identify b and a", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1"}
+{"bra": true, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:10:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-0.0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:10:0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.0-1"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.1-0"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:10:0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.1-0"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.1-0"}
+{"bra": true, "change": "add arb", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.1-0"}
+{"bra": true, "change": "add brb", "entered": true, "obstructed": true, "outcome": "2:10:0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.1-0"}
+{"bra": true, "change": "identify b and a", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": true, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:01:0-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:10:0-0.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": true, "change": "add bra", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": true, "change": "add ara", "entered": true, "obstructed": true, "outcome": "2:01:0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:10:0-0.1-0"}
+{"bra": true, "change": "identify a and b", "entered": true, "obstructed": true, "outcome": "1:00:0-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove ara", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove arb", "entered": true, "obstructed": false, "outcome": "2:10:0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove bra", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "remove brb", "entered": true, "obstructed": false, "outcome": "2:01:0-0.0-1.1-0", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0.1-1"}
+{"bra": true, "change": "add a term", "entered": false, "obstructed": false, "outcome": "3:01:0-0.0-1.1-0.1-1", "reading": "perform", "round": 3, "sameness": "anchored", "state": "2:01:0-0.0-1.1-0.1-1"}

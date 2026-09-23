@@ -1,0 +1,20 @@
+{
+  "bound": 3,
+  "loop_beginning_in_replace": [],
+  "loop_beginning_not_in_perform": [],
+  "m_agree_on_loop": [],
+  "m_disagree_loopfree": [],
+  "passes": true,
+  "perform_cost_not_above": [],
+  "perform_misses_witness": [],
+  "perform_results_summed_over_runs": 1188,
+  "refusal_changes_something": [],
+  "remove_first_differs": [],
+  "replace_cost_mismatch": [],
+  "replace_has_xrx": [],
+  "replace_not_base": [],
+  "replace_not_formula": [],
+  "replace_results_summed_over_runs": 201,
+  "rounds": 6,
+  "runs": 4
+}
