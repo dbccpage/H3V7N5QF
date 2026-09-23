@@ -76,7 +76,13 @@ def given_ok(given: dict[str, object]) -> bool:
 
 
 def alternatives_ok(alternatives: dict[str, object]) -> bool:
-    """The unchosen readings behave as the paper says: the set reading breaks the identity, the drop reading keeps the ninth's criterion."""
+    """The unchosen readings behave as the paper says (D14).
+
+    The set reading breaks the same-relation identity, and neither the ninth's
+    criterion nor the carrying criterion agrees with search.  The drop reading
+    keeps the identity and the ninth's criterion, and the carrying criterion
+    does not agree with search.
+    """
     as_set = alternatives["set"]
     drop = alternatives["drop"]
     assert isinstance(as_set, dict) and isinstance(drop, dict)
@@ -89,6 +95,7 @@ def alternatives_ok(alternatives: dict[str, object]) -> bool:
         and int(str(as_set["same_relation_identity_failures"])) > 0
         and drop["same_relation_identity_failures"] == 0
         and drop_reach["ninth_criterion_disagreements_with_search"] == 0
+        and int(str(drop_reach["carrying_criterion_disagreements_with_search"])) > 0
         and int(str(set_reach["ninth_criterion_disagreements_with_search"])) > 0
         and int(str(set_reach["carrying_criterion_disagreements_with_search"])) > 0
     )

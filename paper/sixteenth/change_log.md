@@ -94,3 +94,16 @@ Each material change, and its reason. Newest last. Commits are on the branch
    hits, both in §14. `--regen` added exactly that entry (two terms, once
    each; diff inspected); the body of the paper has none. Item 6 is left as
    written, being the record of what was claimed.
+
+10. **The count of pairs the two mass invariants admit and the carrying
+    criterion refuses no longer also requires the ninth's criterion; the
+    docstring of `reach.py` no longer cites theorems that were not proved.**
+    Reason: `write_reach` counted `mass_ok` and not `carries` only when the
+    ninth's criterion also admitted the pair, so the three states with a
+    term and mass 0 into the empty state (mass and diagonal mass both 0,
+    no map into no terms) were left out. The published count was 4 224; it
+    is 4 227. `alternatives_ok` now requires the drop reading's carrying
+    criterion to disagree with search, as D14 states. `reach.py` cited
+    `Reach16.diag_le` and a Lean sufficiency for an arbitrary carrying map;
+    neither exists (O3, O4). Item 4's "targets 1–5 closed" is left as
+    written; those two targets of item 4 in the plan were not closed.

@@ -6,6 +6,7 @@ from fourteenth.leftover import leftover_nothing, leftover_pair
 from sixteenth import invariants
 from sixteenth.changes import Change16, Kind, changes16
 from sixteenth.explore import explore16
+from sixteenth import follows
 from sixteenth.follows import (
     CHANGE_STATEMENTS,
     RECORD_STATEMENTS,
@@ -32,6 +33,7 @@ def test_record_statements() -> None:
     assert something_recorded(recorded) and some_recorded_pair_asserted(recorded) and not every_recorded_pair_unasserted(recorded)
     assert not some_recorded_pair_asserted(unasserted) and every_recorded_pair_unasserted(unasserted)
     assert len(RECORD_STATEMENTS) == 4 and len(STATEMENTS16) > 4
+    assert "STATEMENTS16" in follows.__all__ and "STATEMENTS" not in follows.__all__
     read = on_state(lambda s: s.n == 1)
     assert read(plain) and not read(empty16())
 

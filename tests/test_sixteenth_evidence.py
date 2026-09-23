@@ -27,6 +27,7 @@ from sixteenth.evidence import (
 )
 from sixteenth.explore import attempt16, count_shortest_sequences16, explore16
 from sixteenth.invariants import check_records
+from sixteenth.reach import mass_ok, reachable16, reachable_ninth
 from sixteenth.state import RState, add_assertion16, canonical16, empty16
 
 
@@ -224,6 +225,28 @@ def test_reach_reports_disagreements(tmp_path: Path, monkeypatch: pytest.MonkeyP
     assert got["ordered_pairs_the_ninth_admits_and_this_seed_refuses"] == 0
 
 
+def test_mass_invariant_count_includes_pairs_the_ninth_refuses(tmp_path: Path) -> None:
+    """The two mass invariants are mass and diagonal mass, not the ninth's criterion.
+
+    A term with nothing asserted and nothing recorded has mass 0, so the
+    invariants admit the empty state, and the carrying criterion refuses it
+    because no map sends a term into no terms. The ninth's criterion refuses
+    that pair too. The published count must still include it.
+    """
+    plan = Plan(reach_bound=2, reach_rounds=3, reach_extra=1)
+    got = write_reach(tmp_path, plan)
+    states = list(explore16(empty16(), plan.reach_bound, plan.reach_rounds).depth)
+    expected = sum(1 for s in states for t in states if mass_ok(s, t) and not reachable16(s, t))
+    ninth_filtered = sum(
+        1
+        for s in states
+        for t in states
+        if mass_ok(s, t) and reachable_ninth(s, t) and not reachable16(s, t)
+    )
+    assert expected > ninth_filtered
+    assert got["ordered_pairs_the_two_mass_invariants_admit_and_the_criterion_refuses"] == expected
+
+
 def test_counts_notice_a_wrong_closed_form_or_part(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(evidence, "one_term_round_count", lambda k: 0)
     counts = write_counts(tmp_path, SMALL)
@@ -345,13 +368,15 @@ def test_the_checks_fail_when_a_number_is_wrong() -> None:
         "direct_additions_that_change_the_record": 0,
     }
     assert cli.given_ok(given) and not cli.given_ok({**given, "other_relation_is_new": False})
-    alt_reach = {"ninth_criterion_disagreements_with_search": 0, "carrying_criterion_disagreements_with_search": 0}
+    alt_reach = {"ninth_criterion_disagreements_with_search": 0, "carrying_criterion_disagreements_with_search": 4}
     alternatives: dict[str, object] = {
         "set": {"explored_equals_independent_count": True, "same_relation_identity_failures": 2, "reachability": {**alt_reach, "ninth_criterion_disagreements_with_search": 1, "carrying_criterion_disagreements_with_search": 1}},
         "drop": {"explored_equals_independent_count": True, "same_relation_identity_failures": 0, "reachability": alt_reach},
     }
     assert cli.alternatives_ok(alternatives)
     assert not cli.alternatives_ok({**alternatives, "drop": {**alternatives["drop"], "same_relation_identity_failures": 1}})  # type: ignore[dict-item]
+    drop_agrees = {**alternatives["drop"], "reachability": {**alt_reach, "carrying_criterion_disagreements_with_search": 0}}  # type: ignore[dict-item]
+    assert not cli.alternatives_ok({**alternatives, "drop": drop_agrees})
 
 
 def test_command_line(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:

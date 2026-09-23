@@ -637,7 +637,7 @@ def write_reach(out: Path, plan: Plan) -> dict[str, object]:
                 ninth_refuses_what_we_admit.append(f"{s.key()} -> {t.key()}")
             if before and not here:
                 ninth_only += 1
-            if mass_ok(s, t) and before and not here:
+            if mass_ok(s, t) and not here:
                 invariants_only += 1
         reaches[s] = here_count
         ordered += here_count

@@ -40,7 +40,7 @@ from sixteenth.state import RState
 __all__ = [
     "CHANGE_STATEMENTS",
     "RECORD_STATEMENTS",
-    "STATEMENTS",
+    "STATEMENTS16",
     "Statement16",
     "ChangeVerdict",
     "Verdict16",

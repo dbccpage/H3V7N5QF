@@ -286,7 +286,7 @@ ordered pairs of the 167 results within 3 terms and 5 rounds
 reachable, 17 790 not, 596 unordered pairs both ways. The ninth's criterion
 admits 27 723 pairs (all but the 166 into the empty state); of them 17 624
 this seed refuses, and it admits none the ninth refuses. The two mass
-invariants alone (the mass and its diagonal part) admit 4 224 pairs the
+invariants alone (the mass and its diagonal part) admit 4 227 pairs the
 criterion refuses — the criterion is finer than the invariants. In Lean: the
 necessity through the mass (`Reach16.mass_le`), sufficiency from the empty
 state (`reach16_by_additions`), from a state to the embedding of a ninth state
@@ -447,7 +447,7 @@ Each item has two witnesses among the results, or a proof.
   it returns to the ninth state (`add_remove_st`).
 - A direct addition changes the record — refuted (`record_not_raised_by_addition`;
   `direct_additions_that_change_the_record` empty).
-- The carrying criterion is the two mass invariants — refuted: 4 224 pairs the
+- The carrying criterion is the two mass invariants — refuted: 4 227 pairs the
   invariants admit and the criterion refuses (§6).
 - The count is the ninth's count times the record's — refuted from two terms
   on (§8).

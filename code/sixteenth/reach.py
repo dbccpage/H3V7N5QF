@@ -17,9 +17,12 @@ Derived (paper; the necessity in `lean4/Sixteenth/Reach.lean`)
 
     the criterion of this seed.  Its computed form is checked against
     breadth-first search along the changes on every ordered pair of results
-    within a small bound (`sixteenth.evidence`); its necessity is in Lean
-    through the two invariants `Reach16.mass_le` and `Reach16.diag_le`
-    (`mass_ok`), its sufficiency in Lean with the same terms.
+    within a small bound (`sixteenth.evidence`).  Necessity of the mass
+    (both totals plus the record) is `Reach16.mass_le`.  The diagonal mass
+    is computed only (ledger O4; there is no `Reach16.diag_le`).  Sufficiency
+    of the carrying criterion is computed (ledger O3); Lean has it from the
+    empty state (`reach16_by_additions`) and by admitting every leftover
+    (`reach16_admit_all`), not for an arbitrary carrying map.
 
 Cited from the ninth derivation (`ninth.reach`) and re-checked
     The ninth's criterion (a term decides) does not survive: the one-term
