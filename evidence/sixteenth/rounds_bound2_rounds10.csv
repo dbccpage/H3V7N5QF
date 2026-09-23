@@ -1,0 +1,12 @@
+round,new_results_within_bound,results_so_far_within_bound,changes_attempted_so_far,of_which_admissions,new_results_with_an_empty_record,new_results_of_the_ninth_seed_within_bound,new_results_with_one_term,new_results_with_one_term_by_closed_form,new_results_without_bound_by_the_series,new_results_with_at_most_two_terms_by_the_series
+0,1,1,0,0,1,1,0,0,1,1
+1,1,2,1,0,1,1,1,1,1,1
+2,3,5,4,0,3,3,2,2,3,3
+3,8,13,22,0,7,7,4,4,9,8
+4,28,41,84,2,24,24,6,6,33,28
+5,85,126,374,10,65,65,9,9,126,85
+6,260,386,1373,50,176,176,12,12,534,260
+7,692,1078,4707,226,403,403,16,16,2376,692
+8,1742,2820,14101,852,876,876,20,20,11285,1742
+9,4005,6825,38845,2828,1725,1725,25,25,56345,4005
+10,8736,15561,97864,8268,3245,3245,30,30,294522,8736

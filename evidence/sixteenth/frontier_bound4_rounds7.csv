@@ -1,0 +1,45 @@
+state,written,round_first_reached,leaves_by_the_change
+4::|#,terms a b c d; asserted nothing; recorded nothing,4,1
+4::|#3-3*1,terms a b c d; asserted nothing; recorded dℓd,6,1
+4::|#3-2*1,terms a b c d; asserted nothing; recorded dℓc,6,1
+4::|3-3*1#,terms a b c d; asserted dsd; recorded nothing,5,1
+4::|3-3*2#,terms a b c d; asserted dsd(2); recorded nothing,6,1
+4::|3-2*1#,terms a b c d; asserted dsc; recorded nothing,5,1
+4::|3-2*1.3-3*1#,terms a b c d; asserted dsc dsd; recorded nothing,6,1
+4::|3-2*2#,terms a b c d; asserted dsc(2); recorded nothing,6,1
+4::|3-1*1.3-2*1#,terms a b c d; asserted dsb dsc; recorded nothing,6,1
+4::|2-3*1.3-3*1#,terms a b c d; asserted csd dsd; recorded nothing,6,1
+4::|2-3*1.3-2*1#,terms a b c d; asserted csd dsc; recorded nothing,6,1
+4::|2-3*1.3-1*1#,terms a b c d; asserted csd dsb; recorded nothing,6,1
+4::|2-2*1.3-3*1#,terms a b c d; asserted csc dsd; recorded nothing,6,1
+4::|2-2*1.3-1*1#,terms a b c d; asserted csc dsb; recorded nothing,6,1
+4::|2-1*1.3-1*1#,terms a b c d; asserted csb dsb; recorded nothing,6,1
+4::|2-1*1.3-0*1#,terms a b c d; asserted csb dsa; recorded nothing,6,1
+4::3-3*1|#,terms a b c d; asserted drd; recorded nothing,5,1
+4::3-3*1|3-3*1#,terms a b c d; asserted drd dsd; recorded nothing,6,1
+4::3-3*1|3-2*1#,terms a b c d; asserted drd dsc; recorded nothing,6,1
+4::3-3*1|2-3*1#,terms a b c d; asserted drd csd; recorded nothing,6,1
+4::3-3*1|2-2*1#,terms a b c d; asserted drd csc; recorded nothing,6,1
+4::3-3*1|2-1*1#,terms a b c d; asserted drd csb; recorded nothing,6,1
+4::3-3*2|#,terms a b c d; asserted drd(2); recorded nothing,6,1
+4::3-2*1|#,terms a b c d; asserted drc; recorded nothing,5,1
+4::3-2*1|3-3*1#,terms a b c d; asserted drc dsd; recorded nothing,6,1
+4::3-2*1|3-2*1#,terms a b c d; asserted drc dsc; recorded nothing,6,1
+4::3-2*1|3-1*1#,terms a b c d; asserted drc dsb; recorded nothing,6,1
+4::3-2*1|2-3*1#,terms a b c d; asserted drc csd; recorded nothing,6,1
+4::3-2*1|2-2*1#,terms a b c d; asserted drc csc; recorded nothing,6,1
+4::3-2*1|2-1*1#,terms a b c d; asserted drc csb; recorded nothing,6,1
+4::3-2*1|1-3*1#,terms a b c d; asserted drc bsd; recorded nothing,6,1
+4::3-2*1|1-2*1#,terms a b c d; asserted drc bsc; recorded nothing,6,1
+4::3-2*1|1-1*1#,terms a b c d; asserted drc bsb; recorded nothing,6,1
+4::3-2*1|1-0*1#,terms a b c d; asserted drc bsa; recorded nothing,6,1
+4::3-2*1.3-3*1|#,terms a b c d; asserted drc drd; recorded nothing,6,1
+4::3-2*2|#,terms a b c d; asserted drc(2); recorded nothing,6,1
+4::3-1*1.3-2*1|#,terms a b c d; asserted drb drc; recorded nothing,6,1
+4::2-3*1.3-3*1|#,terms a b c d; asserted crd drd; recorded nothing,6,1
+4::2-3*1.3-2*1|#,terms a b c d; asserted crd drc; recorded nothing,6,1
+4::2-3*1.3-1*1|#,terms a b c d; asserted crd drb; recorded nothing,6,1
+4::2-2*1.3-3*1|#,terms a b c d; asserted crc drd; recorded nothing,6,1
+4::2-2*1.3-1*1|#,terms a b c d; asserted crc drb; recorded nothing,6,1
+4::2-1*1.3-1*1|#,terms a b c d; asserted crb drb; recorded nothing,6,1
+4::2-1*1.3-0*1|#,terms a b c d; asserted crb dra; recorded nothing,6,1

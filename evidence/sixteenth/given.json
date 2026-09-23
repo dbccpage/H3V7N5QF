@@ -1,0 +1,78 @@
+{
+  "admission_costs_three": {
+    "ninth_cost_of_ara": 2,
+    "potential_of_ara": 2,
+    "potential_of_ara_with_its_leftover_recorded": 4,
+    "route_by_admission_add_term_add_remove_admit": [
+      0,
+      1,
+      2,
+      3,
+      2
+    ]
+  },
+  "changes": [
+    "add a term"
+  ],
+  "cycles": {
+    "ara": [
+      "remove ara",
+      "admit a\u2113a into r"
+    ],
+    "one_term_state": [
+      "add a term",
+      "identify a and b"
+    ],
+    "the_ninth_add_then_remove_is_a_cycle_here": false,
+    "the_ninth_add_then_remove_on_ara_returns_to": "terms a; asserted ara; recorded a\u2113a"
+  },
+  "direct_additions_that_change_the_record": [],
+  "exchange_keeps_the_record": true,
+  "leftover_of_the_first_change": "nothing",
+  "mass": {
+    "ara_reaches_the_one_term_state_here": false,
+    "ara_reaches_the_one_term_state_under_the_ninth_criterion": true,
+    "mass_condition_from_ara_to_the_one_term_state": false,
+    "mass_of_ara": 1,
+    "mass_of_the_one_term_state": 0,
+    "the_one_term_state_reaches_ara": true
+  },
+  "other_relation": {
+    "after_adding_asa_directly": "terms a; asserted asa; recorded a\u2113a",
+    "after_admitting_into_s": "terms a; asserted asa; recorded nothing",
+    "differs_from_the_direct_addition": true,
+    "differs_from_the_start": true,
+    "its_ninth_state_is_asa": true,
+    "potential_of_asa": 2,
+    "potential_of_the_direct_addition": 4
+  },
+  "outcome_of_the_first_change": "terms a; asserted nothing; recorded nothing",
+  "potential": 0,
+  "reaches_itself_in_two_changes": false,
+  "same_relation": {
+    "after_admitting_into_r": "terms a; asserted ara; recorded nothing",
+    "after_removing_ara": "terms a; asserted nothing; recorded a\u2113a",
+    "is_the_identity": true,
+    "leftover_recorded": 1,
+    "potential_after_removing": 3,
+    "potential_of_the_start": 2,
+    "start": "terms a; asserted ara; recorded nothing"
+  },
+  "set_reading": {
+    "after_removing_and_admitting_under_the_count_reading": "terms a; asserted ara; recorded a\u2113a",
+    "after_removing_and_admitting_under_the_set_reading": "terms a; asserted ara; recorded nothing",
+    "is_the_identity_under_the_count_reading": true,
+    "is_the_identity_under_the_set_reading": false,
+    "start": "terms a; asserted ara; recorded a\u2113a"
+  },
+  "state": "no terms; asserted nothing; recorded nothing",
+  "the_first_change_can_only_add_a_term": true,
+  "the_fourteenth_witness": {
+    "both_removals_are_changes": true,
+    "leftover_of_removing_arb": "0\u21131",
+    "leftover_of_removing_arb_admitted_into_s": "terms a b; asserted asb(2); recorded nothing",
+    "leftover_of_removing_asb": "0\u21131",
+    "state": "terms a b; asserted arb asb; recorded nothing",
+    "the_two_leftovers_agree": true
+  }
+}
