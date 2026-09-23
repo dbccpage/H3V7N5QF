@@ -12,4 +12,16 @@
    is greater than 1. A refusal changes nothing. Remove-then-identify and
    identify-then-remove end at the same state.
 
-cycle: landed the 17–21 seeds on main (PR #38); wrote the plan, the reading, and the two explorations with their checks; next Lean (`LoopFree`, the embedding of the base `Step`, the A-perform witness) and the paper.
+4. `lean4/Seventeenth/`: `LoopFree` is the base `Legal` as a predicate;
+   `Step17` drops the ban's side-conditions; M1 and M2 agree on a loop-free
+   state and differ on a state that already asserts `ara`; an unobstructed
+   `Step17` on a loop-free state is a base `Step` and conversely; the base
+   cost is the fewest changes along those steps; identifying `a` with `b` in
+   what is given is one `Step17` whose outcome asserts `ara` and whose base
+   cost is not that length; remove-then-identify and identify-then-remove
+   end at the same state, and the second path's intermediate asserts `ara`;
+   `rename` for an injective rewriting. Not yet built: `lake` checked the
+   pinned packages out again and is rebuilding them, so the exit code is not
+   in hand.
+
+cycle: wrote the Lean library (`Step17`, the embedding, the A-perform witness, answers, rename) and the lakefile target; next get `lake build` green, then the paper, the ledger, and `evidence/seventeenth/`.
