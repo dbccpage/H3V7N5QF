@@ -63,7 +63,9 @@ cycle: wrote the axiom report and closed O1; the seventeenth derivation's gates 
      `ReachAll`). They are added to `Seventeenth/Axioms.lean` and the
      report is regenerated. `tests/test_seventeenth_leanreport.py` now
      fails when a theorem of `lean4/Seventeenth/` cited in the ledger or
-     the paper has no line in `lean_axioms.txt`.
+     the paper has no line in `lean_axioms.txt`. Proved by injection:
+     with the `identify_givenA_reach` line removed from the report, the
+     test failed naming that theorem; with the bytes restored, it passed.
    - The frontier listed only attempts that leave the term bound, but the
      round bound also cut the closures: every A-perform run and the
      names-kept A-replace runs still found new results in round 6. The

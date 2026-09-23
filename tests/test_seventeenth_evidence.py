@@ -48,7 +48,9 @@ def test_passes_rejects_a_disagreement() -> None:
     names = list(disagreements(blank))
     assert len(names) == 12
     for name in names:
-        assert not passes(dataclasses.replace(blank, **{name: ["x"]})), name
+        broken = dataclasses.replace(blank)
+        setattr(broken, name, ["x"])
+        assert not passes(broken), name
     failed = LoopCheck(
         ["x"],
         [],
