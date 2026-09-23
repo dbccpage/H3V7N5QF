@@ -70,7 +70,7 @@ theorem mem_rename_A (hπ : Function.Injective π) {s : St} {x y : ℕ} :
   · intro h
     exact Finset.mem_image.2 ⟨(x, y), h, rfl⟩
 
-theorem Step17.rename {s t : St} (h : Step17 s t) (hπ : Function.Injective π) :
+def Step17.rename {s t : St} (h : Step17 s t) (hπ : Function.Injective π) :
     Step17 (Seed.Seventeenth.rename π s) (Seed.Seventeenth.rename π t) := by
   cases h with
   | addTerm t ht =>
@@ -92,31 +92,32 @@ theorem Reach17.rename (hπ : Function.Injective π) {s t : St} {n : ℕ} (h : R
   induction h with
   | refl => exact Reach17.refl _
   | step r st hu ih =>
+    rename_i mid _ _
     cases st with
-    | addTerm s0 term ht =>
+    | addTerm term ht =>
       rw [rename_addTerm]
       exact Reach17.step ih (Step17.addTerm _ _ ((mem_rename_T hπ).not.2 ht))
         (by simp [Step17.unobstructed, Step17.obstructedM1])
-    | addAssertion s0 x y hx hy hnew =>
+    | addAssertion x y hx hy hnew =>
       have hxy : x ≠ y := by
-        intro hxy
-        exact hu (by simpa [Step17.obstructedM1] using hxy)
+        intro heq
+        exact hu (by simpa [Step17.obstructedM1] using heq)
       rw [rename_addAssertion]
       exact Reach17.step ih
         (Step17.addAssertion _ _ _ ((mem_rename_T hπ).2 hx) ((mem_rename_T hπ).2 hy)
           ((mem_rename_A hπ).not.2 hnew))
         (by simpa [Step17.unobstructed, Step17.obstructedM1] using hπ.ne hxy)
-    | remove s0 p hp =>
+    | remove p hp =>
       rw [rename_remove hπ]
       exact Reach17.step ih
         (Step17.remove _ _ ((mem_rename_A (x := p.1) (y := p.2) hπ).2 hp))
         (by simp [Step17.unobstructed, Step17.obstructedM1])
-    | identify s0 u v hu hv huv =>
-      have hnot : ¬ ((u, v) ∈ s0.A ∨ (v, u) ∈ s0.A) := by
-        simpa [Step17.obstructedM1] using hu
+    | identify u v hu' hv huv =>
+      have hnot : ¬ ((u, v) ∈ mid.A ∨ (v, u) ∈ mid.A) := by
+        simpa [Step17.unobstructed, Step17.obstructedM1] using hu
       rw [rename_identify hπ]
       refine Reach17.step ih
-        (Step17.identify _ _ _ ((mem_rename_T hπ).2 hu) ((mem_rename_T hπ).2 hv) (hπ.ne huv)) ?_
+        (Step17.identify _ _ _ ((mem_rename_T hπ).2 hu') ((mem_rename_T hπ).2 hv) (hπ.ne huv)) ?_
       intro hmem
       apply hnot
       rcases hmem with hmem | hmem

@@ -18,8 +18,11 @@ open Seed St
 /-- One change. Adding `xrx`, and identifying two related terms, are included.
 The new term is new, the added assertion is new and between terms that are
 there, the removed assertion is asserted, and the identified terms are two
-terms that are there. -/
-inductive Step17 : St → St → Prop
+terms that are there.
+
+A `Type`, not a `Prop`: the obstruction predicate distinguishes constructors,
+and a `Prop` with several constructors cannot be eliminated into `Prop`. -/
+inductive Step17 : St → St → Type
   | addTerm (s : St) (t : ℕ) (ht : t ∉ s.T) : Step17 s (s.addTerm t)
   | addAssertion (s : St) (x y : ℕ) (hx : x ∈ s.T) (hy : y ∈ s.T)
       (hnew : (x, y) ∉ s.A) : Step17 s (s.addAssertion x y)
@@ -28,12 +31,14 @@ inductive Step17 : St → St → Prop
       Step17 s (s.identify u v)
 
 /-- M1: the assertions that would become some `xrx`. An existing `xrx` does
-not obstruct an unrelated change. -/
-def Step17.obstructedM1 {s s' : St} : Step17 s s' → Prop
-  | addTerm _ _ _ => False
-  | addAssertion _ x y _ _ _ => x = y
-  | remove _ _ _ => False
-  | identify s u v _ _ _ => (u, v) ∈ s.A ∨ (v, u) ∈ s.A
+not obstruct an unrelated change. The target state is a pattern, not a fixed
+index: `Step17` is a proposition, and a match on a fixed index does not
+eliminate into `Prop`. -/
+def Step17.obstructedM1 {s : St} : {s' : St} → Step17 s s' → Prop
+  | _, addTerm _ _ _ => False
+  | _, addAssertion _ x y _ _ _ => x = y
+  | _, remove _ _ _ => False
+  | _, identify s u v _ _ _ => (u, v) ∈ s.A ∨ (v, u) ∈ s.A
 
 /-- M2: the outcome asserts some `xrx`. -/
 def Step17.obstructedM2 {s s' : St} (_h : Step17 s s') : Prop := HasXrx s'
@@ -55,13 +60,15 @@ theorem m1_iff_m2_of_loopFree {s s' : St} (h : Step17 s s') (hs : LoopFree s) :
   | addTerm t ht =>
     constructor
     · intro hfalse
-      exact hfalse.elim
+      cases hfalse
     · intro hx
       exact (hasXrx_iff_not_legal _).1 hx (addTerm_legal hs t)
   | addAssertion x y hx hy hnew =>
     constructor
-    · rintro rfl
-      exact adding_xrx_obstructed s x
+    · intro hxy
+      refine ⟨x, ?_⟩
+      simp only [St.addAssertion, Finset.mem_insert]
+      exact Or.inl (Prod.ext rfl hxy)
     · intro hx
       by_contra hxy
       exact (hasXrx_iff_not_legal _).1 hx ((addAssertion_legal_iff hs x y).2 hxy)
@@ -78,14 +85,15 @@ theorem m1_iff_m2_of_loopFree {s s' : St} (h : Step17 s s') (hs : LoopFree s) :
       · exact ((identify_legal_iff hs u v).1 hlegal).1 huvA
       · exact ((identify_legal_iff hs u v).1 hlegal).2 hvuA
     · intro hnot
-      by_contra hcon
-      exact hnot ((identify_legal_iff hs u v).2 (by tauto))
+      by_contra hneither
+      exact hnot ((identify_legal_iff hs u v).2
+        ⟨fun huvA => hneither (Or.inl huvA), fun hvuA => hneither (Or.inr hvuA)⟩)
 
 theorem Step17.loopFree_out {s s' : St} (h : Step17 s s') (hs : LoopFree s)
     (hu : h.unobstructed) : LoopFree s' := by
   have hm2 : ¬ h.obstructedM2 := (m1_iff_m2_of_loopFree h hs).not.mp hu
   rw [Step17.obstructedM2, hasXrx_iff_not_loopFree] at hm2
-  exact Classical.not_not hm2
+  exact Classical.not_not.mp hm2
 
 theorem Step17.no_xrx_of_unobstructed {s s' : St} (h : Step17 s s') (hs : LoopFree s)
     (hu : h.unobstructed) : ¬ HasXrx s' :=
@@ -127,13 +135,18 @@ theorem Step17.names_stay_merged {s s' : St} (h : Step17 s s') (hab : s.a = s.b)
 /-- Identifying `1` with `2` in `loopyWitness` is not obstructed under M1. -/
 theorem loopy_m1_allows :
     ¬ (Step17.identify loopyWitness 1 2
-        (by simp [loopyWitness]) (by simp [loopyWitness]) (by decide)).obstructedM1 := by
-  simp [Step17.obstructedM1, loopyWitness]
+        (by unfold loopyWitness; decide)
+        (by unfold loopyWitness; decide)
+        (by decide)).obstructedM1 := by
+  intro h
+  simp [Step17.obstructedM1, loopyWitness] at h
 
 /-- The same identification is obstructed under M2: `0r0` is still asserted. -/
 theorem loopy_m2_obstructs :
     (Step17.identify loopyWitness 1 2
-        (by simp [loopyWitness]) (by simp [loopyWitness]) (by decide)).obstructedM2 := by
+        (by unfold loopyWitness; decide)
+        (by unfold loopyWitness; decide)
+        (by decide)).obstructedM2 := by
   refine ⟨0, ?_⟩
   refine mem_identify.2 ⟨(0, 0), by simp [loopyWitness], ?_⟩
   simp [merge]

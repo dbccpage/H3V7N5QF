@@ -21,10 +21,10 @@ theorem identify_givenA_eq : givenA.identify 0 1 = oneLoop := by
 theorem identify_givenB_eq : givenB.identify 0 1 = oneLoop := by
   decide
 
-theorem identify_givenA_step : Step17 givenA (givenA.identify 0 1) :=
+def identify_givenA_step : Step17 givenA (givenA.identify 0 1) :=
   Step17.identify givenA 0 1 (by simp [givenA]) (by simp [givenA]) (by decide)
 
-theorem identify_givenB_step : Step17 givenB (givenB.identify 0 1) :=
+def identify_givenB_step : Step17 givenB (givenB.identify 0 1) :=
   Step17.identify givenB 0 1 (by simp [givenB]) (by simp [givenB]) (by decide)
 
 theorem identify_givenA_reach : ReachAll givenA (givenA.identify 0 1) 1 :=
@@ -83,7 +83,7 @@ theorem arb_not_gone : (givenA.identify 0 1).a = (givenA.identify 0 1).b ∧
   rw [identify_givenA_eq]
   exact ⟨oneLoop_names, by simp [oneLoop]⟩
 
-theorem add_ara_step : Step17 givenA (givenA.addAssertion 0 0) :=
+def add_ara_step : Step17 givenA (givenA.addAssertion 0 0) :=
   Step17.addAssertion givenA 0 0 (by simp [givenA]) (by simp [givenA]) (by simp [givenA])
 
 theorem add_ara_reach : ReachAll givenA (givenA.addAssertion 0 0) 1 :=

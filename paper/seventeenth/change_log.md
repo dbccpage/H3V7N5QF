@@ -42,3 +42,7 @@ cycle: the same lake process was still compiling Mathlib (oleans 1905 of 8311 at
 cycle: the same lake process was still compiling Mathlib (oleans 2229 of 8311 at 06:16, newest `RingTheory/MatrixPolynomialAlgebra.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
 
 cycle: the same lake process was still compiling Mathlib (oleans 2549 of 8311 at 06:36, newest `FieldTheory/IntermediateField/Adjoin/Algebra.olean`; did not start a second build); next read that process's exit and, if it is 0, write `evidence/seventeenth/lean_axioms.txt` and close O1.
+
+6. `lake build Seventeenth` exited 1. The failure was in `Seventeenth/Step.lean`, not in Mathlib: `obstructedM1` matched on `Step17` with the target state fixed, and that match does not eliminate into `Prop`. The target state is now a pattern. `Classical.not_not` is an `Iff`, so `loopFree_out` uses `.mp`. `not_not` and `tauto` are gone from the identify case. `lake +leanprover/lean4:v4.33.1 -d lean4 build Seventeenth` then exited 0.
+
+cycle: fixed the Seventeenth Lean build (EXIT=0); next write `evidence/seventeenth/lean_axioms.txt` and close O1.

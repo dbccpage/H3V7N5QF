@@ -13,23 +13,29 @@ namespace Seed.Seventeenth
 
 open Seed St
 
-theorem Step.toStep17 {s s' : St} : Step s s' → Step17 s s'
-  | .addTerm s t ht => .addTerm s t ht
-  | .addAssertion s x y hx hy _ hnew => .addAssertion s x y hx hy hnew
-  | .remove s p hp => .remove s p hp
-  | .identify s u v hu hv huv _ _ => .identify s u v hu hv huv
+theorem Step.toStep17 {s s' : St} (h : Step s s') : Nonempty (Step17 s s') := by
+  cases h with
+  | addTerm t ht => exact ⟨Step17.addTerm s t ht⟩
+  | addAssertion x y hx hy _ hnew => exact ⟨Step17.addAssertion s x y hx hy hnew⟩
+  | remove p hp => exact ⟨Step17.remove s p hp⟩
+  | identify u v hu hv huv _ _ => exact ⟨Step17.identify s u v hu hv huv⟩
 
-theorem Step.unobstructed17 {s s' : St} (h : Step s s') : h.toStep17.unobstructed := by
+theorem Step.unobstructed17 {s s' : St} (h : Step s s') :
+    ∃ st : Step17 s s', st.unobstructed := by
   cases h with
   | addTerm t ht =>
-    simp [Step.toStep17, Step17.unobstructed, Step17.obstructedM1]
+    refine ⟨Step17.addTerm s t ht, ?_⟩
+    simp [Step17.unobstructed, Step17.obstructedM1]
   | addAssertion x y hx hy hxy hnew =>
-    simpa [Step.toStep17, Step17.unobstructed, Step17.obstructedM1] using hxy
+    refine ⟨Step17.addAssertion s x y hx hy hnew, ?_⟩
+    simpa [Step17.unobstructed, Step17.obstructedM1] using hxy
   | remove p hp =>
-    simp [Step.toStep17, Step17.unobstructed, Step17.obstructedM1]
+    refine ⟨Step17.remove s p hp, ?_⟩
+    simp [Step17.unobstructed, Step17.obstructedM1]
   | identify u v hu hv huv h1 h2 =>
+    refine ⟨Step17.identify s u v hu hv huv, ?_⟩
     intro hmem
-    simp only [Step.toStep17, Step17.obstructedM1] at hmem
+    simp only [Step17.obstructedM1] at hmem
     rcases hmem with hmem | hmem
     · exact h1 hmem
     · exact h2 hmem
@@ -40,20 +46,23 @@ theorem Step17.toStep {s s' : St} (h : Step17 s s') (hs : LoopFree s) (hu : h.un
   | addTerm t ht => exact Step.addTerm s t ht
   | addAssertion x y hx hy hnew =>
     have hxy : x ≠ y := by
-      intro hxy
-      exact hu (by simpa [Step17.obstructedM1] using hxy)
+      intro heq
+      exact hu (by simpa [Step17.obstructedM1] using heq)
     exact Step.addAssertion s x y hx hy hxy hnew
   | remove p hp => exact Step.remove s p hp
   | identify u v hu' hv huv =>
     have hnot : ¬ ((u, v) ∈ s.A ∨ (v, u) ∈ s.A) := by
-      simpa [Step17.obstructedM1] using hu
-    exact Step.identify s u v hu' hv huv (by tauto) (by tauto)
+      simpa [Step17.unobstructed, Step17.obstructedM1] using hu
+    exact Step.identify s u v hu' hv huv
+      (fun h => hnot (Or.inl h)) (fun h => hnot (Or.inr h))
 
 theorem Reach.toReach17 {s t : St} {n : ℕ} (h : Reach s t n) (hs : LoopFree s) :
     Reach17 s t n := by
   induction h with
   | refl => exact Reach17.refl _
-  | step r st ih => exact Reach17.step ih st.toStep17 st.unobstructed17
+  | step r st ih =>
+    obtain ⟨st17, hu⟩ := Step.unobstructed17 st
+    exact Reach17.step ih st17 hu
 
 theorem Reach17.toReach {s t : St} {n : ℕ} (h : Reach17 s t n) (hs : LoopFree s) :
     Reach s t n := by
@@ -79,7 +88,7 @@ theorem fewest_changes17_A {g : St} (hg : g.Legal) (hgw : g.WF) (ha : g.a = 0)
     (∃ n, Reach17 givenA g n ∧ n + 3 = costA g) ∧
       ∀ n, Reach17 givenA g n → costA g ≤ n + 3 := by
   obtain ⟨⟨n, hR, hn⟩, hlow⟩ := fewest_changes_A hg hgw ha hb
-  refine ⟨⟨n, hR.toReach17 givenA_legal, hn⟩, ?_⟩
+  refine ⟨⟨n, Reach.toReach17 hR givenA_legal, hn⟩, ?_⟩
   intro m hm
   exact hlow m (hm.toReach givenA_legal)
 
@@ -88,7 +97,7 @@ theorem fewest_changes17_B {g : St} (hg : g.Legal) (hgw : g.WF) (ha : g.a = 0)
     (∃ n, Reach17 givenB g n ∧ n + 4 = costB g) ∧
       ∀ n, Reach17 givenB g n → costB g ≤ n + 4 := by
   obtain ⟨⟨n, hR, hn⟩, hlow⟩ := fewest_changes_B hg hgw ha hb
-  refine ⟨⟨n, hR.toReach17 givenB_legal, hn⟩, ?_⟩
+  refine ⟨⟨n, Reach.toReach17 hR givenB_legal, hn⟩, ?_⟩
   intro m hm
   exact hlow m (hm.toReach givenB_legal)
 
