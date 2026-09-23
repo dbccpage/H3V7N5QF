@@ -401,9 +401,21 @@ reading of the seed.
     `paper/sixteenth/change_log.md`, as are the sixteenth derivation's own
     changes.
 
+## Changes made during the seventeenth derivation (`prompt/seventeenth/`)
+
+35. **`lean4/lakefile.toml`: a seventeenth library target `Seventeenth` and
+    `defaultTargets = [..., "Sixteenth", "Seventeenth"]`.** Made by the
+    seventeenth derivation. Not a defect correction: it is the build
+    configuration of the shared Lake package, and the only earlier-derivation
+    file this derivation touched; recorded here as
+    `prompt/seventeenth/prompt.md` requires for any change to an earlier
+    derivation's file. Nothing in `lean4/H3V7N5QF/` … `lean4/Sixteenth/`,
+    `code/xry/` … `code/sixteenth/`, the earlier test sets, the earlier papers,
+    ledgers, or `evidence/` through `evidence/sixteenth/` was modified.
+
 ## Changes made during the nineteenth, twentieth, and twenty-first derivations
 
-35. **`lean4/lakefile.toml`: library targets `Nineteenth`, `Twentieth`, and
+36. **`lean4/lakefile.toml`: library targets `Nineteenth`, `Twentieth`, and
     `Twentyfirst`, and the same three names on `defaultTargets`.** Made by
     this run. Not a defect correction: it is the build configuration of the
     shared Lake package. Each library imports `H3V7N5QF` only. Nothing in

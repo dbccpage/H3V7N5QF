@@ -393,6 +393,76 @@ def _twentyfirst() -> Panel:
         "stopped_at_the_start": lambda: _one("twentyfirst.evidence.has_unobstructed", lambda _state: False),
     }
     return Panel("twentyfirst", RefusalCheck, signals, cases)
+def _eighteenth() -> Panel:
+    from eighteenth.evidence import WritingCheck, audit
+    from xry.state import Sameness, given, rewrite
+
+    def signals() -> frozenset[str]:
+        start = given(False, Sameness.ANCHORED)
+        return _nonempty_lists(audit([start], start, rewrite(start, (1, 0))))
+
+    cases: dict[str, Mutation] = {
+        "writings_called_the_same": lambda: _one(
+            "eighteenth.evidence.same_written", lambda _left, _right: True
+        ),
+        "orbit_formula_fails": lambda: _one(
+            "eighteenth.evidence.orbit_splits_factorial", lambda _state: False
+        ),
+    }
+    return Panel("eighteenth", WritingCheck, signals, cases)
+def _seventeenth() -> Panel:
+    from xry.changes import Answer, AnswerKind
+    from xry.state import Sameness, State
+
+    from seventeenth.evidence import LoopCheck, check_bounds
+    from seventeenth.explore import Closure, closure_unobstructed as real_unobstructed
+    from seventeenth.explore import with_loop
+    from seventeenth.loop import obstructed_m1
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(check_bounds(2, 3))
+
+    def only_start(start: State, bound: int, rounds: int, keep_log: bool = False) -> Closure:
+        del bound, rounds, keep_log
+        return Closure(depth={start: 0}, frontier=())
+
+    def extra(start: State, bound: int, rounds: int, keep_log: bool = False) -> Closure:
+        got = real_unobstructed(start, bound, rounds, keep_log)
+        for bra in (False, True):
+            for sameness in Sameness:
+                got.depth[with_loop(bra, sameness)] = 1
+        return got
+
+    def bad_remove(state: State, change: object) -> tuple[Answer, ...]:
+        del change
+        return (Answer(AnswerKind.REMOVE_OBSTRUCTION, (), True, state),)
+
+    def bad_refuse(state: State, change: object) -> tuple[Answer, ...]:
+        del change
+        return ()
+
+    cases: dict[str, Mutation] = {
+        "replace_has_xrx": lambda: _one("seventeenth.evidence.has_xrx", lambda _state: True),
+        "replace_not_base": lambda: _one(
+            "seventeenth.evidence.closure_unobstructed",
+            lambda start, bound, rounds, keep_log=False: Closure(depth={}, frontier=()),
+        ),
+        "replace_cost_mismatch": lambda: _one("seventeenth.evidence.cost", lambda _state, _bra: -1),
+        "replace_not_formula": lambda: _one(
+            "seventeenth.evidence.by_cost", lambda _bound, _rounds, _bra, _sameness: set()
+        ),
+        "perform_misses_witness": lambda: _one("seventeenth.evidence.closure_perform", only_start),
+        "perform_cost_not_above": lambda: _one("seventeenth.evidence.cost", lambda _state, _bra: 0),
+        "m_disagree_loopfree": lambda: _one("seventeenth.evidence.outcome_has_xrx", lambda _state, _change: True),
+        "m_agree_on_loop": lambda: _one(
+            "seventeenth.evidence.outcome_has_xrx", lambda state, change: obstructed_m1(state, change)
+        ),
+        "remove_first_differs": lambda: _one("seventeenth.evidence.answers", bad_remove),
+        "refusal_changes_something": lambda: _one("seventeenth.evidence.answers", bad_refuse),
+        "loop_beginning_in_replace": lambda: _one("seventeenth.evidence.closure_unobstructed", extra),
+        "loop_beginning_not_in_perform": lambda: _one("seventeenth.evidence.closure_perform", only_start),
+    }
+    return Panel("seventeenth", LoopCheck, signals, cases)
 
 
 def panels() -> list[Panel]:
@@ -404,11 +474,12 @@ def panels() -> list[Panel]:
         _fourteenth(),
         _fifteenth(),
         _sixteenth(),
+        _seventeenth(),
+        _eighteenth(),
         _nineteenth(),
         _twentieth(),
         _twentyfirst(),
     ]
-
 
 def main(argv: list[str] | None = None) -> int:
     if hasattr(sys.stdout, "reconfigure"):
