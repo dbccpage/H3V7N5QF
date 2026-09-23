@@ -15,3 +15,10 @@
 4. **The package, the library, the evidence, and this paper.** P1 is the
    exploration. P2 is computed beside it. The one-term state is unreachable,
    in Lean and in the census.
+
+5. **Review repair.** O2 ("a return from 4 terms inside the bound") was left
+   open, and its re-check said the base leaves it open. The paper's own
+   `PReach.card_ge` closes it: no change of this seed lowers the number of
+   terms, so nothing that leaves the bound comes back. It is now N13
+   (derived). The base theorems the ledger cites (`addTerm_legal`,
+   `givenA_to_oneTerm`) are printed in the axiom report.

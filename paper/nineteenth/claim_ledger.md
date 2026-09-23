@@ -20,4 +20,4 @@ Lean names are in namespace `Seed.Nineteenth`. Axiom report:
 | N11 | Global identification is recovered by iterating partial ones | refuted | N8, N9 | std | a run whose least term count is 1 | — |
 | N12 | Adding a term is never obstructed, so there is no last result | derived | base `addTerm_legal`; the frontier counts in N9 | std | an added term that asserts `xrx` | survives: the changed sentence is not about adding a term |
 | O1 | A closed form for 68 and 19 | open | the rounds in N9 | — | a proved formula | — |
-| O2 | A return from 4 terms inside the bound | open | the frontier counts in N9 | — | a shorter path that leaves and returns | the base leaves the same question open |
+| N13 | No sequence that adds a fourth term returns inside the bound, so the closure inside 3 terms is every result with at most 3 terms | derived | `PStep.card_ge`, `PReach.card_ge` (over a superset of the seed's changes) | std | a change of this seed that lowers the number of terms | differs from the base, where an identification lowers it |
