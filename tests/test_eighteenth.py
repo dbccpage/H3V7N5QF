@@ -61,16 +61,37 @@ def test_written_exploration_keeps_more_than_the_base() -> None:
     assert len(free.depth) == 69
 
 
-def test_audit_records_a_collapse_and_a_bad_count(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_audit_records_a_collapse_a_bad_count_and_a_short_round(monkeypatch: pytest.MonkeyPatch) -> None:
     start = given(False, Sameness.ANCHORED)
     other = rewrite(start, (1, 0))
-    clean = audit([start], start, other)
-    assert clean.writings_called_the_same == [] and clean.orbit_formula_fails == []
+    depth = explore_written(start, 2, 4).depth
+    clean = audit(depth, False, start, other)
+    assert clean == evidence.WritingCheck([], [], [])
     monkeypatch.setattr(evidence, "same_written", lambda _left, _right: True)
-    assert audit([start], start, other).writings_called_the_same
+    assert f"{start.key()} = {other.key()}" in audit(depth, False, start, other).writings_called_the_same
+    monkeypatch.undo()
+    # The base's sameness would call the two writings one result; the key does not.
+    monkeypatch.setattr(evidence, "same_written", lambda left, right: canonical(left) == canonical(right))
+    assert audit(depth, False, start, other).writings_called_the_same
     monkeypatch.undo()
     monkeypatch.setattr(evidence, "orbit_splits_factorial", lambda _state: False)
-    assert start.key() in audit([start], start, other).orbit_formula_fails
+    assert start.key() in audit(depth, False, start, other).orbit_formula_fails
+    monkeypatch.undo()
+    monkeypatch.setattr(evidence, "cost", lambda _state, _bra: 99)
+    assert start.key() in audit(depth, False, start, other).rounds_below_the_base_cost
+
+
+def test_base_count_is_the_same_for_every_writing() -> None:
+    start = given(True, Sameness.FREE)
+    for state in explore_written(start, 3, 12).depth:
+        counts = {evidence.base_count(writing, True) for writing in orbit(state)}
+        assert counts == {evidence.base_count(state, True)}
+
+
+def test_letter_supply_grows_with_every_letter() -> None:
+    assert evidence.letter_supply_grows(3, 1)
+    assert evidence.letter_supply_grows(1, 1, 1)
+    assert not evidence.letter_supply_grows(0, 1, 1)
 
 
 def test_explore_rejects_a_bad_start_and_an_illegal_outcome(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -94,7 +115,26 @@ def test_write_and_check(tmp_path: Path) -> None:
     assert summary["given_orbit"] == 2
     assert summary["anchored_closures_equal_for_both_bra"] is True
     assert summary["free_closures_equal_for_both_bra"] is True
+    runs = summary["runs"]
+    assert isinstance(runs, list)
+    for run in runs:
+        assert run["writings_called_the_same"] == run["orbit_formula_fails"] == []
+        assert run["rounds_below_the_base_cost"] == []
+        assert run["sample_letter_supply_grows"] is True
+    excess = [(run["rounds_above_the_base_cost"], run["greatest_excess_over_the_base_cost"]) for run in runs]
+    assert excess == [(0, 0), (32, 2), (0, 0), (29, 4)]
     from eighteenth.__main__ import main
 
     assert main(["--out", str(tmp_path), "--check", "--bound", "3", "--rounds", "12"]) == 0
     assert main(["--out", str(tmp_path / "missing"), "--check"]) == 1
+
+
+def test_main_writes_and_reports_a_difference(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    from eighteenth.__main__ import main
+
+    out = tmp_path / "eighteenth"
+    assert main(["--out", str(out), "--bound", "2", "--rounds", "4"]) == 0
+    assert f"wrote {out}" in capsys.readouterr().out
+    assert main(["--out", str(out), "--check", "--bound", "2", "--rounds", "4"]) == 0
+    (out / "summary.json").write_text("{}\n", encoding="utf-8")
+    assert main(["--out", str(out), "--check", "--bound", "2", "--rounds", "4"]) == 1

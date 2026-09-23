@@ -16,3 +16,7 @@ open Seed.Nineteenth
 #print axioms PStep.card_ge
 #print axioms PReach.card_ge
 #print axioms oneTerm_unreachable
+
+-- Base theorems this paper cites in its re-checks.
+#print axioms Seed.addTerm_legal
+#print axioms Seed.givenA_to_oneTerm

@@ -67,7 +67,12 @@ is reached.
 ## 4. The other reading
 
 O2 expands the reached result with the fewest additions, and stops after as
-many expansions as O1 has results of round at most 2. Names kept:
+many expansions as O1 has results of round at most 2. That cap is not the
+budget O1 itself spends: O1 reaches its round-2 results by expanding only the
+results of rounds 0 and 1, which is 4 expansions from either beginning
+(`o1_expansions_to_round_2`, `o1_at_that_cap_is_round_2`). Under the plan's
+cap, then, O2 has spent 12 or 11 expansions against O1's 4, and most of what
+"enters" is the extra budget, not the order. Names kept, plan's cap:
 
 - From `arb` only, 12 expansions. Nothing that O1 has reached by round 2 is
   missing. 17 results have been reached that O1 has not reached by round 2.
@@ -75,6 +80,11 @@ many expansions as O1 has results of round at most 2. Names kept:
   results at round 2 of O1: `3:01:0-1.0-2.1-0`, `3:10:0-1.0-2.1-0`,
   `3:01:0-1.1-0.2-0`, `3:10:0-1.1-0.2-0`. 18 results enter, among them the
   one-term state, which O1 reaches only at round 3.
+
+With the budget matched — O2 given the 4 expansions O1 uses — the order
+alone moves the frontier: from `arb` only, 5 of O1's round-2 results are not
+yet reached and 4 others are (`matched_leave`, `matched_enter`); from `bra` as
+well, 5 and 3, the one-term state among the latter.
 
 Under a cap on how many results are expanded, before the closure has
 finished, the frontier moves. Once the term bound is exhausted, O1 and the
@@ -107,12 +117,15 @@ frontiers differ.
 
 ## 7. Open
 
-- **O1.** O2 was run only up to the round-2 cap, names kept. Its full
-  closure is the same set as O1, because the underlying changes are the
-  base's, but that full run is not a second census.
-- **O2.** Whether a sequence that leaves the term bound and returns can be
-  shorter than the recorded round. The round is the shortest sequence that
-  stays inside the bound. The changed sentence does not touch that question.
+Nothing is left open here. O2 run until nothing
+is pending reaches the same set as O1 run until nothing is pending, for
+either beginning and either sameness (`o2_closure_differs` is empty). A
+sequence that leaves the term bound and returns is not shorter than the
+recorded round: the round equals the base's round (`differs_from_base` is
+empty), and the base proves that round is the fewest changes with no bound
+on terms (base D12, D8; Lean `fewest_changes_lower_A`, `_B` bound every
+sequence). The changed sentence is about order and does not touch the
+changes those proofs count.
 
 ## 8. Nearest known results, and how the findings differ
 

@@ -100,9 +100,14 @@ no change was invented to fill 100 rounds.
 ## 6. Open
 
 - **O1.** A closed form for the 68 and the 19. The rounds are computed.
-- **O2.** Whether a sequence that adds a fourth term and returns inside the
-  bound can reach a result this exploration did not. The frontier lists the
-  attempts that leave.
+
+The question whether a sequence that adds a fourth term can return inside
+the bound is closed, not open: no change of this seed lowers the number of
+terms (`PStep.card_ge`, `PReach.card_ge`; `PStep` admits more steps than the
+seed does — a rewrite of any pair, an assertion anywhere — so the bound holds
+for every sequence of the seed's changes). An attempt that leaves the bound
+never returns, so the closure inside 3 terms is every result with at most 3
+terms, and the frontier is exact.
 
 ## 7. Nearest known results, and how the findings differ
 

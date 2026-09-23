@@ -1,7 +1,8 @@
 """Evidence that refusal reaches the base closure.
 
 The disagreement lists are empty on the real exploration. Each has a branch
-that records a failure, driven by the tests.
+that records a failure, driven by the tests and by the twenty-first panel of
+`ci/check_mutation_bite.py`.
 """
 
 from __future__ import annotations
@@ -15,7 +16,7 @@ from xry.evidence import write_manifest
 from xry.explore import explore
 from xry.state import Sameness, State, canonical, given
 
-from twentyfirst.refusal import refusal_result
+from twentyfirst.refusal import explore_refusing
 
 
 @dataclass
@@ -25,11 +26,6 @@ class RefusalCheck:
     outside_the_base: list[str]
     answer_buys_a_result: list[str]
     stopped_at_the_start: list[str]
-
-
-def refusal_changes(answer_result: State, state: State) -> bool:
-    """A refusal that does not leave the state as it was."""
-    return answer_result != state
 
 
 def answer_is_new(got: State, depth: dict[State, int]) -> bool:
@@ -43,21 +39,29 @@ def has_unobstructed(state: State) -> bool:
 
 
 def audit(bra: bool, sameness: Sameness, bound: int = 3, rounds: int = 12) -> RefusalCheck:
-    """Compare refusal with the base exploration at the same bound."""
+    """Compare the refusing exploration with the base exploration at the same bound.
+
+    The refusing exploration performs every change and refuses an outcome that
+    asserts some `xrx`; the base spreads along the changes its obstruction test
+    lets through. A result reached by one and not the other, or at another
+    round, is recorded. Then every base answer other than refusal is checked
+    against the base closure.
+    """
     start = given(bra, sameness)
     base = explore(start, bound, rounds)
-    outside: list[str] = []
+    refusing = explore_refusing(start, bound, rounds).depth
+    outside = sorted(
+        state.key()
+        for state in base.depth.keys() | refusing.keys()
+        if base.depth.get(state) != refusing.get(state)
+    )
     bought: list[str] = []
     for state in base.depth:
         for change in changes(state):
             if not obstruction(state, change):
                 continue
             for answer in answers(state, change):
-                if answer.kind is AnswerKind.REFUSE:
-                    if refusal_changes(refusal_result(state), state) or answer.result != refusal_result(state):
-                        outside.append(state.key())
-                    continue
-                if answer.result.n > bound:
+                if answer.kind is AnswerKind.REFUSE or answer.result.n > bound:
                     continue
                 if answer_is_new(canonical(answer.result), base.depth):
                     bought.append(f"{state.key()} / {answer.kind.value}")
@@ -70,10 +74,13 @@ def measure(bra: bool, sameness: Sameness, bound: int, rounds: int) -> dict[str,
     start = given(bra, sameness)
     base = explore(start, bound, rounds)
     check = audit(bra, sameness, bound, rounds)
+    refusing = explore_refusing(start, bound, rounds)
     looked = 0
+    obstructed = 0
     for state in base.depth:
         for change in changes(state):
             if obstruction(state, change):
+                obstructed += 1
                 looked += len(answers(state, change))
     return {
         "bra": bra,
@@ -81,6 +88,9 @@ def measure(bra: bool, sameness: Sameness, bound: int, rounds: int) -> dict[str,
         "results": len(base.depth),
         "last_new_round": base.last_new_round,
         "frontier_exits": len(base.frontier),
+        "refusing_results": len(refusing.depth),
+        "refusals": refusing.refusals,
+        "obstructed_attempts_in_the_base": obstructed,
         "answers_checked": looked,
         "outside_the_base": check.outside_the_base,
         "answer_buys_a_result": check.answer_buys_a_result,

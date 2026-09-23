@@ -1,8 +1,6 @@
 {
   "bound": 3,
   "rounds": 12,
-  "writings_called_the_same": [],
-  "orbit_formula_fails": [],
   "given_orbit": 2,
   "given_aut": 1,
   "given_equals_its_swap": false,
@@ -15,7 +13,8 @@
       "base_results": 109,
       "base_classes_among_written": 109,
       "classes_with_two_writings_reached": 28,
-      "rounds_off_the_base_cost": 0,
+      "rounds_above_the_base_cost": 0,
+      "greatest_excess_over_the_base_cost": 0,
       "answers_on_an_unreached_writing": 0,
       "frontier": 128,
       "new_per_round": [
@@ -36,7 +35,11 @@
       "sample_key": "3:01:0-1.0-2.1-0.1-2.2-0.2-1",
       "sample_orbit": 6,
       "sample_aut": 1,
-      "sample_letters_25": 13800
+      "sample_letters_25": 13800,
+      "sample_letter_supply_grows": true,
+      "writings_called_the_same": [],
+      "orbit_formula_fails": [],
+      "rounds_below_the_base_cost": []
     },
     {
       "bra": false,
@@ -45,7 +48,8 @@
       "base_results": 20,
       "base_classes_among_written": 20,
       "classes_with_two_writings_reached": 15,
-      "rounds_off_the_base_cost": 32,
+      "rounds_above_the_base_cost": 32,
+      "greatest_excess_over_the_base_cost": 2,
       "answers_on_an_unreached_writing": 0,
       "frontier": 64,
       "new_per_round": [
@@ -66,7 +70,11 @@
       "sample_key": "3::0-2.1-0.1-2.2-0.2-1",
       "sample_orbit": 6,
       "sample_aut": 1,
-      "sample_letters_25": 13800
+      "sample_letters_25": 13800,
+      "sample_letter_supply_grows": true,
+      "writings_called_the_same": [],
+      "orbit_formula_fails": [],
+      "rounds_below_the_base_cost": []
     },
     {
       "bra": true,
@@ -75,7 +83,8 @@
       "base_results": 109,
       "base_classes_among_written": 109,
       "classes_with_two_writings_reached": 28,
-      "rounds_off_the_base_cost": 0,
+      "rounds_above_the_base_cost": 0,
+      "greatest_excess_over_the_base_cost": 0,
       "answers_on_an_unreached_writing": 0,
       "frontier": 128,
       "new_per_round": [
@@ -96,7 +105,11 @@
       "sample_key": "3:01:0-1.0-2.1-0.1-2.2-0.2-1",
       "sample_orbit": 6,
       "sample_aut": 1,
-      "sample_letters_25": 13800
+      "sample_letters_25": 13800,
+      "sample_letter_supply_grows": true,
+      "writings_called_the_same": [],
+      "orbit_formula_fails": [],
+      "rounds_below_the_base_cost": []
     },
     {
       "bra": true,
@@ -105,7 +118,8 @@
       "base_results": 20,
       "base_classes_among_written": 20,
       "classes_with_two_writings_reached": 15,
-      "rounds_off_the_base_cost": 29,
+      "rounds_above_the_base_cost": 29,
+      "greatest_excess_over_the_base_cost": 4,
       "answers_on_an_unreached_writing": 0,
       "frontier": 64,
       "new_per_round": [
@@ -126,10 +140,13 @@
       "sample_key": "3::0-2.1-0.1-2.2-0.2-1",
       "sample_orbit": 6,
       "sample_aut": 1,
-      "sample_letters_25": 13800
+      "sample_letters_25": 13800,
+      "sample_letter_supply_grows": true,
+      "writings_called_the_same": [],
+      "orbit_formula_fails": [],
+      "rounds_below_the_base_cost": []
     }
   ],
-  "letter_supply_unbounded_for_a_positive_term_count": true,
   "anchored_closures_equal_for_both_bra": true,
   "free_closures_equal_for_both_bra": true
 }

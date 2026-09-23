@@ -26,9 +26,13 @@ used, the re-check says whether it used that sentence.
    least writing, reaches 109 and 20 of those classes. 28 named classes and
    15 nameless classes are reached in two writings.
 4. The round of a named result is still the base's count of changes for that
-   writing. Without the names, that count is the least over writings, and the
+   writing. That count is a lower bound on every sequence, inside the bound
+   or not, so no detour through a fourth term reaches a named writing sooner.
+   Without the names, that count is the least over writings, and the
    writing the changes reach is longer on 32 results from `arb` and on 29
-   from the beginning that also asserts `bra`. It is never shorter.
+   from the beginning that also asserts `bra`, by at most 2 and 4 changes.
+   It is never shorter (`rounds_below_the_base_cost` is empty on all four
+   runs).
 5. Swapping the two terms of what is given is a different state. The base's
    reading that forgets the names calls the two nameless forms one result.
    Lean proves the written states differ. The base does not formalise that
@@ -79,16 +83,24 @@ With the names kept, either beginning reaches the same 137 results. The base
 reaches 109 classes, and 28 of those classes are reached here in two
 writings. The round of each result equals the base's count of changes for
 that writing (`xry.cost.cost`, re-checked: the count does not use the
-sameness sentence; it reads the writing it is given). No answer lands on a
-writing the unobstructed changes have not reached. 128 attempts would add a
-fourth term.
+sameness sentence; it reads the size and the destroyed givens, which are the
+same for every writing). The base proves that count a lower bound on the
+length of every sequence of changes from what is given (`1:D8`, Lean
+`fewest_changes_lower_A`, `fewest_changes_lower_B`: the potential rises by at
+most one per change, whatever the number of terms). So the recorded round is
+the fewest changes to that writing with no bound on terms: a sequence that
+adds a fourth term and returns is not shorter. No answer lands on a writing
+the unobstructed changes have not reached. 128 attempts would add a fourth
+term.
 
 With the names forgotten, either beginning reaches the same 69 results. The
 base reaches 20 classes, and 15 of those are reached here in two or more
 writings. The base's count without the names is the least count over
 writings. The round of the writing the changes reach is that least count, or
 greater: greater on 32 results from `arb`, and on 29 from the beginning that
-also asserts `bra`. The greatest excesses are 2 and 4. No answer lands on an
+also asserts `bra` (`rounds_above_the_base_cost`). The greatest excesses are
+2 and 4 (`greatest_excess_over_the_base_cost`), and no round is below the
+count (`rounds_below_the_base_cost` is empty). No answer lands on an
 unreached writing. 64 attempts would add a fourth term.
 
 Whether `bra` is asserted at the start does not change the set. It changes
@@ -101,10 +113,13 @@ If every injection of the terms into a supply of letters is a result, the
 changes no longer determine the writing. A state of `n` terms that is fixed
 by `a` permutations then has, in a supply of `L` letters, `L (L − 1) ⋯ (L − n + 1) / a`
 writings. For the three-term sample fixed by one permutation and `L = 25`,
-that is 13 800. The seed does not give a finite supply, and it does not say
-that an unreached writing has been obtained. The count on that reading is
-therefore infinite for every result that has a term, and the exploration
-does not run it. It is not refuted.
+that is 13 800. For `n ≥ 1` the count grows with every further letter: going
+from `L` to `L + 1` letters multiplies it by `(L + 1) / (L + 1 − n) > 1`
+(derived; computed for the sample over twelve further letters,
+`sample_letter_supply_grows`). The seed does not give a finite supply, and it
+does not say that an unreached writing has been obtained. On that reading no
+finite supply bounds the count, so it is infinite for every result that has a
+term, and the exploration does not run it. It is not refuted.
 
 ## 5. What survives
 
@@ -113,16 +128,18 @@ does not run it. It is not refuted.
 | the four changes, obstruction, answers | no | the same changes; an answer's writing is reached |
 | no `xrx` in a result | no | kept; an unobstructed change still does not assert it |
 | adding a term never obstructed, so no last result | no | kept; the frontier is those attempts |
-| fewest changes for a fixed writing (`1:D8`, names kept) | no | the round equals that count on all 137 named results |
-| fewest changes with the names forgotten | yes, the least over writings | a lower bound on the round of the writing reached; strict on 32 and 29 results |
+| fewest changes for a fixed writing (`1:D8`, names kept) | no | the round equals that count on all 137 named results, and is the fewest changes with no bound on terms |
+| fewest changes with the names forgotten | yes, the least over writings | a lower bound on the round of the writing reached; strict on 32 and 29 results, by at most 2 and 4 |
 | one result for a whole family of writings | yes | refuted; 28 named classes and 15 nameless classes split |
 
 ## 6. Open
 
 - **O1.** A closed form for the 137 and the 69. The rounds are computed.
-- **O2.** Whether a sequence that adds a fourth term and returns inside the
-  bound can be shorter than the recorded round. The recorded round is the
-  shortest sequence that stays inside the bound.
+- **O2.** Without the names only: whether a sequence that adds a fourth term
+  and returns can reach a written result sooner than the recorded round. With
+  the names kept this is closed (section 3): the round equals the base count,
+  which bounds every sequence. Without the names the recorded round can exceed
+  the base count (by up to 2 and 4), so the base count does not close it.
 
 ## 7. Nearest known results, and how the findings differ
 

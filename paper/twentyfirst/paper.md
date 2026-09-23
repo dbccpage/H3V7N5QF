@@ -15,9 +15,13 @@ derivation.
 | The declared bound: 3 terms, 12 rounds | chosen |
 
 The base already reaches results along unobstructed changes and checks
-answers afterwards. R1 is that exploration. No second closure is required
-to state it, and none is hidden: the answers are compared with the closure,
-one by one.
+answers afterwards. R1 is that exploration, so to compare the two is not to
+compare the base with itself: a second exploration (`explore_refusing`)
+performs every change, whatever the base's obstruction test says, and refuses
+the change when its outcome asserts some `xrx`. That is the seed's sentence
+applied directly. Its closure is compared with the base's, result by result
+and round by round, and the answers are compared with the closure, one by
+one.
 
 ## 2. What refusal does
 
@@ -43,8 +47,11 @@ else.
 | names forgotten, `arb` only | 20 | 6 | 112 | none |
 | names forgotten, `bra` as well | 20 | 5 | 112 | none |
 
-`outside_the_base`, `answer_buys_a_result`, and `stopped_at_the_start` are
-empty on each of the four runs. The start has unobstructed changes, so it
+The refusing exploration reaches the same results at the same rounds on
+each of the four runs (`outside_the_base` is empty), and the changes it
+refuses are exactly as many as the base's obstructed attempts: 547 with the
+names kept, 92 without (`refusals`, `obstructed_attempts_in_the_base`).
+`answer_buys_a_result` and `stopped_at_the_start` are empty as well. The start has unobstructed changes, so it
 is not a place where every alternative stops. Every answer whose result
 stays inside the bound — a removal of the assertions between two terms and
 then the identification, the state itself as a build, or a build that adds
@@ -92,11 +99,13 @@ Inside the bound it finishes by round 11. No change was invented to fill
 
 ## 6. Open
 
-- **O1.** An answer that leaves the bound is not followed further. The base
-  leaves open whether a sequence that leaves the bound can return shorter
-  than the recorded round. This seed refuses instead of taking that answer,
-  so the same question stays open for the unobstructed changes, and it is
-  not a question about a new route.
+Nothing is left open here. An answer that leaves the bound is not followed
+further, and it need not be: the recorded round is the base's round, which
+the base proves is the fewest changes with no bound on terms (base D12, D8;
+Lean `fewest_changes_lower_A`, `_B` bound every sequence of unobstructed
+changes). A sequence that leaves the bound and returns is therefore not
+shorter. The changed sentence removes answers, not changes, so that proof is
+untouched.
 
 ## 7. Nearest known results, and how the findings differ
 

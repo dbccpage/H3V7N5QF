@@ -10,7 +10,8 @@ import pytest
 from twentieth import evidence
 from twentieth.evidence import audit, witness, write_all
 from twentieth.order import _bfs as real_bfs
-from twentieth.order import additions_priority, rankings_differ
+from twentieth.order import additions_priority, changes_priority, rankings_differ
+from xry.explore import explore
 from xry.state import Sameness, State, given
 
 
@@ -29,6 +30,7 @@ def test_a_single_result_has_no_ranking_witness() -> None:
     with pytest.raises(ValueError, match="bound"):
         additions_priority(start, 1, 1)
     assert set(additions_priority(start, 2, 0)) == {start}
+    assert set(changes_priority(start, 2, 0)) == {start}
     finished = real_bfs(start, 2, 6, False)
     assert 1 <= len(finished) < 109
 
@@ -39,6 +41,16 @@ def test_listings_agree_inside_two_terms() -> None:
     assert clean.frontier_mismatch == []
     assert clean.additions_track_rounds == []
     assert clean.differs_from_base == []
+    assert clean.o2_closure_differs == []
+
+
+def test_both_rankings_run_to_the_base_closure() -> None:
+    for bra in (False, True):
+        for sameness in (Sameness.ANCHORED, Sameness.FREE):
+            start = given(bra, sameness)
+            closure = set(explore(start, 3, 12).depth)
+            assert set(additions_priority(start, 3, evidence.UNCAPPED)) == closure
+            assert set(changes_priority(start, 3, evidence.UNCAPPED)) == closure
 
 
 def test_audit_records_each_disagreement(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -57,6 +69,14 @@ def test_audit_records_each_disagreement(monkeypatch: pytest.MonkeyPatch) -> Non
     monkeypatch.undo()
     monkeypatch.setattr(evidence, "rankings_differ", lambda _depth: None)
     assert audit(False, 2, 2).additions_track_rounds == ["no witness"]
+    monkeypatch.undo()
+
+    def stop_early(start: State, bound: int, expansions: int) -> dict[State, int]:
+        del expansions
+        return additions_priority(start, bound, 1)
+
+    monkeypatch.setattr(evidence, "additions_priority", stop_early)
+    assert audit(False, 2, 2).o2_closure_differs
 
 
 def test_write_and_check(tmp_path: Path) -> None:
@@ -105,6 +125,13 @@ def test_write_and_check(tmp_path: Path) -> None:
         "3:01:0-1.1-0.2-0",
         "3:10:0-1.1-0.2-0",
     ]
+    for bra, leave, enter in ((False, 5, 4), (True, 5, 3)):
+        assert capped[bra]["o1_expansions_to_round_2"] == 4
+        assert capped[bra]["o1_at_that_cap_is_round_2"] is True
+        assert len(cast(list[object], capped[bra]["matched_leave"])) == leave
+        assert len(cast(list[object], capped[bra]["matched_enter"])) == enter
+    for row in runs.values():
+        assert row["o2_closure_differs"] == []
     from twentieth.__main__ import main
 
     small = tmp_path / "small"

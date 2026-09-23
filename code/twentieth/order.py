@@ -60,11 +60,12 @@ def rankings_differ(depth: dict[State, int]) -> tuple[State, State] | None:
     return None
 
 
-def additions_priority(start: State, bound: int, expansions: int) -> dict[State, int]:
-    """Expand reached results fewest additions first, for `expansions` expansions.
+def _expand_capped(start: State, bound: int, expansions: int, by_additions: bool) -> dict[State, int]:
+    """Expand reached results one at a time, at most `expansions` of them.
 
-    Unchosen reading of the base sentence: the additions rank the results
-    globally, instead of listing the attempts inside one round.
+    `by_additions` ranks the pending results by the additions they record
+    (O2); otherwise by the round they were reached at (O1, breadth first).
+    The value is the number of changes along the path that found the result.
     """
     if not start.legal:
         raise ValueError("what is given asserts no xrx")
@@ -75,7 +76,10 @@ def additions_priority(start: State, bound: int, expansions: int) -> dict[State,
     pending = [root]
     expanded = 0
     while pending and expanded < expansions:
-        pending.sort(key=lambda state: (sum(added(state)), depth[state], order(state)))
+        if by_additions:
+            pending.sort(key=lambda state: (sum(added(state)), depth[state], order(state)))
+        else:
+            pending.sort(key=lambda state: (depth[state], order(state)))
         state = pending.pop(0)
         expanded += 1
         for change in changes(state):
@@ -89,3 +93,17 @@ def additions_priority(start: State, bound: int, expansions: int) -> dict[State,
                 depth[out] = depth[state] + 1
                 pending.append(out)
     return depth
+
+
+def additions_priority(start: State, bound: int, expansions: int) -> dict[State, int]:
+    """Expand reached results fewest additions first, for `expansions` expansions.
+
+    Unchosen reading of the base sentence: the additions rank the results
+    globally, instead of listing the attempts inside one round.
+    """
+    return _expand_capped(start, bound, expansions, True)
+
+
+def changes_priority(start: State, bound: int, expansions: int) -> dict[State, int]:
+    """The chosen reading with the same cap: expand reached results round by round."""
+    return _expand_capped(start, bound, expansions, False)

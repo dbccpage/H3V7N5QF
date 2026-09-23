@@ -10,3 +10,5 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Nineteenth.PStep.card_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Nineteenth.PReach.card_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Nineteenth.oneTerm_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.addTerm_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.givenA_to_oneTerm' depends on axioms: [propext, Classical.choice, Quot.sound]

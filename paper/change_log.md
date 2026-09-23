@@ -423,3 +423,20 @@ reading of the seed.
     the earlier test sets, the earlier papers, or `evidence/` through
     `evidence/sixteenth/` was modified. `ci/check_mutation_bite.py` gained
     one panel per derivation, logged in each paper's `change_log.md`.
+
+37. **`lean4/lakefile.toml`: library target `Eighteenth`, and the name on
+    `defaultTargets`** (missing from item 36, which the eighteenth's run
+    preceded). Made by the eighteenth derivation, which imports `H3V7N5QF`
+    only. `ci/check_mutation_bite.py` gained an eighteenth panel, logged in
+    `paper/eighteenth/change_log.md`.
+
+38. **Review of the eighteenth through twenty-first derivations.** Repairs are
+    logged in each derivation's `change_log.md`. Shared files touched:
+    `ci/check_mutation_bite.py` (the eighteenth, twentieth and twenty-first
+    panels gain or change bite cases for the repaired checks; the seventeenth
+    to twenty-first panels are put in order, with the blank lines between
+    them restored), `lean4/lakefile.toml` (a final newline), and `CLAUDE.md`
+    (the eighteenth plan moved after the seventeenth's, where the merge had
+    put it before). Nothing in `lean4/H3V7N5QF/` … `lean4/Seventeenth/`,
+    `code/xry/` … `code/seventeenth/`, or `evidence/` through
+    `evidence/seventeenth/` was modified.
