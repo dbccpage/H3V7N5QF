@@ -77,3 +77,5 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Fourteenth.leftover_remove_r_s' does not depend on any axioms
 'Seed.Fourteenth.clearing_not_a_kind' does not depend on any axioms
 'Seed.Fourteenth.add_remove' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Sixteenth.Reach16.swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Sixteenth.remove_add9' depends on axioms: [propext, Classical.choice, Quot.sound]

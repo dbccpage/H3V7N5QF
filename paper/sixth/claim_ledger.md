@@ -123,8 +123,8 @@ survive" means it is false under the sixth seed, with the witness.
 
 | ID | Statement | Status | Evidence | Axioms | Re-check | What would settle it |
 |---|---|---|---|---|---|---|
-| O1 | The seed read with multiplicity | closed by the fourth seed | — | — | 4:O1 | — |
-| O2 | Number of new results in rounds beyond the bound | given by the series and the cost formula (D14, `layer_counts`); not listed | — | — | 5:O2 | a listing |
+| O1 | The seed read with multiplicity | closed by the fourth seed | `prompt/fourth/seed_prompt.md`; 4:O1 | — | 4:O1 | — |
+| O2 | Number of new results in rounds beyond the bound | given by the series and the cost formula (D14, `layer_counts`); not listed | D14 `layer_counts`; `rounds_*.csv` | — | 5:O2 | a listing |
 | O3 | Results beyond the declared bounds, listed | open | frontier exported (both parts); census counts at 5 terms; two-term rounds in closed form (D17) | — | 5:O3 | a larger run |
 | O4 | Other readings of "build structure" | without object | — | — | 5:O4 | — |
 | O5 | A closed form for the number of shortest sequences with three or more terms, or with the names one term | open | computed per result within the bound (K7); two terms, names apart: a multinomial (D17) | — | 5:O5 | a formula agreeing with every computed count |

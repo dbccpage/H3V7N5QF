@@ -131,3 +131,7 @@ repository).
     (D8, D9) are proved in the paper and checked by computation, as bookkeeping
     rule 3 allows and the ledger already marked ("paper §4"). §0 now says so.
     No claim status or evidence file changed.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F004: printed the cited second size bound in Third/Axioms.lean and regenerated the Lean report and manifest. No theorem statement changed.

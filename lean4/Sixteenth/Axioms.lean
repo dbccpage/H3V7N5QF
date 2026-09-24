@@ -83,3 +83,7 @@ import Sixteenth.Compare
 #print axioms Seed.Fourteenth.leftover_remove_r_s
 #print axioms Seed.Fourteenth.clearing_not_a_kind
 #print axioms Seed.Fourteenth.add_remove
+
+-- Whole-repo review: cited own results absent from the prior report.
+#print axioms Seed.Sixteenth.Reach16.swap
+#print axioms Seed.Sixteenth.remove_add9

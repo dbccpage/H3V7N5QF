@@ -42,7 +42,7 @@ from sixth.state import given as given_sixth
 from xry.evidence import _write_csv, _write_json, alternative, compare_evidence, write_manifest
 from xry.state import Sameness
 
-from eighth.changes import Change, Kind, attempt_counts, perform
+from eighth.changes import Change, Kind, attempt_counts, changes, perform
 from eighth.cost import cost, cost_free_by_placement, destroyed, raises_by_one
 from eighth.explore import Attempt, Exploration, count_shortest_sequences, cycle, explore, order, performed, sequences_exact
 from eighth.follows import verdicts
@@ -154,6 +154,7 @@ def write_given(out: Path) -> dict[str, object]:
         for bra in (False, True):
             start = given(bra, sameness)
             expl = explore(start, bound=3, rounds=1, keep_log=True)
+            listed = changes(start)
             attempts, xrx, xsx = attempt_counts(start)
             not_performed += sum(1 for rec in expl.log if rec.outcome is None and not rec.beyond)
             off_formula += int((sum(1 for rec in expl.log if rec.xrx), sum(1 for rec in expl.log if rec.xsx)) != (xrx, xsx))
@@ -164,8 +165,8 @@ def write_given(out: Path) -> dict[str, object]:
             doc[f"{sameness.value}/{alternative(bra)}"] = {
                 "state": start.written(),
                 "changes": attempts,
-                "of_which_in_r": 1 + int(bra) + 4,
-                "of_which_in_s": 4,
+                "of_which_in_r": sum(c.rel == "r" for c in listed),
+                "of_which_in_s": sum(c.rel == "s" for c in listed),
                 "of_which_make_some_xrx_asserted": xrx,
                 "of_which_make_some_xsx_asserted": xsx,
                 "of_which_obstructed": 0,

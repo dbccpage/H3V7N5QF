@@ -191,3 +191,6 @@ library re-proves some first-derivation theorems under the same short name.
 #print axioms Seed.Fourth.size_rename4
 #print axioms Seed.Fourth.Step4.rename
 #print axioms Seed.Fourth.rename4_symm_apply
+
+-- Whole-repo review: cited base potential bound.
+#print axioms Seed.Reach.costA_le

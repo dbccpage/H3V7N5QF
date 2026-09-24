@@ -27,7 +27,7 @@ from ninth.orbits import count_results, two_term_round_count
 from ninth.state import DState, empty, written
 from xry.evidence import _write_csv, _write_json, compare_evidence, write_manifest
 
-from fifteenth.admission import admitted_record, admission_of_reaching, not_admitted_record
+from fifteenth.admission import admitted_record, admission_of_reaching, can_admit, not_admitted_record
 from fifteenth.changes import admission_counts
 from fifteenth.cost import cost, tagged_cost
 from fifteenth.explore import (
@@ -179,8 +179,8 @@ def write_given(out: Path) -> dict[str, object]:
         "s_only_admission": s_admission.written(),
         "r_and_s_same_admission": r_admission == s_admission,
         "both_admission": both_admission.written(),
-        "can_admit_empty": True,
-        "can_admit_one": True,
+        "can_admit_empty": can_admit(start),
+        "can_admit_one": can_admit(one),
         "reaches_itself_in_two_changes": cycle(start) is not None,
         "empty_changes": len(first),
         "admitted_written_uses_neither_r_nor_s": admitted_record().written() == "admitted",

@@ -86,3 +86,7 @@ cycle: wrote the axiom report and closed O1; the seventeenth derivation's gates 
    - Two shared files changed by this derivation were not logged: the
      seventeenth panel in `ci/check_mutation_bite.py`, and the paper's
      pinned hits in `ci/prose_watchlist.json`.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F001: printed twelve cited base theorems and regenerated the Lean report and manifest. No theorem statement changed.

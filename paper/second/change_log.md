@@ -130,3 +130,7 @@ the branch was pushed afterwards at the user's request (item 12).
     `ci/` too. Tests 179 → 193; coverage of `code/` unchanged (the gate lives in
     `ci/`, outside the measured source). No object-language notion or result
     changed.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F003: printed seven cited base theorems in Second/Axioms.lean and regenerated the Lean report and manifest. No theorem statement changed.

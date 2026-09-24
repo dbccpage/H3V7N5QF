@@ -168,3 +168,7 @@ installed the fifth seed — before any work of the fifth derivation).
     benign step-zero branch at 377). Line coverage returns to 100%. No
     derivation code, evidence, claim, or claim status changed; the checks the
     tests exercise are unchanged.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F006: printed the cited base cost bound and regenerated the Lean report and manifest. F013: filled O1/O2 evidence with the fourth seed and own series/round references. No claim or theorem statement changed.

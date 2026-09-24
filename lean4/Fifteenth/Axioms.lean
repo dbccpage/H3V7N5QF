@@ -33,3 +33,7 @@ import Fifteenth.Rename
 #print axioms Seed.Ninth.fewest_changes9
 #print axioms Seed.Ninth.reach9_iff
 #print axioms Seed.Ninth.results_pair9
+
+-- Whole-repo review: cited fourteenth-derivation witnesses.
+#print axioms Seed.Fourteenth.twoBoth_remove_r
+#print axioms Seed.Fourteenth.twoBoth_remove_s

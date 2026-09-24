@@ -119,3 +119,7 @@ at aceb154).
 13. **The prose watchlist baseline was re-pinned for `paper/ninth/paper.md`.**
     Three watched hits (one enumeration term, two algorithm terms), all in
     §10. Reason: AA8; the paper is now tracked.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F002: printed seven cited Eighth theorems and the cited Fifth containment witness, then regenerated the Lean report and manifest. F013: filled O5 carry-forward evidence. No claim or theorem statement changed.

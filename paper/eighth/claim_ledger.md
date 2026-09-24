@@ -117,4 +117,4 @@ asserting nothing with `s`), or "—" for a claim new to this derivation.
 | O2 | Results beyond the declared bounds, listed | open: frontier exported (both parts); census counts at 4 terms; two-term rounds in closed form (D11) | `frontier_*.csv`, `summary.json` | — | 6:O3 | a larger run |
 | O3 | Lean statements of D3, of D4(iv), of the exactness of the shortest-sequence counts (D10), of D11, of D15 and of the non-product count (D10) | open: proved in the paper, checked by computation | paper §4; `summary.json` | — | 6:O7 | the Lean proofs |
 | O4 | The cost from a beginning asserting something with `s` | open: the formula of C2″, proved in the paper; not computed | paper §3 | — | — (new) | a computation from such a beginning |
-| O5 | The earlier papers' O1 (multiplicity) and O2 (results beyond the bound, counted) | closed by the fourth seed; given by the series for any round (D10) | — | — | 6:O1, 6:O2 | — |
+| O5 | The earlier papers' O1 (multiplicity) and O2 (results beyond the bound, counted) | closed by the fourth seed; given by the series for any round (D10) | `prompt/fourth/seed_prompt.md`; D10 `layer_counts`; `rounds_*.csv` | — | 6:O1, 6:O2 | — |

@@ -159,3 +159,7 @@ the one in which the third to seventh derivations were made.
     C10, N4, N5, N7, N8 re-check cells now say jointly, on a part, or
     through the embedding. Findings and Lean are unchanged. Committed
     from `main`; `prompt/` unchanged.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F008: printed the cited sixth upper-bound theorem and regenerated the Lean report and manifest. F011: relation attempt counts now come from the change list, with an injected list-drift test; regenerated evidence. F013: filled O5 carry-forward evidence. No claim or theorem statement changed.
