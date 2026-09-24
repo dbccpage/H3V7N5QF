@@ -1,0 +1,5 @@
+--- prompt/sixteenth/seed_prompt.md
++++ meta/next_ten/08-record-order/seed_prompt.md
+@@ -9 +9 @@
+-After every change, record what that change leaves. A leftover is written neither `xry` nor `xsy`. A recorded leftover `xℓy` may be admitted, adding the assertion `xry` or the assertion `xsy`; an unadmitted leftover is not an assertion.
++After every change, record what that change leaves. A leftover is written neither `xry` nor `xsy`. Recorded leftovers are kept in the order they arise. Only the most recently recorded leftover may be admitted, adding the assertion `xry` or the assertion `xsy`; an unadmitted leftover is not an assertion.

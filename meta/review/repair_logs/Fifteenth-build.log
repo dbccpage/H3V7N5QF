@@ -1,0 +1,77 @@
+⚠ [3031/3083] Replayed Fifth.Reach
+warning: Fifth/Reach.lean:357:59: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3032/3083] Replayed Fifth.Answers
+warning: Fifth/Answers.lean:191:78: Variable name `huv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _huv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3059/3083] Replayed Tenth.State
+warning: Tenth/State.lean:53:46: This simp argument is unused:
+  Function.update_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [NDSt.remove, NDSt.addAssertion]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Tenth/State.lean:83:35: This simp argument is unused:
+  twoEmpty
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [empty9, NDSt.addTerm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Tenth/State.lean:83:45: This simp argument is unused:
+  empty9
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [twoEmpty, NDSt.addTerm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Tenth/State.lean:83:53: This simp argument is unused:
+  NDSt.addTerm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [twoEmpty, empty9]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3063/3083] Replayed Eleventh.State
+warning: Eleventh/State.lean:80:6: Try `simp at hp` instead of `simpa using hp`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [3083/3083] Built Fifteenth.Axioms (25s)
+info: Fifteenth/Axioms.lean:10:0: 'Seed.Fifteenth.reaching_does_not_admit' does not depend on any axioms
+info: Fifteenth/Axioms.lean:11:0: 'Seed.Fifteenth.admitted_is_admitted' does not depend on any axioms
+info: Fifteenth/Axioms.lean:12:0: 'Seed.Fifteenth.reaching_ne_admitted' does not depend on any axioms
+info: Fifteenth/Axioms.lean:13:0: 'Seed.Fifteenth.admission_not_assertion' does not depend on any axioms
+info: Fifteenth/Axioms.lean:14:0: 'Seed.Fifteenth.admission_not_in_M' depends on axioms: [propext, Quot.sound]
+info: Fifteenth/Axioms.lean:15:0: 'Seed.Fifteenth.admission_not_a_kind' does not depend on any axioms
+info: Fifteenth/Axioms.lean:16:0: 'Seed.Fifteenth.first_change_does_not_admit' does not depend on any axioms
+info: Fifteenth/Axioms.lean:17:0: 'Seed.Fifteenth.r_admission_is_s' does not depend on any axioms
+info: Fifteenth/Axioms.lean:18:0: 'Seed.Fifteenth.admission_not_of_relation' does not depend on any axioms
+info: Fifteenth/Axioms.lean:19:0: 'Seed.Fifteenth.fewest_changes15' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:20:0: 'Seed.Fifteenth.reach15_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:21:0: 'Seed.Fifteenth.results_pair15' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:22:0: 'Seed.Fifteenth.no_third_rel' depends on axioms: [propext, Quot.sound]
+info: Fifteenth/Axioms.lean:23:0: 'Seed.Fifteenth.r_admission_is_s_result' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:24:0: 'Seed.Fifteenth.no_cross_constraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:25:0: 'Seed.Fifteenth.every_reached_can_be_admitted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:26:0: 'Seed.Fifteenth.step_reaches_not_admitted' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:27:0: 'Seed.Fifteenth.tagged_one_nothing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:28:0: 'Seed.Fifteenth.tagged_cost_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:29:0: 'Seed.Fifteenth.tagged_extra' depends on axioms: [propext, Quot.sound]
+info: Fifteenth/Axioms.lean:30:0: 'Seed.Fifteenth.admission_swap' does not depend on any axioms
+info: Fifteenth/Axioms.lean:31:0: 'Seed.Fifteenth.admission_swap_admitted' does not depend on any axioms
+info: Fifteenth/Axioms.lean:32:0: 'Seed.Fifteenth.Step15.swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:33:0: 'Seed.Ninth.fewest_changes9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:34:0: 'Seed.Ninth.reach9_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:35:0: 'Seed.Ninth.results_pair9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:38:0: 'Seed.Fourteenth.twoBoth_remove_r' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Fifteenth/Axioms.lean:39:0: 'Seed.Fourteenth.twoBoth_remove_s' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3083 jobs).

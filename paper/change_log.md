@@ -450,3 +450,16 @@ reading of the seed.
     the exact reach and limits. The individual `Axioms.lean`, regenerated
     report and manifest edits are logged in their derivations' change logs;
     no theorem statement or seed is changed.
+
+40. **Fenced whole-repo review and proposal area (2026-09-23).** Added
+    `meta/` for the 21-derivation audit, correspondence and Genesis
+    comparisons, local receipts, and ten future seed proposals. Its
+    categorical and biological vocabulary is outside the derivational seal:
+    no `meta/` file is an input to a blind seed, paper, or theorem. Added
+    ten digest entries to `ci/prose_watchlist.json` for that vocabulary
+    and the external repository name, with deliberate pins for tracked
+    review prose. The preexisting per-paper pins are checked unchanged by
+    `meta/review/check_paper_pins.py`. The proposal changes themselves do
+    not alter the repair branch's theorem, generator, or axiom-report files;
+    this integration also carries the separately reviewed repair commit.
+    `prompt/` remains untouched.

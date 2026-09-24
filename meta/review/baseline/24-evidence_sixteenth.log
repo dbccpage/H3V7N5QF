@@ -1,0 +1,8 @@
+bound3_rounds8: 10697 results, checks pass
+bound4_rounds7: 3033 results, checks pass
+bound2_rounds10: 15561 results, checks pass
+reachability: checks pass
+independent counts: checks pass
+given: checks pass
+alternatives: checks pass
+check: identical

@@ -1,0 +1,29 @@
+lake build: passed
+sorry / admit / declared axiom in lean4/ (outside comments): none
+#print axioms (Fifteenth/Axioms.lean):
+'Seed.Fifteenth.reaching_does_not_admit' does not depend on any axioms
+'Seed.Fifteenth.admitted_is_admitted' does not depend on any axioms
+'Seed.Fifteenth.reaching_ne_admitted' does not depend on any axioms
+'Seed.Fifteenth.admission_not_assertion' does not depend on any axioms
+'Seed.Fifteenth.admission_not_in_M' depends on axioms: [propext, Quot.sound]
+'Seed.Fifteenth.admission_not_a_kind' does not depend on any axioms
+'Seed.Fifteenth.first_change_does_not_admit' does not depend on any axioms
+'Seed.Fifteenth.r_admission_is_s' does not depend on any axioms
+'Seed.Fifteenth.admission_not_of_relation' does not depend on any axioms
+'Seed.Fifteenth.fewest_changes15' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.reach15_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.results_pair15' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.no_third_rel' depends on axioms: [propext, Quot.sound]
+'Seed.Fifteenth.r_admission_is_s_result' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.no_cross_constraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.every_reached_can_be_admitted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.step_reaches_not_admitted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.tagged_one_nothing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.tagged_cost_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Fifteenth.tagged_extra' depends on axioms: [propext, Quot.sound]
+'Seed.Fifteenth.admission_swap' does not depend on any axioms
+'Seed.Fifteenth.admission_swap_admitted' does not depend on any axioms
+'Seed.Fifteenth.Step15.swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.fewest_changes9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.reach9_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.results_pair9' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,14 @@
+lake build Nineteenth: passed
+sorry / admit / declared axiom in lean4/ (outside comments): none
+#print axioms (Nineteenth/Axioms.lean):
+'Seed.Nineteenth.performPartial_terms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Nineteenth.cooccur_is_loop' depends on axioms: [propext]
+'Seed.Nineteenth.side_partial_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Nineteenth.side_partial_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Nineteenth.side_not_identify' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Nineteenth.identify_smaller' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Nineteenth.PStep.card_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Nineteenth.PReach.card_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Nineteenth.oneTerm_unreachable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.addTerm_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.givenA_to_oneTerm' depends on axioms: [propext, Classical.choice, Quot.sound]

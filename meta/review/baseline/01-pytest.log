@@ -1,0 +1,293 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.2, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\a343o\source\repos\H3V7N5QF
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.12.1, hypothesis-6.167.1, asyncio-1.3.0, cov-7.0.0, xdist-3.8.0
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+created: 12/12 workers
+12 workers [935 items]
+
+........................................................................ [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 23%]
+........................................................................ [ 30%]
+........................................................................ [ 38%]
+........................................................................ [ 46%]
+........................................................................ [ 53%]
+........................................................................ [ 61%]
+........................................................................ [ 69%]
+........................................................................ [ 77%]
+........................................................................ [ 84%]
+........................................................................ [ 92%]
+.......................................................................  [100%]
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.14.2-final-0 _______________
+
+Name                              Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------------
+code\eighteenth\__init__.py           0      0      0      0   100%
+code\eighteenth\__main__.py          31      0      8      0   100%
+code\eighteenth\evidence.py          48      0      2      0   100%
+code\eighteenth\explore.py           66      1     32      1    98%   73
+code\eighteenth\leanreport.py        36      0     10      0   100%
+code\eighteenth\writing.py           21      0      4      0   100%
+code\eighth\__init__.py               0      0      0      0   100%
+code\eighth\__main__.py              74      0     12      0   100%
+code\eighth\changes.py               68      0     24      0   100%
+code\eighth\cost.py                  25      0      4      0   100%
+code\eighth\evidence.py             314      0     84      0   100%
+code\eighth\explore.py              117      0     42      0   100%
+code\eighth\follows.py               62      0      8      0   100%
+code\eighth\invariants.py            29      0     16      0   100%
+code\eighth\leanreport.py            36      0     10      0   100%
+code\eighth\orbits.py               127      0     70      0   100%
+code\eighth\reach.py                 53      0     26      0   100%
+code\eighth\state.py                143      0     36      0   100%
+code\eleventh\__init__.py             0      0      0      0   100%
+code\eleventh\__main__.py            58      0      8      0   100%
+code\eleventh\changes.py              8      0      0      0   100%
+code\eleventh\cost.py                 7      0      0      0   100%
+code\eleventh\evidence.py           154      0     28      0   100%
+code\eleventh\explore.py             64      0      8      0   100%
+code\eleventh\follows.py             41      0      8      0   100%
+code\eleventh\invariants.py          47      0     24      0   100%
+code\eleventh\leanreport.py          36      0     10      0   100%
+code\eleventh\reach.py                8      0      0      0   100%
+code\eleventh\state.py               19      0      2      0   100%
+code\eleventh\writing.py             94      0     40      0   100%
+code\fifteenth\__init__.py            0      0      0      0   100%
+code\fifteenth\__main__.py           58      0      8      0   100%
+code\fifteenth\admission.py          37      0      4      0   100%
+code\fifteenth\changes.py            24      0      4      0   100%
+code\fifteenth\cost.py                7      0      0      0   100%
+code\fifteenth\evidence.py          150      0     26      0   100%
+code\fifteenth\explore.py           110      0     34      1    99%   198->201
+code\fifteenth\follows.py            42      0      6      0   100%
+code\fifteenth\invariants.py         37      0     14      0   100%
+code\fifteenth\leanreport.py         36      0     10      0   100%
+code\fifteenth\reach.py               8      0      0      0   100%
+code\fifteenth\state.py              20      0      0      0   100%
+code\fifth\__init__.py                0      0      0      0   100%
+code\fifth\__main__.py               74      0     12      0   100%
+code\fifth\changes.py                98      0     34      0   100%
+code\fifth\cost.py                   51      0     24      0   100%
+code\fifth\evidence.py              336      0     96      0   100%
+code\fifth\explore.py               144      0     60      0   100%
+code\fifth\follows.py                41      0      6      0   100%
+code\fifth\invariants.py             23      0     10      0   100%
+code\fifth\leanreport.py             36      0     10      0   100%
+code\fifth\orbits.py                 91      0     46      0   100%
+code\fifth\reach.py                  62      0     34      0   100%
+code\fifth\state.py                  25      0      4      0   100%
+code\fourteenth\__init__.py           0      0      0      0   100%
+code\fourteenth\__main__.py          58      0      8      0   100%
+code\fourteenth\changes.py           21      0      6      0   100%
+code\fourteenth\cost.py               7      0      0      0   100%
+code\fourteenth\evidence.py         157      0     26      0   100%
+code\fourteenth\explore.py          102      0     28      0   100%
+code\fourteenth\follows.py           39      0      6      0   100%
+code\fourteenth\invariants.py        49      0     24      0   100%
+code\fourteenth\leanreport.py        36      0     10      0   100%
+code\fourteenth\leftover.py          52      0     14      0   100%
+code\fourteenth\reach.py              8      0      0      0   100%
+code\fourteenth\state.py             41      0     10      1    98%   130->126
+code\fourth\__init__.py               0      0      0      0   100%
+code\fourth\__main__.py              72      0     12      0   100%
+code\fourth\changes.py               90      0     28      0   100%
+code\fourth\cost.py                  27      0      8      0   100%
+code\fourth\evidence.py             306      0     96      0   100%
+code\fourth\explore.py              133      0     54      0   100%
+code\fourth\follows.py               59      0      6      0   100%
+code\fourth\invariants.py             8      0      0      0   100%
+code\fourth\leanreport.py            36      0     10      0   100%
+code\fourth\orbits.py                73      0     42      0   100%
+code\fourth\reach.py                 79      0     50      0   100%
+code\fourth\state.py                142      0     42      0   100%
+code\generate.py                      3      0      2      1    80%   5->exit
+code\generate_eighth.py               1      0      0      0   100%
+code\generate_eleventh.py             1      0      0      0   100%
+code\generate_fifteenth.py            1      0      0      0   100%
+code\generate_fifth.py                1      0      0      0   100%
+code\generate_fourteenth.py           1      0      0      0   100%
+code\generate_fourth.py               1      0      0      0   100%
+code\generate_ninth.py                1      0      0      0   100%
+code\generate_second.py               3      0      2      1    80%   5->exit
+code\generate_seventh.py              1      0      0      0   100%
+code\generate_sixteenth.py            1      0      0      0   100%
+code\generate_sixth.py                1      0      0      0   100%
+code\generate_tenth.py                1      0      0      0   100%
+code\generate_third.py                3      0      2      1    80%   5->exit
+code\generate_thirteenth.py           1      0      0      0   100%
+code\generate_twelfth.py              1      0      0      0   100%
+code\lean_report.py                   3      0      2      1    80%   5->exit
+code\lean_report_eighteenth.py        2      2      0      0     0%   3-5
+code\lean_report_eighth.py            1      0      0      0   100%
+code\lean_report_eleventh.py          1      0      0      0   100%
+code\lean_report_fifteenth.py         1      0      0      0   100%
+code\lean_report_fifth.py             1      0      0      0   100%
+code\lean_report_fourteenth.py        1      0      0      0   100%
+code\lean_report_fourth.py            1      0      0      0   100%
+code\lean_report_nineteenth.py        2      2      0      0     0%   3-5
+code\lean_report_ninth.py             1      0      0      0   100%
+code\lean_report_second.py            3      0      2      1    80%   5->exit
+code\lean_report_seventeenth.py       2      0      0      0   100%
+code\lean_report_seventh.py           1      0      0      0   100%
+code\lean_report_sixteenth.py         1      0      0      0   100%
+code\lean_report_sixth.py             1      0      0      0   100%
+code\lean_report_tenth.py             1      0      0      0   100%
+code\lean_report_third.py             3      0      2      1    80%   5->exit
+code\lean_report_thirteenth.py        1      0      0      0   100%
+code\lean_report_twelfth.py           1      0      0      0   100%
+code\lean_report_twentieth.py         2      2      0      0     0%   3-5
+code\lean_report_twentyfirst.py       2      2      0      0     0%   3-5
+code\nineteenth\__init__.py           0      0      0      0   100%
+code\nineteenth\__main__.py          31      3      8      1    90%   36-38
+code\nineteenth\changes.py           48      1     16      1    97%   72
+code\nineteenth\evidence.py          61      0     10      0   100%
+code\nineteenth\explore.py           61      0     28      0   100%
+code\nineteenth\leanreport.py        36      0     10      0   100%
+code\ninth\__init__.py                0      0      0      0   100%
+code\ninth\__main__.py               76      0     10      0   100%
+code\ninth\changes.py                13      0      0      0   100%
+code\ninth\cost.py                   21      0      4      0   100%
+code\ninth\evidence.py              314      0     68      0   100%
+code\ninth\explore.py               108      0     38      0   100%
+code\ninth\follows.py                41      0      4      0   100%
+code\ninth\invariants.py              8      0      0      0   100%
+code\ninth\leanreport.py             36      0     10      0   100%
+code\ninth\orbits.py                 48      0     24      0   100%
+code\ninth\reach.py                  58      0     28      0   100%
+code\ninth\state.py                  27      0      6      0   100%
+code\run_eighteenth.py                2      2      0      0     0%   3-5
+code\run_nineteenth.py                2      2      0      0     0%   3-5
+code\run_seventeenth.py               2      0      0      0   100%
+code\run_twentieth.py                 2      2      0      0     0%   3-5
+code\run_twentyfirst.py               2      2      0      0     0%   3-5
+code\second\__init__.py               0      0      0      0   100%
+code\second\__main__.py              60      0     10      0   100%
+code\second\changes.py               35      0     10      0   100%
+code\second\cost.py                  25      0      8      0   100%
+code\second\evidence.py             215      0     70      0   100%
+code\second\explore.py               72      0     38      0   100%
+code\second\follows.py               11      0      0      0   100%
+code\second\invariants.py            22      0     12      0   100%
+code\second\leanreport.py            36      0     10      0   100%
+code\second\orbits.py                23      0     10      0   100%
+code\second\reach.py                 71      0     44      0   100%
+code\seventeenth\__init__.py          0      0      0      0   100%
+code\seventeenth\__main__.py         32      0      8      0   100%
+code\seventeenth\evidence.py        153      0     46      0   100%
+code\seventeenth\explore.py          88      0     30      0   100%
+code\seventeenth\leanreport.py       36      0     10      0   100%
+code\seventeenth\loop.py             11      0      0      0   100%
+code\seventh\__init__.py              0      0      0      0   100%
+code\seventh\__main__.py             74      0     10      0   100%
+code\seventh\changes.py              13      0      0      0   100%
+code\seventh\cost.py                 18      0      4      0   100%
+code\seventh\evidence.py            269      0     64      0   100%
+code\seventh\explore.py             103      0     38      0   100%
+code\seventh\follows.py              38      0      4      0   100%
+code\seventh\invariants.py           23      0     12      0   100%
+code\seventh\leanreport.py           36      0     10      0   100%
+code\seventh\orbits.py               31      0     16      0   100%
+code\seventh\reach.py                55      0     28      0   100%
+code\seventh\state.py                23      0      6      0   100%
+code\sixteenth\__init__.py            0      0      0      0   100%
+code\sixteenth\__main__.py           80      0     10      0   100%
+code\sixteenth\changes.py            68      0     22      0   100%
+code\sixteenth\cost.py               22      0      0      0   100%
+code\sixteenth\evidence.py          282      0     58      0   100%
+code\sixteenth\explore.py           117      0     44      0   100%
+code\sixteenth\follows.py            78      0     12      0   100%
+code\sixteenth\invariants.py         81      0     40      0   100%
+code\sixteenth\leanreport.py         36      0     10      0   100%
+code\sixteenth\leftover.py           17      0      4      0   100%
+code\sixteenth\orbits.py             87      0     48      0   100%
+code\sixteenth\reach.py              72      0     36      0   100%
+code\sixteenth\state.py             141      0     32      0   100%
+code\sixth\__init__.py                0      0      0      0   100%
+code\sixth\__main__.py               74      0     12      0   100%
+code\sixth\changes.py                14      0      0      0   100%
+code\sixth\cost.py                   74      0     30      0   100%
+code\sixth\evidence.py              352      0    100      0   100%
+code\sixth\explore.py               105      0     38      0   100%
+code\sixth\follows.py                37      0      4      0   100%
+code\sixth\invariants.py             25      0     12      0   100%
+code\sixth\leanreport.py             36      0     10      0   100%
+code\sixth\orbits.py                145      0     78      0   100%
+code\sixth\reach.py                  57      0     30      0   100%
+code\sixth\state.py                  13      0      2      0   100%
+code\tenth\__init__.py                0      0      0      0   100%
+code\tenth\__main__.py               58      0      8      0   100%
+code\tenth\changes.py                29      0     12      0   100%
+code\tenth\cost.py                    7      0      0      0   100%
+code\tenth\evidence.py              144      0     24      0   100%
+code\tenth\explore.py               106      0     32      0   100%
+code\tenth\follows.py                37      0      6      0   100%
+code\tenth\invariants.py             50      0     20      0   100%
+code\tenth\leanreport.py             36      0     10      0   100%
+code\tenth\leftover.py               34      0     12      0   100%
+code\tenth\reach.py                   8      0      0      0   100%
+code\tenth\state.py                  17      0      0      0   100%
+code\third\__init__.py                0      0      0      0   100%
+code\third\__main__.py               61      0     10      0   100%
+code\third\changes.py                33      0      8      0   100%
+code\third\cost.py                    3      0      0      0   100%
+code\third\evidence.py              179      0     42      0   100%
+code\third\explore.py                90      0     50      0   100%
+code\third\follows.py                 3      0      0      0   100%
+code\third\invariants.py              6      0      0      0   100%
+code\third\leanreport.py             36      0     10      0   100%
+code\third\orbits.py                  3      0      0      0   100%
+code\third\reach.py                  73      0     42      0   100%
+code\thirteenth\__init__.py           0      0      0      0   100%
+code\thirteenth\__main__.py          58      0      8      0   100%
+code\thirteenth\changes.py            9      0      2      0   100%
+code\thirteenth\coarse.py            24      0      2      0   100%
+code\thirteenth\cost.py               7      0      0      0   100%
+code\thirteenth\evidence.py         149      0     24      0   100%
+code\thirteenth\explore.py           99      1     22      1    98%   158, 176->175
+code\thirteenth\follows.py           41      0      6      0   100%
+code\thirteenth\invariants.py        61      0     28      1    99%   82->53
+code\thirteenth\leanreport.py        36      0     10      0   100%
+code\thirteenth\reach.py              8      0      0      0   100%
+code\thirteenth\state.py              4      0      0      0   100%
+code\twelfth\__init__.py              0      0      0      0   100%
+code\twelfth\__main__.py             58      0      8      0   100%
+code\twelfth\changes.py              18      0      6      0   100%
+code\twelfth\cost.py                  7      0      0      0   100%
+code\twelfth\evidence.py            154      0     26      0   100%
+code\twelfth\explore.py             102      0     28      0   100%
+code\twelfth\follows.py              55      0      6      0   100%
+code\twelfth\invariants.py           51      0     20      0   100%
+code\twelfth\leanreport.py           36      0     10      0   100%
+code\twelfth\reach.py                 8      0      0      0   100%
+code\twelfth\record.py               69      0     22      0   100%
+code\twelfth\state.py                17      0      0      0   100%
+code\twentieth\__init__.py            0      0      0      0   100%
+code\twentieth\__main__.py           31      3      8      1    90%   36-38
+code\twentieth\evidence.py           59      0      2      0   100%
+code\twentieth\leanreport.py         36      0     10      0   100%
+code\twentieth\order.py              71      0     42      0   100%
+code\twentyfirst\__init__.py          0      0      0      0   100%
+code\twentyfirst\__main__.py         31      3      8      1    90%   36-38
+code\twentyfirst\evidence.py         54      0     18      0   100%
+code\twentyfirst\leanreport.py       36      0     10      0   100%
+code\twentyfirst\refusal.py          40      0     18      0   100%
+code\xry\__init__.py                  0      0      0      0   100%
+code\xry\__main__.py                 48      0      8      0   100%
+code\xry\changes.py                 130      0     56      0   100%
+code\xry\cost.py                     36      0     16      0   100%
+code\xry\evidence.py                191      0     52      0   100%
+code\xry\explore.py                 105      0     36      0   100%
+code\xry\follows.py                  70      0      6      0   100%
+code\xry\gate.py                     34      0      6      0   100%
+code\xry\leanreport.py               66      0     24      0   100%
+code\xry\orbits.py                  117      0     60      0   100%
+code\xry\state.py                   144      0     46      0   100%
+-----------------------------------------------------------------------------
+TOTAL                             12911     28   3784     15    99%
+Coverage JSON written to file coverage.json
+Required test coverage of 95% reached. Total coverage: 99.74%
+======================= 935 passed in 247.90s (0:04:07) =======================

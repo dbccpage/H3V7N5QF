@@ -1,0 +1,20 @@
+free/without_bra/bound5_rounds8: 22618 results, checks pass
+free/without_bra/bound3_rounds9: 8724 results, checks pass
+free/without_bra/bound2_rounds20: 6357 results, checks pass
+free/with_bra/bound5_rounds8: 38075 results, checks pass
+free/with_bra/bound3_rounds9: 12403 results, checks pass
+free/with_bra/bound2_rounds20: 7029 results, checks pass
+anchored/without_bra/bound4_rounds8: 63362 results, checks pass
+anchored/without_bra/bound3_rounds9: 35241 results, checks pass
+anchored/without_bra/bound2_rounds20: 20642 results, checks pass
+anchored/with_bra/bound4_rounds8: 76905 results, checks pass
+anchored/with_bra/bound3_rounds9: 43905 results, checks pass
+anchored/with_bra/bound2_rounds20: 23342 results, checks pass
+free/without_bra reachability: 36864 pairs, checks pass
+free/with_bra reachability: 48841 pairs, checks pass
+anchored/without_bra reachability: 148996 pairs, checks pass
+anchored/with_bra reachability: 218089 pairs, checks pass
+anchored/without_bra census at bound 5: 93392 results, checks pass
+anchored/with_bra census at bound 5: 111350 results, checks pass
+given, counts and free cost: checks pass
+evidence\sixth: matches a fresh regeneration

@@ -1,0 +1,127 @@
+⚠ [3031/3088] Replayed Fifth.Reach
+warning: Fifth/Reach.lean:357:59: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3032/3088] Replayed Fifth.Answers
+warning: Fifth/Answers.lean:191:78: Variable name `huv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _huv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [3059/3088] Replayed Tenth.State
+warning: Tenth/State.lean:53:46: This simp argument is unused:
+  Function.update_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [NDSt.remove, NDSt.addAssertion]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Tenth/State.lean:83:35: This simp argument is unused:
+  twoEmpty
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [empty9, NDSt.addTerm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Tenth/State.lean:83:45: This simp argument is unused:
+  empty9
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [twoEmpty, NDSt.addTerm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Tenth/State.lean:83:53: This simp argument is unused:
+  NDSt.addTerm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [twoEmpty, empty9]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [3063/3088] Replayed Eleventh.State
+warning: Eleventh/State.lean:80:6: Try `simp at hp` instead of `simpa using hp`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+ℹ [3088/3088] Built Sixteenth.Axioms (22s)
+info: Sixteenth/Axioms.lean:10:0: 'Seed.Sixteenth.remove_admit_same' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:11:0: 'Seed.Sixteenth.remove_admit_other_ne' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:12:0: 'Seed.Sixteenth.remove_admit_other_ne_direct' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:13:0: 'Seed.Sixteenth.remove_admit_other_st' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:14:0: 'Seed.Sixteenth.add_remove_ne' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:15:0: 'Seed.Sixteenth.add_remove_st' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:16:0: 'Seed.Sixteenth.record_not_raised_by_addition' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:17:0: 'Seed.Sixteenth.potential_addTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:18:0: 'Seed.Sixteenth.potential_addAssertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:19:0: 'Seed.Sixteenth.potential_remove' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:20:0: 'Seed.Sixteenth.potential_admit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:21:0: 'Seed.Sixteenth.potential_identify' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:22:0: 'Seed.Sixteenth.mass_addTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:23:0: 'Seed.Sixteenth.mass_addAssertion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:24:0: 'Seed.Sixteenth.mass_remove' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:25:0: 'Seed.Sixteenth.mass_admit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:26:0: 'Seed.Sixteenth.mass_identify' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:27:0: 'Seed.Seventh.NSt.identify_addTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:28:0: 'Seed.Sixteenth.identify_addTerm9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:29:0: 'Seed.Sixteenth.identify_addTerm16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:30:0: 'Seed.Sixteenth.potential_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:31:0: 'Seed.Sixteenth.Step16.proj' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:32:0: 'Seed.Ninth.Add9.embed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:33:0: 'Seed.Ninth.AddReach9.embed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:34:0: 'Seed.Ninth.Step9.embed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:35:0: 'Seed.Sixteenth.Step9.embed_identify' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:36:0: 'Seed.Sixteenth.Step16.wf' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:37:0: 'Seed.Sixteenth.Step16.nonempty_out' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:38:0: 'Seed.Sixteenth.Step16.nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:39:0: 'Seed.Sixteenth.first_change_adds_term16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:40:0: 'Seed.Sixteenth.Step16.swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:41:0: 'Seed.Sixteenth.Reach16.proj' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:42:0: 'Seed.Sixteenth.Reach16.nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:43:0: 'Seed.Sixteenth.reach16_empty_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:44:0: 'Seed.Sixteenth.Step16.potential_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:45:0: 'Seed.Sixteenth.Reach16.potential_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:46:0: 'Seed.Sixteenth.Reach16.potential_parity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:47:0: 'Seed.Sixteenth.fewest_changes16_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:48:0: 'Seed.Sixteenth.Step16.rise_or_fall' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:49:0: 'Seed.Sixteenth.ReachD.potential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:50:0: 'Seed.Sixteenth.Reach16.toReachD' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:51:0: 'Seed.Sixteenth.no_fall_on_shortest16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:52:0: 'Seed.Sixteenth.reach16_record' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:53:0: 'Seed.Sixteenth.reach16_by_additions' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:54:0: 'Seed.Sixteenth.fewest_changes16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:55:0: 'Seed.Sixteenth.fewest_changes16_of_empty_record' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:56:0: 'Seed.Sixteenth.ninth_cost_fails_off_empty_record' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:57:0: 'Seed.Sixteenth.admission_costs_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:58:0: 'Seed.Sixteenth.Step16.mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:59:0: 'Seed.Sixteenth.Reach16.mass_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:60:0: 'Seed.Sixteenth.has_term_criterion_fails16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:61:0: 'Seed.Sixteenth.one_way16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:62:0: 'Seed.Sixteenth.result16_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:63:0: 'Seed.Sixteenth.results_ninth_iff16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:64:0: 'Seed.Sixteenth.results_pair16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:65:0: 'Seed.Sixteenth.cycle2_assert16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:66:0: 'Seed.Sixteenth.cycle2_16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:67:0: 'Seed.Sixteenth.Reach16.unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:68:0: 'Seed.Sixteenth.admit_remove_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:69:0: 'Seed.Sixteenth.reach16_admit_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:70:0: 'Seed.Sixteenth.reach16_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:71:0: 'Seed.Sixteenth.result16_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:72:0: 'Seed.Sixteenth.ninth_round_survives' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:73:0: 'Seed.Sixteenth.leftOne_is_new' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:74:0: 'Seed.Sixteenth.exchange_symmetry16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:75:0: 'Seed.Sixteenth.record_names_no_relation' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:76:0: 'Seed.Sixteenth.r_leftover_admitted_into_s' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:77:0: 'Seed.Sixteenth.clearing_is_a_kind16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:78:0: 'Seed.Sixteenth.admitted_leftover_is_the_assertion' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:79:0: 'Seed.Sixteenth.record_moved_only_by_removal_and_admission' depends on axioms: [propext, Quot.sound]
+info: Sixteenth/Axioms.lean:80:0: 'Seed.Ninth.fewest_changes9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:81:0: 'Seed.Ninth.reach9_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:82:0: 'Seed.Ninth.results_pair9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:83:0: 'Seed.Fourteenth.leftover_remove_r_s' does not depend on any axioms
+info: Sixteenth/Axioms.lean:84:0: 'Seed.Fourteenth.clearing_not_a_kind' does not depend on any axioms
+info: Sixteenth/Axioms.lean:85:0: 'Seed.Fourteenth.add_remove' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:88:0: 'Seed.Sixteenth.Reach16.swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Sixteenth/Axioms.lean:89:0: 'Seed.Sixteenth.remove_add9' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3088 jobs).

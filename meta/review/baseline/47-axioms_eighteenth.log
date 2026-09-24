@@ -1,0 +1,9 @@
+lake build Eighteenth: passed
+sorry / admit / declared axiom in lean4/ (outside comments): none
+#print axioms (Eighteenth/Axioms.lean):
+'Seed.Eighteenth.given_ne_bra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Eighteenth.swapped_ne_given' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Eighteenth.swapped_ne_bra' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.addTerm_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_lower_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_lower_B' depends on axioms: [propext, Classical.choice, Quot.sound]

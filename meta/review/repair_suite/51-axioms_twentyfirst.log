@@ -1,0 +1,12 @@
+lake build Twentyfirst: passed
+sorry / admit / declared axiom in lean4/ (outside comments): none
+#print axioms (Twentyfirst/Axioms.lean):
+'Seed.Twentyfirst.no_step_to_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twentyfirst.identify_given_illegal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twentyfirst.identify_given_refused' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twentyfirst.refusal_continues_by_a_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twentyfirst.refusal_continues_by_removal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.addTerm_legal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.identify_legal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_lower_A' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.fewest_changes_lower_B' depends on axioms: [propext, Classical.choice, Quot.sound]

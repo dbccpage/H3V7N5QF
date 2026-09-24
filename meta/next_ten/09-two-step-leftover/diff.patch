@@ -1,0 +1,5 @@
+--- prompt/tenth/seed_prompt.md
++++ meta/next_ten/09-two-step-leftover/seed_prompt.md
+@@ -9 +9 @@
+-After every change, record what that change leaves. A leftover is not an assertion. Nothing left, a leftover that a later change of the four kinds can clear, and a leftover that none of them can, are three outcomes. Declare which, for every change.
++After every change, record what that change leaves. A leftover is not an assertion. Nothing left, a leftover that a sequence of at most two later changes of the four kinds can clear, and a leftover that no such sequence can clear, are three outcomes. Declare which, for every change.

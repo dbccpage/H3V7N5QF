@@ -1,0 +1,416 @@
+{
+  "weights": {
+    "H": 4,
+    "N": 3,
+    "R": 2,
+    "C": 4,
+    "M": 3,
+    "G": 2,
+    "L": 2
+  },
+  "candidates": 28,
+  "prototype_rejected": [
+    "C06"
+  ],
+  "all_scores": [
+    {
+      "id": "C19",
+      "score": 92.0
+    },
+    {
+      "id": "C06",
+      "score": 89.0
+    },
+    {
+      "id": "C21",
+      "score": 89.0
+    },
+    {
+      "id": "C09",
+      "score": 87.0
+    },
+    {
+      "id": "C07",
+      "score": 85.0
+    },
+    {
+      "id": "C01",
+      "score": 84.0
+    },
+    {
+      "id": "C04",
+      "score": 81.0
+    },
+    {
+      "id": "C05",
+      "score": 80.0
+    },
+    {
+      "id": "C25",
+      "score": 79.0
+    },
+    {
+      "id": "C11",
+      "score": 78.0
+    },
+    {
+      "id": "C17",
+      "score": 78.0
+    },
+    {
+      "id": "C02",
+      "score": 77.0
+    },
+    {
+      "id": "C03",
+      "score": 77.0
+    },
+    {
+      "id": "C14",
+      "score": 77.0
+    },
+    {
+      "id": "C12",
+      "score": 76.0
+    },
+    {
+      "id": "C08",
+      "score": 75.0
+    },
+    {
+      "id": "C18",
+      "score": 74.0
+    },
+    {
+      "id": "C22",
+      "score": 73.0
+    },
+    {
+      "id": "C24",
+      "score": 73.0
+    },
+    {
+      "id": "C28",
+      "score": 73.0
+    },
+    {
+      "id": "C10",
+      "score": 72.0
+    },
+    {
+      "id": "C26",
+      "score": 71.0
+    },
+    {
+      "id": "C15",
+      "score": 70.0
+    },
+    {
+      "id": "C20",
+      "score": 70.0
+    },
+    {
+      "id": "C27",
+      "score": 69.0
+    },
+    {
+      "id": "C16",
+      "score": 67.0
+    },
+    {
+      "id": "C23",
+      "score": 65.0
+    },
+    {
+      "id": "C13",
+      "score": 56.0
+    }
+  ],
+  "ranked": [
+    {
+      "id": "C19",
+      "score": 92.0
+    },
+    {
+      "id": "C21",
+      "score": 89.0
+    },
+    {
+      "id": "C09",
+      "score": 87.0
+    },
+    {
+      "id": "C07",
+      "score": 85.0
+    },
+    {
+      "id": "C01",
+      "score": 84.0
+    },
+    {
+      "id": "C04",
+      "score": 81.0
+    },
+    {
+      "id": "C05",
+      "score": 80.0
+    },
+    {
+      "id": "C25",
+      "score": 79.0
+    },
+    {
+      "id": "C11",
+      "score": 78.0
+    },
+    {
+      "id": "C17",
+      "score": 78.0
+    },
+    {
+      "id": "C02",
+      "score": 77.0
+    },
+    {
+      "id": "C03",
+      "score": 77.0
+    },
+    {
+      "id": "C14",
+      "score": 77.0
+    },
+    {
+      "id": "C12",
+      "score": 76.0
+    },
+    {
+      "id": "C08",
+      "score": 75.0
+    },
+    {
+      "id": "C18",
+      "score": 74.0
+    },
+    {
+      "id": "C22",
+      "score": 73.0
+    },
+    {
+      "id": "C24",
+      "score": 73.0
+    },
+    {
+      "id": "C28",
+      "score": 73.0
+    },
+    {
+      "id": "C10",
+      "score": 72.0
+    },
+    {
+      "id": "C26",
+      "score": 71.0
+    },
+    {
+      "id": "C15",
+      "score": 70.0
+    },
+    {
+      "id": "C20",
+      "score": 70.0
+    },
+    {
+      "id": "C27",
+      "score": 69.0
+    },
+    {
+      "id": "C16",
+      "score": 67.0
+    },
+    {
+      "id": "C23",
+      "score": 65.0
+    },
+    {
+      "id": "C13",
+      "score": 56.0
+    }
+  ],
+  "top_ten": [
+    "C19",
+    "C21",
+    "C09",
+    "C07",
+    "C01",
+    "C04",
+    "C05",
+    "C25",
+    "C11",
+    "C17"
+  ],
+  "sensitivity": [
+    {
+      "axis": "H",
+      "factor": 0.5,
+      "entered": [
+        "C18"
+      ],
+      "left": [
+        "C25"
+      ],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "H",
+      "factor": 1.5,
+      "entered": [
+        "C02",
+        "C03",
+        "C14"
+      ],
+      "left": [
+        "C11",
+        "C17"
+      ],
+      "cutoff_tie": true,
+      "retained_at_cutoff": 11
+    },
+    {
+      "axis": "N",
+      "factor": 0.5,
+      "entered": [],
+      "left": [],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "N",
+      "factor": 1.5,
+      "entered": [
+        "C02",
+        "C03"
+      ],
+      "left": [
+        "C11",
+        "C17"
+      ],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "R",
+      "factor": 0.5,
+      "entered": [
+        "C02",
+        "C03"
+      ],
+      "left": [
+        "C11",
+        "C17"
+      ],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "R",
+      "factor": 1.5,
+      "entered": [],
+      "left": [],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "C",
+      "factor": 0.5,
+      "entered": [
+        "C08"
+      ],
+      "left": [
+        "C25"
+      ],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "C",
+      "factor": 1.5,
+      "entered": [
+        "C02",
+        "C03"
+      ],
+      "left": [
+        "C04"
+      ],
+      "cutoff_tie": true,
+      "retained_at_cutoff": 11
+    },
+    {
+      "axis": "M",
+      "factor": 0.5,
+      "entered": [
+        "C02",
+        "C03"
+      ],
+      "left": [
+        "C11",
+        "C17"
+      ],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "M",
+      "factor": 1.5,
+      "entered": [],
+      "left": [],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "G",
+      "factor": 0.5,
+      "entered": [],
+      "left": [],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "G",
+      "factor": 1.5,
+      "entered": [
+        "C02",
+        "C03",
+        "C14"
+      ],
+      "left": [
+        "C11",
+        "C17"
+      ],
+      "cutoff_tie": true,
+      "retained_at_cutoff": 11
+    },
+    {
+      "axis": "L",
+      "factor": 0.5,
+      "entered": [
+        "C02",
+        "C03"
+      ],
+      "left": [
+        "C11",
+        "C17"
+      ],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    },
+    {
+      "axis": "L",
+      "factor": 1.5,
+      "entered": [],
+      "left": [],
+      "cutoff_tie": false,
+      "retained_at_cutoff": 10
+    }
+  ]
+}

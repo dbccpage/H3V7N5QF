@@ -1,0 +1,600 @@
+{
+  "branch": "review/whole-repo-2026-09-23-meta",
+  "head": "6f60a16f378b57fadec3d087dfd3aebcec916ff1",
+  "started_utc": "2026-09-23T23:56:02.633511+00:00",
+  "commands": [
+    {
+      "name": "pytest",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "pytest",
+        "-n",
+        "auto"
+      ],
+      "started_utc": "2026-09-23T23:56:02.633576+00:00",
+      "finished_utc": "2026-09-24T00:00:36.306519+00:00",
+      "exit_code": 0,
+      "log": "01-pytest.log"
+    },
+    {
+      "name": "coverage_gate",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/xry/gate.py",
+        "coverage.json"
+      ],
+      "started_utc": "2026-09-24T00:00:36.318179+00:00",
+      "finished_utc": "2026-09-24T00:00:36.665489+00:00",
+      "exit_code": 0,
+      "log": "02-coverage_gate.log"
+    },
+    {
+      "name": "mypy",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "mypy"
+      ],
+      "started_utc": "2026-09-24T00:00:36.667239+00:00",
+      "finished_utc": "2026-09-24T00:00:44.482605+00:00",
+      "exit_code": 0,
+      "log": "03-mypy.log"
+    },
+    {
+      "name": "prose_watchlist",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "ci/check_prose_watchlist.py"
+      ],
+      "started_utc": "2026-09-24T00:00:44.484512+00:00",
+      "finished_utc": "2026-09-24T00:04:15.253649+00:00",
+      "exit_code": 0,
+      "log": "04-prose_watchlist.log"
+    },
+    {
+      "name": "vacuous_checks",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "ci/check_vacuous_checks.py"
+      ],
+      "started_utc": "2026-09-24T00:04:15.264368+00:00",
+      "finished_utc": "2026-09-24T00:04:16.694400+00:00",
+      "exit_code": 0,
+      "log": "05-vacuous_checks.log"
+    },
+    {
+      "name": "definitional_citations",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "ci/check_definitional_citations.py"
+      ],
+      "started_utc": "2026-09-24T00:04:16.697066+00:00",
+      "finished_utc": "2026-09-24T00:04:35.212692+00:00",
+      "exit_code": 0,
+      "log": "06-definitional_citations.log"
+    },
+    {
+      "name": "mutation_bite",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "ci/check_mutation_bite.py"
+      ],
+      "started_utc": "2026-09-24T00:04:35.214679+00:00",
+      "finished_utc": "2026-09-24T00:04:37.471443+00:00",
+      "exit_code": 0,
+      "log": "07-mutation_bite.log"
+    },
+    {
+      "name": "lean_build",
+      "command": [
+        "lake",
+        "+leanprover/lean4:v4.33.1",
+        "-d",
+        "lean4",
+        "build"
+      ],
+      "started_utc": "2026-09-24T00:04:37.474272+00:00",
+      "finished_utc": "2026-09-24T00:05:38.321298+00:00",
+      "exit_code": 1,
+      "log": "08-lean_build.log"
+    },
+    {
+      "name": "evidence_base",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:05:38.325868+00:00",
+      "finished_utc": "2026-09-24T00:06:13.730432+00:00",
+      "exit_code": 0,
+      "log": "09-evidence_base.log"
+    },
+    {
+      "name": "evidence_second",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_second.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:06:13.740508+00:00",
+      "finished_utc": "2026-09-24T00:10:30.476258+00:00",
+      "exit_code": 0,
+      "log": "10-evidence_second.log"
+    },
+    {
+      "name": "evidence_third",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_third.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:10:30.485705+00:00",
+      "finished_utc": "2026-09-24T00:15:30.081809+00:00",
+      "exit_code": 0,
+      "log": "11-evidence_third.log"
+    },
+    {
+      "name": "evidence_fourth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_fourth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:15:30.092145+00:00",
+      "finished_utc": "2026-09-24T00:17:20.600917+00:00",
+      "exit_code": 0,
+      "log": "12-evidence_fourth.log"
+    },
+    {
+      "name": "evidence_fifth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_fifth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:17:20.604728+00:00",
+      "finished_utc": "2026-09-24T00:23:24.048250+00:00",
+      "exit_code": 0,
+      "log": "13-evidence_fifth.log"
+    },
+    {
+      "name": "evidence_sixth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_sixth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:23:24.055210+00:00",
+      "finished_utc": "2026-09-24T00:32:53.244203+00:00",
+      "exit_code": 0,
+      "log": "14-evidence_sixth.log"
+    },
+    {
+      "name": "evidence_seventh",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_seventh.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:32:53.255600+00:00",
+      "finished_utc": "2026-09-24T00:41:42.413474+00:00",
+      "exit_code": 0,
+      "log": "15-evidence_seventh.log"
+    },
+    {
+      "name": "evidence_eighth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_eighth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:41:42.423430+00:00",
+      "finished_utc": "2026-09-24T00:52:07.050798+00:00",
+      "exit_code": 0,
+      "log": "16-evidence_eighth.log"
+    },
+    {
+      "name": "evidence_ninth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_ninth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:52:07.059576+00:00",
+      "finished_utc": "2026-09-24T00:54:39.006343+00:00",
+      "exit_code": 0,
+      "log": "17-evidence_ninth.log"
+    },
+    {
+      "name": "evidence_tenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_tenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:54:39.009496+00:00",
+      "finished_utc": "2026-09-24T00:54:41.710923+00:00",
+      "exit_code": 0,
+      "log": "18-evidence_tenth.log"
+    },
+    {
+      "name": "evidence_eleventh",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_eleventh.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:54:41.713294+00:00",
+      "finished_utc": "2026-09-24T00:54:44.228134+00:00",
+      "exit_code": 0,
+      "log": "19-evidence_eleventh.log"
+    },
+    {
+      "name": "evidence_twelfth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_twelfth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:54:44.229649+00:00",
+      "finished_utc": "2026-09-24T00:54:46.798599+00:00",
+      "exit_code": 0,
+      "log": "20-evidence_twelfth.log"
+    },
+    {
+      "name": "evidence_thirteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_thirteenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:54:46.799462+00:00",
+      "finished_utc": "2026-09-24T00:54:48.748263+00:00",
+      "exit_code": 0,
+      "log": "21-evidence_thirteenth.log"
+    },
+    {
+      "name": "evidence_fourteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_fourteenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:54:48.749951+00:00",
+      "finished_utc": "2026-09-24T00:54:51.750229+00:00",
+      "exit_code": 0,
+      "log": "22-evidence_fourteenth.log"
+    },
+    {
+      "name": "evidence_fifteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_fifteenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:54:51.753048+00:00",
+      "finished_utc": "2026-09-24T00:54:54.552408+00:00",
+      "exit_code": 0,
+      "log": "23-evidence_fifteenth.log"
+    },
+    {
+      "name": "evidence_sixteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/generate_sixteenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:54:54.554720+00:00",
+      "finished_utc": "2026-09-24T00:56:06.925272+00:00",
+      "exit_code": 0,
+      "log": "24-evidence_sixteenth.log"
+    },
+    {
+      "name": "evidence_seventeenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/run_seventeenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:56:06.927918+00:00",
+      "finished_utc": "2026-09-24T00:56:07.368053+00:00",
+      "exit_code": 0,
+      "log": "25-evidence_seventeenth.log"
+    },
+    {
+      "name": "evidence_eighteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/run_eighteenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:56:07.369640+00:00",
+      "finished_utc": "2026-09-24T00:56:07.910665+00:00",
+      "exit_code": 0,
+      "log": "26-evidence_eighteenth.log"
+    },
+    {
+      "name": "evidence_nineteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/run_nineteenth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:56:07.912612+00:00",
+      "finished_utc": "2026-09-24T00:56:08.263106+00:00",
+      "exit_code": 0,
+      "log": "27-evidence_nineteenth.log"
+    },
+    {
+      "name": "evidence_twentieth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/run_twentieth.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:56:08.265017+00:00",
+      "finished_utc": "2026-09-24T00:56:08.599242+00:00",
+      "exit_code": 0,
+      "log": "28-evidence_twentieth.log"
+    },
+    {
+      "name": "evidence_twentyfirst",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/run_twentyfirst.py",
+        "--check"
+      ],
+      "started_utc": "2026-09-24T00:56:08.600928+00:00",
+      "finished_utc": "2026-09-24T00:56:08.912115+00:00",
+      "exit_code": 0,
+      "log": "29-evidence_twentyfirst.log"
+    },
+    {
+      "name": "axioms_base",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report.py"
+      ],
+      "started_utc": "2026-09-24T00:56:08.914496+00:00",
+      "finished_utc": "2026-09-24T00:57:44.498481+00:00",
+      "exit_code": 0,
+      "log": "30-axioms_base.log"
+    },
+    {
+      "name": "axioms_second",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_second.py"
+      ],
+      "started_utc": "2026-09-24T00:57:44.500878+00:00",
+      "finished_utc": "2026-09-24T00:58:24.235735+00:00",
+      "exit_code": 0,
+      "log": "31-axioms_second.log"
+    },
+    {
+      "name": "axioms_third",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_third.py"
+      ],
+      "started_utc": "2026-09-24T00:58:24.241082+00:00",
+      "finished_utc": "2026-09-24T00:59:21.868826+00:00",
+      "exit_code": 0,
+      "log": "32-axioms_third.log"
+    },
+    {
+      "name": "axioms_fourth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_fourth.py"
+      ],
+      "started_utc": "2026-09-24T00:59:21.872196+00:00",
+      "finished_utc": "2026-09-24T01:00:46.363811+00:00",
+      "exit_code": 0,
+      "log": "33-axioms_fourth.log"
+    },
+    {
+      "name": "axioms_fifth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_fifth.py"
+      ],
+      "started_utc": "2026-09-24T01:00:46.368332+00:00",
+      "finished_utc": "2026-09-24T01:01:45.221870+00:00",
+      "exit_code": 0,
+      "log": "34-axioms_fifth.log"
+    },
+    {
+      "name": "axioms_sixth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_sixth.py"
+      ],
+      "started_utc": "2026-09-24T01:01:45.224479+00:00",
+      "finished_utc": "2026-09-24T01:02:14.388831+00:00",
+      "exit_code": 0,
+      "log": "35-axioms_sixth.log"
+    },
+    {
+      "name": "axioms_seventh",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_seventh.py"
+      ],
+      "started_utc": "2026-09-24T01:02:14.391269+00:00",
+      "finished_utc": "2026-09-24T01:03:11.810848+00:00",
+      "exit_code": 0,
+      "log": "36-axioms_seventh.log"
+    },
+    {
+      "name": "axioms_eighth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_eighth.py"
+      ],
+      "started_utc": "2026-09-24T01:03:11.814856+00:00",
+      "finished_utc": "2026-09-24T01:03:46.066375+00:00",
+      "exit_code": 0,
+      "log": "37-axioms_eighth.log"
+    },
+    {
+      "name": "axioms_ninth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_ninth.py"
+      ],
+      "started_utc": "2026-09-24T01:03:46.067713+00:00",
+      "finished_utc": "2026-09-24T01:04:05.342171+00:00",
+      "exit_code": 0,
+      "log": "38-axioms_ninth.log"
+    },
+    {
+      "name": "axioms_tenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_tenth.py"
+      ],
+      "started_utc": "2026-09-24T01:04:05.342763+00:00",
+      "finished_utc": "2026-09-24T01:04:24.543954+00:00",
+      "exit_code": 0,
+      "log": "39-axioms_tenth.log"
+    },
+    {
+      "name": "axioms_eleventh",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_eleventh.py"
+      ],
+      "started_utc": "2026-09-24T01:04:24.544702+00:00",
+      "finished_utc": "2026-09-24T01:04:43.189027+00:00",
+      "exit_code": 0,
+      "log": "40-axioms_eleventh.log"
+    },
+    {
+      "name": "axioms_twelfth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_twelfth.py"
+      ],
+      "started_utc": "2026-09-24T01:04:43.190413+00:00",
+      "finished_utc": "2026-09-24T01:05:03.877049+00:00",
+      "exit_code": 0,
+      "log": "41-axioms_twelfth.log"
+    },
+    {
+      "name": "axioms_thirteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_thirteenth.py"
+      ],
+      "started_utc": "2026-09-24T01:05:03.877577+00:00",
+      "finished_utc": "2026-09-24T01:05:36.624212+00:00",
+      "exit_code": 0,
+      "log": "42-axioms_thirteenth.log"
+    },
+    {
+      "name": "axioms_fourteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_fourteenth.py"
+      ],
+      "started_utc": "2026-09-24T01:05:36.626183+00:00",
+      "finished_utc": "2026-09-24T01:05:59.599977+00:00",
+      "exit_code": 0,
+      "log": "43-axioms_fourteenth.log"
+    },
+    {
+      "name": "axioms_fifteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_fifteenth.py"
+      ],
+      "started_utc": "2026-09-24T01:05:59.601138+00:00",
+      "finished_utc": "2026-09-24T01:06:18.612673+00:00",
+      "exit_code": 0,
+      "log": "44-axioms_fifteenth.log"
+    },
+    {
+      "name": "axioms_sixteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_sixteenth.py"
+      ],
+      "started_utc": "2026-09-24T01:06:18.613728+00:00",
+      "finished_utc": "2026-09-24T01:06:38.194891+00:00",
+      "exit_code": 0,
+      "log": "45-axioms_sixteenth.log"
+    },
+    {
+      "name": "axioms_seventeenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_seventeenth.py"
+      ],
+      "started_utc": "2026-09-24T01:06:38.195401+00:00",
+      "finished_utc": "2026-09-24T01:06:55.390471+00:00",
+      "exit_code": 0,
+      "log": "46-axioms_seventeenth.log"
+    },
+    {
+      "name": "axioms_eighteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_eighteenth.py"
+      ],
+      "started_utc": "2026-09-24T01:06:55.391596+00:00",
+      "finished_utc": "2026-09-24T01:07:12.422434+00:00",
+      "exit_code": 0,
+      "log": "47-axioms_eighteenth.log"
+    },
+    {
+      "name": "axioms_nineteenth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_nineteenth.py"
+      ],
+      "started_utc": "2026-09-24T01:07:12.424272+00:00",
+      "finished_utc": "2026-09-24T01:07:32.434810+00:00",
+      "exit_code": 0,
+      "log": "48-axioms_nineteenth.log"
+    },
+    {
+      "name": "axioms_twentieth",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_twentieth.py"
+      ],
+      "started_utc": "2026-09-24T01:07:32.435933+00:00",
+      "finished_utc": "2026-09-24T01:07:49.559621+00:00",
+      "exit_code": 0,
+      "log": "49-axioms_twentieth.log"
+    },
+    {
+      "name": "axioms_twentyfirst",
+      "command": [
+        "C:\\Users\\a343o\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "code/lean_report_twentyfirst.py"
+      ],
+      "started_utc": "2026-09-24T01:07:49.561329+00:00",
+      "finished_utc": "2026-09-24T01:08:07.952873+00:00",
+      "exit_code": 0,
+      "log": "50-axioms_twentyfirst.log"
+    },
+    {
+      "name": "git_status",
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--branch"
+      ],
+      "started_utc": "2026-09-24T01:08:07.953417+00:00",
+      "finished_utc": "2026-09-24T01:08:08.063443+00:00",
+      "exit_code": 0,
+      "log": "51-git_status.log"
+    }
+  ],
+  "finished_utc": "2026-09-24T01:08:08.063966+00:00"
+}

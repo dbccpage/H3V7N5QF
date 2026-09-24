@@ -1,0 +1,5 @@
+--- prompt/ninth/seed_prompt.md
++++ meta/next_ten/10-swap-as-change/seed_prompt.md
+@@ -7 +7 @@
+-A change is exactly one of: identifying two terms; removing an assertion; adding a term; adding an assertion. Nothing else is a change. Identifying two terms replaces both by one term in every assertion.
++A change is exactly one of: identifying two terms; removing an assertion; adding a term; adding an assertion; exchanging the relations. Nothing else is a change. Identifying two terms replaces both by one term in every assertion. Exchanging the relations replaces every `xry` with `xsy` and every `xsy` with `xry`, preserving each multiplicity.

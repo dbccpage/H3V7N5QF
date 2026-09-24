@@ -1,0 +1,23 @@
+lake build: passed
+sorry / admit / declared axiom in lean4/ (outside comments): none
+#print axioms (Twelfth/Axioms.lean):
+'Seed.Twelfth.record_determined_by_rel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.r_record_not_s' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.record_not_assertion' depends on axioms: [propext, Quot.sound]
+'Seed.Twelfth.identify_drops_a_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.empty_record_restored_by_addTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.nonempty_not_restored' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.first_change_adds_term12' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.fewest_changes12' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.reach12_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.results_pair12' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.no_third_rel' depends on axioms: [propext, Quot.sound]
+'Seed.Twelfth.no_cross_constraint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.recorded_extra' depends on axioms: [propext, Quot.sound]
+'Seed.Twelfth.recorded_cost_is_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.recordRel_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.recordOf_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Twelfth.Step12.swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.fewest_changes9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.reach9_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Ninth.results_pair9' depends on axioms: [propext, Classical.choice, Quot.sound]

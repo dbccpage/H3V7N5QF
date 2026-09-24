@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+
+# The meta-branch exact-head run is recorded locally and summarized in its
+# PR body; its logs are not derivation inputs.
+/review/meta_suite/
