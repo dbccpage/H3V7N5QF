@@ -1,0 +1,140 @@
+{
+  "census": {
+    "bound_2_rounds_8": {
+      "bound": 2,
+      "comparison": {
+        "coincides": true,
+        "counts_one_step": {
+          "a leftover that a sequence of at most two later changes of the four kinds can clear": 5292,
+          "a leftover that no such sequence can clear": 1491,
+          "nothing left": 13780
+        },
+        "counts_two_step": {
+          "a leftover that a sequence of at most two later changes of the four kinds can clear": 5292,
+          "a leftover that no such sequence can clear": 1491,
+          "nothing left": 13780
+        },
+        "discrepancies": [],
+        "length_two_restorations": 0,
+        "total_checked": 20563
+      },
+      "last_new_round": 8,
+      "rounds": 8,
+      "states_explored": 1556
+    },
+    "bound_3_rounds_4": {
+      "bound": 3,
+      "comparison": {
+        "coincides": true,
+        "counts_one_step": {
+          "a leftover that a sequence of at most two later changes of the four kinds can clear": 75,
+          "a leftover that no such sequence can clear": 21,
+          "nothing left": 351
+        },
+        "counts_two_step": {
+          "a leftover that a sequence of at most two later changes of the four kinds can clear": 75,
+          "a leftover that no such sequence can clear": 21,
+          "nothing left": 351
+        },
+        "discrepancies": [],
+        "length_two_restorations": 0,
+        "total_checked": 447
+      },
+      "last_new_round": 4,
+      "rounds": 4,
+      "states_explored": 41
+    },
+    "handcrafted_edge_cases": {
+      "comparison": {
+        "coincides": true,
+        "counts_one_step": {
+          "a leftover that a sequence of at most two later changes of the four kinds can clear": 87,
+          "a leftover that no such sequence can clear": 35,
+          "nothing left": 327
+        },
+        "counts_two_step": {
+          "a leftover that a sequence of at most two later changes of the four kinds can clear": 87,
+          "a leftover that no such sequence can clear": 35,
+          "nothing left": 327
+        },
+        "discrepancies": [],
+        "length_two_restorations": 0,
+        "total_checked": 449
+      },
+      "states_count": 35
+    }
+  },
+  "falsification_results": {
+    "all_runs_coincide": true,
+    "falsifier": "Every two-step clearable leftover was already one-step clearable",
+    "falsifier_status": "CONFIRMED",
+    "hypothesis": "Two-step clearing has outcomes beyond the one-step bare-term criterion",
+    "hypothesis_status": "REFUTED",
+    "size_parity_invariant_holds": true,
+    "three_step_witness": {
+      "bare_0": false,
+      "bare_1": false,
+      "change": "identify a and b",
+      "restores_1": false,
+      "restores_2": false,
+      "restores_3": true,
+      "sequence_3": [
+        "remove ara",
+        "add a term",
+        "add arb"
+      ],
+      "state": "2::0-1*1|"
+    },
+    "total_changes_tested": 21459,
+    "total_states_evaluated": 1632
+  },
+  "formal_claim": {
+    "falsifier": "Every two-step clearable leftover was already one-step clearable",
+    "falsifier_status": "CONFIRMED",
+    "hypothesis": "Two-step clearing has outcomes beyond the one-step bare-term criterion",
+    "hypothesis_status": "REFUTED"
+  },
+  "parent_derivation": "tenth",
+  "problem": "meta/next_ten/09-two-step-leftover",
+  "seed_change": {
+    "from": "Nothing left, a leftover that a later change of the four kinds can clear, and a leftover that none of them can, are three outcomes. Declare which, for every change.",
+    "to": "Nothing left, a leftover that a sequence of at most two later changes of the four kinds can clear, and a leftover that no such sequence can clear, are three outcomes. Declare which, for every change."
+  },
+  "size_parity_invariant": {
+    "description": "Every single change of the four kinds alters the term count n by delta_n in {-1, 0, +1} and the assertion multiplicity m by delta_m in {-1, 0, +1}. Identification preserves total multiplicity m(T) = m(S) but decreases term count n(T) = n(S) - 1. Any 2-step restoration must achieve net delta_n = +1 and net delta_m = 0. The only integer partition of delta_n = +1 in two steps is (+1, 0) or (0, +1), requiring exactly one ADD_TERM (delta_n=+1, delta_m=0) and one assertion change (delta_n=0, delta_m=+-1). Consequently, net delta_m is +-1 != 0, rendering 2-step restoration of an identification algebraically impossible.",
+    "holds": true,
+    "possible_two_step_multiplicity_deltas_when_term_delta_is_one": [
+      -1,
+      1
+    ],
+    "possible_two_step_term_deltas": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "restoration_requires_multiplicity_delta": 0,
+    "restoration_requires_term_delta": 1,
+    "two_step_restoration_algebraically_possible": false
+  },
+  "what_does_not_follow": {
+    "claim": "Three-step clearing has no outcomes beyond the one-step bare-term criterion",
+    "notes": "A sequence of 3 changes CAN clear an identification between two non-bare terms: Step 1 adds a term, Step 2 adds the separated assertion, Step 3 removes the merged loop. Because 3 is odd, parity permits delta_m = 0 along with delta_n = +1.",
+    "refuted_by_witness": true,
+    "witness": {
+      "bare_0": false,
+      "bare_1": false,
+      "change": "identify a and b",
+      "restores_1": false,
+      "restores_2": false,
+      "restores_3": true,
+      "sequence_3": [
+        "remove ara",
+        "add a term",
+        "add arb"
+      ],
+      "state": "2::0-1*1|"
+    }
+  }
+}

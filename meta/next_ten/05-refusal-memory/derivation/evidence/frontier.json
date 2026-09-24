@@ -1,0 +1,114 @@
+{
+  "bra_False_anchored": {
+    "frontier_sample": [
+      "3:01:0-0.0-1|add a term|terms",
+      "3:01:0-1.0-2.1-0|add a term|terms",
+      "3:01:0-1.0-2.1-2|add a term|terms",
+      "3:01:0-1.0-2|add a term|terms",
+      "3:01:0-1.0-2|refused:[add ara]|add a term|terms",
+      "3:01:0-1.0-2|refused:[add brb]|add a term|terms",
+      "3:01:0-1.0-2|refused:[add crc]|add a term|terms",
+      "3:01:0-1.0-2|refused:[identify a and b]|add a term|terms",
+      "3:01:0-1.0-2|refused:[identify a and c]|add a term|terms",
+      "3:01:0-1.1-0.2-0|add a term|terms"
+    ],
+    "frontier_total": 62,
+    "unexpanded_sample": [
+      "2:00:0-0.0-1",
+      "2:00:0-0.1-0",
+      "2:00:0-0|refused:[add crc]",
+      "2:00:0-1",
+      "2:00:|refused:[add ara]",
+      "2:00:|refused:[add crc]",
+      "2:01:0-0.0-1.1-0|refused:[add brb]",
+      "2:01:0-0.0-1.1-0|refused:[identify a and b]",
+      "2:01:0-0.0-1.1-1",
+      "2:01:0-0.0-1|refused:[add brb; identify a and b]"
+    ],
+    "unexpanded_total": 198
+  },
+  "bra_False_free": {
+    "frontier_sample": [
+      "3::0-0.0-1|add a term|terms",
+      "3::0-0.1-0|add a term|terms",
+      "3::0-1.0-2.1-0|add a term|terms",
+      "3::0-1.0-2.1-2|add a term|terms",
+      "3::0-1.0-2|add a term|terms",
+      "3::0-1.0-2|refused:[add ara]|add a term|terms",
+      "3::0-1.0-2|refused:[add brb]|add a term|terms",
+      "3::0-1.0-2|refused:[identify a and b]|add a term|terms",
+      "3::0-1.1-0.2-0|add a term|terms",
+      "3::0-1.1-0|add a term|terms"
+    ],
+    "frontier_total": 38,
+    "unexpanded_sample": [
+      "2::0-0.0-1.1-0|refused:[add brb]",
+      "2::0-0.0-1.1-0|refused:[identify a and b]",
+      "2::0-0.0-1.1-1",
+      "2::0-0.0-1|refused:[add brb; identify a and b]",
+      "2::0-0.1-0|refused:[add brb; identify a and b]",
+      "2::0-0|refused:[add brb]",
+      "2::0-1.1-0|refused:[add ara; add brb; identify a and b]",
+      "3::0-0",
+      "3::0-0.0-1.0-2",
+      "3::0-0.0-1.1-0"
+    ],
+    "unexpanded_total": 79
+  },
+  "bra_True_anchored": {
+    "frontier_sample": [
+      "3:01:0-0.0-1.1-0|add a term|terms",
+      "3:01:0-1.0-2.1-0.1-2|add a term|terms",
+      "3:01:0-1.0-2.1-0.2-0|add a term|terms",
+      "3:01:0-1.0-2.1-0|add a term|terms",
+      "3:01:0-1.0-2.1-0|refused:[add ara]|add a term|terms",
+      "3:01:0-1.0-2.1-0|refused:[add brb]|add a term|terms",
+      "3:01:0-1.0-2.1-0|refused:[add crc]|add a term|terms",
+      "3:01:0-1.0-2.1-0|refused:[identify a and b]|add a term|terms",
+      "3:01:0-1.0-2.1-0|refused:[identify a and c]|add a term|terms",
+      "3:01:0-1.0-2|add a term|terms"
+    ],
+    "frontier_total": 63,
+    "unexpanded_sample": [
+      "1:00:|refused:[add ara]",
+      "2:00:",
+      "2:00:0-0.0-1",
+      "2:00:0-0.1-0",
+      "2:00:0-0|refused:[add crc]",
+      "2:01:0-0",
+      "2:01:0-0.0-1.1-0.1-1",
+      "2:01:0-0.0-1.1-0|refused:[add brb; identify a and b]",
+      "2:01:0-0.0-1|refused:[add brb]",
+      "2:01:0-0.0-1|refused:[identify a and b]"
+    ],
+    "unexpanded_total": 202
+  },
+  "bra_True_free": {
+    "frontier_sample": [
+      "3::0-0.0-1.1-0|add a term|terms",
+      "3::0-1.0-2.1-0.1-2|add a term|terms",
+      "3::0-1.0-2.1-0.2-0|add a term|terms",
+      "3::0-1.0-2.1-0|add a term|terms",
+      "3::0-1.0-2.1-0|refused:[add ara]|add a term|terms",
+      "3::0-1.0-2.1-0|refused:[add brb]|add a term|terms",
+      "3::0-1.0-2.1-0|refused:[add crc]|add a term|terms",
+      "3::0-1.0-2.1-0|refused:[identify a and b]|add a term|terms",
+      "3::0-1.0-2.1-0|refused:[identify a and c]|add a term|terms",
+      "3::0-1.0-2.1-2.2-0|add a term|terms"
+    ],
+    "frontier_total": 35,
+    "unexpanded_sample": [
+      "1::|refused:[add ara]",
+      "2::0-0.0-1.1-0.1-1",
+      "2::0-0.0-1.1-0|refused:[add brb; identify a and b]",
+      "2::0-0.0-1|refused:[add brb]",
+      "2::0-0.0-1|refused:[identify a and b]",
+      "2::0-0.1-0|refused:[add brb]",
+      "2::0-0.1-0|refused:[identify a and b]",
+      "2::0-0|refused:[add brb]",
+      "2::0-1|refused:[add ara; add brb; identify a and b]",
+      "2::|refused:[add ara; add brb]"
+    ],
+    "unexpanded_total": 86
+  }
+}

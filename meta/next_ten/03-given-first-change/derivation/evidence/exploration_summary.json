@@ -1,0 +1,41 @@
+{
+  "attempts_per_round": [
+    0,
+    3,
+    21,
+    100,
+    446
+  ],
+  "bound_terms": 3,
+  "census_complete": true,
+  "disagreements": {},
+  "empty_explored": false,
+  "frontier_exits_count": 5,
+  "given_assertions": 0,
+  "given_size": 1,
+  "given_terms": 1,
+  "new_per_round": [
+    1,
+    3,
+    8,
+    28,
+    99
+  ],
+  "rounds": 4,
+  "total_results_expected": 139,
+  "total_results_explored": 139,
+  "xrx_per_round": [
+    0,
+    1,
+    4,
+    15,
+    56
+  ],
+  "xsx_per_round": [
+    0,
+    1,
+    4,
+    15,
+    56
+  ]
+}

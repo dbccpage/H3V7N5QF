@@ -1,0 +1,18 @@
+lean check: passed
+sorry / admit / declared axiom in Derivation.lean: none
+#print axioms:
+'Derivation02.StepG.toStep9' does not depend on any axioms
+'Derivation02.ReachG.toReach9' does not depend on any axioms
+'Derivation02.blocked_pair_cannot_add' does not depend on any axioms
+'Derivation02.s_witness_r_asserted' does not depend on any axioms
+'Derivation02.s_witness_blocks_s' does not depend on any axioms
+'Derivation02.empty_disjoint' does not depend on any axioms
+'Derivation02.addTerm_disjoint' does not depend on any axioms
+'Derivation02.addAssertion_disjoint' does not depend on any axioms
+'Derivation02.reach_add_preserves_disjoint' does not depend on any axioms
+'Derivation02.overlapping_not_disjoint' does not depend on any axioms
+'Derivation02.overlapping_unreachable_by_additions' does not depend on any axioms
+'Derivation02.s_pre_disjoint' does not depend on any axioms
+'Derivation02.s_post_overlapping' does not depend on any axioms
+'Derivation02.step_identify_valid' depends on axioms: [propext, Quot.sound]
+'Derivation02.identification_bypasses_guard' depends on axioms: [propext, Quot.sound]

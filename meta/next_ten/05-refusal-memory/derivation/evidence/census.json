@@ -1,0 +1,10 @@
+{
+  "anchored_bound_1": 3,
+  "anchored_bound_2": 129,
+  "free_bound_1": 3,
+  "free_bound_2": 39,
+  "loopfree_anchored_bound_1": 1,
+  "loopfree_anchored_bound_2": 9,
+  "loopfree_free_bound_1": 1,
+  "loopfree_free_bound_2": 4
+}

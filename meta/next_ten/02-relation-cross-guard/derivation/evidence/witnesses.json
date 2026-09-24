@@ -1,0 +1,76 @@
+{
+  "blocked_pair": {
+    "change": "add asa",
+    "rel": "s",
+    "state": "1::0-0*1|",
+    "x": 0,
+    "y": 0
+  },
+  "one_term_bypass": {
+    "sequence": [
+      {
+        "change": "add a term",
+        "result": "1::|",
+        "step": 1
+      },
+      {
+        "change": "add a term",
+        "result": "2::|",
+        "step": 2
+      },
+      {
+        "change": "add brb",
+        "result": "2::1-1*1|",
+        "step": 3
+      },
+      {
+        "change": "add asa",
+        "result": "2::1-1*1|0-0*1",
+        "step": 4
+      },
+      {
+        "change": "identify a and b",
+        "result": "1::0-0*1|0-0*1",
+        "step": 5
+      }
+    ],
+    "steps": 5,
+    "target": "1::0-0*1|0-0*1"
+  },
+  "two_term_bypass": {
+    "sequence": [
+      {
+        "change": "add a term",
+        "result": "1::|",
+        "step": 1
+      },
+      {
+        "change": "add a term",
+        "result": "2::|",
+        "step": 2
+      },
+      {
+        "change": "add a term",
+        "result": "3::|",
+        "step": 3
+      },
+      {
+        "change": "add crb",
+        "result": "3::2-1*1|",
+        "step": 4
+      },
+      {
+        "change": "add asb",
+        "result": "3::2-1*1|0-1*1",
+        "step": 5
+      },
+      {
+        "change": "identify a and c",
+        "result": "2::1-0*1|1-0*1",
+        "step": 6
+      }
+    ],
+    "steps": 6,
+    "target": "2::1-0*1|1-0*1"
+  }
+}
