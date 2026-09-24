@@ -83,10 +83,15 @@ run as a full derivation.
 
 ## Remaining boundary
 
-Remote pushes and `gh pr create` are blocked by the task's hard rule that
-network use is limited to read-only Genesis access. Two local branch/PR
-packages and exact local receipts are prepared without a GitHub write.
+The repair branch passed 52/52 native commands. The meta branch ran all 51
+commands at `6f60a16`: 50 passed, while the parallel Lean build failed to
+read existing Mathlib `.olean.private` files. Sequential builds of the ten
+affected modules and a full pinned build then passed without source changes.
+A clean retry at the same commit passed its first 39 commands before the user
+stopped it. The final 11 report writers and status command had passed on the
+first run; a single uninterrupted 51/51 retry was not completed. See
+`meta_suite_first_summary.json` and `meta_suite_retry_summary.json` for exact
+exit codes. The user subsequently requested commit, push, and PR publication.
 `AGENTS.md` was present untracked before this work and is preserved as
 user-owned. No file under `prompt/` changed; `.lake/` is not staged or
-committed. Details of any remaining local gate issue are recorded in
-`meta/review_log.md`.
+committed. No remote PR was opened when this summary was written.

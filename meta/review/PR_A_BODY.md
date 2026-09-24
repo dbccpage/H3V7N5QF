@@ -48,6 +48,5 @@ preexisting untracked `AGENTS.md` and the uncommitted `meta/` package.
 ## Limits
 
 The repair restores claim/evidence custody; it does not extend any finite
-bound or assert a new theorem. This body is prepared locally. Publishing the
-PR is blocked by the task's hard network rule, which permits only read-only
-Genesis access.
+bound or assert a new theorem. The user explicitly requested publication of
+this PR after the local review.

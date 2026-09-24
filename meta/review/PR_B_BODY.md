@@ -33,14 +33,32 @@ mypy; four existing CI gates; pinned offline Lean build; 21 evidence checks;
 21 axiom-report writers. Full logs and exit codes are in
 `meta/review/baseline/summary.json` and its numbered logs.
 
-The meta-branch full-suite receipt, final commit SHA, prose-watchlist pin
-comparison, and `prompt/`/`.lake` audit are added here after that run.
+At exact source commit `6f60a16f378b57fadec3d087dfd3aebcec916ff1`,
+the first meta-branch suite ran all 51 commands: 50 passed. The parallel
+Lean build alone failed while reading existing Mathlib `.olean.private`
+files. Those files existed and were hash-readable. All ten affected axiom
+modules built sequentially, and the full pinned build then passed (3,160
+jobs), without a package update or source change. A clean retry at the same
+commit passed commands 1–39, including 935 tests, the 99.78% line and 99.60%
+branch coverage gate, mypy, four CI gates, the full pinned Lean build, all
+21 evidence `--check` commands, and the first ten axiom-report writers. The
+user stopped the retry before the remaining 11 report writers and final
+status command. All 21 report writers had passed in the first suite. Each
+native check therefore has a passing exact-source receipt, while a single
+uninterrupted 51/51 pass was not completed. The two command summaries are
+`meta/review/meta_suite_first_summary.json` and
+`meta/review/meta_suite_retry_summary.json`; detailed logs remain local.
+
+The expanded prose watchlist passed with 22 watched digests and 213 hits
+across 35 tracked files. The paper-pin comparison found 17 paper files with
+pins before and after, with no count change. `prompt/` has no diff, no
+`.lake` path is tracked, and the only untracked path is the preexisting
+user-owned `AGENTS.md`.
 
 ## Limits
 
 The correspondence audit labels derived, computed, refuted, chosen, and open
 claims separately. Finite map checks use the declared two-term binary
 universe; historical defect counts have different review units. The ten
-seeds are proposals, not completed derivations. Remote PR creation is
-withheld because this task's network rule permits only read-only Genesis
-access; this file is the prepared PR body.
+seeds are proposals, not completed derivations. The user explicitly
+requested publication after the local review.

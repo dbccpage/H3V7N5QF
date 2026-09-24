@@ -190,3 +190,26 @@ the 21-derivation review and `meta/review/findings.md`.
   tracked files. `meta/review/check_paper_pins.py` passed: 17 paper files
   had pins before and after, with zero changed per-paper counts. The two
   follow-up probes now report WATCHED. No prior paper pin was repinned.
+
+### Meta-branch validation and publication handoff
+
+- The independent meta branch was committed at
+  `6f60a16f378b57fadec3d087dfd3aebcec916ff1`. Its first full suite ran
+  all 51 commands: 50 passed; only the parallel Lean build failed while
+  reading existing `.olean.private` files. Ten affected axiom modules built
+  sequentially, then the full pinned 3,160-job build passed. No dependency
+  was updated and no tracked source changed.
+- The clean retry at that same commit passed commands 1–39, including the
+  full pinned build and all 21 evidence checks. The user requested a stop
+  while the remaining report writers were queued. The process was
+  interrupted; the tracked tree stayed unchanged. Its exact command
+  summaries were copied to `meta/review/meta_suite_first_summary.json` and
+  `meta/review/meta_suite_retry_summary.json`. The first run contains passing
+  receipts for all 21 axiom-report writers. No uninterrupted 51/51 retry
+  is claimed.
+- The user then explicitly requested commit, push, and PR publication.
+  The live remote main read before publishing was
+  `53b319a48f347b1a52e823ea7db46c79f8434c42`, matching the review
+  base. Both remote review branches and PRs were absent at that read.
+  Next: check the final local diff and gates, commit the receipt-only update,
+  then refresh remote metadata before each push and PR creation.
