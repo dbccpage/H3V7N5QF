@@ -213,3 +213,22 @@ the 21-derivation review and `meta/review/findings.md`.
   base. Both remote review branches and PRs were absent at that read.
   Next: check the final local diff and gates, commit the receipt-only update,
   then refresh remote metadata before each push and PR creation.
+
+### Publication and integration of the two PRs
+
+- The receipt-only commit `8b38673b862c62d53b1d28018718f92248fa90cd`
+  was pushed as PR #44; repair commit `e5d02dd` was pushed as PR #43.
+  Both PRs were opened against main at `53b319a`.
+- PR #43 merged with an expected-head SHA guard as
+  `460c6e623636f69f588f6f123d4974b1c6a3086c`. Its two parents are
+  starting main and exact repair head, and its tree equals the repair head.
+- The proposal branch merged the new `origin/main` locally. The one conflict
+  in `paper/change_log.md` was resolved by retaining the repair detector
+  as item 39 and the fenced analysis as item 40. Against merged main,
+  `code/`, `evidence/`, `lean4/`, and `tests/` have no diff; under `ci/`,
+  only the prose watchlist differs; under `paper/`, only the change log
+  differs. The axiom-citation gate, ten exact proposal edits, unchanged
+  paper-pin check, and prose watchlist all passed after resolution.
+- Next: commit the conflict resolution and updated report, push PR #44's
+  exact head, update its body, refresh the live base/head and merge only
+  that tested head. Preserve user-owned untracked `AGENTS.md`.

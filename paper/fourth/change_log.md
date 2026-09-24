@@ -160,3 +160,7 @@ repository in which the third derivation was made; the branch was brought to
     and `code/lean_report_fourth.py` (as `fourth/__main__.py` already carries).
     Line coverage returns to 100%. No derivation code, evidence, claim, or
     claim status changed; the checks the tests exercise are unchanged.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F005: printed four cited parent theorems and regenerated the Lean report and manifest. F013: filled O2 evidence with the existing D14/D17 series and generated round files; the claim and status are unchanged.

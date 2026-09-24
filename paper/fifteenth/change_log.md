@@ -67,3 +67,7 @@ Each material change, and its reason. Newest last. Commits are on the branch
    citing `admission_swap`/`admission_swap_admitted` (`reaching = reaching`,
    `admitted = admitted`) as *derived*; the row now discloses that the
    exchange-keeps-record part is definitional (matching the paper §5).
+
+## Whole-repo review repairs (2026-09-23)
+
+- F009: printed two cited Fourteenth witnesses and regenerated the Lean report and manifest. F012: admission availability in given.json now calls the model function, with an injected drift test; regenerated evidence. No claim or theorem statement changed.

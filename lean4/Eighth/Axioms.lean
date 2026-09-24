@@ -162,3 +162,6 @@ derivations that the eighth paper cites and re-checks.
 #print axioms Seed.Sixth.costA6_rename
 #print axioms Seed.Sixth.costB6_rename
 #print axioms Seed.Sixth.no_return_fails6
+
+-- Whole-repo review: cited sixth-derivation upper-bound construction.
+#print axioms Seed.Sixth.reach6_raise

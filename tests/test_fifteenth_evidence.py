@@ -230,6 +230,16 @@ def test_write_tagged_and_given(tmp_path: Path) -> None:
     assert not_admitted_record().written() == "not-admitted"
 
 
+def test_given_admission_availability_uses_the_model(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    write_given(tmp_path)
+    original = json.loads((tmp_path / "given.json").read_text(encoding="utf-8"))
+    assert original["can_admit_empty"] and original["can_admit_one"]
+    monkeypatch.setattr(evidence, "can_admit", lambda state: state.n == 0)
+    write_given(tmp_path)
+    altered = json.loads((tmp_path / "given.json").read_text(encoding="utf-8"))
+    assert altered["can_admit_empty"] and not altered["can_admit_one"]
+
+
 def test_main_writes_and_checks(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     out = tmp_path / "evidence" / "fifteenth"
     argv = [

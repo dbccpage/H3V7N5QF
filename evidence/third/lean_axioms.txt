@@ -126,3 +126,4 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Second.costB_eq_size_of_reach3' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.fewest_changes_lower_A' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.fewest_changes_lower_B' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Second.Step3.size_le' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -198,3 +198,7 @@ full, since the libraries re-prove some theorems under similar short names.
 #print axioms Seed.Fifth.rename4_identify
 #print axioms Seed.Fifth.exists_writing5
 #print axioms Seed.Fifth.build_answer5
+
+-- Whole-repo review: cited containment and identification witnesses.
+#print axioms Seed.Fifth.contains_fails
+#print axioms Seed.Sixth.step_identify_given

@@ -166,3 +166,4 @@ sorry / admit / declared axiom in lean4/ (outside comments): none
 'Seed.Fourth.size_rename4' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fourth.Step4.rename' depends on axioms: [propext, Classical.choice, Quot.sound]
 'Seed.Fourth.rename4_symm_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Seed.Reach.costA_le' depends on axioms: [propext, Classical.choice, Quot.sound]

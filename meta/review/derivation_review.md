@@ -4,9 +4,10 @@
 not a new derivation. The inputs are the 21 local seeds and their parent diffs,
 the 21 plans in `CLAUDE.md`, each paper, ledger, change log, evidence summary,
 `code/**/evidence.py`, Lean sources, and committed axiom report. The
-independent meta branch keeps the baseline derivation tree; references below
-to a repair mean the separate branch at `e5d02dd`, not that the repair is
-present in this branch. `reading_index.md` gives the exact seed diffs and
+meta branch kept the baseline derivation tree when this audit was written;
+references below to a repair mean the separately validated commit `e5d02dd`.
+The PR branch later integrated that repair through `main`.
+`reading_index.md` gives the exact seed diffs and
 open ledger rows. The
 `claim_audit.csv` indexes all **782** ledger rows with their status, evidence
 cell, and line number on the baseline meta branch; `claim_audit_repair.csv`

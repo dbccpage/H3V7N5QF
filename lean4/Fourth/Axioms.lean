@@ -183,3 +183,9 @@ open Seed Seed.Second Seed.Third Seed.Fourth
 #print axioms two_sequences
 #print axioms build_gives_back
 #print axioms build_needs_term_and_assertion
+
+-- Whole-repo review: cited second- and third-derivation results.
+#print axioms Seed.Third.Step2.size_eq
+#print axioms Seed.Second.additions_count
+#print axioms Seed.Third.givenA_to_givenB2
+#print axioms Seed.Second.givenB_never_givenA

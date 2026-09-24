@@ -35,8 +35,8 @@ commands at exact commit `e5d02dd`: 940 tests; coverage gate 99.78% line and
 the pinned 3,160-job Lean build; all 21 evidence `--check` runs; and all 21
 axiom-report writers (`repair_suite/summary.json`). No tracked source,
 paper, evidence, gate, Lean, or prompt file drifted after the run. The
-repair branch retains only the preexisting untracked `AGENTS.md` and the
-uncommitted `meta/` package, which belongs to the independent branch.
+repair-branch run had only the preexisting untracked `AGENTS.md` and the
+uncommitted `meta/` package, which was committed on the proposal branch.
 
 ## Correspondence results
 
@@ -95,3 +95,10 @@ exit codes. The user subsequently requested commit, push, and PR publication.
 `AGENTS.md` was present untracked before this work and is preserved as
 user-owned. No file under `prompt/` changed; `.lake/` is not staged or
 committed. No remote PR was opened when this summary was written.
+
+After PR #43 merged as `460c6e623636f69f588f6f123d4974b1c6a3086c`,
+the proposal branch integrated the new `main`. Both competing change-log
+entries were kept as items 39 and 40. Relative to that `main`, its code,
+evidence, Lean sources, and tests are identical; the focused citation,
+package, paper-pin, and prose checks passed on the integrated tree. The
+integration does not create a new full-suite receipt.

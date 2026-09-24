@@ -2,13 +2,13 @@
 
 ## Scope
 
-This independent branch starts at the plan-only commit
-`8f2c5179159b7dbdb9db06d39c47cb084abddb0f` atop the starting local
-`main` (`53b319a48f347b1a52e823ea7db46c79f8434c42`). It adds `meta/`
+The proposal work was authored independently from plan-only commit
+`8f2c5179159b7dbdb9db06d39c47cb084abddb0f`. After repair PR #43
+merged, this branch integrated the new `main` and retained both entries in
+`paper/change_log.md`. Against current `main`, this PR adds `meta/`
 analysis, reproducible bounded map/proposal checks, and a prose-watchlist
-extension. It does not contain repair commit `e5d02dd`; that is the separate
-PR A branch. No derivation seed, paper theorem, or `prompt/` file is changed
-by this branch.
+extension. It changes no derivation seed, theorem statement, or `prompt/`
+file beyond the repairs already merged through PR #43.
 
 ## Findings
 
@@ -54,6 +54,18 @@ across 35 tracked files. The paper-pin comparison found 17 paper files with
 pins before and after, with no count change. `prompt/` has no diff, no
 `.lake` path is tracked, and the only untracked path is the preexisting
 user-owned `AGENTS.md`.
+
+## Integration after PR #43
+
+PR #43 merged as `460c6e623636f69f588f6f123d4974b1c6a3086c`; its tree
+equals the repair head tested by the 52-command suite. This branch then
+integrated that `main`. The sole content conflict was `paper/change_log.md`:
+both entries were retained as items 39 and 40. Against merged `main`,
+`code/`, `evidence/`, `lean4/`, and `tests/` are identical; under `ci/`, only
+the deliberate prose watchlist differs, and under `paper/`, only the change
+log differs. The integrated tree passed the axiom-citation detector, exact
+checks for all ten proposal packages, the unchanged-paper-pin comparison,
+and the prose watchlist. No new full-suite pass is claimed for this merge.
 
 ## Limits
 

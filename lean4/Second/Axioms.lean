@@ -96,3 +96,12 @@ open Seed Seed.Second
 #print axioms obstruction_persists
 #print axioms fewest_changes_lower_A
 #print axioms fewest_changes_lower_B
+
+-- Whole-repo review: base theorems cited by this paper and ledger.
+#print axioms Seed.Reach.legal
+#print axioms Seed.Reach.nonempty
+#print axioms Seed.Reach.wf
+#print axioms Seed.givenA_to_givenB
+#print axioms Seed.givenB_to_givenA
+#print axioms Seed.reach_by_edits
+#print axioms Seed.remove_legal

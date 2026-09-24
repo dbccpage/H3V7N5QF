@@ -174,3 +174,13 @@ full, since the libraries re-prove some theorems under similar short names.
 #print axioms Seed.Eighth.cost_survives
 #print axioms Seed.Eighth.criterion_survives
 #print axioms Seed.Eighth.s_costs_its_total
+
+-- Whole-repo review: cited eighth-derivation invariants and paths.
+#print axioms Seed.Eighth.Reach8.nonempty
+#print axioms Seed.Eighth.Step8.size_step
+#print axioms Seed.Eighth.cycle2_8
+#print axioms Seed.Eighth.fewest_changes8_lower_A
+#print axioms Seed.Eighth.reach8_of_names
+#print axioms Seed.Eighth.reach8_raise
+#print axioms Seed.Eighth.rename8_addTerm
+#print axioms Seed.Fifth.contains_fails

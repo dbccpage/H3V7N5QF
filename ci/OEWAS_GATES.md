@@ -86,6 +86,26 @@ designed to trigger it. The **antigen panel** is domain-specific by design and
 maintained by hand; extending it to a new derivation is a new panel of the
 same shape.
 
+## Gate: cited Lean name in the derivation's own report (`check_axiom_citations.py`)
+
+Whole-repo review F001–F010 found ten derivations whose paper or ledger
+cited a Lean theorem missing from that derivation's `#print axioms` report.
+The report writers had built successfully: a successful report command alone
+did not certify *citation completeness*. This gate scans backticked names in
+each paper and ledger, filters them against local Lean theorem/lemma
+declarations, and requires each identified name in that derivation's actual
+Lean-generated report. Its injection test removes the real second
+derivation's `Seed.Reach.legal` line, checks that the gate fails, then restores
+the line and checks a pass. This is an assay for one observed custody defect,
+not a count of theorems.
+
+Reach: short, unqualified names can collide; they are accepted by suffix.
+Unbackticked prose references and declarations other than `theorem` or
+`lemma` are outside the detector. The separate Lean report writer still
+elaborates the names and checks the actual axiom dependencies. Neither
+detector establishes that the cited theorem proves the English claim; the
+claim ledger and definitional-citation review have that job.
+
 ## Anti-skills are detectors, not encyclopedia entries
 
 The reason a hand-written skill/anti-skill library becomes an unfileable pile

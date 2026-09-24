@@ -441,7 +441,17 @@ reading of the seed.
     `code/xry/` … `code/seventeenth/`, or `evidence/` through
     `evidence/seventeenth/` was modified.
 
-39. **Fenced whole-repo review and proposal area (2026-09-23).** Added
+39. **Whole-repo review citation detector (2026-09-23).** Findings F001–F010
+    identified cited Lean names absent from ten derivations' own axiom
+    reports. The shared `ci/check_axiom_citations.py` checks backticked
+    theorem/lemma citations against each Lean-generated report. Its test
+    removes and restores the second derivation's real `Reach.legal` report
+    line, proving the missing-line defect fires. `ci/OEWAS_GATES.md` records
+    the exact reach and limits. The individual `Axioms.lean`, regenerated
+    report and manifest edits are logged in their derivations' change logs;
+    no theorem statement or seed is changed.
+
+40. **Fenced whole-repo review and proposal area (2026-09-23).** Added
     `meta/` for the 21-derivation audit, correspondence and Genesis
     comparisons, local receipts, and ten future seed proposals. Its
     categorical and biological vocabulary is outside the derivational seal:
@@ -449,6 +459,7 @@ reading of the seed.
     ten digest entries to `ci/prose_watchlist.json` for that vocabulary
     and the external repository name, with deliberate pins for tracked
     review prose. The preexisting per-paper pins are checked unchanged by
-    `meta/review/check_paper_pins.py`. This independent branch has no
-    repair-branch theorem, generator, or axiom-report changes; `prompt/`
-    remains untouched.
+    `meta/review/check_paper_pins.py`. The proposal changes themselves do
+    not alter the repair branch's theorem, generator, or axiom-report files;
+    this integration also carries the separately reviewed repair commit.
+    `prompt/` remains untouched.

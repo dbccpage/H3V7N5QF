@@ -140,3 +140,7 @@ derivation).
     matched (973 seconds, beside other runs), after `python
     code/generate_seventh.py` (654 seconds) and `python
     code/lean_report_seventh.py`.
+
+## Whole-repo review repairs (2026-09-23)
+
+- F013: filled the O4 carry-forward evidence cell with the fourth seed and existing D10 series/round files. No claim or status changed.
