@@ -83,5 +83,13 @@ Each material change, and its reason. Newest last. Commits are on the branch
     state (`follows.py`).
 
 12. **Every earlier derivation's evidence was re-checked with its `--check`
-    after this derivation's code was in place**; the outcome is recorded in the
-    commit message.
+    after this derivation's code was in place**
+    (`research/twentythird/check_earlier.py`): all twenty-three derivations,
+    this one included, regenerate byte-identically (`failed: 0`). The gates of
+    "Done" were run in the foreground after the last change: `python -m pytest`
+    (1 049 passed), `python code/xry/gate.py coverage.json` (line 99.81 %,
+    branch 99.66 %, every evidence module fully covered), `python -m mypy`, the
+    prose watchlist, `ci/check_vacuous_checks.py`,
+    `ci/check_definitional_citations.py`, `ci/check_mutation_bite.py`,
+    `ci/check_axiom_citations.py`, and
+    `lake +leanprover/lean4:v4.33.1 -d lean4_core build` (exit code 0).
