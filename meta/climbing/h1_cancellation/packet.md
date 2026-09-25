@@ -137,6 +137,16 @@ the `/meta/` pattern is rewritten into a Windows path. This was tested on
    - The transcript is written outside the worktree, so the run cannot read
      or commit it. It is what the audit in §7 reads.
 
+   **Probed 2026-09-25** with this binary and these flags in a sparse
+   worktree, using a cheap model and throwaway prompts. The project
+   settings loaded (15 allow rules, 47 deny rules), and `git ls-remote
+   origin` was refused by a deny rule. The following ran: `python`,
+   `python -m pytest`, `python -m mypy`, `python code/xry/gate.py`, `lake`
+   with the pinned toolchain, `git status`, `git log`, the Write tool,
+   `git add` and `git commit`. `python -c "…"` was refused: headless mode
+   will not approve inline interpreter code, so a run writes its scripts
+   to files.
+
    If another runner is used, it reads `AGENTS.md`, which points to
    `CLAUDE.md`. Its own network switch must be off, and its grade records
    how isolation was enforced.
