@@ -1,0 +1,42 @@
+terms,triples,triples_up_to_rewriting,decides,witness_if_not
+3,0,,0,terms a b c; asserted arb bsa
+3,1,012,1,
+4,0,,0,terms a b c d; asserted arb bsa
+4,1,012,0,terms a b c d; asserted arb arc bsa csa
+4,2,012 013,0,terms a b c d; asserted arc brc csa csb
+4,3,012 013 023,1,
+4,4,012 013 023 123,1,
+5,0,,0,terms a b c d e; asserted arb bsa
+5,1,012,0,terms a b c d e; asserted arb arc bsa csa
+5,2,012 013,0,terms a b c d e; asserted arb arc ard bsa csa dsa
+5,2,012 034,0,terms a b c d e; asserted arb arc bsa csa
+5,3,012 013 014,0,terms a b c d e; asserted arc brc csa csb
+5,3,012 013 023,0,terms a b c d e; asserted arb arc ard bsa csa dsa
+5,3,012 013 024,0,terms a b c d e; asserted bra brc dra asb asd csb
+5,3,012 013 234,0,terms a b c d e; asserted arb arc ard bsa csa dsa
+5,4,012 013 014 023,0,terms a b c d e; asserted arc ard brc brd csa csb dsa dsb
+5,4,012 013 014 234,0,terms a b c d e; asserted arc brc csa csb
+5,4,012 013 023 123,0,terms a b c d e; asserted arb arc ard bsa csa dsa
+5,4,012 013 023 124,0,terms a b c d e; asserted arb arc ard bsa csa dsa
+5,4,012 013 024 034,0,terms a b c d e; asserted bra brc brd asb csb dsb
+5,4,012 013 024 134,0,terms a b c d e; asserted bra brc dra asb asd csb
+5,5,012 013 014 023 024,0,terms a b c d e; asserted ard brd crd dsa dsb dsc
+5,5,012 013 014 023 123,0,terms a b c d e; asserted arc ard brc brd csa csb dsa dsb
+5,5,012 013 014 023 124,0,terms a b c d e; asserted ard brd crd dsa dsb dsc
+5,5,012 013 014 023 234,0,terms a b c d e; asserted arc ard brc brd csa csb dsa dsb
+5,5,012 013 023 124 134,0,terms a b c d e; asserted arb arc ard bsa csa dsa
+5,5,012 013 024 134 234,0,terms a b c d e; asserted bra brc dra asb asd csb
+5,6,012 013 014 023 024 034,1,
+5,6,012 013 014 023 024 123,0,terms a b c d e; asserted ard brd crd dsa dsb dsc
+5,6,012 013 014 023 024 134,1,
+5,6,012 013 014 023 123 234,0,terms a b c d e; asserted arc ard brc brd csa csb dsa dsb
+5,6,012 013 014 023 124 234,1,
+5,6,012 013 023 124 134 234,0,terms a b c d e; asserted arb arc ard bsa csa dsa
+5,7,012 013 014 023 024 034 123,1,
+5,7,012 013 014 023 024 123 124,0,terms a b c d e; asserted ard brd crd dsa dsb dsc
+5,7,012 013 014 023 024 123 134,1,
+5,7,012 013 014 023 024 134 234,1,
+5,8,012 013 014 023 024 034 123 124,1,
+5,8,012 013 014 023 024 123 134 234,1,
+5,9,012 013 014 023 024 034 123 124 134,1,
+5,10,012 013 014 023 024 034 123 124 134 234,1,

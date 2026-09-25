@@ -1,0 +1,685 @@
+{
+  "attempts_in_full_log": 441,
+  "disagreements": {
+    "blind_mismatch": [],
+    "change_mismatch": [],
+    "count_mismatch": [],
+    "decide_mismatch": [],
+    "embed_mismatch": [],
+    "exchange_mismatch": [],
+    "keeping_mismatch": [],
+    "plain_mismatch": [],
+    "reach_mismatch": [],
+    "read_back_mismatch": [],
+    "readings_mismatch": [],
+    "record_mismatch": [],
+    "round_not_cost": [],
+    "told_mismatch": [],
+    "two_term_mismatch": [],
+    "whether_mismatch": []
+  },
+  "every_check_clean": true,
+  "given": {
+    "witnesses": 13
+  },
+  "independent_counts": {
+    "rows": 43
+  },
+  "plan": {
+    "directions_never_told_for_every_set_up_to_terms_and_every_triple_up_to_terms": [
+      4,
+      6
+    ],
+    "full_log": [
+      3,
+      5
+    ],
+    "independent_counts_written_at": [
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "least_keeping_sets_by_reading_every_set_of_terms_up_to_terms": 5,
+    "reachability": [
+      3,
+      5
+    ],
+    "readings": [
+      3,
+      6
+    ],
+    "runs": [
+      [
+        5,
+        8
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        2,
+        24
+      ]
+    ],
+    "searched_over_small_excess_tables_up_to_terms": 4,
+    "sets_of_triples_that_decide_up_to_terms": 5
+  },
+  "reachability": {
+    "bound_on_terms": 3,
+    "ordered_pairs": 8100,
+    "ordered_pairs_reachable": 8011,
+    "results": 90,
+    "rounds": 5
+  },
+  "runs": {
+    "bound2_rounds24": {
+      "bound_on_terms": 2,
+      "changes": {
+        "how_each_kind_moves_the_cost": {
+          "add a term +1": 46,
+          "add an assertion +1": 307540,
+          "add an assertion -1": 267550,
+          "identify two terms -1": 22385,
+          "identify two terms -11": 5739,
+          "identify two terms -13": 4815,
+          "identify two terms -15": 3807,
+          "identify two terms -17": 2779,
+          "identify two terms -19": 1739,
+          "identify two terms -21": 735,
+          "identify two terms -3": 8171,
+          "identify two terms -5": 7839,
+          "identify two terms -7": 7279,
+          "identify two terms -9": 6587,
+          "remove an assertion +1": 32340,
+          "remove an assertion -1": 228588
+        }
+      },
+      "frontier_entries": 71875,
+      "frontier_states": 71875,
+      "last_round_with_a_new_result": 24,
+      "map_back": {
+        "first_result_answered_none": null,
+        "its_round": null,
+        "results_answered_none": 0
+      },
+      "results": 7914,
+      "results_blind_not_asserting_nothing": 7911,
+      "results_by_terms": {
+        "0": 1,
+        "1": 47,
+        "2": 7866
+      },
+      "results_told": 0,
+      "results_with_a_filled_triple": 0,
+      "rounds": 24,
+      "shortest_sequences_total": 249729213073307,
+      "statements_depending_on_the_state": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "every_term_first_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "every_term_first_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s"
+      ],
+      "statements_holding_in_every_result": [
+        "every_filled_triple_balances",
+        "no_filling_tells_it"
+      ],
+      "statements_tested": 48,
+      "statements_that_do_not_follow": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "exactly_two_terms_r",
+        "something_asserted_r",
+        "at_least_one_term_r",
+        "no_xrx_r",
+        "at_least_two_terms_r",
+        "nothing_asserted_r",
+        "some_xrx_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "exactly_two_terms_s",
+        "something_asserted_s",
+        "at_least_one_term_s",
+        "no_xrx_s",
+        "at_least_two_terms_s",
+        "nothing_asserted_s",
+        "some_xrx_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "nothing_in_s",
+        "nothing_in_r",
+        "relations_agree",
+        "s_within_r",
+        "r_within_s",
+        "nothing_at_all",
+        "unchanged_by_exchange",
+        "nothing_asserted_up_to_raising",
+        "unchanged_by_exchange_here",
+        "unchanged_by_exchange_with_fillings"
+      ],
+      "states_reached": 86201,
+      "the_twentythird_record": {
+        "first_such_record": [
+          2,
+          0,
+          1
+        ],
+        "its_results_by_the_sizes_of_their_least_keeping_sets": {
+          "[1]": "terms a b; asserted bsb",
+          "[2]": "terms a b; asserted bsa"
+        },
+        "records": 324,
+        "records_shared_by_results_kept_by_sets_of_different_sizes": 44
+      },
+      "told_or_not": {
+        "results_by_why_they_are_told_or_not": {
+          "nothing filled": 7911,
+          "the result asserting nothing": 3
+        }
+      },
+      "twentythird_derivation": {
+        "map_back_returns_the_original_on_every_mapped_result": true,
+        "most_results_here_forgotten_onto_one": 1,
+        "results_here_with_nothing_filled": 7914,
+        "twentythird_results": 7914,
+        "twentythird_results_reached_by_forgetting": 7914
+      }
+    },
+    "bound3_rounds10": {
+      "bound_on_terms": 3,
+      "changes": {
+        "how_each_kind_moves_the_cost": {
+          "add a term +1": 850,
+          "add a term +3": 231,
+          "add a term +5": 63,
+          "add a term +7": 7,
+          "add an assertion +1": 280562,
+          "add an assertion -1": 110190,
+          "fill three different terms +1": 32981,
+          "identify two terms -1": 17419,
+          "identify two terms -2": 11259,
+          "identify two terms -3": 17473,
+          "identify two terms -4": 9068,
+          "identify two terms -5": 6899,
+          "identify two terms -6": 2050,
+          "identify two terms -7": 574,
+          "remove an assertion +1": 7524,
+          "remove an assertion -1": 80696
+        }
+      },
+      "frontier_entries": 21203,
+      "frontier_states": 21203,
+      "last_round_with_a_new_result": 10,
+      "map_back": {
+        "first_result_answered_none": "terms a b c; asserted nothing; filled abc",
+        "its_round": 4,
+        "results_answered_none": 14212
+      },
+      "results": 29883,
+      "results_blind_not_asserting_nothing": 1612,
+      "results_by_terms": {
+        "0": 1,
+        "1": 19,
+        "2": 453,
+        "3": 29410
+      },
+      "results_told": 11072,
+      "results_with_a_filled_triple": 14212,
+      "rounds": 10,
+      "shortest_sequences_total": 620034632,
+      "statements_depending_on_the_state": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s",
+        "unchanged_by_exchange"
+      ],
+      "statements_holding_in_every_result": [],
+      "statements_tested": 48,
+      "statements_that_do_not_follow": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "exactly_two_terms_r",
+        "something_asserted_r",
+        "at_least_one_term_r",
+        "no_xrx_r",
+        "at_least_two_terms_r",
+        "nothing_asserted_r",
+        "some_xrx_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "exactly_two_terms_s",
+        "something_asserted_s",
+        "at_least_one_term_s",
+        "no_xrx_s",
+        "at_least_two_terms_s",
+        "nothing_asserted_s",
+        "some_xrx_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s",
+        "nothing_in_s",
+        "nothing_in_r",
+        "relations_agree",
+        "s_within_r",
+        "r_within_s",
+        "nothing_at_all",
+        "unchanged_by_exchange",
+        "nothing_asserted_up_to_raising",
+        "unchanged_by_exchange_here",
+        "some_triple_filled",
+        "every_filled_triple_balances",
+        "no_filling_tells_it",
+        "unchanged_by_exchange_with_fillings"
+      ],
+      "states_reached": 68526,
+      "the_twentythird_record": {
+        "first_such_record": [
+          2,
+          0,
+          1
+        ],
+        "its_results_by_the_sizes_of_their_least_keeping_sets": {
+          "[1]": "terms a b; asserted bsb",
+          "[2]": "terms a b; asserted bsa"
+        },
+        "records": 101,
+        "records_shared_by_results_kept_by_sets_of_different_sizes": 51
+      },
+      "told_or_not": {
+        "results_by_why_they_are_told_or_not": {
+          "a sum around not zero only off the filled triples": 2512,
+          "blind: every sum around zero both ways round": 444,
+          "differs from nothing only at loops": 182,
+          "nothing filled": 15667,
+          "the result asserting nothing": 6,
+          "told": 11072
+        }
+      },
+      "twentythird_derivation": {
+        "map_back_returns_the_original_on_every_mapped_result": true,
+        "most_results_here_forgotten_onto_one": 4,
+        "results_here_with_nothing_filled": 15671,
+        "twentythird_results": 15671,
+        "twentythird_results_reached_by_forgetting": 15671
+      }
+    },
+    "bound5_rounds8": {
+      "bound_on_terms": 5,
+      "changes": {
+        "how_each_kind_moves_the_cost": {
+          "add a term +1": 2191,
+          "add a term +3": 129,
+          "add a term +5": 7,
+          "add an assertion +1": 41128,
+          "add an assertion -1": 7782,
+          "fill three different terms +1": 7662,
+          "identify two terms -1": 4752,
+          "identify two terms -2": 1612,
+          "identify two terms -3": 1618,
+          "identify two terms -4": 357,
+          "identify two terms -5": 161,
+          "remove an assertion +1": 284,
+          "remove an assertion -1": 6126
+        }
+      },
+      "frontier_entries": 59,
+      "frontier_states": 59,
+      "last_round_with_a_new_result": 8,
+      "map_back": {
+        "first_result_answered_none": "terms a b c; asserted nothing; filled abc",
+        "its_round": 4,
+        "results_answered_none": 4600
+      },
+      "results": 9573,
+      "results_blind_not_asserting_nothing": 709,
+      "results_by_terms": {
+        "0": 1,
+        "1": 15,
+        "2": 210,
+        "3": 3622,
+        "4": 5002,
+        "5": 723
+      },
+      "results_told": 2309,
+      "results_with_a_filled_triple": 4600,
+      "rounds": 8,
+      "shortest_sequences_total": 9857906,
+      "statements_depending_on_the_state": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s",
+        "unchanged_by_exchange"
+      ],
+      "statements_holding_in_every_result": [],
+      "statements_tested": 48,
+      "statements_that_do_not_follow": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "exactly_two_terms_r",
+        "something_asserted_r",
+        "at_least_one_term_r",
+        "no_xrx_r",
+        "at_least_two_terms_r",
+        "nothing_asserted_r",
+        "some_xrx_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "exactly_two_terms_s",
+        "something_asserted_s",
+        "at_least_one_term_s",
+        "no_xrx_s",
+        "at_least_two_terms_s",
+        "nothing_asserted_s",
+        "some_xrx_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s",
+        "nothing_in_s",
+        "nothing_in_r",
+        "relations_agree",
+        "s_within_r",
+        "r_within_s",
+        "nothing_at_all",
+        "unchanged_by_exchange",
+        "nothing_asserted_up_to_raising",
+        "unchanged_by_exchange_here",
+        "some_triple_filled",
+        "every_filled_triple_balances",
+        "no_filling_tells_it",
+        "unchanged_by_exchange_with_fillings"
+      ],
+      "states_reached": 12445,
+      "the_twentythird_record": {
+        "first_such_record": [
+          2,
+          0,
+          1
+        ],
+        "its_results_by_the_sizes_of_their_least_keeping_sets": {
+          "[1]": "terms a b; asserted bsb",
+          "[2]": "terms a b; asserted bsa"
+        },
+        "records": 90,
+        "records_shared_by_results_kept_by_sets_of_different_sizes": 55
+      },
+      "told_or_not": {
+        "results_by_why_they_are_told_or_not": {
+          "a sum around not zero only off the filled triples": 1961,
+          "blind: every sum around zero both ways round": 61,
+          "differs from nothing only at loops": 236,
+          "nothing filled": 4967,
+          "the result asserting nothing": 39,
+          "told": 2309
+        }
+      },
+      "twentythird_derivation": {
+        "map_back_returns_the_original_on_every_mapped_result": true,
+        "most_results_here_forgotten_onto_one": 49,
+        "results_here_with_nothing_filled": 4973,
+        "twentythird_results": 4973,
+        "twentythird_results_reached_by_forgetting": 4973
+      }
+    }
+  },
+  "sets_of_triples_that_decide": {
+    "3_terms": {
+      "deciding_and_not_by_size": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          1,
+          0
+        ]
+      },
+      "fewest_triples_that_decide": 1,
+      "labelled_sets_deciding_and_not_by_size": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          1,
+          0
+        ]
+      },
+      "sets_up_to_rewriting": 2
+    },
+    "4_terms": {
+      "deciding_and_not_by_size": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          0,
+          1
+        ],
+        "2": [
+          0,
+          1
+        ],
+        "3": [
+          1,
+          0
+        ],
+        "4": [
+          1,
+          0
+        ]
+      },
+      "fewest_triples_that_decide": 3,
+      "labelled_sets_deciding_and_not_by_size": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          0,
+          4
+        ],
+        "2": [
+          0,
+          6
+        ],
+        "3": [
+          4,
+          0
+        ],
+        "4": [
+          1,
+          0
+        ]
+      },
+      "sets_up_to_rewriting": 5
+    },
+    "5_terms": {
+      "deciding_and_not_by_size": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          0,
+          1
+        ],
+        "10": [
+          1,
+          0
+        ],
+        "2": [
+          0,
+          2
+        ],
+        "3": [
+          0,
+          4
+        ],
+        "4": [
+          0,
+          6
+        ],
+        "5": [
+          0,
+          6
+        ],
+        "6": [
+          3,
+          3
+        ],
+        "7": [
+          3,
+          1
+        ],
+        "8": [
+          2,
+          0
+        ],
+        "9": [
+          1,
+          0
+        ]
+      },
+      "fewest_triples_that_decide": 6,
+      "labelled_sets_deciding_and_not_by_size": {
+        "0": [
+          0,
+          1
+        ],
+        "1": [
+          0,
+          10
+        ],
+        "10": [
+          1,
+          0
+        ],
+        "2": [
+          0,
+          45
+        ],
+        "3": [
+          0,
+          120
+        ],
+        "4": [
+          0,
+          210
+        ],
+        "5": [
+          0,
+          252
+        ],
+        "6": [
+          125,
+          85
+        ],
+        "7": [
+          110,
+          10
+        ],
+        "8": [
+          45,
+          0
+        ],
+        "9": [
+          10,
+          0
+        ]
+      },
+      "sets_up_to_rewriting": 34
+    }
+  }
+}

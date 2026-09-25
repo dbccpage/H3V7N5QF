@@ -127,6 +127,33 @@ theorem record_does_not_show_which_terms :
   · rcases lt_three hx with rfl | rfl | rfl <;> decide
   · rcases lt_three hx with rfl | rfl | rfl <;> rcases lt_three hy with rfl | rfl | rfl <;> decide
 
+/-- `a b; ara`. -/
+def aLoop : St := ⟨2, [⟨.r, 0, 0⟩]⟩
+
+theorem aLoop_wf : aLoop.WF := by
+  intro a ha
+  simp only [aLoop, List.mem_cons, List.not_mem_nil, or_false] at ha
+  subst ha
+  decide
+
+/-- **The smallest pair**: `a b; ara` and `a b; arb` each assert the fewest of their results — one assertion,
+in `r` — so they record the same; the first is kept from the result asserting nothing by a loop (one term),
+the second, every loop zero, by a two-way sum (two terms). -/
+theorem record_pair_two_terms :
+    Fewest aLoop ∧ Fewest arbOnce ∧ aLoop.A.length = 1 ∧ arbOnce.A.length = 1 ∧
+      excess aLoop 0 0 ≠ 0 ∧ (∀ x, x < 2 → excess arbOnce x x = 0) ∧ excess arbOnce 0 1 + excess arbOnce 1 0 ≠ 0 := by
+  have c1 := cost3_two aLoop_wf rfl
+  have e1 : 2 + (excess aLoop 0 0).natAbs + (excess aLoop 1 1).natAbs + (excess aLoop 0 1 + excess aLoop 1 0).natAbs =
+      phi aLoop := by decide
+  rw [e1] at c1
+  have c2 := cost3_two arbOnce_wf rfl
+  have e2 : 2 + (excess arbOnce 0 0).natAbs + (excess arbOnce 1 1).natAbs +
+      (excess arbOnce 0 1 + excess arbOnce 1 0).natAbs = phi arbOnce := by decide
+  rw [e2] at c2
+  refine ⟨(fewest_iff aLoop_wf).2 ⟨by decide, c1⟩, (fewest_iff arbOnce_wf).2 ⟨by decide, c2⟩, rfl, rfl, by decide,
+    fun x hx => ?_, by decide⟩
+  rcases lt_two hx with rfl | rfl <;> decide
+
 /-- A plain part that is empty means an excess of zero everywhere. -/
 theorem excess_zero_of_plain_nil {H : St} (h : plain H.A = []) (x y : Nat) : excess H x y = 0 := by
   have c1 := count_plain H.A ⟨.r, x, y⟩

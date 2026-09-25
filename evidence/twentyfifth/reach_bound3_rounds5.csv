@@ -1,0 +1,91 @@
+result,written,round,results_it_reaches,results_it_reaches_by_search
+0:|,no terms; asserted nothing,0,90,90
+1:0|,terms a; asserted nothing,1,89,89
+1:-1|,terms a; asserted asa,2,89,89
+1:1|,terms a; asserted ara,2,89,89
+"2:0,0,0,0|",terms a b; asserted nothing,2,89,89
+1:-2|,terms a; asserted asa(2),3,89,89
+1:2|,terms a; asserted ara(2),3,89,89
+"2:-1,0,0,0|",terms a b; asserted bsb,3,89,89
+"2:0,-1,0,0|",terms a b; asserted bsa,3,89,89
+"2:0,0,0,1|",terms a b; asserted brb,3,89,89
+"2:0,1,0,0|",terms a b; asserted bra,3,89,89
+"3:0,0,0,0,0,0,0,0,0|",terms a b c; asserted nothing,3,89,89
+1:-3|,terms a; asserted asa(3),4,89,89
+1:3|,terms a; asserted ara(3),4,89,89
+"2:-2,0,0,0|",terms a b; asserted bsb(2),4,89,89
+"2:-1,-1,0,0|",terms a b; asserted bsa bsb,4,89,89
+"2:0,-2,0,0|",terms a b; asserted bsa(2),4,89,89
+"2:-1,0,0,-1|",terms a b; asserted asa bsb,4,89,89
+"2:0,-1,0,1|",terms a b; asserted brb bsa,4,89,89
+"2:-1,0,0,1|",terms a b; asserted brb asa,4,89,89
+"2:0,0,0,2|",terms a b; asserted brb(2),4,89,89
+"2:-1,1,0,0|",terms a b; asserted bra bsb,4,89,89
+"2:0,1,0,1|",terms a b; asserted bra brb,4,89,89
+"2:0,2,0,0|",terms a b; asserted bra(2),4,89,89
+"2:1,0,0,1|",terms a b; asserted ara brb,4,89,89
+"3:0,0,0,0,0,0,0,0,0|012",terms a b c; asserted nothing; filled abc,4,89,89
+"3:-1,0,0,0,0,0,0,0,0|",terms a b c; asserted csc,4,89,89
+"3:0,-1,0,0,0,0,0,0,0|",terms a b c; asserted csb,4,89,89
+"3:0,0,0,0,0,0,0,0,1|",terms a b c; asserted crc,4,89,89
+"3:0,0,0,0,0,0,0,1,0|",terms a b c; asserted crb,4,89,89
+1:-4|,terms a; asserted asa(4),5,89,89
+1:4|,terms a; asserted ara(4),5,89,89
+"2:-3,0,0,0|",terms a b; asserted bsb(3),5,89,89
+"2:-2,-1,0,0|",terms a b; asserted bsa bsb(2),5,89,89
+"2:-1,-2,0,0|",terms a b; asserted bsa(2) bsb,5,89,89
+"2:0,-3,0,0|",terms a b; asserted bsa(3),5,89,89
+"2:-2,0,0,-1|",terms a b; asserted asa bsb(2),5,89,89
+"2:-1,-1,0,-1|",terms a b; asserted asa bsa bsb,5,89,89
+"2:0,-2,0,1|",terms a b; asserted brb bsa(2),5,89,89
+"2:-1,-1,0,1|",terms a b; asserted brb asa bsa,5,89,89
+"2:-2,0,0,1|",terms a b; asserted brb asa(2),5,89,89
+"2:0,-1,0,2|",terms a b; asserted brb(2) bsa,5,89,89
+"2:-1,0,0,2|",terms a b; asserted brb(2) asa,5,89,89
+"2:0,0,0,3|",terms a b; asserted brb(3),5,89,89
+"2:-2,1,0,0|",terms a b; asserted bra bsb(2),5,89,89
+"2:-1,1,0,-1|",terms a b; asserted bra asa bsb,5,89,89
+"2:-1,1,0,1|",terms a b; asserted bra brb asa,5,89,89
+"2:0,1,0,2|",terms a b; asserted bra brb(2),5,89,89
+"2:-1,2,0,0|",terms a b; asserted bra(2) bsb,5,89,89
+"2:0,2,0,1|",terms a b; asserted bra(2) brb,5,89,89
+"2:0,3,0,0|",terms a b; asserted bra(3),5,89,89
+"2:1,-1,0,1|",terms a b; asserted ara brb bsa,5,89,89
+"2:1,0,0,2|",terms a b; asserted ara brb(2),5,89,89
+"2:1,1,0,1|",terms a b; asserted ara bra brb,5,89,89
+"3:0,0,0,0,0,0,0,0,0|012.021",terms a b c; asserted nothing; filled abc acb,5,89,89
+"3:-1,0,0,0,0,0,0,0,0|012",terms a b c; asserted csc; filled abc,5,89,89
+"3:-2,0,0,0,0,0,0,0,0|",terms a b c; asserted csc(2),5,89,89
+"3:0,-1,0,0,0,0,0,0,0|021",terms a b c; asserted csb; filled abc,5,89,89
+"3:0,-1,0,0,0,0,0,0,0|012",terms a b c; asserted csb; filled acb,5,89,89
+"3:-1,-1,0,0,0,0,0,0,0|",terms a b c; asserted csb csc,5,89,89
+"3:0,-2,0,0,0,0,0,0,0|",terms a b c; asserted csb(2),5,89,89
+"3:0,-1,-1,0,0,0,0,0,0|",terms a b c; asserted csa csb,5,89,89
+"3:-1,-1,0,0,0,1,0,-1,0|",terms a b c; asserted bsc csc,5,89,89
+"3:0,-2,0,0,0,1,0,-1,0|",terms a b c; asserted bsc csb,5,89,89
+"3:0,-1,-1,0,0,-1,0,1,0|",terms a b c; asserted bsc csa,5,89,89
+"3:-1,0,0,0,-1,0,0,0,0|",terms a b c; asserted bsb csc,5,89,89
+"3:-1,0,0,0,0,-1,0,0,0|",terms a b c; asserted bsb csa,5,89,89
+"3:0,0,0,0,0,0,0,0,1|012",terms a b c; asserted crc; filled abc,5,89,89
+"3:0,-1,0,0,1,1,0,-1,0|",terms a b c; asserted crc csb,5,89,89
+"3:0,-1,0,0,1,0,0,0,0|",terms a b c; asserted crc bsc,5,89,89
+"3:-1,0,0,0,0,0,0,0,1|",terms a b c; asserted crc bsb,5,89,89
+"3:0,-1,0,0,0,0,0,0,1|",terms a b c; asserted crc bsa,5,89,89
+"3:0,0,0,0,0,0,0,0,2|",terms a b c; asserted crc(2),5,89,89
+"3:0,0,0,0,0,0,0,1,0|012",terms a b c; asserted crb; filled abc,5,89,89
+"3:0,0,0,0,0,0,0,1,0|021",terms a b c; asserted crb; filled acb,5,89,89
+"3:-1,0,1,0,0,0,0,0,0|",terms a b c; asserted crb csc,5,89,89
+"3:0,-1,0,0,0,2,0,-1,0|",terms a b c; asserted crb csa,5,89,89
+"3:0,0,0,0,0,-1,0,1,0|",terms a b c; asserted crb bsc,5,89,89
+"3:-1,0,1,0,0,1,0,-1,0|",terms a b c; asserted crb bsb,5,89,89
+"3:0,-1,0,0,0,1,0,0,0|",terms a b c; asserted crb bsa,5,89,89
+"3:0,-1,0,0,0,0,0,1,0|",terms a b c; asserted crb asb,5,89,89
+"3:-1,0,0,0,0,0,0,1,0|",terms a b c; asserted crb asa,5,89,89
+"3:0,0,0,0,0,0,0,1,1|",terms a b c; asserted crb crc,5,89,89
+"3:0,0,0,0,0,0,0,2,0|",terms a b c; asserted crb(2),5,89,89
+"3:0,0,1,0,0,1,0,0,0|",terms a b c; asserted cra crb,5,89,89
+"3:0,0,0,0,0,1,0,0,1|",terms a b c; asserted brc crc,5,89,89
+"3:0,0,0,0,0,1,0,1,0|",terms a b c; asserted brc crb,5,89,89
+"3:0,0,1,0,0,0,0,1,0|",terms a b c; asserted brc cra,5,89,89
+"3:0,0,0,0,1,0,0,0,1|",terms a b c; asserted brb crc,5,89,89
+"3:0,0,1,0,1,0,0,0,0|",terms a b c; asserted brb cra,5,89,89

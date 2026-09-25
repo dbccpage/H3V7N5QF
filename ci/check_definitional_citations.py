@@ -78,6 +78,7 @@ RECORD_NOUN = {
     "fifteenth": "admission",
     "sixteenth": "leftover",
     "twentyfourth": "fill",
+    "twentyfifth": "balanc",
 }
 
 

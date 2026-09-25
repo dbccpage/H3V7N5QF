@@ -128,6 +128,18 @@ theorem empty_never_returned25 {A : FSt} (hA : A.WF) (a : 0 < A.G.n) : ¬ ReachR
   · exact absurd e (by decide)
   · omega
 
+/-! ## Which changes respect the sameness -/
+
+/-- **Filling respects the sameness**: the same triple filled in two states of one result gives one result. -/
+theorem Same25.fill {A B : FSt} (h : Same25 A B) (t : Tri) : Same25 (A.fill t) (B.fill t) :=
+  ⟨h.1, h.2.cons _⟩
+
+/-- **Adding a term does not** (the twenty-third's witness, nothing filled): `a b` and `a b; arb bsa` are one
+result, and with a term added they are two. -/
+theorem addTerm_not_respected25 :
+    Same25 (embed raisedPair) (embed ⟨2, []⟩) ∧ ¬ Same25 (embed raisedPair).addTerm (embed ⟨2, []⟩).addTerm :=
+  ⟨embed_same_iff.2 raisedPair_nothing, fun s => addTerm_not_respected.2 s.1⟩
+
 /-! ## The exchange of the two relations -/
 
 /-- The two relations exchanged; the filled triples kept. -/

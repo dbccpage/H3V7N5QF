@@ -1,7 +1,8 @@
 import Twentyfifth
 
-/-! `#print axioms` for every theorem of the library, file by file.  Only `propext` and
-`Quot.sound` are allowed (`code/twentyfifth/leanreport.py`). -/
+/-! `#print axioms` for every theorem of the library, file by file, then for every theorem of `Twentythird`
+or `Twentysecond` the paper or ledger cites (imported).  Only `propext` and `Quot.sound` are allowed
+(`code/twentyfifth/leanreport.py`). -/
 
 -- Twentyfifth/Fill.lean
 #print axioms Twentyfifth.Tri.norm_cases
@@ -106,6 +107,8 @@ import Twentyfifth
 #print axioms Twentyfifth.fewest_wPair
 #print axioms Twentyfifth.fewest_arcThree
 #print axioms Twentyfifth.record_does_not_show_which_terms
+#print axioms Twentyfifth.aLoop_wf
+#print axioms Twentyfifth.record_pair_two_terms
 #print axioms Twentyfifth.excess_zero_of_plain_nil
 #print axioms Twentyfifth.record_shows_whether
 -- Twentyfifth/Map.lean
@@ -133,6 +136,8 @@ import Twentyfifth
 #print axioms Twentyfifth.reach25_criterion
 #print axioms Twentyfifth.reach25_mutual
 #print axioms Twentyfifth.empty_never_returned25
+#print axioms Twentyfifth.Same25.fill
+#print axioms Twentyfifth.addTerm_not_respected25
 #print axioms Twentyfifth.FSt.swap_swap
 #print axioms Twentyfifth.Same25.swap
 #print axioms Twentyfifth.same25_swap_iff
@@ -177,3 +182,30 @@ import Twentyfifth
 #print axioms Twentyfifth.swapBC_rw
 #print axioms Twentyfifth.oneFilled_sameW_other
 #print axioms Twentyfifth.readBack25_none_smallest_writing
+-- imported from Twentythird and Twentysecond, cited by the paper or the ledger
+#print axioms Twentysecond.Step.phi_le
+#print axioms Twentysecond.addReach_atoms
+#print axioms Twentysecond.eq_empty_of_wf
+#print axioms Twentysecond.excess_swap
+#print axioms Twentysecond.reach_grow
+#print axioms Twentysecond.reach_plainSt
+#print axioms Twentysecond.swap_swap
+#print axioms Twentysecond.swap_wf
+#print axioms Twentythird.Same3.around
+#print axioms Twentythird.Same3.rename
+#print axioms Twentythird.Step.not_same3
+#print axioms Twentythird.addTerm_not_respected
+#print axioms Twentythird.cost3_iff
+#print axioms Twentythird.cost3_iff_min
+#print axioms Twentythird.cost3_two
+#print axioms Twentythird.excess_rename
+#print axioms Twentythird.fewest_iff
+#print axioms Twentythird.first_pair_apart
+#print axioms Twentythird.first_pair_merge
+#print axioms Twentythird.gen3_iff_same3
+#print axioms Twentythird.ninth_pair_apart
+#print axioms Twentythird.phi_ge_around
+#print axioms Twentythird.same3_nothing_iff
+#print axioms Twentythird.seventh_pair_apart
+#print axioms Twentythird.seventh_pair_merge
+#print axioms Twentythird.twentysecond_pair_apart
