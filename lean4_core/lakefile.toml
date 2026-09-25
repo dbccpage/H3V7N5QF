@@ -1,8 +1,11 @@
 name = "twentysecond"
-defaultTargets = ["Twentysecond", "Twentythird"]
+defaultTargets = ["Twentysecond", "Twentythird", "Twentyfourth"]
 
 [[lean_lib]]
 name = "Twentysecond"
 
 [[lean_lib]]
 name = "Twentythird"
+
+[[lean_lib]]
+name = "Twentyfourth"
