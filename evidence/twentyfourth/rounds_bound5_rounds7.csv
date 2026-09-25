@@ -1,0 +1,9 @@
+round,new_states,new_results,attempts_so_far,results_with_at_most_two_terms_closed_form
+0,1,1,0,1
+1,1,1,1,1
+2,4,4,5,4
+3,10,10,30,9
+4,37,28,136,22
+5,133,94,679,48
+6,532,365,3194,90
+7,2225,1549,15735,148

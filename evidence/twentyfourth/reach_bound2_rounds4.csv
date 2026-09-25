@@ -1,0 +1,112 @@
+identify_reading,result,first_state_reached,round,results_reachable
+either,0::,no terms; asserted nothing,0,37
+either,1:0:0,terms a; asserted nothing; filled none,1,36
+either,1:-1:0,terms a; asserted asa; filled none,2,36
+either,1:1:0,terms a; asserted ara; filled none,2,36
+either,1:0:1,terms a; asserted nothing; filled a,2,13
+either,"2:0,0,0,0:00",terms a b; asserted nothing; filled none,2,36
+either,1:-2:0,terms a; asserted asa(2); filled none,3,36
+either,1:2:0,terms a; asserted ara(2); filled none,3,36
+either,1:-1:1,terms a; asserted asa; filled a,3,13
+either,1:1:1,terms a; asserted ara; filled a,3,13
+either,"2:-1,0,0,0:00",terms a b; asserted bsb; filled none,3,36
+either,"2:0,-1,0,0:00",terms a b; asserted bsa; filled none,3,36
+either,"2:0,0,0,1:00",terms a b; asserted brb; filled none,3,36
+either,"2:0,1,0,0:00",terms a b; asserted bra; filled none,3,36
+either,"2:0,0,0,0:01",terms a b; asserted nothing; filled b,3,13
+either,1:-3:0,terms a; asserted asa(3); filled none,4,36
+either,1:3:0,terms a; asserted ara(3); filled none,4,36
+either,1:-2:1,terms a; asserted asa(2); filled a,4,13
+either,1:2:1,terms a; asserted ara(2); filled a,4,13
+either,"2:-2,0,0,0:00",terms a b; asserted bsb(2); filled none,4,36
+either,"2:-1,-1,0,0:00",terms a b; asserted bsa bsb; filled none,4,36
+either,"2:0,-2,0,0:00",terms a b; asserted bsa(2); filled none,4,36
+either,"2:-1,0,0,-1:00",terms a b; asserted asa bsb; filled none,4,36
+either,"2:0,-1,0,1:00",terms a b; asserted brb bsa; filled none,4,36
+either,"2:-1,0,0,1:00",terms a b; asserted brb asa; filled none,4,36
+either,"2:0,0,0,2:00",terms a b; asserted brb(2); filled none,4,36
+either,"2:-1,1,0,0:00",terms a b; asserted bra bsb; filled none,4,36
+either,"2:0,1,0,1:00",terms a b; asserted bra brb; filled none,4,36
+either,"2:0,2,0,0:00",terms a b; asserted bra(2); filled none,4,36
+either,"2:1,0,0,1:00",terms a b; asserted ara brb; filled none,4,36
+either,"2:-1,0,0,0:10",terms a b; asserted bsb; filled b,4,13
+either,"2:0,-1,0,0:01",terms a b; asserted bsa; filled b,4,13
+either,"2:-1,0,0,0:01",terms a b; asserted asa; filled b,4,13
+either,"2:0,0,0,1:01",terms a b; asserted brb; filled b,4,13
+either,"2:0,1,0,0:01",terms a b; asserted bra; filled b,4,13
+either,"2:0,0,0,1:10",terms a b; asserted ara; filled b,4,13
+either,"2:0,0,0,0:11",terms a b; asserted nothing; filled a b,4,13
+both,0::,no terms; asserted nothing,0,37
+both,1:0:0,terms a; asserted nothing; filled none,1,36
+both,1:-1:0,terms a; asserted asa; filled none,2,36
+both,1:1:0,terms a; asserted ara; filled none,2,36
+both,1:0:1,terms a; asserted nothing; filled a,2,36
+both,"2:0,0,0,0:00",terms a b; asserted nothing; filled none,2,36
+both,1:-2:0,terms a; asserted asa(2); filled none,3,36
+both,1:2:0,terms a; asserted ara(2); filled none,3,36
+both,1:-1:1,terms a; asserted asa; filled a,3,36
+both,1:1:1,terms a; asserted ara; filled a,3,36
+both,"2:-1,0,0,0:00",terms a b; asserted bsb; filled none,3,36
+both,"2:0,-1,0,0:00",terms a b; asserted bsa; filled none,3,36
+both,"2:0,0,0,1:00",terms a b; asserted brb; filled none,3,36
+both,"2:0,1,0,0:00",terms a b; asserted bra; filled none,3,36
+both,"2:0,0,0,0:01",terms a b; asserted nothing; filled b,3,36
+both,1:-3:0,terms a; asserted asa(3); filled none,4,36
+both,1:3:0,terms a; asserted ara(3); filled none,4,36
+both,1:-2:1,terms a; asserted asa(2); filled a,4,36
+both,1:2:1,terms a; asserted ara(2); filled a,4,36
+both,"2:-2,0,0,0:00",terms a b; asserted bsb(2); filled none,4,36
+both,"2:-1,-1,0,0:00",terms a b; asserted bsa bsb; filled none,4,36
+both,"2:0,-2,0,0:00",terms a b; asserted bsa(2); filled none,4,36
+both,"2:-1,0,0,-1:00",terms a b; asserted asa bsb; filled none,4,36
+both,"2:0,-1,0,1:00",terms a b; asserted brb bsa; filled none,4,36
+both,"2:-1,0,0,1:00",terms a b; asserted brb asa; filled none,4,36
+both,"2:0,0,0,2:00",terms a b; asserted brb(2); filled none,4,36
+both,"2:-1,1,0,0:00",terms a b; asserted bra bsb; filled none,4,36
+both,"2:0,1,0,1:00",terms a b; asserted bra brb; filled none,4,36
+both,"2:0,2,0,0:00",terms a b; asserted bra(2); filled none,4,36
+both,"2:1,0,0,1:00",terms a b; asserted ara brb; filled none,4,36
+both,"2:-1,0,0,0:10",terms a b; asserted bsb; filled b,4,36
+both,"2:0,-1,0,0:01",terms a b; asserted bsa; filled b,4,36
+both,"2:-1,0,0,0:01",terms a b; asserted asa; filled b,4,36
+both,"2:0,0,0,1:01",terms a b; asserted brb; filled b,4,36
+both,"2:0,1,0,0:01",terms a b; asserted bra; filled b,4,36
+both,"2:0,0,0,1:10",terms a b; asserted ara; filled b,4,36
+both,"2:0,0,0,0:11",terms a b; asserted nothing; filled a b,4,36
+never,0::,no terms; asserted nothing,0,37
+never,1:0:0,terms a; asserted nothing; filled none,1,36
+never,1:-1:0,terms a; asserted asa; filled none,2,36
+never,1:1:0,terms a; asserted ara; filled none,2,36
+never,1:0:1,terms a; asserted nothing; filled a,2,36
+never,"2:0,0,0,0:00",terms a b; asserted nothing; filled none,2,36
+never,1:-2:0,terms a; asserted asa(2); filled none,3,36
+never,1:2:0,terms a; asserted ara(2); filled none,3,36
+never,1:-1:1,terms a; asserted asa; filled a,3,36
+never,1:1:1,terms a; asserted ara; filled a,3,36
+never,"2:-1,0,0,0:00",terms a b; asserted bsb; filled none,3,36
+never,"2:0,-1,0,0:00",terms a b; asserted bsa; filled none,3,36
+never,"2:0,0,0,1:00",terms a b; asserted brb; filled none,3,36
+never,"2:0,1,0,0:00",terms a b; asserted bra; filled none,3,36
+never,"2:0,0,0,0:01",terms a b; asserted nothing; filled b,3,36
+never,1:-3:0,terms a; asserted asa(3); filled none,4,36
+never,1:3:0,terms a; asserted ara(3); filled none,4,36
+never,1:-2:1,terms a; asserted asa(2); filled a,4,36
+never,1:2:1,terms a; asserted ara(2); filled a,4,36
+never,"2:-2,0,0,0:00",terms a b; asserted bsb(2); filled none,4,36
+never,"2:-1,-1,0,0:00",terms a b; asserted bsa bsb; filled none,4,36
+never,"2:0,-2,0,0:00",terms a b; asserted bsa(2); filled none,4,36
+never,"2:-1,0,0,-1:00",terms a b; asserted asa bsb; filled none,4,36
+never,"2:0,-1,0,1:00",terms a b; asserted brb bsa; filled none,4,36
+never,"2:-1,0,0,1:00",terms a b; asserted brb asa; filled none,4,36
+never,"2:0,0,0,2:00",terms a b; asserted brb(2); filled none,4,36
+never,"2:-1,1,0,0:00",terms a b; asserted bra bsb; filled none,4,36
+never,"2:0,1,0,1:00",terms a b; asserted bra brb; filled none,4,36
+never,"2:0,2,0,0:00",terms a b; asserted bra(2); filled none,4,36
+never,"2:1,0,0,1:00",terms a b; asserted ara brb; filled none,4,36
+never,"2:-1,0,0,0:10",terms a b; asserted bsb; filled b,4,36
+never,"2:0,-1,0,0:01",terms a b; asserted bsa; filled b,4,36
+never,"2:-1,0,0,0:01",terms a b; asserted asa; filled b,4,36
+never,"2:0,0,0,1:01",terms a b; asserted brb; filled b,4,36
+never,"2:0,1,0,0:01",terms a b; asserted bra; filled b,4,36
+never,"2:0,0,0,1:10",terms a b; asserted ara; filled b,4,36
+never,"2:0,0,0,0:11",terms a b; asserted nothing; filled a b,4,36

@@ -1,0 +1,7 @@
+state,written,change,result_of_the_state
+5::||f00000,terms a b c d e; asserted nothing; filled none,add a term,"5:0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0:00000"
+5::|4-4*1|f00000,terms a b c d e; asserted ese; filled none,add a term,"5:-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0:00000"
+5::|4-3*1|f00000,terms a b c d e; asserted esd; filled none,add a term,"5:0,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0:00000"
+5::4-4*1||f00000,terms a b c d e; asserted ere; filled none,add a term,"5:0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1:00000"
+5::4-3*1||f00000,terms a b c d e; asserted erd; filled none,add a term,"5:0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0:00000"
+5::||f00001,terms a b c d e; asserted nothing; filled e,add a term,"5:0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0:00001"

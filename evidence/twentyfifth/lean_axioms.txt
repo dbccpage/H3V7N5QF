@@ -1,0 +1,200 @@
+lake build Twentyfifth (lean4_core/, no outside library): passed
+sorry / admit / declared axiom in lean4_core/ (outside comments): none
+axioms allowed: propext, Quot.sound
+#print axioms (Twentyfifth/Axioms.lean):
+'Twentyfifth.Tri.norm_cases' does not depend on any axioms
+'Twentyfifth.Tri.within_rot' does not depend on any axioms
+'Twentyfifth.Tri.distinct_rot' does not depend on any axioms
+'Twentyfifth.Tri.norm_within' does not depend on any axioms
+'Twentyfifth.Tri.norm_distinct' does not depend on any axioms
+'Twentyfifth.Tri.norm_eq_self' does not depend on any axioms
+'Twentyfifth.Tri.norm_least' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Tri.norm_norm' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Tri.norm_mk' does not depend on any axioms
+'Twentyfifth.Tri.norm_rot' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.mem_nub' depends on axioms: [propext]
+'Twentyfifth.nub_nodup' depends on axioms: [propext]
+'Twentyfifth.length_nub_le' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.length_carry_le' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.carry_nil' depends on axioms: [propext]
+'Twentyfifth.mem_carry' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Reach25.trans' depends on axioms: [propext]
+'Twentyfifth.Reach25.single' depends on axioms: [propext]
+'Twentyfifth.within_glue' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.carry_wf' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Step25.wf' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Reach25.wf' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.empty25_wf' does not depend on any axioms
+'Twentyfifth.embed_wf' does not depend on any axioms
+'Twentyfifth.nothing_filled_of_lt_three' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.embed_step' depends on axioms: [propext]
+'Twentyfifth.embed_reach' depends on axioms: [propext]
+'Twentyfifth.around_rot' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.around_norm' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same3.around25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.around_nothing' does not depend on any axioms
+'Twentyfifth.nothing_balanced' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.refl' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.symm' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.trans' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.n' does not depend on any axioms
+'Twentyfifth.Gen25.same25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.gen25_iff_same25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.balanced_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.exists_not_of_not_forall' depends on axioms: [propext]
+'Twentyfifth.told_iff' depends on axioms: [propext]
+'Twentyfifth.sameRecord_nothing' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.told_not_nothing' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.not_told' does not depend on any axioms
+'Twentyfifth.excess_add' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.excess_add_loop' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.around_add_loop' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.loopFilled_wf' depends on axioms: [propext]
+'Twentyfifth.loop_unseen' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.arb_one_way' does not depend on any axioms
+'Twentyfifth.blind_three_not_nothing' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.arcThree_told' does not depend on any axioms
+'Twentyfifth.around_swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.balanced_swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.three_others' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Blind.balanced' does not depend on any axioms
+'Twentyfifth.blind_twoWay_five' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.blind_five' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.blind_three_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.blind_four' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.lt_four' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.blind_four_not_nothing' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.blindThree_blind' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.cone_decides' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.two_triples_do_not_decide' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.psi_empty25' depends on axioms: [propext]
+'Twentyfifth.Step25.psi_le' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Reach25.psi_le' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.reach_fill_all' depends on axioms: [propext]
+'Twentyfifth.reach_build' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.same_build' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Cost25.unique' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Cost25.congr' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.cost25_eq' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Reach25.proj' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.perm_nil_eq' depends on axioms: [propext]
+'Twentyfifth.cost25_embed_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.cost3_nothing' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.oneFilled_wf' depends on axioms: [propext]
+'Twentyfifth.oneFilledOther_wf' depends on axioms: [propext]
+'Twentyfifth.cost_oneFilled' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.cost_oneFilledOther' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.parity_fails' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Cost25.le_psi' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Step25.cost_le' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Step25.not_same' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.sum_nine_ge'' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.phi_ge_sums3' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.cost3_three_ge_sums' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.wLoop_wf' depends on axioms: [propext]
+'Twentyfifth.wPair_wf' depends on axioms: [propext]
+'Twentyfifth.arcThree_wf' depends on axioms: [propext]
+'Twentyfifth.cost3_of_sums3' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.cost3_of_around3' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.fewest_wLoop' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.fewest_wPair' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.fewest_arcThree' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.record_does_not_show_which_terms' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.aLoop_wf' depends on axioms: [propext]
+'Twentyfifth.record_pair_two_terms' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.excess_zero_of_plain_nil' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.record_shows_whether' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.embed_same_iff' does not depend on any axioms
+'Twentyfifth.seventh_pair_merge25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.first_pair_merge25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.forget_same' does not depend on any axioms
+'Twentyfifth.forget_loses' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.readBack25_embed' does not depend on any axioms
+'Twentyfifth.readBack25_none_iff' depends on axioms: [propext]
+'Twentyfifth.readBack25_some' depends on axioms: [propext]
+'Twentyfifth.readBack25_congr' depends on axioms: [propext]
+'Twentyfifth.readBack25_oneFilled' does not depend on any axioms
+'Twentyfifth.three_le_of_filled' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.readBack25_none_cost' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.tri_three' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.readBack25_none_smallest' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Step25.n_pos' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Reach25.n_pos' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.reach25_clear' depends on axioms: [propext]
+'Twentyfifth.reach25_collapse' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.reach25_grow' depends on axioms: [propext]
+'Twentyfifth.reach25_fill_in' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.reach25_criterion' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.reach25_mutual' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.empty_never_returned25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.fill' does not depend on any axioms
+'Twentyfifth.addTerm_not_respected25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.FSt.swap_swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.same25_swap_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.swap25_wf' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Step25.swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Reach25.swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.empty25_swap' does not depend on any axioms
+'Twentyfifth.cost25_swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.reach25_swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.told_swap' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Tri.map_rot' does not depend on any axioms
+'Twentyfifth.Tri.map_map' does not depend on any axioms
+'Twentyfifth.Tri.norm_map_norm' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Tri.distinct_map' does not depend on any axioms
+'Twentyfifth.Tri.within_map' does not depend on any axioms
+'Twentyfifth.Tri.map_gf' does not depend on any axioms
+'Twentyfifth.Tri.rename_rename' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.map_eq_self_tri' does not depend on any axioms
+'Twentyfifth.nodup_map_of_inj' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.rename25_wf' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.rename25_rename' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.rename25_comp' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.around_rename' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.rename' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.rename25_id' does not depend on any axioms
+'Twentyfifth.Same25.sameW25' does not depend on any axioms
+'Twentyfifth.SameW25.refl' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.SameW25.n' does not depend on any axioms
+'Twentyfifth.SameW25.symm' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.SameW25.trans' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Gen25.wf_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.GenW25.wf_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.genW25_iff_sameW25' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.told_rename' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.Same25.told_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.SameW25.told_iff' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.psi_rename' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.cost25_every_writing' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.embed_rename' does not depend on any axioms
+'Twentyfifth.embed_sameW_iff' does not depend on any axioms
+'Twentyfifth.swapBC_rw' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.oneFilled_sameW_other' depends on axioms: [propext, Quot.sound]
+'Twentyfifth.readBack25_none_smallest_writing' depends on axioms: [propext, Quot.sound]
+'Twentysecond.Step.phi_le' depends on axioms: [propext, Quot.sound]
+'Twentysecond.addReach_atoms' does not depend on any axioms
+'Twentysecond.eq_empty_of_wf' does not depend on any axioms
+'Twentysecond.excess_swap' depends on axioms: [propext, Quot.sound]
+'Twentysecond.reach_grow' does not depend on any axioms
+'Twentysecond.reach_plainSt' depends on axioms: [propext, Quot.sound]
+'Twentysecond.swap_swap' depends on axioms: [propext, Quot.sound]
+'Twentysecond.swap_wf' depends on axioms: [propext, Quot.sound]
+'Twentythird.Same3.around' depends on axioms: [propext, Quot.sound]
+'Twentythird.Same3.rename' depends on axioms: [propext]
+'Twentythird.Step.not_same3' depends on axioms: [propext, Quot.sound]
+'Twentythird.addTerm_not_respected' depends on axioms: [propext, Quot.sound]
+'Twentythird.cost3_iff' depends on axioms: [propext, Quot.sound]
+'Twentythird.cost3_iff_min' depends on axioms: [propext, Quot.sound]
+'Twentythird.cost3_two' depends on axioms: [propext, Quot.sound]
+'Twentythird.excess_rename' depends on axioms: [propext]
+'Twentythird.fewest_iff' depends on axioms: [propext, Quot.sound]
+'Twentythird.first_pair_apart' depends on axioms: [propext, Quot.sound]
+'Twentythird.first_pair_merge' depends on axioms: [propext, Quot.sound]
+'Twentythird.gen3_iff_same3' depends on axioms: [propext, Quot.sound]
+'Twentythird.ninth_pair_apart' depends on axioms: [propext, Quot.sound]
+'Twentythird.phi_ge_around' depends on axioms: [propext, Quot.sound]
+'Twentythird.same3_nothing_iff' depends on axioms: [propext, Quot.sound]
+'Twentythird.seventh_pair_apart' depends on axioms: [propext]
+'Twentythird.seventh_pair_merge' depends on axioms: [propext, Quot.sound]
+'Twentythird.twentysecond_pair_apart' depends on axioms: [propext, Quot.sound]

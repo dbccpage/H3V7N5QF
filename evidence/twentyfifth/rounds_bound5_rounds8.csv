@@ -1,0 +1,10 @@
+round,new_results_within_bound,results_so_far_within_bound,new_states_reached,new_results_with_at_most_two_terms,new_results_with_at_most_two_terms_by_closed_form,new_results_with_a_filled_triple,new_results_told
+0,1,1,1,1,1,0,0
+1,1,2,1,1,1,0,0
+2,3,5,3,3,3,0,0
+3,7,12,7,6,6,0,0
+4,19,31,26,13,13,1,0
+5,66,97,91,24,24,8,2
+6,284,381,389,39,39,70,30
+7,1388,1769,1868,58,58,526,253
+8,7804,9573,10059,81,81,3995,2024

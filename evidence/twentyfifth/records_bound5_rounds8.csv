@@ -1,0 +1,91 @@
+terms,recorded_in_r,recorded_in_s,sizes_of_least_keeping_sets_seen,a_result_for_each
+0,0,0,1,[]: no terms; asserted nothing
+1,0,0,1,[]: terms a; asserted nothing
+1,0,1,1,[1]: terms a; asserted asa
+1,0,2,1,[1]: terms a; asserted asa(2)
+1,0,3,1,[1]: terms a; asserted asa(3)
+1,0,4,1,[1]: terms a; asserted asa(4)
+1,0,5,1,[1]: terms a; asserted asa(5)
+1,0,6,1,[1]: terms a; asserted asa(6)
+1,0,7,1,[1]: terms a; asserted asa(7)
+1,1,0,1,[1]: terms a; asserted ara
+1,2,0,1,[1]: terms a; asserted ara(2)
+1,3,0,1,[1]: terms a; asserted ara(3)
+1,4,0,1,[1]: terms a; asserted ara(4)
+1,5,0,1,[1]: terms a; asserted ara(5)
+1,6,0,1,[1]: terms a; asserted ara(6)
+1,7,0,1,[1]: terms a; asserted ara(7)
+2,0,0,1,[]: terms a b; asserted nothing
+2,0,1,2,[1]: terms a b; asserted bsb / [2]: terms a b; asserted bsa
+2,0,2,2,[1]: terms a b; asserted bsb(2) / [2]: terms a b; asserted bsa(2)
+2,0,3,2,[1]: terms a b; asserted bsb(3) / [2]: terms a b; asserted bsa(3)
+2,0,4,2,[1]: terms a b; asserted bsb(4) / [2]: terms a b; asserted bsa(4)
+2,0,5,2,[1]: terms a b; asserted bsb(5) / [2]: terms a b; asserted bsa(5)
+2,0,6,2,[1]: terms a b; asserted bsb(6) / [2]: terms a b; asserted bsa(6)
+2,1,0,2,[1]: terms a b; asserted brb / [2]: terms a b; asserted bra
+2,1,1,1,[1]: terms a b; asserted brb bsa
+2,1,2,1,[1]: terms a b; asserted brb bsa(2)
+2,1,3,1,[1]: terms a b; asserted brb bsa(3)
+2,1,4,1,[1]: terms a b; asserted brb bsa(4)
+2,1,5,1,[1]: terms a b; asserted brb bsa(5)
+2,2,0,2,[1]: terms a b; asserted brb(2) / [2]: terms a b; asserted bra(2)
+2,2,1,1,[1]: terms a b; asserted brb(2) bsa
+2,2,2,1,[1]: terms a b; asserted brb(2) bsa(2)
+2,2,3,1,[1]: terms a b; asserted brb(2) bsa(3)
+2,2,4,1,[1]: terms a b; asserted brb(2) bsa(4)
+2,3,0,2,[1]: terms a b; asserted brb(3) / [2]: terms a b; asserted bra(3)
+2,3,1,1,[1]: terms a b; asserted brb(3) bsa
+2,3,2,1,[1]: terms a b; asserted brb(3) bsa(2)
+2,3,3,1,[1]: terms a b; asserted brb(3) bsa(3)
+2,4,0,2,[1]: terms a b; asserted brb(4) / [2]: terms a b; asserted bra(4)
+2,4,1,1,[1]: terms a b; asserted brb(4) bsa
+2,4,2,1,[1]: terms a b; asserted brb(4) bsa(2)
+2,5,0,2,[1]: terms a b; asserted brb(5) / [2]: terms a b; asserted bra(5)
+2,5,1,1,[1]: terms a b; asserted brb(5) bsa
+2,6,0,2,[1]: terms a b; asserted brb(6) / [2]: terms a b; asserted bra(6)
+3,0,0,1,[]: terms a b c; asserted nothing
+3,0,1,2,[1]: terms a b c; asserted csc / [2]: terms a b c; asserted csb
+3,0,2,3,"[1]: terms a b c; asserted csc(2) / [1, 2]: terms a b c; asserted bsb csa / [2]: terms a b c; asserted csb(2)"
+3,0,3,3,"[1]: terms a b c; asserted csc(3) / [1, 2]: terms a b c; asserted bsb csa csb / [2]: terms a b c; asserted csb(3)"
+3,0,4,3,"[1]: terms a b c; asserted csc(4) / [1, 2]: terms a b c; asserted bsb csa csb(2) / [2]: terms a b c; asserted csb(4)"
+3,0,5,3,"[1]: terms a b c; asserted csc(5) / [1, 2]: terms a b c; asserted bsb csa csb(3) / [2]: terms a b c; asserted csb(5)"
+3,1,0,2,[1]: terms a b c; asserted crc / [2]: terms a b c; asserted crb
+3,1,1,4,"[1]: terms a b c; asserted crc csb / [1, 2]: terms a b c; asserted crc bsa / [2]: terms a b c; asserted crb csa / [3]: terms a b c; asserted crb bsc"
+3,1,2,3,"[1]: terms a b c; asserted crc csb(2) / [1, 2]: terms a b c; asserted crc bsa csb / [2]: terms a b c; asserted crb csa(2)"
+3,1,3,3,"[1]: terms a b c; asserted crc csb(3) / [1, 2]: terms a b c; asserted crc bsa csb(2) / [2]: terms a b c; asserted crb csa(3)"
+3,1,4,3,"[1]: terms a b c; asserted crc csb(4) / [1, 2]: terms a b c; asserted crc bsa csb(3) / [2]: terms a b c; asserted crb csa(4)"
+3,2,0,3,"[1]: terms a b c; asserted crc(2) / [1, 2]: terms a b c; asserted brb cra / [2]: terms a b c; asserted crb(2)"
+3,2,1,3,"[1]: terms a b c; asserted crc(2) csb / [1, 2]: terms a b c; asserted crc(2) bsa / [2]: terms a b c; asserted crb(2) csa"
+3,2,2,4,"[1]: terms a b c; asserted crc(2) csb(2) / [1, 2]: terms a b c; asserted crc(2) bsa csb / [2]: terms a b c; asserted crb(2) csa(2) / [3]: terms a b c; asserted crb(2) bsc(2)"
+3,2,3,3,"[1]: terms a b c; asserted crc(2) csb(3) / [1, 2]: terms a b c; asserted crc(2) bsa csb(2) / [2]: terms a b c; asserted crb(2) csa(3)"
+3,3,0,3,"[1]: terms a b c; asserted crc(3) / [1, 2]: terms a b c; asserted brb cra crb / [2]: terms a b c; asserted crb(3)"
+3,3,1,3,"[1]: terms a b c; asserted crc(3) csb / [1, 2]: terms a b c; asserted crc(3) bsa / [2]: terms a b c; asserted crb(3) csa"
+3,3,2,3,"[1]: terms a b c; asserted crc(3) csb(2) / [1, 2]: terms a b c; asserted crc(3) bsa csb / [2]: terms a b c; asserted crb(3) csa(2)"
+3,4,0,3,"[1]: terms a b c; asserted crc(4) / [1, 2]: terms a b c; asserted brb cra crb(2) / [2]: terms a b c; asserted crb(4)"
+3,4,1,3,"[1]: terms a b c; asserted crc(4) csb / [1, 2]: terms a b c; asserted crc(4) bsa / [2]: terms a b c; asserted crb(4) csa"
+3,5,0,3,"[1]: terms a b c; asserted crc(5) / [1, 2]: terms a b c; asserted brb cra crb(3) / [2]: terms a b c; asserted crb(5)"
+4,0,0,1,[]: terms a b c d; asserted nothing
+4,0,1,2,[1]: terms a b c d; asserted dsd / [2]: terms a b c d; asserted dsc
+4,0,2,3,"[1]: terms a b c d; asserted dsd(2) / [1, 2]: terms a b c d; asserted csc dsb / [2]: terms a b c d; asserted dsc(2)"
+4,0,3,3,"[1]: terms a b c d; asserted dsd(3) / [1, 2]: terms a b c d; asserted csc dsb dsc / [2]: terms a b c d; asserted dsc(3)"
+4,0,4,3,"[1]: terms a b c d; asserted dsd(4) / [1, 2]: terms a b c d; asserted csc dsb dsc(2) / [2]: terms a b c d; asserted dsc(4)"
+4,1,0,2,[1]: terms a b c d; asserted drd / [2]: terms a b c d; asserted drc
+4,1,1,4,"[1]: terms a b c d; asserted drd dsc / [1, 2]: terms a b c d; asserted drd csb / [2]: terms a b c d; asserted drc dsb / [3]: terms a b c d; asserted drc csd"
+4,1,2,5,"[1]: terms a b c d; asserted drd dsc(2) / [1, 2]: terms a b c d; asserted drd csb dsc / [1, 3]: terms a b c d; asserted drc bsb csd / [2]: terms a b c d; asserted drc dsb(2) / [2, 3]: terms a b c d; asserted drc csd dsb"
+4,1,3,5,"[1]: terms a b c d; asserted drd dsc(3) / [1, 2]: terms a b c d; asserted drd csb dsc(2) / [1, 3]: terms a b c d; asserted drc bsb csd dsb / [2]: terms a b c d; asserted drc dsb(3) / [2, 3]: terms a b c d; asserted drc csd dsb(2)"
+4,2,0,3,"[1]: terms a b c d; asserted drd(2) / [1, 2]: terms a b c d; asserted crc drb / [2]: terms a b c d; asserted drc(2)"
+4,2,1,5,"[1]: terms a b c d; asserted drd(2) dsc / [1, 2]: terms a b c d; asserted drd(2) csb / [1, 3]: terms a b c d; asserted crc drb bsd / [2]: terms a b c d; asserted drc(2) dsb / [2, 3]: terms a b c d; asserted drb drc csd"
+4,2,2,6,"[1]: terms a b c d; asserted drd(2) dsc(2) / [1, 2]: terms a b c d; asserted drd(2) csb dsc / [1, 3]: terms a b c d; asserted drb drc bsd csc / [2]: terms a b c d; asserted drc(2) dsb(2) / [2, 3]: terms a b c d; asserted drb drc csb csd / [3]: terms a b c d; asserted drc(2) csd(2)"
+4,3,0,3,"[1]: terms a b c d; asserted drd(3) / [1, 2]: terms a b c d; asserted crc drb drc / [2]: terms a b c d; asserted drc(3)"
+4,3,1,5,"[1]: terms a b c d; asserted drd(3) dsc / [1, 2]: terms a b c d; asserted drd(3) csb / [1, 3]: terms a b c d; asserted crc drb drc bsd / [2]: terms a b c d; asserted drc(3) dsb / [2, 3]: terms a b c d; asserted drb drc(2) bsd"
+4,4,0,3,"[1]: terms a b c d; asserted drd(4) / [1, 2]: terms a b c d; asserted crc drb drc(2) / [2]: terms a b c d; asserted drc(4)"
+5,0,0,1,[]: terms a b c d e; asserted nothing
+5,0,1,2,[1]: terms a b c d e; asserted ese / [2]: terms a b c d e; asserted esd
+5,0,2,3,"[1]: terms a b c d e; asserted ese(2) / [1, 2]: terms a b c d e; asserted dsd esc / [2]: terms a b c d e; asserted esd(2)"
+5,0,3,3,"[1]: terms a b c d e; asserted ese(3) / [1, 2]: terms a b c d e; asserted dsd esc esd / [2]: terms a b c d e; asserted esd(3)"
+5,1,0,2,[1]: terms a b c d e; asserted ere / [2]: terms a b c d e; asserted erd
+5,1,1,4,"[1]: terms a b c d e; asserted ere esd / [1, 2]: terms a b c d e; asserted ere dsc / [2]: terms a b c d e; asserted erd esc / [3]: terms a b c d e; asserted erd dse"
+5,1,2,5,"[1]: terms a b c d e; asserted ere esd(2) / [1, 2]: terms a b c d e; asserted ere dsc esd / [1, 3]: terms a b c d e; asserted erd csc dse / [2]: terms a b c d e; asserted erd esc(2) / [2, 3]: terms a b c d e; asserted erd dse esc"
+5,2,0,3,"[1]: terms a b c d e; asserted ere(2) / [1, 2]: terms a b c d e; asserted drd erc / [2]: terms a b c d e; asserted erd(2)"
+5,2,1,5,"[1]: terms a b c d e; asserted ere(2) esd / [1, 2]: terms a b c d e; asserted ere(2) dsc / [1, 3]: terms a b c d e; asserted drd erc cse / [2]: terms a b c d e; asserted erd(2) esc / [2, 3]: terms a b c d e; asserted erc erd dse"
+5,3,0,3,"[1]: terms a b c d e; asserted ere(3) / [1, 2]: terms a b c d e; asserted drd erc erd / [2]: terms a b c d e; asserted erd(3)"

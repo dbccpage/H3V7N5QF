@@ -5153,3 +5153,676 @@ From the repository root:
 - `lake +leanprover/lean4:v4.33.1 -d lean4_core build`, then read the exit
   code on its own line; `python code/lean_report_twentythird.py` builds and
   writes `evidence/twentythird/lean_axioms.txt`.
+
+---
+
+# Twenty-fourth derivation (`prompt/twentyfourth/`) — plan and stopping conditions
+
+Written before any other work of the twenty-fourth derivation, as
+`prompt/twentyfourth/prompt.md` requires. Inputs: `prompt/twentyfourth/prompt.md`
+and `prompt/twentyfourth/seed_prompt.md`. The parent is the twenty-third
+(`prompt/twentythird/seed_prompt.md`, `paper/twentythird/`,
+`code/twentythird/`, `lean4_core/Twentythird/`, `evidence/twentythird/`); its
+own parents — the twenty-second, and through it the ninth, the seventh, the
+eighth and the first — are cited through it. The other derivations are not
+inputs; the twenty-fifth (`prompt/twentyfifth/`) is a sibling started from the
+same point and is not an input either. Everything above stays in force
+(isolation, no network, `prompt/` untouched, `.lake/` never committed,
+bookkeeping rules 1–4, the evidence-module coverage gate, the `ci/` gates).
+Rule 5 of this task: every earlier result used is cited, its proof re-checked
+from this seed, and the ledger's re-check column says how — *no change*,
+*re-proved*, *imported* (a `lean4_core/Twentythird` or
+`lean4_core/Twentysecond` theorem used as it stands, its statement mentioning
+nothing this seed changes), or *computed again*. This derivation and its
+sibling land on one branch: in the files they share (`CLAUDE.md`,
+`lean4_core/lakefile.toml`, `ci/check_mutation_bite.py`,
+`ci/check_axiom_citations.py`, `ci/check_definitional_citations.py`, an earlier
+derivation's `change_log.md`) this derivation only adds; nothing already there
+is reordered, reworded or reformatted.
+
+## What differs in the seed
+
+Against the twenty-third seed (`diff`), one sentence changes and one is
+added. The list of changes gains a fifth kind: "A change is exactly one of:
+identifying two terms; removing an assertion; adding a term; adding an
+assertion; filling one term." Added after the sentence on identifying: "A
+filled term `x` balances when `xrx` and `xsx` are asserted equally often; for
+every result, record which filled terms balance." Every other sentence is the
+twenty-third's, the sameness sentence and the raising sentence included. The
+seed does not say what filling does beyond making a term filled, and the
+sameness sentence says nothing of filled terms.
+
+## Readings
+
+- **C-F1 (chosen). Filling.** Filling `x` makes `x` filled and changes
+  nothing asserted: a state is the twenty-third's state (terms, a
+  multiplicity for each ordered pair in each relation) with a set of filled
+  terms among its terms. Filling a filled term changes nothing and is not a
+  change, as removing what is not asserted is not (9:C5⁗). Unchosen C-F1′ (it
+  is a change whose outcome is its start): the same results at the same
+  rounds (to prove), so eliminated.
+- **C-F2 (unchosen, kept, computed).** A term is filled a number of times,
+  each filling raising it by one; "filled" is filled at least once. It gives
+  different results (a term filled twice); computed at a small bound (count,
+  cost) and compared.
+- **C-F3 (unchosen, to be eliminated by proof).** Filling `x` also asserts
+  `xrx` and `xsx` once each. That is a pair asserted together, so its outcome
+  is C-F1's result (to prove in Lean) and the results and rounds are C-F1's.
+- **C-F4 (unchosen, kept, computed).** Filling `x` makes it balance, adding
+  `xrx` or `xsx` until they are asserted equally often. Expected: the same
+  results and the same fewest changes as C-F1 (the potential below), other
+  outcomes of single changes; computed at a small bound.
+- **C-S (chosen). Filled terms and the sameness.** A rewriting carries the
+  filled terms with the terms; pairs asserted together and raising touch no
+  filled term; two results that differ in which terms are filled are two
+  results (no clause of the sameness sentence joins them). Set aside: filled
+  terms kept off the result as a record of the sequence that reached it —
+  refused by "for every result, record which filled terms balance", which
+  needs the filled terms of a result.
+- **C-I1 (chosen). Identifying.** The one term is filled when either term
+  was ("replaces both by one term": the one term stands for both).
+  **C-I2** (filled only when both were) and **C-I3** (never filled) are
+  unchosen, kept and computed. Expected: the same results and the same fewest
+  changes under all three; which result an identification reaches, how far it
+  moves the cost, and reachability differ (under C-I1 a result with a filled
+  term never reaches one without; under C-I2 and C-I3 it can).
+- **C-B (chosen). Balance and its record.** `x` balances when
+  `M_r(x, x) = M_s(x, x)`. Expected: the same in every state of the result and
+  in every writing (a loop's excess is kept by the sameness, 23:D2), so
+  balance belongs to the result. The record: for every filled term of the
+  result, at its least writing, whether it balances; with it the numbers of
+  filled terms that balance and that do not. The twenty-third's record (terms,
+  and the assertions in `r` and in `s` of a state asserting the fewest,
+  23:C-R) is kept beside it: G11 is unchanged.
+- **C-N (chosen). "A result with nothing asserted on as many terms"** (the
+  task's words): as many terms and the same filled terms, nothing asserted;
+  the question is then about the assertions. Unchosen C-N0 (nothing asserted
+  and nothing filled): every result with a filled term is then not such a
+  result; kept and answered alongside.
+- **C-K (chosen). "The terms that keep a result from being the one asserting
+  nothing"** (the task's words, for the twenty-third): the smallest sets of
+  terms on which the result, restricted, is not the one asserting nothing —
+  a loop, two terms, or three terms whose sum is not zero (23:D2).
+- **C-O (chosen). Order of the attempts.** Filling adds no term and no
+  assertion, so it comes with the changes that add nothing: identifications,
+  removals in `r`, in `s`, fillings, a term, additions in `r`, in `s`.
+  Expected: the order within a round changes no result and no round (only the
+  attempt log).
+- **The twenty-third's C-E, C-X, C-R** are kept: changes are performed on
+  states — the twenty-second's plain states, now with their filled terms, at
+  their least writing — and the results are formed afterwards. Unchosen C-E′
+  (the ninth's states with filled terms, grouped) is computed at a small
+  bound.
+
+## Expected consequences, to be proved or refuted
+
+1. **The twenty-third's question.** Its record shows *whether* a result is the
+   one asserting nothing (it records no assertion exactly then) but not
+   *which* terms keep it from being: `a b; ara` and `a b; arb` record the same
+   (two terms, one `r`) and are kept by one term and by two terms together;
+   `a b c; ara asb` and `a b c; arb bsa` record the same and are kept by one
+   term and only by three terms together.
+2. **Balance** belongs to the result. In the result with nothing asserted
+   every filled term balances. A result that is not it is told apart from it
+   by filled terms that do not balance exactly when some filled term has a
+   loop whose excess is not zero. It cannot be told when every filled term
+   balances: (a) a loop of non-zero excess only at unfilled terms — one filling
+   away from being told; (b) every loop of excess zero — never, whatever terms
+   are filled: what shows it is not the one asserting nothing is then two
+   terms or three terms (23:D2).
+3. **Fewest changes**: the twenty-third's cost plus the number of filled
+   terms, `n + |F| + min_g Σ |e(x, y) + g(x) − g(y)|`. Lower bound: the
+   twenty-second's `phi` plus the number of filled terms rises by at most one
+   per change; upper bound: additions, then fillings. Shortest sequences:
+   additions and fillings only, fillings interleaved; counted per result.
+4. **Changes of a result.** Filling respects the sameness (performed on two
+   states of one result it gives one result); adding a term still does not
+   (23:D4, carried in by the embedding).
+5. **Parity.** Every change of the twenty-third moves the cost by an odd
+   number (23:D6). Here filling moves it by exactly one, and under C-I1
+   identifying two filled terms moves it by an even number (`a b` both filled,
+   cost 4, identified: `a` filled, cost 2). No change returns a state to its
+   own result.
+6. **Reachability.** Under C-I1 a result reaches another exactly when the
+   other has a term or the first is empty, and the other has a filled term or
+   the first has none: the twenty-third's criterion fails exactly on reaching
+   a result with no filled term from one with a filled term. Under C-I2 and
+   C-I3 the twenty-third's criterion holds.
+7. **The exchange of the two relations**: a symmetry of results, cost,
+   reachability and balance (it negates every loop's excess, keeping zero).
+8. **Mapping an earlier seed in.** The twenty-third's results, with no term
+   filled, map one to one, each change carried to a change of the same kind;
+   so this seed makes no two of the twenty-third's results the same and the
+   merge loses nothing. The map back: the twenty-third result of a result with
+   no filled term, "none" otherwise; it returns the original on mapped
+   results; the smallest result answered "none" is one term, filled, nothing
+   asserted (cost 2), the only one at that cost. Beside it, the forgetting map
+   (a result to the twenty-third result of its states) answers every result
+   and carries each change to a change or to none (a filling). The
+   twenty-second, the ninth, the seventh and the first do not map in one to
+   one (23:D9, carried through the embedding).
+9. **Counts.** Two-term results recording `t` assertions with `k` filled terms:
+   `2t² + t + 1`, `4t² + 2`, `2t² + t + 1` for `k = 0, 1, 2` (`t ≥ 1`; one each
+   for `t = 0`); the results of every round with at most two terms in closed
+   form, so the seed's 100 rounds are given by formula; three terms from the
+   loops, two-way sums and sum around with the filled terms, up to rewriting;
+   four and five terms by listing.
+
+## Layout
+
+- `research/twentyfourth/` — reading notes and scratch (not evidence).
+- `code/twentyfourth/` — typed Python. Imported where a result still applies:
+  the twenty-second's state, `plain`, `canonical`, changes and `perform`; the
+  twenty-third's `excess_table`, `normal_table`, raising, the cost by raising
+  sets (`descend`, `fewest`, `record`, `least_tables`), the sums and the
+  certificate, its grouped exploration for the comparison, its counts; the
+  ninth's exploration for C-E′; `xry.orbits`, `fourth.state._rewritings`; the
+  writers, `compare_evidence`, the Lean report runner. Defined afresh: the
+  state with filled terms, its least writing and the mark of its result;
+  filling and identifying under C-I1, C-I2, C-I3; the exploration of states and
+  the grouping; the balance record and the told / not told classes; the cost;
+  the independent counts with filled terms; the twenty-third mapped in and the
+  two maps back; reachability; the readings C-F2, C-F3, C-F4, C-I2, C-I3,
+  C-E′, C-N0; the statements; a `FillCheck` dataclass whose every disagreement
+  field has an injection test and a mutation in a new panel of
+  `ci/check_mutation_bite.py`. Launcher `code/run_twentyfourth.py`
+  (`--check`); axiom report `code/lean_report_twentyfourth.py`, refusing any
+  axiom other than `propext` and `Quot.sound`.
+- `tests/test_twentyfourth_*.py`.
+- `lean4_core/Twentyfourth/` — a library `Twentyfourth` in the existing
+  package, importing `Twentythird` (and through it `Twentysecond`); the
+  lakefile gains the library and a default target, appended (recorded in
+  `paper/twentysecond/change_log.md`, since the lakefile is the
+  twenty-second's).
+- `evidence/twentyfourth/` — generated, with `MANIFEST.sha256`.
+- `paper/twentyfourth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+- `ci/check_axiom_citations.py` lists the twenty-fourth derivation;
+  `ci/check_definitional_citations.py` gains its record notion (`fill`);
+  `ci/check_mutation_bite.py` its panel.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the seed (`research/twentyfourth/`)
+Sentence-by-sentence diff against the twenty-third seed; the notion table with
+source statuses; the readings above; which of the twenty-third's claims are
+about states and changes (no change), about results (re-examined), or about
+its record (re-examined against the task's first question).
+
+### Phase 2 — `code/twentyfourth/` and `tests/`
+- the state with filled terms; least writing; the mark of a result (the
+  twenty-third's mark with the filled terms carried by the same rewriting); a
+  check that the equivalence generated by the seed's clauses on small states
+  with filled terms, found by search, is exactly the classes of the mark;
+- the exploration from the empty state, bounded in terms and rounds,
+  attempting every change of every state reached (fewest additions first,
+  C-O); frontier; grouping into results; shortest-sequence counts; a full
+  attempt log at a small bound;
+- per result: the round against the cost by formula; the balance record read
+  from the mark against the loops of every state of the result reached; the
+  told / not told class against the certificate; the twenty-third's record;
+- per change within the bound: the cost moves by at most one from a state
+  asserting the fewest; filling by exactly one; parity as item 5 says;
+  filling respects the sameness;
+- an independent count of the results by terms, filled terms and cost (closed
+  form for at most two terms, invariants for three, listing for four and
+  five) as the completeness certificate; the two-term closed form against the
+  count and the run;
+- comparisons: the results with no filled term against the twenty-third's
+  grouped exploration at the same bounds (the same results at the same
+  rounds); C-E′ at a small bound; the twenty-third's record classes holding
+  results kept by different numbers of terms (item 1), computed;
+- the map back and its smallest "none"; the forgetting map; reachability
+  against search under C-I1, C-I2, C-I3; the exchange; the readings C-F2,
+  C-F3, C-F4 at a small bound;
+- property witnesses for "what does not follow";
+- deterministic evidence writer with `--check`; the Lean report writer.
+
+### Phase 3 — `lean4_core/Twentyfourth/`
+Targets, in order:
+1. The model: a state with filled terms (`FSt`: the twenty-second's `St` and
+   a filled predicate), well-formedness, the number of filled terms, the five
+   changes under C-I1 (`Step24`, `Reach24`); the twenty-third's states with no
+   term filled (`ofSt`) and each of their changes carried (`Step.toStep24`).
+2. The sameness (`Same24`: the twenty-third's `Same3` and the same filled
+   terms), an equivalence; one to one on the embedded states, at a fixed
+   writing and in every writing; balance a mark of the result; filling
+   respects the sameness; C-F3's outcome is C-F1's result.
+3. The questions: the twenty-third's record witnesses (item 1) and "it records
+   no assertion exactly for the result asserting nothing"; `told_iff` (item 2);
+   every filled term balances in the result asserting nothing; the witnesses
+   of each class that cannot be told.
+4. The cost: the potential rises by at most one per change; the upper bound;
+   the fewest changes exactly (`cost24`); filling moves it by one; the parity
+   witness; no change returns a state to its own result.
+5. Reachability under C-I1 (a filled term never goes away; the criterion both
+   ways) and a C-I2 witness that it can; the exchange.
+6. The map back (returns the original on mapped results; "none" exactly with
+   a filled term; smallest "none" at cost 2, `a` filled) and the forgetting map
+   (changes carried to changes or to none; what it loses).
+7. Rewriting: the sameness and the cost in every writing. Attempted once; if
+   it does not close, proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the paper cites, in
+`lean4_core/Twentyfourth/Axioms.lean`, reported by
+`code/lean_report_twentyfourth.py` into
+`evidence/twentyfourth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/twentyfourth/`
+Generated, hashed, regenerated and compared with `--check`. Every earlier
+derivation's `--check` re-run to confirm its evidence still regenerates.
+
+### Phase 5 — `paper/twentyfourth/`
+`paper.md` (findings; every use of an earlier derivation cited with its
+re-check; the answers to the task's questions: whether the twenty-third's
+record shows which terms keep a result from being the one asserting nothing;
+which results filled terms that do not balance tell apart from a result with
+nothing asserted, which they cannot, and the fewest changes to each result;
+the map in, the map back, what a merge loses; which of the twenty-third's
+results — cost, reachability, the exchange — hold here and where they do not;
+final section: nearest known results and differences, the only place where
+outside names appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit (no push).
+
+## Stopping conditions (twenty-fourth derivation)
+
+The run stops when AM1–AM10 hold, or when a blocker is hit.
+
+- AM1 Every notion in `paper/twentyfourth/paper.md` has one recorded source
+  status.
+- AM2 Every claim in `paper/twentyfourth/claim_ledger.md` has evidence, or is
+  open; the ledger has the columns ID, statement, status, evidence, axiom
+  report, re-check, falsifier.
+- AM3 C-F1/C-F1′/C-F2/C-F3/C-F4, C-S, C-I1/C-I2/C-I3, C-B, C-N/C-N0, C-K, C-O
+  and C-E/C-E′ are kept or eliminated by a cited proof; every non-isomorphic
+  result within the bound is kept.
+- AM4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- AM5 `lake +leanprover/lean4:v4.33.1 -d lean4_core build` passes, its exit
+  code read on its own line and not through a pipe; no `sorry`, `admit` or
+  declared axiom in `lean4_core/`; the axiom report lists only `propext` and
+  `Quot.sound`.
+- AM6 `python code/run_twentyfourth.py --check` matches; every earlier
+  derivation's evidence still regenerates byte-identically.
+- AM7 Every use of an earlier result is cited and re-checked (ledger column
+  "re-check": no change, re-proved, imported, or computed again).
+- AM8 The prose watchlist, `ci/check_vacuous_checks.py`,
+  `ci/check_definitional_citations.py`, `ci/check_mutation_bite.py` (with a
+  twenty-fourth panel covering every disagreement field) and
+  `ci/check_axiom_citations.py` pass; every pinned hit of the paper is in its
+  final section.
+- AM9 The paper states which results filled terms that do not balance tell
+  apart from a result with nothing asserted, which they cannot, the fewest
+  changes to each result, and which of the twenty-third's results (cost,
+  reachability, exchange) hold here and where not.
+- AM10 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: on terms and rounds together. Targets: 5 terms and 7 rounds, 3
+  terms and 9, 2 terms and 16; the twenty-third's grouped exploration at the
+  same bounds for the comparison; a full attempt log at 2 terms and 3 rounds;
+  reachability among the results of 2 terms and 4 rounds under each
+  identification reading; the readings at 2 terms and 6 rounds. Any run that
+  does not complete in minutes here has its rounds lowered first, then its
+  terms; the bounds used are declared in the paper; the frontier is exported
+  exactly; completeness within the bound is certified by the independent
+  count; the two-term round counts are proved in closed form for every round,
+  so the seed's 100 rounds are given by formula, not listed.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–6 required; target 7 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `derivation/twentyfourth`; commits only, no push.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question; a tool refused
+by the session's permissions. Should `lake` try to fetch anything, the build
+is stopped and the Lean claims are marked open.
+
+## How to run (twenty-fourth derivation)
+
+From the repository root:
+- `python -m pytest`, then `python code/xry/gate.py coverage.json`,
+  `python -m mypy`, `python ci/check_prose_watchlist.py`,
+  `python ci/check_vacuous_checks.py`,
+  `python ci/check_definitional_citations.py`,
+  `python ci/check_mutation_bite.py`, `python ci/check_axiom_citations.py`;
+- `python code/run_twentyfourth.py` writes `evidence/twentyfourth/`;
+  `python code/run_twentyfourth.py --check` compares with a fresh
+  regeneration;
+- `lake +leanprover/lean4:v4.33.1 -d lean4_core build`, then read the exit
+  code on its own line; `python code/lean_report_twentyfourth.py` builds and
+  writes `evidence/twentyfourth/lean_axioms.txt`.
+
+---
+
+# Twenty-fifth derivation (`prompt/twentyfifth/`) — plan and stopping conditions
+
+Written before any other work of the twenty-fifth derivation, as
+`prompt/twentyfifth/prompt.md` requires. Inputs: `prompt/twentyfifth/prompt.md`
+and `prompt/twentyfifth/seed_prompt.md`. The parent is the twenty-third
+(`prompt/twentythird/seed_prompt.md`, `paper/twentythird/`,
+`code/twentythird/`, `lean4_core/Twentythird/`, `evidence/twentythird/`); its
+own parents — the twenty-second, and through it the ninth, the seventh, the
+eighth and the first — are cited through it. The twenty-fourth derivation is a
+sibling started at the same time and is not an input; nor is any other
+derivation. Everything above stays in force (isolation, no network, `prompt/`
+untouched, `.lake/` never committed, bookkeeping rules 1–4, the
+evidence-module coverage gate, the `ci/` gates). Rule 5 of this task: every
+earlier result used is cited, its proof re-checked from this seed, and the
+ledger's re-check column says how — *no change*, *re-proved*, *imported* (a
+`lean4_core/Twentythird` or `lean4_core/Twentysecond` theorem used as it
+stands, its statement mentioning nothing this seed changes), or *computed
+again*. Files other derivations share (`CLAUDE.md`,
+`lean4_core/lakefile.toml`, `ci/check_mutation_bite.py`,
+`ci/check_axiom_citations.py`, an earlier derivation's `change_log.md`) are
+only added to: nothing already there is reordered, reworded or reformatted.
+
+## What differs in the seed
+
+Against the twenty-third seed (`diff`): the list of the kinds of change gains
+a fifth, "filling three different terms", and one sentence is added: "Three
+filled terms `x`, `y`, `z` balance when, going from `x` to `y` to `z` and back
+to `x`, as many assertions are written with `r` as with `s`, each counted as
+often as it is asserted; for every result, record which filled terms
+balance." Every other sentence is the twenty-third's, the sameness sentence
+(with raising) included. So states gain what is filled, there are five kinds
+of change, and every result carries a record of which of its filled terms
+balance. The seed does not say what filling does beyond making three terms
+filled; that silence is where the readings below come from.
+
+## Readings
+
+- **C-F1 (chosen). Filling.** A state carries its filled triples; filling
+  three different terms of the state makes them a filled triple and changes
+  nothing else. Filling a triple already filled changes nothing, so it is not
+  a change (as removing what is not asserted is not, 9:C5⁗). **C-F2
+  (unchosen, kept):** filling leaves the state as it was, the filled triple
+  being recorded on the change only; expected (to prove) to give the
+  twenty-third's results at the twenty-third's rounds.
+- **C-O1 (chosen). Which way round.** A filled triple keeps the order in which
+  its terms are gone round: `x, y, z` is `y, z, x` and `z, x, y` (the same way
+  round), and `x, z, y` is another filled triple. Balance is read going round
+  that way. Unchosen, kept and computed: **C-O2** three terms as a set,
+  balancing both ways round; **C-O3** a set, balancing either way round;
+  **C-O4** every starting term a different filled triple.
+- **C-B1 (chosen). What is gone along.** Going from `x` to `y` goes along
+  `xry` and `xsy`; the triple balances when `e(x, y) + e(y, z) + e(z, x) = 0`,
+  `e` the excess `M_r − M_s` (the twenty-third's sum around three terms).
+  **C-B2 (unchosen, kept, computed):** the assertions between `x` and `y`
+  either way; the triple balances when the three two-way sums add up to zero.
+- **C-M1 (chosen).** A triple is filled or not. **C-M2 (unchosen, computed):**
+  each filling counted, like a multiplicity.
+- **C-I1 (chosen). Identifying.** "Identifying two terms replaces both by one
+  term": in every filled triple too; a filled triple left without three
+  different terms is no longer a filled triple of three different terms and
+  is dropped; two that become one are one. **C-I2 (unchosen, computed):**
+  every filled triple naming either term is dropped. **C-I3 (unchosen,
+  computed):** the triples left without three different terms are kept.
+- **C-A (chosen). The order of attempts.** Filling adds no term and no
+  assertion, so it is attempted with the changes that add nothing:
+  identifications, removals in `r`, in `s`, fillings, a term, additions in
+  `r`, in `s`. Unchosen: fillings last. Expected (to prove): the same results
+  at the same rounds.
+- **C-R (chosen). What is recorded.** The twenty-third's record (the terms,
+  and the assertions in `r` and in `s` of a state asserting the fewest; a
+  filled triple is neither a term nor an assertion) and, as the seed adds, the
+  result's filled triples, each marked as balancing or not. Unchosen: filled
+  triples counted among what a result adds to what is given (a record only).
+- **The task's words.** "A result with nothing asserted on as many terms": the
+  twenty-third's result asserting nothing, here with whatever triples are
+  filled. "Which of its terms keep it from being the same as" that result
+  (chosen): a set of terms keeps it when the result read on those terms alone
+  is not the one asserting nothing on them; the terms that keep it are the
+  least such sets (one term with a loop, two terms, three terms: 23:D2).
+  Unchosen: every term in some such set. "Told from one that is by filled
+  terms that do not balance": the records of which filled terms balance
+  differ.
+- **Inherited without change:** 23:C-inh, 22:C-J1, 23:C-H1 (raising touches no
+  filled triple), 23:C-X (a change of a result is a change of one of its
+  states), 23:C-E (explore states, form the results afterwards), the bound on
+  terms and rounds (9:C8′). Each is re-checked against the added sentence.
+
+## Expected consequences, to be proved or refuted
+
+1. **The record is a record of the result.** The sum around a filled triple is
+   kept by rewriting (which carries the filled triples), by pairs asserted
+   together and by raising (23:D2), by going round from another term, and is
+   negated by exchanging the two relations; so which filled triples balance is
+   the same on every state of a result and survives the exchange.
+2. **The twenty-third's question.** Its record (terms, assertions in `r`, in
+   `s`) shows *whether* a result is the one asserting nothing (it records no
+   assertion exactly then) but not *which* terms keep it from being so:
+   `a b c; ara bsb`, `a b c; arb bsc` and `a b c; arb bsa` record the same
+   (three terms, one assertion in each relation), and are kept by one term, by
+   two terms and by three terms respectively.
+3. **Told and not told.** A result asserting nothing balances every filled
+   triple; so a result is told from one asserting nothing by filled terms that
+   do not balance exactly when one of its filled triples does not balance.
+   Not told: every result with no filled triple (all results with at most two
+   terms among them); a loop is never gone along, so a result differing from
+   nothing only at loops is never told; a two-way sum can be seen one way
+   round and not the other (`a b c; arb`). Blind results (no filling could
+   tell them): with at most two terms, all; with three and four terms, those
+   whose sums around every three terms, both ways round, are zero — some with
+   a non-zero two-way sum; with five terms or more, exactly those differing
+   from nothing only at loops. With every loop and two-way sum zero, the filled
+   triples tell every such result exactly when their sums around give every
+   sum around (a rank condition on the filled triples; the triples through one
+   term are enough; with four terms, any three of the four sets of three).
+   What the record shows of the terms that keep a result: every filled triple
+   that does not balance is such a set of terms; loops and unfilled triples
+   are not shown.
+4. **Fewest changes.** The twenty-third's cost plus the number of filled
+   triples: `n + min_g Σ |e(x, y) + g(x) − g(y)| + |F|`. Lower bound: `phi`
+   plus the filled triples rises by at most one per change; upper bound:
+   additions, then the fillings.
+5. **What of the twenty-third holds.** Its cost, exactly on the results with
+   no filled triple; "every change changes the cost by an odd number" fails
+   (identifying two terms of a filled triple: `a b c` filled, cost 4, to
+   `a b`, cost 2); "no change returns a state to its own result" and "a
+   change from a state asserting the fewest raises the cost by at most one"
+   hold; reachability holds under C-I1 (identifying down to one term drops
+   every filled triple) and fails under C-I3; the exchange holds.
+6. **Mapping an earlier seed in.** The twenty-third maps one to one: a result
+   with no filled triple, each of its changes carried to the same change. The
+   twenty-second, the ninth, the seventh and the first do not (23:D9 through
+   that map). The map back gives the twenty-third result of a result with no
+   filled triple and "none" otherwise; it returns the original on every mapped
+   result; the smallest result it answers "none" on is `a b c` with one filled
+   triple and nothing asserted (cost 4), unique up to writing. No two
+   twenty-third results are made one here, so no merge loses anything; what
+   forgetting the filled triples loses (the filled triples and their record)
+   is recorded.
+
+## Layout
+
+- `research/twentyfifth/` — reading notes and scratch (not evidence).
+- `code/twentyfifth/` — typed Python. Imported where a result still applies:
+  the state, `canonical`, `rewrite`, `swap`, `empty`, `excess`, `plain`,
+  `written` (twenty-second, ninth), raising, the mark of a result, the sums
+  around, the certificate, the cost and the states asserting the fewest
+  (twenty-third), the twenty-third's exploration and counts for the
+  comparison, `xry.orbits`, the writers, `compare_evidence`, the Lean report
+  runner. Defined afresh: filled triples and their normal form, the state with
+  filled triples, the five kinds of change, the balance record, the mark of a
+  result here, the exploration of states with filled triples and the grouping
+  into results, the cost, told and blind results, the rank condition on filled
+  triples, the counts, the twenty-third embedded and the map back,
+  reachability, the unchosen readings, the statements, and a `*Check`
+  dataclass whose every disagreement field has an injection test and a
+  mutation in a new panel of `ci/check_mutation_bite.py`. Launcher
+  `code/run_twentyfifth.py` (`--check`); axiom report
+  `code/lean_report_twentyfifth.py`, refusing any axiom other than `propext`
+  and `Quot.sound`.
+- `tests/test_twentyfifth_*.py`.
+- `lean4_core/Twentyfifth/` — a library `Twentyfifth` in the existing package,
+  importing `Twentythird` (and through it `Twentysecond`); the lakefile gains
+  the library and the default target (added only; recorded in
+  `paper/twentysecond/change_log.md`, the lakefile being the twenty-second's).
+- `evidence/twentyfifth/` — generated, with `MANIFEST.sha256`.
+- `paper/twentyfifth/` — `paper.md`, `claim_ledger.md`, `change_log.md`.
+- `ci/check_axiom_citations.py` lists the twenty-fifth derivation.
+
+## Plan
+
+### Phase 0 — this section, committed alone.
+
+### Phase 1 — reading the seed (`research/twentyfifth/`)
+Sentence-by-sentence diff against the twenty-third seed; the notion table with
+source statuses; the readings above; which of the twenty-third's claims are
+about states and changes of the four kinds (no change or imported), about its
+results (re-examined), or about its cost and record (re-proved or refuted).
+
+### Phase 2 — `code/twentyfifth/` and `tests/`
+- filled triples, the state, the five kinds, identifying under C-I1; the mark
+  of a result (the twenty-third's normal table with the filled triples, least
+  over the rewritings); balance and the record; a check that balance is the
+  same on every state of a result reached;
+- the exploration: states (plain state and filled triples, least writing)
+  explored from the empty state, every change fewest additions first, bounded
+  in terms and rounds, grouped into results afterwards; the round of a result
+  against its cost by formula; the frontier; a full attempt log;
+- per change within the bound: the cost moves as the formula says; a change
+  from a state asserting the fewest raises it by at most one; the witnesses of
+  the parity failure;
+- an independent count of the results by terms and cost (tables of excesses
+  and sets of filled triples, grouped by the mark, not by the exploration);
+  with at most two terms the twenty-third's closed form;
+- told and blind: on every result reached, told exactly when a filled triple
+  does not balance; the blind results with three, four and five terms listed
+  and checked against their description; the rank condition on the sets of
+  filled triples up to rewriting (exact rational arithmetic), checked against
+  a search over small excesses;
+- the twenty-third's question: its records against the least sets of terms
+  that keep a result, on every twenty-third result of a run;
+- the twenty-third embedded: its results within the bound are exactly the
+  results with no filled triple, at the same rounds; the map back and its
+  smallest "none"; the seventh's pair still merged;
+- reachability against search (C-I1, and C-I3 at a small bound); the exchange;
+- the unchosen readings C-F2, C-O2, C-O3, C-O4, C-B2, C-M2, C-I2, C-I3 and the
+  order of attempts at a small bound;
+- property witnesses for "what does not follow";
+- deterministic evidence writer with `--check`; the Lean report writer.
+
+### Phase 3 — `lean4_core/Twentyfifth/`
+Targets, in order:
+1. The model: filled triples (three terms, the way round), their normal form
+   (starting from the least term), the state (`St` and its filled triples),
+   well-formedness, the five operations, `Step25`, `Reach25`; well-formedness
+   kept; the twenty-third's states embedded with no filled triple, every change
+   carried to the same change.
+2. Balance: the sum around a filled triple kept by going round from another
+   term, by the twenty-third's sameness (imported `Same3.around`), negated by
+   the exchange; the sameness here; the record the same on every state of a
+   result; a result asserting nothing balances every filled triple; told
+   exactly when a filled triple does not balance; the witnesses: a loop never
+   seen, a two-way sum seen one way round, a blind result with three terms and
+   a non-zero two-way sum; with five terms or more, blind only at loops; with
+   loops and two-way sums zero, the triples through one term decide.
+3. The cost: the twenty-third's cost plus the filled triples (both bounds);
+   the parity failure; a change from a state asserting the fewest raises it by
+   at most one; no change returns a state to its own result.
+4. The twenty-third's question: the three witnesses record the same and are
+   kept by one, two and three terms; the record shows whether a result is the
+   one asserting nothing.
+5. Mapping: the embedding one to one and carrying changes; the other seeds of
+   the line not one to one (through the twenty-third's witnesses); the map
+   back, what it returns on mapped results, its smallest "none".
+6. Reachability (the criterion re-proved with filled triples) and the
+   exchange.
+7. Rewriting filled triples: the full sameness in every writing, the cost in
+   every writing, the embedding one to one in every writing. Attempted once;
+   if it does not close, proved in the paper and marked "not in Lean".
+`#print axioms` for every theorem the paper cites, in
+`lean4_core/Twentyfifth/Axioms.lean`, reported by
+`code/lean_report_twentyfifth.py` into `evidence/twentyfifth/lean_axioms.txt`.
+
+### Phase 4 — `evidence/twentyfifth/`
+Generated, hashed, regenerated and compared with `--check`. Every earlier
+derivation's `--check` re-run to confirm its evidence still regenerates.
+
+### Phase 5 — `paper/twentyfifth/`
+`paper.md` (findings; every use of an earlier derivation cited with its
+re-check; the answers to the task's questions: whether the twenty-third's
+record shows which terms keep a result from being the one asserting nothing,
+which results filled terms that do not balance tell from one asserting nothing
+and which they cannot, the fewest changes to each result, the mapping, the map
+back and what a merge loses, and which of the twenty-third's results — cost,
+reachability, exchange — hold here and where they do not; final section:
+nearest known results and differences, the only place where outside names
+appear), `claim_ledger.md`, `change_log.md`.
+
+### Phase 6 — audit against "Done", commit (no push).
+
+## Stopping conditions (twenty-fifth derivation)
+
+The run stops when AN1–AN11 hold, or when a blocker is hit.
+
+- AN1 Every notion in `paper/twentyfifth/paper.md` has one recorded source
+  status.
+- AN2 Every claim in `paper/twentyfifth/claim_ledger.md` has evidence, or is
+  open; the ledger has the columns ID, statement, status, evidence, axiom
+  report, re-check, falsifier.
+- AN3 C-F1/C-F2, C-O1–C-O4, C-B1/C-B2, C-M1/C-M2, C-I1–C-I3 and the order of
+  attempts are kept or eliminated by a cited proof; every non-isomorphic
+  result within the bound is kept.
+- AN4 `python -m pytest` passes; `python code/xry/gate.py coverage.json`
+  reports ≥ 95 % line and ≥ 95 % branch over all of `code/` and every
+  evidence module fully covered; `python -m mypy` passes.
+- AN5 `lake +leanprover/lean4:v4.33.1 -d lean4_core build` passes, its exit
+  code read on its own line; no `sorry`, `admit` or declared axiom in
+  `lean4_core/`; the axiom report lists only `propext` and `Quot.sound`.
+- AN6 `python code/run_twentyfifth.py --check` matches; every earlier
+  derivation's evidence still regenerates byte-identically.
+- AN7 Every use of an earlier result is cited and re-checked (ledger column
+  "re-check": no change, re-proved, imported, or computed again).
+- AN8 The prose watchlist, `ci/check_vacuous_checks.py`,
+  `ci/check_definitional_citations.py`, `ci/check_mutation_bite.py` (with a
+  twenty-fifth panel covering every disagreement field) and
+  `ci/check_axiom_citations.py` pass; every pinned hit of the paper is in its
+  final section.
+- AN9 The paper states which results filled terms that do not balance tell
+  apart from a result with nothing asserted and which they cannot, the fewest
+  changes to each result, and which of the twenty-third's results (cost,
+  reachability, exchange) hold here and where not.
+- AN10 Shared files were only added to (checked with `git diff` before each
+  commit that touches them).
+- AN11 `git status` clean; `prompt/` unchanged; `.lake/` untracked.
+
+Bounded effort:
+- Bounds: planned 4 terms with 7 rounds, 3 terms with 9 rounds, 2 terms with
+  24 rounds (no filling is possible there: the twenty-third's two-term
+  results), and 5 terms with 7 rounds if it completes in minutes; a full
+  attempt log at 3 terms and 5 rounds (the smallest bound with a filling);
+  reachability among the results of 3 terms and 5 rounds; the unchosen
+  readings at 3 terms with 6 rounds; the rank condition on every set of
+  filled triples up to rewriting with at most 5 terms. Any run that does not
+  complete in minutes here has its rounds lowered first, then its terms; the
+  bounds used are declared in the paper; the frontier is exported exactly;
+  completeness within the bound is certified by the independent count.
+- Rounds: at most 100; no change is invented.
+- Lean targets 1–6 required; target 7 attempted once.
+- At most two review passes over paper and ledger after the first draft.
+- Branch: `derivation/twentyfifth`; commits only, no push.
+
+Blockers (stop and report): anything that would need the network, a file
+outside the repository, a change to `prompt/`, or a question; a tool refused
+by the session's permissions. Should `lake` try to fetch anything, the build
+is stopped and the Lean claims are marked open.
+
+## How to run (twenty-fifth derivation)
+
+From the repository root:
+- `python -m pytest`, then `python code/xry/gate.py coverage.json`,
+  `python -m mypy`, `python ci/check_prose_watchlist.py`,
+  `python ci/check_vacuous_checks.py`,
+  `python ci/check_definitional_citations.py`,
+  `python ci/check_mutation_bite.py`, `python ci/check_axiom_citations.py`;
+- `python code/run_twentyfifth.py` writes `evidence/twentyfifth/`;
+  `python code/run_twentyfifth.py --check` compares with a fresh
+  regeneration;
+- `lake +leanprover/lean4:v4.33.1 -d lean4_core build`, then read the exit
+  code on its own line; `python code/lean_report_twentyfifth.py` builds and
+  writes `evidence/twentyfifth/lean_axioms.txt`.

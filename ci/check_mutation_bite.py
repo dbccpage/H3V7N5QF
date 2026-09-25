@@ -577,6 +577,105 @@ def _twentythird() -> Panel:
     return Panel("twentythird", RaisingCheck, signals, cases)
 
 
+def _twentyfourth() -> Panel:
+    from twentyfourth.evidence import FillCheck, audit
+    from twentyfourth.explore import performed as real_performed
+    from twentythird.explore import explore as real_twentythird
+    from twentythird.state import excess_table
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(audit(2, 4))
+
+    def outcome_is_start(expl: Any) -> Any:
+        return ((s, c, s, o) for s, c, _, o in real_performed(expl))
+
+    def fewer_rounds(bound: int, rounds: int, keep_log: bool = False) -> Any:
+        return real_twentythird(bound, max(rounds - 1, 0), keep_log)
+
+    cases: dict[str, Mutation] = {
+        # the cost (the twenty-third's plus the filled terms) against the rounds of results and states
+        "round_not_cost": lambda: _one("twentyfourth.evidence.cost", lambda _s: -1),
+        # the balance record read on every state against the one read from the mark
+        "balance_mismatch": lambda: _one("twentyfourth.evidence.balance_record", lambda _s: (9, 9)),
+        "tell_mismatch": lambda: _one("twentyfourth.evidence.tell_class", lambda _s: "nothing"),
+        "record_mismatch": lambda: _one("twentyfourth.evidence.record23", lambda _s: (0, 0, 0)),
+        # the independent counts and closed forms
+        "count_mismatch": lambda: _one("twentyfourth.evidence.counts_within", lambda _b, _r: {}),
+        "two_term_mismatch": lambda: _one("twentyfourth.evidence.two_term_round_count", lambda _r: -1),
+        "sequences_mismatch": lambda: _one("twentyfourth.evidence.one_term_sequences", lambda _k, _t: -1),
+        # every change's outcome replaced by its start
+        "change_mismatch": lambda: _one("twentyfourth.evidence.performed", outcome_is_start),
+        # outcomes read at their writing, not as results
+        "respect_mismatch": lambda: _one(
+            "twentyfourth.evidence.outcome_key", lambda s, _c: (s.n, excess_table(s.base), s.fills)
+        ),
+        # the twenty-third's run cut short
+        "twentythird_mismatch": lambda: _one("twentyfourth.embed.explore23", fewer_rounds),
+        "read_back_mismatch": lambda: _one("twentyfourth.evidence.read_back", lambda _k: None),
+        "forget_mismatch": lambda: _one("twentyfourth.evidence.forget_key", lambda _k: (0, ())),
+        "reach_mismatch": lambda: _one("twentyfourth.evidence.reachable", lambda _s, _t, _r: True),
+        # the exchange: an identity in its place exchanges no record
+        "exchange_mismatch": lambda: _one("twentyfourth.evidence.swap", lambda s: s),
+        # the search for the generated sameness with no joins at all
+        "sameness_mismatch": lambda: _one("twentyfourth.readings.fill_steps", lambda _s: iter(())),
+        "readings_mismatch": lambda: _one("twentyfourth.evidence.cost_counted", lambda _s: -1),
+        # the twenty-third's record question with every result kept by no term
+        "record_question_mismatch": lambda: _one("twentyfourth.evidence.keeping_size", lambda _b: 0),
+    }
+    return Panel("twentyfourth", FillCheck, signals, cases)
+
+
+def _twentyfifth() -> Panel:
+    from twentyfifth.evidence import FillingCheck, audit
+    from twentyfifth.explore import performed as real_performed
+    from twentythird.explore import explore as real_explore23
+    from twentythird.state import DState, excess
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(audit(3, 6))
+
+    def outcome_is_start(expl: Any) -> Any:
+        return [(s, c, r, s) for s, c, r, _ in real_performed(expl)]
+
+    def fewer_rounds(bound: int, rounds: int) -> Any:
+        return real_explore23(bound, max(rounds - 1, 0))
+
+    def with_a_loop(fs: Any) -> Any:
+        r = list(fs.state.r)
+        if fs.n:
+            r[0] += 1
+        return type(fs)(DState(fs.n, tuple(r), fs.state.s), fs.filled)
+
+    cases: dict[str, Mutation] = {
+        # the cost (the twenty-third's plus the filled triples) against the rounds; the rounds of the states
+        "round_not_cost": lambda: _one("twentyfifth.evidence.cost", lambda _s: -1),
+        "plain_mismatch": lambda: _one("twentyfifth.evidence.psi", lambda _s: -1),
+        # the independent count and the twenty-third's two-term closed form
+        "count_mismatch": lambda: _one("twentyfifth.evidence.counts_within", lambda _b, _r: {}),
+        "two_term_mismatch": lambda: _one("twentyfifth.evidence.two_term_round_count", lambda _r: -1),
+        # balance read on one pair instead of going round: not the same on every state of a result
+        "record_mismatch": lambda: _one(
+            "twentyfifth.evidence.balances", lambda fs, t: excess(fs.state, t[0], t[1]) == 0
+        ),
+        # the two records compared, against "some filled triple does not balance"
+        "told_mismatch": lambda: _one("twentyfifth.evidence.record_differs_from_nothing", lambda _fs: False),
+        "blind_mismatch": lambda: _one("twentyfifth.evidence.blind_by_description", lambda _s: False),
+        "keeping_mismatch": lambda: _one("twentyfifth.evidence.keeping_sets_by_restriction", lambda _s: ()),
+        "whether_mismatch": lambda: _one("twentyfifth.evidence.record", lambda fs: (fs.n, 0, 0)),
+        "decide_mismatch": lambda: _one("twentyfifth.evidence.decides", lambda _n, _sub: True),
+        # every change's outcome replaced by its start
+        "change_mismatch": lambda: _one("twentyfifth.evidence.performed", outcome_is_start),
+        # the twenty-third's exploration cut short by a round
+        "embed_mismatch": lambda: _one("twentyfifth.evidence.explore23", fewer_rounds),
+        "read_back_mismatch": lambda: _one("twentyfifth.evidence.read_back", lambda _fs: None),
+        "reach_mismatch": lambda: _one("twentyfifth.evidence.reachable", lambda _s, _t: True),
+        # the exchange replaced by adding a loop: another result, of another round
+        "exchange_mismatch": lambda: _one("twentyfifth.evidence.swap25", with_a_loop),
+        "readings_mismatch": lambda: _one("twentyfifth.evidence.i3_reach_failures", lambda _run: (1, 1)),
+    }
+    return Panel("twentyfifth", FillingCheck, signals, cases)
+
+
 def panels() -> list[Panel]:
     return [
         _tenth(),
@@ -593,6 +692,8 @@ def panels() -> list[Panel]:
         _twentyfirst(),
         _twentysecond(),
         _twentythird(),
+        _twentyfourth(),
+        _twentyfifth(),
     ]
 
 

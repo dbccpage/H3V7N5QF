@@ -1,0 +1,140 @@
+{
+  "a_b_c_arb_bsa_filled_either_way_round": {
+    "state": "terms a b c; asserted arb bsa",
+    "told_filled_a_b_c": true,
+    "told_filled_a_c_b": true
+  },
+  "a_loop_is_never_gone_along": {
+    "state": "terms a b c; asserted ara; filled abc acb",
+    "the_result_asserting_nothing": false,
+    "told": false
+  },
+  "a_two_way_sum_seen_one_way_round": {
+    "balances_a_b_c": false,
+    "balances_a_c_b": true,
+    "state": "terms a b c; asserted arb"
+  },
+  "blind_with_five_terms_at_a_loop": {
+    "blind": true,
+    "state": "terms a b c d e; asserted ara"
+  },
+  "blind_with_four_terms": {
+    "blind": true,
+    "nothing": false,
+    "state": "terms a b c d; asserted bra crd asc dsb"
+  },
+  "blind_with_three_terms": {
+    "blind": true,
+    "nothing": false,
+    "state": "terms a b c; asserted arb arc csa csb"
+  },
+  "identifying_two_terms_of_a_filled_triple": {
+    "after_identifying_a_and_b": "terms a b; asserted nothing",
+    "cost": 4,
+    "cost_after": 2,
+    "state": "terms a b c; asserted nothing; filled abc"
+  },
+  "state": "no terms; asserted nothing",
+  "the_map_back": {
+    "on_a_b_arb": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "on_a_b_c_filled_a_b_c": null
+  },
+  "the_seventh_and_first_pairs_stay_merged": [
+    true,
+    true
+  ],
+  "the_twentythird_cost_of_a_b_c_arb_bsa_and_with_a_b_c_filled": [
+    5,
+    6
+  ],
+  "the_twentythird_record_does_not_show_which_terms": [
+    {
+      "least_sets_keeping_it_from_nothing": [
+        [
+          0
+        ]
+      ],
+      "record": [
+        2,
+        1,
+        0
+      ],
+      "state": "terms a b; asserted ara"
+    },
+    {
+      "least_sets_keeping_it_from_nothing": [
+        [
+          0,
+          1
+        ]
+      ],
+      "record": [
+        2,
+        1,
+        0
+      ],
+      "state": "terms a b; asserted arb"
+    },
+    {
+      "least_sets_keeping_it_from_nothing": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "record": [
+        3,
+        1,
+        1
+      ],
+      "state": "terms a b c; asserted ara bsb"
+    },
+    {
+      "least_sets_keeping_it_from_nothing": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "record": [
+        3,
+        1,
+        1
+      ],
+      "state": "terms a b c; asserted arb bsc"
+    },
+    {
+      "least_sets_keeping_it_from_nothing": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "record": [
+        3,
+        1,
+        1
+      ],
+      "state": "terms a b c; asserted arb bsa"
+    }
+  ],
+  "two_triples_through_a_do_not_decide": {
+    "balances_a_b_c": true,
+    "balances_a_b_d": true,
+    "balances_a_c_d": false,
+    "nothing": false,
+    "state": "terms a b c d; asserted crd dsc"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "C-E\u2032_results": 175,
+  "C-E\u2032_states_reached": 482,
+  "C-F1_C-I1_results": 175,
+  "C-F1_C-I1_states_reached": 340,
+  "C-F1_results_per_round": [
+    1,
+    1,
+    4,
+    9,
+    22,
+    48,
+    90
+  ],
+  "C-F2_results": 233,
+  "C-F2_results_per_round": [
+    1,
+    1,
+    4,
+    10,
+    26,
+    61,
+    130
+  ],
+  "C-F3_results": 175,
+  "C-F3_states_reached": 340,
+  "C-F4_results": 175,
+  "C-F4_states_reached": 340,
+  "C-I2_results": 175,
+  "C-I2_states_reached": 340,
+  "C-I3_results": 175,
+  "C-I3_states_reached": 340,
+  "C-N0_results_not_that_one_with_every_filled_term_balancing": 115,
+  "C-N0_results_that_are_the_one_asserting_and_filling_nothing": 3,
+  "bound_on_terms": 2,
+  "identifications_under_C-I2": {
+    "even_move_chosen": 5,
+    "even_move_other": 46,
+    "identifications": 113,
+    "other_result": 41
+  },
+  "identifications_under_C-I3": {
+    "even_move_chosen": 5,
+    "even_move_other": 41,
+    "identifications": 113,
+    "other_result": 46
+  },
+  "rounds": 6
+}

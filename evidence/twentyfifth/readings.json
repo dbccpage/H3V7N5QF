@@ -1,0 +1,158 @@
+{
+  "C-B2: the assertions between two terms either way": {
+    "results": 319,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      60,
+      229
+    ],
+    "results_told": 42,
+    "rounds_against_the_cost_formula": 319
+  },
+  "C-F2: filling changes nothing": {
+    "results": 257,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      17,
+      53,
+      175
+    ],
+    "results_told": 0,
+    "rounds_against_the_cost_formula": 257
+  },
+  "C-I2: identifying drops the triples naming either term": {
+    "results": 319,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      60,
+      229
+    ],
+    "results_told": 30,
+    "rounds_against_the_cost_formula": 319
+  },
+  "C-I3: identifying keeps the triples left without three different terms": {
+    "results": 328,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      61,
+      237
+    ],
+    "results_told": 34,
+    "rounds_against_the_cost_formula": 319
+  },
+  "C-I3_witness": {
+    "cost_by_the_formula": 3,
+    "filled_triples": [
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "of_which_reach_a_result_with_none": 0,
+    "results_with_a_filled_triple": 71,
+    "round": 5,
+    "state": "terms a b; asserted nothing"
+  },
+  "C-M2: fillings counted": {
+    "results": 328,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      61,
+      237
+    ],
+    "results_told": 32,
+    "rounds_against_the_cost_formula": 328
+  },
+  "C-O2: a set, balancing both ways round": {
+    "results": 291,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      57,
+      204
+    ],
+    "results_told": 25,
+    "rounds_against_the_cost_formula": 291
+  },
+  "C-O3: a set, balancing either way round": {
+    "results": 291,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      57,
+      204
+    ],
+    "results_told": 7,
+    "rounds_against_the_cost_formula": 291
+  },
+  "C-O4: every starting term another triple": {
+    "results": 478,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      75,
+      373
+    ],
+    "results_told": 104,
+    "rounds_against_the_cost_formula": 478
+  },
+  "bound_on_terms": 3,
+  "chosen (C-F1, C-O1, C-B1, C-M1, C-I1)": {
+    "results": 319,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      60,
+      229
+    ],
+    "results_told": 30,
+    "rounds_against_the_cost_formula": 319
+  },
+  "fillings attempted last": {
+    "results": 319,
+    "results_per_round": [
+      1,
+      1,
+      3,
+      7,
+      18,
+      60,
+      229
+    ],
+    "results_told": 30,
+    "rounds_against_the_cost_formula": 319
+  },
+  "rounds": 6
+}
