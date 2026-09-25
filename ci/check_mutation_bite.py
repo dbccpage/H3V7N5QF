@@ -528,6 +528,55 @@ def _twentysecond() -> Panel:
     return Panel("twentysecond", JointCheck, signals, cases)
 
 
+def _twentythird() -> Panel:
+    from ninth.explore import explore as real_ninth
+    from twentysecond.explore import performed as real_performed
+    from twentythird.embed import seventh_pair
+    from twentythird.evidence import RaisingCheck, audit
+    from twentythird.state import excess_table
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(audit(2, 4, 4, 1, 3))
+
+    def fewer_rounds(start: Any, bound: int, rounds: int = 100, keep_log: bool = False) -> Any:
+        return real_ninth(start, bound, max(rounds - 1, 0), keep_log)
+
+    def outcome_is_start(expl: Any) -> Any:
+        return ((s, c, r, s) for s, c, r, _ in real_performed(expl))
+
+    a, _ = seventh_pair()
+    cases: dict[str, Mutation] = {
+        # the cost by raising sets of terms against the rounds, the closed forms and the search
+        "round_not_cost": lambda: _one("twentythird.evidence.cost", lambda _s: -1),
+        "closed_form_mismatch": lambda: _one("twentythird.evidence.cost_closed", lambda _s: -5),
+        # the states asserting the fewest found by raising, against those the exploration reached first
+        "fewest_mismatch": lambda: _one("twentythird.evidence.fewest_states", lambda _s: []),
+        "characterization_mismatch": lambda: _one("twentythird.evidence.set_moves_least", lambda _n, _t: True),
+        "record_mismatch": lambda: _one("twentythird.evidence.record", lambda _s: (0, 0, 0)),
+        # the sums kept by the sameness, against the mark of the result asserting nothing
+        "nothing_mismatch": lambda: _one("twentythird.evidence.nothing_certificate", lambda _s: None),
+        # the independent counts and closed forms
+        "count_mismatch": lambda: _one("twentythird.evidence.counts_within", lambda _b, _r: {}),
+        "two_term_mismatch": lambda: _one("twentythird.evidence.two_term_round_count", lambda _r: -1),
+        # every change's outcome replaced by its start: the parity of the cost does not change
+        "change_mismatch": lambda: _one("twentythird.evidence.performed", outcome_is_start),
+        # outcomes read at their writing, not as results
+        "respect_mismatch": lambda: _one("twentythird.evidence.outcome_key", lambda s, _c: (s.n, excess_table(s))),
+        "plain_mismatch": lambda: _one("twentythird.evidence.plain_cost", lambda _s: -1),
+        # the earlier derivations: the ninth's exploration cut short; the seventh's pair made one state
+        "ninth_mismatch": lambda: _one("twentythird.evidence.explore_ninth", fewer_rounds),
+        "seventh_mismatch": lambda: _one("twentythird.evidence.seventh_pair", lambda: (a, a)),
+        "read_back_mismatch": lambda: _one("twentythird.evidence.read_back_direct", lambda _s: None),
+        "reach_mismatch": lambda: _one("twentythird.evidence.reachable", lambda _s, _t: True),
+        # the exchange: an identity in its place negates no excess
+        "exchange_mismatch": lambda: _one("twentythird.evidence.swap", lambda s: s),
+        # the search for the generated sameness with no joins at all
+        "sameness_mismatch": lambda: _one("twentythird.evidence.steps_h1", lambda _s: iter(())),
+        "readings_mismatch": lambda: _one("twentythird.evidence.cost_j3", lambda _s: -1),
+    }
+    return Panel("twentythird", RaisingCheck, signals, cases)
+
+
 def panels() -> list[Panel]:
     return [
         _tenth(),
@@ -543,6 +592,7 @@ def panels() -> list[Panel]:
         _twentieth(),
         _twentyfirst(),
         _twentysecond(),
+        _twentythird(),
     ]
 
 

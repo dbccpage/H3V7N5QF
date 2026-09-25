@@ -1,0 +1,122 @@
+{
+  "a_sum_that_is_not_zero": {
+    "certificate": [
+      "around",
+      [
+        0,
+        1,
+        2
+      ],
+      1
+    ],
+    "state": "terms a b c; asserted arb bsa"
+  },
+  "adding_a_term_can_raise_the_cost_by_2k_plus_1": [
+    {
+      "cost": 2,
+      "cost_after_adding_a_term": 5,
+      "state": "terms a b; asserted arb bsa"
+    },
+    {
+      "cost": 2,
+      "cost_after_adding_a_term": 7,
+      "state": "terms a b; asserted arb(2) bsa(2)"
+    },
+    {
+      "cost": 2,
+      "cost_after_adding_a_term": 9,
+      "state": "terms a b; asserted arb(3) bsa(3)"
+    }
+  ],
+  "adding_a_term_to_two_states_of_one_result": {
+    "one_result": true,
+    "one_result_after": false,
+    "outcomes": [
+      "terms a b c; asserted nothing",
+      "terms a b c; asserted arb bsa"
+    ],
+    "states": [
+      "terms a b; asserted nothing",
+      "terms a b; asserted arb bsa"
+    ]
+  },
+  "changes_on_the_empty_state": [
+    "add a term"
+  ],
+  "four_terms_single_terms_do_not_find_the_fewest": {
+    "a_state_asserting_the_fewest": "terms a b c d; asserted bsa bsd csa",
+    "assertions": 5,
+    "fewest": 3,
+    "raising_a_single_term_or_all_but_one_lowers_it": false,
+    "sets_that_lower_it": [
+      [
+        0,
+        3
+      ]
+    ],
+    "state": "terms a b c d; asserted crd asb asc dsb dsc"
+  },
+  "identifying_two_terms_in_two_states_of_one_result": {
+    "one_result": true,
+    "one_result_after": false,
+    "outcomes": [
+      "terms a b c; asserted nothing",
+      "terms a b c; asserted bra(2) brc asb(2) csb"
+    ],
+    "states": [
+      "terms a b c d; asserted nothing",
+      "terms a b c d; asserted cra crb crd asc bsc dsc"
+    ]
+  },
+  "in_the_twentysecond_a_state_asserting_something_is_the_result_asserting_nothing": {
+    "is_the_result_of": "terms a; asserted nothing",
+    "same_twentysecond_result": true,
+    "state": "terms a; asserted ara asa"
+  },
+  "raising_a_on_two_terms": {
+    "state": "terms a b; asserted arb bsa",
+    "the_result_asserting_nothing_here": true,
+    "the_twentysecond_result_asserting_nothing": false
+  },
+  "raising_every_term_of_a_b_once": {
+    "same_twentysecond_result": true,
+    "state": "terms a b; asserted arb bra asb bsa"
+  },
+  "state": "no terms; asserted nothing",
+  "the_first_does_not_map_one_to_one": {
+    "different_in_every_writing": true,
+    "one_result_here": true,
+    "states": [
+      "terms a b c; asserted arb arc",
+      "terms a b c; asserted bra cra"
+    ]
+  },
+  "the_map_back": {
+    "on_a_b_ara_arb": null,
+    "on_a_b_arb": "terms a b; asserted bra",
+    "on_a_b_arb_arb": null,
+    "on_a_b_arb_bsa": "terms a b; asserted nothing",
+    "states_of_a_b_ara_arb_asserting_the_fewest": [
+      "terms a b; asserted arb brb",
+      "terms a b; asserted bra brb"
+    ],
+    "states_of_a_b_arb_arb_asserting_the_fewest": [
+      "terms a b; asserted arb bra",
+      "terms a b; asserted bra(2)"
+    ]
+  },
+  "the_seventh_ninth_and_twentysecond_do_not_map_one_to_one": {
+    "different_seventh_results": true,
+    "different_twentysecond_results": true,
+    "one_result_here": true,
+    "states": [
+      "terms a b; asserted arb(2)",
+      "terms a b; asserted arb bra"
+    ]
+  },
+  "three_terms_the_loops_and_two_way_sums_do_not_give_the_cost": {
+    "cost": 12,
+    "lower_bound_from_loops_and_two_way_sums": 6,
+    "state": "terms a b c; asserted arb(2) brc(2) cra(2) asc bsa csb"
+  }
+}

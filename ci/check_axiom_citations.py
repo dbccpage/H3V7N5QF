@@ -23,7 +23,7 @@ DERIVATIONS = (
     "base", "second", "third", "fourth", "fifth", "sixth", "seventh",
     "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth",
     "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth",
-    "nineteenth", "twentieth", "twentyfirst", "twentysecond",
+    "nineteenth", "twentieth", "twentyfirst", "twentysecond", "twentythird",
 )
 #: Lean packages scanned for declarations: `lean4/` (with the outside library) and, from the
 #: twenty-second derivation on, `lean4_core/` (no outside library).

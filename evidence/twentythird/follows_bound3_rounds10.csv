@@ -1,0 +1,46 @@
+statement,wording,first_holds,first_fails,first_depends_on_the_state,results_where_it_depends
+both_ways_always_r,"In `r`: Whenever `xry` is asserted, `yrx` is asserted.",no terms; asserted nothing,terms a b; asserted bra,terms a b; asserted bra(2),1673
+both_ways_never_r,In `r`: Never are `xry` and `yrx` both asserted.,no terms; asserted nothing,terms a; asserted ara,terms a b; asserted bra(2),1178
+passes_on_r,"In `r`: Whenever `xry` and `yrz` are asserted, `xrz` is asserted.",no terms; asserted nothing,terms a b c; asserted brc crb,terms a b; asserted bra(2),3748
+any_two_related_r,"In `r`: For any two terms `x`, `y`: `xry` or `yrx` is asserted.",no terms; asserted nothing,terms a b; asserted nothing,terms a b c; asserted brc cra(2) asc,257
+every_term_first_r,In `r`: Every term `x` has some `xry` asserted.,no terms; asserted nothing,terms a; asserted nothing,terms a b; asserted bra brb,2806
+every_term_mentioned_r,In `r`: Every term occurs in some asserted assertion.,no terms; asserted nothing,terms a; asserted nothing,terms a b c; asserted crb crc bsc,813
+exactly_two_terms_r,In `r`: There are exactly two terms.,terms a b; asserted nothing,no terms; asserted nothing,,0
+something_asserted_r,In `r`: Some assertion is asserted.,terms a; asserted ara,no terms; asserted nothing,,0
+at_least_one_term_r,In `r`: There is at least one term.,terms a; asserted nothing,no terms; asserted nothing,,0
+no_xrx_r,In `r`: No `xrx` is asserted.,no terms; asserted nothing,terms a; asserted ara,,0
+at_least_two_terms_r,In `r`: There are at least two terms.,terms a b; asserted nothing,no terms; asserted nothing,,0
+nothing_asserted_r,In `r`: Nothing is asserted.,no terms; asserted nothing,terms a; asserted ara,,0
+some_xrx_r,In `r`: Some `xrx` is asserted.,terms a; asserted ara,no terms; asserted nothing,,0
+nothing_twice_r,In `r`: No assertion is asserted more than once.,no terms; asserted nothing,terms a; asserted ara(2),terms a b; asserted bra(2),1679
+something_twice_r,In `r`: Some assertion is asserted at least twice.,terms a; asserted ara(2),no terms; asserted nothing,terms a b; asserted bra(2),1679
+same_multiplicity_r,In `r`: Every asserted assertion is asserted equally often.,no terms; asserted nothing,terms a b; asserted bra brb(2),terms a b; asserted bra(2) brb,1843
+both_ways_equal_r,"In `r`: Whenever `xry` and `yrx` are both asserted, they are asserted equally often.",no terms; asserted nothing,terms a b c; asserted brc crb(2),terms a b; asserted bra(3),1377
+both_ways_always_s,"In `s`: Whenever `xsy` is asserted, `ysx` is asserted.",no terms; asserted nothing,terms a b; asserted bsa,terms a b; asserted bsa(2),1673
+both_ways_never_s,In `s`: Never are `xsy` and `ysx` both asserted.,no terms; asserted nothing,terms a; asserted asa,terms a b; asserted bsa(2),1178
+passes_on_s,"In `s`: Whenever `xsy` and `ysz` are asserted, `xsz` is asserted.",no terms; asserted nothing,terms a b c; asserted bsc csb,terms a b; asserted bsa(2),3748
+any_two_related_s,"In `s`: For any two terms `x`, `y`: `xsy` or `ysx` is asserted.",no terms; asserted nothing,terms a b; asserted nothing,terms a b c; asserted crb bsc(2) csa,257
+every_term_first_s,In `s`: Every term `x` has some `xsy` asserted.,no terms; asserted nothing,terms a; asserted nothing,terms a b; asserted bsa bsb,2806
+every_term_mentioned_s,In `s`: Every term occurs in some asserted assertion.,no terms; asserted nothing,terms a; asserted nothing,terms a b c; asserted crb bsc csc,813
+exactly_two_terms_s,In `s`: There are exactly two terms.,terms a b; asserted nothing,no terms; asserted nothing,,0
+something_asserted_s,In `s`: Some assertion is asserted.,terms a; asserted asa,no terms; asserted nothing,,0
+at_least_one_term_s,In `s`: There is at least one term.,terms a; asserted nothing,no terms; asserted nothing,,0
+no_xrx_s,In `s`: No `xsx` is asserted.,no terms; asserted nothing,terms a; asserted asa,,0
+at_least_two_terms_s,In `s`: There are at least two terms.,terms a b; asserted nothing,no terms; asserted nothing,,0
+nothing_asserted_s,In `s`: Nothing is asserted.,no terms; asserted nothing,terms a; asserted asa,,0
+some_xrx_s,In `s`: Some `xsx` is asserted.,terms a; asserted asa,no terms; asserted nothing,,0
+nothing_twice_s,In `s`: No assertion is asserted more than once.,no terms; asserted nothing,terms a; asserted asa(2),terms a b; asserted bsa(2),1679
+something_twice_s,In `s`: Some assertion is asserted at least twice.,terms a; asserted asa(2),no terms; asserted nothing,terms a b; asserted bsa(2),1679
+same_multiplicity_s,In `s`: Every asserted assertion is asserted equally often.,no terms; asserted nothing,terms a b; asserted bsa bsb(2),terms a b; asserted bsa(2) bsb,1843
+both_ways_equal_s,"In `s`: Whenever `xsy` and `ysx` are both asserted, they are asserted equally often.",no terms; asserted nothing,terms a b c; asserted bsc csb(2),terms a b; asserted bsa(3),1377
+nothing_in_s,Nothing is asserted with `s`.,no terms; asserted nothing,terms a; asserted asa,,0
+nothing_in_r,Nothing is asserted with `r`.,no terms; asserted nothing,terms a; asserted ara,,0
+some_pair_in_both,Some `xry` and `xsy` are both asserted.,,no terms; asserted nothing,,0
+relations_agree,Every `xry` is asserted exactly as often as `xsy`.,no terms; asserted nothing,terms a; asserted asa,,0
+s_within_r,"Whenever `xsy` is asserted, `xry` is asserted.",no terms; asserted nothing,terms a; asserted asa,,0
+r_within_s,"Whenever `xry` is asserted, `xsy` is asserted.",no terms; asserted nothing,terms a; asserted ara,,0
+nothing_at_all,There are no terms and nothing is asserted.,no terms; asserted nothing,terms a; asserted nothing,,0
+unchanged_by_exchange,Exchanging the two relations gives the same result (up to rewriting the terms).,no terms; asserted nothing,terms a; asserted asa,terms a b c; asserted crb crc bsb bsc,22
+nothing_asserted_up_to_raising,The result is the one asserting nothing on its terms.,no terms; asserted nothing,terms a; asserted asa,,0
+unchanged_by_exchange_here,Exchanging the two relations gives the same result here.,no terms; asserted nothing,terms a; asserted asa,,0
+one_state_asserting_the_fewest,"The result has one state asserting the fewest, up to writing.",no terms; asserted nothing,terms a b; asserted bsa bsb,,0

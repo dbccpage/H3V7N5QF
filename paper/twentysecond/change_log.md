@@ -97,3 +97,10 @@ Each material change, and its reason. Newest last. Commits are on the branch
 13. **Every earlier derivation's evidence was re-checked with its `--check`
     after this derivation's code was in place** (`research/twentysecond/check_earlier.py`);
     the outcome is recorded in the commit message.
+
+14. **(Recorded by the twenty-third derivation.) `lean4_core/lakefile.toml` gained
+    a second library, `Twentythird`, and lists it among the default targets.**
+    Reason: `prompt/twentythird/prompt.md` puts the twenty-third's Lean library in
+    this package, importing `Twentysecond`. The library `Twentysecond`, its files
+    and its axiom report are unchanged; `lake build Twentysecond` builds exactly
+    what it built before.
