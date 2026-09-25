@@ -520,3 +520,20 @@ reading of the seed.
     regenerate there; `tests/test_prose_watchlist.py` covers both sides by
     injection. `CLAUDE.md`'s operator note says the same. No earlier prompt,
     code, Lean, evidence, or paper file changes.
+
+44. **The twenty-fourth and twenty-fifth seeds installed (2026-09-25).**
+    `prompt/twentyfourth/seed_prompt.md` (SHA-256
+    `ebbf2fb621125898aa28ef13f7c9a12f1ddac81f52b15d6ea4cf004e805cf89a`),
+    `prompt/twentyfourth/prompt.md` (SHA-256
+    `835a1074af291750c63ea95e014bc0b368e1d67a196318c1a5dc4474890f7ee5`),
+    `prompt/twentyfifth/seed_prompt.md` (SHA-256
+    `79a757575547a15ab29fce9d83efa081d04c75f76034ca15a5533449b324507b`) and
+    `prompt/twentyfifth/prompt.md` (SHA-256
+    `57dbecc1a88896072cfee9a2d98fb009cd3fe4fdfb0f31253cfd60579df7b3d5`) are
+    installed as LF bytes. Each seed is the twenty-third seed
+    (`84eda21987126db16a43261ccc98d6fef23449c9c580a1bb5cf275b4f378578f`)
+    with one kind of change added to its list and one sentence added; the
+    two seeds differ only in that kind and that sentence. The two
+    derivations are siblings: each run starts from the same snapshot, and
+    their commits land on one branch. No earlier prompt, code, Lean,
+    evidence, or paper file changes.

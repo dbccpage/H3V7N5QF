@@ -1,0 +1,52 @@
+# [opaque repository name]
+
+## Task
+
+This repository holds earlier derivations. Each has a seed and a task under `prompt/`, and a paper, ledger and change log under `paper/`. The parent of this derivation is the twenty-third (`prompt/twentythird/seed_prompt.md`, `paper/twentythird/`). The twenty-third's own parents may be cited through it: the twenty-second, and through it the ninth, the seventh, the eighth and the first (`prompt/seed_prompt.md`, `paper/paper.md`). The other derivations are not inputs. The twenty-fourth derivation (`prompt/twentyfourth/`) is a sibling of this one: it starts from the same point at the same time, and it is not an input either.
+
+Begin now from `prompt/twentyfifth/seed_prompt.md`. It is the twenty-third seed with one kind of change added to its list and one sentence added: filling three different terms is now a change, and when three filled terms balance is defined, with a record, for every result, of which filled terms balance. Determine what follows and what does not.
+
+In the twenty-third, does what is recorded for a result show which of its terms keep it from being the same as a result with nothing asserted on as many terms; and here, which results that are not the same as such a result can be told from one that is by filled terms that do not balance, which cannot, and what are the fewest changes to each result?
+
+Explore by performing changes on states, as the twenty-third's exploration does, and form the results afterwards.
+
+Throughout:
+
+1. record for every notion whether it was given, chosen, derived, computed, refuted, or left open;
+2. state what does not follow;
+3. prove every claimed necessity and every claimed impossibility;
+4. keep every non-isomorphic alternative unless a proof eliminates it, and keep every reading of the seed that gives a different result;
+5. where you use a result of an earlier derivation, cite it and check that its proof still holds from this seed, and say in the ledger's re-check column how: no change, re-proved, imported, or computed again.
+
+Relating this seed to the earlier ones, in Lean:
+
+- Choose an earlier seed in this one's line (the twenty-third, the twenty-second, the ninth, the seventh, or the first) whose results map one to one into this seed's results, with each of its changes carried to a change here. If none does, prove that with a witness.
+- Give a map back from this seed's results to that seed's results that may answer "none". Prove what it returns on mapped results, and name the smallest result on which it answers "none", if there is one.
+- If this seed makes two of the twenty-third's results the same, record what the merge loses.
+
+Do not steer toward a known theory. The final section of the paper names the nearest known results and how the findings differ. The prose watchlist (`ci/check_prose_watchlist.py`) pins outside-theory terms to that final section; keep it clean.
+
+Use only this repository. No network, other files, or questions. Do not modify `prompt/`. Change an earlier derivation's files only to correct a defect, and record each such change in the relevant `change_log.md`. Commit on your branch and do not push; the operator pushes.
+
+This derivation and its sibling land on one branch. Where you register this derivation in a file that other derivations share (`CLAUDE.md`, `lean4_core/lakefile.toml`, `ci/check_mutation_bite.py`, `ci/check_axiom_citations.py`, an earlier derivation's `change_log.md`), only add to it: do not reorder, reword or reformat what is already there.
+
+First add your plan and stopping conditions for the twenty-fifth derivation to the end of `CLAUDE.md`, and commit them.
+
+Before you finish, run every gate in "Done" in the foreground and wait for each to end. Do not finish while a check you started is still running.
+
+## Folders
+
+- `prompt/twentyfifth/`: the input files
+- `code/`: typed Python; a package `code/twentyfifth/`, importing `code/xry` through `code/twentythird` where a result still applies; `code/run_twentyfifth.py` writes the evidence and, with `--check`, compares it with a fresh regeneration
+- `tests/`: tests for `code/`, at least 95% line and 95% branch coverage, and every `code/**/evidence.py` fully covered (the gate `python code/xry/gate.py coverage.json` requires it: a dead differential-check branch fails it until an injection test drives it); `ci/check_mutation_bite.py` gains a panel for this derivation covering every disagreement field
+- `lean4_core/`: a library `Twentyfifth` in the existing package, which has no `require` and the toolchain `leanprover/lean4:v4.33.1`. It may import `Twentythird` and `Twentysecond`; it does not import the libraries in `lean4/`, which depend on an outside library. No `sorry`, `admit`, or user-declared `axiom`. `#print axioms` for every theorem the paper cites. `code/lean_report_twentyfifth.py` writes the axiom report and refuses any axiom other than `propext` and `Quot.sound`. `.lake/` is not committed.
+- `evidence/twentyfifth/`: outputs generated by `code/`, regenerable, with a manifest
+- `research/twentyfifth/`: work not cited as evidence
+- `paper/twentyfifth/`: `paper.md`, `change_log.md`, `claim_ledger.md`
+
+`claim_ledger.md`: each claim's ID, statement, status, evidence, axiom report, re-check, and what would falsify it.
+`change_log.md`: each material change and its reason.
+
+## Done
+
+Every notion has a recorded source; every claim has evidence or is marked open; every alternative and every reading is kept or eliminated by proof; the gates pass: `python -m pytest`, then `python code/xry/gate.py coverage.json`, `python -m mypy`, the prose watchlist, `ci/check_vacuous_checks.py`, `ci/check_definitional_citations.py`, `ci/check_mutation_bite.py` and `ci/check_axiom_citations.py`; `lake +leanprover/lean4:v4.33.1 -d lean4_core build` passes, with its exit code read on its own line and not through a pipe; the axiom report lists only `propext` and `Quot.sound`; every earlier derivation's evidence still regenerates; everything intended is committed; the paper states what was found, including which results filled terms that do not balance tell apart from a result with nothing asserted, which they cannot, and which of the twenty-third's results (its cost, its reachability, the exchange of the two relations) hold here, and where they do not.
