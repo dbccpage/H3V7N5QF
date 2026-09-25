@@ -98,7 +98,7 @@ $$\text{Reachable}(\text{root03}, t) \iff t.n \ge 1$$
 Furthermore, for any two states $s, t$ with $s.n \ge 1$ and $t.n \ge 1$:
 - $s$ reaches a 1-term state by removing all assertions (in $s.m$ steps) and identifying terms (in $s.n - 1$ steps).
 - The 1-term state reaches $t$ by additions (in $t.n - 1 + t.m$ steps).
-Hence, $s$ reaches $t$ and $t$ reaches $s$. All reachable states are mutually reachable by the construction above. The Lean file proves empty-state exclusion; this stronger characterization is proved here and checked on the declared finite census.
+Hence, $s$ reaches $t$ and $t$ reaches $s$. All reachable states are mutually reachable by the construction above. The Lean file establishes empty-state exclusion; this stronger characterization is derived here and checked on the declared finite census.
 
 ---
 

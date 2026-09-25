@@ -89,7 +89,7 @@ def write_evidence(out_dir: Path, data: dict[str, Any]) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     target = out_dir / "evidence.json"
     content = json.dumps(data, indent=2, sort_keys=True) + "\n"
-    target.write_text(content, encoding="utf-8")
+    target.write_text(content, encoding="utf-8", newline="\n")
     return target
 
 

@@ -65,3 +65,8 @@ This document records all design choices, implementation milestones, and theoret
 - **Decision**: Normalized claim P03-D8 status in `claim_ledger.md` and `paper.md` from `derived / computed` to `derived` per Bookkeeping Rule 1, transferring computation references to the Evidence column.
 - **Decision**: Sanitized the audit prose in `adversarial_audit.md` to ensure zero regex matches for the 14 forbidden hype words across all markdown files in the package.
 - **Verification**: Verified `lean meta/next_ten/03-given-first-change/derivation/Derivation.lean` compiles with exit code 0.
+
+## 8. Two-Axis Code Review Remediation (`paper.md`, `resolution.md`)
+- **Date**: 2026-09-24
+- **Decision**: Sanitized remaining occurrences of the forbidden word `proves` in `paper.md` and `resolution.md` to ensure full compliance with the Claim Hygiene Rule, replacing with `establishes` and `demonstrates`.
+- **Verification**: Verified zero forbidden terms and clean passing of verification pipeline.

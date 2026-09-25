@@ -48,3 +48,6 @@ Each material change and design decision, newest last.
 8. **Prose Watchlist Remediation.**
    - Replaced graph-theory phrase with 'cyclic assertion paths' in `paper.md` line 128 to comply with `ci/prose_watchlist.json`.
    - Verified that `ci/check_prose_watchlist.py` reports zero hits across all derivation markdown files.
+
+9. **Two-Axis Code Review Remediation (`evidence.py`).**
+   - Added `newline="\n"` to `write_evidence` in `evidence.py` to prevent platform-dependent CRLF conversion on Windows, ensuring byte-identical verification across environments.
