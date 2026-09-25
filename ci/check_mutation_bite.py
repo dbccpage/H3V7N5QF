@@ -623,6 +623,8 @@ def _twentyfourth() -> Panel:
         "record_question_mismatch": lambda: _one("twentyfourth.evidence.keeping_size", lambda _b: 0),
     }
     return Panel("twentyfourth", FillCheck, signals, cases)
+
+
 def _twentyfifth() -> Panel:
     from twentyfifth.evidence import FillingCheck, audit
     from twentyfifth.explore import performed as real_performed
