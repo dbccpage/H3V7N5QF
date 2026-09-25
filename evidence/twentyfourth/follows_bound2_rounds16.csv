@@ -1,0 +1,51 @@
+statement,wording,in_every_result,holds_at,fails_at,depends_at,results_where_it_depends
+both_ways_always_r,"In `r`: Whenever `xry` is asserted, `yrx` is asserted.",0,0::,"2:0,1,0,0:00","2:0,2,0,0:00",2409
+both_ways_never_r,In `r`: Never are `xry` and `yrx` both asserted.,0,0::,1:1:0,"2:0,2,0,0:00",777
+passes_on_r,"In `r`: Whenever `xry` and `yrz` are asserted, `xrz` is asserted.",0,0::,,"2:0,2,0,0:00",1933
+any_two_related_r,"In `r`: For any two terms `x`, `y`: `xry` or `yrx` is asserted.",0,0::,"2:0,0,0,0:00",,0
+every_term_first_r,In `r`: Every term `x` has some `xry` asserted.,0,0::,1:0:0,"2:0,1,0,1:00",2246
+every_term_mentioned_r,In `r`: Every term occurs in some asserted assertion.,0,0::,1:0:0,,0
+exactly_two_terms_r,In `r`: There are exactly two terms.,0,"2:0,0,0,0:00",0::,,0
+something_asserted_r,In `r`: Some assertion is asserted.,0,1:1:0,0::,,0
+at_least_one_term_r,In `r`: There is at least one term.,0,1:0:0,0::,,0
+no_xrx_r,In `r`: No `xrx` is asserted.,0,0::,1:1:0,,0
+at_least_two_terms_r,In `r`: There are at least two terms.,0,"2:0,0,0,0:00",0::,,0
+nothing_asserted_r,In `r`: Nothing is asserted.,0,0::,1:1:0,,0
+some_xrx_r,In `r`: Some `xrx` is asserted.,0,1:1:0,0::,,0
+nothing_twice_r,In `r`: No assertion is asserted more than once.,0,0::,1:2:0,"2:0,2,0,0:00",210
+something_twice_r,In `r`: Some assertion is asserted at least twice.,0,1:2:0,0::,"2:0,2,0,0:00",210
+same_multiplicity_r,In `r`: Every asserted assertion is asserted equally often.,0,0::,"2:0,1,0,2:00","2:0,2,0,1:00",857
+both_ways_equal_r,"In `r`: Whenever `xry` and `yrx` are both asserted, they are asserted equally often.",0,0::,,"2:0,3,0,0:00",1865
+both_ways_always_s,"In `s`: Whenever `xsy` is asserted, `ysx` is asserted.",0,0::,"2:0,-1,0,0:00","2:0,-2,0,0:00",2409
+both_ways_never_s,In `s`: Never are `xsy` and `ysx` both asserted.,0,0::,1:-1:0,"2:0,-2,0,0:00",777
+passes_on_s,"In `s`: Whenever `xsy` and `ysz` are asserted, `xsz` is asserted.",0,0::,,"2:0,-2,0,0:00",1933
+any_two_related_s,"In `s`: For any two terms `x`, `y`: `xsy` or `ysx` is asserted.",0,0::,"2:0,0,0,0:00",,0
+every_term_first_s,In `s`: Every term `x` has some `xsy` asserted.,0,0::,1:0:0,"2:-1,-1,0,0:00",2246
+every_term_mentioned_s,In `s`: Every term occurs in some asserted assertion.,0,0::,1:0:0,,0
+exactly_two_terms_s,In `s`: There are exactly two terms.,0,"2:0,0,0,0:00",0::,,0
+something_asserted_s,In `s`: Some assertion is asserted.,0,1:-1:0,0::,,0
+at_least_one_term_s,In `s`: There is at least one term.,0,1:0:0,0::,,0
+no_xrx_s,In `s`: No `xsx` is asserted.,0,0::,1:-1:0,,0
+at_least_two_terms_s,In `s`: There are at least two terms.,0,"2:0,0,0,0:00",0::,,0
+nothing_asserted_s,In `s`: Nothing is asserted.,0,0::,1:-1:0,,0
+some_xrx_s,In `s`: Some `xsx` is asserted.,0,1:-1:0,0::,,0
+nothing_twice_s,In `s`: No assertion is asserted more than once.,0,0::,1:-2:0,"2:0,-2,0,0:00",210
+something_twice_s,In `s`: Some assertion is asserted at least twice.,0,1:-2:0,0::,"2:0,-2,0,0:00",210
+same_multiplicity_s,In `s`: Every asserted assertion is asserted equally often.,0,0::,"2:-2,-1,0,0:00","2:-1,-2,0,0:00",857
+both_ways_equal_s,"In `s`: Whenever `xsy` and `ysx` are both asserted, they are asserted equally often.",0,0::,,"2:0,-3,0,0:00",1865
+nothing_in_s,Nothing is asserted with `s`.,0,0::,1:-1:0,,0
+nothing_in_r,Nothing is asserted with `r`.,0,0::,1:1:0,,0
+some_pair_in_both,Some `xry` and `xsy` are both asserted.,0,,0::,,0
+relations_agree,Every `xry` is asserted exactly as often as `xsy`.,0,0::,1:-1:0,,0
+s_within_r,"Whenever `xsy` is asserted, `xry` is asserted.",0,0::,1:-1:0,,0
+r_within_s,"Whenever `xry` is asserted, `xsy` is asserted.",0,0::,1:1:0,,0
+nothing_at_all,There are no terms and nothing is asserted.,0,0::,1:0:0,,0
+unchanged_by_exchange,Exchanging the two relations gives the same result (up to rewriting the terms).,0,0::,1:-1:0,,0
+nothing_asserted_up_to_raising,The result is the one asserting nothing on its terms.,0,0::,1:-1:0,,0
+unchanged_by_exchange_here,Exchanging the two relations gives the same result here.,0,0::,1:-1:0,,0
+some_term_filled,Some term is filled.,0,1:0:1,0::,,0
+every_term_filled,Every term is filled.,0,0::,1:0:0,,0
+every_filled_term_balances,Every filled term balances.,0,0::,1:-1:1,,0
+told_apart,A filled term that does not balance tells the result apart from the one asserting nothing.,0,1:-1:1,0::,,0
+unbalanced_loops_filled,Every term whose `xrx` and `xsx` are asserted unequally often is filled.,0,0::,1:-1:0,,0
+unchanged_by_exchange,"Exchanging the two relations, the filled terms kept, gives the same result.",0,0::,1:-1:0,,0

@@ -1,0 +1,69 @@
+{
+  "first_result_of_each_class": {
+    "nothing": "no terms; asserted nothing",
+    "one filling away": "terms a; asserted asa; filled none",
+    "three terms": "terms a b c; asserted crb bsc; filled none",
+    "told": "terms a; asserted asa; filled a",
+    "two terms": "terms a b; asserted bsa; filled none"
+  },
+  "identifying_turns_a_two_term_witness_into_a_loop": {
+    "class_from": "two terms",
+    "class_to": "told",
+    "from": "terms a b; asserted arb; filled a b",
+    "to": "terms a; asserted ara; filled a"
+  },
+  "identifying_two_filled_terms": {
+    "cost_from": 4,
+    "cost_to": 2,
+    "from": "terms a b; asserted nothing; filled a b",
+    "to": "terms a; asserted nothing; filled a"
+  },
+  "smallest_result_answered_none": {
+    "cost": 2,
+    "state": "terms a; asserted nothing; filled a"
+  },
+  "the_twentythird_record_question": {
+    "first_such_record": {
+      "record": [
+        2,
+        0,
+        1
+      ],
+      "results": [
+        "terms a b; asserted bsb",
+        "terms a b; asserted bsa"
+      ]
+    },
+    "records_among_twentythird_results": 37,
+    "records_holding_results_kept_by_different_numbers_of_terms": 17,
+    "records_holding_results_with_different_numbers_of_keeping_terms": 23,
+    "witnesses": [
+      {
+        "first": "terms a b; asserted ara",
+        "kept_by": [
+          1,
+          2
+        ],
+        "record": [
+          2,
+          1,
+          0
+        ],
+        "second": "terms a b; asserted arb"
+      },
+      {
+        "first": "terms a b c; asserted ara asb",
+        "kept_by": [
+          1,
+          3
+        ],
+        "record": [
+          3,
+          1,
+          1
+        ],
+        "second": "terms a b c; asserted arb bsa"
+      }
+    ]
+  }
+}

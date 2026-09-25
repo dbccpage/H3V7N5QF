@@ -154,3 +154,20 @@ import Twentyfourth
 #print axioms Twentyfourth.fc_rename
 #print axioms Twentyfourth.pot_rename
 #print axioms Twentyfourth.cost24_every_writing
+-- earlier theorems the paper names (imported)
+#print axioms Twentysecond.reach_plainSt
+#print axioms Twentysecond.Step.phi_le
+#print axioms Twentysecond.Step.phi_identify
+#print axioms Twentysecond.Reach.n_pos
+#print axioms Twentysecond.excess_swap
+#print axioms Twentysecond.swap_swap
+#print axioms Twentythird.gen3_iff_same3
+#print axioms Twentythird.Same3.loop
+#print axioms Twentythird.Same3.size_parity
+#print axioms Twentythird.same3_nothing_iff
+#print axioms Twentythird.arcThree_not_nothing
+#print axioms Twentythird.addTerm_not_respected
+#print axioms Twentythird.cost3_iff
+#print axioms Twentythird.phi_ge_around
+#print axioms Twentythird.excess_rename
+#print axioms Twentythird.seventh_pair_merge

@@ -104,3 +104,10 @@ Each material change, and its reason. Newest last. Commits are on the branch
     this package, importing `Twentysecond`. The library `Twentysecond`, its files
     and its axiom report are unchanged; `lake build Twentysecond` builds exactly
     what it built before.
+
+15. **(Recorded by the twenty-fourth derivation.) `lean4_core/lakefile.toml` gained
+    a third library, `Twentyfourth`, appended to the default targets.** Reason:
+    `prompt/twentyfourth/prompt.md` puts the twenty-fourth's Lean library in this
+    package, importing `Twentythird`. Nothing already in the file was reordered,
+    reworded or reformatted; the libraries `Twentysecond` and `Twentythird`, their
+    files and their axiom reports are unchanged.

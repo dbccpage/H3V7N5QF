@@ -1,0 +1,432 @@
+{
+  "attempts_in_full_log": 30,
+  "disagreements": {
+    "balance_mismatch": [],
+    "change_mismatch": [],
+    "count_mismatch": [],
+    "exchange_mismatch": [],
+    "forget_mismatch": [],
+    "reach_mismatch": [],
+    "read_back_mismatch": [],
+    "readings_mismatch": [],
+    "record_mismatch": [],
+    "record_question_mismatch": [],
+    "respect_mismatch": [],
+    "round_not_cost": [],
+    "sameness_mismatch": [],
+    "sequences_mismatch": [],
+    "tell_mismatch": [],
+    "twentythird_mismatch": [],
+    "two_term_mismatch": []
+  },
+  "every_check_clean": true,
+  "generated_sameness": {
+    "1_terms": {
+      "classes": 6,
+      "results": 6,
+      "states": 8
+    },
+    "2_terms": {
+      "classes": 29,
+      "results": 29,
+      "states": 100
+    }
+  },
+  "given": {
+    "witnesses": [
+      "first_result_of_each_class",
+      "identifying_turns_a_two_term_witness_into_a_loop",
+      "identifying_two_filled_terms",
+      "smallest_result_answered_none",
+      "the_twentythird_record_question"
+    ]
+  },
+  "independent_counts": {
+    "results_of_round_r_with_at_most_two_terms": [
+      1,
+      1,
+      4,
+      9,
+      22,
+      48,
+      90,
+      148,
+      222,
+      312,
+      418,
+      540,
+      678,
+      832,
+      1002,
+      1188,
+      1390,
+      1608,
+      1842,
+      2092,
+      2358,
+      2640,
+      2938,
+      3252,
+      3582,
+      3928,
+      4290,
+      4668,
+      5062,
+      5472,
+      5898,
+      6340,
+      6798,
+      7272,
+      7762,
+      8268,
+      8790,
+      9328,
+      9882,
+      10452,
+      11038,
+      11640,
+      12258,
+      12892,
+      13542,
+      14208,
+      14890,
+      15588,
+      16302,
+      17032,
+      17778,
+      18540,
+      19318,
+      20112,
+      20922,
+      21748,
+      22590,
+      23448,
+      24322,
+      25212,
+      26118,
+      27040,
+      27978,
+      28932,
+      29902,
+      30888,
+      31890,
+      32908,
+      33942,
+      34992,
+      36058,
+      37140,
+      38238,
+      39352,
+      40482,
+      41628,
+      42790,
+      43968,
+      45162,
+      46372,
+      47598,
+      48840,
+      50098,
+      51372,
+      52662,
+      53968,
+      55290,
+      56628,
+      57982,
+      59352,
+      60738,
+      62140,
+      63558,
+      64992,
+      66442,
+      67908,
+      69390,
+      70888,
+      72402,
+      73932,
+      75478
+    ],
+    "results_of_round_r_without_a_bound_on_terms": [
+      1,
+      1,
+      4,
+      10,
+      28,
+      94,
+      366,
+      1555
+    ],
+    "their_sum_over_rounds_0_to_100": 2482245
+  },
+  "plan": {
+    "full_log": [
+      2,
+      3
+    ],
+    "generated_sameness_checked_on": [
+      1,
+      4
+    ],
+    "reachability": [
+      2,
+      4
+    ],
+    "readings": [
+      2,
+      6
+    ],
+    "runs": [
+      [
+        5,
+        7
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        2,
+        16
+      ]
+    ]
+  },
+  "reachability": {
+    "both": {
+      "ordered_pairs": 1369,
+      "ordered_pairs_reachable": 1333,
+      "reading": "fill-mark_identify-both",
+      "results": 37
+    },
+    "either": {
+      "ordered_pairs": 1369,
+      "ordered_pairs_reachable": 1034,
+      "reading": "fill-mark_identify-either",
+      "results": 37
+    },
+    "never": {
+      "ordered_pairs": 1369,
+      "ordered_pairs_reachable": 1333,
+      "reading": "fill-mark_identify-never",
+      "results": 37
+    }
+  },
+  "runs": {
+    "bound2_rounds16": {
+      "changes": {
+        "changes_checked": 460078,
+        "changes_moving_the_cost_by_an_even_number": 6015,
+        "how_each_kind_moves_the_cost": {
+          "add a term +1": 57,
+          "add an assertion +1": 151988,
+          "add an assertion -1": 119988,
+          "fill one term +1": 39324,
+          "identify two terms -1": 9920,
+          "identify two terms -10": 517,
+          "identify two terms -11": 1561,
+          "identify two terms -12": 219,
+          "identify two terms -13": 479,
+          "identify two terms -2": 2220,
+          "identify two terms -3": 5113,
+          "identify two terms -4": 1211,
+          "identify two terms -5": 4543,
+          "identify two terms -6": 1049,
+          "identify two terms -7": 3685,
+          "identify two terms -8": 799,
+          "identify two terms -9": 2667,
+          "remove an assertion +1": 14016,
+          "remove an assertion -1": 100722
+        }
+      },
+      "frontier_entries": 33983,
+      "map_back": {
+        "first_result_answered_none": "terms a; asserted nothing; filled a",
+        "its_round": 2,
+        "results_answered_none": 4723
+      },
+      "new_results_per_round": [
+        1,
+        1,
+        4,
+        9,
+        22,
+        48,
+        90,
+        148,
+        222,
+        312,
+        418,
+        540,
+        678,
+        832,
+        1002,
+        1188,
+        1390
+      ],
+      "respect": {
+        "outcomes_compared": 358040
+      },
+      "results": 6905,
+      "results_by_how_they_stand_against_the_one_asserting_nothing": {
+        "nothing": 6,
+        "one filling away": 2489,
+        "told": 4332,
+        "two terms": 78
+      },
+      "results_by_terms": [
+        1,
+        60,
+        6844
+      ],
+      "results_of_the_last_round": 1390,
+      "shortest_sequences": {
+        "most_shortest_sequences_to_one_result": 587059200,
+        "results_reached_by_one_shortest_sequence": 34
+      },
+      "states_reached": 46030,
+      "twentythird": {
+        "most_results_here_forgotten_onto_one": 4,
+        "results_here_with_no_filled_term": 2182,
+        "twentythird_results": 2182,
+        "twentythird_results_the_forgetting_map_lands_on": 2182
+      }
+    },
+    "bound3_rounds9": {
+      "changes": {
+        "changes_checked": 217237,
+        "changes_moving_the_cost_by_an_even_number": 873,
+        "how_each_kind_moves_the_cost": {
+          "add a term +1": 1213,
+          "add a term +3": 280,
+          "add a term +5": 40,
+          "add a term +7": 1,
+          "add an assertion +1": 107112,
+          "add an assertion -1": 36456,
+          "fill one term +1": 19760,
+          "identify two terms -1": 12399,
+          "identify two terms -2": 621,
+          "identify two terms -3": 8575,
+          "identify two terms -4": 237,
+          "identify two terms -5": 1543,
+          "identify two terms -6": 15,
+          "identify two terms -7": 27,
+          "remove an assertion +1": 2012,
+          "remove an assertion -1": 26946
+        }
+      },
+      "frontier_entries": 7304,
+      "map_back": {
+        "first_result_answered_none": "terms a; asserted nothing; filled a",
+        "its_round": 2,
+        "results_answered_none": 9017
+      },
+      "new_results_per_round": [
+        1,
+        1,
+        4,
+        10,
+        27,
+        88,
+        314,
+        1110,
+        3600,
+        10312
+      ],
+      "respect": {
+        "outcomes_compared": 273457
+      },
+      "results": 15467,
+      "results_by_how_they_stand_against_the_one_asserting_nothing": {
+        "nothing": 10,
+        "one filling away": 9062,
+        "three terms": 8,
+        "told": 4915,
+        "two terms": 1472
+      },
+      "results_by_terms": [
+        1,
+        32,
+        824,
+        14610
+      ],
+      "results_of_the_last_round": 10312,
+      "shortest_sequences": {
+        "most_shortest_sequences_to_one_result": 39648,
+        "results_reached_by_one_shortest_sequence": 21
+      },
+      "states_reached": 29898,
+      "twentythird": {
+        "most_results_here_forgotten_onto_one": 8,
+        "results_here_with_no_filled_term": 6450,
+        "twentythird_results": 6450,
+        "twentythird_results_the_forgetting_map_lands_on": 6450
+      }
+    },
+    "bound5_rounds7": {
+      "changes": {
+        "changes_checked": 15729,
+        "changes_moving_the_cost_by_an_even_number": 38,
+        "how_each_kind_moves_the_cost": {
+          "add a term +1": 667,
+          "add a term +3": 44,
+          "add a term +5": 1,
+          "add an assertion +1": 8480,
+          "add an assertion -1": 1836,
+          "fill one term +1": 1536,
+          "identify two terms -1": 1277,
+          "identify two terms -2": 33,
+          "identify two terms -3": 321,
+          "identify two terms -4": 5,
+          "identify two terms -5": 15,
+          "remove an assertion +1": 78,
+          "remove an assertion -1": 1436
+        }
+      },
+      "frontier_entries": 6,
+      "map_back": {
+        "first_result_answered_none": "terms a; asserted nothing; filled a",
+        "its_round": 2,
+        "results_answered_none": 888
+      },
+      "new_results_per_round": [
+        1,
+        1,
+        4,
+        10,
+        28,
+        94,
+        365,
+        1549
+      ],
+      "respect": {
+        "outcomes_compared": 13387
+      },
+      "results": 2052,
+      "results_by_how_they_stand_against_the_one_asserting_nothing": {
+        "nothing": 17,
+        "one filling away": 1176,
+        "three terms": 9,
+        "told": 346,
+        "two terms": 504
+      },
+      "results_by_terms": [
+        1,
+        24,
+        298,
+        1232,
+        445,
+        52
+      ],
+      "results_of_the_last_round": 1549,
+      "shortest_sequences": {
+        "most_shortest_sequences_to_one_result": 1176,
+        "results_reached_by_one_shortest_sequence": 19
+      },
+      "states_reached": 2943,
+      "twentythird": {
+        "most_results_here_forgotten_onto_one": 8,
+        "results_here_with_no_filled_term": 1164,
+        "twentythird_results": 1164,
+        "twentythird_results_the_forgetting_map_lands_on": 1164
+      }
+    }
+  }
+}
