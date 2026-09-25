@@ -20,11 +20,16 @@ Design, stated so it cannot be quietly weakened:
   ``--regen`` rewrites the pin deliberately, never implicitly. The pin puts the
   tree's outside-theory vocabulary in one inspectable place -- for these papers,
   each paper's final "nearest known results" section.
-* **Scope is tracked files** (``git ls-files``), minus the read-only seed
-  inputs under ``prompt/`` (the one place these words may appear unrestricted),
-  this gate's own JSON, and files that contain a NUL byte. Text that is not
-  UTF-8 is decoded as Latin-1 rather than skipped, so an encoding cannot hide a
-  hit.
+* **Scope is tracked files** (``git ls-files``), minus this gate's own JSON
+  and files that contain a NUL byte. Since the author's ruling of 2026-09-25
+  the read-only seed inputs under ``prompt/`` are counted too: they are never
+  edited, but a new prompt is pinned when it is installed, so what a run is
+  handed is on the census. Text that is not UTF-8 is decoded as Latin-1 rather
+  than skipped, so an encoding cannot hide a hit.
+* **A sparse checkout is read as far as it goes.**  Tracked files marked
+  skip-worktree (outside a sparse checkout, so absent on disk) are not read,
+  their pins are set aside, and the clean message counts them. ``--regen``
+  refuses in a sparse checkout, since it would drop those pins.
 * **Matching is whole-word after normalization** (NFKD, combining marks
   dropped, lowercase). A token matches if it, or it minus a trailing ``s`` or
   ``es``, digests to a watched term. Two-word terms match two adjacent tokens on
@@ -53,10 +58,9 @@ from typing import NamedTuple
 REPO = Path(__file__).resolve().parent.parent
 WATCHLIST_REL = "ci/prose_watchlist.json"
 EXCLUDED_PATHS = frozenset({WATCHLIST_REL})
-# The whole `prompt/` tree is read-only seed input, not paper prose, so it is
-# out of scope -- one prefix rather than a file list, so a new `prompt/<n>/`
-# subtree needs no edit here.
-EXCLUDED_PREFIXES: tuple[str, ...] = ("prompt/",)
+# No prefix is excluded. Until 2026-09-25 the whole `prompt/` tree was; by the
+# author's ruling of that date it is counted under the pin like any other file.
+EXCLUDED_PREFIXES: tuple[str, ...] = ()
 
 TOKEN = re.compile(r"\b[a-z]+\b")
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
@@ -173,6 +177,24 @@ def tracked_files(repo: Path) -> list[str]:
     )
 
 
+def sparse_files(repo: Path) -> set[str]:
+    """Tracked files marked skip-worktree (``git ls-files -t`` tag ``S``):
+    outside a sparse checkout, so absent on disk and not read."""
+    proc = subprocess.run(
+        ["git", "ls-files", "-z", "-t"], capture_output=True, cwd=repo, check=False
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(
+            "git ls-files -t failed: " + proc.stderr.decode("utf-8", "replace")
+        )
+    out: set[str] = set()
+    for raw in proc.stdout.split(b"\0"):
+        entry = raw.decode("utf-8")
+        if entry.startswith("S "):
+            out.add(entry[2:].replace("\\", "/"))
+    return out
+
+
 def scan_repo(
     repo: Path,
     watched: Mapping[str, str],
@@ -286,18 +308,31 @@ def run(
     watched = data["watched"]
     baseline = data["baseline"]
     assert isinstance(watched, dict) and isinstance(baseline, dict)
+    unread: set[str] = set()
+    if files is None:
+        unread = sparse_files(repo)
+        if unread:
+            files = [f for f in tracked_files(repo) if f not in unread]
+    pinned = {rel: counts for rel, counts in baseline.items() if rel not in unread}
     hits = scan_repo(repo, watched, files)
     current = census_of(hits)
-    failures = compare(baseline, current, hits)
+    failures = compare(pinned, current, hits)
     if failures:
         return 1, failures, hits
     total = sum(len(v) for v in hits.values())
+    set_aside = len(set(baseline) & unread)
+    note = (
+        f"; {set_aside} pinned files lie outside this sparse checkout and were "
+        f"not read"
+        if set_aside
+        else ""
+    )
     return (
         0,
         [
             f"prose watchlist clean: {len(watched)} watched terms, "
             f"{len(hits)} files with pinned hits, {total} hits, census "
-            f"matches its pin"
+            f"matches its pin{note}"
         ],
         hits,
     )
@@ -323,6 +358,11 @@ def regen(repo: Path, path: Path, data: dict[str, object]) -> list[str]:
     watched = data["watched"]
     old = data["baseline"]
     assert isinstance(watched, dict) and isinstance(old, dict)
+    if sparse_files(repo):
+        return [
+            "regen: refused: this is a sparse checkout, and a regenerated pin "
+            "would drop the pins of the files it does not hold"
+        ]
     new = census_of(scan_repo(repo, watched))
     diff = compare(old, new)
     data["baseline"] = new

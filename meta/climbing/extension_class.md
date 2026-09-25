@@ -1,32 +1,42 @@
-# Extension class for the climbing track: draft, not yet frozen
+# Extension class for the climbing track (frozen 2026-09-25)
 
-**Status:** chosen, outside the seal. This is a **draft**. Rubric rule L3
-needs the class frozen (its SHA-256 committed) before any rung's seed is
-written. Freezing it is the author's decision (decision D5 in
-`h1_cancellation/packet.md`). Until then no rung may cite it as frozen.
+**Status:** chosen, outside the seal. **Frozen** by the author's ruling of
+2026-09-25 (D5 in `rulings.md`). Its SHA-256 is in `extension_class.sha256`.
+The operator wrote each member's sentences out in full on that date, from
+the draft of 2026-09-24. Once frozen, this file is never edited; a changed
+class is a new file with a new digest and a new ruling.
 
 Every member is one or two sentences in seed words, and each changes the
-states, the steps, or which results are the same (rule L4). The class is an
-operator's input. A rung that installs a member derives consequences of that
-member, never the member itself.
+states, the steps, or which results are the same (rubric rule L4). The class
+is an operator's input. A rung that installs a member derives consequences
+of that member, never the member itself. A member is written against the
+seed it edits. "Replaces" names the sentence it replaces; "adds" means the
+sentence is new, and "joins the list" means the kind is appended to the
+seed's list of changes. Where a member names both relations, a seed with one
+relation reads only its `r` part.
 
-| member | sentence(s), in seed words | what it adds |
+| member | sentences, in seed words | what it adds |
 |---|---|---|
-| cancel | "Two results that differ only in how their terms are written, or only by an `xry` and an `xsy` asserted together, are the same result." | signed counts on each ordered pair |
-| raise | "… or only by raising terms, are the same result. Raising a term `x` adds `xry` and `ysx` once for every other term `y`." | moves that repair a result without changing its class; least members of a class |
-| fill one / two / three | "A change is exactly one of: …; filling *k* different terms." plus a balance sentence recording, for every result, which filled terms balance | a local check on a closed sequence of one, two or three terms |
-| compose | a change that joins `xry` and `yrz` into `xrz` | counting sequences of assertions |
-| divide | counts may be divided as well as added | fractional counts |
-| stand-for | a term may stand for an assertion | assertions as things a change can act on |
-| between | a change that fills between two changes that start and end together | a change acting on changes |
-| typed and joined | terms of two kinds, and a rule joining an assertion of one kind to the other | two sorts of term |
-| share | two results joined along the terms they share | gluing two results |
-| orient | reversing an assertion flips its sign | reversal as a change |
-| fewest build | an obstructed change is answered by the fewest further changes | a chosen, least answer |
+| cancel | Replaces the sameness sentence: "Two results that differ only in how their terms are written, or only by an `xry` and an `xsy` asserted together, are the same result." | counts with a sign on each ordered pair |
+| raise | Needs cancel. Replaces the sameness sentence: "Two results that differ only in how their terms are written, only by an `xry` and an `xsy` asserted together, or only by raising terms, are the same result." Adds: "Raising a term `x` adds `xry` and `ysx` once for every other term `y`." | moves that repair a result without changing what it is the same as; least members of a result |
+| fill one | "Filling one term" joins the list. Adds: "A filled term `x` balances when `xrx` and `xsx` are asserted equally often; for every result, record which filled terms balance." | a local check on a single term |
+| fill two | "Filling two different terms" joins the list. Adds: "Two filled terms `x`, `y` balance when, going from `x` to `y` and back to `x`, as many assertions are written with `r` as with `s`, each counted as often as it is asserted; for every result, record which filled terms balance." | a local check on a return between two terms |
+| fill three | "Filling three different terms" joins the list. Adds: "Three filled terms `x`, `y`, `z` balance when, going from `x` to `y` to `z` and back to `x`, as many assertions are written with `r` as with `s`, each counted as often as it is asserted; for every result, record which filled terms balance." | a local check on a closed sequence of three terms |
+| compose | "Composing two assertions" joins the list. Adds: "Composing `xry` and `yrz` adds `xrz`; composing `xsy` and `ysz` adds `xsz`." | counting sequences of assertions |
+| divide | Adds: "A multiplicity is a fraction. Dividing is a change: it divides every multiplicity by the same whole number greater than one." "Dividing" joins the list. | fractional counts |
+| stand-for | Adds: "Every asserted `xry` is also a term, written `(xry)`, and may appear in assertions like any other term." | assertions as things a change can act on |
+| between | Adds: "Two sequences of changes that start at the same result and end at the same result may be filled. Filling them is a change, and a result records which pairs of sequences are filled." "Filling two sequences" joins the list. | a change acting on changes |
+| typed and joined | Replaces the first sentence: "Terms are written with small or capital letters. An assertion joins two small terms, two capital terms, or a small term `x` to a capital term `Y`, written `xjY`. Every small term is joined to exactly one capital term." | two kinds of term, and a rule joining them |
+| share | "Joining two results" joins the list. Adds: "Joining the current result with an earlier result keeps every term and every assertion of either, writing once each term that is written with the same letter in both." | gluing two results |
+| orient | Replaces the sameness sentence: "Two results that differ only in how their terms are written, or only by an `xry` and a `yrx` asserted together, are the same result." | reversal as a sign change |
+| fewest build | For a seed with an obstruction, replaces the answering sentence: "An obstructed change is answered by the fewest further changes after which no `xrx` is asserted; declare them, and record the change, the obstruction, and the answer." | a least answer |
 
-Sentences marked "…" or given only as a description must be written out in
-full before the class is frozen. Decision D5 also settles whether the
-native track aims at results that need division together with further
-arithmetic laws a seed would have to supply outright (estimated at eight to
-twelve heavy rungs). The recommendation is no: keep "divide" in the class,
-but leave those results to supplied encodings.
+## Excluded by the ruling
+
+The native track does not aim at results that need division together with
+further arithmetic laws a seed would have to supply outright, such as a
+pairing of counts or a rule whose double is a change of sign. The earlier
+estimate was eight to twelve heavy rungs for them. No member supplies those
+laws, so no rung licensed by this class can reach them. Where they are wanted,
+they are hosted as supplied encodings, graded as supplied, outside this
+track. "Divide" stays in the class for the results that need division alone.

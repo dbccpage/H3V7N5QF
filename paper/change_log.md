@@ -487,3 +487,20 @@ reading of the seed.
     is read-only, so they are left as they are and the finding is recorded
     in `meta/climbing/blindness.md`. Nothing under `prompt/`, `code/`,
     `lean4/`, `evidence/`, or any paper body changes.
+
+42. **The twenty-second seed installed; the watchlist counts `prompt/`
+    (2026-09-25).** By the author's rulings of 2026-09-25,
+    `prompt/twentysecond/seed_prompt.md` (SHA-256
+    `dd6ea130764ddc6336ba4e21adcac1493cfca11312574dabf25c9859cddefd04`) and
+    `prompt/twentysecond/prompt.md` (SHA-256
+    `a09505016125a4d53a653ebbfb53aef34cff86b846756f34b08e80197409fc3d`) are
+    installed as LF bytes. The seed is the ninth seed
+    (`7231e4280445abcc74f5fc22e5c741178cae507854d93af49878404fc1a9d135`)
+    with one sentence replaced. `ci/check_prose_watchlist.py` no longer
+    excludes `prompt/`: every prompt, the new one included, is counted
+    under the pin. In a sparse checkout it sets aside the pins of files it
+    does not hold, and it refuses to regenerate there.
+    `ci/prose_watchlist.json` gains 16 watched digests, and the pin is
+    regenerated. Tests in `tests/test_prose_watchlist.py` cover the new
+    scope and the sparse case by injection. No earlier prompt, code, Lean,
+    evidence, or paper file changes.
