@@ -25,22 +25,40 @@ item 41 logs the change.
 | `paper/change_log.md` item 40; `paper/second/change_log.md` item 15 | Name another repository and the review area's vocabulary. A run that reads its parent's change log sees them. | Change logs are append-only. The author may leave them or add a dated note. |
 | `ci/check_prose_watchlist.py` scope | `prompt/` was excluded, so nothing above was counted. | **Resolved 2026-09-25** (ruling D1): `prompt/` is counted under a pin, so these prompts' hits are on the census. |
 | `meta/next_ten/*/prompt.md`, `meta/next_ten/make_packages.py` | Eleven citations of the missing `docs/index/topics.md`. | Those packages are being run in open pull request #45; the fix belongs after it lands. |
-| git history | A run in a worktree that omits `meta/` can still read it with `git show` or `git log -p`. | Blind by instruction on this point. A stronger fix is a run repository without that history; not done. |
+| git history | A run in a worktree that omits `meta/` can still read it with `git show` or `git log -p`. **This happened in H1 (PR #48):** the run's `git log --stat` showed operator commit messages from #46 and #47, which summarize the rubric and the rulings, and file names under `meta/climbing/`. It did not show the prediction's content. | **Fixed 2026-09-26.** From H2 on, a run starts in a clone of a one-commit snapshot: no parent, a neutral message, and main's tree without `meta/`. From its HEAD no operator message and no `meta/` path can be reached (see `launch.md`, tested). |
 | deny patterns | Shell deny patterns match command prefixes. A script (for example Python's `urllib`) can still open a connection, and `lake` fetches a missing dependency by itself. | The climbing track removes the `lake` case (its Lean package has no dependency). The rest rests on instruction. |
 
 ## The clean-room launch, for every later derivation
 
+The full commands are in `launch.md`. In outline:
+
 1. The author installs the seed and task under `prompt/<n>/` through a pull
-   request, as before.
-2. The operator freezes the predictions: commit the SHA-256 of the
-   prediction file before the run. The plaintext stays in `meta/`, which the
-   run's worktree omits.
-3. A fresh worktree from `origin/main`, with a sparse checkout that omits
-   `meta/`. No junction to another checkout's `.lake/`.
+   request.
+2. The operator freezes the predictions: the SHA-256 of the prediction file
+   is committed before the run. The plaintext stays in `meta/`, and nothing
+   of `meta/` reaches the run.
+3. **A history-free clone (from 2026-09-26).** The operator makes a
+   snapshot commit whose tree is `main`'s tree without `meta/`. It has no
+   parent and the message "Snapshot". The operator clones it at depth 1,
+   one branch, no tags. The clone's remote is removed and its reflog
+   emptied, so the clone records neither the source path nor any operator
+   message. No junction to another checkout's `.lake/`.
 4. The session starts with project settings only, no outside servers, no
-   skills, and no browser tools. Each packet gives the exact command.
-5. The run commits on its branch and does not push. The operator pushes,
-   has a second model review the run, and opens the pull request.
-6. The transcript is audited from outside the worktree. The run's seed,
-   prompt and paper body carry no outside vocabulary. Outside words appear
-   only in the paper's final section.
+   skills and no browser tools. Its transcript is written outside the
+   repository.
+5. The run commits on its branch in the clone and cannot push.
+6. **Landing.** The operator fetches the run's branch into the main
+   repository and cherry-picks the run's commits (snapshot..tip) onto a
+   branch from `origin/main`. `git range-diff` must show every commit as
+   equal (`=`). The replayed tip's tree equals the run's tip outside `meta/`
+   when `main` has not moved. The operator pushes, has a second model review
+   the run, and opens the pull request, with the run's original commit ids
+   in its body.
+7. The transcript is audited from outside. The run's seed, prompt and paper
+   body carry no outside vocabulary. Outside words appear only in the
+   paper's final section.
+
+**What is left.** The run's `CLAUDE.md` and the base change log are
+`main`'s, so their operator notes are visible; they are kept neutral. A
+command could still reach a path outside the clone if the run guessed it.
+That rests on instruction.

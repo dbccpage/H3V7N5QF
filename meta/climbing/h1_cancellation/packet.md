@@ -84,6 +84,8 @@ To be filled from evidence after the run, in `record.md`:
 
 ## 6. Launch, with isolation
 
+*H1 ran with the steps below. From H2 on, `../launch.md` replaces steps 3 and 4 with a history-free clone, because a worktree exposes commit messages (`../blindness.md`).*
+
 The decisions are adopted and P0 is merged. The commands are PowerShell. In
 Git Bash, prefix the `sparse-checkout` line with `MSYS_NO_PATHCONV=1`, or
 the `/meta/` pattern is rewritten into a Windows path. This was tested on
