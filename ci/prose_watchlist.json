@@ -4,16 +4,6 @@
     "A CENSUS, not a ban: every whole-word hit in tracked prose is pinned per file under baseline. The pins gather the tree outside-theory vocabulary in one place -- for these papers, each paper final nearest-known-results section. Run: python ci/check_prose_watchlist.py; probe: --probe WORD; repin deliberately: --regen."
   ],
   "baseline": {
-    "CLAUDE.md": {
-      "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e": 4
-    },
-    "ci/OEWAS_GATES.md": {
-      "808a374d01599f57dd4fdbf441edfa3e1958792b8bdeb2404e033789ca3e3bb7": 4,
-      "fc3d315607dc4ffad60c19d553a485ff2bca65518b33b93ad16988de918583e2": 1
-    },
-    "ci/check_prose_watchlist.py": {
-      "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e": 1
-    },
     "meta/README.md": {
       "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e": 1
     },
@@ -61,6 +51,13 @@
     "meta/review/SUMMARY.md": {
       "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e": 4,
       "edb2cd3b74c999af70f0b7054990f2072dc6e10a847af6ed05954b8994b730fe": 2
+    },
+    "meta/review/detector_design_notes.md": {
+      "808a374d01599f57dd4fdbf441edfa3e1958792b8bdeb2404e033789ca3e3bb7": 3,
+      "fc3d315607dc4ffad60c19d553a485ff2bca65518b33b93ad16988de918583e2": 1
+    },
+    "meta/review/plan_2026-09-23.md": {
+      "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e": 4
     },
     "meta/review/watchlist_decision.md": {
       "3c751652653e3f64b5be8dac3b9e3b7e74dfcc696d14cf8ecff610cafbd618b0": 1,

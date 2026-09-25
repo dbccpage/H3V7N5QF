@@ -1,6 +1,6 @@
 """Prose-level watchlist census for outside-theory words.
 
-Ported from the genesis repository (`dbccpage/19L57G1`, `ci/check_prose_watchlist.py`).
+Ported from an earlier repository's gate of the same name.
 This repository's rule (`prompt/*/prompt.md`, `CLAUDE.md`) is that the body of a
 paper uses only the seed's own words; outside results are named only in the
 paper's final section. Nothing enforced that mechanically here until this gate:

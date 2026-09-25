@@ -10,8 +10,8 @@ exact defect, naming it, recovering when it is removed — not by being green
 
 They are "anti-skill detectors": each names one *failure pattern* — a move
 that looks like evidence and is not. They are deliberately **narrow and
-domain-specific**. An immune system that tries to detect "wrongness" in
-general overfits and fires on healthy tissue; these fire on two precise,
+domain-specific**. A detector that tries to find "wrongness" in general
+overfits and fires on sound work; these fire on two precise,
 mechanical shapes and are silent otherwise, and each documents exactly what
 it does **not** see.
 
@@ -106,34 +106,10 @@ elaborates the names and checks the actual axiom dependencies. Neither
 detector establishes that the cited theorem proves the English claim; the
 claim ledger and definitional-citation review have that job.
 
-## Anti-skills are detectors, not encyclopedia entries
+## Where the design notes went
 
-The reason a hand-written skill/anti-skill library becomes an unfileable pile
-is that it stores knowledge **generatively** -- as descriptions of good and
-bad patterns, which cannot be enumerated, organized, or scoped to a domain. A
-biological immune system has the same problem and does not solve it by
-cataloguing pathogens; it stores **antibodies** -- detectors -- and grows them
-from exposure. These gates follow that: an anti-skill here is never a
-paragraph, it is an executable assay with an injection proof that it fires on
-the real defect and stays silent on healthy code. Detectors are
-*discriminative*, not generative -- you never enumerate all the ways to be
-wrong, you only recognize a specific wrong when it appears -- and each domain
-carries its own **antigen panel**, grown from that domain's real defects. The
-filing system is the gate structure itself: detector + injection proof +
-panel. That is where a skill/anti-skill goes; it does not go in a prompt.
-
-## On growing this into OEWAS without forcing it
-
-These are the first two entries in what could become a registry of anti-skill
-detectors. The temptation is to impose a categorical scheme first — declare
-the detectors an operad, look for instances. That overfits: an immune system
-that starts from the abstraction fires on shapes the abstraction predicts,
-not on the pathogens the corpus actually carries. The blind-derivation ethos
-applies to the immune system too — **do not target a known structure.** Grow
-detectors from observed defects (both of these came from real over-claims),
-keep each narrow and domain-specific, and *let* compositional structure
-appear if it is there: if a detector for "vacuous check *inside* a
-definitional-citation context" turns out to be the composite of these two,
-that composition is evidence of an operadic skeleton — earned, not assumed.
-Until a composite detector is needed by a real defect, there is nothing to
-compose, and forcing one would be the anti-skill this system exists to catch.
+Two sections of design notes on how these detectors should grow stood here.
+They are not a gate and not an input to any derivation, and on 2026-09-24
+they moved to the review area (`paper/change_log.md` item 41). In short:
+each detector is an executable check with an injection proof, grown from a
+real defect, kept narrow, and never replaced by a paragraph in a prompt.
