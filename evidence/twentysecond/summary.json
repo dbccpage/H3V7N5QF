@@ -1,0 +1,563 @@
+{
+  "attempts_in_full_log": 22,
+  "disagreements": {
+    "cost_raised_by_more_than_one": [],
+    "count_mismatch": [],
+    "exchange_mismatch": [],
+    "ninth_mismatch": [],
+    "one_term_not_one_sequence": [],
+    "raising_not_addition": [],
+    "reach_mismatch": [],
+    "read_back_mismatch": [],
+    "readings_mismatch": [],
+    "record_move_mismatch": [],
+    "removal_outside": [],
+    "round_not_cost": [],
+    "sameness_mismatch": [],
+    "seventh_mismatch": [],
+    "two_term_mismatch": [],
+    "undo_failed": []
+  },
+  "every_check_clean": true,
+  "generated_sameness": {
+    "classes": 247,
+    "results": 247,
+    "states": 1242
+  },
+  "given": {
+    "changes_on_the_empty_state": 1
+  },
+  "independent_counts": {
+    "results_of_each_round_with_at_most_two_terms_up_to_round_100": [
+      1,
+      1,
+      3,
+      6,
+      20,
+      46,
+      102,
+      182,
+      312,
+      478,
+      714,
+      998,
+      1372,
+      1806,
+      2350,
+      2966,
+      3712,
+      4542,
+      5522,
+      6598,
+      7844,
+      9198,
+      10742,
+      12406,
+      14280,
+      16286,
+      18522,
+      20902,
+      23532,
+      26318,
+      29374,
+      32598,
+      36112,
+      39806,
+      43810,
+      48006,
+      52532,
+      57262,
+      62342,
+      67638,
+      73304,
+      79198,
+      85482,
+      92006,
+      98940,
+      106126,
+      113742,
+      121622,
+      129952,
+      138558,
+      147634,
+      156998,
+      166852,
+      177006,
+      187670,
+      198646,
+      210152,
+      221982,
+      234362,
+      247078,
+      260364,
+      273998,
+      288222,
+      302806,
+      318000,
+      333566,
+      349762,
+      366342,
+      383572,
+      401198,
+      419494,
+      438198,
+      457592,
+      477406,
+      497930,
+      518886,
+      540572,
+      562702,
+      585582,
+      608918,
+      633024,
+      657598,
+      682962,
+      708806,
+      735460,
+      762606,
+      790582,
+      819062,
+      848392,
+      878238,
+      908954,
+      940198,
+      972332,
+      1005006,
+      1038590,
+      1072726,
+      1107792,
+      1143422,
+      1180002,
+      1217158,
+      1255284
+    ],
+    "results_of_each_round_without_bound": [
+      1,
+      1,
+      3,
+      7,
+      25,
+      83,
+      316,
+      1272,
+      5506,
+      25035,
+      120137,
+      603437,
+      3161084,
+      17212344,
+      97203415
+    ],
+    "results_with_at_most_two_terms_within_100_rounds": 31391855,
+    "totals_by_terms": [
+      1,
+      21,
+      4211,
+      554271,
+      22583282,
+      306479541
+    ]
+  },
+  "plan": {
+    "full_log": [
+      2,
+      3
+    ],
+    "generated_sameness_checked_on": [
+      2,
+      3
+    ],
+    "reachability": [
+      3,
+      4
+    ],
+    "readings": [
+      2,
+      8
+    ],
+    "runs": [
+      [
+        5,
+        8,
+        8
+      ],
+      [
+        3,
+        10,
+        9
+      ],
+      [
+        2,
+        24,
+        12
+      ]
+    ]
+  },
+  "reachability": {
+    "bound_on_terms": 3,
+    "ordered_pairs": 1296,
+    "ordered_pairs_reachable": 1261,
+    "ordered_pairs_unreachable": 35,
+    "results": 36,
+    "rounds": 4,
+    "unordered_pairs_reachable_both_ways": 595
+  },
+  "runs": {
+    "bound2_rounds24": {
+      "attempts": 979814,
+      "attempts_equal_formula": true,
+      "bound_on_terms": 2,
+      "changes": {
+        "changes_checked": 907939,
+        "changes_keeping_the_round": 0,
+        "changes_lowering_the_round": 593731,
+        "changes_raising_the_round": 314208,
+        "how_each_kind_moves_what_is_recorded": {
+          "add a term": {
+            "terms +1, assertions +0": 46
+          },
+          "add an assertion": {
+            "terms +0, assertions +1": 314162,
+            "terms +0, assertions -1": 260928
+          },
+          "identify two terms": {
+            "terms -1, assertions +0": 12715,
+            "terms -1, assertions -10": 7210,
+            "terms -1, assertions -12": 6718,
+            "terms -1, assertions -14": 5930,
+            "terms -1, assertions -16": 4846,
+            "terms -1, assertions -18": 3410,
+            "terms -1, assertions -2": 7074,
+            "terms -1, assertions -20": 1606,
+            "terms -1, assertions -4": 7382,
+            "terms -1, assertions -6": 7506,
+            "terms -1, assertions -8": 7478
+          },
+          "remove an assertion": {
+            "terms +0, assertions -1": 260928
+          }
+        },
+        "removals_from_states_not_plain_checked": 575090
+      },
+      "frontier_entries": 71875,
+      "frontier_entries_are_1_per_state_with_N_terms": true,
+      "frontier_states": 71875,
+      "last_round_with_a_new_result": 24,
+      "ninth_derivation": {
+        "most_ninth_results_taken_in_by_one_result": 70,
+        "ninth_results": 22021,
+        "ninth_results_asserting_no_pair_in_both_relations": 4235,
+        "ninth_results_merged_away": 17786,
+        "ninth_rounds": 12,
+        "results_here_taking_in_more_than_one_ninth_result": 1864,
+        "results_here_within_the_ninth_rounds": 4235
+      },
+      "results": 86201,
+      "results_by_terms": {
+        "0": 1,
+        "1": 47,
+        "2": 86153
+      },
+      "results_of_the_last_round_whose_changes_await": 14280,
+      "results_reached_by_one_shortest_sequence": 49,
+      "results_that_reach_what_is_given": 1,
+      "rounds": 24,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true
+      ],
+      "seventh_derivation": {
+        "first_result_answered_none": "terms a; asserted asa",
+        "its_round": 2,
+        "results_the_map_back_answers_none_on": 78662,
+        "results_whose_plain_state_asserts_nothing_with_s": 7539,
+        "seventh_results": 7539
+      },
+      "shortest_sequences_total": 498329110651631,
+      "statements_holding_in_every_result": [],
+      "statements_holding_in_no_result": [
+        "some_pair_in_both"
+      ],
+      "statements_tested": 42,
+      "statements_that_do_not_follow": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "exactly_two_terms_r",
+        "something_asserted_r",
+        "at_least_one_term_r",
+        "no_xrx_r",
+        "at_least_two_terms_r",
+        "nothing_asserted_r",
+        "some_xrx_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "exactly_two_terms_s",
+        "something_asserted_s",
+        "at_least_one_term_s",
+        "no_xrx_s",
+        "at_least_two_terms_s",
+        "nothing_asserted_s",
+        "some_xrx_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s",
+        "nothing_in_s",
+        "nothing_in_r",
+        "relations_agree",
+        "s_within_r",
+        "r_within_s",
+        "nothing_at_all",
+        "unchanged_by_exchange"
+      ]
+    },
+    "bound3_rounds10": {
+      "attempts": 349352,
+      "attempts_equal_formula": true,
+      "bound_on_terms": 3,
+      "changes": {
+        "changes_checked": 336591,
+        "changes_keeping_the_round": 0,
+        "changes_lowering_the_round": 153872,
+        "changes_raising_the_round": 182719,
+        "how_each_kind_moves_what_is_recorded": {
+          "add a term": {
+            "terms +1, assertions +0": 1151
+          },
+          "add an assertion": {
+            "terms +0, assertions +1": 181568,
+            "terms +0, assertions -1": 57228
+          },
+          "identify two terms": {
+            "terms -1, assertions +0": 18244,
+            "terms -1, assertions -2": 16062,
+            "terms -1, assertions -4": 4754,
+            "terms -1, assertions -6": 356
+          },
+          "remove an assertion": {
+            "terms +0, assertions -1": 57228
+          }
+        },
+        "removals_from_states_not_plain_checked": 238796
+      },
+      "frontier_entries": 12761,
+      "frontier_entries_are_1_per_state_with_N_terms": true,
+      "frontier_states": 12761,
+      "last_round_with_a_new_result": 10,
+      "ninth_derivation": {
+        "most_ninth_results_taken_in_by_one_result": 55,
+        "ninth_results": 25965,
+        "ninth_results_asserting_no_pair_in_both_relations": 13912,
+        "ninth_results_merged_away": 12053,
+        "ninth_rounds": 9,
+        "results_here_taking_in_more_than_one_ninth_result": 1343,
+        "results_here_within_the_ninth_rounds": 13912
+      },
+      "results": 39526,
+      "results_by_terms": {
+        "0": 1,
+        "1": 19,
+        "2": 1845,
+        "3": 37661
+      },
+      "results_of_the_last_round_whose_changes_await": 25614,
+      "results_reached_by_one_shortest_sequence": 22,
+      "results_that_reach_what_is_given": 1,
+      "rounds": 10,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "seventh_derivation": {
+        "first_result_answered_none": "terms a; asserted asa",
+        "its_round": 2,
+        "results_the_map_back_answers_none_on": 37294,
+        "results_whose_plain_state_asserts_nothing_with_s": 2232,
+        "seventh_results": 2232
+      },
+      "shortest_sequences_total": 404184064,
+      "statements_holding_in_every_result": [],
+      "statements_holding_in_no_result": [
+        "some_pair_in_both"
+      ],
+      "statements_tested": 42,
+      "statements_that_do_not_follow": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "exactly_two_terms_r",
+        "something_asserted_r",
+        "at_least_one_term_r",
+        "no_xrx_r",
+        "at_least_two_terms_r",
+        "nothing_asserted_r",
+        "some_xrx_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "exactly_two_terms_s",
+        "something_asserted_s",
+        "at_least_one_term_s",
+        "no_xrx_s",
+        "at_least_two_terms_s",
+        "nothing_asserted_s",
+        "some_xrx_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s",
+        "nothing_in_s",
+        "nothing_in_r",
+        "relations_agree",
+        "s_within_r",
+        "r_within_s",
+        "nothing_at_all",
+        "unchanged_by_exchange"
+      ]
+    },
+    "bound5_rounds8": {
+      "attempts": 44930,
+      "attempts_equal_formula": true,
+      "bound_on_terms": 5,
+      "changes": {
+        "changes_checked": 44890,
+        "changes_keeping_the_round": 0,
+        "changes_lowering_the_round": 15508,
+        "changes_raising_the_round": 29382,
+        "how_each_kind_moves_what_is_recorded": {
+          "add a term": {
+            "terms +1, assertions +0": 1662
+          },
+          "add an assertion": {
+            "terms +0, assertions +1": 27720,
+            "terms +0, assertions -1": 4952
+          },
+          "identify two terms": {
+            "terms -1, assertions +0": 4226,
+            "terms -1, assertions -2": 1242,
+            "terms -1, assertions -4": 136
+          },
+          "remove an assertion": {
+            "terms +0, assertions -1": 4952
+          }
+        },
+        "removals_from_states_not_plain_checked": 32672
+      },
+      "frontier_entries": 40,
+      "frontier_entries_are_1_per_state_with_N_terms": true,
+      "frontier_states": 40,
+      "last_round_with_a_new_result": 8,
+      "ninth_derivation": {
+        "most_ninth_results_taken_in_by_one_result": 55,
+        "ninth_results": 10416,
+        "ninth_results_asserting_no_pair_in_both_relations": 7168,
+        "ninth_results_merged_away": 3248,
+        "ninth_rounds": 8,
+        "results_here_taking_in_more_than_one_ninth_result": 434,
+        "results_here_within_the_ninth_rounds": 7168
+      },
+      "results": 7168,
+      "results_by_terms": {
+        "0": 1,
+        "1": 15,
+        "2": 657,
+        "3": 3811,
+        "4": 2340,
+        "5": 344
+      },
+      "results_of_the_last_round_whose_changes_await": 5466,
+      "results_reached_by_one_shortest_sequence": 20,
+      "results_that_reach_what_is_given": 1,
+      "rounds": 8,
+      "rounds_agreeing_with_unbounded_formula": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "seventh_derivation": {
+        "first_result_answered_none": "terms a; asserted asa",
+        "its_round": 2,
+        "results_the_map_back_answers_none_on": 6369,
+        "results_whose_plain_state_asserts_nothing_with_s": 799,
+        "seventh_results": 799
+      },
+      "shortest_sequences_total": 5370224,
+      "statements_holding_in_every_result": [],
+      "statements_holding_in_no_result": [
+        "some_pair_in_both"
+      ],
+      "statements_tested": 42,
+      "statements_that_do_not_follow": [
+        "both_ways_always_r",
+        "both_ways_never_r",
+        "passes_on_r",
+        "any_two_related_r",
+        "every_term_first_r",
+        "every_term_mentioned_r",
+        "exactly_two_terms_r",
+        "something_asserted_r",
+        "at_least_one_term_r",
+        "no_xrx_r",
+        "at_least_two_terms_r",
+        "nothing_asserted_r",
+        "some_xrx_r",
+        "nothing_twice_r",
+        "something_twice_r",
+        "same_multiplicity_r",
+        "both_ways_equal_r",
+        "both_ways_always_s",
+        "both_ways_never_s",
+        "passes_on_s",
+        "any_two_related_s",
+        "every_term_first_s",
+        "every_term_mentioned_s",
+        "exactly_two_terms_s",
+        "something_asserted_s",
+        "at_least_one_term_s",
+        "no_xrx_s",
+        "at_least_two_terms_s",
+        "nothing_asserted_s",
+        "some_xrx_s",
+        "nothing_twice_s",
+        "something_twice_s",
+        "same_multiplicity_s",
+        "both_ways_equal_s",
+        "nothing_in_s",
+        "nothing_in_r",
+        "relations_agree",
+        "s_within_r",
+        "r_within_s",
+        "nothing_at_all",
+        "unchanged_by_exchange"
+      ]
+    }
+  }
+}

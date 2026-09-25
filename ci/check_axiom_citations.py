@@ -23,8 +23,11 @@ DERIVATIONS = (
     "base", "second", "third", "fourth", "fifth", "sixth", "seventh",
     "eighth", "ninth", "tenth", "eleventh", "twelfth", "thirteenth",
     "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth",
-    "nineteenth", "twentieth", "twentyfirst",
+    "nineteenth", "twentieth", "twentyfirst", "twentysecond",
 )
+#: Lean packages scanned for declarations: `lean4/` (with the outside library) and, from the
+#: twenty-second derivation on, `lean4_core/` (no outside library).
+LEAN_ROOTS = ("lean4", "lean4_core")
 DECLARATION = re.compile(
     r"(?m)^\s*(?:@\[[^\]\n]*\]\s*)*"
     r"(?:(?:private|protected|noncomputable|unsafe|partial|public)\s+)*"
@@ -37,15 +40,18 @@ REPORT_NAME = re.compile(r"^'([^']+)' (?:depends on axioms:|does not depend)")
 def declarations(root: Path) -> set[str]:
     """Names for filtering prose tokens; the Lean report resolves them."""
     out: set[str] = set()
-    lean_root = root / "lean4"
-    paths = list(lean_root.glob("*.lean"))
-    paths.extend(
-        path for directory in lean_root.iterdir()
-        if directory.is_dir() and directory.name != ".lake"
-        for path in directory.glob("*.lean")
-    )
-    for path in paths:
-        out.update(DECLARATION.findall(path.read_text(encoding="utf-8")))
+    for name in LEAN_ROOTS:
+        lean_root = root / name
+        if not lean_root.is_dir():
+            continue
+        paths = list(lean_root.glob("*.lean"))
+        paths.extend(
+            path for directory in lean_root.iterdir()
+            if directory.is_dir() and directory.name != ".lake"
+            for path in directory.glob("*.lean")
+        )
+        for path in paths:
+            out.update(DECLARATION.findall(path.read_text(encoding="utf-8")))
     return out
 
 

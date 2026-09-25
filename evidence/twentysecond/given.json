@@ -1,0 +1,140 @@
+{
+  "an_addition_lowers_what_is_recorded": {
+    "after_adding_asa": "terms a; asserted ara asa",
+    "recorded_after": [
+      1,
+      0,
+      0
+    ],
+    "recorded_before": [
+      1,
+      1,
+      0
+    ],
+    "state": "terms a; asserted ara"
+  },
+  "changes": [
+    "add a term"
+  ],
+  "one_identification_takes_out_2c_assertions": [
+    {
+      "identified": "terms a; asserted ara asa",
+      "recorded": [
+        2,
+        1,
+        1
+      ],
+      "recorded_after": [
+        1,
+        0,
+        0
+      ],
+      "state": "terms a b; asserted arb bsa"
+    },
+    {
+      "identified": "terms a; asserted ara(2) asa(2)",
+      "recorded": [
+        2,
+        2,
+        2
+      ],
+      "recorded_after": [
+        1,
+        0,
+        0
+      ],
+      "state": "terms a b; asserted arb(2) bsa(2)"
+    },
+    {
+      "identified": "terms a; asserted ara(3) asa(3)",
+      "recorded": [
+        2,
+        3,
+        3
+      ],
+      "recorded_after": [
+        1,
+        0,
+        0
+      ],
+      "state": "terms a b; asserted arb(3) bsa(3)"
+    }
+  ],
+  "removing_ara_from_a_state_of_the_one_term_result_is_adding_asa_to_it": {
+    "after_adding_asa_to_a": "terms a; asserted asa",
+    "after_removing_ara": "terms a; asserted asa",
+    "same_result": true,
+    "state": "terms a; asserted ara asa"
+  },
+  "state": "no terms; asserted nothing",
+  "the_eighth_does_not_map_one_to_one": {
+    "different_eighth_states": true,
+    "one_result_here": true,
+    "states": [
+      "terms a b; asserted arb",
+      "terms a c (a and b are one term); asserted arc"
+    ]
+  },
+  "the_first_change_can_only_add_a_term": true,
+  "the_map_back": {
+    "a_asa_costs": 2,
+    "of_the_result_of_a_ara": "1::0-0*1",
+    "of_the_result_of_a_asa": null
+  },
+  "the_ninth_does_not_map_one_to_one": {
+    "ninth_sizes": [
+      1,
+      3
+    ],
+    "one_result_here": true,
+    "states": [
+      "terms a; asserted nothing",
+      "terms a; asserted ara asa"
+    ]
+  },
+  "two_additions_on_different_pairs_that_undo_up_to_writing": {
+    "after_adding_brb_then_asa": "terms a b; asserted ara brb asa",
+    "excesses_at_the_two_loops_before_and_after": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "same_result": true,
+    "state": "terms a b; asserted ara"
+  },
+  "undoing": {
+    "ninth_sizes": [
+      1,
+      2,
+      3
+    ],
+    "recorded": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "states": [
+      "terms a; asserted nothing",
+      "terms a; asserted ara",
+      "terms a; asserted ara asa"
+    ],
+    "the_third_is_the_first_result_here": true
+  }
+}

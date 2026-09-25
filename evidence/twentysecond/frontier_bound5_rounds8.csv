@@ -1,0 +1,41 @@
+state,written,round_first_reached,leaves_by_the_change
+5::|,terms a b c d e; asserted nothing,5,1
+5::|4-4*1,terms a b c d e; asserted ese,6,1
+5::|4-4*2,terms a b c d e; asserted ese(2),7,1
+5::|4-3*1,terms a b c d e; asserted esd,6,1
+5::|4-3*1.4-4*1,terms a b c d e; asserted esd ese,7,1
+5::|4-3*2,terms a b c d e; asserted esd(2),7,1
+5::|4-2*1.4-3*1,terms a b c d e; asserted esc esd,7,1
+5::|3-4*1.4-4*1,terms a b c d e; asserted dse ese,7,1
+5::|3-4*1.4-3*1,terms a b c d e; asserted dse esd,7,1
+5::|3-4*1.4-2*1,terms a b c d e; asserted dse esc,7,1
+5::|3-3*1.4-4*1,terms a b c d e; asserted dsd ese,7,1
+5::|3-3*1.4-2*1,terms a b c d e; asserted dsd esc,7,1
+5::|3-2*1.4-2*1,terms a b c d e; asserted dsc esc,7,1
+5::|3-2*1.4-1*1,terms a b c d e; asserted dsc esb,7,1
+5::4-4*1|,terms a b c d e; asserted ere,6,1
+5::4-4*1|4-3*1,terms a b c d e; asserted ere esd,7,1
+5::4-4*1|3-4*1,terms a b c d e; asserted ere dse,7,1
+5::4-4*1|3-3*1,terms a b c d e; asserted ere dsd,7,1
+5::4-4*1|3-2*1,terms a b c d e; asserted ere dsc,7,1
+5::4-4*2|,terms a b c d e; asserted ere(2),7,1
+5::4-3*1|,terms a b c d e; asserted erd,6,1
+5::4-3*1|4-4*1,terms a b c d e; asserted erd ese,7,1
+5::4-3*1|4-2*1,terms a b c d e; asserted erd esc,7,1
+5::4-3*1|3-4*1,terms a b c d e; asserted erd dse,7,1
+5::4-3*1|3-3*1,terms a b c d e; asserted erd dsd,7,1
+5::4-3*1|3-2*1,terms a b c d e; asserted erd dsc,7,1
+5::4-3*1|2-4*1,terms a b c d e; asserted erd cse,7,1
+5::4-3*1|2-3*1,terms a b c d e; asserted erd csd,7,1
+5::4-3*1|2-2*1,terms a b c d e; asserted erd csc,7,1
+5::4-3*1|2-1*1,terms a b c d e; asserted erd csb,7,1
+5::4-3*1.4-4*1|,terms a b c d e; asserted erd ere,7,1
+5::4-3*2|,terms a b c d e; asserted erd(2),7,1
+5::4-2*1.4-3*1|,terms a b c d e; asserted erc erd,7,1
+5::3-4*1.4-4*1|,terms a b c d e; asserted dre ere,7,1
+5::3-4*1.4-3*1|,terms a b c d e; asserted dre erd,7,1
+5::3-4*1.4-2*1|,terms a b c d e; asserted dre erc,7,1
+5::3-3*1.4-4*1|,terms a b c d e; asserted drd ere,7,1
+5::3-3*1.4-2*1|,terms a b c d e; asserted drd erc,7,1
+5::3-2*1.4-2*1|,terms a b c d e; asserted drc erc,7,1
+5::3-2*1.4-1*1|,terms a b c d e; asserted drc erb,7,1

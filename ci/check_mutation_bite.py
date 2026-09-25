@@ -478,6 +478,56 @@ def _twentyfirst() -> Panel:
     return Panel("twentyfirst", RefusalCheck, signals, cases)
 
 
+def _twentysecond() -> Panel:
+    from ninth.explore import explore as real_ninth
+    from seventh.explore import explore as real_seventh
+    from twentysecond.changes import Change, Kind, perform
+    from twentysecond.evidence import JointCheck, audit
+
+    def signals() -> frozenset[str]:
+        return _nonempty_lists(audit(2, 4, 4, 1, 2))
+
+    def fewer_rounds(real: Callable[..., Any]) -> Callable[..., Any]:
+        def wrong(start: Any, bound: int, rounds: int = 100, keep_log: bool = False) -> Any:
+            return real(start, bound, max(rounds - 1, 0), keep_log)
+
+        return wrong
+
+    def add_r_twice(state: Any, x: int, y: int) -> Any:
+        once = perform(state, Change(Kind.ADD_ASSERTION, "r", x, y))
+        return perform(once, Change(Kind.ADD_ASSERTION, "r", x, y))
+
+    cases: dict[str, Mutation] = {
+        # the cost formula against the rounds, and against every change
+        "round_not_cost": lambda: _one("twentysecond.evidence.cost", lambda _s: -1),
+        "cost_raised_by_more_than_one": lambda: _one("twentysecond.evidence.cost", lambda s: 5 * s.n),
+        # the rule for what is recorded, computed from the excesses, against the outcome
+        "record_move_mismatch": lambda: _one("twentysecond.evidence.predicted_move", lambda _s, _c: (9, 9)),
+        # a removal from a state that is not plain, against the plain state's outcomes
+        "removal_outside": lambda: _one("twentysecond.evidence.result_changes", lambda _s: ()),
+        # the second addition of the other relation, replaced by the same relation again
+        "undo_failed": lambda: _one("twentysecond.evidence.add_r_then_s", add_r_twice),
+        "raising_not_addition": lambda: _one("twentysecond.evidence.is_addition", lambda _c: False),
+        # the independent counts and closed forms
+        "count_mismatch": lambda: _one("twentysecond.evidence.counts_within", lambda _b, _r: {}),
+        "two_term_mismatch": lambda: _one("twentysecond.evidence.two_term_round_count", lambda _r: -1),
+        "one_term_not_one_sequence": lambda: _one(
+            "twentysecond.evidence.count_shortest_sequences", lambda e: {s: 2 for s in e.depth}
+        ),
+        # the exchange: an identity in its place negates no excess
+        "exchange_mismatch": lambda: _one("twentysecond.evidence.swap", lambda s: s),
+        # the earlier derivations' explorations, cut short by a round
+        "seventh_mismatch": lambda: _one("twentysecond.evidence.explore_seventh", fewer_rounds(real_seventh)),
+        "read_back_mismatch": lambda: _one("twentysecond.evidence.read_back", lambda _s: None),
+        "ninth_mismatch": lambda: _one("twentysecond.evidence.explore_ninth", fewer_rounds(real_ninth)),
+        "reach_mismatch": lambda: _one("twentysecond.evidence.reachable", lambda _s, _t: True),
+        # the sameness: equality of writings in place of the seed's sameness
+        "sameness_mismatch": lambda: _one("twentysecond.evidence.same", lambda s, t: s == t),
+        "readings_mismatch": lambda: _one("twentysecond.evidence.cost_j2", lambda _k: -1),
+    }
+    return Panel("twentysecond", JointCheck, signals, cases)
+
+
 def panels() -> list[Panel]:
     return [
         _tenth(),
@@ -492,6 +542,7 @@ def panels() -> list[Panel]:
         _nineteenth(),
         _twentieth(),
         _twentyfirst(),
+        _twentysecond(),
     ]
 
 

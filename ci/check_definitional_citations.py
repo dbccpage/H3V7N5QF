@@ -110,6 +110,18 @@ class Theorems:
         self._by_lib = by_lib
         self._flat = flat
 
+    def merged(self, other: Theorems) -> Theorems:
+        """Both packages' theorems (`lean4/` and `lean4_core/`); a library in both keeps this one's first."""
+        by_lib = {lib: dict(names) for lib, names in self._by_lib.items()}
+        for lib, names in other._by_lib.items():
+            into = by_lib.setdefault(lib, {})
+            for short, thm in names.items():
+                into.setdefault(short, thm)
+        flat = dict(self._flat)
+        for short, thm in other._flat.items():
+            flat.setdefault(short, thm)
+        return Theorems(by_lib, flat)
+
     def resolve(self, name: str, library: str | None) -> Theorem | None:
         short = name.split(".")[-1]
         if library and library in self._by_lib:
@@ -295,10 +307,13 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="check_definitional_citations", description=__doc__)
     parser.add_argument("--paper", type=Path, default=REPO / "paper")
     parser.add_argument("--lean", type=Path, default=REPO / "lean4")
+    parser.add_argument("--lean-core", type=Path, default=REPO / "lean4_core", help="the package with no outside library")
     parser.add_argument("--report", action="store_true", help="list every derived-row Lean citation and its verdict")
     args = parser.parse_args(argv)
 
     theorems = parse_theorems(args.lean)
+    if args.lean_core.is_dir():
+        theorems = theorems.merged(parse_theorems(args.lean_core))
     files = ledgers(args.paper)
 
     if args.report:
