@@ -93,3 +93,17 @@ from Git Bash and from the PowerShell commands above) and the clone steps of
   `git range-diff` showed both as `=`, and the tip's tree equalled the
   clone's tip outside `meta/`.
 - The throwaway refs, worktree and clone were removed.
+
+**Dress rehearsal.** A second test ran the PowerShell commands of §1 and §2
+verbatim on the H2 install head (`57260a5`), giving snapshot `0c0a26a`. It
+found:
+
+- one commit and one ref (`Snapshot`);
+- no reflog, no remote, no `meta/`, and no source path in `.git/`;
+- `prompt/twentythird/` present;
+- the watchlist clean, with 14 `meta/` pins set aside;
+- `tests/test_prose_watchlist.py` passing (18 tests).
+
+A throwaway commit (a `CLAUDE.md` append and a new file) then landed by §4:
+`git range-diff` showed `=`, and the trees were identical outside `meta/`.
+Everything was removed afterwards.
