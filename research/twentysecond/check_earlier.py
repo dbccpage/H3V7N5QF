@@ -32,7 +32,7 @@ SCRIPTS = [
     "run_twentyfirst.py",
 ]
 failed = 0
-for script in SCRIPTS:
+for script in sys.argv[1:] or SCRIPTS:
     t0 = time.perf_counter()
     done = subprocess.run(
         [sys.executable, str(ROOT / "code" / script), "--check"], cwd=ROOT, capture_output=True, text=True, check=False

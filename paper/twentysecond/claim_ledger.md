@@ -88,7 +88,7 @@ claim.
 | N4 | An identification's loss has no fixed bound. | derived | Lean `identify_takes` | p, Q | — | a bound on the assertions one identification takes out (refuted by `identify_takes`) |
 | N5 | Two additions that undo need not be one pair, up to rewriting. | derived | `given.json` | — | — | a proof that two additions returning to their start are always one pair (refuted by `given.json`) |
 | N6 | The cost need not move by exactly one per change. | derived | Lean `record_identify`, `identify_takes` | p, Q | 9:D4(i) refuted here | a proof that every change moves the cost by exactly one |
-| N7 | A result's plain `r` and `s` parts are not free of each other. | derived | Lean `plain_reduced` | p, Q | 9:D5 (`results_pair9`) refuted for results | two plain states asserting one pair in both relations |
+| N7 | A result's plain `r` and `s` parts are not free of each other. | derived | Lean `plain_reduced` | p, Q | 9:D5 (jointly free parts) refuted for results | two plain states asserting one pair in both relations |
 | N8 | Results with equally many terms need not have equally many changes. | derived | paper N8; `results_*.csv` | — | — | a formula for the changes of a result from its terms alone |
 | N9 | A result need not have one shortest sequence. | computed | `results_*.csv` | — | — | a proof that every result has one shortest sequence |
 | N10 | Nothing about the asserting follows (D16). | computed | `follows_*.csv` | — | — | a statement about the asserting true of every excess function |

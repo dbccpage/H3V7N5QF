@@ -289,8 +289,9 @@ an addition (`raising_not_addition` empty).
 returns to its start's result (`ninth_additions_never_return`, in every writing
 `ninth_additions_never_return_every_writing`). No addition undoes an earlier
 one. *Here:* on every state with terms `x`, `y`, adding `xry` then `xsy` is two
-additions ending at the start's result (`addition_undoes_addition`), and the
-three states are three different ninth states (`addition_undoes_not_in_ninth`).
+additions ending at the start's result (`addition_undoes_addition`), while the
+start and the end are two different ninth states (`addition_undoes_not_in_ninth`;
+the state between them differs from both by its size).
 Removing `xry` and adding `xsy` have one result (`same_remove_add_partner`), so
 the second addition does what a removal of the first would. At a fixed writing
 two additions in a row return to the start's result exactly when they are one
@@ -515,8 +516,8 @@ Each item has two witnesses, or a proof.
   addition moves it by one.
 - **N7.** That the results' plain `r` and `s` parts are free of each other: in
   a plain state the two relations never assert the same pair
-  (`plain_reduced`), whereas the ninth's two parts were jointly free (9:D5,
-  `results_pair9`); every pair of parts is a state here, but `(M_r, M_s)` and
+  (`plain_reduced`), whereas the ninth's two parts were jointly free (9:D5);
+  every pair of parts is a state here, but `(M_r, M_s)` and
   `(M_r + c, M_s + c)` are one result.
 - **N8.** That results of one round with equally many terms have equally many
   changes: `C(n, 2) + d + 1 + 2n²` depends on the pairs `d` the plain state

@@ -94,7 +94,7 @@ def test_count_refuses_a_fraction(monkeypatch: pytest.MonkeyPatch) -> None:
 
     monkeypatch.setattr(orbits, "class_size", lambda _parts: 1)
     with pytest.raises(ArithmeticError):
-        count_results(2, 1)
+        count_results(3, 0)
 
 
 def test_reach() -> None:

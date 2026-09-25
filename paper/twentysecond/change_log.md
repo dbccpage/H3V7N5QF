@@ -87,6 +87,13 @@ Each material change, and its reason. Newest last. Commits are on the branch
     `meta/` files would lose their pins), so the one entry was added by hand with
     the digest `--probe` reports. Every other outside name of §11 is unwatched.
 
-12. **Every earlier derivation's evidence was re-checked with its `--check`
+12. **The paper and ledger first cited the ninth's Lean theorem for jointly free
+    parts by its name; `ci/check_axiom_citations.py` requires every cited Lean
+    name in this derivation's own report, and that theorem lives in `lean4/`,
+    so it is now cited by its claim ID (9:D5).** An injection test of the orbit
+    count's divisibility guard first chose inputs whose total stayed divisible;
+    it now uses three terms.
+
+13. **Every earlier derivation's evidence was re-checked with its `--check`
     after this derivation's code was in place** (`research/twentysecond/check_earlier.py`);
     the outcome is recorded in the commit message.
