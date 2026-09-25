@@ -23,7 +23,7 @@ Computed evidence: `meta/next_ten/06-written-budget/derivation/evidence/` genera
 | ID | Statement | Status | Evidence | Axioms | Re-check | What would falsify it |
 |---|---|---|---|---|---|---|
 | C1 | State representation is `(canonical_dstate, budget)` with budget $b \in \{0, 1, 2, 3, 4\}$ | chosen | `model.py` (`BudgetedState`); Lean `BSt` | — | 9:C1′ extended with integer budget field | a seed sentence specifying non-integer or unrecorded budget |
-| C2 | Sameness: results agree iff canonical underlying Ninth states agree and recorded budgets agree | chosen | `model.py` (`BudgetedState.__eq__`); Lean `BSt.ext` | — | 9:C2 combined with G5 | a seed reading collapsing results across different remaining budgets |
+| C2 | Sameness: results agree iff canonical underlying Ninth states agree and recorded budgets agree | chosen | `model.py` (`BudgetedState` equality); Lean `BState` stores the budget explicitly | — | 9:C2 combined with G5 | a seed reading collapsing results across different remaining budgets |
 | C3 | Unit consumption decrements budget by exactly 1 on every performed change | chosen | `model.py` (`perform_change`); Lean `BStep` | — | direct formalization of G3 | a reading where some changes consume more or less |
 | C4 | Budget 0 attempts result in identity transition changing nothing | chosen | `model.py` (`attempt`, `perform_change`); Lean `BStep.not_step_at_zero` | — | direct formalization of G4 | a reading treating zero budget as termination with error |
 | C5 | Exploration explores breadth-first round by round until all branches reach budget 0 | chosen | `model.py` (`explore`) | — | 9:C6 adapted to budget termination | a reading stopping earlier or exploring depth-first |
@@ -38,7 +38,7 @@ Computed evidence: `meta/next_ten/06-written-budget/derivation/evidence/` genera
 | D4 | A state reached from `emptyB` has budget 0 iff it was reached in exactly 4 steps | derived | Lean `BReach.budget_zero_iff_four` | std | new to Problem 06 | a state with budget 0 reached in $< 4$ steps |
 | D5 | No performed change can be taken from a state with budget 0 | derived | Lean `BStep.not_step_at_zero` | std | new to Problem 06 | a valid `BStep` from a state with budget 0 |
 | D6 | Characterization: `BReach emptyB t n` iff $n \le 4$, $t.\text{budget} = 4 - n$, and `Reach9 empty9 t.state n` | derived | Lean `BReach.characterization` | std | combines 9:Reach9 with budget tracking | a reachable budgeted state whose underlying state is not in Ninth Reach9 |
-| D7 | Size bound: every state reached from `emptyB` satisfies $\text{size} \le n \le 4$ | derived | Lean `BReach.size_le` | std | 9:Reach9.size_le applied to D6 | a reachable state with size $> 4$ |
+| D7 | Size bound: every state reached from `emptyB` satisfies $\text{size} \le n \le 4$ | derived | `paper.md` §7 step-size argument, `BReach.four_step_max`, bounded census | std | Each legal step raises size by at most 1 | a reachable state with size $> 4$ |
 | D8 | Term bound: every state reached from `emptyB` has at most 4 terms | derived | Lean `BReach.terms_le` | std | follows from D7 and `terms ≤ size` | a reachable state with 5 or more terms |
 
 ## Computed
@@ -57,4 +57,4 @@ Computed evidence: `meta/next_ten/06-written-budget/derivation/evidence/` genera
 | R1 | Falsifier under wave discovery: "At every recorded budget, reachable states are parent's states at same round" | refuted | `test_derivation.py`, `resolution.md`, `evidence/parent_comparison.json` | — | refuted at budget 1 (9 vs 8) and budget 0 (32 vs 29) | an equivalence between budget sets and parent BFS waves |
 | R2 | Falsifier under unbounded horizon: parent states match budgeted states for $k \ge 5$ | refuted | `test_derivation.py`, `resolution.md`, `Derivation.lean` (`BReach.four_step_max`) | std | parent reaches $\ge 104$ states at $k=5$; budget reaches 0 | a non-empty reachable set at round 5 in Problem 06 |
 | R3 | Paths of length $> 4$ from `emptyB` | refuted | Lean `BReach.four_step_max` | std | precluded in this model by Lean `BReach.four_step_max` | a witness path of length 5 from `emptyB` |
-| R4 | Reachability of states with size $> 4$ from `emptyB` | refuted | Lean `BReach.size_le` | std | precluded in this model by Lean `BReach.size_le` | a reachable state with 5 or more terms or assertions |
+| R4 | Reachability of states with size $> 4$ from `emptyB` | refuted | `paper.md` §7 step-size argument and Lean `BReach.four_step_max` | std | precluded by at most four size-increasing steps | a reachable state with size 5 or more |

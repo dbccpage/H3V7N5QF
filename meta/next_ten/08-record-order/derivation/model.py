@@ -100,6 +100,8 @@ class OrderedState:
         expected_len = self.n * self.n
         if len(self.r) != expected_len or len(self.s) != expected_len:
             raise ValueError(f"relation vectors must have length n^2 = {expected_len}")
+        if any(m < 0 for m in self.r + self.s):
+            raise ValueError("assertion multiplicities cannot be negative")
         for x, y in self.record:
             if not (0 <= x < self.n and 0 <= y < self.n):
                 raise ValueError(f"leftover ({x}, {y}) out of range for n = {self.n}")
@@ -126,6 +128,8 @@ class OrderedState:
 
     def mult_of(self, rel: str, x: int, y: int) -> int:
         """Multiplicity of assertion x(rel)y."""
+        if rel not in RELATIONS:
+            raise ValueError(f"invalid relation: {rel}")
         if not (0 <= x < self.n and 0 <= y < self.n):
             return 0
         idx = x * self.n + y

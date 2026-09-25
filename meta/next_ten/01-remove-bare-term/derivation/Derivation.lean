@@ -69,6 +69,20 @@ def sumGrid (r c : Nat) (M : Nat → Nat → Nat) : Nat :=
   | 0 => 0
   | k + 1 => sumGrid k c M + sumRow c (M k)
 
+def mergedIndex (u v t : Nat) : Nat :=
+  if t = v then (if u < v then u else u - 1)
+  else if t < v then t else t - 1
+
+/-- Add every source multiplicity into the pair named after identifying u and v. -/
+def mergedMultiplicity (n : Nat) (M : Nat → Nat → Nat) (u v x y : Nat) : Nat :=
+  (List.range n).foldl (fun acc a =>
+    acc + (List.range n).foldl (fun inner b =>
+      if mergedIndex u v a = x ∧ mergedIndex u v b = y
+      then inner + M a b else inner) 0) 0
+
+def identifyTerms (s : State) (u v : Nat) : State :=
+  ⟨s.n - 1, mergedMultiplicity s.n s.M u v⟩
+
 def total (s : State) : Nat :=
   sumGrid s.n s.n s.M
 
@@ -156,6 +170,8 @@ inductive Step : State → State → Prop
       Step s (removeAssertion s x y)
   | removeBareTerm (s : State) (t : Nat) (hb : s.isBare t) :
       Step s (removeBare s t)
+  | identify (s : State) (u v : Nat) (hu : u < v) (hv : v < s.n) :
+      Step s (identifyTerms s u v)
 
 /-! ## Multi-Step Reachability -/
 

@@ -36,6 +36,16 @@ def empty : State :=
 theorem empty_wf : empty.WF := by
   constructor <;> (intro x y h; contradiction)
 
+def mergedIndex (u v t : Nat) : Nat :=
+  if t = v then (if u < v then u else u - 1)
+  else if t < v then t else t - 1
+
+def mergedMultiplicity (n : Nat) (M : Nat → Nat → Nat) (u v x y : Nat) : Nat :=
+  (List.range n).foldl (fun acc a =>
+    acc + (List.range n).foldl (fun inner b =>
+      if mergedIndex u v a = x ∧ mergedIndex u v b = y
+      then inner + M a b else inner) 0) 0
+
 -- Four kinds of changes on State
 inductive Step : State → State → Prop where
   | addTerm (s : State) :
@@ -60,8 +70,8 @@ inductive Step : State → State → Prop where
               fun u v => if u = x ∧ v = y then s.Ms u v - 1 else s.Ms u v⟩
   | identify (s : State) (u v : Nat) (hu : u < s.n) (hv : v < s.n) (hne : u ≠ v) :
       Step s ⟨s.n - 1,
-              fun x y => s.Mr x y,
-              fun x y => s.Ms x y⟩
+              mergedMultiplicity s.n s.Mr u v,
+              mergedMultiplicity s.n s.Ms u v⟩
 
 -- Multi-step reachability without budget
 inductive Reach : State → State → Nat → Prop where

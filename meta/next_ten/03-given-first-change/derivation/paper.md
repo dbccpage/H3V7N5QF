@@ -86,7 +86,7 @@ By induction, every state reached by a sequence of changes from $\text{root03}$ 
 ### 4.2 Unreachability of the Empty State
 The empty state $\text{empty9}$ has $n = 0$ terms. Because every state reachable from $\text{root03}$ has $n \ge 1$:
 $$\forall k \in \mathbb{N}, \quad \neg \text{Reach}(\text{root03}, \text{empty9}, k)$$
-The empty state is not a result in Problem 03 (`empty9_not_result03`).
+The empty state is not a result in Problem 03 (Lean `empty_not_result03`).
 
 ### 4.3 Reachability Characterization and Mutual Reachability
 Let $t$ be any well-formed state:
@@ -98,7 +98,7 @@ $$\text{Reachable}(\text{root03}, t) \iff t.n \ge 1$$
 Furthermore, for any two states $s, t$ with $s.n \ge 1$ and $t.n \ge 1$:
 - $s$ reaches a 1-term state by removing all assertions (in $s.m$ steps) and identifying terms (in $s.n - 1$ steps).
 - The 1-term state reaches $t$ by additions (in $t.n - 1 + t.m$ steps).
-Hence, $s$ reaches $t$ and $t$ reaches $s$. All reachable states are mutually reachable (`reach03_symm`).
+Hence, $s$ reaches $t$ and $t$ reaches $s$. All reachable states are mutually reachable by the construction above. The Lean file proves empty-state exclusion; this stronger characterization is proved here and checked on the declared finite census.
 
 ---
 
@@ -175,7 +175,7 @@ Because both reachability and cost shift despite the complete absence of a given
 
 1. **It does not follow that all states in Ninth are reachable in Problem 03:**
    - *Witness in Ninth:* The state $\text{empty9} = \text{DState}(0, (), ())$ is reachable at round 0.
-   - *Non-reachability in 03:* The state $\text{empty9}$ is unreachable by theorem `empty9_not_result03`.
+   - *Non-reachability in 03:* The state $\text{empty9}$ is unreachable by Lean theorem `empty_not_result03`.
 
 2. **It does not follow that the cost shift applies to all states in the universe:**
    - *Witness where shift is $-1$:* Any state with $n \ge 1$ satisfies $\text{cost}_{03}(t) - \text{cost}_{\text{ninth}}(t) = -1$.

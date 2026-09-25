@@ -63,15 +63,15 @@ The seed prompt differs from the ninth seed by exactly Sentence 5 (`meta/next_te
 | Budget zero equivalence | derived (D4) | Lean `BReach.budget_zero_iff_four` ($t.\text{budget} = 0 \leftrightarrow n = 4$) |
 | Non-step at budget zero | derived (D5) | Lean `BStep.not_step_at_zero` (no valid `BStep` from `budget = 0`) |
 | Reachability characterization | derived (D6) | Lean `BReach.characterization` |
-| Size bound $\le 4$ | derived (D7) | Lean `BReach.size_le` ($t.\text{state}.\text{size} \le n \le 4$) |
-| Term bound $\le 4$ | derived (D8) | Lean `BReach.terms_le` ($t.\text{state}.T.\text{card} \le 4$) |
+| Size bound $\le 4$ | derived (D7) | Step-size argument in §7, plus the bounded census; no corresponding theorem in this Lean file |
+| Term bound $\le 4$ | derived (D8) | Lean `BReach.terms_le` ($t.\text{state}.n \le 4$) |
 | Reachable state counts {1, 1, 3, 9, 32} | computed (K1) | `model.py`, `evidence/budget_census.json` |
 | Completeness certificate | computed (K2) | Independent census matches BFS exploration |
 | Empty frontier at bound 4 | computed (K3) | `evidence/summary.json` |
 | Discrepancy with parent waves | computed (K4) | `evidence/parent_comparison.json` |
 | Refutation of falsifier | refuted (R1, R2) | `resolution.md`, `test_derivation.py` |
 | Paths of length $> 4$ | refuted (R3) | Lean `BReach.four_step_max` |
-| States of size $> 4$ | refuted (R4) | Lean `BReach.size_le` |
+| States of size $> 4$ | refuted (R4) | Step-size argument in §7 |
 
 ---
 
@@ -228,7 +228,7 @@ To maintain strict claim discipline, the following negative results are establis
    *Witness:* From `(empty, 4)`, any sequence of 4 changes reaches budget 0. At budget 0, attempting any change produces the identical state with budget 0 (Lean `BStep.not_step_at_zero`). No 5-step path of performed changes exists (refuted by Lean `BReach.four_step_max`).
 
 2. **Reaching states of size $> 4$ does not follow.**  
-   *Witness:* Every performed change raises size by at most 1 (Lean `BReach.size_le`). Since initial size is 0 and path length is at most 4, every reachable state has size $\le 4$. States of size 5 (such as `5-term empty` or `1-term with 5 assertions`) are unreachable from `emptyB`.
+   *Argument:* Each legal addition raises size by 1, each removal lowers it by 1, and identification preserves assertion multiplicity while removing one term. Since initial size is 0 and a path has at most 4 performed changes (`BReach.four_step_max`), every reachable state has size $\le 4$. States of size 5 (such as `5-term empty` or `1-term with 5 assertions`) are unreachable from `emptyB`.
 
 3. **Equality of budget sets with parent BFS discovery waves does not follow.**  
    *Witness:* At budget 1, the state `DState(1, (0,), (0,))` (1-term empty) is reachable carrying budget 1. In parent Ninth, this state belongs to wave 1, not wave 3. Thus the set of underlying states reachable at budget 1 is not equal to parent wave 3.

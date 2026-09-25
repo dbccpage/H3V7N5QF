@@ -21,9 +21,9 @@ import tempfile
 from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
-if str(REPO_ROOT / "code") not in sys.path:
+if str(REPO_ROOT / "code") not in sys.path:  # pragma: no cover - direct script invocation
     sys.path.insert(0, str(REPO_ROOT / "code"))
-if str(REPO_ROOT) not in sys.path:
+if str(REPO_ROOT) not in sys.path:  # pragma: no cover - direct script invocation
     sys.path.insert(0, str(REPO_ROOT))
 
 # Ensure model is imported cleanly
@@ -226,5 +226,5 @@ def main() -> int:
     return 0
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover - CLI checked separately
     sys.exit(main())

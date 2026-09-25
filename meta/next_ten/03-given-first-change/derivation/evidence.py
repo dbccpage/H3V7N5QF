@@ -85,7 +85,7 @@ def write_evidence(out_dir: Path) -> list[Path]:
         "disagreements": completeness["disagreements"],
     }
     p_summary = out_dir / "exploration_summary.json"
-    p_summary.write_text(json.dumps(summary_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_summary.write_text(json.dumps(summary_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_summary)
 
     # 2. comparison_with_ninth.json
@@ -105,13 +105,13 @@ def write_evidence(out_dir: Path) -> list[Path]:
         "hypothesis_supported": comp.hypothesis_supported,
     }
     p_comp = out_dir / "comparison_with_ninth.json"
-    p_comp.write_text(json.dumps(comp_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_comp.write_text(json.dumps(comp_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_comp)
 
     # 3. census_counts.csv
     p_census = out_dir / "census_counts.csv"
     with open(p_census, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["terms", "assertions", "expected_orbit_count"])
         for k in sorted(expected_census.keys(), key=lambda x: tuple(map(int, x.split("/")))):
             n_str, t_str = k.split("/")
@@ -121,7 +121,7 @@ def write_evidence(out_dir: Path) -> list[Path]:
     # 4. reachable_states_sample.csv
     p_sample = out_dir / "reachable_states_sample.csv"
     with open(p_sample, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow([
             "index",
             "round_03",
@@ -158,7 +158,7 @@ def write_evidence(out_dir: Path) -> list[Path]:
     for p in written:
         manifest_lines.append(f"{compute_sha256(p)}  {p.name}\n")
     p_manifest = out_dir / "MANIFEST.sha256"
-    p_manifest.write_text("".join(manifest_lines), encoding="utf-8")
+    p_manifest.write_text("".join(manifest_lines), encoding="utf-8", newline="\n")
     written.append(p_manifest)
 
     return written

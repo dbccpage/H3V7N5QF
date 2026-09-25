@@ -36,7 +36,7 @@ Every change in this system preserves non-emptiness:
 Because the beginning $\text{root03}$ has $n = 1 > 0$, every state reachable from $\text{root03}$ by any finite sequence of changes has $n \ge 1$.
 Therefore:
 $$\text{empty9} \text{ is not reachable from } \text{root03}$$
-Formally checked in Lean 4 as `empty9_not_reachable_from_root03` and `empty9_not_result03`.
+Formally checked in Lean 4 as `empty_not_reachable_from_root03` and `empty_not_result03`.
 
 ### 3.2 Exact Reachability Characterization
 Let $t$ be any well-formed state:
@@ -44,14 +44,14 @@ Let $t$ be any well-formed state:
 - If $t.n \ge 1$, then $t$ can be reached from $\text{root03}$ by adding $t.n - 1$ terms followed by $t.m$ assertion additions.
 Hence:
 $$\text{Reachable}(\text{root03}, t) \iff t.n \ge 1$$
-Formally checked in Lean 4 as `reach03_iff`.
+The constructive addition path above proves the reverse direction; Lean `empty_not_result03` proves the exclusion of zero-term states. The full equivalence is also checked over the declared finite census.
 
 ### 3.3 Mutual Reachability (Strong Connectivity)
 In Ninth, reachability from the empty state was strictly one-way: $\text{empty9}$ reached every state, but no state could reach $\text{empty9}$.
 In Problem 03, the empty state is excluded. For any two reachable states $s$ and $t$ with $s.n \ge 1$ and $t.n \ge 1$:
 - State $s$ can reach a 1-term state by identifying terms and removing assertions.
 - A 1-term state can reach state $t$ by term and assertion additions.
-Thus, $s$ reaches $t$ and $t$ reaches $s$. Reachability among all results is mutual (`reach03_symm`).
+Thus, $s$ reaches $t$ and $t$ reaches $s$. Reachability among all results is mutual by the paths just described. The Lean formalization proves the non-emptiness invariant used here.
 
 ### 3.4 Cost Characterization and Shift
 For any reachable state $t$ ($t.n \ge 1$):

@@ -65,7 +65,7 @@ def write_evidence(out_dir: Path) -> list[Path]:
         "total_budgeted_states": comp["total_budgeted_states"],
     }
     p_census = out_dir / "budget_census.json"
-    p_census.write_text(json.dumps(census_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_census.write_text(json.dumps(census_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_census)
 
     raw_parent_bfs = comp["parent_bfs_wave_sizes"]
@@ -80,13 +80,13 @@ def write_evidence(out_dir: Path) -> list[Path]:
         "frontier_size": comp["frontier_size"],
     }
     p_comp = out_dir / "parent_comparison.json"
-    p_comp.write_text(json.dumps(comp_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_comp.write_text(json.dumps(comp_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_comp)
 
     # 3. budgeted_states.csv
     p_csv = out_dir / "budgeted_states.csv"
     with open(p_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow([
             "index",
             "budget",
@@ -130,7 +130,7 @@ def write_evidence(out_dir: Path) -> list[Path]:
         "frontier_size": len(expl.frontier),
     }
     p_summary = out_dir / "summary.json"
-    p_summary.write_text(json.dumps(summary_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_summary.write_text(json.dumps(summary_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_summary)
 
     # 5. MANIFEST.sha256
@@ -138,7 +138,7 @@ def write_evidence(out_dir: Path) -> list[Path]:
     for p in written:
         manifest_lines.append(f"{compute_sha256(p)}  {p.name}\n")
     p_manifest = out_dir / "MANIFEST.sha256"
-    p_manifest.write_text("".join(manifest_lines), encoding="utf-8")
+    p_manifest.write_text("".join(manifest_lines), encoding="utf-8", newline="\n")
     written.append(p_manifest)
 
     return written

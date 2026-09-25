@@ -21,9 +21,9 @@ from typing import Any
 _HERE = Path(__file__).resolve().parent
 _REPO_ROOT = _HERE.parents[3]
 _CODE_DIR = _REPO_ROOT / "code"
-if str(_CODE_DIR) not in sys.path:
+if str(_CODE_DIR) not in sys.path:  # pragma: no cover - direct script invocation
     sys.path.insert(0, str(_CODE_DIR))
-if str(_HERE) not in sys.path:
+if str(_HERE) not in sys.path:  # pragma: no cover - direct script invocation
     sys.path.insert(0, str(_HERE))
 
 from model import (  # noqa: E402

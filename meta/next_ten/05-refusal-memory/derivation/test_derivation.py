@@ -25,7 +25,7 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from model import (  # type: ignore[import-not-found]
+from model import (
     Closure,
     RecordScope,
     RefusalState,
@@ -283,7 +283,7 @@ def test_both_beginnings_and_sameness_options() -> None:
 
 
 def test_evidence_generation_and_check(tmp_path: Path) -> None:
-    from evidence import generate_all_evidence, main, verify_check  # type: ignore[attr-defined]
+    from evidence import generate_all_evidence, main, verify_check
     written = generate_all_evidence(tmp_path)
     assert len(written) == 5
     assert (tmp_path / "MANIFEST.sha256").exists()

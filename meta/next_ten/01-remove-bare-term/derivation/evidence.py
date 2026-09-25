@@ -246,10 +246,10 @@ def generate_all(out_dir: Path) -> dict[str, str]:
     }
 
     for filename, content in files_content.items():
-        (out_dir / filename).write_text(content, encoding="utf-8")
+        (out_dir / filename).write_text(content, encoding="utf-8", newline="\n")
 
     manifest = compute_manifest(out_dir)
-    (out_dir / "MANIFEST.sha256").write_text(manifest, encoding="utf-8")
+    (out_dir / "MANIFEST.sha256").write_text(manifest, encoding="utf-8", newline="\n")
     files_content["MANIFEST.sha256"] = manifest
     return files_content
 

@@ -38,10 +38,9 @@ This document records all design choices, implementation milestones, and theoret
 ## 4. Formalization in Lean 4 (`Derivation.lean`)
 - **Date**: 2026-09-24
 - **Decision**: Formalized `root03` as `empty9.addTerm 0` in namespace `Seed.Problem03`.
-- **Decision**: Formally established `root03_is_add_term_outcome`, `root03_terms`, `root03_size`, `root03_nonempty`, and `root03_wf`.
-- **Decision**: Formally proved that `empty9` is never reachable from `root03` (`empty9_not_reachable_from_root03`, `empty9_not_result03`).
-- **Decision**: Formally proved exact reachability characterization: `reach03_iff` ($t$ reachable iff $t.T.\text{Nonempty}$).
-- **Decision**: Formally proved mutual reachability `reach03_symm` and size lower bound `cost03_lower_bound`.
+- **Decision**: Formally established `root03_is_add_term_outcome`, `root03_n`, `root03_size`, `root03_nonempty`, and `root03_wf`.
+- **Decision**: Formally proved that `empty` is never reachable from `root03` (`empty_not_reachable_from_root03`, `empty_not_result03`).
+- **Decision**: Gave constructive proofs of reachability, mutual reachability, and minimum cost in `paper.md` §§4–5. These results have bounded computational checks; the Lean file does not contain corresponding full characterization or cost theorems.
 - **Verification**: Zero `sorry`, zero `admit`, zero declared axioms.
 
 ## 5. Evidence Generation and Verification (`evidence.py`)
@@ -66,4 +65,3 @@ This document records all design choices, implementation milestones, and theoret
 - **Decision**: Normalized claim P03-D8 status in `claim_ledger.md` and `paper.md` from `derived / computed` to `derived` per Bookkeeping Rule 1, transferring computation references to the Evidence column.
 - **Decision**: Sanitized the audit prose in `adversarial_audit.md` to ensure zero regex matches for the 14 forbidden hype words across all markdown files in the package.
 - **Verification**: Verified `lean meta/next_ten/03-given-first-change/derivation/Derivation.lean` compiles with exit code 0.
-

@@ -17,7 +17,7 @@
   - **Exact Reduction Formula**: Verified without exception across all 1024 state pairs:
     $$\text{dist}_{10}(S, T) = \min(\text{dist}_9(S, T), 1 + \text{dist}_9(\text{swap}(S), T))$$
 - **CI & Quality Verification**:
-  - `pytest`: 8/8 tests pass with 99.61% line and branch coverage (exceeds 95% floor).
+  - `pytest`: 9 tests pass; the reported coverage figure predates the follow-up review.
   - `mypy --strict`: clean across `model.py`, `test_derivation.py`, `evidence.py`.
   - `evidence.py --check`: byte-identical regeneration verified.
   - `Derivation.lean`: zero `sorry`, zero `admit`, zero declared `axiom`.

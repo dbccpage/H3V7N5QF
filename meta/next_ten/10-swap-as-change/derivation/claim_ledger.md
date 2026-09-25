@@ -2,7 +2,7 @@
 
 Status: **given**, **chosen**, **derived**, **computed**, **refuted**, **open**.  
 Parent derivation: `paper/ninth/` (`code/ninth/`, `lean4/Ninth/`, `evidence/ninth/`).  
-Formalization: `meta/next_ten/10-swap-as-change/derivation/Derivation.lean` (`Seed.Problem10`).  
+Formalization: `meta/next_ten/10-swap-as-change/derivation/Derivation.lean` (`Seed.Problem10`), on the aggregate `(n, total_r, total_s)` projection.  
 Model and tests: `meta/next_ten/10-swap-as-change/derivation/model.py`, `test_derivation.py`.  
 Evidence: `meta/next_ten/10-swap-as-change/derivation/evidence/` (`MANIFEST.sha256`).
 
@@ -24,8 +24,8 @@ Evidence: `meta/next_ten/10-swap-as-change/derivation/evidence/` (`MANIFEST.sha2
 
 | ID | Statement | Status | Evidence | Re-check | What would falsify it |
 |---|---|---|---|---|---|
-| C1 | Asserted means multiplicity at least 1; a state consists of terms and a multiplicity per ordered pair in each relation, without names. | chosen | `model.py` (`DState`), Lean `NDSt` | 9:C1′ no change | A seed sentence interpreting asserted as a boolean flag |
-| C2 | The chosen reading of exchanging the relations: a swap counts as a change only when it changes the exact written state (`state.r != state.s`). The unchosen reading: allow self-swap as a counted step on symmetric states. | chosen | `model.py` (`changes(allow_self_swap=False)`), Lean `Step10.swap` (`s.swap ≠ s`) | Proposal candidate C17 | A seed sentence specifying that identity swaps are counted |
+| C1 | Asserted means multiplicity at least 1; a full state consists of terms and a multiplicity per ordered pair in each relation, without names. | chosen | `model.py` (`DState`); Lean `NDSt` retains only total counts | 9:C1′ no change | A seed sentence interpreting asserted as a boolean flag |
+| C2 | The chosen reading of exchanging the relations: a swap counts as a change only when it changes the exact written state (`state.r != state.s`). The unchosen reading: allow self-swap as a counted step on symmetric states. | chosen | `model.py` (`changes(allow_self_swap=False)`); Lean `Step10.swap` applies this rule on aggregate counts only | Proposal candidate C17 | A seed sentence specifying that identity swaps are counted |
 | C3 | Fewest additions first ordering: identifications, removals, swap (0 additions), followed by adding a term, then adding assertions in `r` and `s` (1 addition). | chosen | `model.py` (`changes`) | Extends 9:C6 with swap among 0 additions | A seed sentence specifying a different priority order |
 | C4 | Bound and scope of finite exploration: at most 2 terms, 4 rounds, keeping all results up to 2 assertions per relation for all-pairs shortest path analysis. | chosen | `model.py`, `evidence.py` | Declared finite bound in `plan.md` | Exploration exceeding declared memory or time limits |
 
@@ -36,15 +36,15 @@ Evidence: `meta/next_ten/10-swap-as-change/derivation/evidence/` (`MANIFEST.sha2
 | ID | Statement | Status | Evidence | Re-check | What would falsify it |
 |---|---|---|---|---|---|
 | D1 | Exchanging relations is an involution: `swap(swap(s)) = s`, preserves `n`, total multiplicity `m`, size (`size(swap(s)) = size(s)`), and well-formedness. | derived | Lean `swap_involution`, `swap_size`, `swap_wf`; `test_swap_involution` | 9:D4 re-proved | An instance where swapping twice alters terms or multiplicities |
-| D2 | Every change of Problem 10 preserves well-formedness (`Step10.wf`) and increases size by at most 1 (`Step10.size_le`). | derived | Lean `Step10.wf`, `Step10.size_le`; `test_perform` | Extends 9:D3 with swap case | A change producing an ill-formed state or increasing size by > 1 |
-| D3 | Any sequence of changes reaching `g` from `empty9` requires at least `g.size` changes (`fewest_changes10_lower`). | derived | Lean `fewest_changes10_lower`; `test_cost_reductions_and_formula` | Re-proved from `Step10.size_le` | A sequence from `empty9` reaching `g` in fewer than `g.size` changes |
-| D4 | Additions alone reach every well-formed state from `empty9` in `g.size` changes (`reach10_by_additions`). | derived | Lean `reach10_by_additions`; `Reach9.toReach10` | 9:D4 embedded | A well-formed state unreachable by additions |
-| D5 | Fewest changes from `empty9` to `g` is exactly `g.size`, identical to Ninth. All BFS exploration rounds from `empty9` equal Ninth's rounds. | derived | Lean `fewest_changes10_empty`; `model.compare_with_ninth` | Proved via upper and lower bounds | A state reached from `empty9` in a round different from Ninth |
+| D2 | Every full-state change preserves well-formedness and increases size by at most 1. | derived | Per-pair step analysis in `paper.md` §3; Lean `Step10.wf`, `Step10.size_le` on aggregate counts; `test_perform` | Extends 9:D3 with swap case | A change producing an ill-formed state or increasing size by > 1 |
+| D3 | Any sequence of changes reaching `g` from `empty9` requires at least `g.size` changes. | derived | Size argument in `paper.md` §4; Lean `fewest_changes10_lower` on aggregate counts | Re-proved from the step-size bound | A sequence from `empty9` reaching `g` in fewer than `g.size` changes |
+| D4 | Additions alone reach every well-formed full state from `empty9` in `g.size` changes. | derived | Per-pair construction in `paper.md` §4; Lean `reach10_by_additions` on aggregate counts | 9:D4 rechecked | A well-formed state unreachable by additions |
+| D5 | Fewest changes from `empty9` to `g` is exactly `g.size`, identical to Ninth. All BFS exploration rounds from `empty9` equal Ninth's rounds. | derived | Upper and lower bounds in `paper.md` §4; Lean `fewest_changes10_empty` on aggregate counts; `model.compare_with_ninth` | Full-state construction and size bound | A state reached from `empty9` in a round different from Ninth |
 | D6 | Shortest sequences from `empty9` contain no swaps and are identical in count to Ninth. | derived | `model.count_shortest_sequences`; `test_exploration_comparison_with_ninth` | Follows from swap adding 0 to size | A shortest sequence from `empty9` containing a swap |
-| D7 | For any asymmetric state `s` (`s.swap ≠ s`), Problem 10 reaches `s.swap` in 1 change, whereas Ninth requires at least 2 changes (`swap_cost_reduction`). | derived | Lean `swap_cost_reduction`; `test_cost_reductions_and_formula` | New to Problem 10 | A sequence in Ninth reaching `s.swap` in 1 change |
+| D7 | For any asymmetric state `s` (`s.swap ≠ s`), Problem 10 reaches `s.swap` in 1 change, whereas Ninth requires at least 2 changes. | derived | Seed swap step and size-parity argument in `paper.md` §5; Lean `swap_cost_reduction` for unequal aggregate counts; `test_cost_reductions_and_formula` | New to Problem 10 | A sequence in Ninth reaching `s.swap` in 1 change |
 | D8 | Any shortest path between arbitrary states uses at most one swap. | derived | `model.verify_swap_reduction_formula`; commutation of swap with Ninth changes | New to Problem 10 | A pair requiring two swaps on every shortest path |
 | D9 | Closed-form reduction formula: $\text{dist}_{10}(S, T) = \min(\text{dist}_9(S, T), 1 + \text{dist}_9(\text{swap}(S), T))$ holds for all state pairs. | derived | `model.verify_swap_reduction_formula`; `reduction_formula_verification.json` | New to Problem 10 | A pair where the formula fails |
-| D10 | What does not follow: swap does not reduce shortest path cost from `empty9`; Ninth costs are not preserved between arbitrary asymmetric pairs. | derived | Lean `what_does_not_follow_empty_cost_reduction`, `what_does_not_follow_ninth_costs_equal` | Refutation by legal witnesses | A reduction from `empty9` or an equality for all asymmetric pairs |
+| D10 | What does not follow: swap does not reduce shortest path cost from `empty9`; Ninth costs are not preserved between arbitrary asymmetric pairs. | derived | Full-state argument and witnesses in `paper.md` §§4–5; Lean `what_does_not_follow_empty_cost_reduction`, `what_does_not_follow_ninth_costs_equal` on aggregate counts | Refutation by legal witnesses | A reduction from `empty9` or an equality for all asymmetric pairs |
 
 ---
 

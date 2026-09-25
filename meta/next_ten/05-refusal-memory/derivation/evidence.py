@@ -30,7 +30,7 @@ if str(HERE) not in sys.path:  # pragma: no cover
 if str(ROOT / "code") not in sys.path:  # pragma: no cover
     sys.path.insert(0, str(ROOT / "code"))
 
-from model import (  # type: ignore[import-not-found]
+from model import (
     Closure,
     RefusalState,
     closure,
@@ -96,7 +96,7 @@ def generate_all_evidence(out_dir: Path) -> list[Path]:
             }
 
     p_summary = out_dir / "summary.json"
-    p_summary.write_text(json.dumps(summary_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_summary.write_text(json.dumps(summary_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_summary)
 
     # 2. Comparison with seventeenth
@@ -119,20 +119,20 @@ def generate_all_evidence(out_dir: Path) -> list[Path]:
 
             # Round of oneLoop
             oneloop_sev_rep = None
-            for s, r in seventeenth_rep.depth.items():
-                if s.n == 1 and s.loops:
+            for replacement_state, r in seventeenth_rep.depth.items():
+                if replacement_state.n == 1 and replacement_state.loops:
                     oneloop_sev_rep = r
                     break
 
             oneloop_p05 = None
-            for s, r in p05_rep.depth.items():
-                if s.n == 1 and s.has_loop:
+            for memory_state, r in p05_rep.depth.items():
+                if memory_state.n == 1 and memory_state.has_loop:
                     oneloop_p05 = r
                     break
 
             oneloop_sev_perf = None
-            for s, r in seventeenth_perf.depth.items():
-                if s.n == 1 and s.loops:
+            for performed_state, r in seventeenth_perf.depth.items():
+                if performed_state.n == 1 and performed_state.loops:
                     oneloop_sev_perf = r
                     break
 
@@ -158,7 +158,7 @@ def generate_all_evidence(out_dir: Path) -> list[Path]:
             }
 
     p_comp = out_dir / "comparison.json"
-    p_comp.write_text(json.dumps(comparison_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_comp.write_text(json.dumps(comparison_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_comp)
 
     # 3. Frontier and unexpanded details
@@ -171,7 +171,7 @@ def generate_all_evidence(out_dir: Path) -> list[Path]:
             "unexpanded_total": len(cl.unexpanded),
         }
     p_frontier = out_dir / "frontier.json"
-    p_frontier.write_text(json.dumps(frontier_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_frontier.write_text(json.dumps(frontier_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_frontier)
 
     # 4. Independent census counts
@@ -186,7 +186,7 @@ def generate_all_evidence(out_dir: Path) -> list[Path]:
         "loopfree_free_bound_2": len(loopfree_census(bound=2, sameness=Sameness.FREE)),
     }
     p_census = out_dir / "census.json"
-    p_census.write_text(json.dumps(census_data, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p_census.write_text(json.dumps(census_data, indent=2, sort_keys=True) + "\n", encoding="utf-8", newline="\n")
     written.append(p_census)
 
     # 5. MANIFEST.sha256
@@ -196,7 +196,7 @@ def generate_all_evidence(out_dir: Path) -> list[Path]:
         digest = compute_sha256(p)
         lines.append(f"{digest}  {name}\n")
     p_manifest = out_dir / "MANIFEST.sha256"
-    p_manifest.write_text("".join(lines), encoding="utf-8")
+    p_manifest.write_text("".join(lines), encoding="utf-8", newline="\n")
     written.append(p_manifest)
 
     return written

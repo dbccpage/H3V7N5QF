@@ -15,12 +15,12 @@ from pathlib import Path
 
 # Ensure derivation directory is on sys.path
 HERE = Path(__file__).resolve().parent
-if str(HERE) not in sys.path:
+if str(HERE) not in sys.path:  # pragma: no cover - direct script invocation
     sys.path.insert(0, str(HERE))
 
 # Ensure repo code/ directory is on sys.path
 ROOT = Path(__file__).resolve().parents[4]
-if str(ROOT / "code") not in sys.path:
+if str(ROOT / "code") not in sys.path:  # pragma: no cover - direct script invocation
     sys.path.insert(0, str(ROOT / "code"))
 
 from model import (  # noqa: E402

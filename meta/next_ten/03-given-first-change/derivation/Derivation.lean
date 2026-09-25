@@ -85,10 +85,21 @@ def removeAssertionR (st : DState) (x y : Nat) : DState :=
 def removeAssertionS (st : DState) (x y : Nat) : DState :=
   ⟨st.n, st.r, fun u v => if u = x ∧ v = y then st.s u v - 1 else st.s u v⟩
 
+def mergedIndex (x y t : Nat) : Nat :=
+  if t = y then (if x < y then x else x - 1)
+  else if t < y then t else t - 1
+
+/-- Identification sums every source assertion into its renamed pair. -/
+def mergedMultiplicity (n : Nat) (M : Nat → Nat → Nat) (x y u v : Nat) : Nat :=
+  (List.range n).foldl (fun acc a =>
+    acc + (List.range n).foldl (fun inner b =>
+      if mergedIndex x y a = u ∧ mergedIndex x y b = v
+      then inner + M a b else inner) 0) 0
+
 def identifyTerms (st : DState) (x y : Nat) : DState :=
   ⟨st.n - 1,
-   fun u v => st.r (if u ≥ x then u + 1 else u) (if v ≥ x then v + 1 else v),
-   fun u v => st.s (if u ≥ x then u + 1 else u) (if v ≥ x then v + 1 else v)⟩
+   mergedMultiplicity st.n st.r x y,
+   mergedMultiplicity st.n st.s x y⟩
 
 /-! ## Step Relation -/
 

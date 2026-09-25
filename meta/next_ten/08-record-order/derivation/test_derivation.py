@@ -61,6 +61,10 @@ def test_empty_and_basic_state() -> None:
         OrderedState(-1, (), (), ())
     with pytest.raises(ValueError, match="relation vectors must have length"):
         OrderedState(1, (0,), (0, 0), ())
+    with pytest.raises(ValueError, match="multiplicities cannot be negative"):
+        OrderedState(1, (-1,), (0,), ())
+    with pytest.raises(ValueError, match="multiplicities cannot be negative"):
+        OrderedState(1, (0,), (-1,), ())
     with pytest.raises(ValueError, match="out of range"):
         OrderedState(1, (0,), (0,), ((0, 1),))
 
@@ -76,6 +80,8 @@ def test_make_state_and_properties() -> None:
     assert st.mult_of("s", 1, 0) == 1
     assert st.mult_of("r", 1, 0) == 0
     assert st.mult_of("r", 9, 9) == 0  # out of bounds returns 0
+    with pytest.raises(ValueError, match="invalid relation"):
+        st.mult_of("q", 0, 1)
     assert "0r1(2)" in st.written()
     assert "1s0" in st.written()
     assert "0ℓ0 1ℓ1" in st.written()
@@ -328,4 +334,3 @@ def test_evidence_generation_and_check(tmp_path: Path, monkeypatch: pytest.Monke
 
     monkeypatch.setattr(sys, "argv", ["evidence.py", "--out", str(tmp_path)])
     assert evidence.main() == 0
-
