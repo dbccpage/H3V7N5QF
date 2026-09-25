@@ -29,6 +29,44 @@
       "88ebfb3dbf38e758584f9b273fa01aa5b9ca1bef064a729a964afb78c45446de": 1,
       "fc3d315607dc4ffad60c19d553a485ff2bca65518b33b93ad16988de918583e2": 1
     },
+    "meta/next_ten/02-relation-cross-guard/derivation/adversarial_audit.md": {
+      "78e5fe1da689719621fb45e0f1400927d5742e8479717b05a38c25d85f0031aa": 1,
+      "bf39c79f9a16d5864695caabaed13a5c51673ba790420847780bfa9c8fa8e6e7": 1
+    },
+    "meta/next_ten/02-relation-cross-guard/derivation/paper.md": {
+      "78e5fe1da689719621fb45e0f1400927d5742e8479717b05a38c25d85f0031aa": 1,
+      "bf39c79f9a16d5864695caabaed13a5c51673ba790420847780bfa9c8fa8e6e7": 1
+    },
+    "meta/next_ten/03-given-first-change/derivation/adversarial_audit.md": {
+      "666d83a02126d92598412bd2bb96ee181cc7bcc88a1014847b3ddf35fb8a87ea": 1,
+      "803893c31132cb8ee7b86aee5444b6333137fc29776ebde488b1d358015f1169": 1
+    },
+    "meta/next_ten/03-given-first-change/derivation/paper.md": {
+      "666d83a02126d92598412bd2bb96ee181cc7bcc88a1014847b3ddf35fb8a87ea": 1,
+      "803893c31132cb8ee7b86aee5444b6333137fc29776ebde488b1d358015f1169": 1
+    },
+    "meta/next_ten/04-written-refusal/derivation/paper.md": {
+      "803893c31132cb8ee7b86aee5444b6333137fc29776ebde488b1d358015f1169": 3
+    },
+    "meta/next_ten/04-written-refusal/derivation/resolution.md": {
+      "803893c31132cb8ee7b86aee5444b6333137fc29776ebde488b1d358015f1169": 1
+    },
+    "meta/next_ten/07-two-term-readings/derivation/change_log.md": {
+      "bf39c79f9a16d5864695caabaed13a5c51673ba790420847780bfa9c8fa8e6e7": 1,
+      "c6a78bd5638ad442e2d39bef85d56424144a93a2181c6094af380ef1c78fd57e": 1
+    },
+    "meta/next_ten/07-two-term-readings/derivation/model.py": {
+      "bf39c79f9a16d5864695caabaed13a5c51673ba790420847780bfa9c8fa8e6e7": 1
+    },
+    "meta/next_ten/07-two-term-readings/derivation/paper.md": {
+      "bf39c79f9a16d5864695caabaed13a5c51673ba790420847780bfa9c8fa8e6e7": 4
+    },
+    "meta/next_ten/09-two-step-leftover/derivation/adversarial_audit.md": {
+      "3d2371b94363bb589b7f07d9493bfcd380eefc5e377474509a5f88c40a6109ec": 5
+    },
+    "meta/next_ten/09-two-step-leftover/derivation/test_derivation.py": {
+      "3d2371b94363bb589b7f07d9493bfcd380eefc5e377474509a5f88c40a6109ec": 1
+    },
     "meta/next_ten/candidates.json": {
       "64a5b744b8e3f298d33d50f2e10418891f9645d5737bef8d16b5de0f46621861": 1
     },

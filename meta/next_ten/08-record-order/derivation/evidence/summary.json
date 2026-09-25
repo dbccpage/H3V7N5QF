@@ -1,0 +1,101 @@
+{
+  "admissions_per_round": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    10,
+    50
+  ],
+  "attempts_per_round": [
+    0,
+    1,
+    4,
+    22,
+    84,
+    374,
+    1373
+  ],
+  "bound_terms": 2,
+  "frontier_size": 103,
+  "new_per_round": [
+    1,
+    1,
+    3,
+    8,
+    28,
+    85,
+    262
+  ],
+  "num_split_classes": 2,
+  "problem": "08-record-order",
+  "rounds": 6,
+  "seed_sentence": "Recorded leftovers are kept in the order they arise. Only the most recently recorded leftover may be admitted, adding the assertion xry or the assertion xsy; an unadmitted leftover is not an assertion.",
+  "split_classes": [
+    {
+      "ordered_count": 2,
+      "ordered_keys": [
+        "2#r:0000#s:0000#rec:0-1.1-1",
+        "2#r:0000#s:0000#rec:0-0.1-0"
+      ],
+      "ordered_records": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ],
+      "sixteenth_key": "2::|#0-1*1.1-1*1",
+      "sixteenth_n": 2
+    },
+    {
+      "ordered_count": 2,
+      "ordered_keys": [
+        "2#r:0000#s:0000#rec:0-1.0-0",
+        "2#r:0000#s:0000#rec:0-0.0-1"
+      ],
+      "ordered_records": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      ],
+      "sixteenth_key": "2::|#1-0*1.1-1*1",
+      "sixteenth_n": 2
+    }
+  ],
+  "total_ordered_results": 388,
+  "total_sixteenth_results": 386
+}

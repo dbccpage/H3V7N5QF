@@ -36,7 +36,7 @@ derivation.
 `prototype.py` ran before any complete proposal seed was written. Its exact
 bounded output is `prototype_results.json`. C19 has a two-change return from
 the empty beginning through a bare one-term state; C21 loses a one-term
-two-relation result at round 3. C06 was excluded because merely dropping
+two-relation result at round 3. C06 was excluded because dropping only
 the loop ban leaves the existing obstruction-answer rule in place: the
 one-step loop-producing partial identification is still obstructed, so the
 proposed edit does not decide whether it is performed. C08's one-term,

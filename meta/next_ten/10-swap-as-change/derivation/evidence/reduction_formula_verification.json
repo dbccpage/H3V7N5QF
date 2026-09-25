@@ -1,0 +1,7 @@
+{
+  "canonical_states_count": 32,
+  "max_cost_reduction": 3,
+  "pairs_with_reduction_count": 220,
+  "reduction_formula_verified_all_pairs": true,
+  "total_pairs_checked": 1024
+}

@@ -1,0 +1,91 @@
+{
+  "comparison": {
+    "admissions_disjoint": true,
+    "counts_identical": true,
+    "ordered_same": false,
+    "sixteenth_same": true
+  },
+  "conclusion": "Hypothesis validated: Order-sensitive feedback changes the result quotient and admission paths. Falsifier refuted: results are not classified by old count alone.",
+  "witness1": {
+    "admissions": [
+      "admit top leftover 0\u21131 into r",
+      "admit top leftover 0\u21131 into s"
+    ],
+    "depth_reached": 6,
+    "key": "2#r:0000#s:0000#rec:0-0.0-1",
+    "n": 2,
+    "r": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "record": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "s": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sixteenth_counts": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "top_leftover": [
+      0,
+      1
+    ]
+  },
+  "witness2": {
+    "admissions": [
+      "admit top leftover 0\u21130 into r",
+      "admit top leftover 0\u21130 into s"
+    ],
+    "depth_reached": 6,
+    "key": "2#r:0000#s:0000#rec:0-1.0-0",
+    "n": 2,
+    "r": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "record": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "s": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "sixteenth_counts": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "top_leftover": [
+      0,
+      0
+    ]
+  }
+}

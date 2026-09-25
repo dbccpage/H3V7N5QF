@@ -1,0 +1,10 @@
+{
+  "all_passed": true,
+  "checks": {
+    "step_counts_formula_matches_changes": true,
+    "two_term_closed_form_matches_burnside": true,
+    "size_changes_by_plus_minus_one": true,
+    "bare_term_removal_preserves_counted_assertions": true,
+    "cost_equals_bfs_depth": true
+  }
+}

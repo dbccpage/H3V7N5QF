@@ -1,0 +1,10 @@
+{
+  "attempts_at_budget_zero": 403,
+  "attempts_count": 507,
+  "frontier_size": 0,
+  "initial_budget": 4,
+  "max_changes": 4,
+  "performed_count": 104,
+  "total_states": 46,
+  "total_waves": 5
+}

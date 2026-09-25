@@ -1,0 +1,41 @@
+{
+  "cycle_length": 2,
+  "states": [
+    {
+      "step": 0,
+      "n": 0,
+      "m": 0,
+      "mult": [],
+      "name": "empty"
+    },
+    {
+      "step": 1,
+      "n": 1,
+      "m": 0,
+      "mult": [
+        0
+      ],
+      "name": "one_term_bare"
+    },
+    {
+      "step": 2,
+      "n": 0,
+      "m": 0,
+      "mult": [],
+      "name": "empty"
+    }
+  ],
+  "changes": [
+    {
+      "step": 1,
+      "kind": "ADD_TERM",
+      "written": "add a term"
+    },
+    {
+      "step": 2,
+      "kind": "REMOVE_BARE_TERM",
+      "written": "remove bare term 0"
+    }
+  ],
+  "closed": true
+}

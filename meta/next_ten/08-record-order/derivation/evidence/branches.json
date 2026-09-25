@@ -1,0 +1,54 @@
+{
+  "branch1": {
+    "final_record": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "final_top": [
+      0,
+      1
+    ],
+    "matches_witness1": true,
+    "next_admissible": [
+      "admit top leftover 0\u21131 into r",
+      "admit top leftover 0\u21131 into s"
+    ],
+    "step5": "remove 0r0 -> leaves 0\u21130",
+    "step6": "remove 0r1 -> leaves 0\u21131"
+  },
+  "branch2": {
+    "final_record": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "final_top": [
+      0,
+      0
+    ],
+    "matches_witness2": true,
+    "next_admissible": [
+      "admit top leftover 0\u21130 into r",
+      "admit top leftover 0\u21130 into s"
+    ],
+    "step5": "remove 0r1 -> leaves 0\u21131",
+    "step6": "remove 0r0 -> leaves 0\u21130"
+  },
+  "common_prefix": [
+    "add term (0)",
+    "add term (1)",
+    "add assertion 0r0",
+    "add assertion 0r1"
+  ]
+}

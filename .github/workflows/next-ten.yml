@@ -1,0 +1,42 @@
+name: Next ten derivations
+
+on:
+  pull_request:
+    paths:
+      - 'meta/next_ten/**'
+      - '.github/workflows/next-ten.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest pytest-cov mypy
+      - name: Verify packages, Python tests, types, and evidence
+        run: |
+          set -e
+          python meta/next_ten/verify_packages.py
+          for package in meta/next_ten/*/derivation; do
+            python -m pytest "$package/test_derivation.py" -q -o addopts='' -p no:cacheprovider \
+              "--cov=$package" --cov-branch "--cov-report=json:$package/coverage.json" --cov-fail-under=95
+            python -c 'import json,sys; files=json.load(open(sys.argv[1],encoding="utf-8"))["files"]; evidence=next(v for k,v in files.items() if k.endswith("/evidence.py")); assert evidence["summary"]["percent_covered"] >= 95, evidence["summary"]' "$package/coverage.json"
+            MYPYPATH="$GITHUB_WORKSPACE/code:$GITHUB_WORKSPACE/$package" python -m mypy --strict "$package/model.py" "$package/evidence.py" "$package/test_derivation.py"
+            python "$package/evidence.py" --check
+          done
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: lean4
+          auto-config: false
+      - name: Check each Lean derivation
+        run: |
+          set -e
+          for source in meta/next_ten/*/derivation/Derivation.lean; do
+            lean "$source"
+          done

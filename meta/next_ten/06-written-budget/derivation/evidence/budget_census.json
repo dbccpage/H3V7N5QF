@@ -1,0 +1,18 @@
+{
+  "budget_counts": {
+    "0": 32,
+    "1": 9,
+    "2": 3,
+    "3": 1,
+    "4": 1
+  },
+  "census_counts": {
+    "0": 32,
+    "1": 9,
+    "2": 3,
+    "3": 1,
+    "4": 1
+  },
+  "census_matches": true,
+  "total_budgeted_states": 46
+}

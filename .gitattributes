@@ -1,2 +1,4 @@
 prompt/** -text
 evidence/** -text
+meta/**/evidence/** -text
+meta/**/evidence.json -text
