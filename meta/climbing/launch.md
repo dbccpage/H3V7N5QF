@@ -53,7 +53,14 @@ if (Test-Path "$C/meta") { throw "meta/ present: do not launch" }
 ```powershell
 Set-Location $C
 $env:CLAUDE_CODE_DISABLE_AUTO_MEMORY = "1"
-& "C:\Users\a343o\AppData\Roaming\Claude\claude-code\2.1.281\claude.exe" -p "Begin from prompt/<n>/prompt.md." --model claude-opus-5-5 --setting-sources project --strict-mcp-config --disable-slash-commands --no-chrome --output-format stream-json --verbose --disallowedTools "WebFetch,WebSearch" *> "C:/wt/h3-<n>.transcript.jsonl"
+# A fresh clone is an untrusted workspace: the project settings' allow list is
+# not applied there, and every write or python call waits for an approval that
+# a headless run cannot give (found at H2, 2026-09-25). Pass the settings' own
+# allow and deny lists on the command line, unchanged.
+$S = Get-Content "$C/.claude/settings.json" -Raw | ConvertFrom-Json
+$allow = ($S.permissions.allow -join ",")
+$deny = ($S.permissions.deny -join ",")
+& "C:\Users\a343o\AppData\Roaming\Claude\claude-code\2.1.281\claude.exe" -p "Begin from prompt/<n>/prompt.md." --model claude-opus-5-5 --setting-sources project --strict-mcp-config --disable-slash-commands --no-chrome --output-format stream-json --verbose --allowedTools $allow --disallowedTools $deny *> "C:/wt/h3-<n>.transcript.jsonl"
 "exit: $LASTEXITCODE"
 ```
 
