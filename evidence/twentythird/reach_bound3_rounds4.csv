@@ -1,0 +1,30 @@
+result,written,round,has_a_term,results_it_reaches,results_it_reaches_by_search
+0:,no terms; asserted nothing,0,0,29,29
+1:0,terms a; asserted nothing,1,1,28,28
+1:-1,terms a; asserted asa,2,1,28,28
+1:1,terms a; asserted ara,2,1,28,28
+"2:0,0,0,0",terms a b; asserted nothing,2,1,28,28
+1:-2,terms a; asserted asa(2),3,1,28,28
+1:2,terms a; asserted ara(2),3,1,28,28
+"2:-1,0,0,0",terms a b; asserted bsb,3,1,28,28
+"2:0,-1,0,0",terms a b; asserted bsa,3,1,28,28
+"2:0,0,0,1",terms a b; asserted brb,3,1,28,28
+"2:0,1,0,0",terms a b; asserted bra,3,1,28,28
+"3:0,0,0,0,0,0,0,0,0",terms a b c; asserted nothing,3,1,28,28
+1:-3,terms a; asserted asa(3),4,1,28,28
+1:3,terms a; asserted ara(3),4,1,28,28
+"2:-2,0,0,0",terms a b; asserted bsb(2),4,1,28,28
+"2:-1,-1,0,0",terms a b; asserted bsa bsb,4,1,28,28
+"2:0,-2,0,0",terms a b; asserted bsa(2),4,1,28,28
+"2:-1,0,0,-1",terms a b; asserted asa bsb,4,1,28,28
+"2:0,-1,0,1",terms a b; asserted brb bsa,4,1,28,28
+"2:-1,0,0,1",terms a b; asserted brb asa,4,1,28,28
+"2:0,0,0,2",terms a b; asserted brb(2),4,1,28,28
+"2:-1,1,0,0",terms a b; asserted bra bsb,4,1,28,28
+"2:0,1,0,1",terms a b; asserted bra brb,4,1,28,28
+"2:0,2,0,0",terms a b; asserted bra(2),4,1,28,28
+"2:1,0,0,1",terms a b; asserted ara brb,4,1,28,28
+"3:-1,0,0,0,0,0,0,0,0",terms a b c; asserted csc,4,1,28,28
+"3:0,-1,0,0,0,0,0,0,0",terms a b c; asserted csb,4,1,28,28
+"3:0,0,0,0,0,0,0,0,1",terms a b c; asserted crc,4,1,28,28
+"3:0,0,0,0,0,0,0,1,0",terms a b c; asserted crb,4,1,28,28

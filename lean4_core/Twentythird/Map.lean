@@ -329,6 +329,15 @@ theorem arbOnce_wf : arbOnce.WF := by
   subst ha
   decide
 
+/-- **On a mapped state the map back returns the original exactly when the original asserts the fewest of
+its result and every other such state is it in some writing.** -/
+theorem readBack3_self_iff (T : St) : ReadBack3 T T ↔ Fewest T ∧ ∀ T', Fewest3 T T' → SameW T' T :=
+  ⟨fun h => ⟨h.1.2, h.2⟩, fun h => ⟨⟨Same3.refl T, h.1⟩, h.2⟩⟩
+
+/-- **Whatever the map back answers asserts the fewest of the result, at its cost.** -/
+theorem readBack3_answer_cost {G T : St} (h : ReadBack3 G T) {c : Nat} (hc : Cost3 G c) : phi T = c :=
+  fewest3_length h.1 hc
+
 /-- **On `a b; arb` the map back returns it.** -/
 theorem readBack3_arb : ReadBack3 arbOnce arbOnce := by
   have hc : Cost3 arbOnce 3 := cost3_two arbOnce_wf rfl

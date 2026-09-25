@@ -134,6 +134,8 @@ import Twentythird
 #print axioms Twentythird.cost3_arbTwice
 #print axioms Twentythird.readBack3_none
 #print axioms Twentythird.arbOnce_wf
+#print axioms Twentythird.readBack3_self_iff
+#print axioms Twentythird.readBack3_answer_cost
 #print axioms Twentythird.readBack3_arb
 -- Twentythird/Reach.lean
 #print axioms Twentythird.reach3_criterion

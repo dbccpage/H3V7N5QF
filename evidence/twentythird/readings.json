@@ -1,0 +1,40 @@
+{
+  "C-H1_results": 226,
+  "C-H1_results_per_round": [
+    1,
+    1,
+    3,
+    6,
+    13,
+    24,
+    39,
+    58,
+    81
+  ],
+  "C-H2_results_per_round": [
+    1,
+    1,
+    3,
+    6,
+    20,
+    46,
+    102,
+    182,
+    312
+  ],
+  "C-H2_results_which_are_the_twentysecond_results": 673,
+  "C-J3_with_raising_results": 419,
+  "C-J3_with_raising_results_per_round": [
+    1,
+    1,
+    3,
+    7,
+    16,
+    33,
+    63,
+    111,
+    184
+  ],
+  "bound_on_terms": 2,
+  "rounds": 8
+}
