@@ -1,8 +1,9 @@
 # H1 "cancellation": launch packet
 
-**Status:** prepared 2026-09-24, **not launched**. Launching needs the six
-author decisions at the end of this file, and the P0 isolation change
-(`meta/climbing/blindness.md`) merged into `main`. This packet is chosen
+**Status:** prepared 2026-09-24. On 2026-09-25 the author adopted the six
+decisions of §8 as written (`../rulings.md`). The seed and task are
+installed as `prompt/twentysecond/`, byte for byte. The class is frozen.
+Launch waits only for the install to merge. This packet is chosen
 apparatus, outside the seal. The files a run will see (`seed_prompt.md`,
 `prompt.md`) use only the parent seed's words and this repository's own.
 
@@ -83,18 +84,21 @@ To be filled from evidence after the run, in `record.md`:
 
 ## 6. Launch, with isolation
 
-These steps run after the decisions and the P0 merge. The commands are
-PowerShell. In Git Bash, prefix the `sparse-checkout` line with
-`MSYS_NO_PATHCONV=1`, or the `/meta/` pattern is rewritten into a Windows
-path. This was tested on 2026-09-24.
+The decisions are adopted and P0 is merged. The commands are PowerShell. In
+Git Bash, prefix the `sparse-checkout` line with `MSYS_NO_PATHCONV=1`, or
+the `/meta/` pattern is rewritten into a Windows path. This was tested on
+2026-09-24.
 
-1. **Install (the author's act).** In a pull request to `main`, copy
-   `seed_prompt.md` and `prompt.md` byte for byte to `prompt/twentysecond/`,
-   where `.gitattributes` keeps them LF. Put the two digests above in the
-   pull request body. Merge it.
-2. **Freeze.** Confirm that `prediction.sha256` is on `main`, and that
-   `git show origin/main:meta/climbing/h1_cancellation/prediction.md | sha256sum`
-   matches it.
+1. **Install (done).** `seed_prompt.md` and `prompt.md` are installed byte
+   for byte as `prompt/twentysecond/`, where `.gitattributes` keeps them
+   LF, with the digests above. `paper/change_log.md` item 42 logs the
+   install. The watchlist pin counts both files.
+2. **Freeze.** After the install merges, confirm three things:
+   - `git show origin/main:meta/climbing/h1_cancellation/prediction.md | sha256sum`
+     matches `prediction.sha256`;
+   - the same holds for `extension_class.md` and `extension_class.sha256`;
+   - `git show origin/main:prompt/twentysecond/seed_prompt.md | sha256sum`
+     is `dd6ea130…`.
 3. **Worktree, omitting `meta/`:**
 
    ```powershell
@@ -105,27 +109,37 @@ path. This was tested on 2026-09-24.
    ```
 
    Do not link `lean4/.lake` to another checkout. The run's Lean package
-   has no dependency, so it needs none.
-4. **Launch (Claude, from the worktree root):**
+   has no dependency, so it needs none. In this worktree the watchlist sets
+   aside the pins of the `meta/` files it does not hold, and passes.
+4. **Launch (headless Claude, from the worktree root):**
 
    ```powershell
    Set-Location C:/wt/h3-d22
-   claude --disallowedTools "WebFetch,WebSearch" --model fable --setting-sources project --strict-mcp-config --disable-slash-commands --no-chrome "Begin from prompt/twentysecond/prompt.md."
+   $env:CLAUDE_CODE_DISABLE_AUTO_MEMORY = "1"
+   & "C:\Users\a343o\AppData\Roaming\Claude\claude-code\2.1.281\claude.exe" -p "Begin from prompt/twentysecond/prompt.md." --model claude-opus-5-5 --setting-sources project --strict-mcp-config --disable-slash-commands --no-chrome --output-format stream-json --verbose --disallowedTools "WebFetch,WebSearch" *> C:/wt/h3-d22.transcript.jsonl
+   "exit: $LASTEXITCODE"
    ```
 
    What each part does:
 
+   - The binary is 2.1.281; the one on `PATH` is too old for the model.
+   - `CLAUDE_CODE_DISABLE_AUTO_MEMORY=1` keeps memory off. The settings
+     also say `autoMemoryEnabled: false`.
+   - `-p` runs headless. The prompt comes right after it, so no list-taking
+     flag can swallow it. In this mode a tool outside the allow list is
+     refused, never asked about.
    - `--setting-sources project` loads only the tracked
      `.claude/settings.json`, with its deny list, and no user settings or
      plugins.
    - `--strict-mcp-config` with no `--mcp-config` loads no outside server.
    - `--disable-slash-commands` turns off every skill.
-   - `--disallowedTools` repeats the two web denials on the command line.
+   - `--disallowedTools`, last, repeats the two web denials.
+   - The transcript is written outside the worktree, so the run cannot read
+     or commit it. It is what the audit in §7 reads.
 
-   Keep `--disallowedTools` before the other flags, because it takes a list
-   and would swallow a prompt placed after it. If another runner is used, it
-   reads `AGENTS.md`, which points to `CLAUDE.md`. Its own network switch
-   must be off, and its grade records how isolation was enforced.
+   If another runner is used, it reads `AGENTS.md`, which points to
+   `CLAUDE.md`. Its own network switch must be off, and its grade records
+   how isolation was enforced.
 5. **During the run,** nothing is sent to the session. The run asks no
    questions.
 
@@ -146,7 +160,7 @@ path. This was tested on 2026-09-24.
 full local suite of about 90 minutes, about 2 hours of meta work, and 1 to
 1.5 author hours.
 
-## 8. Decisions needed before launch
+## 8. Decisions (adopted by the author as written, 2026-09-25)
 
 | # | decision | recommendation |
 |---|---|---|

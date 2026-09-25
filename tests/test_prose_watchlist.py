@@ -11,6 +11,7 @@ whole point of storing them as digests.
 from __future__ import annotations
 
 import hashlib
+import subprocess
 import sys
 from pathlib import Path
 
@@ -94,12 +95,67 @@ def test_probe_reports_watched_status() -> None:
     assert "not watched" in cpw.probe(["zzbeta"], watched)[0]
 
 
-def test_in_scope_excludes_seed_inputs_and_the_json() -> None:
-    # the whole prompt/ tree is read-only seed input, out of scope by prefix.
-    assert not cpw.in_scope("prompt/second/seed_prompt.md")
-    assert not cpw.in_scope("prompt/third/seed_prompt.md")
+def test_in_scope_counts_prompts_and_excludes_the_json() -> None:
+    # since the author's ruling of 2026-09-25 the prompt/ tree is counted.
+    assert cpw.in_scope("prompt/second/seed_prompt.md")
+    assert cpw.in_scope("prompt/third/prompt.md")
     assert not cpw.in_scope(cpw.WATCHLIST_REL)
     assert cpw.in_scope("paper/second/paper.md")
+
+
+def test_a_watched_word_in_a_prompt_is_counted(tmp_path: Path) -> None:
+    # injection for the scope change: the same probe word is found in a prompt.
+    rel = "prompt/probe/prompt.md"
+    (tmp_path / "prompt" / "probe").mkdir(parents=True)
+    (tmp_path / rel).write_text("line one\nuses zebrafinch here\n", encoding="utf-8")
+    hits = cpw.scan_repo(tmp_path, _watched("zebrafinch"), files=[rel])
+    assert [h.line for h in hits[rel]] == [2]
+
+
+def _git(repo: Path, *args: str) -> None:
+    subprocess.run(["git", *args], cwd=repo, check=True, capture_output=True)
+
+
+def _sparse_repo(tmp_path: Path) -> Path:
+    """A two-file repository with `kept/a.md` present and `gone/b.md` marked
+    skip-worktree and absent, as a sparse checkout leaves it."""
+    repo = tmp_path / "r"
+    (repo / "kept").mkdir(parents=True)
+    (repo / "gone").mkdir()
+    (repo / "kept" / "a.md").write_text("zebrafinch\n", encoding="utf-8")
+    (repo / "gone" / "b.md").write_text("zebrafinch zebrafinch\n", encoding="utf-8")
+    _git(repo, "init", "-q")
+    _git(repo, "add", "-A")
+    _git(repo, "-c", "user.name=t", "-c", "user.email=t@t", "commit", "-q", "-m", "t")
+    _git(repo, "update-index", "--skip-worktree", "gone/b.md")
+    (repo / "gone" / "b.md").unlink()
+    return repo
+
+
+def test_a_sparse_checkout_sets_aside_the_pins_it_does_not_hold(tmp_path: Path) -> None:
+    repo = _sparse_repo(tmp_path)
+    assert cpw.sparse_files(repo) == {"gone/b.md"}
+    d = cpw.digest("zebrafinch")
+    data: dict[str, object] = {
+        "watched": {d: "probe"},
+        "baseline": {"kept/a.md": {d: 1}, "gone/b.md": {d: 2}},
+    }
+    code, messages, _ = cpw.run(repo, data)
+    assert code == 0, messages
+    assert "1 pinned files lie outside this sparse checkout" in messages[0]
+    # a new hit in the part that is held still fails.
+    (repo / "kept" / "a.md").write_text("zebrafinch zebrafinch\n", encoding="utf-8")
+    code, messages, _ = cpw.run(repo, data)
+    assert code == 1 and "NEW HIT: kept/a.md" in messages[0]
+
+
+def test_regen_refuses_in_a_sparse_checkout(tmp_path: Path) -> None:
+    repo = _sparse_repo(tmp_path)
+    path = repo / "w.json"
+    data: dict[str, object] = {"watched": {cpw.digest("zebrafinch"): "probe"}, "baseline": {}}
+    out = cpw.regen(repo, path, data)
+    assert out[0].startswith("regen: refused")
+    assert not path.exists()
 
 
 def test_load_rejects_malformed_watchlist(tmp_path: Path) -> None:
