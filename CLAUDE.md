@@ -4529,8 +4529,10 @@ These are operator steps, not results, and they hold for every later run:
   `lake update`), outside connectors and servers, reads outside the working
   directory, and edits to `.claude/`. A run commits on its branch; the
   operator pushes it and opens the pull request.
-- A run starts in a fresh worktree that omits `meta/`, with skills, plugins,
-  memory and user settings off. Nothing outside the worktree is an input.
+- A run starts in a fresh clone of a one-commit snapshot of `main` that omits
+  `meta/`, with skills, plugins, memory and user settings off (from
+  2026-09-26; earlier runs used a worktree). Nothing outside the clone is an
+  input. The operator replays the run's commits onto `main`.
 
 ---
 

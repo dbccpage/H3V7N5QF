@@ -504,3 +504,19 @@ reading of the seed.
     regenerated. Tests in `tests/test_prose_watchlist.py` cover the new
     scope and the sparse case by injection. No earlier prompt, code, Lean,
     evidence, or paper file changes.
+
+43. **The twenty-third seed installed; runs start from a clone
+    (2026-09-26).** `prompt/twentythird/seed_prompt.md` (SHA-256
+    `84eda21987126db16a43261ccc98d6fef23449c9c580a1bb5cf275b4f378578f`) and
+    `prompt/twentythird/prompt.md` (SHA-256
+    `b9d8c293dec647f6c03f7712e8253d0b8360379ff9585825bf00214f1388df8a`) are
+    installed as LF bytes. The seed is the twenty-second seed
+    (`dd6ea130764ddc6336ba4e21adcac1493cfca11312574dabf25c9859cddefd04`)
+    with its sameness sentence extended and one sentence added. From this
+    derivation on, a run starts in a clone of a one-commit snapshot of
+    `main` that omits `meta/`, and the operator replays its commits onto
+    `main`. `ci/check_prose_watchlist.py` therefore sets aside the pins
+    under a tree that no tracked file lies in (`meta/`), and refuses to
+    regenerate there; `tests/test_prose_watchlist.py` covers both sides by
+    injection. `CLAUDE.md`'s operator note says the same. No earlier prompt,
+    code, Lean, evidence, or paper file changes.

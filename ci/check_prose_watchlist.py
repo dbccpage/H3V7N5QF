@@ -26,10 +26,14 @@ Design, stated so it cannot be quietly weakened:
   edited, but a new prompt is pinned when it is installed, so what a run is
   handed is on the census. Text that is not UTF-8 is decoded as Latin-1 rather
   than skipped, so an encoding cannot hide a hit.
-* **A sparse checkout is read as far as it goes.**  Tracked files marked
-  skip-worktree (outside a sparse checkout, so absent on disk) are not read,
-  their pins are set aside, and the clean message counts them. ``--regen``
-  refuses in a sparse checkout, since it would drop those pins.
+* **A partial checkout is read as far as it goes.**  Tracked files marked
+  skip-worktree (outside a sparse checkout, so absent on disk) are not read.
+  When no tracked file lies under one of ``OMITTABLE_PREFIXES`` (a snapshot
+  that leaves out the review area), the pins under that prefix are not read
+  either. Their pins are set aside, and the clean message counts them. A pin
+  under a prefix that is still partly tracked is checked as usual, so deleting
+  one file does not hide its pin. ``--regen`` refuses in either case, since it
+  would drop those pins.
 * **Matching is whole-word after normalization** (NFKD, combining marks
   dropped, lowercase). A token matches if it, or it minus a trailing ``s`` or
   ``es``, digests to a watched term. Two-word terms match two adjacent tokens on
@@ -61,6 +65,9 @@ EXCLUDED_PATHS = frozenset({WATCHLIST_REL})
 # No prefix is excluded. Until 2026-09-25 the whole `prompt/` tree was; by the
 # author's ruling of that date it is counted under the pin like any other file.
 EXCLUDED_PREFIXES: tuple[str, ...] = ()
+# Top-level trees a derivation's snapshot leaves out (2026-09-26). When no
+# tracked file lies under one, its pins are set aside rather than failed as stale.
+OMITTABLE_PREFIXES: tuple[str, ...] = ("meta/",)
 
 TOKEN = re.compile(r"\b[a-z]+\b")
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
@@ -195,6 +202,14 @@ def sparse_files(repo: Path) -> set[str]:
     return out
 
 
+def omitted_prefixes(tracked: Iterable[str]) -> tuple[str, ...]:
+    """The ``OMITTABLE_PREFIXES`` under which no tracked file lies."""
+    paths = list(tracked)
+    return tuple(
+        p for p in OMITTABLE_PREFIXES if not any(t.startswith(p) for t in paths)
+    )
+
+
 def scan_repo(
     repo: Path,
     watched: Mapping[str, str],
@@ -309,22 +324,24 @@ def run(
     baseline = data["baseline"]
     assert isinstance(watched, dict) and isinstance(baseline, dict)
     unread: set[str] = set()
+    omitted: tuple[str, ...] = ()
     if files is None:
+        tracked = tracked_files(repo)
         unread = sparse_files(repo)
-        if unread:
-            files = [f for f in tracked_files(repo) if f not in unread]
-    pinned = {rel: counts for rel, counts in baseline.items() if rel not in unread}
+        omitted = omitted_prefixes(tracked)
+        files = [f for f in tracked if f not in unread]
+    aside = {rel for rel in baseline if rel in unread or rel.startswith(omitted)}
+    pinned = {rel: counts for rel, counts in baseline.items() if rel not in aside}
     hits = scan_repo(repo, watched, files)
     current = census_of(hits)
     failures = compare(pinned, current, hits)
     if failures:
         return 1, failures, hits
     total = sum(len(v) for v in hits.values())
-    set_aside = len(set(baseline) & unread)
     note = (
-        f"; {set_aside} pinned files lie outside this sparse checkout and were "
-        f"not read"
-        if set_aside
+        f"; {len(aside)} pinned files lie outside this checkout (sparse or "
+        f"omitted) and were not read"
+        if aside
         else ""
     )
     return (
@@ -358,10 +375,10 @@ def regen(repo: Path, path: Path, data: dict[str, object]) -> list[str]:
     watched = data["watched"]
     old = data["baseline"]
     assert isinstance(watched, dict) and isinstance(old, dict)
-    if sparse_files(repo):
+    if sparse_files(repo) or omitted_prefixes(tracked_files(repo)):
         return [
-            "regen: refused: this is a sparse checkout, and a regenerated pin "
-            "would drop the pins of the files it does not hold"
+            "regen: refused: this checkout is sparse or omits a tree, and a "
+            "regenerated pin would drop the pins of the files it does not hold"
         ]
     new = census_of(scan_repo(repo, watched))
     diff = compare(old, new)

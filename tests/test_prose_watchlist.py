@@ -142,7 +142,7 @@ def test_a_sparse_checkout_sets_aside_the_pins_it_does_not_hold(tmp_path: Path) 
     }
     code, messages, _ = cpw.run(repo, data)
     assert code == 0, messages
-    assert "1 pinned files lie outside this sparse checkout" in messages[0]
+    assert "1 pinned files lie outside this checkout" in messages[0]
     # a new hit in the part that is held still fails.
     (repo / "kept" / "a.md").write_text("zebrafinch zebrafinch\n", encoding="utf-8")
     code, messages, _ = cpw.run(repo, data)
@@ -190,3 +190,39 @@ def test_an_outside_term_outside_its_pin_is_caught() -> None:
         forged,
     )
     assert any("NEW HIT" in f and "change_log.md" in f for f in failures)
+
+
+def _repo_with(tmp_path: Path, files: dict[str, str]) -> Path:
+    repo = tmp_path / "s"
+    for rel, text in files.items():
+        (repo / rel).parent.mkdir(parents=True, exist_ok=True)
+        (repo / rel).write_text(text, encoding="utf-8")
+    _git(repo, "init", "-q")
+    _git(repo, "add", "-A")
+    _git(repo, "-c", "user.name=t", "-c", "user.email=t@t", "commit", "-q", "-m", "t")
+    return repo
+
+
+def test_a_snapshot_without_the_review_area_sets_its_pins_aside(tmp_path: Path) -> None:
+    # a snapshot clone holds no file under meta/: those pins are not read.
+    repo = _repo_with(tmp_path, {"kept/a.md": "zebrafinch\n"})
+    assert cpw.omitted_prefixes(cpw.tracked_files(repo)) == ("meta/",)
+    d = cpw.digest("zebrafinch")
+    data: dict[str, object] = {
+        "watched": {d: "probe"},
+        "baseline": {"kept/a.md": {d: 1}, "meta/x.md": {d: 3}},
+    }
+    code, messages, _ = cpw.run(repo, data)
+    assert code == 0, messages
+    assert "1 pinned files lie outside this checkout" in messages[0]
+    assert cpw.regen(repo, repo / "w.json", data)[0].startswith("regen: refused")
+
+
+def test_a_pin_under_a_partly_tracked_review_area_is_still_checked(tmp_path: Path) -> None:
+    # injection: with meta/ present, a pinned meta file that is gone still fails.
+    repo = _repo_with(tmp_path, {"meta/y.md": "plain\n"})
+    assert cpw.omitted_prefixes(cpw.tracked_files(repo)) == ()
+    d = cpw.digest("zebrafinch")
+    data: dict[str, object] = {"watched": {d: "probe"}, "baseline": {"meta/x.md": {d: 3}}}
+    code, messages, _ = cpw.run(repo, data)
+    assert code == 1 and "STALE PIN: meta/x.md" in messages[0]
