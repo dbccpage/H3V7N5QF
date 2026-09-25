@@ -1,0 +1,6 @@
+# Exact Frontier Export for Problem 01
+# Total exits leaving term bound: 3
+# Source state -> Attempted change
+n=3 mult=(0, 0, 0, 0, 0, 0, 0, 0, 0) -> add a term
+n=3 mult=(0, 0, 0, 0, 0, 0, 0, 0, 1) -> add a term
+n=3 mult=(0, 0, 0, 0, 0, 0, 0, 1, 0) -> add a term

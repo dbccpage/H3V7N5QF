@@ -1,0 +1,25 @@
+{
+  "problem": "meta/next_ten/01-remove-bare-term",
+  "parent": "seventh",
+  "hypothesis": "A bare-term removal destroys the empty state's one-way reachability.",
+  "hypothesis_status": "confirmed",
+  "falsifier": "No nonempty result reaches the empty beginning within two changes.",
+  "falsifier_status": "refuted",
+  "witness": {
+    "nonempty_state": {
+      "n": 1,
+      "m": 0,
+      "mult": [
+        0
+      ]
+    },
+    "change_to_empty": "remove bare term 0",
+    "steps_to_empty": 1,
+    "steps_leq_2": true
+  },
+  "reachability_classification": {
+    "seventh_status": "one-way out of empty; empty in-degree was 0",
+    "problem01_status": "strongly connected; empty in-degree is positive (>= 1)",
+    "universal_reachability": true
+  }
+}

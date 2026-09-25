@@ -1,0 +1,35 @@
+{
+  "cost_shifts": {
+    "empty": null,
+    "n=1,m=0": -1,
+    "n=1,m=1": -1,
+    "n=1,m=2": -1,
+    "n=1,m=3": -1,
+    "n=1,m=4": -1,
+    "one_term": -1
+  },
+  "empty_reachable_in_03": false,
+  "empty_reachable_in_ninth": true,
+  "falsifier_holds": false,
+  "hypothesis_supported": true,
+  "root_03_m": 0,
+  "root_03_n": 1,
+  "root_ninth_m": 0,
+  "root_ninth_n": 0,
+  "round_03_new_per_round": [
+    1,
+    3,
+    8,
+    28,
+    99
+  ],
+  "round_03_of_one_term": 0,
+  "round_ninth_new_per_round": [
+    1,
+    1,
+    3,
+    8,
+    28
+  ],
+  "round_ninth_of_one_term": 1
+}

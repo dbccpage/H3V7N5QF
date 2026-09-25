@@ -1,0 +1,74 @@
+{
+  "bra_False_anchored": {
+    "falsifier_agrees_with_seventeenth": false,
+    "problem05_refusal_memory": {
+      "loop_states_count": 57,
+      "oneloop_round": 2,
+      "total_states": 298
+    },
+    "seventeenth_perform": {
+      "loop_states_count": 114,
+      "oneloop_round": 1,
+      "total_states": 165
+    },
+    "seventeenth_replace": {
+      "loop_states_count": 0,
+      "oneloop_round": null,
+      "total_states": 51
+    }
+  },
+  "bra_False_free": {
+    "falsifier_agrees_with_seventeenth": false,
+    "problem05_refusal_memory": {
+      "loop_states_count": 37,
+      "oneloop_round": 2,
+      "total_states": 144
+    },
+    "seventeenth_perform": {
+      "loop_states_count": 45,
+      "oneloop_round": 1,
+      "total_states": 63
+    },
+    "seventeenth_replace": {
+      "loop_states_count": 0,
+      "oneloop_round": null,
+      "total_states": 18
+    }
+  },
+  "bra_True_anchored": {
+    "falsifier_agrees_with_seventeenth": false,
+    "problem05_refusal_memory": {
+      "loop_states_count": 59,
+      "oneloop_round": 2,
+      "total_states": 303
+    },
+    "seventeenth_perform": {
+      "loop_states_count": 114,
+      "oneloop_round": 1,
+      "total_states": 165
+    },
+    "seventeenth_replace": {
+      "loop_states_count": 0,
+      "oneloop_round": null,
+      "total_states": 48
+    }
+  },
+  "bra_True_free": {
+    "falsifier_agrees_with_seventeenth": false,
+    "problem05_refusal_memory": {
+      "loop_states_count": 31,
+      "oneloop_round": 2,
+      "total_states": 144
+    },
+    "seventeenth_perform": {
+      "loop_states_count": 49,
+      "oneloop_round": 1,
+      "total_states": 68
+    },
+    "seventeenth_replace": {
+      "loop_states_count": 0,
+      "oneloop_round": null,
+      "total_states": 19
+    }
+  }
+}

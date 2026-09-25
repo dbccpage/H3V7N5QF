@@ -1,0 +1,35 @@
+{
+  "attempts_per_round": [
+    0,
+    1,
+    3,
+    16,
+    68,
+    274,
+    1147
+  ],
+  "blocked_attempts_per_round": [
+    0,
+    0,
+    0,
+    2,
+    6,
+    38,
+    162
+  ],
+  "bound_assertions": 3,
+  "bound_terms": 3,
+  "frontier_count": 291,
+  "last_new_round": 6,
+  "new_per_round": [
+    1,
+    1,
+    3,
+    7,
+    24,
+    77,
+    178
+  ],
+  "rounds": 6,
+  "total_results": 291
+}
