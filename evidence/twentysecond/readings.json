@@ -1,0 +1,46 @@
+{
+  "C-J2_results": 29,
+  "C-J2_results_per_round": [
+    1,
+    1,
+    3,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "C-J3_results": 1081,
+  "C-J3_results_per_round": [
+    1,
+    1,
+    3,
+    7,
+    23,
+    57,
+    140,
+    287,
+    562
+  ],
+  "C-J3_under_C-X_identify_two_terms_carrying_k_pairs_asserted_together": [
+    {
+      "cost_under_the_plain_changes": 3,
+      "identified": "terms a; asserted ara asa",
+      "state": "terms a b; asserted arb asb"
+    },
+    {
+      "cost_under_the_plain_changes": 5,
+      "identified": "terms a; asserted ara(2) asa(2)",
+      "state": "terms a b; asserted arb(2) asb(2)"
+    },
+    {
+      "cost_under_the_plain_changes": 7,
+      "identified": "terms a; asserted ara(3) asa(3)",
+      "state": "terms a b; asserted arb(3) asb(3)"
+    }
+  ],
+  "bound_on_terms": 2,
+  "chosen_reading_results": 673,
+  "rounds": 8
+}
