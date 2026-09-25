@@ -91,3 +91,15 @@ Each material change, and its reason. Newest last. Commits are on the branch
     entry was added by hand with the digests `--probe` reports, as the
     twenty-second did (its item 11), since `--regen` would drop the pins of files
     this checkout omits.
+
+14. **Every derivation's `--check` was re-run after the paper was written, all
+    twenty-four of them, from `generate.py` to `run_twentyfifth.py`
+    (`research/twentyfifth/check_earlier.py`). Each exited 0 and reported that its
+    evidence matches a fresh regeneration.** Reason: stopping condition AN6. No
+    earlier derivation's file was changed to correct a defect. The other gates of
+    "Done" also passed on the committed tree: `pytest` (1 102 passed; 99.83 %
+    line, 99.70 % branch; every evidence module fully covered), `mypy`, the prose
+    watchlist, the vacuous-check, definitional-citation, mutation-bite and
+    axiom-citation gates, and `lake +leanprover/lean4:v4.33.1 -d lean4_core
+    build`, whose exit code was read on its own line as 0. The axiom report lists
+    only `propext` and `Quot.sound`.
