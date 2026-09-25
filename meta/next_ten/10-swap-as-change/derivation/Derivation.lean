@@ -8,7 +8,11 @@ change. Identifying two terms replaces both by one term in every assertion.
 Exchanging the relations replaces every `xry` with `xsy` and every `xsy` with
 `xry`, preserving each multiplicity."
 
-Formalized here:
+Formalized here for aggregate states recording a term count and total multiplicity
+in each relation. Individual term pairs and their assertion multiplicities are
+handled in the paper model and Python checks, not in this Lean model.
+
+Results in the aggregate model:
 1. `swap` involution: `s.swap.swap = s`.
 2. `swap` preserves size and well-formedness: `s.swap.size = s.size`, `s.swap.WF`.
 3. `Step10`: the five kinds of change (the four kinds of Step9, plus swap).
@@ -41,7 +45,7 @@ abbrev ℕ := Nat
 /-- Two relations: false = r, true = s. -/
 abbrev Rel := Bool
 
-/-- A two-relation state without names: term count `n`, multiplicity in `r`, multiplicity in `s`. -/
+/-- A two-relation aggregate state: term count `n`, total `r` assertions, total `s` assertions. -/
 @[ext]
 structure NDSt where
   n : Nat
@@ -57,7 +61,7 @@ namespace NDSt
 def WF (st : NDSt) : Prop :=
   st.n = 0 → st.r = 0 ∧ st.s = 0
 
-/-- Exchanging the relations replaces every xry with xsy and every xsy with xry. -/
+/-- Exchanging the relations swaps their aggregate assertion counts. -/
 def swap (st : NDSt) : NDSt :=
   ⟨st.n, st.s, st.r⟩
 

@@ -17,8 +17,7 @@ Formalized here:
 4. Step transitions: IDENTIFY, REMOVE (r and s), ADD_TERM, ADD_ASSERTION (r and s).
 5. Non-emptiness invariant: every step on a state with n ≥ 1 preserves n ≥ 1.
 6. The empty state is never reachable from `root03`.
-7. Cost lower bound: reaching state `t` in `k` steps requires `k ≥ size(t) - 1`.
-8. Refutation of the candidate falsifier and resolution of the hypothesis.
+7. Refutation of the candidate falsifier and resolution of the hypothesis.
 -/
 
 set_option linter.unusedVariables false

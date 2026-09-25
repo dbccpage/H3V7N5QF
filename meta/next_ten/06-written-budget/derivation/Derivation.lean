@@ -12,7 +12,7 @@ This formalization establishes in this model:
 3. Stopping at budget zero: no change can be performed once budget reaches zero.
 4. Reachability characterization: a state is reachable from (empty, 4) in n steps iff
    n ≤ 4, remaining budget is 4 - n, and the underlying state is reachable in n ninth-steps.
-5. Term and size bounds: all reachable states have at most 4 terms.
+5. Term bound: all reachable states have at most 4 terms.
 
 Checked without `sorry`, `admit`, or non-standard axioms.
 -/
