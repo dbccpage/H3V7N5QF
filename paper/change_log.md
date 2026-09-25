@@ -463,3 +463,27 @@ reading of the seed.
     not alter the repair branch's theorem, generator, or axiom-report files;
     this integration also carries the separately reviewed repair commit.
     `prompt/` remains untouched.
+
+41. **Isolation restored for later derivations (2026-09-24).** Since
+    2026-09-18 (commit `f255ba5`), `.claude/settings.json` allowed the web
+    tools and outside servers and denied nothing, so the third through
+    twenty-first derivations were isolated by instruction only. The deny
+    list is restored (web fetch and search, `curl`, `git fetch`, `pull`,
+    `push` and `remote`, `gh`, package installs, `lake update`, outside
+    connectors and servers, edits to `.claude/`), and reads outside the
+    working directory are blocked again. The review plan appended to
+    `CLAUDE.md` for item 40 moved verbatim to
+    `meta/review/plan_2026-09-23.md`, and the two closing design-note
+    sections of `ci/OEWAS_GATES.md` moved verbatim to
+    `meta/review/detector_design_notes.md`, so that no file a derivation
+    loads or reads for its gates carries review or analogy vocabulary.
+    `CLAUDE.md` gains a short operator note on isolation, the docstring of
+    `ci/check_prose_watchlist.py` no longer names another repository, and a
+    tracked `AGENTS.md` now only points to `CLAUDE.md` (an untracked stale
+    copy of an older `CLAUDE.md` was removed from the main checkout). The
+    watchlist pin is regenerated for these moves only; every per-paper pin
+    is unchanged. The prompts of the sixteenth through twenty-first
+    derivations also carry phrasing from outside this repository; `prompt/`
+    is read-only, so they are left as they are and the finding is recorded
+    in `meta/climbing/blindness.md`. Nothing under `prompt/`, `code/`,
+    `lean4/`, `evidence/`, or any paper body changes.
