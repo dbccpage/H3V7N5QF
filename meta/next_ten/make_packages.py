@@ -168,7 +168,7 @@ Do not steer toward a known theory. Only the final section of the paper may name
 
 ## Folders
 
-If installed, follow the five-file pattern in `docs/index/topics.md`: `code/<ordinal>/` (typed Python), `code/run_<ordinal>.py`, `tests/`, `lean4/<Ordinal>/`, `evidence/<ordinal>/` with byte-identical `--check`, and `paper/<ordinal>/` with `paper.md`, `claim_ledger.md`, and `change_log.md`. This numbered meta package is a proposal; it does not write into those folders.
+If installed, use these repository folders: `code/<ordinal>/` (typed Python), `code/run_<ordinal>.py`, `tests/`, `lean4/<Ordinal>/`, `evidence/<ordinal>/` with byte-identical `--check`, and `paper/<ordinal>/` with `paper.md`, `claim_ledger.md`, and `change_log.md`. This numbered meta package is a proposal; it does not write into those folders.
 
 ## Gates
 
