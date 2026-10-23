@@ -22,3 +22,24 @@ for it.
 `../climbing/blindness.md` lists the same finding. The installed prompts of
 the seventeenth through twenty-first derivations carry the same dead path;
 they are records under `prompt/` and are left as they are too.
+
+## Template correction, 2026-10-23
+
+AuthorityEffect: None.
+
+The dated note above describes the retained packages and their original
+template. The current `make_packages.py` template now names the repository
+folders directly, without the nonexistent index reference. This changes only
+future rendered text. The ten retained packages, installed `prompt/` inputs,
+and `package_checks.json` have not been regenerated or edited.
+
+Do not rerun the package generator over the retained records to apply this
+correction. The focused tests render the text in memory and check that the
+existing inputs and package files keep their bytes:
+
+```text
+python -m unittest discover -s meta/next_ten -p test_prompt_template.py -v
+```
+
+This is a regression test, not a new development gate or a fresh run of the
+ten mini-implementations.

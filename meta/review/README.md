@@ -39,3 +39,19 @@ python -m unittest discover -s meta/review -p test_run_full_suite.py -v
 ```
 
 A passing plan test is not a passing full-suite receipt or a Lean build.
+
+## Reading older status text, 2026-10-23
+
+The [H3 launch packet](../climbing/h3_twin_fills/packet.md) says "Not launched"
+at its preparation date. Later results are in the
+[twenty-fourth paper](../../paper/twentyfourth/paper.md) and the
+[twenty-fifth paper](../../paper/twentyfifth/paper.md), with their ledgers and
+change logs. The old packet is a preparation record, not current launch status.
+Likewise, the [next-ten packages](../next_ten/README.md) retain their proposal
+text beside later `derivation/` implementations. Neither the old status text nor
+the presence of later files is a fresh replay receipt. Keep both dated records;
+do not overwrite historical summaries to make them read as current results.
+
+The Wiki review's missing entry-point finding was already addressed by the root
+README in PR #56. Open mathematical and formalization obligations remain open;
+the runner and template repairs do not close them or change any axiom policy.
