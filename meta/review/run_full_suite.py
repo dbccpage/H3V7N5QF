@@ -1,7 +1,8 @@
 """Run the full native gate/evidence/report suite and save exact local receipts.
 
-This does not use the network. It runs all baseline commands on the current
-tree, and adds the citation gate if that shared repair exists on the branch.
+It extends the historical baseline plan with the current evidence and report
+launchers and both pinned Lean roots. It adds no check or threshold. Lean must
+already be available offline; the child tools are not network-sandboxed here.
 It never writes to the immutable `baseline/` receipt directory.
 """
 
@@ -14,7 +15,34 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from run_baseline import ROOT, commands
+from run_baseline import ROOT, commands as baseline_commands
+
+
+def commands() -> list[tuple[str, list[str]]]:
+    """The current plan; leave the historical baseline recipe unchanged."""
+    sequence = baseline_commands()
+    known = {name for name, _ in sequence}
+    for pattern, prefix in (("generate_*.py", "generate_"), ("run_*.py", "run_")):
+        for path in sorted((ROOT / "code").glob(pattern)):
+            name = "evidence_" + path.stem.removeprefix(prefix)
+            if name not in known:
+                position = next(i for i, (label, _) in enumerate(sequence) if label == "axioms_base")
+                sequence.insert(position, (name, [sys.executable, path.relative_to(ROOT).as_posix(), "--check"]))
+                known.add(name)
+    for path in sorted((ROOT / "code").glob("lean_report_*.py")):
+        name = "axioms_" + path.stem.removeprefix("lean_report_")
+        if name not in known:
+            position = next(i for i, (label, _) in enumerate(sequence) if label == "git_status")
+            sequence.insert(position, (name, [sys.executable, path.relative_to(ROOT).as_posix()]))
+            known.add(name)
+    position = next(i for i, (name, _) in enumerate(sequence) if name == "lean_build")
+    builds = []
+    for root, label in (("lean4", "lean_build"), ("lean4_core", "lean_core_build")):
+        pin = (ROOT / root / "lean-toolchain").read_text(encoding="utf-8").strip()
+        builds.append((label, ["lake", "+" + pin, "-d", root, "build"]))
+    sequence[position:position + 1] = builds
+    sequence.insert(position, ("axiom_citations", [sys.executable, "ci/check_axiom_citations.py"]))
+    return sequence
 
 
 def now() -> str:
@@ -38,9 +66,6 @@ def main() -> int:
         raise ValueError("the baseline receipts are immutable")
     out.mkdir(parents=True, exist_ok=True)
     sequence = commands()
-    if (ROOT / "ci" / "check_axiom_citations.py").is_file():
-        position = next(i for i, (name, _) in enumerate(sequence) if name == "lean_build")
-        sequence.insert(position, ("axiom_citations", [sys.executable, "ci/check_axiom_citations.py"]))
     summary: dict[str, object] = {
         "branch": git("branch", "--show-current"),
         "head": git("rev-parse", "HEAD"),
