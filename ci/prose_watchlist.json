@@ -4,6 +4,10 @@
     "A CENSUS, not a ban: every whole-word hit in tracked prose is pinned per file under baseline. The pins gather the tree outside-theory vocabulary in one place -- for these papers, each paper final nearest-known-results section. Run: python ci/check_prose_watchlist.py; probe: --probe WORD; repin deliberately: --regen."
   ],
   "baseline": {
+    "README.md": {
+      "5f330c671741ab4066e1bf35b0201276f0b336a0ee1d14dfb24187e2ac3d4d92": 1,
+      "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e": 7
+    },
     "meta/README.md": {
       "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e": 1
     },
