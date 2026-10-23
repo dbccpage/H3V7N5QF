@@ -25,7 +25,7 @@ derivation.
 |---|---|
 | [**19L57G1**](https://github.com/dbccpage/19L57G1), Genesis | A blind, sealed, finite derivation from an opaque seed, and the point where it stops: the minimum response is tied across readings L and F. |
 | **H3V7N5QF** (this repository), Genesis-Ongoing | 25 further blind derivations, each from its own seed, on terms, assertions and a short list of changes: obstruction and answer, fewest changes, counted assertions, two relations, an admission gate, and three operator-targeted climbing rounds. |
-| [**theory_of_finite_quantum_mechanics**](https://github.com/dbccpage/theory_of_finite_quantum_mechanics), finite QM | A derivation graph of 880 nodes in 34 stages. It starts from the inert inscription `<>`, passes through Pre-Genesis, Genesis, S(n) and MSS-N, the witnessed-difference programme (WDP), L1 and L1 to L2, and asks how far finite exact constructions reach toward finite QM. Every node carries a status and an evidence grade E0 to E4. |
+| [**theory_of_finite_quantum_mechanics**](https://github.com/dbccpage/theory_of_finite_quantum_mechanics), finite QM | A derivation graph of 892 nodes in 35 stages. It starts from the inert inscription `<>`, passes through Pre-Genesis, Genesis, S(n) and MSS-N, the witnessed-difference programme (WDP), L1 and L1 to L2, and asks how far finite exact constructions reach toward finite QM. Every node carries a status and an evidence grade E0 to E4. |
 
 **How this repository relates to Genesis.** It continues the method, not the
 code. It shares the bookkeeping discipline, the claim ledger with falsifiers,
@@ -36,7 +36,7 @@ is in `meta/immune_system/genesis_correspondence.md`, outside any derivation.
 It is a table of chosen analogies, refuted identifications and open bridges,
 and it identifies nothing.
 
-**How it connects to finite QM.** At finite QM commit `5bb9635` (2026-10-22),
+**How it connects to finite QM.** At finite QM commit `8f1f7ca` (2026-10-22),
 16 nodes of the derivation graph cite this repository. 14 are in the GENESIS
 stage, 1 is in COMPUTATION and 1 is in WDP. 12 are `PROVED_LEAN`, 2 are
 `OPEN`, 1 is `COMPUTATIONALLY_CHECKED` and 1 is `DEFINITION`.
@@ -63,15 +63,15 @@ stage, 1 is in COMPUTATION and 1 is in WDP. 12 are `PROVED_LEAN`, 2 are
 The route from the H3 node into `PGW-WDP-BRIDGE-ONGOING-TO-WINDOW` is
 `GAP_NO_DERIVATION`. None of the 25 papers states a derivation of a Born
 rule, a complex field, an inner product or any other structure of finite QM.
-The
-finite QM graph cites this repository by a sibling path and not by a pinned
-commit. 14 of the 16 nodes are grade E0 in finite QM's evidence map, which
-means that map's checkout has no counted evidence file for them. Mostly that
-is because the Lean and code they cite are here, not there. A name check of the 45 Lean references
-finds 42 whose file exists here and whose last name component occurs in it.
-That is a citation check. It is not a replay of the Lean and not a review that
-each theorem states its node's claim. The other three cite
-`lean4/Second/Rename.lean` under names that do not occur in this repository.
+The finite QM graph cites this repository by a sibling path and not by a
+pinned commit. 14 of the 16 nodes are grade E0 in finite QM's evidence map,
+which means that map's checkout has no counted evidence file for them. Mostly
+that is because the Lean and code they cite are here, not there. A name check
+of the 45 Lean references that name a declaration finds 42 whose file exists
+here and whose last name component occurs in it. That is a citation check. It
+is not a replay of the Lean and not a review that each theorem states its
+node's claim. The other three cite `lean4/Second/Rename.lean` under names that
+do not occur in this repository.
 
 Finite QM [README](https://github.com/dbccpage/theory_of_finite_quantum_mechanics#readme)
 and [evidence map](https://github.com/dbccpage/theory_of_finite_quantum_mechanics/blob/main/docs/evidence/README.md).
