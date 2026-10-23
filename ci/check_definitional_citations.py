@@ -61,7 +61,7 @@ EXEMPT = (
 )
 
 #: A reflexivity proof term, once whitespace and newlines are collapsed.
-_REFL = re.compile(r"^(rfl|Iff\.rfl|by\s+rfl|⟨\s*(rfl\s*,?\s*)+⟩)$")
+_REFL = re.compile(r"^(rfl|Iff\.rfl|by\s+rfl|⟨\s*rfl(?:\s*(?:,\s*)?rfl)*\s*(?:,\s*)?⟩)$")
 #: A single forwarded reference: `name`, `name arg …`, or `Foo.name arg …`.
 _FORWARD = re.compile(r"^([A-Za-z_][\w'.]*)(\s+\S.*)?$")
 
