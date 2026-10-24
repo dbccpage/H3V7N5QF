@@ -275,3 +275,5 @@ There is no hosted CI for the derivations. The one workflow,
 
 `prompt/` is never modified after a derivation starts, and `.lake/` is never
 committed.
+
+Support this research: [Buy Me a Coffee](https://buymeacoffee.com/ooutwire).
